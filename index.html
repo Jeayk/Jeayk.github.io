@@ -70,6 +70,65 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-C-学习笔记-抽象类与密封类（读自C-从入门到精通-第2版）" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/04/15/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%8A%BD%E8%B1%A1%E7%B1%BB%E4%B8%8E%E5%AF%86%E5%B0%81%E7%B1%BB%EF%BC%88%E8%AF%BB%E8%87%AAC-%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A-%E7%AC%AC2%E7%89%88%EF%BC%89/" class="article-date">
+  <time datetime="2020-04-15T12:56:37.000Z" itemprop="datePublished">2020-04-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/15/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%8A%BD%E8%B1%A1%E7%B1%BB%E4%B8%8E%E5%AF%86%E5%B0%81%E7%B1%BB%EF%BC%88%E8%AF%BB%E8%87%AAC-%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A-%E7%AC%AC2%E7%89%88%EF%BC%89/">C#学习笔记--抽象类与密封类（读自C#从入门到精通 第2版）</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>继承是面向对象设计理论的基石，抽象理论和方法是继承理论的顶梁柱。</strong></p>
+<h4 id="抽象类与抽象方法"><a href="#抽象类与抽象方法" class="headerlink" title="抽象类与抽象方法"></a>抽象类与抽象方法</h4><p>用来描述共性的类叫做抽象类，抽象类中不考虑具体实现，只确定必须具有的行为，即确定抽象方法。</p>
+<p>如教师的任务是教学，具体教什么，如何教，每个教师都有自己独特的一面，对教学这个动作就可以提取出来作为抽象方法，而不考虑具体实现内容。</p>
+<p>包含抽象方法的类就是抽象类，抽象类和抽象方法声明使用<strong>abstract</strong>关键字。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 语法</span><br><span class="line">&lt;访问修饰符&gt; abstract class 抽象类名</span><br><span class="line">&#123;</span><br><span class="line">	&#x2F;&#x2F; 类体</span><br><span class="line">	&lt;访问修饰符&gt; abstract 返回类型方法(); &#x2F;&#x2F; 抽象方法</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 示例</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">class</span> <span class="title">Test</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">Display</span>(<span class="params"></span>)</span>; <span class="comment">// 抽象方法 --&gt; Display()后面不能加 &#123;&#125;, 声明了abstract无法声明主体</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="实现抽象方法"><a href="#实现抽象方法" class="headerlink" title="实现抽象方法"></a>实现抽象方法</h4><p><strong>C#中通过方法重写来实现抽象方法。</strong></p>
+<ul>
+<li>当一个抽象基类派生一个派生类时，派生类将继承基类的所有特征，重新实现所有的抽象方法。</li>
+<li>在派生类中实现基类的抽象方法，是使用override关键字来重写基类方法。<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> System.Linq;</span><br><span class="line"><span class="keyword">using</span> System.Text;</span><br><span class="line"><span class="keyword">using</span> System.Threading.Tasks;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">AbstractTest</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">class</span> <span class="title">Program</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>(<span class="params"><span class="keyword">string</span>[] args</span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            Manager objManager = <span class="keyword">new</span> Manager(<span class="string">"jay"</span>);</span><br><span class="line">            objManager.Display(); <span class="comment">// name: jay</span></span><br><span class="line">            Console.ReadKey();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">class</span> <span class="title">Employee</span> <span class="comment">// 声明抽象类</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">Display</span>(<span class="params"></span>)</span>; <span class="comment">// 抽象方法Display()</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Manager</span>: <span class="title">Employee</span> <span class="comment">// 创建抽象类Employee的派生类Manager类</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">string</span> name;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">Manager</span>(<span class="params"><span class="keyword">string</span> name</span>) <span class="comment">// 构造函数实现name初始化</span></span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            <span class="keyword">this</span>.name = name;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">override</span> <span class="keyword">void</span> <span class="title">Display</span>(<span class="params"></span>) <span class="comment">// 重写基类Employee中的抽象方法Display()</span></span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            Console.WriteLine(<span class="string">"name: "</span> + name);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="接口、类和抽象类"><a href="#接口、类和抽象类" class="headerlink" title="接口、类和抽象类"></a>接口、类和抽象类</h4>一个类可以同时继承类和接口，或者抽象类和接口，抽象类和类不能在一个类的继承列表中同时出现。</li>
+</ul>
+<p>如果派生类同时继承类或抽象类和接口，一定要把类或者抽象类写在前面，接口写在后面，类名和接口名之间用“,”隔开，接口没有先后顺序。每一种继承都要根据各自的规则去实现。</p>
+<h6 id="接口与抽象类的区别"><a href="#接口与抽象类的区别" class="headerlink" title="接口与抽象类的区别"></a>接口与抽象类的区别</h6><ul>
+<li>抽象类是一个不完全的类，需要通过派生类完善</li>
+<li>接口只是对类的约束，它仅仅承诺了类能够调用的方法</li>
+<li>一个类一次可以实现若干个接口，但一个类只能继承一个基类</li>
+<li>抽象类只需派生类实现它的抽象方法，接口要求必须实现它的所有成员</li>
+<li>在实际编程中，接口的使用要比抽象类广泛得多</li>
+</ul>
+<h4 id="密封类"><a href="#密封类" class="headerlink" title="密封类"></a>密封类</h4><p>与抽象类相反的是，C#支持创建密封类，密封类是不能当做基类的类。其他的类不能从此类派生，从而保证了密封类的密封性和安全性。在C#中使用<strong>sealed</strong>关键字创建密封类。</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 示例</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">sealed</span> <span class="keyword">class</span> <span class="title">Animal</span> <span class="comment">// 创建密封类</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Animal</span>(<span class="params"></span>) <span class="comment">// 创建构造函数</span></span></span><br><span class="line"><span class="function"></span>	&#123;</span><br><span class="line">		<span class="comment">// 函数主体</span></span><br><span class="line">		Console.WriteLine(<span class="string">"Animal被构造"</span>)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>当从Animal派生派生类时，编译器会提示出现错误。设计类的时候，通常情况下是不需要将类设置为密封类的，因为密封类会让类的扩展性非常差，这个类也无法再次扩展和派生。但是出于某种目的，当程序块只需要完成某些特定的功能或者在商业上为了保密，就可以使用密封类对类进行密封，以保证类的可靠性。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/04/15/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%8A%BD%E8%B1%A1%E7%B1%BB%E4%B8%8E%E5%AF%86%E5%B0%81%E7%B1%BB%EF%BC%88%E8%AF%BB%E8%87%AAC-%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A-%E7%AC%AC2%E7%89%88%EF%BC%89/" data-id="ck91cd7960000dfic0x6c9gjf" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-C-学习笔记-接口（读自C-从入门到精通-第2版）" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/04/14/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%8E%A5%E5%8F%A3%EF%BC%88%E8%AF%BB%E8%87%AAC-%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A-%E7%AC%AC2%E7%89%88%EF%BC%89/" class="article-date">
@@ -105,7 +164,7 @@
 <p><strong>示例： 声明接口IPoint描述一个点的坐标并实现该接口。</strong></p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// IPoint.cs</span></span><br><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> System.Linq;</span><br><span class="line"><span class="keyword">using</span> System.Text;</span><br><span class="line"><span class="keyword">using</span> System.Threading.Tasks;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">interfaceTest</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">interface</span> <span class="title">IPoint</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// 定义属性成员x，它含有读/写抽象访问</span></span><br><span class="line">        <span class="keyword">int</span> x &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line">        <span class="comment">// 定义属性成员y，它含有读/写抽象访问</span></span><br><span class="line">        <span class="keyword">int</span> y &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line">        <span class="comment">/**</span></span><br><span class="line"><span class="comment">         * 对接口名称建议以“I”开头，如Ipoint；</span></span><br><span class="line"><span class="comment">         * 对接口的访问修饰符可以选择使用，但是接口的方法前面不能添加任何访问修饰符，它是隐式公开的；</span></span><br><span class="line"><span class="comment">         * 接口不能包含构造函数，接口不能实现任何方法、属性和索引器。</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 从接口IPoint派生一个新类，这个类用来实现Point接口成员</span></span><br><span class="line">    <span class="keyword">class</span> <span class="title">Point</span>: <span class="title">IPoint</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// 定义两个类内部访问的私有成员变量</span></span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">int</span> px;</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">int</span> py;</span><br><span class="line">        <span class="comment">// 构造函数实现类的私有化，为私有变量赋值</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">Point</span>(<span class="params"><span class="keyword">int</span> x, <span class="keyword">int</span> y</span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            px = x;</span><br><span class="line">            py = y;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 接口属性实现</span></span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">int</span> x</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">get</span> &#123; <span class="keyword">return</span> px; &#125; <span class="comment">// 实现读访写</span></span><br><span class="line">            <span class="keyword">set</span> &#123; px = <span class="keyword">value</span>; &#125; <span class="comment">// 实现写访问</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">int</span> y</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">get</span> &#123; <span class="keyword">return</span> py; &#125; <span class="comment">// 实现读访写</span></span><br><span class="line">            <span class="keyword">set</span> &#123; py = <span class="keyword">value</span>; &#125; <span class="comment">// 实现写访问</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>IPoint接口内部声明了两个属性成员x和y，x和y一起组成了一个点的坐标。属性成员x和y包含抽象的读/写访问，分别表示属性成员可以对坐标进行读和写。<br>定义类Point来实现IPoint接口，它包含了对接口成员的具体实现。</p>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Program.cs</span></span><br><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> System.Linq;</span><br><span class="line"><span class="keyword">using</span> System.Text;</span><br><span class="line"><span class="keyword">using</span> System.Threading.Tasks;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">interfaceTest</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">interface</span> <span class="title">IPoint</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// 定义属性成员x，它含有读/写抽象访问</span></span><br><span class="line">        <span class="keyword">int</span> x &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line">        <span class="comment">// 定义属性成员y，它含有读/写抽象访问</span></span><br><span class="line">        <span class="keyword">int</span> y &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line">        <span class="comment">/**</span></span><br><span class="line"><span class="comment">         * </span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 从接口IPoint派生一个新类，这个类用来实现Point接口成员</span></span><br><span class="line">    <span class="keyword">class</span> <span class="title">Point</span>: <span class="title">IPoint</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// 定义两个类内部访问的私有成员变量</span></span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">int</span> px;</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">int</span> py;</span><br><span class="line">        <span class="comment">// 构造函数实现类的私有化，为私有变量赋值</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">Point</span>(<span class="params"><span class="keyword">int</span> x, <span class="keyword">int</span> y</span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            px = x;</span><br><span class="line">            py = y;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 接口属性实现</span></span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">int</span> x</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">get</span> &#123; <span class="keyword">return</span> px; &#125; <span class="comment">// 实现读访写</span></span><br><span class="line">            <span class="keyword">set</span> &#123; px = <span class="keyword">value</span>; &#125; <span class="comment">// 实现写访问</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">int</span> y</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">get</span> &#123; <span class="keyword">return</span> py; &#125; <span class="comment">// 实现读访写</span></span><br><span class="line">            <span class="keyword">set</span> &#123; py = <span class="keyword">value</span>; &#125; <span class="comment">// 实现写访问</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Program.cs</span></span><br><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> System.Linq;</span><br><span class="line"><span class="keyword">using</span> System.Text;</span><br><span class="line"><span class="keyword">using</span> System.Threading.Tasks;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">interfaceTest</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">class</span> <span class="title">Program</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>(<span class="params"><span class="keyword">string</span>[] args</span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            Point p = <span class="keyword">new</span> Point(<span class="number">5</span>, <span class="number">30</span>); <span class="comment">// 应用接口的派生类Point实例化一个新的对象并进行初始化赋值</span></span><br><span class="line">            Console.WriteLine(<span class="string">"新创建的Point点的坐标是："</span>);</span><br><span class="line">            Console.WriteLine(<span class="string">"x = &#123;0&#125;, y = &#123;1&#125;"</span>, p.x, p.y); <span class="comment">// x = 5, y = 30</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ul>
 <li>对接口名称建议以“I”开头，如Ipoint；</li>
 <li>对接口的访问修饰符可以选择使用，但是接口的方法前面不能添加任何访问修饰符，它是隐式公开的；</li>
@@ -124,7 +183,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/04/14/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%8E%A5%E5%8F%A3%EF%BC%88%E8%AF%BB%E8%87%AAC-%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A-%E7%AC%AC2%E7%89%88%EF%BC%89/" data-id="ck90028kc0000djicc1sb4058" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/04/14/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%8E%A5%E5%8F%A3%EF%BC%88%E8%AF%BB%E8%87%AAC-%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A-%E7%AC%AC2%E7%89%88%EF%BC%89/" data-id="ck91cd79e0001dfic7g8j0sv3" class="article-share-link">Share</a>
       
       
     </footer>
@@ -180,7 +239,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/04/13/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%A4%9A%E6%80%81%EF%BC%88%E8%AF%BB%E8%87%AAC-%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A-%E7%AC%AC2%E7%89%88%EF%BC%89/" data-id="ck90028kn0001djicft382wnv" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/04/13/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%A4%9A%E6%80%81%EF%BC%88%E8%AF%BB%E8%87%AAC-%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A-%E7%AC%AC2%E7%89%88%EF%BC%89/" data-id="ck91cd79h0002dficcg4t125m" class="article-share-link">Share</a>
       
       
     </footer>
@@ -254,7 +313,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/04/10/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E7%9B%B8%E5%85%B3%E4%BB%A3%E7%A0%81%E7%AC%94%E8%AE%B0%EF%BC%88%E8%AF%BB%E8%87%AAC-%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A-%E7%AC%AC2%E7%89%88%EF%BC%89/" data-id="ck90028kt0004djic73m0ekqa" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/04/10/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E7%9B%B8%E5%85%B3%E4%BB%A3%E7%A0%81%E7%AC%94%E8%AE%B0%EF%BC%88%E8%AF%BB%E8%87%AAC-%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A-%E7%AC%AC2%E7%89%88%EF%BC%89/" data-id="ck91cd79l0005dfic1z50d0yj" class="article-share-link">Share</a>
       
       
     </footer>
@@ -300,7 +359,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/04/10/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%93%8D%E4%BD%9C%E7%9B%B8%E5%85%B3%E7%AC%94%E8%AE%B0%EF%BC%88%E8%AF%BB%E8%87%AAC-%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A-%E7%AC%AC2%E7%89%88%EF%BC%89/" data-id="ck90028ks0003djiccv1ugo7l" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/04/10/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%93%8D%E4%BD%9C%E7%9B%B8%E5%85%B3%E7%AC%94%E8%AE%B0%EF%BC%88%E8%AF%BB%E8%87%AAC-%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A-%E7%AC%AC2%E7%89%88%EF%BC%89/" data-id="ck91cd79j0004dfic4tyc8jzz" class="article-share-link">Share</a>
       
       
     </footer>
@@ -371,7 +430,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/04/10/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%95%B0%E7%BB%84%E6%93%8D%E4%BD%9C%E7%9B%B8%E5%85%B3%E7%AC%94%E8%AE%B0%EF%BC%88%E8%AF%BB%E8%87%AAC-%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A-%E7%AC%AC2%E7%89%88%EF%BC%89/" data-id="ck90028kq0002djic2jbj6f5c" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/04/10/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%95%B0%E7%BB%84%E6%93%8D%E4%BD%9C%E7%9B%B8%E5%85%B3%E7%AC%94%E8%AE%B0%EF%BC%88%E8%AF%BB%E8%87%AAC-%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A-%E7%AC%AC2%E7%89%88%EF%BC%89/" data-id="ck91cd79i0003dfich8k03its" class="article-share-link">Share</a>
       
       
     </footer>
@@ -457,7 +516,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/04/10/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1%E7%9B%B8%E5%85%B3%E7%AC%94%E8%AE%B0%EF%BC%88%E8%AF%BB%E8%87%AAC-%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A-%E7%AC%AC2%E7%89%88%EF%BC%89/" data-id="ck90028kv0006djic6uaycms7" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/04/10/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1%E7%9B%B8%E5%85%B3%E7%AC%94%E8%AE%B0%EF%BC%88%E8%AF%BB%E8%87%AAC-%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A-%E7%AC%AC2%E7%89%88%EF%BC%89/" data-id="ck91cd79n0007dficau8ecx3s" class="article-share-link">Share</a>
       
       
     </footer>
@@ -524,7 +583,7 @@ Main方法测试代码<figure class="highlight csharp"><table><tr><td class="gut
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/04/10/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1%E7%9B%B8%E5%85%B3%E7%AC%94%E8%AE%B02%EF%BC%88%E8%AF%BB%E8%87%AAC-%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A-%E7%AC%AC2%E7%89%88%EF%BC%89/" data-id="ck90028ku0005djic5bcqg7p1" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/04/10/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1%E7%9B%B8%E5%85%B3%E7%AC%94%E8%AE%B02%EF%BC%88%E8%AF%BB%E8%87%AAC-%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A-%E7%AC%AC2%E7%89%88%EF%BC%89/" data-id="ck91cd79m0006dficcmgzgoa1" class="article-share-link">Share</a>
       
       
     </footer>
@@ -589,7 +648,7 @@ Main方法测试代码<figure class="highlight csharp"><table><tr><td class="gut
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/04/10/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E7%BB%93%E6%9E%84%E4%B8%8E%E7%B1%BB%E7%9B%B8%E5%85%B3%E7%AC%94%E8%AE%B0%EF%BC%88%E8%AF%BB%E8%87%AAC-%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A-%E7%AC%AC2%E7%89%88%EF%BC%89/" data-id="ck90028kw0007djic255y8960" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/04/10/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E7%BB%93%E6%9E%84%E4%B8%8E%E7%B1%BB%E7%9B%B8%E5%85%B3%E7%AC%94%E8%AE%B0%EF%BC%88%E8%AF%BB%E8%87%AAC-%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A-%E7%AC%AC2%E7%89%88%EF%BC%89/" data-id="ck91cd79s000adfic5nb2f1re" class="article-share-link">Share</a>
       
       
     </footer>
@@ -691,56 +750,7 @@ Main方法测试代码<figure class="highlight csharp"><table><tr><td class="gut
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/04/10/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E7%BB%A7%E6%89%BF%E7%9B%B8%E5%85%B3%E7%AC%94%E8%AE%B0%EF%BC%88%E8%AF%BB%E8%87%AAC-%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A-%E7%AC%AC2%E7%89%88%EF%BC%89/" data-id="ck90028kz0009djicdubhbpd4" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/04/09/hello-world/" class="article-date">
-  <time datetime="2020-04-09T13:28:13.135Z" itemprop="datePublished">2020-04-09</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/09/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/04/09/hello-world/" data-id="ck90028kx0008djic6vkk14ec" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/04/10/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E7%BB%A7%E6%89%BF%E7%9B%B8%E5%85%B3%E7%AC%94%E8%AE%B0%EF%BC%88%E8%AF%BB%E8%87%AAC-%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A-%E7%AC%AC2%E7%89%88%EF%BC%89/" data-id="ck91cd79o0008dfich87s60of" class="article-share-link">Share</a>
       
       
     </footer>
@@ -751,6 +761,11 @@ Main方法测试代码<figure class="highlight csharp"><table><tr><td class="gut
 
   
 
+
+  <nav id="page-nav">
+    
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
+  </nav>
 
 </section>
         
@@ -781,6 +796,10 @@ Main方法测试代码<figure class="highlight csharp"><table><tr><td class="gut
       <ul>
         
           <li>
+            <a href="/2020/04/15/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%8A%BD%E8%B1%A1%E7%B1%BB%E4%B8%8E%E5%AF%86%E5%B0%81%E7%B1%BB%EF%BC%88%E8%AF%BB%E8%87%AAC-%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A-%E7%AC%AC2%E7%89%88%EF%BC%89/">C#学习笔记--抽象类与密封类（读自C#从入门到精通 第2版）</a>
+          </li>
+        
+          <li>
             <a href="/2020/04/14/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%8E%A5%E5%8F%A3%EF%BC%88%E8%AF%BB%E8%87%AAC-%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A-%E7%AC%AC2%E7%89%88%EF%BC%89/">C#学习笔记--接口（读自C#从入门到精通 第2版）</a>
           </li>
         
@@ -794,10 +813,6 @@ Main方法测试代码<figure class="highlight csharp"><table><tr><td class="gut
         
           <li>
             <a href="/2020/04/10/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%93%8D%E4%BD%9C%E7%9B%B8%E5%85%B3%E7%AC%94%E8%AE%B0%EF%BC%88%E8%AF%BB%E8%87%AAC-%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A-%E7%AC%AC2%E7%89%88%EF%BC%89/">C#学习笔记-字符串操作相关笔记（读自C#从入门到精通 第2版）</a>
-          </li>
-        
-          <li>
-            <a href="/2020/04/10/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%95%B0%E7%BB%84%E6%93%8D%E4%BD%9C%E7%9B%B8%E5%85%B3%E7%AC%94%E8%AE%B0%EF%BC%88%E8%AF%BB%E8%87%AAC-%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A-%E7%AC%AC2%E7%89%88%EF%BC%89/">C#学习笔记-数组操作相关笔记（读自C#从入门到精通 第2版）</a>
           </li>
         
       </ul>
