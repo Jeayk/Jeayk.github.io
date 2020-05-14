@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>C#学习笔记--委托与事件（读自C#从入门到精通 第2版） | 积跬步以至千里</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="委托委托也叫代理，即把事情交给别人代办。C#中如果将一个方法委托给一个对象，对象即可全权代理该方法的执行。使用委托时首先要定义委托，声明委托所能代理方法的类型。 12&#x2F;&#x2F; 语法&lt;访问修饰符&gt; delegate 返回类型 委托名(); 委托没有具体的实现体，委托能够代表什么样的方法由它的返回值类型和参数列表决定。 12&#x2F;&#x2F; 示例public delegate void">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C#学习笔记--委托与事件（读自C#从入门到精通 第2版）">
+<meta property="og:url" content="http://yoursite.com/2020/04/16/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%A7%94%E6%89%98%E4%B8%8E%E4%BA%8B%E4%BB%B6%EF%BC%88%E8%AF%BB%E8%87%AAC-%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A-%E7%AC%AC2%E7%89%88%EF%BC%89/index.html">
+<meta property="og:site_name" content="积跬步以至千里">
+<meta property="og:description" content="委托委托也叫代理，即把事情交给别人代办。C#中如果将一个方法委托给一个对象，对象即可全权代理该方法的执行。使用委托时首先要定义委托，声明委托所能代理方法的类型。 12&#x2F;&#x2F; 语法&lt;访问修饰符&gt; delegate 返回类型 委托名(); 委托没有具体的实现体，委托能够代表什么样的方法由它的返回值类型和参数列表决定。 12&#x2F;&#x2F; 示例public delegate void">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-04-16T13:45:31.000Z">
+<meta property="article:modified_time" content="2020-04-16T13:46:00.817Z">
+<meta property="article:author" content="Yeats.">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="积跬步以至千里" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">积跬步以至千里</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">让我们兵分两路，最后在顶峰相见！</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-C-学习笔记-委托与事件（读自C-从入门到精通-第2版）" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/04/16/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%A7%94%E6%89%98%E4%B8%8E%E4%BA%8B%E4%BB%B6%EF%BC%88%E8%AF%BB%E8%87%AAC-%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A-%E7%AC%AC2%E7%89%88%EF%BC%89/" class="article-date">
+  <time datetime="2020-04-16T13:45:31.000Z" itemprop="datePublished">2020-04-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      C#学习笔记--委托与事件（读自C#从入门到精通 第2版）
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="委托"><a href="#委托" class="headerlink" title="委托"></a>委托</h4><p>委托也叫代理，即把事情交给别人代办。C#中如果将一个方法委托给一个对象，对象即可全权代理该方法的执行。使用委托时首先要定义委托，声明委托所能代理方法的类型。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 语法</span><br><span class="line">&lt;访问修饰符&gt; delegate 返回类型 委托名();</span><br></pre></td></tr></table></figure>
+<p>委托没有具体的实现体，委托能够代表什么样的方法由它的返回值类型和参数列表决定。</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 示例</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">delegate</span> <span class="keyword">void</span> <span class="title">testDelegate</span>(<span class="params"><span class="keyword">string</span> name</span>)</span>;</span><br></pre></td></tr></table></figure>
+<p>定义了上述委托示例之后要使用委托，首先要实例化委托，也就是将其指向某个方法，即调用委托的构造函数，并将相关联的方法作为参数传递。然后通过调用    委托，执行相关方法的代码，实现委托。</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 使用委托对数组进行降序排列</span></span><br><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> System.Linq;</span><br><span class="line"><span class="keyword">using</span> System.Text;</span><br><span class="line"><span class="keyword">using</span> System.Threading.Tasks;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">DelegateSort</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">class</span> <span class="title">Program</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">delegate</span> <span class="keyword">bool</span> <span class="title">SortDelegate</span>(<span class="params"><span class="keyword">int</span>[] x</span>)</span>; <span class="comment">// 定义委托SortDelegate</span></span><br><span class="line">        <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>(<span class="params"><span class="keyword">string</span>[] args</span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            <span class="keyword">int</span>[] arr = <span class="keyword">new</span> <span class="keyword">int</span>[] &#123; <span class="number">8</span>, <span class="number">9</span>, <span class="number">5</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">6</span>, <span class="number">1</span> &#125;;</span><br><span class="line">            Console.WriteLine(<span class="string">"排序前的数组是： "</span>);</span><br><span class="line">            <span class="keyword">foreach</span> (<span class="keyword">int</span> i <span class="keyword">in</span> arr) Console.Write(<span class="string">"&#123;0&#125;"</span>, i); <span class="comment">// 8953461</span></span><br><span class="line">            SortDelegate myDelegate; <span class="comment">// 声明委托变量</span></span><br><span class="line">            myDelegate = <span class="keyword">new</span> SortDelegate(Test.SortArray); <span class="comment">// 实例化委托变量，委托Test的SortArray</span></span><br><span class="line">            myDelegate(arr); <span class="comment">// 传递参数，调用委托排序</span></span><br><span class="line">            Console.WriteLine(<span class="string">""</span>);</span><br><span class="line">            Console.WriteLine(<span class="string">"排序后的数组是："</span>);</span><br><span class="line">            <span class="keyword">foreach</span> (<span class="keyword">int</span> i <span class="keyword">in</span> arr) Console.Write(<span class="string">"&#123;0&#125;"</span>, i); <span class="comment">// 9865431</span></span><br><span class="line">            Console.ReadKey();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">class</span> <span class="title">Test</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">bool</span> <span class="title">SortArray</span>(<span class="params"><span class="keyword">int</span>[] array </span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            <span class="comment">// 定义方法SortArray用于按照降序排序</span></span><br><span class="line">            <span class="comment">// GetUpperBound(int dimension): 获取数组中指定维度最后一个元素的索引。 dimension Int32 数组的从零开始的维度，其上限需要确定。</span></span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = array.GetUpperBound(<span class="number">0</span>); i &gt;= <span class="number">0</span>; i--) <span class="comment">// 循环从后向前取出数组的元素</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="comment">// 冒泡排序，将数值小的元素移到后面，直到所有的元素按照降序排列</span></span><br><span class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt;= i; j++)</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="keyword">if</span>(array[j] &lt;= array[i]) <span class="comment">// 判断数组前面的值是否小于后面的值</span></span><br><span class="line">                    &#123;</span><br><span class="line">                        Swap(<span class="keyword">ref</span> array[j], <span class="keyword">ref</span> array[i]); <span class="comment">// 交换二者的位置</span></span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>; <span class="comment">// 并非所有代码都有返回值，故加return true</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Swap</span>(<span class="params"><span class="keyword">ref</span> <span class="keyword">int</span> x, <span class="keyword">ref</span> <span class="keyword">int</span> y</span>) <span class="comment">// 交换方法</span></span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            <span class="keyword">int</span> temp = y;</span><br><span class="line">            y = x;</span><br><span class="line">            x = temp;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h4><p>事件是C#中的一个高级概念，是操作发生时允许执行特定应用程序的代码的机制。事件要么在相关联的操作发生前发生（事前事件），要么在操作发生后发生（事后事件）。例如，当用户单击窗口中的按钮时，将引发一个事后事件，以允许执行特定于应用程序的方法。</p>
+<p>类或对象可以通过事件向其他类或对象通知发生的相关事情。发送（或引发）事件的类称为“发行者”，接收（或处理）事件的类称为“订户”。在典型的C# Windows窗体或Web应用程序中，可以订阅由控件（如按钮和列表框）引发的事件。</p>
+<p>定义和使用事件的步骤：<br>(1) 在一个类中声明关于事件的委托。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">public delegate void 事件类型名称(object serder, EventArgs e);</span><br></pre></td></tr></table></figure>
+<p>事件类型名称建议用EventHandler结尾。如果想自定义事件的参数EventArgs，可以用EventArgs类派生自己的事件参数类，也可以没有参数。<br>(2)在类中声明事件，使用步骤(1)的delegate作为事件的类型。 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">public event 事件类型名称 事件名称;</span><br></pre></td></tr></table></figure>
+<p>(3)在类中需要引发事件的方法中，编写引发事件的方法。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">事件名称(this, new EventArgs());</span><br><span class="line">&#x2F;&#x2F; 或者</span><br><span class="line">if(事件名称 !&#x3D; null) 事件名称 (this, new EventArgs());</span><br></pre></td></tr></table></figure>
+<p>(4)订阅事件，当事件发生时通知订户。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">带有事件的类实例.事件名称 +&#x3D; new 事件名称(事件处理方法名称);</span><br></pre></td></tr></table></figure>
+<p>(5)编写事件处理方法。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">public void 事件处理方法(object sender, EventArgs e)</span><br><span class="line">&#123;</span><br><span class="line">	&#x2F;&#x2F; 相关代码</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>(6)在适当的条件下触发事件，即需要调用步骤(3)中的引发事件的方法。</p>
+<p><strong>事件的定义和使用示例</strong><br>假设设计一个高档热水器，通电加热到水温超过96℃的时候，扬声器会发出语音告诉你水的温度，液晶屏显示水温的变化，提示水快烧开了。定义一个类来代表热水器的类Heater，它有代表水温的字段temperature，有给水加热的BoilWater()方法，发出语音警报的MakeAlert()方法，显示水温的ShowMsg()方法。</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> System.Linq;</span><br><span class="line"><span class="keyword">using</span> System.Text;</span><br><span class="line"><span class="keyword">using</span> System.Threading.Tasks;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">HeaterEvent</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">class</span> <span class="title">Program</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>(<span class="params"><span class="keyword">string</span>[] args</span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            Heater heater = <span class="keyword">new</span> Heater(); <span class="comment">// 创建热水器对象heater</span></span><br><span class="line">            Alarm alarm = <span class="keyword">new</span> Alarm(); <span class="comment">// 创建报警器对象alarm</span></span><br><span class="line">            heater.BoilEvent += alarm.MakeAlert; <span class="comment">// 给alarm的MakeAlert方法订阅事件</span></span><br><span class="line">            heater.BoilEvent += Display.ShowMsg; <span class="comment">// 订阅静态方法</span></span><br><span class="line">            heater.BoilWater(); <span class="comment">// 烧水，会自动调用订阅过的对象方法</span></span><br><span class="line">            Console.ReadKey();</span><br><span class="line">            <span class="comment">/**</span></span><br><span class="line"><span class="comment">             * Alarm: 嘀嘀嘀，水已经97度了!</span></span><br><span class="line"><span class="comment">             * Display：水快烧开了，当前温度：97度。</span></span><br><span class="line"><span class="comment">             * Alarm: 嘀嘀嘀，水已经98度了!</span></span><br><span class="line"><span class="comment">             * Display：水快烧开了，当前温度：98度。</span></span><br><span class="line"><span class="comment">             * Alarm: 嘀嘀嘀，水已经99度了!</span></span><br><span class="line"><span class="comment">             * Display：水快烧开了，当前温度：99度。</span></span><br><span class="line"><span class="comment">             * Alarm: 嘀嘀嘀，水已经100度了!</span></span><br><span class="line"><span class="comment">             * Display：水快烧开了，当前温度：100度。</span></span><br><span class="line"><span class="comment">             */</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Heater</span> <span class="comment">// 热水器类Heater</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">int</span> temperature; <span class="comment">// 声明表示水温的字段</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">delegate</span> <span class="keyword">void</span> <span class="title">BoilHandler</span>(<span class="params"><span class="keyword">int</span> param</span>)</span>; <span class="comment">// 声明关于事件的委托</span></span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">event</span> BoilHandler BoilEvent; <span class="comment">// 声明水要烧开的事件</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">BoilWater</span>(<span class="params"></span>) <span class="comment">// 烧水的方法</span></span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= <span class="number">100</span>; i++) <span class="comment">// 循环表示水温的变化</span></span><br><span class="line">            &#123;</span><br><span class="line">                temperature = i; <span class="comment">// 设置水的温度</span></span><br><span class="line">                <span class="keyword">if</span>(temperature &gt; <span class="number">96</span>) <span class="comment">// 水温超过96度，引发事件BoilEvent</span></span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="comment">/*if(BoilEvent != null)</span></span><br><span class="line"><span class="comment">                    &#123;</span></span><br><span class="line"><span class="comment">                        // 如果有对象订阅</span></span><br><span class="line"><span class="comment">                        BoilEvent(temperature); // 调用所有订阅对象的方法</span></span><br><span class="line"><span class="comment">                    &#125;*/</span></span><br><span class="line">                    <span class="comment">// 优化</span></span><br><span class="line">                    BoilEvent?.Invoke(temperature); <span class="comment">// 如果有对象订阅，调用所有订阅对象的方法</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Alarm</span> <span class="comment">// 定义报警类</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">MakeAlert</span>(<span class="params"><span class="keyword">int</span> param</span>) <span class="comment">// 水快开时报警的方法</span></span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            Console.WriteLine(<span class="string">"Alarm: 嘀嘀嘀，水已经&#123;0&#125;度了!"</span>, param);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Display</span> <span class="comment">// 显示水温的显示类</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// 静态方法 ShowMsg用于显示水温</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">ShowMsg</span>(<span class="params"><span class="keyword">int</span> param</span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            Console.WriteLine(<span class="string">"Display：水快烧开了，当前温度：&#123;0&#125;度。"</span>, param);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/04/16/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%A7%94%E6%89%98%E4%B8%8E%E4%BA%8B%E4%BB%B6%EF%BC%88%E8%AF%BB%E8%87%AAC-%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A-%E7%AC%AC2%E7%89%88%EF%BC%89/" data-id="cka6uee7g0002ocicc7ij4e2z" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/04/20/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%8C%BF%E5%90%8D%E6%96%B9%E6%B3%95%E4%B8%8Elambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%EF%BC%88%E8%AF%BB%E8%87%AAC-%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A-%E7%AC%AC2%E7%89%88%EF%BC%89/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          C#学习笔记-匿名方法与lambda表达式（读自C#从入门到精通 第2版）
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/04/15/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%8A%BD%E8%B1%A1%E7%B1%BB%E4%B8%8E%E5%AF%86%E5%B0%81%E7%B1%BB%EF%BC%88%E8%AF%BB%E8%87%AAC-%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A-%E7%AC%AC2%E7%89%88%EF%BC%89/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">C#学习笔记--抽象类与密封类（读自C#从入门到精通 第2版）</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">May 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/05/14/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%B3%9B%E5%9E%8B%EF%BC%88%E8%AF%BB%E8%87%AAC-%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A-%E7%AC%AC2%E7%89%88%EF%BC%89/">C#学习笔记-泛型（读自C#从入门到精通 第2版）</a>
+          </li>
+        
+          <li>
+            <a href="/2020/05/13/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%B8%B8%E7%94%A8%E9%9D%9E%E6%B3%9B%E5%9E%8B%E9%9B%86%E5%90%88%E7%B1%BB-Hashtable%E7%B1%BB%EF%BC%88%E8%AF%BB%E8%87%AAC-%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A-%E7%AC%AC2%E7%89%88%EF%BC%89/">C#学习笔记-常用非泛型集合类-Hashtable类（读自C#从入门到精通 第2版）</a>
+          </li>
+        
+          <li>
+            <a href="/2020/05/13/int-Parse%E4%B8%8Eint-TryParse%E7%9A%84%E5%8C%BA%E5%88%AB/">int.Parse与int.TryParse的区别</a>
+          </li>
+        
+          <li>
+            <a href="/2020/05/11/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%B8%B8%E7%94%A8%E9%9D%9E%E6%B3%9B%E5%9E%8B%E9%9B%86%E5%90%88%E7%B1%BB-ArrayList%E7%B1%BB%EF%BC%88%E8%AF%BB%E8%87%AAC-%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A-%E7%AC%AC2%E7%89%88%EF%BC%89/">C#学习笔记-常用非泛型集合类-ArrayList类（读自C#从入门到精通 第2版）</a>
+          </li>
+        
+          <li>
+            <a href="/2020/04/20/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%8C%BF%E5%90%8D%E6%96%B9%E6%B3%95%E4%B8%8Elambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%EF%BC%88%E8%AF%BB%E8%87%AAC-%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A-%E7%AC%AC2%E7%89%88%EF%BC%89/">C#学习笔记-匿名方法与lambda表达式（读自C#从入门到精通 第2版）</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 Yeats.<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

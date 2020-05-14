@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>C#学习笔记-多态（读自C#从入门到精通 第2版） | 积跬步以至千里</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="多态多态的概念同一操作作用于不同的类的对象，不同的类的对象进行不同的执行，最后产生不同的执行结果。 多态的实现C#中支持基于接口的多态和基于继承的多态，基于继承的多态设计在基类中定义方法，并在派生类中重写方法。 多态和重写是紧密联系的，重写是实现多态的重要手段。重写基类方法就是修改它的实现，或者说在派生类中对继承的基类方法重新编写。 在基类中用virtual关键字声明的方法（叫做虚拟方法）在派生类">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C#学习笔记-多态（读自C#从入门到精通 第2版）">
+<meta property="og:url" content="http://yoursite.com/2020/04/13/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%A4%9A%E6%80%81%EF%BC%88%E8%AF%BB%E8%87%AAC-%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A-%E7%AC%AC2%E7%89%88%EF%BC%89/index.html">
+<meta property="og:site_name" content="积跬步以至千里">
+<meta property="og:description" content="多态多态的概念同一操作作用于不同的类的对象，不同的类的对象进行不同的执行，最后产生不同的执行结果。 多态的实现C#中支持基于接口的多态和基于继承的多态，基于继承的多态设计在基类中定义方法，并在派生类中重写方法。 多态和重写是紧密联系的，重写是实现多态的重要手段。重写基类方法就是修改它的实现，或者说在派生类中对继承的基类方法重新编写。 在基类中用virtual关键字声明的方法（叫做虚拟方法）在派生类">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-04-13T13:25:20.000Z">
+<meta property="article:modified_time" content="2020-04-13T13:25:51.095Z">
+<meta property="article:author" content="Yeats.">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="积跬步以至千里" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">积跬步以至千里</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">让我们兵分两路，最后在顶峰相见！</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-C-学习笔记-多态（读自C-从入门到精通-第2版）" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/04/13/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%A4%9A%E6%80%81%EF%BC%88%E8%AF%BB%E8%87%AAC-%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A-%E7%AC%AC2%E7%89%88%EF%BC%89/" class="article-date">
+  <time datetime="2020-04-13T13:25:20.000Z" itemprop="datePublished">2020-04-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      C#学习笔记-多态（读自C#从入门到精通 第2版）
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h4><h5 id="多态的概念"><a href="#多态的概念" class="headerlink" title="多态的概念"></a>多态的概念</h5><p>同一操作作用于不同的类的对象，不同的类的对象进行不同的执行，最后产生不同的执行结果。</p>
+<h5 id="多态的实现"><a href="#多态的实现" class="headerlink" title="多态的实现"></a>多态的实现</h5><p>C#中支持基于接口的多态和基于继承的多态，基于继承的多态设计在基类中定义方法，并在派生类中重写方法。</p>
+<p>多态和重写是紧密联系的，重写是实现多态的重要手段。重写基类方法就是修改它的实现，或者说在派生类中对继承的基类方法重新编写。</p>
+<p>在基类中用<strong>virtual</strong>关键字声明的方法（叫做虚拟方法）在派生类中可以重写。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 语法</span><br><span class="line">访问修饰符 virtual 返回类型 方法名()</span><br><span class="line">&#123;</span><br><span class="line">	&#x2F;&#x2F; 方法体</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>示例：</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title">Father</span></span><br><span class="line">&#123;</span><br><span class="line">	...</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">Display</span>(<span class="params"></span>) <span class="comment">// 基类中定义成虚拟方法，使用virtual关键字</span></span></span><br><span class="line"><span class="function"></span>	&#123;</span><br><span class="line">		<span class="comment">// Father does sth.</span></span><br><span class="line">		...</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title">Son</span>: <span class="title">Father</span></span><br><span class="line">&#123;</span><br><span class="line">	...</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">override</span> <span class="keyword">void</span> <span class="title">Display</span>(<span class="params"></span>) <span class="comment">// 重写基类的Display方法</span></span></span><br><span class="line"><span class="function"></span>	&#123;</span><br><span class="line">		<span class="comment">// Son does sth.</span></span><br><span class="line">		...</span><br><span class="line">		</span><br><span class="line">		<span class="comment">// 若想派生类方法执行后，继续执行基类方法，执行 base.Display() 方法</span></span><br><span class="line">		<span class="keyword">base</span>.Display();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>重写时，子类重写方法的访问级别和父类虚拟方法的访问级别必须相同。</strong></p>
+<h5 id="方法重载、重写和隐蔽"><a href="#方法重载、重写和隐蔽" class="headerlink" title="方法重载、重写和隐蔽"></a>方法重载、重写和隐蔽</h5><p>在基类和派生类中可以存在同名方法，这些同名的方法可以分为重载、重写和隐藏3种类型。</p>
+<ul>
+<li>重载<br>重载是在同一个作用域内发生（比如一个类里面），定义一系列同名方法，但是方法的参数列表不同，就是签名不同，签名由方法名和参数组成。<br>能通过传递不同的参数来决定到底调用哪一个同名方法。</li>
+</ul>
+<p><strong>注意返回值类型不同不能构成重载，因为签名不包括返回值。</strong></p>
+<ul>
+<li>重写<br>基类方法中使用virtual关键字声明的方法和派生类中使用override关键字声明的方法名称相同，参数列表也相同，就是基类方法和派生类方法的签名相同，实现了派生类重写基类中的同名方法。</li>
+<li>隐藏<br>基类中的方法不声明为virtual（默认为非虚方法），在派生类中声明与基类同名时，需使用new关键字，以隐藏基类同名方法。</li>
+</ul>
+<p><strong>示例：</strong></p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title">Father</span></span><br><span class="line">&#123;</span><br><span class="line">	...</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">Display</span>(<span class="params"></span>) <span class="comment">// 基类中定义成虚拟方法，使用virtual关键字</span></span></span><br><span class="line"><span class="function"></span>	&#123;</span><br><span class="line">		<span class="comment">// Father does sth.</span></span><br><span class="line">		...</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Display</span>(<span class="params"><span class="keyword">int</span> id</span>)</span></span><br><span class="line"><span class="function"></span>	&#123;</span><br><span class="line">		<span class="comment">// 若想执行无参方法</span></span><br><span class="line">		<span class="keyword">this</span>.Display();</span><br><span class="line"></span><br><span class="line">		<span class="comment">// 有参方法</span></span><br><span class="line">		Console.WriteLine(<span class="string">"id: "</span> + id);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title">Son</span>: <span class="title">Father</span></span><br><span class="line">&#123;</span><br><span class="line">	...</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">override</span> <span class="keyword">void</span> <span class="title">Display</span>(<span class="params"></span>) <span class="comment">// 重写基类的Display方法</span></span></span><br><span class="line"><span class="function"></span>	&#123;</span><br><span class="line">		<span class="comment">// do sth.</span></span><br><span class="line">		...</span><br><span class="line">		</span><br><span class="line">		<span class="comment">// 若想派生类方法执行后，继续执行基类方法，执行 base.Display() 方法</span></span><br><span class="line">		<span class="keyword">base</span>.Display();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> new <span class="keyword">void</span> <span class="title">Display</span>(<span class="params"><span class="keyword">int</span> no</span>) <span class="comment">// 使用new隐藏基类</span></span></span><br><span class="line"><span class="function"></span>	&#123;</span><br><span class="line">		<span class="comment">// do sth.</span></span><br><span class="line">		...</span><br><span class="line">		</span><br><span class="line">		<span class="comment">// 若想派生类方法执行后，继续执行基类方法，执行 base.Display() 方法</span></span><br><span class="line">		<span class="keyword">base</span>.Display();</span><br><span class="line"></span><br><span class="line">		<span class="comment">// 隐藏基类自定义方法</span></span><br><span class="line">		Console.WriteLine(<span class="string">"no: "</span> + no);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/04/13/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%A4%9A%E6%80%81%EF%BC%88%E8%AF%BB%E8%87%AAC-%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A-%E7%AC%AC2%E7%89%88%EF%BC%89/" data-id="cka6uee730000ocicggio4075" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/04/14/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%8E%A5%E5%8F%A3%EF%BC%88%E8%AF%BB%E8%87%AAC-%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A-%E7%AC%AC2%E7%89%88%EF%BC%89/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          C#学习笔记--接口（读自C#从入门到精通 第2版）
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/04/10/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E7%9B%B8%E5%85%B3%E4%BB%A3%E7%A0%81%E7%AC%94%E8%AE%B0%EF%BC%88%E8%AF%BB%E8%87%AAC-%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A-%E7%AC%AC2%E7%89%88%EF%BC%89/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">C#学习笔记-数据类型相关代码笔记（读自C#从入门到精通 第2版）</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">May 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/05/14/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%B3%9B%E5%9E%8B%EF%BC%88%E8%AF%BB%E8%87%AAC-%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A-%E7%AC%AC2%E7%89%88%EF%BC%89/">C#学习笔记-泛型（读自C#从入门到精通 第2版）</a>
+          </li>
+        
+          <li>
+            <a href="/2020/05/13/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%B8%B8%E7%94%A8%E9%9D%9E%E6%B3%9B%E5%9E%8B%E9%9B%86%E5%90%88%E7%B1%BB-Hashtable%E7%B1%BB%EF%BC%88%E8%AF%BB%E8%87%AAC-%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A-%E7%AC%AC2%E7%89%88%EF%BC%89/">C#学习笔记-常用非泛型集合类-Hashtable类（读自C#从入门到精通 第2版）</a>
+          </li>
+        
+          <li>
+            <a href="/2020/05/13/int-Parse%E4%B8%8Eint-TryParse%E7%9A%84%E5%8C%BA%E5%88%AB/">int.Parse与int.TryParse的区别</a>
+          </li>
+        
+          <li>
+            <a href="/2020/05/11/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%B8%B8%E7%94%A8%E9%9D%9E%E6%B3%9B%E5%9E%8B%E9%9B%86%E5%90%88%E7%B1%BB-ArrayList%E7%B1%BB%EF%BC%88%E8%AF%BB%E8%87%AAC-%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A-%E7%AC%AC2%E7%89%88%EF%BC%89/">C#学习笔记-常用非泛型集合类-ArrayList类（读自C#从入门到精通 第2版）</a>
+          </li>
+        
+          <li>
+            <a href="/2020/04/20/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%8C%BF%E5%90%8D%E6%96%B9%E6%B3%95%E4%B8%8Elambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%EF%BC%88%E8%AF%BB%E8%87%AAC-%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A-%E7%AC%AC2%E7%89%88%EF%BC%89/">C#学习笔记-匿名方法与lambda表达式（读自C#从入门到精通 第2版）</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 Yeats.<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
