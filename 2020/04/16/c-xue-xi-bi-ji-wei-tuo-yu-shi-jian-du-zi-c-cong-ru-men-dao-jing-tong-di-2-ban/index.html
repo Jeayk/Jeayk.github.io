@@ -29,7 +29,7 @@
     <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
     <link rel="stylesheet" type="text/css" href="/css/matery.css">
     <link rel="stylesheet" type="text/css" href="/css/my.css">
-
+    <link rel="stylesheet" href="/js/prism/prism.css">
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 
 <meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
@@ -471,14 +471,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    1.6k
+                    483
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    6 Min
+                    1 Min
                 </div>
                 
 
@@ -503,64 +503,64 @@
 &lt;访问修饰符&gt; delegate 返回类型 委托名();
 </code></pre>
 <p>委托没有具体的实现体，委托能够代表什么样的方法由它的返回值类型和参数列表决定。</p>
-<pre class=" language-csharp"><code class="language-csharp"><span class="token comment" spellcheck="true">// 示例</span>
-<span class="token keyword">public</span> <span class="token keyword">delegate</span> <span class="token keyword">void</span> <span class="token function">testDelegate</span><span class="token punctuation">(</span><span class="token keyword">string</span> name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">// 示例
+public delegate void testDelegate(string name);
 </code></pre>
 <p>定义了上述委托示例之后要使用委托，首先要实例化委托，也就是将其指向某个方法，即调用委托的构造函数，并将相关联的方法作为参数传递。然后通过调用    委托，执行相关方法的代码，实现委托。</p>
-<pre class=" language-csharp"><code class="language-csharp"><span class="token comment" spellcheck="true">// 使用委托对数组进行降序排列</span>
-<span class="token keyword">using</span> System<span class="token punctuation">;</span>
-<span class="token keyword">using</span> System<span class="token punctuation">.</span>Collections<span class="token punctuation">.</span>Generic<span class="token punctuation">;</span>
-<span class="token keyword">using</span> System<span class="token punctuation">.</span>Linq<span class="token punctuation">;</span>
-<span class="token keyword">using</span> System<span class="token punctuation">.</span>Text<span class="token punctuation">;</span>
-<span class="token keyword">using</span> System<span class="token punctuation">.</span>Threading<span class="token punctuation">.</span>Tasks<span class="token punctuation">;</span>
+<pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">// 使用委托对数组进行降序排列
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-<span class="token keyword">namespace</span> DelegateSort
-<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    <span class="token keyword">class</span> <span class="token class-name">Program</span>
-    <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-        <span class="token keyword">public</span> <span class="token keyword">delegate</span> <span class="token keyword">bool</span> <span class="token function">SortDelegate</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> x<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 定义委托SortDelegate</span>
-        <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">Main</span><span class="token punctuation">(</span><span class="token keyword">string</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span>
-        <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-            <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> arr <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">1</span> <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
-            Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">"排序前的数组是： "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token keyword">foreach</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token keyword">in</span> arr<span class="token punctuation">)</span> Console<span class="token punctuation">.</span><span class="token function">Write</span><span class="token punctuation">(</span><span class="token string">"&amp;#123;0&amp;#125;"</span><span class="token punctuation">,</span> i<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 8953461</span>
-            SortDelegate myDelegate<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 声明委托变量</span>
-            myDelegate <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SortDelegate</span><span class="token punctuation">(</span>Test<span class="token punctuation">.</span>SortArray<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 实例化委托变量，委托Test的SortArray</span>
-            <span class="token function">myDelegate</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 传递参数，调用委托排序</span>
-            Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">"排序后的数组是："</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token keyword">foreach</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token keyword">in</span> arr<span class="token punctuation">)</span> Console<span class="token punctuation">.</span><span class="token function">Write</span><span class="token punctuation">(</span><span class="token string">"&amp;#123;0&amp;#125;"</span><span class="token punctuation">,</span> i<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 9865431</span>
-            Console<span class="token punctuation">.</span><span class="token function">ReadKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+namespace DelegateSort
+&#123;
+    class Program
+    &#123;
+        public delegate bool SortDelegate(int[] x); // 定义委托SortDelegate
+        static void Main(string[] args)
+        &#123;
+            int[] arr = new int[] &#123; 8, 9, 5, 3, 4, 6, 1 &#125;;
+            Console.WriteLine("排序前的数组是： ");
+            foreach (int i in arr) Console.Write("&#123;0&#125;", i); // 8953461
+            SortDelegate myDelegate; // 声明委托变量
+            myDelegate = new SortDelegate(Test.SortArray); // 实例化委托变量，委托Test的SortArray
+            myDelegate(arr); // 传递参数，调用委托排序
+            Console.WriteLine("");
+            Console.WriteLine("排序后的数组是：");
+            foreach (int i in arr) Console.Write("&#123;0&#125;", i); // 9865431
+            Console.ReadKey();
+        &#125;
+    &#125;
 
-    <span class="token keyword">class</span> <span class="token class-name">Test</span>
-    <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-        <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">bool</span> <span class="token function">SortArray</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> array <span class="token punctuation">)</span>
-        <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-            <span class="token comment" spellcheck="true">// 定义方法SortArray用于按照降序排序</span>
-            <span class="token comment" spellcheck="true">// GetUpperBound(int dimension): 获取数组中指定维度最后一个元素的索引。 dimension Int32 数组的从零开始的维度，其上限需要确定。</span>
-            <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> array<span class="token punctuation">.</span><span class="token function">GetUpperBound</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span> i <span class="token operator">>=</span> <span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">--</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 循环从后向前取出数组的元素</span>
-            <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-                <span class="token comment" spellcheck="true">// 冒泡排序，将数值小的元素移到后面，直到所有的元素按照降序排列</span>
-                <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;=</span> i<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span>
-                <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-                    <span class="token keyword">if</span><span class="token punctuation">(</span>array<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">&lt;=</span> array<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 判断数组前面的值是否小于后面的值</span>
-                    <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-                        <span class="token function">Swap</span><span class="token punctuation">(</span><span class="token keyword">ref</span> array<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token keyword">ref</span> array<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 交换二者的位置</span>
-                    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-                <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-            <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-            <span class="token keyword">return</span> <span class="token keyword">true</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 并非所有代码都有返回值，故加return true</span>
-        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-        <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">Swap</span><span class="token punctuation">(</span><span class="token keyword">ref</span> <span class="token keyword">int</span> x<span class="token punctuation">,</span> <span class="token keyword">ref</span> <span class="token keyword">int</span> y<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 交换方法</span>
-        <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-            <span class="token keyword">int</span> temp <span class="token operator">=</span> y<span class="token punctuation">;</span>
-            y <span class="token operator">=</span> x<span class="token punctuation">;</span>
-            x <span class="token operator">=</span> temp<span class="token punctuation">;</span>
-        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    class Test
+    &#123;
+        public static bool SortArray(int[] array )
+        &#123;
+            // 定义方法SortArray用于按照降序排序
+            // GetUpperBound(int dimension): 获取数组中指定维度最后一个元素的索引。 dimension Int32 数组的从零开始的维度，其上限需要确定。
+            for (int i = array.GetUpperBound(0); i >= 0; i--) // 循环从后向前取出数组的元素
+            &#123;
+                // 冒泡排序，将数值小的元素移到后面，直到所有的元素按照降序排列
+                for(int j = 0; j <= i; j++)
+                &#123;
+                    if(array[j] <= array[i]) // 判断数组前面的值是否小于后面的值
+                    &#123;
+                        Swap(ref array[j], ref array[i]); // 交换二者的位置
+                    &#125;
+                &#125;
+            &#125;
+            return true; // 并非所有代码都有返回值，故加return true
+        &#125;
+        static void Swap(ref int x, ref int y) // 交换方法
+        &#123;
+            int temp = y;
+            y = x;
+            x = temp;
+        &#125;
+    &#125;
+&#125;
 </code></pre>
 <h4 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h4><p>事件是C#中的一个高级概念，是操作发生时允许执行特定应用程序的代码的机制。事件要么在相关联的操作发生前发生（事前事件），要么在操作发生后发生（事后事件）。例如，当用户单击窗口中的按钮时，将引发一个事后事件，以允许执行特定于应用程序的方法。</p>
 <p>类或对象可以通过事件向其他类或对象通知发生的相关事情。发送（或引发）事件的类称为“发行者”，接收（或处理）事件的类称为“订户”。在典型的C# Windows窗体或Web应用程序中，可以订阅由控件（如按钮和列表框）引发的事件。</p>
@@ -586,25 +586,25 @@ if(事件名称 != null) 事件名称 (this, new EventArgs());
 </code></pre>
 <p>(6)在适当的条件下触发事件，即需要调用步骤(3)中的引发事件的方法。</p>
 <p><strong>事件的定义和使用示例</strong><br>假设设计一个高档热水器，通电加热到水温超过96℃的时候，扬声器会发出语音告诉你水的温度，液晶屏显示水温的变化，提示水快烧开了。定义一个类来代表热水器的类Heater，它有代表水温的字段temperature，有给水加热的BoilWater()方法，发出语音警报的MakeAlert()方法，显示水温的ShowMsg()方法。</p>
-<pre class=" language-csharp"><code class="language-csharp"><span class="token keyword">using</span> System<span class="token punctuation">;</span>
-<span class="token keyword">using</span> System<span class="token punctuation">.</span>Collections<span class="token punctuation">.</span>Generic<span class="token punctuation">;</span>
-<span class="token keyword">using</span> System<span class="token punctuation">.</span>Linq<span class="token punctuation">;</span>
-<span class="token keyword">using</span> System<span class="token punctuation">.</span>Text<span class="token punctuation">;</span>
-<span class="token keyword">using</span> System<span class="token punctuation">.</span>Threading<span class="token punctuation">.</span>Tasks<span class="token punctuation">;</span>
+<pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-<span class="token keyword">namespace</span> HeaterEvent
-<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    <span class="token keyword">class</span> <span class="token class-name">Program</span>
-    <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-        <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">Main</span><span class="token punctuation">(</span><span class="token keyword">string</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span>
-        <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-            Heater heater <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Heater</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 创建热水器对象heater</span>
-            Alarm alarm <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Alarm</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 创建报警器对象alarm</span>
-            heater<span class="token punctuation">.</span>BoilEvent <span class="token operator">+</span><span class="token operator">=</span> alarm<span class="token punctuation">.</span>MakeAlert<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 给alarm的MakeAlert方法订阅事件</span>
-            heater<span class="token punctuation">.</span>BoilEvent <span class="token operator">+</span><span class="token operator">=</span> Display<span class="token punctuation">.</span>ShowMsg<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 订阅静态方法</span>
-            heater<span class="token punctuation">.</span><span class="token function">BoilWater</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 烧水，会自动调用订阅过的对象方法</span>
-            Console<span class="token punctuation">.</span><span class="token function">ReadKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token comment" spellcheck="true">/**
+namespace HeaterEvent
+&#123;
+    class Program
+    &#123;
+        static void Main(string[] args)
+        &#123;
+            Heater heater = new Heater(); // 创建热水器对象heater
+            Alarm alarm = new Alarm(); // 创建报警器对象alarm
+            heater.BoilEvent += alarm.MakeAlert; // 给alarm的MakeAlert方法订阅事件
+            heater.BoilEvent += Display.ShowMsg; // 订阅静态方法
+            heater.BoilWater(); // 烧水，会自动调用订阅过的对象方法
+            Console.ReadKey();
+            /**
              * Alarm: 嘀嘀嘀，水已经97度了!
              * Display：水快烧开了，当前温度：97度。
              * Alarm: 嘀嘀嘀，水已经98度了!
@@ -613,50 +613,50 @@ if(事件名称 != null) 事件名称 (this, new EventArgs());
              * Display：水快烧开了，当前温度：99度。
              * Alarm: 嘀嘀嘀，水已经100度了!
              * Display：水快烧开了，当前温度：100度。
-             */</span>
-        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Heater</span> <span class="token comment" spellcheck="true">// 热水器类Heater</span>
-    <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-        <span class="token keyword">private</span> <span class="token keyword">int</span> temperature<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 声明表示水温的字段</span>
-        <span class="token keyword">public</span> <span class="token keyword">delegate</span> <span class="token keyword">void</span> <span class="token function">BoilHandler</span><span class="token punctuation">(</span><span class="token keyword">int</span> param<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 声明关于事件的委托</span>
-        <span class="token keyword">public</span> <span class="token keyword">event</span> BoilHandler BoilEvent<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 声明水要烧开的事件</span>
-        <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">BoilWater</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 烧水的方法</span>
-        <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-            <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> <span class="token number">100</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 循环表示水温的变化</span>
-            <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-                temperature <span class="token operator">=</span> i<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 设置水的温度</span>
-                <span class="token keyword">if</span><span class="token punctuation">(</span>temperature <span class="token operator">></span> <span class="token number">96</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 水温超过96度，引发事件BoilEvent</span>
-                <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-                    <span class="token comment" spellcheck="true">/*if(BoilEvent != null)
-                    &amp;#123;
+             */
+        &#125;
+    &#125;
+    public class Heater // 热水器类Heater
+    &#123;
+        private int temperature; // 声明表示水温的字段
+        public delegate void BoilHandler(int param); // 声明关于事件的委托
+        public event BoilHandler BoilEvent; // 声明水要烧开的事件
+        public void BoilWater() // 烧水的方法
+        &#123;
+            for(int i = 0; i <= 100; i++) // 循环表示水温的变化
+            &#123;
+                temperature = i; // 设置水的温度
+                if(temperature > 96) // 水温超过96度，引发事件BoilEvent
+                &#123;
+                    /*if(BoilEvent != null)
+                    &#123;
                         // 如果有对象订阅
                         BoilEvent(temperature); // 调用所有订阅对象的方法
-                    &amp;#125;*/</span>
-                    <span class="token comment" spellcheck="true">// 优化</span>
-                    BoilEvent<span class="token operator">?</span><span class="token punctuation">.</span><span class="token function">Invoke</span><span class="token punctuation">(</span>temperature<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 如果有对象订阅，调用所有订阅对象的方法</span>
-                <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-            <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+                    &#125;*/
+                    // 优化
+                    BoilEvent?.Invoke(temperature); // 如果有对象订阅，调用所有订阅对象的方法
+                &#125;
+            &#125;
+        &#125;
+    &#125;
 
-    <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Alarm</span> <span class="token comment" spellcheck="true">// 定义报警类</span>
-    <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-        <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">MakeAlert</span><span class="token punctuation">(</span><span class="token keyword">int</span> param<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 水快开时报警的方法</span>
-        <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-            Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">"Alarm: 嘀嘀嘀，水已经&amp;#123;0&amp;#125;度了!"</span><span class="token punctuation">,</span> param<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    public class Alarm // 定义报警类
+    &#123;
+        public void MakeAlert(int param) // 水快开时报警的方法
+        &#123;
+            Console.WriteLine("Alarm: 嘀嘀嘀，水已经&#123;0&#125;度了!", param);
+        &#125;
+    &#125;
 
-    <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Display</span> <span class="token comment" spellcheck="true">// 显示水温的显示类</span>
-    <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-        <span class="token comment" spellcheck="true">// 静态方法 ShowMsg用于显示水温</span>
-        <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">ShowMsg</span><span class="token punctuation">(</span><span class="token keyword">int</span> param<span class="token punctuation">)</span>
-        <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-            Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">"Display：水快烧开了，当前温度：&amp;#123;0&amp;#125;度。"</span><span class="token punctuation">,</span> param<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    public class Display // 显示水温的显示类
+    &#123;
+        // 静态方法 ShowMsg用于显示水温
+        public static void ShowMsg(int param)
+        &#123;
+            Console.WriteLine("Display：水快烧开了，当前温度：&#123;0&#125;度。", param);
+        &#125;
+    &#125;
+&#125;
 </code></pre>
 
                 
@@ -1189,7 +1189,7 @@ if(事件名称 != null) 事件名称 (this, new EventArgs());
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total Words:&nbsp;<span
-                        class="white-color">22.1k</span>
+                        class="white-color">20.7k</span>
             
             
             
@@ -1250,6 +1250,7 @@ if(事件名称 != null) 事件名称 (this, new EventArgs());
 </footer>
 
 <div class="progress-bar"></div>
+<script src="/js/prism/prism.js" async></script>
 
 
     <!-- 搜索遮罩框 -->

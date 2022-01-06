@@ -28,7 +28,7 @@
     <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
     <link rel="stylesheet" type="text/css" href="/css/matery.css">
     <link rel="stylesheet" type="text/css" href="/css/my.css">
-
+    <link rel="stylesheet" href="/js/prism/prism.css">
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 
 <meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
@@ -470,14 +470,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    1.7k
+                    1.6k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    7 Min
+                    6 Min
                 </div>
                 
 
@@ -521,23 +521,23 @@
 <p><strong>为了实现上面的例子，必须在using区添加System.Collections命名空间。</strong></p>
 <h5 id="创建ArrayList"><a href="#创建ArrayList" class="headerlink" title="创建ArrayList"></a>创建ArrayList</h5><p>ArrayList的四种创建方式：</p>
 <ol>
-<li>使用默认的初始容量创建ArrayList，该实例没有任何元素<pre class=" language-csharp"><code class="language-csharp">ArrayList al1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-al1<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span><span class="token string">"hello"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-al1<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span><span class="token string">"C#"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-al1<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span><span class="token string">"world!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">"al1中容量是&amp;#123;0&amp;#125;, 个数是&amp;#123;1&amp;#125;"</span><span class="token punctuation">,</span> al1<span class="token punctuation">.</span>Capacity<span class="token punctuation">,</span> al1<span class="token punctuation">.</span>Count<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 4 3</span>
+<li>使用默认的初始容量创建ArrayList，该实例没有任何元素<pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">ArrayList al1 = new ArrayList();
+al1.Add("hello");
+al1.Add("C#");
+al1.Add("world!");
+Console.WriteLine("al1中容量是&#123;0&#125;, 个数是&#123;1&#125;", al1.Capacity, al1.Count); // 4 3
 </code></pre>
 </li>
-<li>使用实现了ICollection接口的集合类来初始化新创建的ArrayList,该实例与参数中的集合具有相同的初始容量<pre class=" language-csharp"><code class="language-csharp">ArrayList al2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token punctuation">(</span>al1<span class="token punctuation">)</span><span class="token punctuation">;</span>
-Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">"al2容量是&amp;#123;0&amp;#125;, 个数是&amp;#123;1&amp;#125;"</span><span class="token punctuation">,</span>al2<span class="token punctuation">.</span>Capacity<span class="token punctuation">,</span> al2<span class="token punctuation">.</span>Count<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 3 3</span>
+<li>使用实现了ICollection接口的集合类来初始化新创建的ArrayList,该实例与参数中的集合具有相同的初始容量<pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">ArrayList al2 = new ArrayList(al1);
+Console.WriteLine("al2容量是&#123;0&#125;, 个数是&#123;1&#125;",al2.Capacity, al2.Count); // 3 3
 </code></pre>
 </li>
-<li>经由一个整数数值来初始化ArrayList的容量<pre class=" language-csharp"><code class="language-csharp">ArrayList al3 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token punctuation">(</span><span class="token number">18</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">"al3的容量是：&amp;#123;0&amp;#125;, 元素个数是&amp;#123;1&amp;#125;"</span><span class="token punctuation">,</span> al3<span class="token punctuation">.</span>Capacity<span class="token punctuation">,</span> al3<span class="token punctuation">.</span>Count<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 18 0</span>
+<li>经由一个整数数值来初始化ArrayList的容量<pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">ArrayList al3 = new ArrayList(18);
+Console.WriteLine("al3的容量是：&#123;0&#125;, 元素个数是&#123;1&#125;", al3.Capacity, al3.Count); // 18 0
 </code></pre>
 </li>
-<li>将指定abc字符串重复n次构造数组，以下以三次示例<pre class=" language-csharp"><code class="language-csharp">ArrayList al4 <span class="token operator">=</span> ArrayList<span class="token punctuation">.</span><span class="token function">Repeat</span><span class="token punctuation">(</span><span class="token string">"abc"</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">"al4的容量是：&amp;#123;0&amp;#125;，元素个数是&amp;#123;1&amp;#125;"</span><span class="token punctuation">,</span> al4<span class="token punctuation">.</span>Capacity<span class="token punctuation">,</span> al4<span class="token punctuation">.</span>Count<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 4 3</span>
+<li>将指定abc字符串重复n次构造数组，以下以三次示例<pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">ArrayList al4 = ArrayList.Repeat("abc", 3);
+Console.WriteLine("al4的容量是：&#123;0&#125;，元素个数是&#123;1&#125;", al4.Capacity, al4.Count); // 4 3
 </code></pre>
 <h4 id="向ArrayList中添加元素的方法"><a href="#向ArrayList中添加元素的方法" class="headerlink" title="向ArrayList中添加元素的方法"></a>向ArrayList中添加元素的方法</h4></li>
 </ol>
@@ -545,22 +545,22 @@ Console<span class="token punctuation">.</span><span class="token function">Writ
 <li>Add方法可以将单个元素添加到列表的尾部；AddRange方法可以获取一个实现ICollection接口的集合实例，例如，Array、Queue、Stack等，并将这个集合实例按顺序添加到列表的尾部。</li>
 <li>使用Insert和InsertRange方法向ArrayList中指定的位置插入元素。Insert方法用于添加单个元素到指定的索引位置，InsertRange从指定的位置开始添加一个实现了ICollection接口的实例。</li>
 </ul>
-<pre class=" language-csharp"><code class="language-csharp">ArrayList a1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-a1<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span><span class="token string">"我是元素1"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-a1<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span><span class="token string">"我是元素2"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">string</span><span class="token punctuation">[</span><span class="token punctuation">]</span> strs <span class="token operator">=</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> <span class="token string">"我是元素3"</span><span class="token punctuation">,</span> <span class="token string">"我是元素4"</span> <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
-a1<span class="token punctuation">.</span><span class="token function">AddRange</span><span class="token punctuation">(</span>strs<span class="token punctuation">)</span><span class="token punctuation">;</span>
-a1<span class="token punctuation">.</span><span class="token function">Insert</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token string">"新增第1个元素"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">ArrayList a1 = new ArrayList(20);
+a1.Add("我是元素1");
+a1.Add("我是元素2");
+string[] strs = &#123; "我是元素3", "我是元素4" &#125;;
+a1.AddRange(strs);
+a1.Insert(0, "新增第1个元素");
 
-ArrayList a2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-a2<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span><span class="token string">"我是新增元素1"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-a2<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span><span class="token string">"我是新增元素2"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-a1<span class="token punctuation">.</span><span class="token function">InsertRange</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> a2<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">foreach</span><span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token keyword">in</span> a1<span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">/**
+ArrayList a2 = new ArrayList();
+a2.Add("我是新增元素1");
+a2.Add("我是新增元素2");
+a1.InsertRange(2, a2);
+foreach(var i in a1)
+&#123;
+    Console.WriteLine(i);
+&#125;
+/**
  * 新增第1个元素
  * 我是元素1
  * 我是新增元素1
@@ -568,8 +568,8 @@ a1<span class="token punctuation">.</span><span class="token function">InsertRan
  * 我是元素2
  * 我是元素3
  * 我是元素4
- */</span>
-Console<span class="token punctuation">.</span><span class="token function">ReadKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ */
+Console.ReadKey();
 </code></pre>
 <h4 id="删除ArrayList中的元素"><a href="#删除ArrayList中的元素" class="headerlink" title="删除ArrayList中的元素"></a>删除ArrayList中的元素</h4><p>ArrayList提供了Remove、RemoveAt和RemoveRange3种方法将指定元素从集合中移除。</p>
 <ul>
@@ -578,52 +578,52 @@ Console<span class="token punctuation">.</span><span class="token function">Read
 <li>RemoveRange方法从集合中移除一定范围的元素</li>
 </ul>
 <p>Clear方法可移除所有的元素</p>
-<pre class=" language-csharp"><code class="language-csharp">ArrayList a1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> strs <span class="token operator">=</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
-a1<span class="token punctuation">.</span><span class="token function">AddRange</span><span class="token punctuation">(</span>strs<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">foreach</span><span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token keyword">in</span> a1<span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    Console<span class="token punctuation">.</span><span class="token function">Write</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 01234</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">ArrayList a1 = new ArrayList(20);
+int[] strs = &#123; 0, 1, 2, 3, 4&#125;;
+a1.AddRange(strs);
+foreach(var i in a1)
+&#123;
+    Console.Write(i); // 01234
+&#125;
+Console.WriteLine();
 
-a1<span class="token punctuation">.</span><span class="token function">Remove</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">foreach</span><span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token keyword">in</span> a1<span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    Console<span class="token punctuation">.</span><span class="token function">Write</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 1234</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+a1.Remove(0);
+foreach(var i in a1)
+&#123;
+    Console.Write(i); // 1234
+&#125;
+Console.WriteLine();
 
-a1<span class="token punctuation">.</span><span class="token function">RemoveAt</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">foreach</span><span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token keyword">in</span> a1<span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    Console<span class="token punctuation">.</span><span class="token function">Write</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 134</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+a1.RemoveAt(1);
+foreach(var i in a1)
+&#123;
+    Console.Write(i); // 134
+&#125;
+Console.WriteLine();
 
-a1<span class="token punctuation">.</span><span class="token function">RemoveRange</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// a1.RemoveRange(index, count)</span>
-<span class="token keyword">foreach</span><span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token keyword">in</span> a1<span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    Console<span class="token punctuation">.</span><span class="token function">Write</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 1</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+a1.RemoveRange(1, 2); // a1.RemoveRange(index, count)
+foreach(var i in a1)
+&#123;
+    Console.Write(i); // 1
+&#125;
+Console.WriteLine();
 
-a1<span class="token punctuation">.</span><span class="token function">Clear</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">foreach</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token keyword">in</span> a1<span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    Console<span class="token punctuation">.</span><span class="token function">Write</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 空 </span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-Console<span class="token punctuation">.</span><span class="token function">ReadKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+a1.Clear();
+foreach (var i in a1)
+&#123;
+    Console.Write(i); // 空 
+&#125;
+Console.ReadKey();
 </code></pre>
 <h4 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h4><p>使用Sort方法对ArrayList集合中的元素进行排序。Sort有3种重载方法。</p>
 <ul>
-<li>使用集合元素的比较方式进行排序。<pre class=" language-csharp"><code class="language-csharp"><span class="token keyword">public</span> <span class="token keyword">virtual</span> <span class="token keyword">void</span> <span class="token function">Sort</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<li>使用集合元素的比较方式进行排序。<pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">public virtual void Sort();
 </code></pre>
 </li>
-<li>使用自定义比较器进行排序<pre class=" language-csharp"><code class="language-csharp"><span class="token keyword">public</span> <span class="token keyword">virtual</span> <span class="token keyword">void</span> <span class="token function">Sort</span><span class="token punctuation">(</span>IComparer comparer<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<li>使用自定义比较器进行排序<pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">public virtual void Sort(IComparer comparer);
 </code></pre>
 </li>
-<li>使用自定义比较器进行指定范围的排序<pre class=" language-csharp"><code class="language-csharp"><span class="token keyword">public</span> <span class="token keyword">virtual</span> <span class="token keyword">void</span> <span class="token function">Sort</span><span class="token punctuation">(</span><span class="token keyword">int</span> index<span class="token punctuation">,</span> <span class="token keyword">int</span> count<span class="token punctuation">,</span> Icomparer comparer<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<li>使用自定义比较器进行指定范围的排序<pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">public virtual void Sort(int index, int count, Icomparer comparer);
 </code></pre>
 示例：<br>```csharp<br>ArrayList a1 = new ArrayList();<br>a1.AddRange(new string[5] { “Array1”, “Array2”, “Array5”, “Array3”, “Array” });<br>foreach (var i in a1)<br>  Console.Write(i + “ “); // Array1 Array2 Array5 Array3 Array<br>Console.WriteLine();</li>
 </ul>
@@ -649,28 +649,28 @@ Console.WriteLine(m); // -1
 Console.ReadKey();
 </code></pre>
 <h4 id="泛型List"><a href="#泛型List" class="headerlink" title="泛型List"></a>泛型List</h4><p>因为ArrayList存在不安全类型与装箱拆箱的缺点，所以在C#2.0后出现了泛型的概念。而List类是ArrayList类的泛型等效类。它的大部分用法都与ArrayList相似，因为List类也继承了IList接口。最关键的区别在于，在声明List集合时，我们同时需要为其声明List集合内数据的对象类型。</p>
-<pre class=" language-csharp"><code class="language-csharp">List<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> list <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">List</span><span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">//新增数据</span>
-list<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-list<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">// list.Add("1") // 报错，只能为int型，不能为string</span>
-<span class="token keyword">foreach</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token keyword">in</span> list<span class="token punctuation">)</span>
-    Console<span class="token punctuation">.</span><span class="token function">Write</span><span class="token punctuation">(</span>i <span class="token operator">+</span> <span class="token string">" "</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 1 3</span>
-Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">List<int> list = new List<int>();
+//新增数据
+list.Add(1);
+list.Add(3);
+// list.Add("1") // 报错，只能为int型，不能为string
+foreach (var i in list)
+    Console.Write(i + " "); // 1 3
+Console.WriteLine();
 
-<span class="token comment" spellcheck="true">//修改数据</span>
-list<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
-<span class="token keyword">foreach</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token keyword">in</span> list<span class="token punctuation">)</span>
-    Console<span class="token punctuation">.</span><span class="token function">Write</span><span class="token punctuation">(</span>i <span class="token operator">+</span> <span class="token string">" "</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 2 3</span>
-Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+//修改数据
+list[0] = 2;
+foreach (var i in list)
+    Console.Write(i + " "); // 2 3
+Console.WriteLine();
 
-<span class="token comment" spellcheck="true">//移除数据</span>
-list<span class="token punctuation">.</span><span class="token function">RemoveAt</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">foreach</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token keyword">in</span> list<span class="token punctuation">)</span>
-    Console<span class="token punctuation">.</span><span class="token function">Write</span><span class="token punctuation">(</span>i <span class="token operator">+</span> <span class="token string">" "</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 3</span>
-Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+//移除数据
+list.RemoveAt(0);
+foreach (var i in list)
+    Console.Write(i + " "); // 3
+Console.WriteLine();
 
-Console<span class="token punctuation">.</span><span class="token function">ReadKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+Console.ReadKey();
 </code></pre>
 
                 
@@ -1203,7 +1203,7 @@ Console<span class="token punctuation">.</span><span class="token function">Read
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total Words:&nbsp;<span
-                        class="white-color">22.1k</span>
+                        class="white-color">20.7k</span>
             
             
             
@@ -1264,6 +1264,7 @@ Console<span class="token punctuation">.</span><span class="token function">Read
 </footer>
 
 <div class="progress-bar"></div>
+<script src="/js/prism/prism.js" async></script>
 
 
     <!-- 搜索遮罩框 -->

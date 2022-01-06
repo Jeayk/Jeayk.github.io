@@ -31,7 +31,7 @@ inte">
     <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
     <link rel="stylesheet" type="text/css" href="/css/matery.css">
     <link rel="stylesheet" type="text/css" href="/css/my.css">
-
+    <link rel="stylesheet" href="/js/prism/prism.css">
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 
 <meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
@@ -473,7 +473,7 @@ inte">
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    979
+                    961
                 </div>
                 
 
@@ -513,37 +513,37 @@ inte">
 <li>interface(接口): public    struct: private</li>
 </ul>
 <h5 id="对象与类知识练习代码："><a href="#对象与类知识练习代码：" class="headerlink" title="对象与类知识练习代码："></a>对象与类知识练习代码：</h5><p>phone类文件，phone.cs</p>
-<pre class=" language-csharp"><code class="language-csharp"><span class="token keyword">public</span> <span class="token keyword">const</span> <span class="token keyword">string</span> PhoneType <span class="token operator">=</span> <span class="token string">"GSM"</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 声明常量，隐式静态</span>
-        <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">string</span> emergency_Call <span class="token operator">=</span> <span class="token string">"119"</span><span class="token punctuation">;</span>
-        <span class="token keyword">private</span> <span class="token keyword">string</span> phoneNumber<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 定义私有字段表示电话号码</span>
-        <span class="token keyword">public</span> <span class="token keyword">string</span> PhoneNumber <span class="token comment" spellcheck="true">// 定义公有属性，设置和获取phoneNumber的值</span>
-        <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-            <span class="token keyword">get</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> <span class="token keyword">return</span> phoneNumber<span class="token punctuation">;</span> <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-            <span class="token keyword">set</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> phoneNumber <span class="token operator">=</span> <span class="token keyword">value</span><span class="token punctuation">;</span> <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-        <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">Dial</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 无参数方法成员，表示电话具有拨打功能</span>
-        <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-            Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">"您正在拨打电话！"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-        <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">DialNumber</span><span class="token punctuation">(</span><span class="token keyword">string</span> number<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 有参数方法成员，表示拨打具体电话号码</span>
-        <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-            Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">"您正在拨打"</span> <span class="token operator">+</span> number<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-        <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">EmergencyCall</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 静态方法EmergencyCall</span>
-        <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-            Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">"您正在拨打急救电话119！"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">public const string PhoneType = "GSM"; // 声明常量，隐式静态
+        public static string emergency_Call = "119";
+        private string phoneNumber; // 定义私有字段表示电话号码
+        public string PhoneNumber // 定义公有属性，设置和获取phoneNumber的值
+        &#123;
+            get &#123; return phoneNumber; &#125;
+            set &#123; phoneNumber = value; &#125;
+        &#125;
+        public void Dial() // 无参数方法成员，表示电话具有拨打功能
+        &#123;
+            Console.WriteLine("您正在拨打电话！");
+        &#125;
+        public void DialNumber(string number) // 有参数方法成员，表示拨打具体电话号码
+        &#123;
+            Console.WriteLine("您正在拨打" + number);
+        &#125;
+        public static void EmergencyCall() // 静态方法EmergencyCall
+        &#123;
+            Console.WriteLine("您正在拨打急救电话119！");
+        &#125;
 </code></pre>
-<h5 id="main函数"><a href="#main函数" class="headerlink" title="main函数"></a>main函数</h5><pre class=" language-csharp"><code class="language-csharp">Phone<span class="token punctuation">.</span><span class="token function">EmergencyCall</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 您正在拨打急救电话119！</span>
-Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span>Phone<span class="token punctuation">.</span>emergency_Call<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 119</span>
-Phone objPhone <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Phone</span>
-<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    PhoneNumber <span class="token operator">=</span> <span class="token string">"123456"</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
-Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">"电话号码是"</span> <span class="token operator">+</span> objPhone<span class="token punctuation">.</span>PhoneNumber<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 电话号码是123456</span>
-objPhone<span class="token punctuation">.</span><span class="token function">Dial</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 您正在拨打电话！</span>
-objPhone<span class="token punctuation">.</span><span class="token function">DialNumber</span><span class="token punctuation">(</span><span class="token string">"404404"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 您正在拨打404404</span>
-Console<span class="token punctuation">.</span><span class="token function">ReadKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<h5 id="main函数"><a href="#main函数" class="headerlink" title="main函数"></a>main函数</h5><pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">Phone.EmergencyCall(); // 您正在拨打急救电话119！
+Console.WriteLine(Phone.emergency_Call); // 119
+Phone objPhone = new Phone
+&#123;
+    PhoneNumber = "123456"
+&#125;;
+Console.WriteLine("电话号码是" + objPhone.PhoneNumber); // 电话号码是123456
+objPhone.Dial(); // 您正在拨打电话！
+objPhone.DialNumber("404404"); // 您正在拨打404404
+Console.ReadKey();
 </code></pre>
 <ul>
 <li>实例中定义了常量PhoneType、静态字段emergency_Call和静态方法EmergencyCall，对这些静态成员的使用方法是“类名.静态成员名”，不需要实例化；</li>
@@ -555,15 +555,15 @@ Console<span class="token punctuation">.</span><span class="token function">Read
 <li>每一个对象在内存中都有一个唯一的地址</li>
 <li>对象是类的实例，类是对象的模板。</li>
 </ul>
-<h4 id="new-一个对象"><a href="#new-一个对象" class="headerlink" title="new 一个对象"></a>new 一个对象</h4><pre class=" language-csharp"><code class="language-csharp">Phone objPhone <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Phone</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    PhoneNumber <span class="token operator">=</span> <span class="token string">"12345"</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<h4 id="new-一个对象"><a href="#new-一个对象" class="headerlink" title="new 一个对象"></a>new 一个对象</h4><pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">Phone objPhone = new Phone()
+&#123;
+    PhoneNumber = "12345"
+&#125;
 </code></pre>
-<pre class=" language-csharp"><code class="language-csharp">Phone objPhone <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Phone</span>
-<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    PhoneNumber <span class="token operator">=</span> <span class="token string">"12345"</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">Phone objPhone = new Phone
+&#123;
+    PhoneNumber = "12345"
+&#125;
 </code></pre>
 <h6 id="加括号与不加的区别"><a href="#加括号与不加的区别" class="headerlink" title="加括号与不加的区别"></a>加括号与不加的区别</h6><p>（1）加括号</p>
 <ul>
@@ -1119,7 +1119,7 @@ Console<span class="token punctuation">.</span><span class="token function">Read
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total Words:&nbsp;<span
-                        class="white-color">22.1k</span>
+                        class="white-color">20.7k</span>
             
             
             
@@ -1180,6 +1180,7 @@ Console<span class="token punctuation">.</span><span class="token function">Read
 </footer>
 
 <div class="progress-bar"></div>
+<script src="/js/prism/prism.js" async></script>
 
 
     <!-- 搜索遮罩框 -->

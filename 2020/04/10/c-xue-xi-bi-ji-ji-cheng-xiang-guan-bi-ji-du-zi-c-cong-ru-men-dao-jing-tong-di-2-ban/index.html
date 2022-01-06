@@ -28,7 +28,7 @@
     <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
     <link rel="stylesheet" type="text/css" href="/css/matery.css">
     <link rel="stylesheet" type="text/css" href="/css/my.css">
-
+    <link rel="stylesheet" href="/js/prism/prism.css">
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 
 <meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
@@ -470,7 +470,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    2k
+                    1.9k
                 </div>
                 
 
@@ -505,186 +505,186 @@
     // 类的代码
 &#125;
 </code></pre>
-<h6 id="Person-cs（Person类）"><a href="#Person-cs（Person类）" class="headerlink" title="Person.cs（Person类）"></a>Person.cs（Person类）</h6><pre class=" language-csharp"><code class="language-csharp"><span class="token keyword">using</span> System<span class="token punctuation">;</span>
-<span class="token keyword">using</span> System<span class="token punctuation">.</span>Collections<span class="token punctuation">.</span>Generic<span class="token punctuation">;</span>
-<span class="token keyword">using</span> System<span class="token punctuation">.</span>Linq<span class="token punctuation">;</span>
-<span class="token keyword">using</span> System<span class="token punctuation">.</span>Text<span class="token punctuation">;</span>
-<span class="token keyword">using</span> System<span class="token punctuation">.</span>Threading<span class="token punctuation">.</span>Tasks<span class="token punctuation">;</span>
+<h6 id="Person-cs（Person类）"><a href="#Person-cs（Person类）" class="headerlink" title="Person.cs（Person类）"></a>Person.cs（Person类）</h6><pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-<span class="token keyword">namespace</span> InheritDemo
-<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Person</span>
-    <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-        <span class="token keyword">private</span> <span class="token keyword">string</span> _id<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 声明身份证号码字段 _id</span>
-        <span class="token keyword">public</span> <span class="token keyword">string</span> Id <span class="token comment" spellcheck="true">// 声明身份证号码属性ID</span>
-        <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-            <span class="token keyword">get</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> <span class="token keyword">return</span> _id<span class="token punctuation">;</span> <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// get访问器，获取身份证号码字段值</span>
-            <span class="token keyword">set</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> _id <span class="token operator">=</span> <span class="token keyword">value</span><span class="token punctuation">;</span> <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// set访问器，设置身份证号码字段值</span>
-        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-        <span class="token keyword">private</span> <span class="token keyword">string</span> _name<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 声明姓名字段</span>
-        <span class="token keyword">public</span> <span class="token keyword">string</span> Name <span class="token comment" spellcheck="true">// 声明姓名属性</span>
-        <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-            <span class="token keyword">get</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> <span class="token keyword">return</span> _name<span class="token punctuation">;</span> <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// get访问器，获取姓名字段值</span>
-            <span class="token keyword">set</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> _name <span class="token operator">=</span> <span class="token keyword">value</span><span class="token punctuation">;</span> <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// set访问器，设置身份证号码字段值</span>
-        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-        <span class="token keyword">private</span> <span class="token keyword">int</span> _age<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 声明年龄字段</span>
-        <span class="token keyword">public</span> <span class="token keyword">int</span> Age <span class="token comment" spellcheck="true">// 声明年龄属性</span>
-        <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-            <span class="token keyword">get</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> <span class="token keyword">return</span> _age<span class="token punctuation">;</span> <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-            <span class="token keyword">set</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> _age <span class="token operator">=</span> <span class="token keyword">value</span><span class="token punctuation">;</span> <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-        <span class="token keyword">private</span> <span class="token keyword">string</span> _gender<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 声明性别字段</span>
-        <span class="token keyword">public</span> <span class="token keyword">string</span> Gender <span class="token comment" spellcheck="true">// 声明性别属性</span>
-        <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-            <span class="token keyword">get</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> <span class="token keyword">return</span> _gender<span class="token punctuation">;</span> <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-            <span class="token keyword">set</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> _gender <span class="token operator">=</span> <span class="token keyword">value</span><span class="token punctuation">;</span> <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+namespace InheritDemo
+&#123;
+    public class Person
+    &#123;
+        private string _id; // 声明身份证号码字段 _id
+        public string Id // 声明身份证号码属性ID
+        &#123;
+            get &#123; return _id; &#125; // get访问器，获取身份证号码字段值
+            set &#123; _id = value; &#125; // set访问器，设置身份证号码字段值
+        &#125;
+        private string _name; // 声明姓名字段
+        public string Name // 声明姓名属性
+        &#123;
+            get &#123; return _name; &#125; // get访问器，获取姓名字段值
+            set &#123; _name = value; &#125; // set访问器，设置身份证号码字段值
+        &#125;
+        private int _age; // 声明年龄字段
+        public int Age // 声明年龄属性
+        &#123;
+            get &#123; return _age; &#125;
+            set &#123; _age = value; &#125;
+        &#125;
+        private string _gender; // 声明性别字段
+        public string Gender // 声明性别属性
+        &#123;
+            get &#123; return _gender; &#125;
+            set &#123; _gender = value; &#125;
+        &#125;
 
-        <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">Display</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 基类的公有方法，用于输出Person对象的姓名、年龄与性别信息</span>
-        <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-            Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">"&amp;#123;0&amp;#125;是&amp;#123;1&amp;#125;性，年龄为&amp;#123;2&amp;#125;"</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>_name<span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>_gender<span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>_age<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+        public void Display() // 基类的公有方法，用于输出Person对象的姓名、年龄与性别信息
+        &#123;
+            Console.WriteLine("&#123;0&#125;是&#123;1&#125;性，年龄为&#123;2&#125;", this._name, this._gender, this._age);
+        &#125;
 
-        <span class="token keyword">public</span> <span class="token function">Person</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 定义无参构造函数</span>
-        <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+        public Person() // 定义无参构造函数
+        &#123; &#125;
 
-        <span class="token keyword">public</span> <span class="token function">Person</span><span class="token punctuation">(</span><span class="token keyword">string</span> name<span class="token punctuation">,</span> <span class="token keyword">int</span> age<span class="token punctuation">,</span> <span class="token keyword">string</span> gender<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 定义有参构造函数</span>
-        <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-            _name <span class="token operator">=</span> name<span class="token punctuation">;</span>
-            _age <span class="token operator">=</span> age<span class="token punctuation">;</span>
-            _gender <span class="token operator">=</span> gender<span class="token punctuation">;</span>
-        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+        public Person(string name, int age, string gender) // 定义有参构造函数
+        &#123;
+            _name = name;
+            _age = age;
+            _gender = gender;
+        &#125;
+    &#125;
 
-    <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Student</span><span class="token punctuation">:</span> Person<span class="token comment" spellcheck="true">// 创建派生类，派生自Person类</span>
-    <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-        <span class="token comment" spellcheck="true">// 定义派生类自己的属性</span>
-        <span class="token keyword">private</span> <span class="token keyword">string</span> _class<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 定义表示学生班级的字段_class</span>
-        <span class="token keyword">public</span> <span class="token keyword">string</span> Class <span class="token comment" spellcheck="true">// 定义设置和获取班级信息的属性Class</span>
-        <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-            <span class="token keyword">get</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> <span class="token keyword">return</span> _class<span class="token punctuation">;</span> <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-            <span class="token keyword">set</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> _class <span class="token operator">=</span> <span class="token keyword">value</span><span class="token punctuation">;</span> <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-        <span class="token keyword">private</span> <span class="token keyword">string</span> _department<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 定义学生所属系的字段</span>
-        <span class="token keyword">public</span> <span class="token keyword">string</span> Deparement <span class="token comment" spellcheck="true">// 定义学生所属系的属性</span>
-        <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-            <span class="token keyword">get</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> <span class="token keyword">return</span> _department<span class="token punctuation">;</span> <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-            <span class="token keyword">set</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> _department <span class="token operator">=</span> <span class="token keyword">value</span><span class="token punctuation">;</span> <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-        <span class="token keyword">private</span> <span class="token keyword">string</span> _no<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 定义学生学号</span>
-        <span class="token keyword">public</span> <span class="token keyword">string</span> NO <span class="token comment" spellcheck="true">// 定义学号的属性</span>
-        <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-            <span class="token keyword">get</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> <span class="token keyword">return</span> _no<span class="token punctuation">;</span> <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-            <span class="token keyword">set</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> _no <span class="token operator">=</span> <span class="token keyword">value</span><span class="token punctuation">;</span> <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-        <span class="token keyword">public</span> <span class="token function">Student</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 无参构造函数</span>
-        <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-        <span class="token comment" spellcheck="true">// 定义派生类独有的方法Study，表示学生负有学习任务</span>
-        <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">Study</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-        <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-            Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">"好好学习，天天向上！"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    public class Student: Person// 创建派生类，派生自Person类
+    &#123;
+        // 定义派生类自己的属性
+        private string _class; // 定义表示学生班级的字段_class
+        public string Class // 定义设置和获取班级信息的属性Class
+        &#123;
+            get &#123; return _class; &#125;
+            set &#123; _class = value; &#125;
+        &#125;
+        private string _department; // 定义学生所属系的字段
+        public string Deparement // 定义学生所属系的属性
+        &#123;
+            get &#123; return _department; &#125;
+            set &#123; _department = value; &#125;
+        &#125;
+        private string _no; // 定义学生学号
+        public string NO // 定义学号的属性
+        &#123;
+            get &#123; return _no; &#125;
+            set &#123; _no = value; &#125;
+        &#125;
+        public Student() // 无参构造函数
+        &#123; &#125;
+        // 定义派生类独有的方法Study，表示学生负有学习任务
+        public void Study()
+        &#123;
+            Console.WriteLine("好好学习，天天向上！");
+        &#125;
+    &#125;
+&#125;
 </code></pre>
-<h6 id="Teacher-cs（Teacher类）"><a href="#Teacher-cs（Teacher类）" class="headerlink" title="Teacher.cs（Teacher类）"></a>Teacher.cs（Teacher类）</h6><pre class=" language-csharp"><code class="language-csharp"><span class="token keyword">using</span> System<span class="token punctuation">;</span>
-<span class="token keyword">using</span> System<span class="token punctuation">.</span>Collections<span class="token punctuation">.</span>Generic<span class="token punctuation">;</span>
-<span class="token keyword">using</span> System<span class="token punctuation">.</span>Linq<span class="token punctuation">;</span>
-<span class="token keyword">using</span> System<span class="token punctuation">.</span>Text<span class="token punctuation">;</span>
-<span class="token keyword">using</span> System<span class="token punctuation">.</span>Threading<span class="token punctuation">.</span>Tasks<span class="token punctuation">;</span>
+<h6 id="Teacher-cs（Teacher类）"><a href="#Teacher-cs（Teacher类）" class="headerlink" title="Teacher.cs（Teacher类）"></a>Teacher.cs（Teacher类）</h6><pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-<span class="token keyword">namespace</span> InheritDemo
-<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    <span class="token keyword">class</span> <span class="token class-name">Teacher</span><span class="token punctuation">:</span> Person
-    <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-        <span class="token keyword">private</span> <span class="token keyword">string</span> _tid<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 声明字段教师编号</span>
-        <span class="token keyword">public</span> <span class="token keyword">string</span> Tid <span class="token comment" spellcheck="true">// 定义教师编号属性</span>
-        <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-            <span class="token keyword">get</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> <span class="token keyword">return</span> _tid<span class="token punctuation">;</span> <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-            <span class="token keyword">set</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> _tid <span class="token operator">=</span> <span class="token keyword">value</span><span class="token punctuation">;</span> <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-        <span class="token keyword">private</span> <span class="token keyword">string</span> _course<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 声明课程字段</span>
-        <span class="token keyword">public</span> <span class="token keyword">string</span> Course <span class="token comment" spellcheck="true">// 定义课程属性</span>
-        <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-            <span class="token keyword">get</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> <span class="token keyword">return</span> _course<span class="token punctuation">;</span> <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-            <span class="token keyword">set</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> _course <span class="token operator">=</span> <span class="token keyword">value</span><span class="token punctuation">;</span> <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+namespace InheritDemo
+&#123;
+    class Teacher: Person
+    &#123;
+        private string _tid; // 声明字段教师编号
+        public string Tid // 定义教师编号属性
+        &#123;
+            get &#123; return _tid; &#125;
+            set &#123; _tid = value; &#125;
+        &#125;
+        private string _course; // 声明课程字段
+        public string Course // 定义课程属性
+        &#123;
+            get &#123; return _course; &#125;
+            set &#123; _course = value; &#125;
+        &#125;
 
-        <span class="token comment" spellcheck="true">// 教师派生类的方法</span>
-        <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">Teaching</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-        <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-            Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">"正在上课中..."</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+        // 教师派生类的方法
+        public void Teaching()
+        &#123;
+            Console.WriteLine("正在上课中...");
+        &#125;
+    &#125;
 
-    <span class="token keyword">class</span> <span class="token class-name">DoubleStudent</span><span class="token punctuation">:</span> Student
-    <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-        <span class="token keyword">private</span> <span class="token keyword">string</span> _sndBachelor<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 声明第二学位名称字段</span>
-        <span class="token keyword">public</span> <span class="token keyword">string</span> SndBachelor <span class="token comment" spellcheck="true">// 声明第二学位属性</span>
-        <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-            <span class="token keyword">get</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> <span class="token keyword">return</span> _sndBachelor<span class="token punctuation">;</span> <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-            <span class="token keyword">set</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> _sndBachelor <span class="token operator">=</span> <span class="token keyword">value</span><span class="token punctuation">;</span> <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-        <span class="token keyword">public</span> <span class="token function">DoubleStudent</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 无参构造函数</span>
-        <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-        <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">UsaBachelor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 定义方法</span>
-        <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-            Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">"正在攻读xxx大学学位"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    class DoubleStudent: Student
+    &#123;
+        private string _sndBachelor; // 声明第二学位名称字段
+        public string SndBachelor // 声明第二学位属性
+        &#123;
+            get &#123; return _sndBachelor; &#125;
+            set &#123; _sndBachelor = value; &#125;
+        &#125;
+        public DoubleStudent() // 无参构造函数
+        &#123; &#125;
+        public void UsaBachelor() // 定义方法
+        &#123;
+            Console.WriteLine("正在攻读xxx大学学位");
+        &#125;
+    &#125;
+&#125;
 </code></pre>
-<h6 id="Program-cs"><a href="#Program-cs" class="headerlink" title="Program.cs"></a>Program.cs</h6><pre class=" language-csharp"><code class="language-csharp"><span class="token keyword">using</span> System<span class="token punctuation">;</span>
-<span class="token keyword">using</span> System<span class="token punctuation">.</span>Collections<span class="token punctuation">.</span>Generic<span class="token punctuation">;</span>
-<span class="token keyword">using</span> System<span class="token punctuation">.</span>Linq<span class="token punctuation">;</span>
-<span class="token keyword">using</span> System<span class="token punctuation">.</span>Text<span class="token punctuation">;</span>
-<span class="token keyword">using</span> System<span class="token punctuation">.</span>Threading<span class="token punctuation">.</span>Tasks<span class="token punctuation">;</span>
+<h6 id="Program-cs"><a href="#Program-cs" class="headerlink" title="Program.cs"></a>Program.cs</h6><pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-<span class="token keyword">namespace</span> InheritDemo
-<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    <span class="token keyword">class</span> <span class="token class-name">Program</span>
-    <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-        <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">Main</span><span class="token punctuation">(</span><span class="token keyword">string</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span>
-        <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-            Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">"Person类："</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            Person objPerson <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token string">"张三"</span><span class="token punctuation">,</span> <span class="token number">18</span><span class="token punctuation">,</span> <span class="token string">"男"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            objPerson<span class="token punctuation">.</span><span class="token function">Display</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 调用Display显式对象信息     -->     张三是男性，年龄为18</span>
+namespace InheritDemo
+&#123;
+    class Program
+    &#123;
+        static void Main(string[] args)
+        &#123;
+            Console.WriteLine("Person类：");
+            Person objPerson = new Person("张三", 18, "男");
+            objPerson.Display(); // 调用Display显式对象信息     -->     张三是男性，年龄为18
 
-            Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">"Student类："</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            Student objStudent <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Student</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-            <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-                Name <span class="token operator">=</span> <span class="token string">"李四"</span><span class="token punctuation">,</span>
-                Age <span class="token operator">=</span> <span class="token number">18</span><span class="token punctuation">,</span>
-                Gender <span class="token operator">=</span> <span class="token string">"女"</span>
-            <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
-            objStudent<span class="token punctuation">.</span><span class="token function">Display</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 访问基类的Display方法     -->     李四是女性，年龄为18</span>
-            objStudent<span class="token punctuation">.</span><span class="token function">Study</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 调用派生类方法      -->     好好学习，天天向上！</span>
-            Console<span class="token punctuation">.</span><span class="token function">ReadKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            Console.WriteLine("Student类：");
+            Student objStudent = new Student()
+            &#123;
+                Name = "李四",
+                Age = 18,
+                Gender = "女"
+            &#125;;
+            objStudent.Display(); // 访问基类的Display方法     -->     李四是女性，年龄为18
+            objStudent.Study(); // 调用派生类方法      -->     好好学习，天天向上！
+            Console.ReadKey();
 
-            Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">"Teacher类"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            Teacher objTeacher <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Teacher</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-            <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-                Name <span class="token operator">=</span> <span class="token string">"Mary"</span><span class="token punctuation">,</span>
-                Age <span class="token operator">=</span> <span class="token number">26</span><span class="token punctuation">,</span>
-                Gender <span class="token operator">=</span> <span class="token string">"女"</span>
-            <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
-            objTeacher<span class="token punctuation">.</span><span class="token function">Display</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 访问基类的Display方法</span>
-            objTeacher<span class="token punctuation">.</span><span class="token function">Teaching</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 访问Teacher类的方法</span>
+            Console.WriteLine("Teacher类");
+            Teacher objTeacher = new Teacher()
+            &#123;
+                Name = "Mary",
+                Age = 26,
+                Gender = "女"
+            &#125;;
+            objTeacher.Display(); // 访问基类的Display方法
+            objTeacher.Teaching(); // 访问Teacher类的方法
 
-            Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">"DoubleStudent类"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            DoubleStudent objSpecial <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">DoubleStudent</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-            <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-                Name <span class="token operator">=</span> <span class="token string">"Bliss"</span><span class="token punctuation">,</span>
-                Age <span class="token operator">=</span> <span class="token number">22</span><span class="token punctuation">,</span>
-                Gender <span class="token operator">=</span> <span class="token string">"女"</span>
-            <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
-            objSpecial<span class="token punctuation">.</span><span class="token function">Display</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 访问Person类方法</span>
-            objSpecial<span class="token punctuation">.</span><span class="token function">Study</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 访问Student类方法</span>
-            objSpecial<span class="token punctuation">.</span><span class="token function">UsaBachelor</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 调用DoubleStudent类方法</span>
-            Console<span class="token punctuation">.</span><span class="token function">ReadKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+            Console.WriteLine("DoubleStudent类");
+            DoubleStudent objSpecial = new DoubleStudent()
+            &#123;
+                Name = "Bliss",
+                Age = 22,
+                Gender = "女"
+            &#125;;
+            objSpecial.Display(); // 访问Person类方法
+            objSpecial.Study(); // 访问Student类方法
+            objSpecial.UsaBachelor(); // 调用DoubleStudent类方法
+            Console.ReadKey();
+        &#125;
+    &#125;
+&#125;
 </code></pre>
 <h6 id="继承的特性"><a href="#继承的特性" class="headerlink" title="继承的特性"></a>继承的特性</h6><p>C#中的继承主要有以下3种特性：</p>
 <ul>
@@ -728,39 +728,39 @@
 </tbody></table>
 <h5 id="this和base关键字"><a href="#this和base关键字" class="headerlink" title="this和base关键字"></a>this和base关键字</h5><p>基类中只有被public、protected、internal修饰的成员才可以被访问，这些成员包括任何基类的字段、属性、方法和索引器，但是基类的构造函数和析构函数是不能被继承的。如果要继承基类的构造函数，必须使用base关键字来实现。</p>
 <p>C#中的base关键字代表基类，使用base关键字可以调用基类的构造函数、属性和方法。<br><strong>语法：派生类构造函数: base(参数列表)</strong></p>
-<pre class=" language-csharp"><code class="language-csharp"><span class="token comment" spellcheck="true">// 给上述示例Student类添加一个有参构造函数</span>
-<span class="token keyword">public</span> <span class="token function">Student</span><span class="token punctuation">(</span><span class="token keyword">string</span> name<span class="token punctuation">,</span> <span class="token keyword">int</span> age<span class="token punctuation">,</span> <span class="token keyword">string</span> gender<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token keyword">base</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> age<span class="token punctuation">,</span> gender<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 构造函数</span>
-<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    <span class="token comment" spellcheck="true">// 通过base(name, age, gender)调用基类的构造函数</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">// 给上述示例Student类添加一个有参构造函数
+public Student(string name, int age, string gender):base(name, age, gender) // 构造函数
+&#123;
+    // 通过base(name, age, gender)调用基类的构造函数
+&#125;
 </code></pre>
-<pre class=" language-csharp"><code class="language-csharp"><span class="token comment" spellcheck="true">// 使用base关键字调用基类方法语法</span>
-<span class="token keyword">base</span><span class="token punctuation">:</span> 基类方法
-<span class="token comment" spellcheck="true">// 示例:</span>
-<span class="token keyword">public</span> <span class="token function">Student</span><span class="token punctuation">(</span><span class="token keyword">string</span> name<span class="token punctuation">,</span> <span class="token keyword">int</span> age<span class="token punctuation">,</span> <span class="token keyword">string</span> gender<span class="token punctuation">)</span> <span class="token punctuation">:</span> <span class="token keyword">base</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> age<span class="token punctuation">,</span> gender<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 调用基类的构造函数</span>
-<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">// 使用base关键字调用基类方法语法
+base: 基类方法
+// 示例:
+public Student(string name, int age, string gender) : base(name, age, gender) // 调用基类的构造函数
+&#123; &#125;
 </code></pre>
 <p>相对于base来说，this关键字是引用类的当前实例。</p>
-<pre class=" language-csharp"><code class="language-csharp"><span class="token keyword">public</span> <span class="token function">Person</span><span class="token punctuation">(</span><span class="token keyword">string</span> name<span class="token punctuation">,</span> <span class="token keyword">int</span> age<span class="token punctuation">,</span> <span class="token keyword">string</span> gender<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 构造函数</span>
-<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    <span class="token keyword">this</span><span class="token punctuation">.</span>_name <span class="token operator">=</span> name<span class="token punctuation">;</span>
-    <span class="token keyword">this</span><span class="token punctuation">.</span>_age <span class="token operator">=</span> age<span class="token punctuation">;</span>
-    <span class="token keyword">this</span><span class="token punctuation">.</span>_gender <span class="token operator">=</span> gender<span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">public Person(string name, int age, string gender) // 构造函数
+&#123;
+    this._name = name;
+    this._age = age;
+    this._gender = gender;
+&#125;
 </code></pre>
 <p>派生类继承基类的属性和方法，从而使创建派生类变得简单，可实现代码的重用。</p>
 <p><strong>基类对象可以引用派生类对象，也就是派生类对象可以赋值给基类对象变量。</strong><br>对这个特性可以这样理解：儿子继承于父亲，父亲也可以代表儿子处理事务，这就实现了基类对象引用派生类对象。</p>
-<pre class=" language-csharp"><code class="language-csharp"><span class="token keyword">class</span> <span class="token class-name">Father</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token keyword">class</span> <span class="token class-name">Son</span><span class="token punctuation">:</span> Father<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-Public <span class="token keyword">void</span> <span class="token function">CallDaddy</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 派生类方法</span>
-<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">class Father()&#123;...&#125;
+class Son: Father&#123;
+...
+Public void CallDaddy() // 派生类方法
+&#123;&#125;
+&#125;
 </code></pre>
-<pre class=" language-csharp"><code class="language-csharp">Son objSon <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Son</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-Father objFather <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Father</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-objFather <span class="token operator">=</span> objSon<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 派生类对象objSon赋值给基类对象 objFather </span>
-<span class="token punctuation">(</span><span class="token punctuation">(</span>Son<span class="token punctuation">)</span>objFather<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">CallDaddy</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 基类对象调用派生类的方法</span>
+<pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">Son objSon = new Son();
+Father objFather = new Father();
+objFather = objSon; // 派生类对象objSon赋值给基类对象 objFather 
+((Son)objFather).CallDaddy(); // 基类对象调用派生类的方法
 </code></pre>
 <p>父类对象引用子类实例时，注意要把父类型转为子类型，否则就会出错。</p>
 
@@ -1295,7 +1295,7 @@ objFather <span class="token operator">=</span> objSon<span class="token punctua
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total Words:&nbsp;<span
-                        class="white-color">22.1k</span>
+                        class="white-color">20.7k</span>
             
             
             
@@ -1356,6 +1356,7 @@ objFather <span class="token operator">=</span> objSon<span class="token punctua
 </footer>
 
 <div class="progress-bar"></div>
+<script src="/js/prism/prism.js" async></script>
 
 
     <!-- 搜索遮罩框 -->

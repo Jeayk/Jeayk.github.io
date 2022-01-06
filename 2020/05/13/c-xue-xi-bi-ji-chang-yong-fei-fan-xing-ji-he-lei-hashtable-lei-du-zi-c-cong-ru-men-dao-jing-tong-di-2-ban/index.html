@@ -28,7 +28,7 @@
     <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
     <link rel="stylesheet" type="text/css" href="/css/matery.css">
     <link rel="stylesheet" type="text/css" href="/css/my.css">
-
+    <link rel="stylesheet" href="/js/prism/prism.css">
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 
 <meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
@@ -470,7 +470,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    635
+                    625
                 </div>
                 
 
@@ -499,10 +499,10 @@
             <div id="articleContent">
                 <h4 id="HashTable类"><a href="#HashTable类" class="headerlink" title="HashTable类"></a>HashTable类</h4><p>HashTable称为哈希表，利用键/值来存储数据。每个元素都是一个键/值对，并且是一一对应的，通过“键”就可以得到“值”。</p>
 <p><strong>常用属性</strong><br>| 属性名称 | 属性说明 |<br>|–|–|<br>| Count | 获取包含在Hashtable中键/值对的数目 |<br>| Keys | 获取包含在Hashtable中所有键的集合 |<br>| Values | 获取包含在Hashtable中所有值得集合 |<br><strong>常用方法</strong><br>| 方法名称 | 方法说明 |<br>|–|–|<br>| Add | 将带有指定键和值得元素添加到Hashtable中 |<br>| Clear | 从Hashtable中移除所有元素 |<br>| Contains | 确认Hashtable是否包含特定键 |<br>| GetEnumberator | 返回IDictionaryEnumberator，可以遍历Hashtable |<br>| Remove | 从Hashtable中移除带有指定键的元素 |<br><strong>常用构造函数声明</strong></p>
-<pre class=" language-csharp"><code class="language-csharp">Hashtable ht1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Hashtable</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 使用所有默认值构建哈希表实例（初始容量为 16，负载因子为 0.75），实际容量为16 * 0.75 = 12</span>
-Hashtable ht2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Hashtable</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 指定哈希表的初始容量为20，实际容量为20 * 0.75 = 15</span>
-Hashtable ht3 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Hashtable</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">0.8f</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 初始容量为20个元素，加载因子为0.8,实际容量为10 *0.8 = 16</span>
-Hashtable ht4 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Hashtable</span><span class="token punctuation">(</span>s1<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 传入实现了IDicitionary接口的参数创建哈希表</span>
+<pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">Hashtable ht1 = new Hashtable(); // 使用所有默认值构建哈希表实例（初始容量为 16，负载因子为 0.75），实际容量为16 * 0.75 = 12
+Hashtable ht2 = new Hashtable(20); // 指定哈希表的初始容量为20，实际容量为20 * 0.75 = 15
+Hashtable ht3 = new Hashtable(20, 0.8f); // 初始容量为20个元素，加载因子为0.8,实际容量为10 *0.8 = 16
+Hashtable ht4 = new Hashtable(s1); // 传入实现了IDicitionary接口的参数创建哈希表
 </code></pre>
 <p>加载因子：</p>
 <ul>
@@ -510,39 +510,39 @@ Hashtable ht4 <span class="token operator">=</span> <span class="token keyword">
 <li>冲突的机会越大,则查找的成本越高.反之,查找的成本越小.因而,查找时间就越小</li>
 </ul>
 <p><strong>示例：</strong></p>
-<pre class=" language-csharp"><code class="language-csharp">Hashtable openWith <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Hashtable</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-openWith<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span><span class="token string">"bmp"</span><span class="token punctuation">,</span> <span class="token string">"paint.exe"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-openWith<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span><span class="token string">"did"</span><span class="token punctuation">,</span> <span class="token string">"paint.exe"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-openWith<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span><span class="token string">"rtf"</span><span class="token punctuation">,</span> <span class="token string">"wordpad.exe"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">"键=\"rtf\"，值=&amp;#123;0&amp;#125;"</span><span class="token punctuation">,</span> openWith<span class="token punctuation">[</span><span class="token string">"rtf"</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// wordpad.exe</span>
+<pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">Hashtable openWith = new Hashtable();
+openWith.Add("bmp", "paint.exe");
+openWith.Add("did", "paint.exe");
+openWith.Add("rtf", "wordpad.exe");
+Console.WriteLine("键=\"rtf\"，值=&#123;0&#125;", openWith["rtf"]); // wordpad.exe
 
-openWith<span class="token punctuation">[</span><span class="token string">"doc"</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">"winword.exe"</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 如果对不存在的键设置值，则添加新的键值对</span>
+openWith["doc"] = "winword.exe"; // 如果对不存在的键设置值，则添加新的键值对
 
-<span class="token comment" spellcheck="true">// 通常添加之前用ContainsKey来判断某个键是否存在</span>
-<span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>openWith<span class="token punctuation">.</span><span class="token function">ContainsKey</span><span class="token punctuation">(</span><span class="token string">"ht"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    openWith<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span><span class="token string">"ht"</span><span class="token punctuation">,</span> <span class="token string">"ht.exe"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span>openWith<span class="token punctuation">[</span><span class="token string">"ht"</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// ht.exe</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+// 通常添加之前用ContainsKey来判断某个键是否存在
+if(!openWith.ContainsKey("ht"))
+&#123;
+    openWith.Add("ht", "ht.exe");
+    Console.WriteLine(openWith["ht"]); // ht.exe
+&#125;
 
-<span class="token comment" spellcheck="true">// 遍历</span>
-<span class="token keyword">foreach</span><span class="token punctuation">(</span>DictionaryEntry de <span class="token keyword">in</span> openWith<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// Hashtable的键/值是DicitionaryEntry类型</span>
-<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">"键 = &amp;#123;0&amp;#125;，值 = &amp;#123;1&amp;#125;"</span><span class="token punctuation">,</span> de<span class="token punctuation">.</span>Key<span class="token punctuation">,</span> de<span class="token punctuation">.</span>Value<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">/**
+// 遍历
+foreach(DictionaryEntry de in openWith) // Hashtable的键/值是DicitionaryEntry类型
+&#123;
+    Console.WriteLine("键 = &#123;0&#125;，值 = &#123;1&#125;", de.Key, de.Value);
+&#125;
+/**
  * 键 = ht，值 = ht.exe
  * 键 = rtf，值 = wordpad.exe
  * 键 = bmp，值 = paint.exe
  * 键 = did，值 = paint.exe
  * 键 = doc，值 = winword.exe
- */</span>
+ */
 
-<span class="token comment" spellcheck="true">// 删除</span>
-openWith<span class="token punctuation">.</span><span class="token function">Remove</span><span class="token punctuation">(</span><span class="token string">"doc"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>openWith<span class="token punctuation">.</span><span class="token function">ContainsKey</span><span class="token punctuation">(</span><span class="token string">"doc"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-    Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">"false"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// false</span>
-Console<span class="token punctuation">.</span><span class="token function">ReadKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+// 删除
+openWith.Remove("doc");
+if (!openWith.ContainsKey("doc"))
+    Console.WriteLine("false"); // false
+Console.ReadKey();
 </code></pre>
 <p><strong>遍历时应注意，Hashtable的每个元素都是一个键/值对，因此元素类型既不是键的类型，也不是值的类型，而是DictionaryEntry类型。</strong></p>
 
@@ -1076,7 +1076,7 @@ Console<span class="token punctuation">.</span><span class="token function">Read
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total Words:&nbsp;<span
-                        class="white-color">22.1k</span>
+                        class="white-color">20.7k</span>
             
             
             
@@ -1137,6 +1137,7 @@ Console<span class="token punctuation">.</span><span class="token function">Read
 </footer>
 
 <div class="progress-bar"></div>
+<script src="/js/prism/prism.js" async></script>
 
 
     <!-- 搜索遮罩框 -->

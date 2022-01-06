@@ -30,7 +30,7 @@ string strname = name; // var型变量nam">
     <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
     <link rel="stylesheet" type="text/css" href="/css/matery.css">
     <link rel="stylesheet" type="text/css" href="/css/my.css">
-
+    <link rel="stylesheet" href="/js/prism/prism.css">
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 
 <meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
@@ -472,14 +472,14 @@ string strname = name; // var型变量nam">
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    1.9k
+                    1.6k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    8 Min
+                    6 Min
                 </div>
                 
 
@@ -499,220 +499,220 @@ string strname = name; // var型变量nam">
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="数据类型相关操作"><a href="#数据类型相关操作" class="headerlink" title="数据类型相关操作"></a>数据类型相关操作</h4><pre class=" language-csharp"><code class="language-csharp"><span class="token keyword">var</span> intNum <span class="token operator">=</span> <span class="token number">250</span><span class="token punctuation">;</span>
-<span class="token keyword">int</span> i <span class="token operator">=</span> intnum<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// var 型变量intnum隐式转换成整型</span>
-<span class="token keyword">var</span> name <span class="token operator">=</span> <span class="token string">"john"</span><span class="token punctuation">;</span>
-<span class="token keyword">string</span> strname <span class="token operator">=</span> name<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// var型变量name隐式转换成string型</span>
-Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">"转换后的内容是&amp;#123;0&amp;#125;，&amp;#123;1&amp;#125;"</span><span class="token punctuation">,</span> i<span class="token punctuation">,</span> name<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 转换后的内容是250, john</span>
-Console<span class="token punctuation">.</span><span class="token function">ReadKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <h4 id="数据类型相关操作"><a href="#数据类型相关操作" class="headerlink" title="数据类型相关操作"></a>数据类型相关操作</h4><pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">var intNum = 250;
+int i = intnum; // var 型变量intnum隐式转换成整型
+var name = "john";
+string strname = name; // var型变量name隐式转换成string型
+Console.WriteLine("转换后的内容是&#123;0&#125;，&#123;1&#125;", i, name); // 转换后的内容是250, john
+Console.ReadKey();
 </code></pre>
-<pre class=" language-csharp"><code class="language-csharp"><span class="token keyword">decimal</span> pi <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">.</span>14159M<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 字母M表示是decimal类型</span>
-<span class="token keyword">int</span> r <span class="token operator">=</span> <span class="token number">12</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 圆的半径</span>
-<span class="token keyword">decimal</span> s <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 圆的面积</span>
-s <span class="token operator">=</span> pi<span class="token operator">*</span>r<span class="token operator">*</span>r<span class="token punctuation">;</span>
-Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">"圆的半径是&amp;#123;0&amp;#125;，\n圆的面积是&amp;#123;1&amp;#125;"</span><span class="token punctuation">,</span> r<span class="token punctuation">,</span> s<span class="token punctuation">)</span><span class="token punctuation">;</span>
-Console<span class="token punctuation">.</span><span class="token function">ReadLine</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-MessageBox<span class="token punctuation">.</span><span class="token function">Show</span><span class="token punctuation">(</span><span class="token string">"圆的半径是"</span><span class="token operator">+</span>r<span class="token operator">+</span><span class="token string">"\n圆的面积是"</span><span class="token operator">+</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">decimal pi = 3.14159M; // 字母M表示是decimal类型
+int r = 12; // 圆的半径
+decimal s = 0; // 圆的面积
+s = pi*r*r;
+Console.WriteLine("圆的半径是&#123;0&#125;，\n圆的面积是&#123;1&#125;", r, s);
+Console.ReadLine();
+MessageBox.Show("圆的半径是"+r+"\n圆的面积是"+s);
 </code></pre>
-<pre class=" language-csharp"><code class="language-csharp"><span class="token keyword">float</span> pi <span class="token operator">=</span> <span class="token number">3.14f</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 定义一个单精度的实数</span>
-<span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span>pi<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 将单精度强制转换成整型计算，i的值是3，不是3.14，造成信息丢失</span>
-Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">"转换后的内容是&amp;#123;0&amp;#125;"</span><span class="token punctuation">,</span> i<span class="token punctuation">)</span><span class="token punctuation">;</span>
-Console<span class="token punctuation">.</span><span class="token function">ReadKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">float pi = 3.14f; // 定义一个单精度的实数
+int i = (int)pi; // 将单精度强制转换成整型计算，i的值是3，不是3.14，造成信息丢失
+Console.WriteLine("转换后的内容是&#123;0&#125;", i);
+Console.ReadKey();
 </code></pre>
-<h4 id="Convert类转换"><a href="#Convert类转换" class="headerlink" title="Convert类转换"></a>Convert类转换</h4><pre class=" language-csharp"><code class="language-csharp"><span class="token keyword">string</span> myString <span class="token operator">=</span> <span class="token string">"true"</span><span class="token punctuation">;</span>
-<span class="token keyword">bool</span> MyBool <span class="token operator">=</span> Convert<span class="token punctuation">.</span><span class="token function">ToBoolean</span><span class="token punctuation">(</span>myString<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 将string转换成Boolean型，Mybool = true</span>
-<span class="token keyword">string</span> newString <span class="token operator">=</span> <span class="token string">"12345"</span><span class="token punctuation">;</span>
-<span class="token keyword">int</span> myInt <span class="token operator">=</span> Convert<span class="token punctuation">.</span><span class="token function">ToInt32</span><span class="token punctuation">(</span>newString<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 将字符串转为数字值，myInt = 12345</span>
-Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">"转换后的内容是&amp;#123;0&amp;#125;，&amp;#123;1&amp;#125;"</span><span class="token punctuation">,</span> MyBool<span class="token punctuation">,</span> myInt<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// true 12345</span>
-Console<span class="token punctuation">.</span><span class="token function">ReadKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<h4 id="Convert类转换"><a href="#Convert类转换" class="headerlink" title="Convert类转换"></a>Convert类转换</h4><pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">string myString = "true";
+bool MyBool = Convert.ToBoolean(myString); // 将string转换成Boolean型，Mybool = true
+string newString = "12345";
+int myInt = Convert.ToInt32(newString); // 将字符串转为数字值，myInt = 12345
+Console.WriteLine("转换后的内容是&#123;0&#125;，&#123;1&#125;", MyBool, myInt); // true 12345
+Console.ReadKey();
 </code></pre>
-<h4 id="隐式转换、显式转换使用举例："><a href="#隐式转换、显式转换使用举例：" class="headerlink" title="隐式转换、显式转换使用举例："></a>隐式转换、显式转换使用举例：</h4><pre class=" language-csharp"><code class="language-csharp">Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">"隐式、显式转换例子："</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">short</span> r <span class="token operator">=</span> <span class="token number">25</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 表示圆的半径</span>
-<span class="token keyword">int</span> i <span class="token operator">=</span> r<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 将短整型r隐式转换成整型</span>
-<span class="token keyword">float</span> pi <span class="token operator">=</span> <span class="token number">3.14f</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 定义一个单精度的实数</span>
-<span class="token keyword">double</span> s1 <span class="token operator">=</span> pi <span class="token operator">*</span> i <span class="token operator">*</span> i<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// s1为double型，表示圆的面积</span>
-<span class="token keyword">int</span> s2<span class="token punctuation">;</span>
-s2 <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span>pi <span class="token operator">*</span> i <span class="token operator">*</span> i<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// s2为int型，表示圆的面积 强制转换</span>
-<span class="token keyword">var</span> name <span class="token operator">=</span> <span class="token string">"john"</span><span class="token punctuation">;</span>
-<span class="token keyword">string</span> strName <span class="token operator">=</span> name<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// var类型变量name隐式转换为string型</span>
-Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">"r=25，圆的面积=&amp;#123;0&amp;#125;,&amp;#123;1&amp;#125;"</span><span class="token punctuation">,</span> s1<span class="token punctuation">,</span> s2<span class="token punctuation">)</span><span class="token punctuation">;</span>
-Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">"转换成功！"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-Console<span class="token punctuation">.</span><span class="token function">ReadKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<h4 id="隐式转换、显式转换使用举例："><a href="#隐式转换、显式转换使用举例：" class="headerlink" title="隐式转换、显式转换使用举例："></a>隐式转换、显式转换使用举例：</h4><pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">Console.WriteLine("隐式、显式转换例子：");
+short r = 25; // 表示圆的半径
+int i = r; // 将短整型r隐式转换成整型
+float pi = 3.14f; // 定义一个单精度的实数
+double s1 = pi * i * i; // s1为double型，表示圆的面积
+int s2;
+s2 = (int)pi * i * i; // s2为int型，表示圆的面积 强制转换
+var name = "john";
+string strName = name; // var类型变量name隐式转换为string型
+Console.WriteLine("r=25，圆的面积=&#123;0&#125;,&#123;1&#125;", s1, s2);
+Console.WriteLine("转换成功！");
+Console.ReadKey();
 </code></pre>
-<h4 id="Convert转换使用举例："><a href="#Convert转换使用举例：" class="headerlink" title="Convert转换使用举例："></a>Convert转换使用举例：</h4><pre class=" language-csharp"><code class="language-csharp"> Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">"隐式、显式转换例子："</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
- <span class="token keyword">short</span> r <span class="token operator">=</span> <span class="token number">25</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 表示圆的半径</span>
- <span class="token keyword">int</span> i <span class="token operator">=</span> Convert<span class="token punctuation">.</span><span class="token function">ToInt32</span><span class="token punctuation">(</span>r<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 将短整型r隐式转换成整型</span>
- <span class="token keyword">float</span> pi <span class="token operator">=</span> <span class="token number">3.14f</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 定义一个单精度的实数</span>
- <span class="token keyword">double</span> s1 <span class="token operator">=</span> pi <span class="token operator">*</span> i <span class="token operator">*</span> i<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// s1为double型，表示圆的面积</span>
- <span class="token keyword">int</span> s2<span class="token punctuation">;</span>
- s2 <span class="token operator">=</span> Convert<span class="token punctuation">.</span><span class="token function">ToInt32</span><span class="token punctuation">(</span>pi<span class="token punctuation">)</span> <span class="token operator">*</span> i <span class="token operator">*</span> i<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// s2为int型，表示圆的面积</span>
- <span class="token keyword">var</span> memberName <span class="token operator">=</span> <span class="token string">"Johnson"</span><span class="token punctuation">;</span>
- <span class="token keyword">string</span> strName <span class="token operator">=</span> Convert<span class="token punctuation">.</span><span class="token function">ToString</span><span class="token punctuation">(</span>memberName<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// var型变量隐式转换为string型</span>
- Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">"r=25，圆的面积=&amp;#123;0&amp;#125;,&amp;#123;1&amp;#125;"</span><span class="token punctuation">,</span> s1<span class="token punctuation">,</span> s2<span class="token punctuation">)</span><span class="token punctuation">;</span>
- Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">"memberName=&amp;#123;0&amp;#125;"</span><span class="token punctuation">,</span> memberName<span class="token punctuation">)</span><span class="token punctuation">;</span>
- Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">"转换成功！"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
- Console<span class="token punctuation">.</span><span class="token function">ReadKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<h4 id="Convert转换使用举例："><a href="#Convert转换使用举例：" class="headerlink" title="Convert转换使用举例："></a>Convert转换使用举例：</h4><pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp"> Console.WriteLine("隐式、显式转换例子：");
+ short r = 25; // 表示圆的半径
+ int i = Convert.ToInt32(r); // 将短整型r隐式转换成整型
+ float pi = 3.14f; // 定义一个单精度的实数
+ double s1 = pi * i * i; // s1为double型，表示圆的面积
+ int s2;
+ s2 = Convert.ToInt32(pi) * i * i; // s2为int型，表示圆的面积
+ var memberName = "Johnson";
+ string strName = Convert.ToString(memberName); // var型变量隐式转换为string型
+ Console.WriteLine("r=25，圆的面积=&#123;0&#125;,&#123;1&#125;", s1, s2);
+ Console.WriteLine("memberName=&#123;0&#125;", memberName);
+ Console.WriteLine("转换成功！");
+ Console.ReadKey();
 </code></pre>
 <h4 id="字符串与数值之间的转换"><a href="#字符串与数值之间的转换" class="headerlink" title="字符串与数值之间的转换"></a>字符串与数值之间的转换</h4><ul>
 <li>ToString()方法：数值类型的ToString()方法可以将数值型数据转换为字符串。</li>
-<li>Parse()方法：数值类型的Parse()方法可以将字符串转换为数值型，例如,字符串转换为整型使用int.Parse(string)，字符串转换为双精度浮点型使用double.Parse(string)等。<pre class=" language-csharp"><code class="language-csharp"><span class="token keyword">int</span> num1 <span class="token operator">=</span> <span class="token number">25</span><span class="token punctuation">;</span>
-<span class="token keyword">string</span> str1 <span class="token operator">=</span> num1<span class="token punctuation">.</span><span class="token function">ToString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// num1的toString()方法将num1转换成string赋值给str1</span>
-<span class="token keyword">string</span> str2 <span class="token operator">=</span> <span class="token string">"38"</span><span class="token punctuation">;</span>
-<span class="token keyword">int</span> num2 <span class="token operator">=</span> <span class="token keyword">int</span><span class="token punctuation">.</span><span class="token function">Parse</span><span class="token punctuation">(</span>str2<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// int.Parse()方法将字符串str2转换成int类型</span>
-<span class="token keyword">string</span> str3 <span class="token operator">=</span> <span class="token string">"21"</span><span class="token punctuation">;</span>
-<span class="token keyword">double</span> num3 <span class="token operator">=</span> <span class="token keyword">double</span><span class="token punctuation">.</span><span class="token function">Parse</span><span class="token punctuation">(</span>str3<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// double.Parse()将字符串转换为双精度浮点型、</span>
-<span class="token keyword">string</span> str4 <span class="token operator">=</span> <span class="token string">"56"</span><span class="token punctuation">;</span>
-<span class="token keyword">float</span> num4 <span class="token operator">=</span> <span class="token keyword">float</span><span class="token punctuation">.</span><span class="token function">Parse</span><span class="token punctuation">(</span>str4<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// float.Parse()将字符串转换成单精度浮点型</span>
-Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">"num1、num2、num3、num4对应的数值为: &amp;#123;0&amp;#125;, &amp;#123;1&amp;#125;, &amp;#123;2&amp;#125;, &amp;#123;3&amp;#125;"</span><span class="token punctuation">,</span> num1<span class="token punctuation">,</span> num2<span class="token punctuation">,</span> num3<span class="token punctuation">,</span>num4<span class="token punctuation">)</span><span class="token punctuation">;</span>
-Console<span class="token punctuation">.</span><span class="token function">ReadKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<li>Parse()方法：数值类型的Parse()方法可以将字符串转换为数值型，例如,字符串转换为整型使用int.Parse(string)，字符串转换为双精度浮点型使用double.Parse(string)等。<pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">int num1 = 25;
+string str1 = num1.ToString(); // num1的toString()方法将num1转换成string赋值给str1
+string str2 = "38";
+int num2 = int.Parse(str2); // int.Parse()方法将字符串str2转换成int类型
+string str3 = "21";
+double num3 = double.Parse(str3); // double.Parse()将字符串转换为双精度浮点型、
+string str4 = "56";
+float num4 = float.Parse(str4); // float.Parse()将字符串转换成单精度浮点型
+Console.WriteLine("num1、num2、num3、num4对应的数值为: &#123;0&#125;, &#123;1&#125;, &#123;2&#125;, &#123;3&#125;", num1, num2, num3,num4);
+Console.ReadKey();
 </code></pre>
 </li>
 </ul>
-<h4 id="装箱与拆箱"><a href="#装箱与拆箱" class="headerlink" title="装箱与拆箱"></a>装箱与拆箱</h4><pre class=" language-csharp"><code class="language-csharp"><span class="token comment" spellcheck="true">// 拆箱：引用类型->值类型</span>
-<span class="token comment" spellcheck="true">// 装箱：值类型->引用类型</span>
-<span class="token keyword">int</span> n <span class="token operator">=</span> <span class="token number">4</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// n是值类型</span>
-<span class="token keyword">object</span> obj <span class="token operator">=</span> n<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 装箱，把任何值类型隐式转换为object类型，其中object为引用类型</span>
-console<span class="token punctuation">.</span><span class="token function">writeline</span><span class="token punctuation">(</span><span class="token string">"n的初始值为：&amp;#123;0&amp;#125;，装箱后的值为：&amp;#123;1&amp;#125;"</span><span class="token punctuation">,</span> n<span class="token punctuation">,</span> obj<span class="token punctuation">.</span><span class="token function">tostring</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">int</span> m <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span>obj<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//拆箱，把一个object类型隐式的转换为值类型</span>
-console<span class="token punctuation">.</span><span class="token function">writeline</span><span class="token punctuation">(</span><span class="token string">"引用类型的值为：&amp;#123;0&amp;#125;，拆箱后的值为：&amp;#123;1&amp;#125;"</span><span class="token punctuation">,</span> obj<span class="token punctuation">.</span><span class="token function">tostring</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> m<span class="token punctuation">)</span><span class="token punctuation">;</span>
-console<span class="token punctuation">.</span><span class="token function">readline</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<h4 id="装箱与拆箱"><a href="#装箱与拆箱" class="headerlink" title="装箱与拆箱"></a>装箱与拆箱</h4><pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">// 拆箱：引用类型->值类型
+// 装箱：值类型->引用类型
+int n = 4; // n是值类型
+object obj = n; // 装箱，把任何值类型隐式转换为object类型，其中object为引用类型
+console.writeline("n的初始值为：&#123;0&#125;，装箱后的值为：&#123;1&#125;", n, obj.tostring());
+int m = (int)obj; //拆箱，把一个object类型隐式的转换为值类型
+console.writeline("引用类型的值为：&#123;0&#125;，拆箱后的值为：&#123;1&#125;", obj.tostring(), m);
+console.readline();
 </code></pre>
 <h4 id="引用类型与值类型"><a href="#引用类型与值类型" class="headerlink" title="引用类型与值类型"></a>引用类型与值类型</h4><p>引用类型和值类型变量的使用是C#中的高级技巧之一。值类型变量中保存的是自己的实际数据，在赋值的时候会把源变量的数据复制一份，然后赋给目的变量；引用类型变量中保存的是“指向实际数据的指针”，即实际对象数据的内存地址，在进行赋值操作的时候，它和值类型一样，也是先有一个复制的操作，不过它复制的不是实际的数据，而是引用（真实数据的内存地址）。</p>
 <ol>
 <li>怎么区分值类型与引用类型以struct关键字定义的数据类型就是值类型，另外，枚举类型也是值类型；以class关键字定义的数据类型就是引用类型。</li>
-<li>值类型变量与引用类型变量的使用区别值类型变量不需要使用new关键字来分配内存。相信大家使用int型变量时，就没有使用new来为其分配内存，定义完之后，就可以直接使用；引用类型变量则需要为其赋值后，才能使用。下面举例说明值类型与引用类型在使用上的区别。<br>首先定义两种类型的员工：结构体SEmployee和类CEmployee。<pre class=" language-csharp"><code class="language-csharp"> <span class="token keyword">struct</span> SEmployee
- <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-     <span class="token keyword">public</span> <span class="token keyword">int</span> age<span class="token punctuation">;</span>
- <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
- <span class="token keyword">class</span> <span class="token class-name">CEmployee</span>
- <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-     <span class="token keyword">public</span> <span class="token keyword">int</span> age<span class="token punctuation">;</span>
- <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<li>值类型变量与引用类型变量的使用区别值类型变量不需要使用new关键字来分配内存。相信大家使用int型变量时，就没有使用new来为其分配内存，定义完之后，就可以直接使用；引用类型变量则需要为其赋值后，才能使用。下面举例说明值类型与引用类型在使用上的区别。<br>首先定义两种类型的员工：结构体SEmployee和类CEmployee。<pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp"> struct SEmployee
+ &#123;
+     public int age;
+ &#125;
+ class CEmployee
+ &#123;
+     public int age;
+ &#125;
 </code></pre>
-<pre class=" language-csharp"><code class="language-csharp">SEmployee se<span class="token punctuation">;</span>
-se<span class="token punctuation">.</span>age <span class="token operator">=</span> <span class="token number">4</span><span class="token punctuation">;</span>
-CEmployee ce<span class="token punctuation">;</span>
-ce <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">CEmployee</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-ce<span class="token punctuation">.</span>age <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">;</span>
-Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">"年龄：&amp;#123;0&amp;#125;"</span><span class="token punctuation">,</span> se<span class="token punctuation">.</span>age<span class="token punctuation">)</span><span class="token punctuation">;</span>
-Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">"年龄：&amp;#123;0&amp;#125;"</span><span class="token punctuation">,</span> ce<span class="token punctuation">.</span>age<span class="token punctuation">)</span><span class="token punctuation">;</span>
-Console<span class="token punctuation">.</span><span class="token function">ReadLine</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">SEmployee se;
+se.age = 4;
+CEmployee ce;
+ce = new CEmployee();
+ce.age = 5;
+Console.WriteLine("年龄：&#123;0&#125;", se.age);
+Console.WriteLine("年龄：&#123;0&#125;", ce.age);
+Console.ReadLine();
 </code></pre>
 值类型变量在定义后，就直接可以使用，而引用类型必须使用new关键字后才能使用。对于引用类型会有“未将对象引用设置到对象的实例”错误，而值类型不会发生这种错误。<h4 id="typeof运算符"><a href="#typeof运算符" class="headerlink" title="typeof运算符"></a>typeof运算符</h4>typeof运算符用于获得系统原型对象的类型，也就是Type类型。Type类包含关于值类型和引用类型的信息。</li>
 </ol>
-<pre class=" language-csharp"><code class="language-csharp">            Type t  <span class="token operator">=</span> <span class="token keyword">typeof</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">"类型：&amp;#123;0&amp;#125;"</span><span class="token punctuation">,</span> t<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// System.Int32</span>
-            Console<span class="token punctuation">.</span><span class="token function">ReadKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">            Type t  = typeof(int);
+            Console.WriteLine("类型：&#123;0&#125;", t); // System.Int32
+            Console.ReadKey();
 </code></pre>
 <h4 id="checked和unchecked运算符"><a href="#checked和unchecked运算符" class="headerlink" title="checked和unchecked运算符"></a>checked和unchecked运算符</h4><p>checked和unchecked运算符用于允许或者禁止对指定的运算进行检测，并指出相应的错误提示信息。</p>
-<pre class=" language-csharp"><code class="language-csharp">            <span class="token keyword">byte</span> s <span class="token operator">=</span> <span class="token number">255</span><span class="token punctuation">;</span>
-            <span class="token keyword">checked</span> <span class="token comment" spellcheck="true">// checked会检查溢出报错，并给出错误提示</span>
-            <span class="token comment" spellcheck="true">// unchecked // checked 改为 unckcked,控制台不报错，输出1</span>
-            <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-                s <span class="token operator">+</span><span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
-            <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-            Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span>s<span class="token punctuation">.</span><span class="token function">ToString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            Console<span class="token punctuation">.</span><span class="token function">ReadKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+<pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">            byte s = 255;
+            checked // checked会检查溢出报错，并给出错误提示
+            // unchecked // checked 改为 unckcked,控制台不报错，输出1
+            &#123;
+                s += 2;
+            &#125;
+            Console.WriteLine(s.ToString());
+            Console.ReadKey(); 
 </code></pre>
-<h4 id="成绩练习代码"><a href="#成绩练习代码" class="headerlink" title="成绩练习代码"></a>成绩练习代码</h4><pre class=" language-csharp"><code class="language-csharp">            Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">"请输入成绩0-100："</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token keyword">int</span> score <span class="token operator">=</span> <span class="token keyword">int</span><span class="token punctuation">.</span><span class="token function">Parse</span><span class="token punctuation">(</span>Console<span class="token punctuation">.</span><span class="token function">ReadLine</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token keyword">if</span> <span class="token punctuation">(</span>score <span class="token operator">>=</span> <span class="token number">90</span><span class="token punctuation">)</span>
-            <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-                Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">"优秀"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-            <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>score <span class="token operator">>=</span> <span class="token number">80</span><span class="token punctuation">)</span>
-            <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-                Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">"良好"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-            <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>score <span class="token operator">>=</span> <span class="token number">70</span><span class="token punctuation">)</span>
-            <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-                Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">"中等"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-            <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>score <span class="token operator">>=</span> <span class="token number">60</span><span class="token punctuation">)</span>
-            <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-                Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">"及格"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-            <span class="token keyword">else</span>
-            <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-                Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">"不及格"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-            Console<span class="token punctuation">.</span><span class="token function">ReadKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<h4 id="成绩练习代码"><a href="#成绩练习代码" class="headerlink" title="成绩练习代码"></a>成绩练习代码</h4><pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">            Console.WriteLine("请输入成绩0-100：");
+            int score = int.Parse(Console.ReadLine());
+            if (score >= 90)
+            &#123;
+                Console.WriteLine("优秀");
+            &#125;
+            else if (score >= 80)
+            &#123;
+                Console.WriteLine("良好");
+            &#125;
+            else if (score >= 70)
+            &#123;
+                Console.WriteLine("中等");
+            &#125;
+            else if (score >= 60)
+            &#123;
+                Console.WriteLine("及格");
+            &#125;
+            else
+            &#123;
+                Console.WriteLine("不及格");
+            &#125;
+            Console.ReadKey();
 </code></pre>
-<h4 id="循环练习代码"><a href="#循环练习代码" class="headerlink" title="循环练习代码"></a>循环练习代码</h4><pre class=" language-csharp"><code class="language-csharp">            <span class="token comment" spellcheck="true">// for循环计算0-100的和</span>
-            <span class="token keyword">int</span> sum <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-            <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span><span class="token number">101</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
-            <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-                sum <span class="token operator">+</span><span class="token operator">=</span> i<span class="token punctuation">;</span>
-            <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-            Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span>sum<span class="token punctuation">)</span><span class="token punctuation">;</span>
-            Console<span class="token punctuation">.</span><span class="token function">ReadKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+<h4 id="循环练习代码"><a href="#循环练习代码" class="headerlink" title="循环练习代码"></a>循环练习代码</h4><pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">            // for循环计算0-100的和
+            int sum = 0;
+            for (int i = 1; i <101; i++)
+            &#123;
+                sum += i;
+            &#125;
+            Console.WriteLine(sum);
+            Console.ReadKey(); 
 </code></pre>
-<pre class=" language-csharp"><code class="language-csharp">              <span class="token comment" spellcheck="true">// while循环计算0-100的和</span>
-            <span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">,</span> sum <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-            <span class="token keyword">while</span><span class="token punctuation">(</span>i <span class="token operator">&lt;</span> <span class="token number">101</span><span class="token punctuation">)</span>
-            <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-                sum <span class="token operator">+</span><span class="token operator">=</span> i<span class="token punctuation">;</span>
-                i<span class="token operator">++</span><span class="token punctuation">;</span>
-            <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-            Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span>sum<span class="token punctuation">)</span><span class="token punctuation">;</span>
-            Console<span class="token punctuation">.</span><span class="token function">ReadKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+<pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">              // while循环计算0-100的和
+            int i = 1, sum = 0;
+            while(i < 101)
+            &#123;
+                sum += i;
+                i++;
+            &#125;
+            Console.WriteLine(sum);
+            Console.ReadKey(); 
 </code></pre>
-<pre class=" language-csharp"><code class="language-csharp">            <span class="token comment" spellcheck="true">// do-while计算0-100的和</span>
-            <span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span> sum <span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
-            <span class="token keyword">do</span>
-            <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-                sum <span class="token operator">+</span><span class="token operator">=</span> i<span class="token punctuation">;</span>
-                i<span class="token operator">++</span><span class="token punctuation">;</span>
-            <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span> <span class="token keyword">while</span> <span class="token punctuation">(</span>i <span class="token operator">&lt;=</span> <span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span>sum<span class="token punctuation">)</span><span class="token punctuation">;</span>
-            Console<span class="token punctuation">.</span><span class="token function">ReadKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">            // do-while计算0-100的和
+            int i=1, sum =0;
+            do
+            &#123;
+                sum += i;
+                i++;
+            &#125; while (i <= 100);
+            Console.WriteLine(sum);
+            Console.ReadKey();
 </code></pre>
-<pre class=" language-csharp"><code class="language-csharp">            <span class="token comment" spellcheck="true">// for-each循环</span>
-            <span class="token keyword">string</span><span class="token punctuation">[</span><span class="token punctuation">]</span>week <span class="token operator">=</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span><span class="token string">"Mon"</span><span class="token punctuation">,</span> <span class="token string">"Tue"</span><span class="token punctuation">,</span> <span class="token string">"Wed"</span><span class="token punctuation">,</span> <span class="token string">"Thu"</span><span class="token punctuation">,</span> <span class="token string">"Fri"</span><span class="token punctuation">,</span> <span class="token string">"Sat"</span><span class="token punctuation">,</span> <span class="token string">"Sun"</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 定义数组并赋值</span>
-            <span class="token keyword">foreach</span><span class="token punctuation">(</span><span class="token keyword">string</span> s <span class="token keyword">in</span> week<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 遍历数组</span>
-            <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-                Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-            Console<span class="token punctuation">.</span><span class="token function">ReadKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+<pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">            // for-each循环
+            string[]week = &#123;"Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"&#125;; // 定义数组并赋值
+            foreach(string s in week) // 遍历数组
+            &#123;
+                Console.WriteLine(s);
+            &#125;
+            Console.ReadKey(); 
 </code></pre>
-<pre class=" language-csharp"><code class="language-csharp">            <span class="token comment" spellcheck="true">// 输出九九乘法表</span>
-            <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
-            <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-                <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> j <span class="token operator">&lt;=</span> i<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span>
-                <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-                    <span class="token keyword">int</span> k <span class="token operator">=</span> i<span class="token operator">*</span>j<span class="token punctuation">;</span>
-                    Console<span class="token punctuation">.</span><span class="token function">Write</span><span class="token punctuation">(</span><span class="token string">"&amp;#123;0&amp;#125;*&amp;#123;1&amp;#125; = &amp;#123;2&amp;#125;"</span><span class="token punctuation">,</span> j<span class="token punctuation">,</span> i<span class="token punctuation">,</span> k<span class="token punctuation">)</span><span class="token punctuation">;</span>
-                    <span class="token keyword">if</span> <span class="token punctuation">(</span>i <span class="token operator">!=</span> j<span class="token punctuation">)</span>Console<span class="token punctuation">.</span><span class="token function">Write</span><span class="token punctuation">(</span><span class="token string">","</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-                Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-            Console<span class="token punctuation">.</span><span class="token function">ReadKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+<pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">            // 输出九九乘法表
+            for (int i = 1; i < 10; i++)
+            &#123;
+                for (int j = 1; j <= i; j++)
+                &#123;
+                    int k = i*j;
+                    Console.Write("&#123;0&#125;*&#123;1&#125; = &#123;2&#125;", j, i, k);
+                    if (i != j)Console.Write(",");
+                &#125;
+                Console.WriteLine();
+            &#125;
+            Console.ReadKey(); 
 </code></pre>
-<pre class=" language-csharp"><code class="language-csharp">            <span class="token comment" spellcheck="true">// 输出小于100的素数</span>
-            Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">"小于100的素数有："</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">100</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
-            <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-                <span class="token keyword">bool</span> isPrime <span class="token operator">=</span> <span class="token keyword">true</span><span class="token punctuation">;</span>
-                <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> i<span class="token number">-1</span><span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span>
-                <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-                    <span class="token keyword">if</span> <span class="token punctuation">(</span>i <span class="token operator">%</span> j <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span>
-                    <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-                        isPrime <span class="token operator">=</span> <span class="token keyword">false</span><span class="token punctuation">;</span>
-                        <span class="token keyword">break</span><span class="token punctuation">;</span>
-                    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-                <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-                <span class="token keyword">if</span> <span class="token punctuation">(</span>isPrime<span class="token punctuation">)</span>Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-            Console<span class="token punctuation">.</span><span class="token function">ReadKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+<pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">            // 输出小于100的素数
+            Console.WriteLine("小于100的素数有：");
+            for (int i = 2; i < 100; i++)
+            &#123;
+                bool isPrime = true;
+                for (int j = 2; j < i-1; j++)
+                &#123;
+                    if (i % j == 0)
+                    &#123;
+                        isPrime = false;
+                        break;
+                    &#125;
+                &#125;
+                if (isPrime)Console.WriteLine(i);
+            &#125;
+            Console.ReadKey(); 
 </code></pre>
-<pre class=" language-csharp"><code class="language-csharp">            <span class="token comment" spellcheck="true">// 复印纸数练习</span>
-            Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">"请输入复印数量："</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token keyword">int</span> num <span class="token operator">=</span> <span class="token keyword">int</span><span class="token punctuation">.</span><span class="token function">Parse</span><span class="token punctuation">(</span>Console<span class="token punctuation">.</span><span class="token function">ReadLine</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token keyword">double</span> money <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-            <span class="token keyword">if</span> <span class="token punctuation">(</span>num <span class="token operator">&lt;</span> <span class="token number">51</span><span class="token punctuation">)</span> money <span class="token operator">=</span> <span class="token number">0.5</span><span class="token operator">*</span>num<span class="token punctuation">;</span>
-            <span class="token keyword">else</span> money <span class="token operator">=</span> <span class="token number">0.5</span><span class="token operator">*</span><span class="token number">50</span> <span class="token operator">+</span> <span class="token punctuation">(</span>num <span class="token operator">-</span> <span class="token number">50</span><span class="token punctuation">)</span><span class="token operator">*</span><span class="token number">0.2</span><span class="token punctuation">;</span>
-            Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span>money<span class="token punctuation">)</span><span class="token punctuation">;</span>
-            Console<span class="token punctuation">.</span><span class="token function">ReadKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">            // 复印纸数练习
+            Console.WriteLine("请输入复印数量：");
+            int num = int.Parse(Console.ReadLine());
+            double money = 0;
+            if (num < 51) money = 0.5*num;
+            else money = 0.5*50 + (num - 50)*0.2;
+            Console.WriteLine(money);
+            Console.ReadKey();
 </code></pre>
 
                 
@@ -1245,7 +1245,7 @@ Console<span class="token punctuation">.</span><span class="token function">Read
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total Words:&nbsp;<span
-                        class="white-color">22.1k</span>
+                        class="white-color">20.7k</span>
             
             
             
@@ -1306,6 +1306,7 @@ Console<span class="token punctuation">.</span><span class="token function">Read
 </footer>
 
 <div class="progress-bar"></div>
+<script src="/js/prism/prism.js" async></script>
 
 
     <!-- 搜索遮罩框 -->

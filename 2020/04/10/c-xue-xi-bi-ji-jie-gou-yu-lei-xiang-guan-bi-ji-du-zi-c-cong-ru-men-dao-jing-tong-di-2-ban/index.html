@@ -30,7 +30,7 @@
     <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
     <link rel="stylesheet" type="text/css" href="/css/matery.css">
     <link rel="stylesheet" type="text/css" href="/css/my.css">
-
+    <link rel="stylesheet" href="/js/prism/prism.css">
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 
 <meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
@@ -472,14 +472,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    1.3k
+                    1.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    5 Min
+                    4 Min
                 </div>
                 
 
@@ -511,64 +511,64 @@
 &#125;
 </code></pre>
 <p><strong>使用：通过声明结构体变量或使用new来实例化结构对象，然后通过“结构体变量.结构成员名”或“结构对象.结构成员”的方式来使用结构。</strong></p>
-<h6 id="示例："><a href="#示例：" class="headerlink" title="示例："></a>示例：</h6><pre class=" language-csharp"><code class="language-csharp"><span class="token keyword">using</span> System<span class="token punctuation">;</span>
-<span class="token keyword">using</span> System<span class="token punctuation">.</span>Collections<span class="token punctuation">.</span>Generic<span class="token punctuation">;</span>
-<span class="token keyword">using</span> System<span class="token punctuation">.</span>Linq<span class="token punctuation">;</span>
-<span class="token keyword">using</span> System<span class="token punctuation">.</span>Text<span class="token punctuation">;</span>
-<span class="token keyword">using</span> System<span class="token punctuation">.</span>Threading<span class="token punctuation">.</span>Tasks<span class="token punctuation">;</span>
+<h6 id="示例："><a href="#示例：" class="headerlink" title="示例："></a>示例：</h6><pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-<span class="token keyword">namespace</span> StructTest
-<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    <span class="token keyword">class</span> <span class="token class-name">Program</span>
-    <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-        <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">Main</span><span class="token punctuation">(</span><span class="token keyword">string</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span>
-        <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-            Student goodStu<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 创建结构goodStu表示好学生</span>
-            goodStu<span class="token punctuation">.</span>stuNum <span class="token operator">=</span> <span class="token string">"20200409"</span><span class="token punctuation">;</span>
-            goodStu<span class="token punctuation">.</span>stuName <span class="token operator">=</span> <span class="token string">"小明"</span><span class="token punctuation">;</span>
-            goodStu<span class="token punctuation">.</span>stuAge <span class="token operator">=</span> <span class="token number">19</span><span class="token punctuation">;</span>
-            goodStu<span class="token punctuation">.</span>stuClass <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
-            goodStu<span class="token punctuation">.</span>stuGrade <span class="token operator">=</span> <span class="token number">100</span><span class="token punctuation">;</span>
-            Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">"结构演示："</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">"三好学生：学号-&amp;#123;0&amp;#125;，姓名-&amp;#123;1&amp;#125;，年龄-&amp;#123;2&amp;#125;，班级-&amp;#123;3&amp;#125;，成绩-&amp;#123;4&amp;#125;"</span><span class="token punctuation">,</span> goodStu<span class="token punctuation">.</span>stuNum<span class="token punctuation">,</span> goodStu<span class="token punctuation">.</span>stuName<span class="token punctuation">,</span> goodStu<span class="token punctuation">.</span>stuAge<span class="token punctuation">,</span> goodStu<span class="token punctuation">.</span>stuClass<span class="token punctuation">,</span> goodStu<span class="token punctuation">.</span>stuGrade<span class="token punctuation">)</span><span class="token punctuation">;</span>
-            goodStu<span class="token punctuation">.</span><span class="token function">DoHomeWork</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 调用结构的方法</span>
-            Console<span class="token punctuation">.</span><span class="token function">ReadKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token comment" spellcheck="true">/**
+namespace StructTest
+&#123;
+    class Program
+    &#123;
+        static void Main(string[] args)
+        &#123;
+            Student goodStu; // 创建结构goodStu表示好学生
+            goodStu.stuNum = "20200409";
+            goodStu.stuName = "小明";
+            goodStu.stuAge = 19;
+            goodStu.stuClass = 1;
+            goodStu.stuGrade = 100;
+            Console.WriteLine("结构演示：");
+            Console.WriteLine("三好学生：学号-&#123;0&#125;，姓名-&#123;1&#125;，年龄-&#123;2&#125;，班级-&#123;3&#125;，成绩-&#123;4&#125;", goodStu.stuNum, goodStu.stuName, goodStu.stuAge, goodStu.stuClass, goodStu.stuGrade);
+            goodStu.DoHomeWork(); // 调用结构的方法
+            Console.ReadKey();
+            /**
              * 三好学生：学号-20200409，姓名-小明，年龄-19，班级-1，成绩-100
              * I'm doing homework!
-             */</span>
+             */
 
-            Student normalStu <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Student</span><span class="token punctuation">(</span><span class="token string">"20200410"</span><span class="token punctuation">,</span> <span class="token string">"小红"</span><span class="token punctuation">,</span> <span class="token number">19</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">80</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">"普通学生：学号-&amp;#123;0&amp;#125;，姓名-&amp;#123;1&amp;#125;，年龄-&amp;#123;2&amp;#125;，班级-&amp;#123;3&amp;#125;，成绩-&amp;#123;4&amp;#125;"</span><span class="token punctuation">,</span> normalStu<span class="token punctuation">.</span>stuNum<span class="token punctuation">,</span> normalStu<span class="token punctuation">.</span>stuName<span class="token punctuation">,</span> normalStu<span class="token punctuation">.</span>stuAge<span class="token punctuation">,</span> normalStu<span class="token punctuation">.</span>stuClass<span class="token punctuation">,</span> normalStu<span class="token punctuation">.</span>stuGrade<span class="token punctuation">)</span><span class="token punctuation">;</span>
-            normalStu<span class="token punctuation">.</span><span class="token function">DoHomeWork</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            Console<span class="token punctuation">.</span><span class="token function">ReadKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token comment" spellcheck="true">/**
+            Student normalStu = new Student("20200410", "小红", 19, 1, 80);
+            Console.WriteLine("普通学生：学号-&#123;0&#125;，姓名-&#123;1&#125;，年龄-&#123;2&#125;，班级-&#123;3&#125;，成绩-&#123;4&#125;", normalStu.stuNum, normalStu.stuName, normalStu.stuAge, normalStu.stuClass, normalStu.stuGrade);
+            normalStu.DoHomeWork();
+            Console.ReadKey();
+            /**
              * 普通学生：学号-20200410，姓名-小红，年龄-19，班级-1，成绩-80
              * I'm doing homework!
-             */</span>
-        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    <span class="token keyword">struct</span> Student
-    <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-        <span class="token keyword">public</span> <span class="token keyword">string</span> stuNum<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 学号</span>
-        <span class="token keyword">public</span> <span class="token keyword">string</span> stuName<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 姓名</span>
-        <span class="token keyword">public</span> <span class="token keyword">int</span> stuAge<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 年龄</span>
-        <span class="token keyword">public</span> <span class="token keyword">int</span> stuClass<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 班级</span>
-        <span class="token keyword">public</span> <span class="token keyword">int</span> stuGrade<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 成绩</span>
-        <span class="token keyword">public</span> <span class="token function">Student</span><span class="token punctuation">(</span><span class="token keyword">string</span> stuNum<span class="token punctuation">,</span> <span class="token keyword">string</span> stuName<span class="token punctuation">,</span> <span class="token keyword">int</span> stuAge<span class="token punctuation">,</span> <span class="token keyword">int</span> stuClass<span class="token punctuation">,</span> <span class="token keyword">int</span> stuGrade<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 结构的构造函数，用参数给结构中的成员赋值</span>
-        <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-            <span class="token keyword">this</span><span class="token punctuation">.</span>stuNum <span class="token operator">=</span> stuNum<span class="token punctuation">;</span>
-            <span class="token keyword">this</span><span class="token punctuation">.</span>stuName <span class="token operator">=</span> stuName<span class="token punctuation">;</span>
-            <span class="token keyword">this</span><span class="token punctuation">.</span>stuAge <span class="token operator">=</span> stuAge<span class="token punctuation">;</span>
-            <span class="token keyword">this</span><span class="token punctuation">.</span>stuClass <span class="token operator">=</span> stuClass<span class="token punctuation">;</span>
-            <span class="token keyword">this</span><span class="token punctuation">.</span>stuGrade <span class="token operator">=</span> stuGrade<span class="token punctuation">;</span>
-        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-        <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">DoHomeWork</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 结构中的方法</span>
-        <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-            Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">"I'm doing homework!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+             */
+        &#125;
+    &#125;
+    struct Student
+    &#123;
+        public string stuNum; // 学号
+        public string stuName; // 姓名
+        public int stuAge; // 年龄
+        public int stuClass; // 班级
+        public int stuGrade; // 成绩
+        public Student(string stuNum, string stuName, int stuAge, int stuClass, int stuGrade) // 结构的构造函数，用参数给结构中的成员赋值
+        &#123;
+            this.stuNum = stuNum;
+            this.stuName = stuName;
+            this.stuAge = stuAge;
+            this.stuClass = stuClass;
+            this.stuGrade = stuGrade;
+        &#125;
+        public void DoHomeWork() // 结构中的方法
+        &#123;
+            Console.WriteLine("I'm doing homework!");
+        &#125;
+    &#125;
+&#125;
 </code></pre>
 <h5 id="结构与类的关系"><a href="#结构与类的关系" class="headerlink" title="结构与类的关系"></a>结构与类的关系</h5><p>类和结构实际上都是创建对象的模板，都可以包含构造函数、常数、字段、方法、属性、索引器和运算符等成员。</p>
 <ul>
@@ -586,27 +586,27 @@
 </ul>
 <p><strong>分部类是一个纯语言层的编译处理，不影响任何执行机制。<br>事实上C#编译器在编译的时候仍会将各个部分的局部类型合并成一个完整的类。C# 分部类是在class前面添加关键字partial来定义。</strong></p>
 <p><strong>分部类中还可以声明分部方法，分部方法是将方法的定义和实现分隔开。在方法前面用partial关键字修饰的方法就是分部方法。</strong><br>例如，在一个文件中声明分部类Person的代码如下： </p>
-<pre class=" language-csharp"><code class="language-csharp"><span class="token keyword">public</span> <span class="token keyword">partial</span> <span class="token keyword">class</span> <span class="token class-name">Person</span> <span class="token comment" spellcheck="true">// 分部类Person的部分代码</span>
-<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">DoWork</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-    <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-        <span class="token comment" spellcheck="true">// 定义方法，表示Person类的工作功能</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    <span class="token keyword">partial</span> <span class="token keyword">void</span> <span class="token function">Drink</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 定义分部方法，表示Person类的喝水功能</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">public partial class Person // 分部类Person的部分代码
+&#123;
+    public void DoWork()
+    &#123;
+        // 定义方法，表示Person类的工作功能
+    &#125;
+    partial void Drink(); // 定义分部方法，表示Person类的喝水功能
+&#125;
 </code></pre>
 <p>在另一个文件中声明分部类Person</p>
-<pre class=" language-csharp"><code class="language-csharp"><span class="token keyword">public</span> <span class="token keyword">partial</span> <span class="token keyword">class</span> <span class="token class-name">Person</span> <span class="token comment" spellcheck="true">// 分部类Person的部分代码</span>
-<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">HaveDinner</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-    <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-        <span class="token comment" spellcheck="true">// 定义方法，表示Person类的吃晚饭功能</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    <span class="token keyword">partial</span> <span class="token keyword">void</span> <span class="token function">Drink</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-    <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-        <span class="token comment" spellcheck="true">// 实现分部方法代码</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">public partial class Person // 分部类Person的部分代码
+&#123;
+    public void HaveDinner()
+    &#123;
+        // 定义方法，表示Person类的吃晚饭功能
+    &#125;
+    partial void Drink()
+    &#123;
+        // 实现分部方法代码
+    &#125;
+&#125;
 </code></pre>
 <p>分部方法隐式为private类型，不可使用public访问修饰符。分部方法不可有返回值。</p>
 
@@ -1140,7 +1140,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total Words:&nbsp;<span
-                        class="white-color">22.1k</span>
+                        class="white-color">20.7k</span>
             
             
             
@@ -1201,6 +1201,7 @@
 </footer>
 
 <div class="progress-bar"></div>
+<script src="/js/prism/prism.js" async></script>
 
 
     <!-- 搜索遮罩框 -->

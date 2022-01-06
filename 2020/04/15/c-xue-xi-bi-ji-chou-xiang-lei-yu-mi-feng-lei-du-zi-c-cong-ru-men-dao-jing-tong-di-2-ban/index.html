@@ -29,7 +29,7 @@
     <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
     <link rel="stylesheet" type="text/css" href="/css/matery.css">
     <link rel="stylesheet" type="text/css" href="/css/my.css">
-
+    <link rel="stylesheet" href="/js/prism/prism.css">
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 
 <meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
@@ -471,7 +471,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    934
+                    930
                 </div>
                 
 
@@ -509,11 +509,11 @@
     &lt;访问修饰符&gt; abstract 返回类型方法(); // 抽象方法
 &#125;
 </code></pre>
-<pre class=" language-csharp"><code class="language-csharp"><span class="token comment" spellcheck="true">// 示例</span>
-<span class="token keyword">public</span> <span class="token keyword">abstract</span> <span class="token keyword">class</span> <span class="token class-name">Test</span>
-<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    <span class="token keyword">public</span> <span class="token keyword">abstract</span> <span class="token keyword">void</span> <span class="token function">Display</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 抽象方法 --> Display()后面不能加 &amp;#123;&amp;#125;, 声明了abstract无法声明主体</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">// 示例
+public abstract class Test
+&#123;
+    public abstract void Display(); // 抽象方法 --> Display()后面不能加 &#123;&#125;, 声明了abstract无法声明主体
+&#125;
 </code></pre>
 <h4 id="实现抽象方法"><a href="#实现抽象方法" class="headerlink" title="实现抽象方法"></a>实现抽象方法</h4><p><strong>C#中通过方法重写来实现抽象方法。</strong></p>
 <ul>
@@ -1098,7 +1098,7 @@ public sealed class Animal // 创建密封类
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total Words:&nbsp;<span
-                        class="white-color">22.1k</span>
+                        class="white-color">20.7k</span>
             
             
             
@@ -1159,6 +1159,7 @@ public sealed class Animal // 创建密封类
 </footer>
 
 <div class="progress-bar"></div>
+<script src="/js/prism/prism.js" async></script>
 
 
     <!-- 搜索遮罩框 -->

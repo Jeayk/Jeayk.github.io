@@ -30,7 +30,7 @@ int[] a   /   a = new int[5]&amp;#123;1, 2, 3, 4, 5&amp;#125;   /   a = new int[
     <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
     <link rel="stylesheet" type="text/css" href="/css/matery.css">
     <link rel="stylesheet" type="text/css" href="/css/my.css">
-
+    <link rel="stylesheet" href="/js/prism/prism.css">
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 
 <meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
@@ -472,14 +472,14 @@ int[] a   /   a = new int[5]&amp;#123;1, 2, 3, 4, 5&amp;#125;   /   a = new int[
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    1.9k
+                    1.8k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    8 Min
+                    7 Min
                 </div>
                 
 
@@ -502,143 +502,143 @@ int[] a   /   a = new int[5]&amp;#123;1, 2, 3, 4, 5&amp;#125;   /   a = new int[
                 <h4 id="一维数组"><a href="#一维数组" class="headerlink" title="一维数组"></a>一维数组</h4><p>语法：数据类型[] 数组名    /   数组名 = new 数据类型[]</p>
 <pre><code>int[] a   /   a = new int[5]&#123;1, 2, 3, 4, 5&#125;   /   a = new int[5]
 </code></pre>
-<pre class=" language-csharp"><code class="language-csharp">            <span class="token keyword">string</span><span class="token punctuation">[</span><span class="token punctuation">]</span> week <span class="token operator">=</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> <span class="token string">"Mon"</span><span class="token punctuation">,</span> <span class="token string">"Tue"</span><span class="token punctuation">,</span> <span class="token string">"Wed"</span><span class="token punctuation">,</span> <span class="token string">"Thu"</span><span class="token punctuation">,</span> <span class="token string">"Fri"</span><span class="token punctuation">,</span> <span class="token string">"Sat"</span><span class="token punctuation">,</span> <span class="token string">"Sun"</span> <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
-            <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> week<span class="token punctuation">.</span>Length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
-            <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-                Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span>week<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-            Console<span class="token punctuation">.</span><span class="token function">ReadLine</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">            string[] week = &#123; "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun" &#125;;
+            for(int i = 0; i < week.Length; i++)
+            &#123;
+                Console.WriteLine(week[i]);
+            &#125;
+            Console.ReadLine();
 </code></pre>
 <h4 id="二维数组"><a href="#二维数组" class="headerlink" title="二维数组"></a>二维数组</h4><p>语法：数据类型[, ]数组名</p>
-<pre class=" language-csharp"><code class="language-csharp"><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">,</span><span class="token punctuation">]</span> b <span class="token operator">=</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span> <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span> <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">9</span> <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span> <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
-<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">3</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
-    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> <span class="token number">3</span><span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span>
-        Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">"&amp;#123;0&amp;#125;行&amp;#123;1&amp;#125;列元素为&amp;#123;2&amp;#125;"</span><span class="token punctuation">,</span> i<span class="token punctuation">,</span> j<span class="token punctuation">,</span> b<span class="token punctuation">[</span>i<span class="token punctuation">,</span> j<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">int[,] b = &#123; &#123; 1, 2, 3 &#125;, &#123; 4, 5, 6 &#125;, &#123; 7, 8, 9 &#125; &#125;;
+for (int i = 0; i < 3; i++)
+    for (int j = 0; j < 3; j++)
+        Console.WriteLine("&#123;0&#125;行&#123;1&#125;列元素为&#123;2&#125;", i, j, b[i, j]);
 
-<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">3</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> <span class="token number">3</span><span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span>
-    <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-        Console<span class="token punctuation">.</span><span class="token function">Write</span><span class="token punctuation">(</span><span class="token string">"&amp;#123;0,-5&amp;#125;"</span><span class="token punctuation">,</span> b<span class="token punctuation">[</span>i<span class="token punctuation">,</span> j<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 输出数组元素，每个元素占五格，靠左对齐</span>
-        <span class="token comment" spellcheck="true">/**
+for (int i = 0; i < 3; i++)
+&#123;
+    for (int j = 0; j < 3; j++)
+    &#123;
+        Console.Write("&#123;0,-5&#125;", b[i, j]); // 输出数组元素，每个元素占五格，靠左对齐
+        /**
          * 1    2    3
         * 4    5    6
          * 7    8    9
-         */</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-Console<span class="token punctuation">.</span><span class="token function">ReadKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+         */
+    &#125;
+    Console.WriteLine();
+&#125;
+Console.ReadKey();
 </code></pre>
 <h4 id="三维数组"><a href="#三维数组" class="headerlink" title="三维数组"></a>三维数组</h4><p>可以把三维数组看做一本记录本，每页都是一个表格，那么，可以使用页号、行号、列号来定位三维数组的一个元素。<br>语法：数据类型[, , ] 数组名</p>
 <h4 id="交错数组"><a href="#交错数组" class="headerlink" title="交错数组"></a>交错数组</h4><p> 交错数组可以看成是数组的数组，交错数组的每个元素又是一个数组<br> 语法：</p>
-<pre class=" language-csharp"><code class="language-csharp">     <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">int</span><span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
-     <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-         <span class="token keyword">new</span> <span class="token class-name">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span> <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">,</span>
-         <span class="token keyword">new</span> <span class="token class-name">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span> <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">,</span>
-         <span class="token keyword">new</span> <span class="token class-name">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">9</span> <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-     <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">     int[][] = new int[3][]
+     &#123;
+         new int[] &#123; 1, 2, 3 &#125;,
+         new int[] &#123; 4, 5, 6 &#125;,
+         new int[] &#123; 7, 8, 9 &#125;
+     &#125;
 </code></pre>
-<pre class=" language-csharp"><code class="language-csharp"><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span> c<span class="token punctuation">;</span>
-c <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">int</span><span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-c<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span> <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
-c<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">7</span> <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
-c<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">,</span> <span class="token number">12</span> <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
-<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> c<span class="token punctuation">.</span>Length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> c<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>Length<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span>
-    <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-        Console<span class="token punctuation">.</span><span class="token function">Write</span><span class="token punctuation">(</span><span class="token string">"&amp;#123;0, -5&amp;#125;"</span><span class="token punctuation">,</span> c<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">/**
+<pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">int[][] c;
+c = new int[3][];
+c[0] = new int[] &#123; 1, 2, 3 &#125;;
+c[1] = new int[] &#123; 4, 5, 6, 7 &#125;;
+c[2] = new int[] &#123; 8, 9, 10, 11, 12 &#125;;
+for (int i = 0; i < c.Length; i++)
+&#123;
+    for (int j = 0; j < c[i].Length; j++)
+    &#123;
+        Console.Write("&#123;0, -5&#125;", c[i][j]);
+    &#125;
+    Console.WriteLine();
+&#125;
+/**
  * 1    2    3
  * 4    5    6    7
  * 8    9    10    11    12
- */</span>
-Console<span class="token punctuation">.</span><span class="token function">ReadKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ */
+Console.ReadKey();
 </code></pre>
 <h3 id="数组基本操作"><a href="#数组基本操作" class="headerlink" title="数组基本操作"></a>数组基本操作</h3><h4 id="数组排序与反转"><a href="#数组排序与反转" class="headerlink" title="数组排序与反转"></a>数组排序与反转</h4><p>Array类的静态方法Sort()可以实现数组的排序，无返回值。<br>语法：Array.Sort(数组名)</p>
 <p>Array类的静态方法Reverse()可以实现数组的反转，无返回值。<br>语法：Array.Reverse(数组名)</p>
-<pre class=" language-csharp"><code class="language-csharp"><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> a <span class="token operator">=</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">4</span> <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
-Array<span class="token punctuation">.</span><span class="token function">Sort</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> a<span class="token punctuation">.</span>Length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    Console<span class="token punctuation">.</span><span class="token function">Write</span><span class="token punctuation">(</span><span class="token string">"&amp;#123;0, -5&amp;#125;"</span><span class="token punctuation">,</span> a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 1    3    4    7    8</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-Array<span class="token punctuation">.</span><span class="token function">Reverse</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> a<span class="token punctuation">.</span>Length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    Console<span class="token punctuation">.</span><span class="token function">Write</span><span class="token punctuation">(</span><span class="token string">"&amp;#123;0, -5&amp;#125;"</span><span class="token punctuation">,</span> a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 8    7    4    3    1</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-Console<span class="token punctuation">.</span><span class="token function">ReadKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">int[] a = &#123; 3, 8, 1, 7, 4 &#125;;
+Array.Sort(a);
+for (int i = 0; i < a.Length; i++)
+&#123;
+    Console.Write("&#123;0, -5&#125;", a[i]); // 1    3    4    7    8
+&#125;
+Console.WriteLine();
+Array.Reverse(a);
+for (int i = 0; i < a.Length; i++)
+&#123;
+    Console.Write("&#123;0, -5&#125;", a[i]); // 8    7    4    3    1
+&#125;
+Console.ReadKey();
 </code></pre>
 <h4 id="查找数组元素"><a href="#查找数组元素" class="headerlink" title="查找数组元素"></a>查找数组元素</h4><p> Array类的静态方法IndexOf( )可以判断数组是否包含与给定值相等的元素，是则返回对应数组元素的下标，否则返回-1。<br>语法：Array.IndexOf(数组名, 要查找的值)</p>
-<pre class=" language-csharp"><code class="language-csharp"><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> a <span class="token operator">=</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">1</span> <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
-Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span>Array<span class="token punctuation">.</span><span class="token function">IndexOf</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 0</span>
-Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span>Array<span class="token punctuation">.</span><span class="token function">IndexOf</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// -1</span>
-Console<span class="token punctuation">.</span><span class="token function">ReadKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">int[] a = &#123; 4, 5, 2, 7, 1 &#125;;
+Console.WriteLine(Array.IndexOf(a, 4)); // 0
+Console.WriteLine(Array.IndexOf(a, 10)); // -1
+Console.ReadKey();
 </code></pre>
 <p>####数组求和，最大值，最小值，平均值<br>Sum(), Max(), Min(), Average()<br>语法：数组名.Sum()</p>
-<pre class=" language-csharp"><code class="language-csharp"><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> a <span class="token operator">=</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">4</span> <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
-Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span>a<span class="token punctuation">.</span><span class="token function">Sum</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 23</span>
-Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span>a<span class="token punctuation">.</span><span class="token function">Max</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 8</span>
-Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span>a<span class="token punctuation">.</span><span class="token function">Min</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 1</span>
-Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span>a<span class="token punctuation">.</span><span class="token function">Average</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 4.6</span>
-Console<span class="token punctuation">.</span><span class="token function">ReadKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">int[] a = &#123; 3, 8, 1, 7, 4 &#125;;
+Console.WriteLine(a.Sum()); // 23
+Console.WriteLine(a.Max()); // 8
+Console.WriteLine(a.Min()); // 1
+Console.WriteLine(a.Average()); // 4.6
+Console.ReadKey();
 </code></pre>
 <h4 id="数组字符串相互转化"><a href="#数组字符串相互转化" class="headerlink" title="数组字符串相互转化"></a>数组字符串相互转化</h4><p> String类的静态方法Join( )可以将数组中所有元素连接起来，生成一个字符串，返回值为该字符串。<br> 语法：String.Join(分隔符, 数组名)  –&gt; Join( )方法分隔符类型为字符串</p>
 <p> 方法Split( )可以根据分隔符将字符串切分为多个部分，每个部分作为一个数组元素生成一个字符串数组，返回值为该字符串数组。<br>语法：字符串变量.Split(分隔符)  –&gt; Split( )方法中的分隔符类型为字符型</p>
-<pre class=" language-csharp"><code class="language-csharp"><span class="token keyword">string</span><span class="token punctuation">[</span><span class="token punctuation">]</span> a <span class="token operator">=</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> <span class="token string">"this"</span><span class="token punctuation">,</span> <span class="token string">"is"</span><span class="token punctuation">,</span> <span class="token string">"a"</span><span class="token punctuation">,</span> <span class="token string">"test"</span><span class="token punctuation">,</span> <span class="token string">"!"</span> <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
-<span class="token keyword">string</span> b <span class="token operator">=</span> String<span class="token punctuation">.</span><span class="token function">Join</span><span class="token punctuation">(</span><span class="token string">" "</span><span class="token punctuation">,</span> a<span class="token punctuation">)</span><span class="token punctuation">;</span>
-Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">string</span><span class="token punctuation">[</span><span class="token punctuation">]</span> a1 <span class="token operator">=</span> b<span class="token punctuation">.</span><span class="token function">Split</span><span class="token punctuation">(</span><span class="token string">' '</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> a1<span class="token punctuation">.</span>Length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span>a1<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-Console<span class="token punctuation">.</span><span class="token function">ReadKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">string[] a = &#123; "this", "is", "a", "test", "!" &#125;;
+string b = String.Join(" ", a);
+Console.WriteLine(b);
+string[] a1 = b.Split(' ');
+for (int i = 0; i < a1.Length; i++)
+&#123;
+    Console.WriteLine(a1[i]);
+&#125;
+Console.ReadKey();
 </code></pre>
 <h4 id="在字符串中查找、删除字符数组元素"><a href="#在字符串中查找、删除字符数组元素" class="headerlink" title="在字符串中查找、删除字符数组元素"></a>在字符串中查找、删除字符数组元素</h4><p> String类方法IndexOfAny( )用于在字符串中查找给定字符数组中的所有元素，返回字符数组元素在字符串中首次出现的位置值，查找失败则返回-1。<br> 语法：字符串变量.IndexOfAny(字符数组名)</p>
 <p>String类方法LastIndexOfAny( )用于在字符串中查找给定字符数组中的所有元素，返回字符数组元素在字符串中最后出现的位置值，查找失败则返回-1。<br>语法：字符串变量.LastIndexOfAny(字符数组名)</p>
 <p> String类方法Trim( )可以在字符串的首部和尾部去除给定字符数组中的所有元素，返回操作后的字符串。<br> 语法：字符串变量.Trim(字符数组名)</p>
-<pre class=" language-csharp"><code class="language-csharp"><span class="token keyword">char</span><span class="token punctuation">[</span><span class="token punctuation">]</span> a <span class="token operator">=</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> <span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token string">'t'</span><span class="token punctuation">,</span> <span class="token string">'i'</span> <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
-<span class="token keyword">string</span> str <span class="token operator">=</span> <span class="token string">"This is a test!"</span><span class="token punctuation">;</span>
-Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span>str<span class="token punctuation">.</span><span class="token function">IndexOfAny</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 2</span>
-Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span>str<span class="token punctuation">.</span><span class="token function">LastIndexOfAny</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 13</span>
-<span class="token keyword">char</span><span class="token punctuation">[</span><span class="token punctuation">]</span> b <span class="token operator">=</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> <span class="token string">'T'</span><span class="token punctuation">,</span> <span class="token string">'h'</span><span class="token punctuation">,</span> <span class="token string">'t'</span> <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
-Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span>str<span class="token punctuation">.</span><span class="token function">Trim</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// is is a test!</span>
-Console<span class="token punctuation">.</span><span class="token function">ReadKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">char[] a = &#123; 'a', 't', 'i' &#125;;
+string str = "This is a test!";
+Console.WriteLine(str.IndexOfAny(a)); // 2
+Console.WriteLine(str.LastIndexOfAny(a)); // 13
+char[] b = &#123; 'T', 'h', 't' &#125;;
+Console.WriteLine(str.Trim(b)); // is is a test!
+Console.ReadKey();
 </code></pre>
 <h4 id="枚举"><a href="#枚举" class="headerlink" title="枚举"></a>枚举</h4><p> 枚举类型用于声明一组命名常数。<br> 语法：enum 枚举类型名 {枚举成员列表}<br>例：enum Week { 星期一, 星期二, 星期三, 星期四, 星期五, 星期六, 星期天 };</p>
 <p> 枚举类型week包含七个常数，默认第一个常数为0，对应“星期一”，每个名称对应的常数都比前边一个加1，最后一个常数为6，对应“星期天”。<br> 相当于为常数起了个名字，把七个常数组合在一起构成枚举类型week。</p>
 <p> enum Week { 星期一 = 1, 星期二, 星期三, 星期四, 星期五, 星期六, 星期天 };<br> 给出第一个名称星期一对应的常数为1，后边的名称对应的常数值分别是2、3、4、5、6、7。</p>
-<pre class=" language-csharp"><code class="language-csharp"><span class="token comment" spellcheck="true">// 定义枚举类型变量x，选择枚举类型中的一个名称为变量x赋值</span>
-Week x <span class="token operator">=</span> Week<span class="token punctuation">.</span>星期一<span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">// 定义枚举类型变量y，将整数2强制转换为week类型的值赋值给变量</span>
-Week y <span class="token operator">=</span> <span class="token punctuation">(</span>Week<span class="token punctuation">)</span><span class="token number">2</span><span class="token punctuation">;</span>
-Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span>x<span class="token punctuation">.</span><span class="token function">ToString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 星期一</span>
-Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span>y<span class="token punctuation">.</span><span class="token function">ToString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 星期二</span>
-Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token punctuation">(</span>Week<span class="token punctuation">)</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 输出枚举类型Week中常量2对应的名称 --> 星期二</span>
-Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span>Week<span class="token punctuation">.</span>星期天<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 输出枚举类型Week中名称“星期天”对应的常量  -->  7</span>
-Console<span class="token punctuation">.</span><span class="token function">ReadKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">// 定义枚举类型变量x，选择枚举类型中的一个名称为变量x赋值
+Week x = Week.星期一;
+// 定义枚举类型变量y，将整数2强制转换为week类型的值赋值给变量
+Week y = (Week)2;
+Console.WriteLine(x.ToString()); // 星期一
+Console.WriteLine(y.ToString()); // 星期二
+Console.WriteLine((Week)2); // 输出枚举类型Week中常量2对应的名称 --> 星期二
+Console.WriteLine((int)Week.星期天); // 输出枚举类型Week中名称“星期天”对应的常量  -->  7
+Console.ReadKey();
 </code></pre>
 <ul>
 <li>枚举类型的最大作用是可以自定义一个类型，将许多相关的名称作为一个集合保存和使用，每个名称对应一个整型常量。</li>
 <li>相对于直接使用数值，使用枚举类型可以使代码更加清晰易懂，便于记忆。</li>
 <li>枚举类型的变量只能选择几个常量中的一个，方便控制变量取值范围，保证程序的执行过程安全可靠。</li>
-<li>常量值和枚举值之间转换方便，使用枚举类型使代码更容易编写和维护。<h4 id="字符串与字符数组相互转化"><a href="#字符串与字符数组相互转化" class="headerlink" title="字符串与字符数组相互转化"></a>字符串与字符数组相互转化</h4>使用语句“string str = new string(‘a’,5);”创建包含5个相同字符的字符串str，str对应的字符串为“aaaaa”。<br>事实上，我们可以使用任意一个字符类型数组初始化一个字符串。<br>反之，一个字符串可以直接作为一个字符类型数组使用，直接在字符串名后面加上下标即可<pre class=" language-csharp"><code class="language-csharp"><span class="token keyword">char</span><span class="token punctuation">[</span><span class="token punctuation">]</span> c <span class="token operator">=</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> <span class="token string">'H'</span><span class="token punctuation">,</span> <span class="token string">'e'</span><span class="token punctuation">,</span> <span class="token string">'l'</span><span class="token punctuation">,</span> <span class="token string">'l'</span><span class="token punctuation">,</span> <span class="token string">'o'</span><span class="token punctuation">,</span> <span class="token string">' '</span><span class="token punctuation">,</span> <span class="token string">'W'</span><span class="token punctuation">,</span> <span class="token string">'o'</span><span class="token punctuation">,</span> <span class="token string">'r'</span><span class="token punctuation">,</span> <span class="token string">'l'</span><span class="token punctuation">,</span> <span class="token string">'d'</span><span class="token punctuation">,</span> <span class="token string">'！'</span> <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
-<span class="token keyword">string</span> str <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">string</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span><span class="token punctuation">;</span>
-Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// Hello World!</span>
-Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span>str<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// H</span>
-Console<span class="token punctuation">.</span><span class="token function">ReadKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<li>常量值和枚举值之间转换方便，使用枚举类型使代码更容易编写和维护。<h4 id="字符串与字符数组相互转化"><a href="#字符串与字符数组相互转化" class="headerlink" title="字符串与字符数组相互转化"></a>字符串与字符数组相互转化</h4>使用语句“string str = new string(‘a’,5);”创建包含5个相同字符的字符串str，str对应的字符串为“aaaaa”。<br>事实上，我们可以使用任意一个字符类型数组初始化一个字符串。<br>反之，一个字符串可以直接作为一个字符类型数组使用，直接在字符串名后面加上下标即可<pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">char[] c = &#123; 'H', 'e', 'l', 'l', 'o', ' ', 'W', 'o', 'r', 'l', 'd', '！' &#125;;
+string str = new string(c);
+Console.WriteLine(str); // Hello World!
+Console.WriteLine(str[0]); // H
+Console.ReadKey();
 </code></pre>
-<h4 id="foreach遍历二维数组"><a href="#foreach遍历二维数组" class="headerlink" title="foreach遍历二维数组"></a>foreach遍历二维数组</h4><pre class=" language-csharp"><code class="language-csharp"><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">,</span><span class="token punctuation">]</span> a <span class="token operator">=</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span> <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span> <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
-<span class="token keyword">foreach</span> <span class="token punctuation">(</span><span class="token keyword">int</span> x <span class="token keyword">in</span> a<span class="token punctuation">)</span>
-  Console<span class="token punctuation">.</span><span class="token function">Write</span><span class="token punctuation">(</span><span class="token string">"&amp;#123;0, -4&amp;#125;"</span><span class="token punctuation">,</span> x<span class="token punctuation">)</span><span class="token punctuation">;</span>
-Console<span class="token punctuation">.</span><span class="token function">ReadKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 1   2   3  4   5   6   7   8   9</span>
+<h4 id="foreach遍历二维数组"><a href="#foreach遍历二维数组" class="headerlink" title="foreach遍历二维数组"></a>foreach遍历二维数组</h4><pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">int[,] a = &#123; &#123; 1, 2, 3 &#125;, &#123; 4, 5, 6&#125;, &#123; 7, 8, 9&#125; &#125;;
+foreach (int x in a)
+  Console.Write("&#123;0, -4&#125;", x);
+Console.ReadKey(); // 1   2   3  4   5   6   7   8   9
 </code></pre>
 </li>
 <li>使用foreach循环遍历二维数组，访问数组元素的顺序是先行后列，因此输出结果为123456。</li>
@@ -1175,7 +1175,7 @@ Console<span class="token punctuation">.</span><span class="token function">Read
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total Words:&nbsp;<span
-                        class="white-color">22.1k</span>
+                        class="white-color">20.7k</span>
             
             
             
@@ -1236,6 +1236,7 @@ Console<span class="token punctuation">.</span><span class="token function">Read
 </footer>
 
 <div class="progress-bar"></div>
+<script src="/js/prism/prism.js" async></script>
 
 
     <!-- 搜索遮罩框 -->

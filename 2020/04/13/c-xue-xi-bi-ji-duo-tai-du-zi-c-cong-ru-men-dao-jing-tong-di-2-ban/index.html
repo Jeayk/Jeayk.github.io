@@ -29,7 +29,7 @@
     <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
     <link rel="stylesheet" type="text/css" href="/css/matery.css">
     <link rel="stylesheet" type="text/css" href="/css/my.css">
-
+    <link rel="stylesheet" href="/js/prism/prism.css">
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 
 <meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
@@ -471,7 +471,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    772
+                    752
                 </div>
                 
 
@@ -509,27 +509,27 @@
 &#125;
 </code></pre>
 <p>示例：</p>
-<pre class=" language-csharp"><code class="language-csharp"><span class="token keyword">class</span> <span class="token class-name">Father</span>
-<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-    <span class="token keyword">public</span> <span class="token keyword">virtual</span> <span class="token keyword">void</span> <span class="token function">Display</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 基类中定义成虚拟方法，使用virtual关键字</span>
-    <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-        <span class="token comment" spellcheck="true">// Father does sth.</span>
-        <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token keyword">class</span> <span class="token class-name">Son</span><span class="token punctuation">:</span> Father
-<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-    <span class="token keyword">public</span> <span class="token keyword">override</span> <span class="token keyword">void</span> <span class="token function">Display</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 重写基类的Display方法</span>
-    <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-        <span class="token comment" spellcheck="true">// Son does sth.</span>
-        <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">class Father
+&#123;
+    ...
+    public virtual void Display() // 基类中定义成虚拟方法，使用virtual关键字
+    &#123;
+        // Father does sth.
+        ...
+    &#125;
+&#125;
+class Son: Father
+&#123;
+    ...
+    public override void Display() // 重写基类的Display方法
+    &#123;
+        // Son does sth.
+        ...
         
-        <span class="token comment" spellcheck="true">// 若想派生类方法执行后，继续执行基类方法，执行 base.Display() 方法</span>
-        <span class="token keyword">base</span><span class="token punctuation">.</span><span class="token function">Display</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+        // 若想派生类方法执行后，继续执行基类方法，执行 base.Display() 方法
+        base.Display();
+    &#125;
+&#125;
 </code></pre>
 <p><strong>重写时，子类重写方法的访问级别和父类虚拟方法的访问级别必须相同。</strong></p>
 <h5 id="方法重载、重写和隐蔽"><a href="#方法重载、重写和隐蔽" class="headerlink" title="方法重载、重写和隐蔽"></a>方法重载、重写和隐蔽</h5><p>在基类和派生类中可以存在同名方法，这些同名的方法可以分为重载、重写和隐藏3种类型。</p>
@@ -542,46 +542,46 @@
 <li>隐藏<br>基类中的方法不声明为virtual（默认为非虚方法），在派生类中声明与基类同名时，需使用new关键字，以隐藏基类同名方法。</li>
 </ul>
 <p><strong>示例：</strong></p>
-<pre class=" language-csharp"><code class="language-csharp"><span class="token keyword">class</span> <span class="token class-name">Father</span>
-<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-    <span class="token keyword">public</span> <span class="token keyword">virtual</span> <span class="token keyword">void</span> <span class="token function">Display</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 基类中定义成虚拟方法，使用virtual关键字</span>
-    <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-        <span class="token comment" spellcheck="true">// Father does sth.</span>
-        <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">Display</span><span class="token punctuation">(</span><span class="token keyword">int</span> id<span class="token punctuation">)</span>
-    <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-        <span class="token comment" spellcheck="true">// 若想执行无参方法</span>
-        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">Display</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">class Father
+&#123;
+    ...
+    public virtual void Display() // 基类中定义成虚拟方法，使用virtual关键字
+    &#123;
+        // Father does sth.
+        ...
+    &#125;
+    public void Display(int id)
+    &#123;
+        // 若想执行无参方法
+        this.Display();
 
-        <span class="token comment" spellcheck="true">// 有参方法</span>
-        Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">"id: "</span> <span class="token operator">+</span> id<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token keyword">class</span> <span class="token class-name">Son</span><span class="token punctuation">:</span> Father
-<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-    <span class="token keyword">public</span> <span class="token keyword">override</span> <span class="token keyword">void</span> <span class="token function">Display</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 重写基类的Display方法</span>
-    <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-        <span class="token comment" spellcheck="true">// do sth.</span>
-        <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+        // 有参方法
+        Console.WriteLine("id: " + id);
+    &#125;
+&#125;
+class Son: Father
+&#123;
+    ...
+    public override void Display() // 重写基类的Display方法
+    &#123;
+        // do sth.
+        ...
         
-        <span class="token comment" spellcheck="true">// 若想派生类方法执行后，继续执行基类方法，执行 base.Display() 方法</span>
-        <span class="token keyword">base</span><span class="token punctuation">.</span><span class="token function">Display</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    <span class="token keyword">public</span> <span class="token keyword">new</span> <span class="token class-name">void</span> <span class="token function">Display</span><span class="token punctuation">(</span><span class="token keyword">int</span> no<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 使用new隐藏基类</span>
-    <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-        <span class="token comment" spellcheck="true">// do sth.</span>
-        <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+        // 若想派生类方法执行后，继续执行基类方法，执行 base.Display() 方法
+        base.Display();
+    &#125;
+    public new void Display(int no) // 使用new隐藏基类
+    &#123;
+        // do sth.
+        ...
         
-        <span class="token comment" spellcheck="true">// 若想派生类方法执行后，继续执行基类方法，执行 base.Display() 方法</span>
-        <span class="token keyword">base</span><span class="token punctuation">.</span><span class="token function">Display</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        // 若想派生类方法执行后，继续执行基类方法，执行 base.Display() 方法
+        base.Display();
 
-        <span class="token comment" spellcheck="true">// 隐藏基类自定义方法</span>
-        Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">"no: "</span> <span class="token operator">+</span> no<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+        // 隐藏基类自定义方法
+        Console.WriteLine("no: " + no);
+    &#125;
+&#125;
 </code></pre>
 
                 
@@ -1114,7 +1114,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total Words:&nbsp;<span
-                        class="white-color">22.1k</span>
+                        class="white-color">20.7k</span>
             
             
             
@@ -1175,6 +1175,7 @@
 </footer>
 
 <div class="progress-bar"></div>
+<script src="/js/prism/prism.js" async></script>
 
 
     <!-- 搜索遮罩框 -->

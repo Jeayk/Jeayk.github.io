@@ -27,7 +27,7 @@
     <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
     <link rel="stylesheet" type="text/css" href="/css/matery.css">
     <link rel="stylesheet" type="text/css" href="/css/my.css">
-
+    <link rel="stylesheet" href="/js/prism/prism.css">
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 
 <meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
@@ -469,7 +469,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    685
+                    609
                 </div>
                 
 
@@ -497,18 +497,18 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h4 id="匿名方法"><a href="#匿名方法" class="headerlink" title="匿名方法"></a>匿名方法</h4><p>要将代码块传递为委托参数，创建匿名方法则是唯一的方法。匿名方法就是为了将代码块传递为委托参数，因此也有人将其称为匿名委托。使用C#的匿名方法可以使委托及事件的代码编写更加精简、高效。一般情况下，事件注册事件处理方法，需要首先定义这个方法，如果该方法仅用于订阅特定的事件，则可使用代码更加简明的匿名方法。<br><strong>示例</strong><br>委托与事件中的烧水示例，Heater类不变，去掉Alarm类和Display类，使用匿名方法订阅事件修改Main方法中的代码。</p>
-<pre class=" language-csharp"><code class="language-csharp">Heater heater <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Heater</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-heater<span class="token punctuation">.</span>BoilEvent <span class="token operator">+</span><span class="token operator">=</span> <span class="token keyword">delegate</span> <span class="token punctuation">(</span><span class="token keyword">int</span> param<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//水快开时报警的匿名方法</span>
-<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">"Alarm: 嘀嘀嘀，水已经&amp;#123;0&amp;#125;度了！"</span><span class="token punctuation">,</span> param<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
-heater<span class="token punctuation">.</span>BoilEvent <span class="token operator">+</span><span class="token operator">=</span> <span class="token keyword">delegate</span> <span class="token punctuation">(</span><span class="token keyword">int</span> param<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 表示水温的匿名方法</span>
-<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">"Display: 水快烧开了，当前温度：&amp;#123;0&amp;#125;度！"</span><span class="token punctuation">,</span> param<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
-heater<span class="token punctuation">.</span><span class="token function">BoilWater</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-Console<span class="token punctuation">.</span><span class="token function">ReadKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">/**
+<pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">Heater heater = new Heater();
+heater.BoilEvent += delegate (int param) //水快开时报警的匿名方法
+&#123;
+    Console.WriteLine("Alarm: 嘀嘀嘀，水已经&#123;0&#125;度了！", param);
+&#125;;
+heater.BoilEvent += delegate (int param) // 表示水温的匿名方法
+&#123;
+    Console.WriteLine("Display: 水快烧开了，当前温度：&#123;0&#125;度！", param);
+&#125;;
+heater.BoilWater();
+Console.ReadKey();
+/**
 * Alarm: 嘀嘀嘀，水已经97度了!
 * Display：水快烧开了，当前温度：97度。
 * Alarm: 嘀嘀嘀，水已经98度了!
@@ -517,52 +517,52 @@ Console<span class="token punctuation">.</span><span class="token function">Read
 * Display：水快烧开了，当前温度：99度。
 * Alarm: 嘀嘀嘀，水已经100度了!
 * Display：水快烧开了，当前温度：100度。
-*/</span>
+*/
 </code></pre>
 <h4 id="lambda表达式"><a href="#lambda表达式" class="headerlink" title="lambda表达式"></a>lambda表达式</h4><p>lambda表达式是一种可用于创建委托或表达式目录树类型的匿名函数。通过使用lambda表达式，可以写入可作为参数传递或作为函数调用值返回的本地函数。lambda表达式对于编写LINQ查询表达式特别有用。若要创建lambda表达式，需要在lambda运算符 =&gt; 左侧指定输入参数（如果有），然后在另一侧输入表达式或语句块。<br><strong>联想理解：类似于ES6的箭头函数</strong><br>示例：使用lambda表达式实现委托，进行数组排序。</p>
-<pre class=" language-csharp"><code class="language-csharp"><span class="token keyword">using</span> System<span class="token punctuation">;</span>
-<span class="token keyword">using</span> System<span class="token punctuation">.</span>Collections<span class="token punctuation">.</span>Generic<span class="token punctuation">;</span>
-<span class="token keyword">using</span> System<span class="token punctuation">.</span>Linq<span class="token punctuation">;</span>
-<span class="token keyword">using</span> System<span class="token punctuation">.</span>Text<span class="token punctuation">;</span>
-<span class="token keyword">using</span> System<span class="token punctuation">.</span>Threading<span class="token punctuation">.</span>Tasks<span class="token punctuation">;</span>
-<span class="token keyword">using</span> System<span class="token punctuation">.</span>Linq<span class="token punctuation">.</span>Expressions<span class="token punctuation">;</span>
+<pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Linq.Expressions;
 
-<span class="token keyword">namespace</span> LambdaTest
-<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    <span class="token keyword">class</span> <span class="token class-name">Program</span>
-    <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-        <span class="token keyword">public</span> <span class="token keyword">delegate</span> <span class="token keyword">bool</span> <span class="token function">SortDelegate</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> x<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 定义委托SortDelegate</span>
-        <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">Main</span><span class="token punctuation">(</span><span class="token keyword">string</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span>
-        <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-            <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> arr <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">3</span> <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
-            Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">"排序前的数组："</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token keyword">foreach</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token keyword">in</span> arr<span class="token punctuation">)</span> Console<span class="token punctuation">.</span><span class="token function">Write</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 892143</span>
-            Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token comment" spellcheck="true">// 用lamdba表达式实例化委托</span>
-            SortDelegate myDelegate <span class="token operator">=</span> array <span class="token operator">=</span><span class="token operator">></span>
-            <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-                <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> array<span class="token punctuation">.</span><span class="token function">GetUpperBound</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span> i <span class="token operator">>=</span> <span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">--</span><span class="token punctuation">)</span>
-                <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-                    <span class="token comment" spellcheck="true">// 冒泡排序</span>
-                    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;=</span> i<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span>
-                    <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-                        <span class="token keyword">if</span> <span class="token punctuation">(</span>array<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">&lt;=</span> array<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
-                        <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-                            <span class="token keyword">int</span> temp <span class="token operator">=</span> array<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">;</span>
-                            array<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> array<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
-                            array<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> temp<span class="token punctuation">;</span>
-                        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-                    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-                <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-                <span class="token keyword">return</span> <span class="token keyword">true</span><span class="token punctuation">;</span>
-            <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
-            <span class="token function">myDelegate</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">;</span>
-            Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">"排序后的数组："</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token keyword">foreach</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token keyword">in</span> arr<span class="token punctuation">)</span> Console<span class="token punctuation">.</span><span class="token function">Write</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 984321</span>
-            Console<span class="token punctuation">.</span><span class="token function">ReadKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+namespace LambdaTest
+&#123;
+    class Program
+    &#123;
+        public delegate bool SortDelegate(int[] x); // 定义委托SortDelegate
+        static void Main(string[] args)
+        &#123;
+            int[] arr = new int[] &#123; 8, 9, 2, 1, 4, 3 &#125;;
+            Console.WriteLine("排序前的数组：");
+            foreach (int i in arr) Console.Write(i); // 892143
+            Console.WriteLine();
+            // 用lamdba表达式实例化委托
+            SortDelegate myDelegate = array =>
+            &#123;
+                for (int i = array.GetUpperBound(0); i >= 0; i--)
+                &#123;
+                    // 冒泡排序
+                    for (int j = 0; j <= i; j++)
+                    &#123;
+                        if (array[j] <= array[i])
+                        &#123;
+                            int temp = array[j];
+                            array[j] = array[i];
+                            array[i] = temp;
+                        &#125;
+                    &#125;
+                &#125;
+                return true;
+            &#125;;
+            myDelegate(arr);
+            Console.WriteLine("排序后的数组：");
+            foreach(int i in arr) Console.Write(i); // 984321
+            Console.ReadKey();
+        &#125;
+    &#125;
+&#125;
 </code></pre>
 
                 
@@ -1095,7 +1095,7 @@ Console<span class="token punctuation">.</span><span class="token function">Read
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total Words:&nbsp;<span
-                        class="white-color">22.1k</span>
+                        class="white-color">20.7k</span>
             
             
             
@@ -1156,6 +1156,7 @@ Console<span class="token punctuation">.</span><span class="token function">Read
 </footer>
 
 <div class="progress-bar"></div>
+<script src="/js/prism/prism.js" async></script>
 
 
     <!-- 搜索遮罩框 -->

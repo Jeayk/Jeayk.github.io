@@ -30,7 +30,7 @@
     <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
     <link rel="stylesheet" type="text/css" href="/css/matery.css">
     <link rel="stylesheet" type="text/css" href="/css/my.css">
-
+    <link rel="stylesheet" href="/js/prism/prism.css">
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 
 <meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
@@ -472,7 +472,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    480
+                    478
                 </div>
                 
 
@@ -502,20 +502,20 @@
                 <h4 id="栈内存和堆内存"><a href="#栈内存和堆内存" class="headerlink" title="栈内存和堆内存"></a>栈内存和堆内存</h4><p>javascript中的变量分为基本类型和引用类型。  </p>
 <ul>
 <li>基本类型是保存在栈内存中的简单数据段，它们的值都有固定的大小，保存在栈空间，按值访问。</li>
-<li>引用类型是保存在堆内存中的对象，值大小不固定，栈内存中存放的该对象的访问地址指向堆内存中的对象，javascript不允许直接访问堆内存中的位置，因此操作对象时，实际上操作的事对象的引用。  <h5 id="结合代码与图理解"><a href="#结合代码与图理解" class="headerlink" title="结合代码与图理解"></a>结合代码与图理解</h5><pre><code>let a1 = 0; // 栈内存
-let a2 = &quot;this is string&quot; // 栈内存
+<li>引用类型是保存在堆内存中的对象，值大小不固定，栈内存中存放的该对象的访问地址指向堆内存中的对象，javascript不允许直接访问堆内存中的位置，因此操作对象时，实际上操作的事对象的引用。  <h5 id="结合代码与图理解"><a href="#结合代码与图理解" class="headerlink" title="结合代码与图理解"></a>结合代码与图理解</h5><pre class=" language-line-numbers language-javascript"><code class="language-line-numbers language-javascript">let a1 = 0; // 栈内存
+let a2 = "this is string" // 栈内存
 let a3 = null; // 栈内存
 let b = &#123; x: 10 &#125;; // 变量b存在于栈中，&#123; x: 10 &#125;作为对象存在于堆中
 let c = [1, 2, 3]; // 变量c存在于栈中，[1, 2, 3]作为对象存在于堆中
 </code></pre>
 <h5 id="访问堆内存中的引用数据类型"><a href="#访问堆内存中的引用数据类型" class="headerlink" title="访问堆内存中的引用数据类型:"></a>访问堆内存中的引用数据类型:</h5></li>
 <li>访问栈内存，获取该对象的地址引用</li>
-<li>通过地址，从堆内存中获取需要的数据<h5 id="基本类型发生复制行为"><a href="#基本类型发生复制行为" class="headerlink" title="基本类型发生复制行为"></a>基本类型发生复制行为</h5><pre><code>let a = 20;
+<li>通过地址，从堆内存中获取需要的数据<h5 id="基本类型发生复制行为"><a href="#基本类型发生复制行为" class="headerlink" title="基本类型发生复制行为"></a>基本类型发生复制行为</h5><pre class=" language-line-numbers language-javascript"><code class="language-line-numbers language-javascript">let a = 20;
 let b = a;
 b = 30;
 console.log(a); // 20
 </code></pre>
-在栈内存中的数据发生复制行为时，系统会自动为新的变量分配一个新值，最后这些变量都是相互独立互不影响的。<h5 id="引用类型发生复制行为"><a href="#引用类型发生复制行为" class="headerlink" title="引用类型发生复制行为"></a>引用类型发生复制行为</h5><pre><code>let a = &#123; x: 10, y: 20 &#125;
+在栈内存中的数据发生复制行为时，系统会自动为新的变量分配一个新值，最后这些变量都是相互独立互不影响的。<h5 id="引用类型发生复制行为"><a href="#引用类型发生复制行为" class="headerlink" title="引用类型发生复制行为"></a>引用类型发生复制行为</h5><pre class=" language-line-numbers language-javascript"><code class="language-line-numbers language-javascript">let a = &#123; x: 10, y: 20 &#125;
 let b = a;
 b.x = 5;
 console.log(a.x); // 5
@@ -763,18 +763,17 @@ console.log(a.x); // 5
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;Current
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/2022/01/05/2-js-dui-xiang-de-di-ceng-shu-ju-jie-gou/">
+                <a href="/2022/01/07/3-js-symbol-lei-xing-zai-shi-ji-kai-fa-zhong-de-ying-yong/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="2. js对象的底层数据结构">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="3. js Symbol类型在实际开发中的应用">
                         
-                        <span class="card-title">2. js对象的底层数据结构</span>
+                        <span class="card-title">3. js Symbol类型在实际开发中的应用</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -784,9 +783,9 @@ console.log(a.x); // 5
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-01-05
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-01-07
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -799,7 +798,6 @@ console.log(a.x); // 5
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
@@ -1057,7 +1055,7 @@ console.log(a.x); // 5
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total Words:&nbsp;<span
-                        class="white-color">22.1k</span>
+                        class="white-color">20.7k</span>
             
             
             
@@ -1118,6 +1116,7 @@ console.log(a.x); // 5
 </footer>
 
 <div class="progress-bar"></div>
+<script src="/js/prism/prism.js" async></script>
 
 
     <!-- 搜索遮罩框 -->

@@ -4,11 +4,11 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="C#学习笔记-类与对象相关笔记2（读自C#从入门到精通 第2版）, 积跬步以至千里">
-    <meta name="description" content="构造函数与析构函数构造函数
-构造函数是类的特殊方法成员，其名称和类名相同，主要用来完成对象的初始化。
-C#通过new创建对象的过程实际上就是调用类的构造函数的过程，创建对象时调用构造函数对对象进行初始化。
-每个类都有构造函数，如果没有定义，">
+    <meta name="keywords" content="3. js Symbol类型在实际开发中的应用, 积跬步以至千里">
+    <meta name="description" content="开发应用
+Symbol 是一种基本数据类型，由Symbol函数生成```javascript// 无参数情况var a = Symbol();var b = Symbol();console.log(a === b); // false
+
+">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -20,7 +20,7 @@ C#通过new创建对象的过程实际上就是调用类的构造函数的过程
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>C#学习笔记-类与对象相关笔记2（读自C#从入门到精通 第2版） | 积跬步以至千里</title>
+    <title>3. js Symbol类型在实际开发中的应用 | 积跬步以至千里</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -312,12 +312,12 @@ C#通过new创建对象的过程实际上就是调用类的构造函数的过程
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">C#学习笔记-类与对象相关笔记2（读自C#从入门到精通 第2版）</h1>
+                    <h1 class="description center-align post-title">3. js Symbol类型在实际开发中的应用</h1>
                 </div>
             </div>
         </div>
@@ -433,8 +433,8 @@ C#通过new创建对象的过程实际上就是调用类的构造函数的过程
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-                                <span class="chip bg-color">C#学习笔记</span>
+                            <a href="/tags/Javascript%E5%9F%BA%E7%A1%80/">
+                                <span class="chip bg-color">Javascript基础</span>
                             </a>
                         
                     </div>
@@ -445,8 +445,8 @@ C#通过new创建对象的过程实际上就是调用类的构造函数的过程
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E8%AF%BB%E8%87%AAC-%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A-%E7%AC%AC2%E7%89%88/" class="post-category">
-                                读自C#从入门到精通 第2版
+                            <a href="/categories/JS%E5%8F%98%E9%87%8F%E4%B8%8E%E7%B1%BB%E5%9E%8B/" class="post-category">
+                                JS变量与类型
                             </a>
                         
                     </div>
@@ -458,28 +458,28 @@ C#通过new创建对象的过程实际上就是调用类的构造函数的过程
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2020-04-10
+                    2022-01-07
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2022-01-04
+                    2022-01-07
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    1.5k
+                    604
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    5 Min
+                    2 Min
                 </div>
                 
 
@@ -499,126 +499,38 @@ C#通过new创建对象的过程实际上就是调用类的构造函数的过程
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="构造函数与析构函数"><a href="#构造函数与析构函数" class="headerlink" title="构造函数与析构函数"></a>构造函数与析构函数</h4><h5 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h5><ul>
-<li>构造函数是类的特殊方法成员，其名称和类名相同，主要用来完成对象的初始化。</li>
-<li>C#通过new创建对象的过程实际上就是调用类的构造函数的过程，创建对象时调用构造函数对对象进行初始化。</li>
-<li>每个类都有构造函数，如果没有定义，系统也会提供一个默认的构造函数，默认的构造函数一般不进行什么操作。</li>
-<li>在访问一个类的时候，系统最先执行构造函数中的语句。</li>
-<li>声明的构造函数是非静态的实例构造函数。构造函数也有静态的，静态构造函数用于初始化类中的静态字段成员。 <h5 id="析构函数"><a href="#析构函数" class="headerlink" title="析构函数"></a>析构函数</h5></li>
-<li>析构函数是对象销毁前释放所占用系统资源的类的成员。</li>
-<li>析构函数的名字是在类名前面加一个符号“～”。析构函数不接受任何参数，也不返回任何值。</li>
-<li>一个类只能有一个析构函数，析构函数不能手动调用，是系统自动调用的。<pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">class Point
-&#123;
-   
-   public int X &#123; get; set; &#125; // 定义属性X，得到和设置点的横坐标
-   public int Y &#123; get; set; &#125; // 定义属性Y，得到和设置点的纵坐标
-   public static int z;
-   static Point() // 定义静态构造函数
-   &#123;
-       z = 100;
-   &#125;
-   public Point() // 无参构造函数用于初始化
-   &#123;
-       X = 0; Y = 2; // 初始化
-   &#125;
-   public Point(int val_x, int val_y) // 有参数构造函数
-   &#123;
-       X = val_x; Y = val_y; // 用指定的参数初始化X和Y
-   &#125;
-   ~Point() // 析构函数
-   &#123;
-       Console.WriteLine("析构函数主要用于清理资源！");
-       Console.ReadKey();
-   &#125;
-&#125;
-</code></pre>
-Main方法测试代码<pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">Console.WriteLine("静态构造函数：" + Point.z); // 静态构造函数：100
-Point objPoint1 = new Point();
-Console.WriteLine("无参构造函数演示");
-Console.WriteLine("X = " + objPoint1.X); // X = 0
-Console.WriteLine("Y = " + objPoint1.Y); // Y = 2
-Point objPoint2 = new Point(80, 90);
-Console.WriteLine("有参构造函数演示");
-Console.WriteLine("X = " + objPoint2.X); // X = 80
-Console.WriteLine("Y = " + objPoint2.Y); // Y = 90
-Console.ReadKey();
-</code></pre>
-<h5 id="参数传递"><a href="#参数传递" class="headerlink" title="参数传递"></a>参数传递</h5></li>
-<li>C#定义方法时声明的参数称为形参（或称虚拟参数）,调用方法时传给形参的值称为实参。</li>
-<li>参数传递类型有值传递与引用传递两种。值传递是C#默认的传递方式。</li>
-<li>如果希望所调用的方法能更改实在参数的值，则必须使用ref或out关键字声明通过引用传递方式传递参数。</li>
-<li>引用传递是把实在参数的地址传给形式参数，形式参数和实在参数指向同一个存储单元，对形式参数的改变就是对实在参数的改变。</li>
-<li>out传递与ref类似，二者的区别是，ref要求参数在传递之前必须初始化，out则不要求初始化。</li>
+                <h4 id="开发应用"><a href="#开发应用" class="headerlink" title="开发应用"></a>开发应用</h4><ul>
+<li>Symbol 是一种基本数据类型，由Symbol函数生成<br>```javascript<br>// 无参数情况<br>var a = Symbol();<br>var b = Symbol();<br>console.log(a === b); // false</li>
 </ul>
-<h6 id="值传递示例"><a href="#值传递示例" class="headerlink" title="值传递示例"></a>值传递示例</h6><pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">// 定义值传递方法
-private void Swap(int num1, int num2) // 交换数据的方法
-&#123;
-    int temp; // 定义用于交换变量值得中间变量
-    temp = num1; // 将num1值赋值给中间变量temp
-    num1 = num2; // 将num2赋值给num1
-    num2 = temp; // 将中间变量存储的num1的值赋值给num2
-&#125;
+<p>// Symbol 函数可以接受一个字符串作为参数，表示对 Symbol 实例的描述，主要是为了在控制台显示，或者转为字符串时，比较容易区分。<br>var c = Symbol(‘foo’);<br>console.log(c); // Symbol(foo)<br>var d = Symbol(‘foo’);<br>console.log(c === d); // false</p>
+<p>// Symbol 函数前不能使用 new 命令，否则会报错。这是因为生成的 Symbol 是一个原始类型的值，不是对象。<br>var f = new Symbol(); // Symbol is not a constructor at new Symbol</p>
+<p>// instanceof 的结果为 false<br>var aa = Symbol();<br>console.log(aa instanceof Symbol); // false</p>
+<p>// 如果 Symbol 的参数是一个对象，就会调用该对象的toString方法，将其转为字符串，然后才生成一个 Symbol 值。<br>const obj = {<br>  toString() {<br>    return ‘abc’;<br>  }<br>};<br>const sym = Symbol(obj);<br>console.log(sym); // Symbol(abc)</p>
+<p>// Symbol 值不能与其他类型的值进行运算，会报错<br>var sym1 = Symbol(‘My symbol’);<br>console.log(“your symbol is “ + sym1); // TypeError: Cannot convert a Symbol value to a string</p>
+<p>// Symbol 值可以显式转为字符串<br>var sym2 = Symbol(‘My symbol’);<br>console.log(String(sym2)); // ‘Symbol(My symbol)’<br>console.log(sym.toString()); // ‘Symbol(My symbol)’</p>
+<p>// Symbol的唯一性，可以作为标识符，用于对象的属性名<br>var symbol1 = Symbol();<br>var symbol2 = Symbol();<br>var symbol3 = Symbol();<br>var A = {};</p>
+<p>// 写法一<br>A[symbol1] = ‘hello’;<br>console.log(A[symbol1]); // hello</p>
+<p>// 写法二<br>A = {<br>    symbol2: ‘hello’<br>}<br>console.log(A[symbol2]]); // hello</p>
+<p>// 写法三<br>Object.defineProperty(A, symbol3, {value: ‘hello’});<br>console.log(A[symbol3]]); // hello</p>
+<pre><code>&lt;font style=&quot;color: red&quot;&gt;注意：&lt;/font&gt; 该属性不会出现在 &lt;font style=&quot;color: red&quot;&gt; for...in &lt;/font&gt;、&lt;font style=&quot;color: red&quot;&gt; for...of &lt;/font&gt; 循环中，也不会被&lt;font style=&quot;color: blue&quot;&gt; Object.keys() &lt;/font&gt;、&lt;font style=&quot;color: blue&quot;&gt; Object.getOwnPropertyNames() &lt;/font&gt;、&lt;font style=&quot;color: blue&quot;&gt; JSON.stringify() &lt;/font&gt; 返回。但是，它也不是私有属性，有一个&lt;font style=&quot;color: blue&quot;&gt; Object.getOwnPropertySymbols &lt;/font&gt;  方法，可以获取指定对象的所有 Symbol 属性名。
+- 使用同一个 Symbol 值，可以使用 Symbol.for
+```javascript
+var s1 = Symbol.for(&#39;foo&#39;)
+var s2 = Symbol.for(&#39;foo&#39;);
+s1 === s2; // true
 </code></pre>
-<pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">int num1 = 1;
-int num2 = 2;
-Console.WriteLine("此实例演示值传递参数");
-Console.WriteLine("交换之前的字符串顺序为：num1-&#123;0&#125;, num2-&#123;1&#125;", num1, num2); // 1   2
-Program objProgram = new Program();
-objProgram.Swap(num1, num2);
-Console.WriteLine("交换之后的字符串顺序为：num1-&#123;0&#125;, num2-&#123;1&#125;", num1, num2); // 1   2
-Console.ReadKey();
-</code></pre>
-<p>运行结果显示并没有真正交换num1和num2两个变量的值，因为选择的是值传递的方法来传递参数。</p>
-<h6 id="ref引用传递示例"><a href="#ref引用传递示例" class="headerlink" title="ref引用传递示例"></a>ref引用传递示例</h6><pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">// 定义引用传递方法
-private void Swap(ref int num1, ref int num2) // 交换数据的方法
-&#123;
-    int temp; // 定义用于交换变量值得中间变量
-    temp = num1; // 将num1值赋值给中间变量temp
-    num1 = num2; // 将num2赋值给num1
-    num2 = temp; // 将中间变量存储的num1的值赋值给num2
-&#125;
-</code></pre>
-<pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">int num1 = 1;
-int num2 = 2;
-Console.WriteLine("此实例演示引用传递参数");
-Console.WriteLine("交换之前的字符串顺序为：num1-&#123;0&#125;, num2-&#123;1&#125;", num1, num2); // 1   2
-Program objProgram = new Program();
-objProgram.Swap(ref num1, ref num2);
-Console.WriteLine("交换之后的字符串顺序为：num1-&#123;0&#125;, num2-&#123;1&#125;", num1, num2); // 2   1
-Console.ReadKey();
-</code></pre>
-<p>ref引用传递交换了两个变量的值，在使用ref方式传递参数时，定义和调用时都要使用ref关键字。</p>
-<h6 id="out引用传递"><a href="#out引用传递" class="headerlink" title="out引用传递"></a>out引用传递</h6><ul>
-<li>out关键字与ref关键字类似，也是声明引用传递参数的，但ref要求变量必须在传递之前对实在参数初始化。</li>
-<li>尽管作为out参数传递的变量不需要在传递之前初始化，但需要调用方法在方法返回之前对out传递的参数赋值。</li>
-<li>当希望方法返回多个值时，可以使用out方式，使用out参数的方法可以将变量用做返回类型，还可以将一个或多个对象作为out参数返回给调用方法。</li>
+<ul>
+<li>Symbol.keyFor 方法返回一个已登记的 Symbol 类型值的 key<br>````javascript<br>var s1 = Symbol.for(“foo”);<br>console.log(Symbol.keyFor(s1)); // “foo”</li>
 </ul>
-<p>下面的例子使用out在一个方法调用中返回3个值。请注意，第3个参数所赋的值为null，这样能允许方法有选择地返回值。</p>
-<pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">namespace PointClass
-&#123;
-    class Program
-    &#123;
-        static void Main(string[] args)
-        &#123;
-            int value;
-            string str1, str2;
-            Console.WriteLine("此实例演示out引用传递");
-            Method(out int value, out string str1, out string str2);
-            Console.WriteLine("参数value的值是：" + value); // 参数value的值是：44
-            Console.WriteLine("参数str1的值是：" + str1); // 参数str1的值是：I've been returned!
-            Console.WriteLine("参数str2的值是：" + str2); // 参数str2的值是：
-            Console.ReadKey();
-        &#125;
+<p>var s2 = Symbol(“foo”);<br>console.log(Symbol.keyFor(s2) ); // undefined</p>
+<pre><code>- 使用  
 
-        static void Method(out int i, out string s1, out string s2) // 定义静态方法使用out进行参数的传递
-        &#123;
-            i = 44;
-            s1 = "I've been returned!";
-            s2 = null;
-        &#125;
-    &#125;
-&#125;
+当需要区分形状，正方形，圆形，菱形 会使用
+````javascript
+const shape = &#123; triangle: ‘triangle’, circle: ‘circle’&#125;
 </code></pre>
+<p>不优雅，可以使用:</p>
+<p>````javascript<br>const shape = { triangle: Symbol(), circle: Symbol()}<br>```</p>
 
                 
             </div>
@@ -645,7 +557,7 @@ Console.ReadKey();
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://jeayk.github.io/2020/04/10/c-xue-xi-bi-ji-lei-yu-dui-xiang-xiang-guan-bi-ji-2-du-zi-c-cong-ru-men-dao-jing-tong-di-2-ban/">https://jeayk.github.io/2020/04/10/c-xue-xi-bi-ji-lei-yu-dui-xiang-xiang-guan-bi-ji-2-du-zi-c-cong-ru-men-dao-jing-tong-di-2-ban/</a>
+                    <a href="https://jeayk.github.io/2022/01/07/3-js-symbol-lei-xing-zai-shi-ji-kai-fa-zhong-de-ying-yong/">https://jeayk.github.io/2022/01/07/3-js-symbol-lei-xing-zai-shi-ji-kai-fa-zhong-de-ying-yong/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -683,8 +595,8 @@ Console.ReadKey();
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-                                    <span class="chip bg-color">C#学习笔记</span>
+                                <a href="/tags/Javascript%E5%9F%BA%E7%A1%80/">
+                                    <span class="chip bg-color">Javascript基础</span>
                                 </a>
                             
                         </div>
@@ -858,17 +770,18 @@ Console.ReadKey();
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
             <div class="card">
-                <a href="/2020/04/10/c-xue-xi-bi-ji-lei-yu-dui-xiang-xiang-guan-bi-ji-du-zi-c-cong-ru-men-dao-jing-tong-di-2-ban/">
+                <a href="/2022/01/07/3-js-symbol-lei-xing-zai-shi-ji-kai-fa-zhong-de-ying-yong/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="C#学习笔记-类与对象相关笔记（读自C#从入门到精通 第2版）">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="3. js Symbol类型在实际开发中的应用">
                         
-                        <span class="card-title">C#学习笔记-类与对象相关笔记（读自C#从入门到精通 第2版）</span>
+                        <span class="card-title">3. js Symbol类型在实际开发中的应用</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -878,26 +791,27 @@ Console.ReadKey();
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-04-10
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-01-07
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E8%AF%BB%E8%87%AAC-%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A-%E7%AC%AC2%E7%89%88/" class="post-category">
-                                    读自C#从入门到精通 第2版
+                            <a href="/categories/JS%E5%8F%98%E9%87%8F%E4%B8%8E%E7%B1%BB%E5%9E%8B/" class="post-category">
+                                    JS变量与类型
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-                        <span class="chip bg-color">C#学习笔记</span>
+                    <a href="/tags/Javascript%E5%9F%BA%E7%A1%80/">
+                        <span class="chip bg-color">Javascript基础</span>
                     </a>
                     
                 </div>
@@ -911,13 +825,13 @@ Console.ReadKey();
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/04/10/c-xue-xi-bi-ji-jie-gou-yu-lei-xiang-guan-bi-ji-du-zi-c-cong-ru-men-dao-jing-tong-di-2-ban/">
+                <a href="/2022/01/05/2-js-dui-xiang-de-di-ceng-shu-ju-jie-gou/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="C#学习笔记-结构与类相关笔记（读自C#从入门到精通 第2版）">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="2. js对象的底层数据结构">
                         
-                        <span class="card-title">C#学习笔记-结构与类相关笔记（读自C#从入门到精通 第2版）</span>
+                        <span class="card-title">2. js对象的底层数据结构</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -928,14 +842,14 @@ Console.ReadKey();
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-10
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-01-05
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E8%AF%BB%E8%87%AAC-%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A-%E7%AC%AC2%E7%89%88/" class="post-category">
-                                    读自C#从入门到精通 第2版
+                            <a href="/categories/JS%E5%8F%98%E9%87%8F%E4%B8%8E%E7%B1%BB%E5%9E%8B/" class="post-category">
+                                    JS变量与类型
                                 </a>
                             
                             
@@ -945,8 +859,8 @@ Console.ReadKey();
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-                        <span class="chip bg-color">C#学习笔记</span>
+                    <a href="/tags/Javascript%E5%9F%BA%E7%A1%80/">
+                        <span class="chip bg-color">Javascript基础</span>
                     </a>
                     
                 </div>
