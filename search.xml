@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>4. js中的变量在内存中的具体存储形式</title>
+      <link href="/2022/01/11/4-js-zhong-de-bian-liang-zai-nei-cun-zhong-de-ju-ti-cun-chu-xing-shi/"/>
+      <url>/2022/01/11/4-js-zhong-de-bian-liang-zai-nei-cun-zhong-de-ju-ti-cun-chu-xing-shi/</url>
+      
+        <content type="html"><![CDATA[<h4 id="栈内存和堆内存"><a href="#栈内存和堆内存" class="headerlink" title="栈内存和堆内存"></a>栈内存和堆内存</h4><p>javascript中的变量分为基本类型和引用类型。  </p><ul><li>基本类型是保存在栈内存中的简单数据段，它们的值都有固定的大小，保存在栈空间，按值访问。</li><li>引用类型是保存在堆内存中的对象，值大小不固定，栈内存中存放的该对象的访问地址指向堆内存中的对象，javascript不允许直接访问堆内存中的位置，因此操作对象时，实际上操作的事对象的引用。  <h5 id="结合代码与图理解"><a href="#结合代码与图理解" class="headerlink" title="结合代码与图理解"></a>结合代码与图理解</h5><pre><code>let a1 = 0; // 栈内存let a2 = &quot;this is string&quot; // 栈内存let a3 = null; // 栈内存let b = &#123; x: 10 &#125;; // 变量b存在于栈中，&#123; x: 10 &#125;作为对象存在于堆中let c = [1, 2, 3]; // 变量c存在于栈中，[1, 2, 3]作为对象存在于堆中</code></pre><h5 id="访问堆内存中的引用数据类型"><a href="#访问堆内存中的引用数据类型" class="headerlink" title="访问堆内存中的引用数据类型:"></a>访问堆内存中的引用数据类型:</h5></li><li>访问栈内存，获取该对象的地址引用</li><li>通过地址，从堆内存中获取需要的数据<h5 id="基本类型发生复制行为"><a href="#基本类型发生复制行为" class="headerlink" title="基本类型发生复制行为"></a>基本类型发生复制行为</h5><pre><code>let a = 20;let b = a;b = 30;console.log(a); // 20</code></pre>在栈内存中的数据发生复制行为时，系统会自动为新的变量分配一个新值，最后这些变量都是相互独立互不影响的。<h5 id="引用类型发生复制行为"><a href="#引用类型发生复制行为" class="headerlink" title="引用类型发生复制行为"></a>引用类型发生复制行为</h5><pre><code>let a = &#123; x: 10, y: 20 &#125;let b = a;b.x = 5;console.log(a.x); // 5</code></pre></li><li>引用类型的复制，同样为新的变量b分配一个新的值，保存在栈内存中，不同的是，这个值仅仅是引用类型的一个地址指针</li><li>他们两个指向同一个值，也就是地址指针相同，在堆内存中访问到的具体对象实际上是同一个,因此改变b.x时，a.x也发生了变化，这就是引用类型的特性</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> JS变量与类型 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Javascript基础 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>3. js Symbol类型在实际开发中的应用</title>
       <link href="/2022/01/07/3-js-symbol-lei-xing-zai-shi-ji-kai-fa-zhong-de-ying-yong/"/>
       <url>/2022/01/07/3-js-symbol-lei-xing-zai-shi-ji-kai-fa-zhong-de-ying-yong/</url>

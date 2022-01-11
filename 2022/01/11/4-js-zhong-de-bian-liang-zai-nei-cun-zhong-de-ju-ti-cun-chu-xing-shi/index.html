@@ -4,9 +4,11 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="C#学习笔记-继承相关笔记（读自C#从入门到精通 第2版）, 积跬步以至千里">
-    <meta name="description" content="继承的定义与使用继承是软件复用的一种形式。使用继承可以复用现有类的数据和行为，为其赋予新功能而创建出新类。复用能节省程序开发的时间，能重用经过实践检验和调试的高质量代码，提高系统的质量。
-在现有类（称为直接基类、父类）上建立新类（称为派生类">
+    <meta name="keywords" content="4. js中的变量在内存中的具体存储形式, 积跬步以至千里">
+    <meta name="description" content="栈内存和堆内存javascript中的变量分为基本类型和引用类型。  
+
+基本类型是保存在栈内存中的简单数据段，它们的值都有固定的大小，保存在栈空间，按值访问。
+引用类型是保存在堆内存中的对象，值大小不固定，栈内存中存放的该对象的访问地址指">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +20,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>C#学习笔记-继承相关笔记（读自C#从入门到精通 第2版） | 积跬步以至千里</title>
+    <title>4. js中的变量在内存中的具体存储形式 | 积跬步以至千里</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -310,12 +312,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">C#学习笔记-继承相关笔记（读自C#从入门到精通 第2版）</h1>
+                    <h1 class="description center-align post-title">4. js中的变量在内存中的具体存储形式</h1>
                 </div>
             </div>
         </div>
@@ -431,8 +433,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-                                <span class="chip bg-color">C#学习笔记</span>
+                            <a href="/tags/Javascript%E5%9F%BA%E7%A1%80/">
+                                <span class="chip bg-color">Javascript基础</span>
                             </a>
                         
                     </div>
@@ -443,8 +445,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E8%AF%BB%E8%87%AAC-%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A-%E7%AC%AC2%E7%89%88/" class="post-category">
-                                读自C#从入门到精通 第2版
+                            <a href="/categories/JS%E5%8F%98%E9%87%8F%E4%B8%8E%E7%B1%BB%E5%9E%8B/" class="post-category">
+                                JS变量与类型
                             </a>
                         
                     </div>
@@ -456,28 +458,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2020-04-10
+                    2022-01-11
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2022-01-04
+                    2022-01-11
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    1.9k
+                    480
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    8 Min
+                    1 Min
                 </div>
                 
 
@@ -497,272 +499,31 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h5 id="继承的定义与使用"><a href="#继承的定义与使用" class="headerlink" title="继承的定义与使用"></a>继承的定义与使用</h5><p>继承是软件复用的一种形式。使用继承可以复用现有类的数据和行为，为其赋予新功能而创建出新类。复用能节省程序开发的时间，能重用经过实践检验和调试的高质量代码，提高系统的质量。</p>
-<p>在现有类（称为直接基类、父类）上建立新类（称为派生类、子类）的处理过程称为继承。<br>派生类能自动获得基类的除了构造函数和析构函数以外的所有成员，可以在派生类中添加新的属性和方法扩展其功能。</p>
-<pre><code>// 语法：
-&lt;访问修饰符&gt; class派生类名: 基类名
-&#123;
-    // 类的代码
-&#125;
-</code></pre>
-<h6 id="Person-cs（Person类）"><a href="#Person-cs（Person类）" class="headerlink" title="Person.cs（Person类）"></a>Person.cs（Person类）</h6><pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace InheritDemo
-&#123;
-    public class Person
-    &#123;
-        private string _id; // 声明身份证号码字段 _id
-        public string Id // 声明身份证号码属性ID
-        &#123;
-            get &#123; return _id; &#125; // get访问器，获取身份证号码字段值
-            set &#123; _id = value; &#125; // set访问器，设置身份证号码字段值
-        &#125;
-        private string _name; // 声明姓名字段
-        public string Name // 声明姓名属性
-        &#123;
-            get &#123; return _name; &#125; // get访问器，获取姓名字段值
-            set &#123; _name = value; &#125; // set访问器，设置身份证号码字段值
-        &#125;
-        private int _age; // 声明年龄字段
-        public int Age // 声明年龄属性
-        &#123;
-            get &#123; return _age; &#125;
-            set &#123; _age = value; &#125;
-        &#125;
-        private string _gender; // 声明性别字段
-        public string Gender // 声明性别属性
-        &#123;
-            get &#123; return _gender; &#125;
-            set &#123; _gender = value; &#125;
-        &#125;
-
-        public void Display() // 基类的公有方法，用于输出Person对象的姓名、年龄与性别信息
-        &#123;
-            Console.WriteLine("&#123;0&#125;是&#123;1&#125;性，年龄为&#123;2&#125;", this._name, this._gender, this._age);
-        &#125;
-
-        public Person() // 定义无参构造函数
-        &#123; &#125;
-
-        public Person(string name, int age, string gender) // 定义有参构造函数
-        &#123;
-            _name = name;
-            _age = age;
-            _gender = gender;
-        &#125;
-    &#125;
-
-    public class Student: Person// 创建派生类，派生自Person类
-    &#123;
-        // 定义派生类自己的属性
-        private string _class; // 定义表示学生班级的字段_class
-        public string Class // 定义设置和获取班级信息的属性Class
-        &#123;
-            get &#123; return _class; &#125;
-            set &#123; _class = value; &#125;
-        &#125;
-        private string _department; // 定义学生所属系的字段
-        public string Deparement // 定义学生所属系的属性
-        &#123;
-            get &#123; return _department; &#125;
-            set &#123; _department = value; &#125;
-        &#125;
-        private string _no; // 定义学生学号
-        public string NO // 定义学号的属性
-        &#123;
-            get &#123; return _no; &#125;
-            set &#123; _no = value; &#125;
-        &#125;
-        public Student() // 无参构造函数
-        &#123; &#125;
-        // 定义派生类独有的方法Study，表示学生负有学习任务
-        public void Study()
-        &#123;
-            Console.WriteLine("好好学习，天天向上！");
-        &#125;
-    &#125;
-&#125;
-</code></pre>
-<h6 id="Teacher-cs（Teacher类）"><a href="#Teacher-cs（Teacher类）" class="headerlink" title="Teacher.cs（Teacher类）"></a>Teacher.cs（Teacher类）</h6><pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace InheritDemo
-&#123;
-    class Teacher: Person
-    &#123;
-        private string _tid; // 声明字段教师编号
-        public string Tid // 定义教师编号属性
-        &#123;
-            get &#123; return _tid; &#125;
-            set &#123; _tid = value; &#125;
-        &#125;
-        private string _course; // 声明课程字段
-        public string Course // 定义课程属性
-        &#123;
-            get &#123; return _course; &#125;
-            set &#123; _course = value; &#125;
-        &#125;
-
-        // 教师派生类的方法
-        public void Teaching()
-        &#123;
-            Console.WriteLine("正在上课中...");
-        &#125;
-    &#125;
-
-    class DoubleStudent: Student
-    &#123;
-        private string _sndBachelor; // 声明第二学位名称字段
-        public string SndBachelor // 声明第二学位属性
-        &#123;
-            get &#123; return _sndBachelor; &#125;
-            set &#123; _sndBachelor = value; &#125;
-        &#125;
-        public DoubleStudent() // 无参构造函数
-        &#123; &#125;
-        public void UsaBachelor() // 定义方法
-        &#123;
-            Console.WriteLine("正在攻读xxx大学学位");
-        &#125;
-    &#125;
-&#125;
-</code></pre>
-<h6 id="Program-cs"><a href="#Program-cs" class="headerlink" title="Program.cs"></a>Program.cs</h6><pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace InheritDemo
-&#123;
-    class Program
-    &#123;
-        static void Main(string[] args)
-        &#123;
-            Console.WriteLine("Person类：");
-            Person objPerson = new Person("张三", 18, "男");
-            objPerson.Display(); // 调用Display显式对象信息     -->     张三是男性，年龄为18
-
-            Console.WriteLine("Student类：");
-            Student objStudent = new Student()
-            &#123;
-                Name = "李四",
-                Age = 18,
-                Gender = "女"
-            &#125;;
-            objStudent.Display(); // 访问基类的Display方法     -->     李四是女性，年龄为18
-            objStudent.Study(); // 调用派生类方法      -->     好好学习，天天向上！
-            Console.ReadKey();
-
-            Console.WriteLine("Teacher类");
-            Teacher objTeacher = new Teacher()
-            &#123;
-                Name = "Mary",
-                Age = 26,
-                Gender = "女"
-            &#125;;
-            objTeacher.Display(); // 访问基类的Display方法
-            objTeacher.Teaching(); // 访问Teacher类的方法
-
-            Console.WriteLine("DoubleStudent类");
-            DoubleStudent objSpecial = new DoubleStudent()
-            &#123;
-                Name = "Bliss",
-                Age = 22,
-                Gender = "女"
-            &#125;;
-            objSpecial.Display(); // 访问Person类方法
-            objSpecial.Study(); // 访问Student类方法
-            objSpecial.UsaBachelor(); // 调用DoubleStudent类方法
-            Console.ReadKey();
-        &#125;
-    &#125;
-&#125;
-</code></pre>
-<h6 id="继承的特性"><a href="#继承的特性" class="headerlink" title="继承的特性"></a>继承的特性</h6><p>C#中的继承主要有以下3种特性：</p>
+                <h4 id="栈内存和堆内存"><a href="#栈内存和堆内存" class="headerlink" title="栈内存和堆内存"></a>栈内存和堆内存</h4><p>javascript中的变量分为基本类型和引用类型。  </p>
 <ul>
-<li>继承的可传递性<br>如果C从B中派生，B又从A中派生，那么C不仅继承了B中声明的成员，同样也继承了A中的成员。<br>如示例代码中DoubleStudent类的基类是Student，Student的基类是Person，因此DoubleStudent类可以继承Person类中的成员。<br>派生类是对基类的扩展，在派生类中可以添加新成员，但不能去除已经继承的成员。</li>
-<li>继承的单一性<br>继承的单一性是指派生类只能从一个基类中继承，不能同时继承多个基类。C#不支持类的多重继承，也就是说儿子只能有一个亲生父亲，不能同时拥有多个亲生父亲。但可以通过接口实现多重继承。（具体后续学习研究）</li>
-<li>继承中的访问修饰符</li>
+<li>基本类型是保存在栈内存中的简单数据段，它们的值都有固定的大小，保存在栈空间，按值访问。</li>
+<li>引用类型是保存在堆内存中的对象，值大小不固定，栈内存中存放的该对象的访问地址指向堆内存中的对象，javascript不允许直接访问堆内存中的位置，因此操作对象时，实际上操作的事对象的引用。  <h5 id="结合代码与图理解"><a href="#结合代码与图理解" class="headerlink" title="结合代码与图理解"></a>结合代码与图理解</h5><pre><code>let a1 = 0; // 栈内存
+let a2 = &quot;this is string&quot; // 栈内存
+let a3 = null; // 栈内存
+let b = &#123; x: 10 &#125;; // 变量b存在于栈中，&#123; x: 10 &#125;作为对象存在于堆中
+let c = [1, 2, 3]; // 变量c存在于栈中，[1, 2, 3]作为对象存在于堆中
+</code></pre>
+<h5 id="访问堆内存中的引用数据类型"><a href="#访问堆内存中的引用数据类型" class="headerlink" title="访问堆内存中的引用数据类型:"></a>访问堆内存中的引用数据类型:</h5></li>
+<li>访问栈内存，获取该对象的地址引用</li>
+<li>通过地址，从堆内存中获取需要的数据<h5 id="基本类型发生复制行为"><a href="#基本类型发生复制行为" class="headerlink" title="基本类型发生复制行为"></a>基本类型发生复制行为</h5><pre><code>let a = 20;
+let b = a;
+b = 30;
+console.log(a); // 20
+</code></pre>
+在栈内存中的数据发生复制行为时，系统会自动为新的变量分配一个新值，最后这些变量都是相互独立互不影响的。<h5 id="引用类型发生复制行为"><a href="#引用类型发生复制行为" class="headerlink" title="引用类型发生复制行为"></a>引用类型发生复制行为</h5><pre><code>let a = &#123; x: 10, y: 20 &#125;
+let b = a;
+b.x = 5;
+console.log(a.x); // 5
+</code></pre>
+</li>
+<li>引用类型的复制，同样为新的变量b分配一个新的值，保存在栈内存中，不同的是，这个值仅仅是引用类型的一个地址指针</li>
+<li>他们两个指向同一个值，也就是地址指针相同，在堆内存中访问到的具体对象实际上是同一个,因此改变b.x时，a.x也发生了变化，这就是引用类型的特性</li>
 </ul>
-<table>
-<thead>
-<tr>
-<th align="center">访问性修饰符</th>
-<th align="center">类内部</th>
-<th align="center">派生类</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">public（公有访问）</td>
-<td align="center">访问不受限制</td>
-<td align="center">不受限制</td>
-</tr>
-<tr>
-<td align="center">protected（保护访问）</td>
-<td align="center">访问仅限于包含类或从包含类派生的类型（本类成员和子类可以访问，实例不能访问）</td>
-<td align="center">可以访问</td>
-</tr>
-<tr>
-<td align="center">internal（内部访问）</td>
-<td align="center">访问仅限于当前项目</td>
-<td align="center">可以访问</td>
-</tr>
-<tr>
-<td align="center">protected internal（内部保护访问）</td>
-<td align="center">访问从包含类派生的当前项目或类型（仅限于本项目或子类）</td>
-<td align="center">可以访问</td>
-</tr>
-<tr>
-<td align="center">private（私有访问）</td>
-<td align="center">访问仅限于包含类型（仅限于本类成员，子类、实例都不能访问）</td>
-<td align="center">不可访问</td>
-</tr>
-</tbody></table>
-<h5 id="this和base关键字"><a href="#this和base关键字" class="headerlink" title="this和base关键字"></a>this和base关键字</h5><p>基类中只有被public、protected、internal修饰的成员才可以被访问，这些成员包括任何基类的字段、属性、方法和索引器，但是基类的构造函数和析构函数是不能被继承的。如果要继承基类的构造函数，必须使用base关键字来实现。</p>
-<p>C#中的base关键字代表基类，使用base关键字可以调用基类的构造函数、属性和方法。<br><strong>语法：派生类构造函数: base(参数列表)</strong></p>
-<pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">// 给上述示例Student类添加一个有参构造函数
-public Student(string name, int age, string gender):base(name, age, gender) // 构造函数
-&#123;
-    // 通过base(name, age, gender)调用基类的构造函数
-&#125;
-</code></pre>
-<pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">// 使用base关键字调用基类方法语法
-base: 基类方法
-// 示例:
-public Student(string name, int age, string gender) : base(name, age, gender) // 调用基类的构造函数
-&#123; &#125;
-</code></pre>
-<p>相对于base来说，this关键字是引用类的当前实例。</p>
-<pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">public Person(string name, int age, string gender) // 构造函数
-&#123;
-    this._name = name;
-    this._age = age;
-    this._gender = gender;
-&#125;
-</code></pre>
-<p>派生类继承基类的属性和方法，从而使创建派生类变得简单，可实现代码的重用。</p>
-<p><strong>基类对象可以引用派生类对象，也就是派生类对象可以赋值给基类对象变量。</strong><br>对这个特性可以这样理解：儿子继承于父亲，父亲也可以代表儿子处理事务，这就实现了基类对象引用派生类对象。</p>
-<pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">class Father()&#123;...&#125;
-class Son: Father&#123;
-...
-Public void CallDaddy() // 派生类方法
-&#123;&#125;
-&#125;
-</code></pre>
-<pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">Son objSon = new Son();
-Father objFather = new Father();
-objFather = objSon; // 派生类对象objSon赋值给基类对象 objFather 
-((Son)objFather).CallDaddy(); // 基类对象调用派生类的方法
-</code></pre>
-<p>父类对象引用子类实例时，注意要把父类型转为子类型，否则就会出错。</p>
 
                 
             </div>
@@ -789,7 +550,7 @@ objFather = objSon; // 派生类对象objSon赋值给基类对象 objFather
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://jeayk.github.io/2020/04/10/c-xue-xi-bi-ji-ji-cheng-xiang-guan-bi-ji-du-zi-c-cong-ru-men-dao-jing-tong-di-2-ban/">https://jeayk.github.io/2020/04/10/c-xue-xi-bi-ji-ji-cheng-xiang-guan-bi-ji-du-zi-c-cong-ru-men-dao-jing-tong-di-2-ban/</a>
+                    <a href="https://jeayk.github.io/2022/01/11/4-js-zhong-de-bian-liang-zai-nei-cun-zhong-de-ju-ti-cun-chu-xing-shi/">https://jeayk.github.io/2022/01/11/4-js-zhong-de-bian-liang-zai-nei-cun-zhong-de-ju-ti-cun-chu-xing-shi/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -827,8 +588,8 @@ objFather = objSon; // 派生类对象objSon赋值给基类对象 objFather
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-                                    <span class="chip bg-color">C#学习笔记</span>
+                                <a href="/tags/Javascript%E5%9F%BA%E7%A1%80/">
+                                    <span class="chip bg-color">Javascript基础</span>
                                 </a>
                             
                         </div>
@@ -1002,66 +763,18 @@ objFather = objSon; // 派生类对象objSon赋值给基类对象 objFather
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
             <div class="card">
-                <a href="/2020/04/10/c-xue-xi-bi-ji-jie-gou-yu-lei-xiang-guan-bi-ji-du-zi-c-cong-ru-men-dao-jing-tong-di-2-ban/">
+                <a href="/2022/01/11/4-js-zhong-de-bian-liang-zai-nei-cun-zhong-de-ju-ti-cun-chu-xing-shi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="C#学习笔记-结构与类相关笔记（读自C#从入门到精通 第2版）">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="4. js中的变量在内存中的具体存储形式">
                         
-                        <span class="card-title">C#学习笔记-结构与类相关笔记（读自C#从入门到精通 第2版）</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-04-10
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E8%AF%BB%E8%87%AAC-%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A-%E7%AC%AC2%E7%89%88/" class="post-category">
-                                    读自C#从入门到精通 第2版
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-                        <span class="chip bg-color">C#学习笔记</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                Current&nbsp;<i class="far fa-dot-circle"></i>
-            </div>
-            <div class="card">
-                <a href="/2020/04/10/c-xue-xi-bi-ji-ji-cheng-xiang-guan-bi-ji-du-zi-c-cong-ru-men-dao-jing-tong-di-2-ban/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="C#学习笔记-继承相关笔记（读自C#从入门到精通 第2版）">
-                        
-                        <span class="card-title">C#学习笔记-继承相关笔记（读自C#从入门到精通 第2版）</span>
+                        <span class="card-title">4. js中的变量在内存中的具体存储形式</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1072,14 +785,14 @@ objFather = objSon; // 派生类对象objSon赋值给基类对象 objFather
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-10
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-01-11
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E8%AF%BB%E8%87%AAC-%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A-%E7%AC%AC2%E7%89%88/" class="post-category">
-                                    读自C#从入门到精通 第2版
+                            <a href="/categories/JS%E5%8F%98%E9%87%8F%E4%B8%8E%E7%B1%BB%E5%9E%8B/" class="post-category">
+                                    JS变量与类型
                                 </a>
                             
                             
@@ -1090,8 +803,57 @@ objFather = objSon; // 派生类对象objSon赋值给基类对象 objFather
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-                        <span class="chip bg-color">C#学习笔记</span>
+                    <a href="/tags/Javascript%E5%9F%BA%E7%A1%80/">
+                        <span class="chip bg-color">Javascript基础</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                Next&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/01/07/3-js-symbol-lei-xing-zai-shi-ji-kai-fa-zhong-de-ying-yong/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="3. js Symbol类型在实际开发中的应用">
+                        
+                        <span class="card-title">3. js Symbol类型在实际开发中的应用</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-01-07
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/JS%E5%8F%98%E9%87%8F%E4%B8%8E%E7%B1%BB%E5%9E%8B/" class="post-category">
+                                    JS变量与类型
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Javascript%E5%9F%BA%E7%A1%80/">
+                        <span class="chip bg-color">Javascript基础</span>
                     </a>
                     
                 </div>
