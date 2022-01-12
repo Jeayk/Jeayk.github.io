@@ -4,10 +4,9 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="C#学习笔记--抽象类与密封类（读自C#从入门到精通 第2版）, 积跬步以至千里">
-    <meta name="description" content="继承是面向对象设计理论的基石，抽象理论和方法是继承理论的顶梁柱。
-抽象类与抽象方法用来描述共性的类叫做抽象类，抽象类中不考虑具体实现，只确定必须具有的行为，即确定抽象方法。
-如教师的任务是教学，具体教什么，如何教，每个教师都有自己独特的一面">
+    <meta name="keywords" content="5. js基本类型的装箱与拆箱, 积跬步以至千里">
+    <meta name="description" content="装箱所谓装箱，就是把基本类型转变为对应的对象。装箱分为隐式和显示。
+隐式装箱每当读取一个基本类型的值时，后台会创建一个该基本类型所对应的对象。在这个基本类型上调用方法，其实是在这个基本类型对象上调用方法。这个基本类型的对象是临时的，它只存在">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,7 +18,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>C#学习笔记--抽象类与密封类（读自C#从入门到精通 第2版） | 积跬步以至千里</title>
+    <title>5. js基本类型的装箱与拆箱 | 积跬步以至千里</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -311,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">C#学习笔记--抽象类与密封类（读自C#从入门到精通 第2版）</h1>
+                    <h1 class="description center-align post-title">5. js基本类型的装箱与拆箱</h1>
                 </div>
             </div>
         </div>
@@ -432,8 +431,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-                                <span class="chip bg-color">C#学习笔记</span>
+                            <a href="/tags/Javascript%E5%9F%BA%E7%A1%80/">
+                                <span class="chip bg-color">Javascript基础</span>
                             </a>
                         
                     </div>
@@ -444,8 +443,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E8%AF%BB%E8%87%AAC-%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A-%E7%AC%AC2%E7%89%88/" class="post-category">
-                                读自C#从入门到精通 第2版
+                            <a href="/categories/JS%E5%8F%98%E9%87%8F%E4%B8%8E%E7%B1%BB%E5%9E%8B/" class="post-category">
+                                JS变量与类型
                             </a>
                         
                     </div>
@@ -457,28 +456,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2020-04-15
+                    2022-01-12
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2022-01-04
+                    2022-01-12
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    930
+                    584
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    3 Min
+                    2 Min
                 </div>
                 
 
@@ -498,75 +497,45 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p><strong>继承是面向对象设计理论的基石，抽象理论和方法是继承理论的顶梁柱。</strong></p>
-<h4 id="抽象类与抽象方法"><a href="#抽象类与抽象方法" class="headerlink" title="抽象类与抽象方法"></a>抽象类与抽象方法</h4><p>用来描述共性的类叫做抽象类，抽象类中不考虑具体实现，只确定必须具有的行为，即确定抽象方法。</p>
-<p>如教师的任务是教学，具体教什么，如何教，每个教师都有自己独特的一面，对教学这个动作就可以提取出来作为抽象方法，而不考虑具体实现内容。</p>
-<p>包含抽象方法的类就是抽象类，抽象类和抽象方法声明使用<strong>abstract</strong>关键字。</p>
-<pre><code>// 语法
-&lt;访问修饰符&gt; abstract class 抽象类名
-&#123;
-    // 类体
-    &lt;访问修饰符&gt; abstract 返回类型方法(); // 抽象方法
-&#125;
+                <h4 id="装箱"><a href="#装箱" class="headerlink" title="装箱"></a>装箱</h4><p>所谓装箱，就是把基本类型转变为对应的对象。装箱分为隐式和显示。</p>
+<h5 id="隐式装箱"><a href="#隐式装箱" class="headerlink" title="隐式装箱"></a>隐式装箱</h5><p>每当读取一个基本类型的值时，后台会创建一个该基本类型所对应的对象。在这个基本类型上调用方法，其实是在这个基本类型对象上调用方法。这个基本类型的对象是临时的，它只存在于方法调用那一行代码执行的瞬间，执行方法后立刻被销毁。具体到代码如下：</p>
+<pre><code>num.toFixed(2); // &#39;123.00&#39;
+//上方代码在后台的真正步骤为
+var c = new Number(123);
+c.toFixed(2);
+c = null;
 </code></pre>
-<pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">// 示例
-public abstract class Test
-&#123;
-    public abstract void Display(); // 抽象方法 --> Display()后面不能加 &#123;&#125;, 声明了abstract无法声明主体
-&#125;
-</code></pre>
-<h4 id="实现抽象方法"><a href="#实现抽象方法" class="headerlink" title="实现抽象方法"></a>实现抽象方法</h4><p><strong>C#中通过方法重写来实现抽象方法。</strong></p>
+<p>当我们访问 num 时，要从内存中读取这个数字的值，此时访问过程处于读取模式。在读取模式中，后台进行了三步处理：</p>
 <ul>
-<li>当一个抽象基类派生一个派生类时，派生类将继承基类的所有特征，重新实现所有的抽象方法。</li>
-<li>在派生类中实现基类的抽象方法，是使用override关键字来重写基类方法。<br>```csharp<br>using System;<br>using System.Collections.Generic;<br>using System.Linq;<br>using System.Text;<br>using System.Threading.Tasks;</li>
+<li>创建一个 Number 类型的实例</li>
+<li>在实例上调用方法</li>
+<li>销毁实例<h5 id="显式装箱"><a href="#显式装箱" class="headerlink" title="显式装箱"></a>显式装箱</h5>通过内置对象 Boolean、Object、String 等可以对基本类型进行显示装箱。<pre><code>var obj = new String(&#39;123&#39;);
+</code></pre>
+<h4 id="拆箱"><a href="#拆箱" class="headerlink" title="拆箱"></a>拆箱</h4>拆箱与装箱相反，把对象转变为基本类型的值。拆箱过程内部调用了抽象操作 ToPrimitive 。该操作接受两个参数，第一个参数是要转变的对象，第二个参数 PreferredType 是对象被期待转成的类型。第二个参数不是必须的，默认该参数为 number，即对象被期待转为数字类型。有些操作如 String(obj) 会传入 PreferredType 参数。有些操作如 obj + “ “ 不会传入 PreferredType。  </li>
 </ul>
-<p>namespace AbstractTest<br>{<br>    class Program<br>    {<br>        static void Main(string[] args)<br>        {<br>            Manager objManager = new Manager(“jay”);<br>            objManager.Display(); // name: jay<br>            Console.ReadKey();<br>        }<br>    }</p>
-<pre><code>public abstract class Employee // 声明抽象类
-&#123;
-    public abstract void Display(); // 抽象方法Display()
+<p>具体转换过程是这样的。默认情况下，ToPrimitive 先检查对象是否有 valueOf 方法，如果有则再检查 valueOf 方法是否有基本类型的返回值。如果没有 valueOf 方法或 valueOf 方法没有返回值，则调用 toString 方法。如果 toString 方法也没有返回值，产生 TypeError 错误。  </p>
+<p>PreferredType 影响 valueOf 与 toString 的调用顺序。如果 PreferrenType 的值为 string。则先调用 toString ,再调用 valueOf。</p>
+<p>具体测试代码如下：</p>
+<pre><code>var obj = &#123;
+    valueOf: () =&gt; &#123;console.log(&quot;valueOf&quot;); return []&#125;,
+    toString: () =&gt; &#123;console.log(&quot;toString&quot;); return []&#125;
 &#125;
 
-public class Manager: Employee // 创建抽象类Employee的派生类Manager类
-&#123;
-    private string name;
-    public Manager(string name) // 构造函数实现name初始化
-    &#123;
-        this.name = name;
-    &#125;
-    public override void Display() // 重写基类Employee中的抽象方法Display()
-    &#123;
-        Console.WriteLine(&quot;name: &quot; + name);
-    &#125;
+String(obj);
+// toString
+// valueOf
+// Uncaught TypeError: Cannot convert object to primitive value
 
-&#125;
+obj + &#39;&#39;;
+// valueOf
+// toString
+// Uncaught TypeError: Cannot convert object to primitive value
+
+Number(obj);
+// valueOf
+// toString
+// Uncaught TypeError: Cannot convert object to primitive value
 </code></pre>
-<p>}</p>
-<pre><code>#### 接口、类和抽象类
-一个类可以同时继承类和接口，或者抽象类和接口，抽象类和类不能在一个类的继承列表中同时出现。
-
-如果派生类同时继承类或抽象类和接口，一定要把类或者抽象类写在前面，接口写在后面，类名和接口名之间用“,”隔开，接口没有先后顺序。每一种继承都要根据各自的规则去实现。
-
-###### 接口与抽象类的区别
-- 抽象类是一个不完全的类，需要通过派生类完善
-- 接口只是对类的约束，它仅仅承诺了类能够调用的方法
-- 一个类一次可以实现若干个接口，但一个类只能继承一个基类
-- 抽象类只需派生类实现它的抽象方法，接口要求必须实现它的所有成员
-- 在实际编程中，接口的使用要比抽象类广泛得多
-
-#### 密封类
-与抽象类相反的是，C#支持创建密封类，密封类是不能当做基类的类。其他的类不能从此类派生，从而保证了密封类的密封性和安全性。在C#中使用**sealed**关键字创建密封类。
-```csharp
-// 示例
-public sealed class Animal // 创建密封类
-&#123;
-    public Animal() // 创建构造函数
-    &#123;
-        // 函数主体
-        Console.WriteLine(&quot;Animal被构造&quot;)
-    &#125;
-&#125;
-</code></pre>
-<p>当从Animal派生派生类时，编译器会提示出现错误。设计类的时候，通常情况下是不需要将类设置为密封类的，因为密封类会让类的扩展性非常差，这个类也无法再次扩展和派生。但是出于某种目的，当程序块只需要完成某些特定的功能或者在商业上为了保密，就可以使用密封类对类进行密封，以保证类的可靠性。</p>
 
                 
             </div>
@@ -593,7 +562,7 @@ public sealed class Animal // 创建密封类
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://jeayk.github.io/2020/04/15/c-xue-xi-bi-ji-chou-xiang-lei-yu-mi-feng-lei-du-zi-c-cong-ru-men-dao-jing-tong-di-2-ban/">https://jeayk.github.io/2020/04/15/c-xue-xi-bi-ji-chou-xiang-lei-yu-mi-feng-lei-du-zi-c-cong-ru-men-dao-jing-tong-di-2-ban/</a>
+                    <a href="https://jeayk.github.io/2022/01/12/5-js-ji-ben-lei-xing-de-zhuang-xiang-yu-chai-xiang/">https://jeayk.github.io/2022/01/12/5-js-ji-ben-lei-xing-de-zhuang-xiang-yu-chai-xiang/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -631,8 +600,8 @@ public sealed class Animal // 创建密封类
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-                                    <span class="chip bg-color">C#学习笔记</span>
+                                <a href="/tags/Javascript%E5%9F%BA%E7%A1%80/">
+                                    <span class="chip bg-color">Javascript基础</span>
                                 </a>
                             
                         </div>
@@ -806,17 +775,18 @@ public sealed class Animal // 创建密封类
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
             <div class="card">
-                <a href="/2020/04/16/c-xue-xi-bi-ji-wei-tuo-yu-shi-jian-du-zi-c-cong-ru-men-dao-jing-tong-di-2-ban/">
+                <a href="/2022/01/12/5-js-ji-ben-lei-xing-de-zhuang-xiang-yu-chai-xiang/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="C#学习笔记--委托与事件（读自C#从入门到精通 第2版）">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="5. js基本类型的装箱与拆箱">
                         
-                        <span class="card-title">C#学习笔记--委托与事件（读自C#从入门到精通 第2版）</span>
+                        <span class="card-title">5. js基本类型的装箱与拆箱</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -826,26 +796,27 @@ public sealed class Animal // 创建密封类
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-04-16
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-01-12
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E8%AF%BB%E8%87%AAC-%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A-%E7%AC%AC2%E7%89%88/" class="post-category">
-                                    读自C#从入门到精通 第2版
+                            <a href="/categories/JS%E5%8F%98%E9%87%8F%E4%B8%8E%E7%B1%BB%E5%9E%8B/" class="post-category">
+                                    JS变量与类型
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-                        <span class="chip bg-color">C#学习笔记</span>
+                    <a href="/tags/Javascript%E5%9F%BA%E7%A1%80/">
+                        <span class="chip bg-color">Javascript基础</span>
                     </a>
                     
                 </div>
@@ -859,13 +830,13 @@ public sealed class Animal // 创建密封类
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/04/14/c-xue-xi-bi-ji-jie-kou-du-zi-c-cong-ru-men-dao-jing-tong-di-2-ban/">
+                <a href="/2022/01/11/4-js-zhong-de-bian-liang-zai-nei-cun-zhong-de-ju-ti-cun-chu-xing-shi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="C#学习笔记--接口（读自C#从入门到精通 第2版）">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="4. js中的变量在内存中的具体存储形式">
                         
-                        <span class="card-title">C#学习笔记--接口（读自C#从入门到精通 第2版）</span>
+                        <span class="card-title">4. js中的变量在内存中的具体存储形式</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -876,14 +847,14 @@ public sealed class Animal // 创建密封类
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-14
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-01-11
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E8%AF%BB%E8%87%AAC-%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A-%E7%AC%AC2%E7%89%88/" class="post-category">
-                                    读自C#从入门到精通 第2版
+                            <a href="/categories/JS%E5%8F%98%E9%87%8F%E4%B8%8E%E7%B1%BB%E5%9E%8B/" class="post-category">
+                                    JS变量与类型
                                 </a>
                             
                             
@@ -893,8 +864,8 @@ public sealed class Animal // 创建密封类
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-                        <span class="chip bg-color">C#学习笔记</span>
+                    <a href="/tags/Javascript%E5%9F%BA%E7%A1%80/">
+                        <span class="chip bg-color">Javascript基础</span>
                     </a>
                     
                 </div>
