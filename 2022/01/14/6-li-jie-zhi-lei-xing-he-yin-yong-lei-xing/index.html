@@ -4,11 +4,12 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="C#学习笔记-数组操作相关笔记（读自C#从入门到精通 第2版）, 积跬步以至千里">
-    <meta name="description" content="一维数组语法：数据类型[] 数组名    /   数组名 = new 数据类型[]
-int[] a   /   a = new int[5]&amp;#123;1, 2, 3, 4, 5&amp;#125;   /   a = new int[5]
-
-  ">
+    <meta name="keywords" content="6. 理解值类型和引用类型, 积跬步以至千里">
+    <meta name="description" content="值类型也称基本类型string、number、array也就是除了object以外的类型  
+例一：
+var a = &amp;#39;aaaaa&amp;#39;
+a.foo = &amp;#39;bar&amp;#39;
+console.log(a.foo) // u">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -20,7 +21,7 @@ int[] a   /   a = new int[5]&amp;#123;1, 2, 3, 4, 5&amp;#125;   /   a = new int[
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>C#学习笔记-数组操作相关笔记（读自C#从入门到精通 第2版） | 积跬步以至千里</title>
+    <title>6. 理解值类型和引用类型 | 积跬步以至千里</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -312,12 +313,12 @@ int[] a   /   a = new int[5]&amp;#123;1, 2, 3, 4, 5&amp;#125;   /   a = new int[
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">C#学习笔记-数组操作相关笔记（读自C#从入门到精通 第2版）</h1>
+                    <h1 class="description center-align post-title">6. 理解值类型和引用类型</h1>
                 </div>
             </div>
         </div>
@@ -433,8 +434,8 @@ int[] a   /   a = new int[5]&amp;#123;1, 2, 3, 4, 5&amp;#125;   /   a = new int[
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-                                <span class="chip bg-color">C#学习笔记</span>
+                            <a href="/tags/Javascript%E5%9F%BA%E7%A1%80/">
+                                <span class="chip bg-color">Javascript基础</span>
                             </a>
                         
                     </div>
@@ -445,8 +446,8 @@ int[] a   /   a = new int[5]&amp;#123;1, 2, 3, 4, 5&amp;#125;   /   a = new int[
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E8%AF%BB%E8%87%AAC-%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A-%E7%AC%AC2%E7%89%88/" class="post-category">
-                                读自C#从入门到精通 第2版
+                            <a href="/categories/JS%E5%8F%98%E9%87%8F%E4%B8%8E%E7%B1%BB%E5%9E%8B/" class="post-category">
+                                JS变量与类型
                             </a>
                         
                     </div>
@@ -458,28 +459,28 @@ int[] a   /   a = new int[5]&amp;#123;1, 2, 3, 4, 5&amp;#125;   /   a = new int[
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2020-04-10
+                    2022-01-14
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2022-01-04
+                    2022-01-14
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    1.8k
+                    927
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    7 Min
+                    3 Min
                 </div>
                 
 
@@ -499,151 +500,77 @@ int[] a   /   a = new int[5]&amp;#123;1, 2, 3, 4, 5&amp;#125;   /   a = new int[
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="一维数组"><a href="#一维数组" class="headerlink" title="一维数组"></a>一维数组</h4><p>语法：数据类型[] 数组名    /   数组名 = new 数据类型[]</p>
-<pre><code>int[] a   /   a = new int[5]&#123;1, 2, 3, 4, 5&#125;   /   a = new int[5]
+                <p>值类型也称基本类型string、number、array也就是除了object以外的类型  </p>
+<p>例一：</p>
+<pre><code>var a = &#39;aaaaa&#39;
+a.foo = &#39;bar&#39;
+console.log(a.foo) // undefined
 </code></pre>
-<pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">            string[] week = &#123; "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun" &#125;;
-            for(int i = 0; i < week.Length; i++)
-            &#123;
-                Console.WriteLine(week[i]);
-            &#125;
-            Console.ReadLine();
+<p>这是因为js内部对基本类型a进行a.foo=’bar’操作时，会在内部创建一个对应的包装类型（在上例中也就是一个String类型）的临时对象，对a的操作会有这个基本类型代理，不管是赋值还是调用成员函数（也就是变量a可以使用String的函数，也可以给自己添加属性），操作完后，这个临时对象就释放掉了（给自己添加的属性也一起释放掉了）。下次访问时，会重新创建一个新的临时对象（访问不到释放了的对象中的属性）</p>
+<p>例二：</p>
+<pre><code>a.foo = &#39;bar&#39;
+a.__proto__.foo2 = &#39;bar2&#39;
+console.log(a.foo, a.foo2) // undefined &quot;bar2&quot;
 </code></pre>
-<h4 id="二维数组"><a href="#二维数组" class="headerlink" title="二维数组"></a>二维数组</h4><p>语法：数据类型[, ]数组名</p>
-<pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">int[,] b = &#123; &#123; 1, 2, 3 &#125;, &#123; 4, 5, 6 &#125;, &#123; 7, 8, 9 &#125; &#125;;
-for (int i = 0; i < 3; i++)
-    for (int j = 0; j < 3; j++)
-        Console.WriteLine("&#123;0&#125;行&#123;1&#125;列元素为&#123;2&#125;", i, j, b[i, j]);
+<p>对__proto__操作起作用不是因为临时对象没有释放，而是临时对象是String,Sring是函数，函数的__proto__是他构造函数的prototype,跟这个函数创建出来的临时对象没关系了。这个临时对象只是引用了他的构造函数的prototype而已（构造函数的prototype不会因为临时对象被释放而被释放）。而所有同类型的对象的构造函数是同一个。也就是同一个prototype，所以可以修改到更深层。</p>
+<p>例三：</p>
+<pre><code>var a = &#39;aaaaa&#39;
+var b = a
+b = &#39;ccccc&#39;
+console.log(a, b) // aaaaa ccccc
+</code></pre>
+<p>如果是引用的话，a、b两个值应该一起改变。这是值类型，所以是两个无关的值。</p>
+<p>例四：</p>
+<pre><code>var a = &#123;name:&#39;aaa&#39;&#125;
+var b = a
+b.name = &#39;bbbbb&#39;
+console.log(a, b) // &#123;name: &quot;bbbbb&quot;&#125; &#123;name: &quot;bbbbb&quot;&#125;
+</code></pre>
+<p>引用类型，一个修改，一起改变</p>
+<p>例五：</p>
+<pre><code>var str = &#39;aaaaa&#39;
+var str1 = String(&#39;aaaaa&#39;)
+console.log(a === b) // true
 
-for (int i = 0; i < 3; i++)
-&#123;
-    for (int j = 0; j < 3; j++)
-    &#123;
-        Console.Write("&#123;0,-5&#125;", b[i, j]); // 输出数组元素，每个元素占五格，靠左对齐
-        /**
-         * 1    2    3
-        * 4    5    6
-         * 7    8    9
-         */
-    &#125;
-    Console.WriteLine();
-&#125;
-Console.ReadKey();
+var str2 = new String(&#39;aaaaa&#39;)
+str == str2
+true
+str === str2
+false
+
+console.log(typeof(str)); // string
+console.log(typeof(str1)); // string
+console.log(typeof(str2)); // object
 </code></pre>
-<h4 id="三维数组"><a href="#三维数组" class="headerlink" title="三维数组"></a>三维数组</h4><p>可以把三维数组看做一本记录本，每页都是一个表格，那么，可以使用页号、行号、列号来定位三维数组的一个元素。<br>语法：数据类型[, , ] 数组名</p>
-<h4 id="交错数组"><a href="#交错数组" class="headerlink" title="交错数组"></a>交错数组</h4><p> 交错数组可以看成是数组的数组，交错数组的每个元素又是一个数组<br> 语法：</p>
-<pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">     int[][] = new int[3][]
-     &#123;
-         new int[] &#123; 1, 2, 3 &#125;,
-         new int[] &#123; 4, 5, 6 &#125;,
-         new int[] &#123; 7, 8, 9 &#125;
-     &#125;
+<p>值一样，但是类型不一样。String,Number,Boolean在JS中是基本类型，基本类型是存储在栈(stack)内存中的,数据大小确定，内存空间大小可以分配。</p>
+<p>而引用类型是存储在堆(heap)内存中的,例如对象, 栈中存在的仅仅是一个堆的指针，这也就是我们日常遇到 a = {num:1}, b=a, b.num1 = 2, 那么a.num1 也为2 的原因。因为a,b同时指向同一个地址。</p>
+<p>前两种方式定义出来的是在栈中并且值相等，而第三种方法定义出来的仅仅是栈中的一个指针。<br>所以这也是为什么 三种方式定义出来的不一样。</p>
+<pre><code>console.log(str.length) // 5
+str.say = &#39;world&#39;
+console.log(str.say) //undefined
+ 
+ console.log(str1.lengh) // 5
+str1.say = &#39;world&#39;
+console.log(str1.say) //undefined
+ 
+console.log(str2.lengh) // 5
+str2.say = &#39;world&#39;
+console.log(str2.say) //world
+
+console.log(str.indexOf === String.prototype.indexOf) //true
+console.log(str1.indexOf === String.prototype.indexOf) //true
+
+str instanceof String // false
+str1 instanceof String // false
 </code></pre>
-<pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">int[][] c;
-c = new int[3][];
-c[0] = new int[] &#123; 1, 2, 3 &#125;;
-c[1] = new int[] &#123; 4, 5, 6, 7 &#125;;
-c[2] = new int[] &#123; 8, 9, 10, 11, 12 &#125;;
-for (int i = 0; i < c.Length; i++)
-&#123;
-    for (int j = 0; j < c[i].Length; j++)
-    &#123;
-        Console.Write("&#123;0, -5&#125;", c[i][j]);
-    &#125;
-    Console.WriteLine();
-&#125;
-/**
- * 1    2    3
- * 4    5    6    7
- * 8    9    10    11    12
- */
-Console.ReadKey();
-</code></pre>
-<h3 id="数组基本操作"><a href="#数组基本操作" class="headerlink" title="数组基本操作"></a>数组基本操作</h3><h4 id="数组排序与反转"><a href="#数组排序与反转" class="headerlink" title="数组排序与反转"></a>数组排序与反转</h4><p>Array类的静态方法Sort()可以实现数组的排序，无返回值。<br>语法：Array.Sort(数组名)</p>
-<p>Array类的静态方法Reverse()可以实现数组的反转，无返回值。<br>语法：Array.Reverse(数组名)</p>
-<pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">int[] a = &#123; 3, 8, 1, 7, 4 &#125;;
-Array.Sort(a);
-for (int i = 0; i < a.Length; i++)
-&#123;
-    Console.Write("&#123;0, -5&#125;", a[i]); // 1    3    4    7    8
-&#125;
-Console.WriteLine();
-Array.Reverse(a);
-for (int i = 0; i < a.Length; i++)
-&#123;
-    Console.Write("&#123;0, -5&#125;", a[i]); // 8    7    4    3    1
-&#125;
-Console.ReadKey();
-</code></pre>
-<h4 id="查找数组元素"><a href="#查找数组元素" class="headerlink" title="查找数组元素"></a>查找数组元素</h4><p> Array类的静态方法IndexOf( )可以判断数组是否包含与给定值相等的元素，是则返回对应数组元素的下标，否则返回-1。<br>语法：Array.IndexOf(数组名, 要查找的值)</p>
-<pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">int[] a = &#123; 4, 5, 2, 7, 1 &#125;;
-Console.WriteLine(Array.IndexOf(a, 4)); // 0
-Console.WriteLine(Array.IndexOf(a, 10)); // -1
-Console.ReadKey();
-</code></pre>
-<p>####数组求和，最大值，最小值，平均值<br>Sum(), Max(), Min(), Average()<br>语法：数组名.Sum()</p>
-<pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">int[] a = &#123; 3, 8, 1, 7, 4 &#125;;
-Console.WriteLine(a.Sum()); // 23
-Console.WriteLine(a.Max()); // 8
-Console.WriteLine(a.Min()); // 1
-Console.WriteLine(a.Average()); // 4.6
-Console.ReadKey();
-</code></pre>
-<h4 id="数组字符串相互转化"><a href="#数组字符串相互转化" class="headerlink" title="数组字符串相互转化"></a>数组字符串相互转化</h4><p> String类的静态方法Join( )可以将数组中所有元素连接起来，生成一个字符串，返回值为该字符串。<br> 语法：String.Join(分隔符, 数组名)  –&gt; Join( )方法分隔符类型为字符串</p>
-<p> 方法Split( )可以根据分隔符将字符串切分为多个部分，每个部分作为一个数组元素生成一个字符串数组，返回值为该字符串数组。<br>语法：字符串变量.Split(分隔符)  –&gt; Split( )方法中的分隔符类型为字符型</p>
-<pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">string[] a = &#123; "this", "is", "a", "test", "!" &#125;;
-string b = String.Join(" ", a);
-Console.WriteLine(b);
-string[] a1 = b.Split(' ');
-for (int i = 0; i < a1.Length; i++)
-&#123;
-    Console.WriteLine(a1[i]);
-&#125;
-Console.ReadKey();
-</code></pre>
-<h4 id="在字符串中查找、删除字符数组元素"><a href="#在字符串中查找、删除字符数组元素" class="headerlink" title="在字符串中查找、删除字符数组元素"></a>在字符串中查找、删除字符数组元素</h4><p> String类方法IndexOfAny( )用于在字符串中查找给定字符数组中的所有元素，返回字符数组元素在字符串中首次出现的位置值，查找失败则返回-1。<br> 语法：字符串变量.IndexOfAny(字符数组名)</p>
-<p>String类方法LastIndexOfAny( )用于在字符串中查找给定字符数组中的所有元素，返回字符数组元素在字符串中最后出现的位置值，查找失败则返回-1。<br>语法：字符串变量.LastIndexOfAny(字符数组名)</p>
-<p> String类方法Trim( )可以在字符串的首部和尾部去除给定字符数组中的所有元素，返回操作后的字符串。<br> 语法：字符串变量.Trim(字符数组名)</p>
-<pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">char[] a = &#123; 'a', 't', 'i' &#125;;
-string str = "This is a test!";
-Console.WriteLine(str.IndexOfAny(a)); // 2
-Console.WriteLine(str.LastIndexOfAny(a)); // 13
-char[] b = &#123; 'T', 'h', 't' &#125;;
-Console.WriteLine(str.Trim(b)); // is is a test!
-Console.ReadKey();
-</code></pre>
-<h4 id="枚举"><a href="#枚举" class="headerlink" title="枚举"></a>枚举</h4><p> 枚举类型用于声明一组命名常数。<br> 语法：enum 枚举类型名 {枚举成员列表}<br>例：enum Week { 星期一, 星期二, 星期三, 星期四, 星期五, 星期六, 星期天 };</p>
-<p> 枚举类型week包含七个常数，默认第一个常数为0，对应“星期一”，每个名称对应的常数都比前边一个加1，最后一个常数为6，对应“星期天”。<br> 相当于为常数起了个名字，把七个常数组合在一起构成枚举类型week。</p>
-<p> enum Week { 星期一 = 1, 星期二, 星期三, 星期四, 星期五, 星期六, 星期天 };<br> 给出第一个名称星期一对应的常数为1，后边的名称对应的常数值分别是2、3、4、5、6、7。</p>
-<pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">// 定义枚举类型变量x，选择枚举类型中的一个名称为变量x赋值
-Week x = Week.星期一;
-// 定义枚举类型变量y，将整数2强制转换为week类型的值赋值给变量
-Week y = (Week)2;
-Console.WriteLine(x.ToString()); // 星期一
-Console.WriteLine(y.ToString()); // 星期二
-Console.WriteLine((Week)2); // 输出枚举类型Week中常量2对应的名称 --> 星期二
-Console.WriteLine((int)Week.星期天); // 输出枚举类型Week中名称“星期天”对应的常量  -->  7
-Console.ReadKey();
-</code></pre>
+<h6 id="str-又-不属于String-却拥有-String-的方法"><a href="#str-又-不属于String-却拥有-String-的方法" class="headerlink" title="str 又 不属于String 却拥有 String 的方法?"></a>str 又 不属于String 却拥有 String 的方法?</h6><p>这是JS中的设计。</p>
 <ul>
-<li>枚举类型的最大作用是可以自定义一个类型，将许多相关的名称作为一个集合保存和使用，每个名称对应一个整型常量。</li>
-<li>相对于直接使用数值，使用枚举类型可以使代码更加清晰易懂，便于记忆。</li>
-<li>枚举类型的变量只能选择几个常量中的一个，方便控制变量取值范围，保证程序的执行过程安全可靠。</li>
-<li>常量值和枚举值之间转换方便，使用枚举类型使代码更容易编写和维护。<h4 id="字符串与字符数组相互转化"><a href="#字符串与字符数组相互转化" class="headerlink" title="字符串与字符数组相互转化"></a>字符串与字符数组相互转化</h4>使用语句“string str = new string(‘a’,5);”创建包含5个相同字符的字符串str，str对应的字符串为“aaaaa”。<br>事实上，我们可以使用任意一个字符类型数组初始化一个字符串。<br>反之，一个字符串可以直接作为一个字符类型数组使用，直接在字符串名后面加上下标即可<pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">char[] c = &#123; 'H', 'e', 'l', 'l', 'o', ' ', 'W', 'o', 'r', 'l', 'd', '！' &#125;;
-string str = new string(c);
-Console.WriteLine(str); // Hello World!
-Console.WriteLine(str[0]); // H
-Console.ReadKey();
-</code></pre>
-<h4 id="foreach遍历二维数组"><a href="#foreach遍历二维数组" class="headerlink" title="foreach遍历二维数组"></a>foreach遍历二维数组</h4><pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">int[,] a = &#123; &#123; 1, 2, 3 &#125;, &#123; 4, 5, 6&#125;, &#123; 7, 8, 9&#125; &#125;;
-foreach (int x in a)
-  Console.Write("&#123;0, -4&#125;", x);
-Console.ReadKey(); // 1   2   3  4   5   6   7   8   9
-</code></pre>
-</li>
-<li>使用foreach循环遍历二维数组，访问数组元素的顺序是先行后列，因此输出结果为123456。</li>
-<li>如果需要按照先列后行遍历数组元素的话，需要使用嵌套的for循环。</li>
+<li>原始资料类型的方法与属性是”借”来的</li>
+<li>一个原始的资料类型值，并没有如对象会有属性或方法，</li>
+<li>原始的资料类型在运算时用的属性与方法，是向包装对象”借来”的用的，</li>
+<li>所以原始资料类型是可以向 new String() 或者 new Number()借来所有的方法。但是自己本身却没有属性和方法。</li>
 </ul>
+<p>所以这也就是为什么第一种第二种我们无法去自定义属性却可以使用对应类型的方法的原因。</p>
 
                 
             </div>
@@ -670,7 +597,7 @@ Console.ReadKey(); // 1   2   3  4   5   6   7   8   9
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://jeayk.github.io/2020/04/10/c-xue-xi-bi-ji-shu-zu-cao-zuo-xiang-guan-bi-ji-du-zi-c-cong-ru-men-dao-jing-tong-di-2-ban/">https://jeayk.github.io/2020/04/10/c-xue-xi-bi-ji-shu-zu-cao-zuo-xiang-guan-bi-ji-du-zi-c-cong-ru-men-dao-jing-tong-di-2-ban/</a>
+                    <a href="https://jeayk.github.io/2022/01/14/6-li-jie-zhi-lei-xing-he-yin-yong-lei-xing/">https://jeayk.github.io/2022/01/14/6-li-jie-zhi-lei-xing-he-yin-yong-lei-xing/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -708,8 +635,8 @@ Console.ReadKey(); // 1   2   3  4   5   6   7   8   9
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-                                    <span class="chip bg-color">C#学习笔记</span>
+                                <a href="/tags/Javascript%E5%9F%BA%E7%A1%80/">
+                                    <span class="chip bg-color">Javascript基础</span>
                                 </a>
                             
                         </div>
@@ -883,17 +810,18 @@ Console.ReadKey(); // 1   2   3  4   5   6   7   8   9
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
             <div class="card">
-                <a href="/2020/04/10/c-xue-xi-bi-ji-zi-fu-chuan-cao-zuo-xiang-guan-bi-ji-du-zi-c-cong-ru-men-dao-jing-tong-di-2-ban/">
+                <a href="/2022/01/14/6-li-jie-zhi-lei-xing-he-yin-yong-lei-xing/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="C#学习笔记-字符串操作相关笔记（读自C#从入门到精通 第2版）">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="6. 理解值类型和引用类型">
                         
-                        <span class="card-title">C#学习笔记-字符串操作相关笔记（读自C#从入门到精通 第2版）</span>
+                        <span class="card-title">6. 理解值类型和引用类型</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -903,26 +831,27 @@ Console.ReadKey(); // 1   2   3  4   5   6   7   8   9
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-04-10
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-01-14
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E8%AF%BB%E8%87%AAC-%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A-%E7%AC%AC2%E7%89%88/" class="post-category">
-                                    读自C#从入门到精通 第2版
+                            <a href="/categories/JS%E5%8F%98%E9%87%8F%E4%B8%8E%E7%B1%BB%E5%9E%8B/" class="post-category">
+                                    JS变量与类型
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-                        <span class="chip bg-color">C#学习笔记</span>
+                    <a href="/tags/Javascript%E5%9F%BA%E7%A1%80/">
+                        <span class="chip bg-color">Javascript基础</span>
                     </a>
                     
                 </div>
@@ -936,13 +865,13 @@ Console.ReadKey(); // 1   2   3  4   5   6   7   8   9
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/04/10/c-xue-xi-bi-ji-lei-yu-dui-xiang-xiang-guan-bi-ji-du-zi-c-cong-ru-men-dao-jing-tong-di-2-ban/">
+                <a href="/2022/01/12/5-js-ji-ben-lei-xing-de-zhuang-xiang-yu-chai-xiang/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="C#学习笔记-类与对象相关笔记（读自C#从入门到精通 第2版）">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="5. js基本类型的装箱与拆箱">
                         
-                        <span class="card-title">C#学习笔记-类与对象相关笔记（读自C#从入门到精通 第2版）</span>
+                        <span class="card-title">5. js基本类型的装箱与拆箱</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -953,14 +882,14 @@ Console.ReadKey(); // 1   2   3  4   5   6   7   8   9
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-10
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-01-12
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E8%AF%BB%E8%87%AAC-%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A-%E7%AC%AC2%E7%89%88/" class="post-category">
-                                    读自C#从入门到精通 第2版
+                            <a href="/categories/JS%E5%8F%98%E9%87%8F%E4%B8%8E%E7%B1%BB%E5%9E%8B/" class="post-category">
+                                    JS变量与类型
                                 </a>
                             
                             
@@ -970,8 +899,8 @@ Console.ReadKey(); // 1   2   3  4   5   6   7   8   9
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-                        <span class="chip bg-color">C#学习笔记</span>
+                    <a href="/tags/Javascript%E5%9F%BA%E7%A1%80/">
+                        <span class="chip bg-color">Javascript基础</span>
                     </a>
                     
                 </div>
