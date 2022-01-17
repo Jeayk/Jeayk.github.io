@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>7. js中null与undefined的区别</title>
+      <link href="/2022/01/18/7-js-zhong-null-yu-undefined-de-qu-bie/"/>
+      <url>/2022/01/18/7-js-zhong-null-yu-undefined-de-qu-bie/</url>
+      
+        <content type="html"><![CDATA[<h5 id="js中null-与-undefined-的区别"><a href="#js中null-与-undefined-的区别" class="headerlink" title="js中null 与 undefined 的区别"></a>js中null 与 undefined 的区别</h5><p>在JavaScript中存在这样两种原始类型:Null与Undefined。<br>Undefined类型只有一个值，即undefined。当声明的变量还未被初始化时，变量的默认值为undefined。<br>Null类型也只有一个值，即null。null用来表示尚未存在的对象，常用来表示函数企图返回一个不存在的对象。  </p><pre><code>var oValue;  console.log(oValue === undefined); // true  没有初始化console.log(null === document.getElementById(&#39;notExistElement&#39;)); // true</code></pre><p>当页面上不存在id为”notExistElement”的DOM节点时，这段代码显示为”true”，因为我们尝试获取一个不存在的对象。</p><pre><code>console.log(typeof undefined); // undefined  console.log(typeof null); // object  </code></pre><h6 id="为什么null的类型是Object？"><a href="#为什么null的类型是Object？" class="headerlink" title="为什么null的类型是Object？"></a>为什么null的类型是Object？</h6><p>其实这是JavaScript最初实现的一个错误，后来被ECMAScript沿用下来。在今天我们可以解释为，null即是一个不存在的对象的占位符，但是在实际编码时还是要注意这一特性。</p><pre><code>null == undefined // truenull === undefined // false</code></pre><p>ECMAScript认为undefined是从null派生出来的，所以把它们定义为值相等的，类型不相等。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> JS变量与类型 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Javascript基础 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>6. 理解值类型和引用类型</title>
       <link href="/2022/01/14/6-li-jie-zhi-lei-xing-he-yin-yong-lei-xing/"/>
       <url>/2022/01/14/6-li-jie-zhi-lei-xing-he-yin-yong-lei-xing/</url>

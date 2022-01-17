@@ -4,10 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="C#学习笔记--委托与事件（读自C#从入门到精通 第2版）, 积跬步以至千里">
-    <meta name="description" content="委托委托也叫代理，即把事情交给别人代办。C#中如果将一个方法委托给一个对象，对象即可全权代理该方法的执行。使用委托时首先要定义委托，声明委托所能代理方法的类型。
-// 语法
-&amp;lt;访问修饰符&amp;gt; delegate 返回类型 委托名()">
+    <meta name="keywords" content="7. js中null与undefined的区别, 积跬步以至千里">
+    <meta name="description" content="js中null 与 undefined 的区别在JavaScript中存在这样两种原始类型:Null与Undefined。Undefined类型只有一个值，即undefined。当声明的变量还未被初始化时，变量的默认值为undefined。">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>C#学习笔记--委托与事件（读自C#从入门到精通 第2版） | 积跬步以至千里</title>
+    <title>7. js中null与undefined的区别 | 积跬步以至千里</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -311,12 +309,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">C#学习笔记--委托与事件（读自C#从入门到精通 第2版）</h1>
+                    <h1 class="description center-align post-title">7. js中null与undefined的区别</h1>
                 </div>
             </div>
         </div>
@@ -432,8 +430,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-                                <span class="chip bg-color">C#学习笔记</span>
+                            <a href="/tags/Javascript%E5%9F%BA%E7%A1%80/">
+                                <span class="chip bg-color">Javascript基础</span>
                             </a>
                         
                     </div>
@@ -444,8 +442,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E8%AF%BB%E8%87%AAC-%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A-%E7%AC%AC2%E7%89%88/" class="post-category">
-                                读自C#从入门到精通 第2版
+                            <a href="/categories/JS%E5%8F%98%E9%87%8F%E4%B8%8E%E7%B1%BB%E5%9E%8B/" class="post-category">
+                                JS变量与类型
                             </a>
                         
                     </div>
@@ -457,21 +455,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2020-04-16
+                    2022-01-18
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2022-01-04
+                    2022-01-18
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    483
+                    270
                 </div>
                 
 
@@ -498,166 +496,21 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="委托"><a href="#委托" class="headerlink" title="委托"></a>委托</h4><p>委托也叫代理，即把事情交给别人代办。C#中如果将一个方法委托给一个对象，对象即可全权代理该方法的执行。使用委托时首先要定义委托，声明委托所能代理方法的类型。</p>
-<pre><code>// 语法
-&lt;访问修饰符&gt; delegate 返回类型 委托名();
-</code></pre>
-<p>委托没有具体的实现体，委托能够代表什么样的方法由它的返回值类型和参数列表决定。</p>
-<pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">// 示例
-public delegate void testDelegate(string name);
-</code></pre>
-<p>定义了上述委托示例之后要使用委托，首先要实例化委托，也就是将其指向某个方法，即调用委托的构造函数，并将相关联的方法作为参数传递。然后通过调用    委托，执行相关方法的代码，实现委托。</p>
-<pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">// 使用委托对数组进行降序排列
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+                <h5 id="js中null-与-undefined-的区别"><a href="#js中null-与-undefined-的区别" class="headerlink" title="js中null 与 undefined 的区别"></a>js中null 与 undefined 的区别</h5><p>在JavaScript中存在这样两种原始类型:Null与Undefined。<br>Undefined类型只有一个值，即undefined。当声明的变量还未被初始化时，变量的默认值为undefined。<br>Null类型也只有一个值，即null。null用来表示尚未存在的对象，常用来表示函数企图返回一个不存在的对象。  </p>
+<pre><code>var oValue;  
+console.log(oValue === undefined); // true  没有初始化
 
-namespace DelegateSort
-&#123;
-    class Program
-    &#123;
-        public delegate bool SortDelegate(int[] x); // 定义委托SortDelegate
-        static void Main(string[] args)
-        &#123;
-            int[] arr = new int[] &#123; 8, 9, 5, 3, 4, 6, 1 &#125;;
-            Console.WriteLine("排序前的数组是： ");
-            foreach (int i in arr) Console.Write("&#123;0&#125;", i); // 8953461
-            SortDelegate myDelegate; // 声明委托变量
-            myDelegate = new SortDelegate(Test.SortArray); // 实例化委托变量，委托Test的SortArray
-            myDelegate(arr); // 传递参数，调用委托排序
-            Console.WriteLine("");
-            Console.WriteLine("排序后的数组是：");
-            foreach (int i in arr) Console.Write("&#123;0&#125;", i); // 9865431
-            Console.ReadKey();
-        &#125;
-    &#125;
-
-    class Test
-    &#123;
-        public static bool SortArray(int[] array )
-        &#123;
-            // 定义方法SortArray用于按照降序排序
-            // GetUpperBound(int dimension): 获取数组中指定维度最后一个元素的索引。 dimension Int32 数组的从零开始的维度，其上限需要确定。
-            for (int i = array.GetUpperBound(0); i >= 0; i--) // 循环从后向前取出数组的元素
-            &#123;
-                // 冒泡排序，将数值小的元素移到后面，直到所有的元素按照降序排列
-                for(int j = 0; j <= i; j++)
-                &#123;
-                    if(array[j] <= array[i]) // 判断数组前面的值是否小于后面的值
-                    &#123;
-                        Swap(ref array[j], ref array[i]); // 交换二者的位置
-                    &#125;
-                &#125;
-            &#125;
-            return true; // 并非所有代码都有返回值，故加return true
-        &#125;
-        static void Swap(ref int x, ref int y) // 交换方法
-        &#123;
-            int temp = y;
-            y = x;
-            x = temp;
-        &#125;
-    &#125;
-&#125;
+console.log(null === document.getElementById(&#39;notExistElement&#39;)); // true
 </code></pre>
-<h4 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h4><p>事件是C#中的一个高级概念，是操作发生时允许执行特定应用程序的代码的机制。事件要么在相关联的操作发生前发生（事前事件），要么在操作发生后发生（事后事件）。例如，当用户单击窗口中的按钮时，将引发一个事后事件，以允许执行特定于应用程序的方法。</p>
-<p>类或对象可以通过事件向其他类或对象通知发生的相关事情。发送（或引发）事件的类称为“发行者”，接收（或处理）事件的类称为“订户”。在典型的C# Windows窗体或Web应用程序中，可以订阅由控件（如按钮和列表框）引发的事件。</p>
-<p>定义和使用事件的步骤：<br>(1) 在一个类中声明关于事件的委托。</p>
-<pre><code>public delegate void 事件类型名称(object serder, EventArgs e); 
+<p>当页面上不存在id为”notExistElement”的DOM节点时，这段代码显示为”true”，因为我们尝试获取一个不存在的对象。</p>
+<pre><code>console.log(typeof undefined); // undefined  
+console.log(typeof null); // object  
 </code></pre>
-<p>事件类型名称建议用EventHandler结尾。如果想自定义事件的参数EventArgs，可以用EventArgs类派生自己的事件参数类，也可以没有参数。<br>(2)在类中声明事件，使用步骤(1)的delegate作为事件的类型。 </p>
-<pre><code>public event 事件类型名称 事件名称;
+<h6 id="为什么null的类型是Object？"><a href="#为什么null的类型是Object？" class="headerlink" title="为什么null的类型是Object？"></a>为什么null的类型是Object？</h6><p>其实这是JavaScript最初实现的一个错误，后来被ECMAScript沿用下来。在今天我们可以解释为，null即是一个不存在的对象的占位符，但是在实际编码时还是要注意这一特性。</p>
+<pre><code>null == undefined // true
+null === undefined // false
 </code></pre>
-<p>(3)在类中需要引发事件的方法中，编写引发事件的方法。</p>
-<pre><code>事件名称(this, new EventArgs());
-// 或者
-if(事件名称 != null) 事件名称 (this, new EventArgs());
-</code></pre>
-<p>(4)订阅事件，当事件发生时通知订户。</p>
-<pre><code>带有事件的类实例.事件名称 += new 事件名称(事件处理方法名称);
-</code></pre>
-<p>(5)编写事件处理方法。</p>
-<pre><code>public void 事件处理方法(object sender, EventArgs e)
-&#123;
-    // 相关代码
-&#125;
-</code></pre>
-<p>(6)在适当的条件下触发事件，即需要调用步骤(3)中的引发事件的方法。</p>
-<p><strong>事件的定义和使用示例</strong><br>假设设计一个高档热水器，通电加热到水温超过96℃的时候，扬声器会发出语音告诉你水的温度，液晶屏显示水温的变化，提示水快烧开了。定义一个类来代表热水器的类Heater，它有代表水温的字段temperature，有给水加热的BoilWater()方法，发出语音警报的MakeAlert()方法，显示水温的ShowMsg()方法。</p>
-<pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace HeaterEvent
-&#123;
-    class Program
-    &#123;
-        static void Main(string[] args)
-        &#123;
-            Heater heater = new Heater(); // 创建热水器对象heater
-            Alarm alarm = new Alarm(); // 创建报警器对象alarm
-            heater.BoilEvent += alarm.MakeAlert; // 给alarm的MakeAlert方法订阅事件
-            heater.BoilEvent += Display.ShowMsg; // 订阅静态方法
-            heater.BoilWater(); // 烧水，会自动调用订阅过的对象方法
-            Console.ReadKey();
-            /**
-             * Alarm: 嘀嘀嘀，水已经97度了!
-             * Display：水快烧开了，当前温度：97度。
-             * Alarm: 嘀嘀嘀，水已经98度了!
-             * Display：水快烧开了，当前温度：98度。
-             * Alarm: 嘀嘀嘀，水已经99度了!
-             * Display：水快烧开了，当前温度：99度。
-             * Alarm: 嘀嘀嘀，水已经100度了!
-             * Display：水快烧开了，当前温度：100度。
-             */
-        &#125;
-    &#125;
-    public class Heater // 热水器类Heater
-    &#123;
-        private int temperature; // 声明表示水温的字段
-        public delegate void BoilHandler(int param); // 声明关于事件的委托
-        public event BoilHandler BoilEvent; // 声明水要烧开的事件
-        public void BoilWater() // 烧水的方法
-        &#123;
-            for(int i = 0; i <= 100; i++) // 循环表示水温的变化
-            &#123;
-                temperature = i; // 设置水的温度
-                if(temperature > 96) // 水温超过96度，引发事件BoilEvent
-                &#123;
-                    /*if(BoilEvent != null)
-                    &#123;
-                        // 如果有对象订阅
-                        BoilEvent(temperature); // 调用所有订阅对象的方法
-                    &#125;*/
-                    // 优化
-                    BoilEvent?.Invoke(temperature); // 如果有对象订阅，调用所有订阅对象的方法
-                &#125;
-            &#125;
-        &#125;
-    &#125;
-
-    public class Alarm // 定义报警类
-    &#123;
-        public void MakeAlert(int param) // 水快开时报警的方法
-        &#123;
-            Console.WriteLine("Alarm: 嘀嘀嘀，水已经&#123;0&#125;度了!", param);
-        &#125;
-    &#125;
-
-    public class Display // 显示水温的显示类
-    &#123;
-        // 静态方法 ShowMsg用于显示水温
-        public static void ShowMsg(int param)
-        &#123;
-            Console.WriteLine("Display：水快烧开了，当前温度：&#123;0&#125;度。", param);
-        &#125;
-    &#125;
-&#125;
-</code></pre>
+<p>ECMAScript认为undefined是从null派生出来的，所以把它们定义为值相等的，类型不相等。</p>
 
                 
             </div>
@@ -684,7 +537,7 @@ namespace HeaterEvent
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://jeayk.github.io/2020/04/16/c-xue-xi-bi-ji-wei-tuo-yu-shi-jian-du-zi-c-cong-ru-men-dao-jing-tong-di-2-ban/">https://jeayk.github.io/2020/04/16/c-xue-xi-bi-ji-wei-tuo-yu-shi-jian-du-zi-c-cong-ru-men-dao-jing-tong-di-2-ban/</a>
+                    <a href="https://jeayk.github.io/2022/01/18/7-js-zhong-null-yu-undefined-de-qu-bie/">https://jeayk.github.io/2022/01/18/7-js-zhong-null-yu-undefined-de-qu-bie/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -722,8 +575,8 @@ namespace HeaterEvent
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-                                    <span class="chip bg-color">C#学习笔记</span>
+                                <a href="/tags/Javascript%E5%9F%BA%E7%A1%80/">
+                                    <span class="chip bg-color">Javascript基础</span>
                                 </a>
                             
                         </div>
@@ -897,17 +750,18 @@ namespace HeaterEvent
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
             <div class="card">
-                <a href="/2020/04/20/c-xue-xi-bi-ji-ni-ming-fang-fa-yu-lambda-biao-da-shi-du-zi-c-cong-ru-men-dao-jing-tong-di-2-ban/">
+                <a href="/2022/01/18/7-js-zhong-null-yu-undefined-de-qu-bie/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="C#学习笔记-匿名方法与lambda表达式（读自C#从入门到精通 第2版）">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="7. js中null与undefined的区别">
                         
-                        <span class="card-title">C#学习笔记-匿名方法与lambda表达式（读自C#从入门到精通 第2版）</span>
+                        <span class="card-title">7. js中null与undefined的区别</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -917,26 +771,27 @@ namespace HeaterEvent
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-04-20
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-01-18
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E8%AF%BB%E8%87%AAC-%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A-%E7%AC%AC2%E7%89%88/" class="post-category">
-                                    读自C#从入门到精通 第2版
+                            <a href="/categories/JS%E5%8F%98%E9%87%8F%E4%B8%8E%E7%B1%BB%E5%9E%8B/" class="post-category">
+                                    JS变量与类型
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-                        <span class="chip bg-color">C#学习笔记</span>
+                    <a href="/tags/Javascript%E5%9F%BA%E7%A1%80/">
+                        <span class="chip bg-color">Javascript基础</span>
                     </a>
                     
                 </div>
@@ -950,13 +805,13 @@ namespace HeaterEvent
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/04/15/c-xue-xi-bi-ji-chou-xiang-lei-yu-mi-feng-lei-du-zi-c-cong-ru-men-dao-jing-tong-di-2-ban/">
+                <a href="/2022/01/14/6-li-jie-zhi-lei-xing-he-yin-yong-lei-xing/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="C#学习笔记--抽象类与密封类（读自C#从入门到精通 第2版）">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="6. 理解值类型和引用类型">
                         
-                        <span class="card-title">C#学习笔记--抽象类与密封类（读自C#从入门到精通 第2版）</span>
+                        <span class="card-title">6. 理解值类型和引用类型</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -967,14 +822,14 @@ namespace HeaterEvent
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-15
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-01-14
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E8%AF%BB%E8%87%AAC-%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A-%E7%AC%AC2%E7%89%88/" class="post-category">
-                                    读自C#从入门到精通 第2版
+                            <a href="/categories/JS%E5%8F%98%E9%87%8F%E4%B8%8E%E7%B1%BB%E5%9E%8B/" class="post-category">
+                                    JS变量与类型
                                 </a>
                             
                             
@@ -984,8 +839,8 @@ namespace HeaterEvent
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-                        <span class="chip bg-color">C#学习笔记</span>
+                    <a href="/tags/Javascript%E5%9F%BA%E7%A1%80/">
+                        <span class="chip bg-color">Javascript基础</span>
                     </a>
                     
                 </div>
