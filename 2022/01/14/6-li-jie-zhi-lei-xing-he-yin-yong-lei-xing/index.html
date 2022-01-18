@@ -7,9 +7,11 @@
     <meta name="keywords" content="6. 理解值类型和引用类型, 积跬步以至千里">
     <meta name="description" content="值类型也称基本类型string、number、array也就是除了object以外的类型  
 例一：
-var a = &amp;#39;aaaaa&amp;#39;
-a.foo = &amp;#39;bar&amp;#39;
-console.log(a.foo) // u">
+值类型也称基本类型string、number、array也就是除了object以外的类型  
+
+例一：
+```javascript
+var">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -466,14 +468,14 @@ console.log(a.foo) // u">
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2022-01-14
+                    2022-01-18
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    927
+                    922
                 </div>
                 
 
@@ -502,37 +504,41 @@ console.log(a.foo) // u">
             <div id="articleContent">
                 <p>值类型也称基本类型string、number、array也就是除了object以外的类型  </p>
 <p>例一：</p>
-<pre><code>var a = &#39;aaaaa&#39;
+<pre><code>值类型也称基本类型string、number、array也就是除了object以外的类型  
+
+例一：
+```javascript
+var a = &#39;aaaaa&#39;
 a.foo = &#39;bar&#39;
 console.log(a.foo) // undefined
 </code></pre>
 <p>这是因为js内部对基本类型a进行a.foo=’bar’操作时，会在内部创建一个对应的包装类型（在上例中也就是一个String类型）的临时对象，对a的操作会有这个基本类型代理，不管是赋值还是调用成员函数（也就是变量a可以使用String的函数，也可以给自己添加属性），操作完后，这个临时对象就释放掉了（给自己添加的属性也一起释放掉了）。下次访问时，会重新创建一个新的临时对象（访问不到释放了的对象中的属性）</p>
 <p>例二：</p>
-<pre><code>a.foo = &#39;bar&#39;
-a.__proto__.foo2 = &#39;bar2&#39;
-console.log(a.foo, a.foo2) // undefined &quot;bar2&quot;
+<pre class=" language-line-numbers language-javascript"><code class="language-line-numbers language-javascript">a.foo = 'bar'
+a.__proto__.foo2 = 'bar2'
+console.log(a.foo, a.foo2) // undefined "bar2"
 </code></pre>
 <p>对__proto__操作起作用不是因为临时对象没有释放，而是临时对象是String,Sring是函数，函数的__proto__是他构造函数的prototype,跟这个函数创建出来的临时对象没关系了。这个临时对象只是引用了他的构造函数的prototype而已（构造函数的prototype不会因为临时对象被释放而被释放）。而所有同类型的对象的构造函数是同一个。也就是同一个prototype，所以可以修改到更深层。</p>
 <p>例三：</p>
-<pre><code>var a = &#39;aaaaa&#39;
+<pre class=" language-line-numbers language-javascript"><code class="language-line-numbers language-javascript">var a = 'aaaaa'
 var b = a
-b = &#39;ccccc&#39;
+b = 'ccccc'
 console.log(a, b) // aaaaa ccccc
 </code></pre>
 <p>如果是引用的话，a、b两个值应该一起改变。这是值类型，所以是两个无关的值。</p>
 <p>例四：</p>
-<pre><code>var a = &#123;name:&#39;aaa&#39;&#125;
+<pre class=" language-line-numbers language-javascript"><code class="language-line-numbers language-javascript">var a = &#123;name:'aaa'&#125;
 var b = a
-b.name = &#39;bbbbb&#39;
-console.log(a, b) // &#123;name: &quot;bbbbb&quot;&#125; &#123;name: &quot;bbbbb&quot;&#125;
+b.name = 'bbbbb'
+console.log(a, b) // &#123;name: "bbbbb"&#125; &#123;name: "bbbbb"&#125;
 </code></pre>
 <p>引用类型，一个修改，一起改变</p>
 <p>例五：</p>
-<pre><code>var str = &#39;aaaaa&#39;
-var str1 = String(&#39;aaaaa&#39;)
+<pre class=" language-line-numbers language-javascript"><code class="language-line-numbers language-javascript">var str = 'aaaaa'
+var str1 = String('aaaaa')
 console.log(a === b) // true
 
-var str2 = new String(&#39;aaaaa&#39;)
+var str2 = new String('aaaaa')
 str == str2
 true
 str === str2
@@ -545,16 +551,16 @@ console.log(typeof(str2)); // object
 <p>值一样，但是类型不一样。String,Number,Boolean在JS中是基本类型，基本类型是存储在栈(stack)内存中的,数据大小确定，内存空间大小可以分配。</p>
 <p>而引用类型是存储在堆(heap)内存中的,例如对象, 栈中存在的仅仅是一个堆的指针，这也就是我们日常遇到 a = {num:1}, b=a, b.num1 = 2, 那么a.num1 也为2 的原因。因为a,b同时指向同一个地址。</p>
 <p>前两种方式定义出来的是在栈中并且值相等，而第三种方法定义出来的仅仅是栈中的一个指针。<br>所以这也是为什么 三种方式定义出来的不一样。</p>
-<pre><code>console.log(str.length) // 5
-str.say = &#39;world&#39;
+<pre class=" language-line-numbers language-javascript"><code class="language-line-numbers language-javascript">console.log(str.length) // 5
+str.say = 'world'
 console.log(str.say) //undefined
  
  console.log(str1.lengh) // 5
-str1.say = &#39;world&#39;
+str1.say = 'world'
 console.log(str1.say) //undefined
  
 console.log(str2.lengh) // 5
-str2.say = &#39;world&#39;
+str2.say = 'world'
 console.log(str2.say) //world
 
 console.log(str.indexOf === String.prototype.indexOf) //true

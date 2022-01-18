@@ -5,8 +5,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="1. js语言类型与Symbol,Iteratorl理解, 积跬步以至千里">
-    <meta name="description" content="JavaScript规定了几种语言类型？七种： 1.Undefined, 2.Null, 3.Boolean, 4.String, 5.Number, 6.Symbol, 7.Object
-Symbol的概念Symbol表示独一无二的值，它">
+    <meta name="description" content="JavaScript规定了几种语言类型？七种： 1.Undefined, 2.Null, 3.Boolean, 4.String, 5.Number, 6.Symbol, 7.Object  
+Symbol的概念Symbol表示独一无二的值">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -463,7 +463,7 @@ Symbol的概念Symbol表示独一无二的值，它">
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2022-01-05
+                    2022-01-18
                 </div>
                 
 
@@ -497,13 +497,13 @@ Symbol的概念Symbol表示独一无二的值，它">
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="JavaScript规定了几种语言类型？"><a href="#JavaScript规定了几种语言类型？" class="headerlink" title="JavaScript规定了几种语言类型？"></a>JavaScript规定了几种语言类型？</h4><p>七种： 1.Undefined, 2.Null, 3.Boolean, 4.String, 5.Number, 6.Symbol, 7.Object</p>
+                <h4 id="JavaScript规定了几种语言类型？"><a href="#JavaScript规定了几种语言类型？" class="headerlink" title="JavaScript规定了几种语言类型？"></a>JavaScript规定了几种语言类型？</h4><p>七种： 1.Undefined, 2.Null, 3.Boolean, 4.String, 5.Number, 6.Symbol, 7.Object  </p>
 <h5 id="Symbol的概念"><a href="#Symbol的概念" class="headerlink" title="Symbol的概念"></a>Symbol的概念</h5><p>Symbol表示独一无二的值，它是一切非字符串的对象key的集合。<br>Symbol 值通过Symbol函数生成。这就是说，对象的属性名现在可以有两种类型，一种是原来就有的字符串，另一种就是新增的 Symbol 类型。凡是属性名属于 Symbol 类型，就都是独一无二的，可以保证不会与其他属性名产生冲突。<br>Symbol函数可以接受一个字符串作为参数，表示对 Symbol 实例的描述，但是即使描述相同，Symbol值也不相等。</p>
 <pre class=" language-line-numbers language-javascript"><code class="language-line-numbers language-javascript">let s1 = Symbol('foo'); let s2 = Symbol('foo');
 
 s1 === s2 // false
 </code></pre>
-<p>一些标准中提到的 Symbol，可以在全局的 Symbol 函数的属性中找到。例如，我们可以使用 Symbol.iterator 来自定义 for…of 在对象上的行为：</p>
+<p>一些标准中提到的 Symbol，可以在全局的 Symbol 函数的属性中找到。例如，我们可以使用 Symbol.iterator 来自定义 for…of 在对象上的行为： </p>
 <pre class=" language-line-numbers language-javascript"><code class="language-line-numbers language-javascript">var o = new Object
 o[Symbol.iterator] = function() &#123;
     var v = 0
@@ -511,16 +511,16 @@ o[Symbol.iterator] = function() &#123;
         next: function() &#123;
             return &#123; value: v++, done: v > 10 &#125;
         &#125;
-    &#125;
+    &#125;        
 &#125;;
-for(var v of o)
+for(var v of o) 
     console.log(v); // 0 1 2 3 ... 9
 </code></pre>
-<h5 id="Iterator（遍历器）的概念"><a href="#Iterator（遍历器）的概念" class="headerlink" title="Iterator（遍历器）的概念"></a>Iterator（遍历器）的概念</h5><p>Javascript表示集合的数据结构，有数组(Array)、对象(Object)、Map、Set四种。用户可以组合使用，定义自己的数据结构。例如:数组的成员为Map,Map的成员为对象。这样就需要一种统一的机制，来处理不同的数据结构。<br>遍历器(Iterator)就是这样一种机制，它是一种接口，为不同的数据结构提供统一的访问机制。任何数据结构只要部署Iterator机制，就可以完成遍历操作。（即依次处理该数据结构的所有成员）。</p>
+<h5 id="Iterator（遍历器）的概念"><a href="#Iterator（遍历器）的概念" class="headerlink" title="Iterator（遍历器）的概念"></a>Iterator（遍历器）的概念</h5><p>Javascript表示集合的数据结构，有数组(Array)、对象(Object)、Map、Set四种。用户可以组合使用，定义自己的数据结构。例如:数组的成员为Map,Map的成员为对象。这样就需要一种统一的机制，来处理不同的数据结构。<br>遍历器(Iterator)就是这样一种机制，它是一种接口，为不同的数据结构提供统一的访问机制。任何数据结构只要部署Iterator机制，就可以完成遍历操作。（即依次处理该数据结构的所有成员）。  </p>
 <h5 id="Iterator（遍历器）的作用"><a href="#Iterator（遍历器）的作用" class="headerlink" title="Iterator（遍历器）的作用"></a>Iterator（遍历器）的作用</h5><ul>
 <li>为各种数据结构，提供一个统一的、简便的访问接口</li>
 <li>使得数据结构的成员能够按照某种次序排序</li>
-<li>ES6提供了一种新的遍历命令<font color='red'> for…of </font>循环，Iterator接口主要供<font color='red'> for…of </font>消费<h5 id="Iterator（遍历器）的遍历过程"><a href="#Iterator（遍历器）的遍历过程" class="headerlink" title="Iterator（遍历器）的遍历过程"></a>Iterator（遍历器）的遍历过程</h5></li>
+<li>ES6提供了一种新的遍历命令<font color='red'> for…of </font>循环，Iterator接口主要供<font color='red'> for…of </font>消费  <h5 id="Iterator（遍历器）的遍历过程"><a href="#Iterator（遍历器）的遍历过程" class="headerlink" title="Iterator（遍历器）的遍历过程"></a>Iterator（遍历器）的遍历过程</h5></li>
 <li>创建一个指针对象，指向当前数据结构的起始位置。也就是说，遍历器对象本质上，就是一个指针对象。</li>
 <li>第一次调用指针对象的<font color='red'> next </font>方法，可以将指针指向数据结构的第一个成员。</li>
 <li>第二次调用指针对象的<font color='red'> next </font>方法，指针将指向数据结构的第二个成员。</li>
@@ -548,9 +548,9 @@ return &#123;
   &#125;
 &#125;
 </code></pre>
-属性名Symbol.iterator，它是一个表达式，返回Symbol对象的iterator属性，这是一个预定义好的、类型为 Symbol 的特殊值，所以要放在方括号内。<br>ES6 的有些数据结构原生具备 Iterator 接口（比如数组），即不用任何处理，就可以被for…of循环遍历。原因在于，这些数据结构原生部署了Symbol.iterator属性，另外一些数据结构没有（比如对象）。凡是部署了Symbol.iterator属性的数据结构，就称为部署了遍历器接口。调用这个接口，就会返回一个遍历器对象。<br>原生具备 Iterator 接口的数据结构：</li>
+属性名Symbol.iterator，它是一个表达式，返回Symbol对象的iterator属性，这是一个预定义好的、类型为 Symbol 的特殊值，所以要放在方括号内。<br>ES6 的有些数据结构原生具备 Iterator 接口（比如数组），即不用任何处理，就可以被for…of循环遍历。原因在于，这些数据结构原生部署了Symbol.iterator属性，另外一些数据结构没有（比如对象）。凡是部署了Symbol.iterator属性的数据结构，就称为部署了遍历器接口。调用这个接口，就会返回一个遍历器对象。<br>原生具备 Iterator 接口的数据结构：  </li>
 <li>Array</li>
-<li>Map</li>
+<li>Map </li>
 <li>Set: 类似于数组，只不过其成员值都是唯一的，没有重复的值。</li>
 <li>String</li>
 <li>TypedArray: 一个TypedArray对象描述一个底层的二进制数据缓存区的一个类似数组(array-like)视图。</li>
@@ -558,7 +558,7 @@ return &#123;
 <li>NodeList 对象: NodeList 对象是一个节点的集合，是由 Node.childNodes 和 document.querySelectorAll返回的.NodeList不是一个数组，是一个类似数组的对象(Like Array Object).虽然NodeList不是一个数组，但是可以使用forEach()对其进行迭代。还可以使用Array.from()将其转换为实际数组。<br>以数组为例：<br>```javascript<br>let arr = [‘a’, ‘b’, ‘c’];<br>let iter = arr<a href="">Symbol.iterator</a>;</li>
 </ul>
 <p>iter.next() // { value: ‘a’, done: false }<br>iter.next() // { value: ‘b’, done: false }<br>iter.next() // { value: ‘c’, done: false }<br>iter.next() // { value: undefined, done: true }</p>
-<pre><code>对象（Object）之所以没有默认部署 Iterator 接口，是因为对象的哪个属性先遍历，哪个属性后遍历是不确定的，需要开发者手动指定。本质上，遍历器是一种线性处理，对于任何非线性的数据结构，部署遍历器接口，就等于部署一种线性转换。不过，严格地说，对象部署遍历器接口并不是很必要，因为这时对象实际上被当作 Map 结构使用，ES5 没有 Map 结构，而 ES6 原生提供了。
+<pre><code>对象（Object）之所以没有默认部署 Iterator 接口，是因为对象的哪个属性先遍历，哪个属性后遍历是不确定的，需要开发者手动指定。本质上，遍历器是一种线性处理，对于任何非线性的数据结构，部署遍历器接口，就等于部署一种线性转换。不过，严格地说，对象部署遍历器接口并不是很必要，因为这时对象实际上被当作 Map 结构使用，ES5 没有 Map 结构，而 ES6 原生提供了。  
 一个对象如果要具备可被for...of循环调用的 Iterator 接口，就必须在Symbol.iterator的属性上部署遍历器生成方法（原型链上的对象具有该方法也可）
 ```javascript
 class RangeIterator &#123;
@@ -592,7 +592,7 @@ range(0, 3).next(); // &#123;done: false, value: &#39;1&#39;&#125;
 range(0, 3).next(); // &#123;done: false, value: &#39;2&#39;&#125;
 range(0, 3).next(); // &#123;done: true, value: undefined&#125;
 </code></pre>
-<p>上面代码是一个类部署 Iterator 接口的写法。Symbol.iterator属性对应一个函数，执行后返回当前对象的遍历器对象。</p>
+<p>上面代码是一个类部署 Iterator 接口的写法。Symbol.iterator属性对应一个函数，执行后返回当前对象的遍历器对象。  </p>
 
                 
             </div>

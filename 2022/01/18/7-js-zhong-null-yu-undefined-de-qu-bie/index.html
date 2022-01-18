@@ -469,7 +469,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    270
+                    268
                 </div>
                 
 
@@ -497,17 +497,17 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h5 id="js中null-与-undefined-的区别"><a href="#js中null-与-undefined-的区别" class="headerlink" title="js中null 与 undefined 的区别"></a>js中null 与 undefined 的区别</h5><p>在JavaScript中存在这样两种原始类型:Null与Undefined。<br>Undefined类型只有一个值，即undefined。当声明的变量还未被初始化时，变量的默认值为undefined。<br>Null类型也只有一个值，即null。null用来表示尚未存在的对象，常用来表示函数企图返回一个不存在的对象。  </p>
-<pre><code>var oValue;  
+<pre class=" language-line-numbers language-javascript"><code class="language-line-numbers language-javascript">var oValue;  
 console.log(oValue === undefined); // true  没有初始化
 
-console.log(null === document.getElementById(&#39;notExistElement&#39;)); // true
+console.log(null === document.getElementById('notExistElement')); // true
 </code></pre>
 <p>当页面上不存在id为”notExistElement”的DOM节点时，这段代码显示为”true”，因为我们尝试获取一个不存在的对象。</p>
-<pre><code>console.log(typeof undefined); // undefined  
+<pre class=" language-line-numbers language-javascript"><code class="language-line-numbers language-javascript">console.log(typeof undefined); // undefined  
 console.log(typeof null); // object  
 </code></pre>
 <h6 id="为什么null的类型是Object？"><a href="#为什么null的类型是Object？" class="headerlink" title="为什么null的类型是Object？"></a>为什么null的类型是Object？</h6><p>其实这是JavaScript最初实现的一个错误，后来被ECMAScript沿用下来。在今天我们可以解释为，null即是一个不存在的对象的占位符，但是在实际编码时还是要注意这一特性。</p>
-<pre><code>null == undefined // true
+<pre class=" language-line-numbers language-javascript"><code class="language-line-numbers language-javascript">null == undefined // true
 null === undefined // false
 </code></pre>
 <p>ECMAScript认为undefined是从null派生出来的，所以把它们定义为值相等的，类型不相等。</p>

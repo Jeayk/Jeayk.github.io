@@ -465,14 +465,14 @@ Symbol 是一种基本数据类型，由Symbol函数生成```javascript// 无参
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2022-01-07
+                    2022-01-18
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    604
+                    606
                 </div>
                 
 
@@ -520,17 +520,18 @@ var s2 = Symbol.for(&#39;foo&#39;);
 s1 === s2; // true
 </code></pre>
 <ul>
-<li>Symbol.keyFor 方法返回一个已登记的 Symbol 类型值的 key<br>````javascript<br>var s1 = Symbol.for(“foo”);<br>console.log(Symbol.keyFor(s1)); // “foo”</li>
+<li>Symbol.keyFor 方法返回一个已登记的 Symbol 类型值的 key<br>```javascript<br>var s1 = Symbol.for(“foo”);<br>console.log(Symbol.keyFor(s1)); // “foo”</li>
 </ul>
 <p>var s2 = Symbol(“foo”);<br>console.log(Symbol.keyFor(s2) ); // undefined</p>
 <pre><code>- 使用  
 
 当需要区分形状，正方形，圆形，菱形 会使用
-````javascript
+```javascript
 const shape = &#123; triangle: ‘triangle’, circle: ‘circle’&#125;
 </code></pre>
 <p>不优雅，可以使用:</p>
-<p>````javascript<br>const shape = { triangle: Symbol(), circle: Symbol()}<br>```</p>
+<pre class=" language-line-numbers language-javascript"><code class="language-line-numbers language-javascript">const shape = &#123; triangle: Symbol(), circle: Symbol()&#125;
+</code></pre>
 
                 
             </div>
