@@ -4,9 +4,10 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="-常用非泛型集合类-ArrayList类, 积跬步以至千里">
-    <meta name="description" content="ArrayList是System.Collections命名空间中的非泛型集合类，类似于数组，有人称其为动态数组，其容量可以根据需要自动扩充，元素的索引也可根据元素数量重新分配，可以动态实现元素的添加、删除等操作。
-可以将ArrayList">
+    <meta name="keywords" content="8. 判断js数据类型的方式, 积跬步以至千里">
+    <meta name="description" content="数据类型分为基本类型和引用类型。
+基本类型String, Number, Boolean, Null, Undefined, Symbol
+引用类型Object, Array, Date, Function, Error, RegExp, ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +19,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>-常用非泛型集合类-ArrayList类 | 积跬步以至千里</title>
+    <title>8. 判断js数据类型的方式 | 积跬步以至千里</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -310,12 +311,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">-常用非泛型集合类-ArrayList类</h1>
+                    <h1 class="description center-align post-title">8. 判断js数据类型的方式</h1>
                 </div>
             </div>
         </div>
@@ -431,8 +432,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-                                <span class="chip bg-color">C#学习笔记</span>
+                            <a href="/tags/Javascript%E5%9F%BA%E7%A1%80/">
+                                <span class="chip bg-color">Javascript基础</span>
                             </a>
                         
                     </div>
@@ -443,8 +444,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E8%AF%BB%E8%87%AAC-%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A-%E7%AC%AC2%E7%89%88/" class="post-category">
-                                读自C#从入门到精通 第2版
+                            <a href="/categories/JS%E5%8F%98%E9%87%8F%E4%B8%8E%E7%B1%BB%E5%9E%8B/" class="post-category">
+                                JS变量与类型
                             </a>
                         
                     </div>
@@ -456,21 +457,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2020-05-11
+                    2022-01-18
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2022-01-04
+                    2022-01-18
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    1.6k
+                    1.4k
                 </div>
                 
 
@@ -497,181 +498,141 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>ArrayList是System.Collections命名空间中的非泛型集合类，类似于数组，有人称其为动态数组，其容量可以根据需要自动扩充，元素的索引也可根据元素数量重新分配，可以动态实现元素的添加、删除等操作。</p>
-<p>可以将ArrayList类理解为Array的优化版本，该类既有数组的特征，又有集合的特性，例如，既可以通过下标进行元素访问，对元素进行排序、搜索，又可以像处理集合一样添加，在指定索引处插入及删除元素。</p>
-<p><strong>常用属性</strong></p>
+                <p>数据类型分为基本类型和引用类型。</p>
+<h5 id="基本类型"><a href="#基本类型" class="headerlink" title="基本类型"></a>基本类型</h5><p>String, Number, Boolean, Null, Undefined, Symbol</p>
+<h5 id="引用类型"><a href="#引用类型" class="headerlink" title="引用类型"></a>引用类型</h5><p>Object, Array, Date, Function, Error, RegExp, Math, Number, String, Boolean, Globle</p>
+<h5 id="js内置类型"><a href="#js内置类型" class="headerlink" title="js内置类型"></a>js内置类型</h5><p>String, Number, Boolean, Null, Undefined, Symbol, Object</p>
+<h5 id="判断数据类型的方法"><a href="#判断数据类型的方法" class="headerlink" title="判断数据类型的方法"></a>判断数据类型的方法</h5><p>typeof、instanceof、constructor、Object.prototype.toString.call()  </p>
 <ul>
-<li>Capacity： 获取或设置ArrayList可包含的元素数，默认为4</li>
-<li>Count: 获取ArrayList中实际包含的元素数</li>
-<li>Item: 获取或设置指定索引处的元素</li>
+<li><h6 id="typeof"><a href="#typeof" class="headerlink" title="typeof"></a>typeof</h6>typeof可以对基本类型（包括function）做出准确的判断，但对于引用类型，用它就有点力不从心了。<br>typeof 返回一个表示数据类型的字符串，返回结果包括：<font color="blue"> number、 </font><font color="blue"> boolean、 </font><font color="blue"> string、 </font><font color="blue"> object、 </font><font color="blue"> undefined、 </font><font color="blue"> function、 </font><font color="blue"> Symbol </font>7种数据类型。</li>
 </ul>
-<p><strong>常用方法</strong></p>
+<p>对于引用类型，返回的都是object，其实返回object也没有错，因为所有对象的原型链最终都指向了Object, Object是所有对象的<code>祖宗</code>。<br>但当我们需要知道某个对象的具体类型时，typeof 就显得有些力不从心了。</p>
+<p><font color="red">注意：typeof null也是返回object</font>  </p>
 <ul>
-<li>Add(): 将元素添加到ArrayList的结尾处</li>
-<li>AddRange(): 在ArrayList的末尾增加一定范围内的元素</li>
-<li>Clear(): 清除ArrayList中的所有元素</li>
-<li>Contains(): 检查某元素是否在ArrayList中</li>
-<li>IndexOf: 返回ArrayList中某个元素值得第一个匹配项对应的索引</li>
-<li>Insert(): 将元素插入ArrayList的指定索引处</li>
-<li>Remove(): 从ArrayList移除特定元素的第一个匹配项</li>
-<li>Reverse(): 将ArrayList或它的一部分中的元素的顺序反转</li>
-<li>Sort(): 对ArrayList或它的一部分中的元素进行排序</li>
-</ul>
-<p><em><strong>由于ArrayList中元素的类型默认为object，因此在获取集合元素时需要强制进行类型转换。并且由于object是引用类型，在与值类型进行转换时会引起装箱和拆箱的操作，因此需要付出一些性能代价。</strong></em></p>
-<p><strong>为了实现上面的例子，必须在using区添加System.Collections命名空间。</strong></p>
-<h5 id="创建ArrayList"><a href="#创建ArrayList" class="headerlink" title="创建ArrayList"></a>创建ArrayList</h5><p>ArrayList的四种创建方式：</p>
-<ol>
-<li>使用默认的初始容量创建ArrayList，该实例没有任何元素<pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">ArrayList al1 = new ArrayList();
-al1.Add("hello");
-al1.Add("C#");
-al1.Add("world!");
-Console.WriteLine("al1中容量是&#123;0&#125;, 个数是&#123;1&#125;", al1.Capacity, al1.Count); // 4 3
+<li><h6 id="instanceof"><a href="#instanceof" class="headerlink" title="instanceof"></a>instanceof</h6>判断对象和构造函数在原型链上是否有关系，如果有关系，返回真，否则返回假<pre class=" language-line-numbers language-javascript"><code class="language-line-numbers language-javascript">function Aaa()&#123;
+&#125;
+const a1 = new Aaa();
+// 判断a1和Aaa是否在同一个原型链上，是的话返回真，否则返回假
+console.log( a1 instanceof Aaa); // true 
+const arr = [];
+console.log( arr instanceof Aaa);//false
+</code></pre>
+对于基本数据类型与引用类型的判断：<pre class=" language-line-numbers language-javascript"><code class="language-line-numbers language-javascript">const str = 'hello';
+console.log(str instanceof String); // false
+const bool = true;
+console.log(bool instanceof Boolean); // false
+const num = 123;
+console.log(num instanceof Number); // false
+const nul = null;
+console.log(nul instanceof Object); // false
+const und = undefined;
+console.log(und instanceof Object); // false
+const oDate = new Date();
+console.log(oDate instanceof Date); // true
+const obj = &#123;&#125;;
+console.log(obj instanceof Object); // true
+const arr = [];
+console.log(arr instanceof Array); // true
+const reg = /a/;
+console.log(reg instanceof RegExp); // true
+const fun = function()&#123;&#125;;
+console.log(fun instanceof Function); // true
+const error = new Error();
+console.log(error instanceof Error); // true
+</code></pre>
+从上面的运行结果我们可以看到，基本数据类型是没有检测出他们的类型，但是我们使用下面的方式创建num、str、boolean，是可以检测出类型的：<pre class=" language-line-numbers language-javascript"><code class="language-line-numbers language-javascript">const num = new Number(123);
+const str = new String('abcdef');
+const boolean = new Boolean(true);
+console.log(num instanceof Number); // true
+console.log(str instanceof String); // true
+console.log(boolean instanceof Boolean); // true
 </code></pre>
 </li>
-<li>使用实现了ICollection接口的集合类来初始化新创建的ArrayList,该实例与参数中的集合具有相同的初始容量<pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">ArrayList al2 = new ArrayList(al1);
-Console.WriteLine("al2容量是&#123;0&#125;, 个数是&#123;1&#125;",al2.Capacity, al2.Count); // 3 3
-</code></pre>
-</li>
-<li>经由一个整数数值来初始化ArrayList的容量<pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">ArrayList al3 = new ArrayList(18);
-Console.WriteLine("al3的容量是：&#123;0&#125;, 元素个数是&#123;1&#125;", al3.Capacity, al3.Count); // 18 0
-</code></pre>
-</li>
-<li>将指定abc字符串重复n次构造数组，以下以三次示例<pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">ArrayList al4 = ArrayList.Repeat("abc", 3);
-Console.WriteLine("al4的容量是：&#123;0&#125;，元素个数是&#123;1&#125;", al4.Capacity, al4.Count); // 4 3
-</code></pre>
-<h4 id="向ArrayList中添加元素的方法"><a href="#向ArrayList中添加元素的方法" class="headerlink" title="向ArrayList中添加元素的方法"></a>向ArrayList中添加元素的方法</h4></li>
-</ol>
-<ul>
-<li>Add方法可以将单个元素添加到列表的尾部；AddRange方法可以获取一个实现ICollection接口的集合实例，例如，Array、Queue、Stack等，并将这个集合实例按顺序添加到列表的尾部。</li>
-<li>使用Insert和InsertRange方法向ArrayList中指定的位置插入元素。Insert方法用于添加单个元素到指定的索引位置，InsertRange从指定的位置开始添加一个实现了ICollection接口的实例。</li>
+<li><h6 id="constructor-NaN"><a href="#constructor-NaN" class="headerlink" title="constructor"></a>constructor</h6>查看对象对应的构造函数，constructor 在其对应对象的原型下面，是自动生成的。当我们写一个构造函数的时候，程序会自动添加：构造函数名.prototype.constructor = 构造函数名<br>```javascript<br>function Aaa(){<br>}<br>// Aaa.prototype.constructor = Aaa; // 每一个函数都会有的，都是自动生成的</li>
 </ul>
-<pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">ArrayList a1 = new ArrayList(20);
-a1.Add("我是元素1");
-a1.Add("我是元素2");
-string[] strs = &#123; "我是元素3", "我是元素4" &#125;;
-a1.AddRange(strs);
-a1.Insert(0, "新增第1个元素");
-
-ArrayList a2 = new ArrayList();
-a2.Add("我是新增元素1");
-a2.Add("我是新增元素2");
-a1.InsertRange(2, a2);
-foreach(var i in a1)
-&#123;
-    Console.WriteLine(i);
-&#125;
-/**
- * 新增第1个元素
- * 我是元素1
- * 我是新增元素1
- * 我是新增元素2
- * 我是元素2
- * 我是元素3
- * 我是元素4
- */
-Console.ReadKey();
+<p>// Aaa.prototype.constructor = Aaa;</p>
+<pre><code>判断数据类型的方法：
+```javascript
+const str = &#39;hello&#39;;
+console.log(str.constructor === String); // true
+const bool = true;
+console.log(bool.constructor === Boolean); // true
+const num = 123;
+console.log(num.constructor === Number); // true
+const nul = null;
+console.log(nul.constructor === Object); // 报错 
+const und = undefined;
+console.log(und.constructor === Object); // 报错
+const oDate = new Date();
+console.log(oDate.constructor === Date); // true
+const obj = &#123;&#125;;
+console.log(obj.constructor === Object); // true
+const arr = [];
+console.log(arr.constructor === Array); // true
+const reg = /a/;
+console.log(reg.constructor === RegExp); // true
+const fun = function()&#123;&#125;;
+console.log(fun.constructor === Function); // true
+const error = new Error();
+console.log(error.constructor === Error); // true
 </code></pre>
-<h4 id="删除ArrayList中的元素"><a href="#删除ArrayList中的元素" class="headerlink" title="删除ArrayList中的元素"></a>删除ArrayList中的元素</h4><p>ArrayList提供了Remove、RemoveAt和RemoveRange3种方法将指定元素从集合中移除。</p>
-<ul>
-<li>Remove方法接受一个object类型的参数，用于移除指定元素值的第一个匹配集合元素</li>
-<li>RemoveAt方法接受一个int类型的参数，用于删除指定索引的集合元素</li>
-<li>RemoveRange方法从集合中移除一定范围的元素</li>
-</ul>
-<p>Clear方法可移除所有的元素</p>
-<pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">ArrayList a1 = new ArrayList(20);
-int[] strs = &#123; 0, 1, 2, 3, 4&#125;;
-a1.AddRange(strs);
-foreach(var i in a1)
-&#123;
-    Console.Write(i); // 01234
+<p>从上面的测试中我们可以看到，undefined和null是不能够判断出类型的，并且会报错。因为null和undefined是无效的对象，因此是不会有constructor存在的。<br>同时我们也需要注意到的是：使用constructor是不保险的，因为constructor属性是可以被修改的，会导致检测出的结果不正确。</p>
+<pre class=" language-line-numbers language-javascript"><code class="language-line-numbers language-javascript">function Aaa()&#123;
 &#125;
-Console.WriteLine();
 
-a1.Remove(0);
-foreach(var i in a1)
-&#123;
-    Console.Write(i); // 1234
-&#125;
-Console.WriteLine();
+// 程序可以自动添加，当我们写个构造函数的时候，程序会自动添加这句代码
+Aaa.prototype.constructor = Aaa;
 
-a1.RemoveAt(1);
-foreach(var i in a1)
-&#123;
-    Console.Write(i); // 134
-&#125;
-Console.WriteLine();
+function BBB()&#123;&#125;
 
-a1.RemoveRange(1, 2); // a1.RemoveRange(index, count)
-foreach(var i in a1)
-&#123;
-    Console.Write(i); // 1
-&#125;
-Console.WriteLine();
-
-a1.Clear();
-foreach (var i in a1)
-&#123;
-    Console.Write(i); // 空 
-&#125;
-Console.ReadKey();
+// 此时我们就修改Aaa构造函数的指向问题
+Aaa.prototype.constructor = BBB;
+console.log(Aaa.construtor === Aaa); // false
 </code></pre>
-<h4 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h4><p>使用Sort方法对ArrayList集合中的元素进行排序。Sort有3种重载方法。</p>
+<p>可以看出，constructor并没有正确检测出正确的构造函数</p>
+<p><font color="red"> 备注：使用Object.create()创建的js对象，没有constructor </font></p>
 <ul>
-<li>使用集合元素的比较方式进行排序。<pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">public virtual void Sort();
+<li><h6 id="Object-prototype-toString"><a href="#Object-prototype-toString" class="headerlink" title="Object.prototype.toString"></a>Object.prototype.toString</h6>可以说不管是什么类型，它都可以立即判断出。<br>toString是Object原型对象上的一个方法，该方法默认返回其调用者的具体类型，更严格的讲，是 toString运行时this指向的对象类型, 返回的类型格式为[object xxx],xxx是具体的数据类型，其中包括：<br>String,Number,Boolean,Undefined,Null,Function,Date,Array,RegExp,Error,HTMLDocument,… 基本上所有对象的类型都可以通过这个方法获取到。 <pre class=" language-line-numbers language-javascript"><code class="language-line-numbers language-javascript">const str = 'hello';
+console.log(Object.prototype.toString.call(str));//[object String]
+const bool = true;
+console.log(Object.prototype.toString.call(bool))//[object Boolean]
+const num = 123;
+console.log(Object.prototype.toString.call(num));//[object Number]
+const nul = null;
+console.log(Object.prototype.toString.call(nul));//[object Null]
+const und = undefined;
+console.log(Object.prototype.toString.call(und));//[object Undefined]
+const oDate = new Date();
+console.log(Object.prototype.toString.call(oDate));//[object Date]
+const obj = &#123;&#125;;
+console.log(Object.prototype.toString.call(obj));//[object Object]
+const arr = [];
+console.log(Object.prototype.toString.call(arr));//[object Array]
+const reg = /a/;
+console.log(Object.prototype.toString.call(reg));//[object RegExp]
+const fun = function()&#123;&#125;;
+console.log(Object.prototype.toString.call(fun));//[object Function]
+const error = new Error();
+console.log(Object.prototype.toString.call(error));//[object Error]
+</code></pre>
+从这个结果也可以看出，不管是什么类型的，Object.prototype.toString.call();都可以判断出其具体的类型。<br>优缺点总结：<br>类型 | 优点 |  缺点  </li>
+<li>|-|-<br>typeof | 使用简单 | 只能检测出基本类型（除了null） |<br>instanceof | 能检测出引用类型 | 不能检测出基本类型，且不能跨iframe  |<br>constructor| 基本能检测所有的类型（除了null和undefined |  constructor易被修改，也不能跨iframe IE6下，undefined和null均为Object |<br>Object.prototype.toString.call | 检测出所有的类型 | / |<br>instanceof和constructor不能跨iframe。<pre class=" language-line-numbers language-javascript"><code class="language-line-numbers language-javascript">window.onload = function () &#123;
+   const oF = document.createElement('iframe');
+   document.body.appendChild( oF );
+   
+   const ifArray = window.frames[0].Array;
+   
+   const arr = new ifArray();
+   
+   console.log( arr.constructor == Array );  // false
+   
+   console.log( arr instanceof Array );  // false
+   
+   console.log( Object.prototype.toString.call(arr) === '[object Array]' );  // true
+&#125;;
 </code></pre>
 </li>
-<li>使用自定义比较器进行排序<pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">public virtual void Sort(IComparer comparer);
-</code></pre>
-</li>
-<li>使用自定义比较器进行指定范围的排序<pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">public virtual void Sort(int index, int count, Icomparer comparer);
-</code></pre>
-示例：<br>```csharp<br>ArrayList a1 = new ArrayList();<br>a1.AddRange(new string[5] { “Array1”, “Array2”, “Array5”, “Array3”, “Array” });<br>foreach (var i in a1)<br>  Console.Write(i + “ “); // Array1 Array2 Array5 Array3 Array<br>Console.WriteLine();</li>
 </ul>
-<p>a1.Sort();<br>foreach (var i in a1)<br>    Console.Write(i + “ “); // Array Array1 Array2 Array3 Array5<br>Console.ReadKey();</p>
-<pre><code>#### 查找ArrayList中的集合元素
-- IndexOf: 从前向后搜索指定的字符串，如果找到，则返回匹配的第1项的自0开始的索引，否则返回-1
-- LastIndexOf: 从后向前搜索指定的字符串，如果找到，则返回匹配的最后一项的自0开始的索引，否则返回-1
-- BinarySearch: 使用二分算法从集合中搜索指定的值，并返回找到的从0开始的索引，否则返回-1
-
-```csharp
-int[] nums = &#123; 1, 2, 3, 4, 5, 4 &#125;;
-ArrayList a1 = new ArrayList(nums);
-int i = a1.IndexOf(3);
-Console.WriteLine(i); // 2
-
-int j = a1.LastIndexOf(4);
-Console.WriteLine(j); // 5
-
-int k = a1.BinarySearch(4);
-int m = a1.BinarySearch(0);
-Console.WriteLine(k); // 3
-Console.WriteLine(m); // -1
-Console.ReadKey();
-</code></pre>
-<h4 id="泛型List"><a href="#泛型List" class="headerlink" title="泛型List"></a>泛型List</h4><p>因为ArrayList存在不安全类型与装箱拆箱的缺点，所以在C#2.0后出现了泛型的概念。而List类是ArrayList类的泛型等效类。它的大部分用法都与ArrayList相似，因为List类也继承了IList接口。最关键的区别在于，在声明List集合时，我们同时需要为其声明List集合内数据的对象类型。</p>
-<pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">List<int> list = new List<int>();
-//新增数据
-list.Add(1);
-list.Add(3);
-// list.Add("1") // 报错，只能为int型，不能为string
-foreach (var i in list)
-    Console.Write(i + " "); // 1 3
-Console.WriteLine();
-
-//修改数据
-list[0] = 2;
-foreach (var i in list)
-    Console.Write(i + " "); // 2 3
-Console.WriteLine();
-
-//移除数据
-list.RemoveAt(0);
-foreach (var i in list)
-    Console.Write(i + " "); // 3
-Console.WriteLine();
-
-Console.ReadKey();
-</code></pre>
 
                 
             </div>
@@ -698,7 +659,7 @@ Console.ReadKey();
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://jeayk.github.io/2020/05/11/c-xue-xi-bi-ji-chang-yong-fei-fan-xing-ji-he-lei-arraylist-lei-du-zi-c-cong-ru-men-dao-jing-tong-di-2-ban/">https://jeayk.github.io/2020/05/11/c-xue-xi-bi-ji-chang-yong-fei-fan-xing-ji-he-lei-arraylist-lei-du-zi-c-cong-ru-men-dao-jing-tong-di-2-ban/</a>
+                    <a href="https://jeayk.github.io/2022/01/18/8-pan-duan-js-shu-ju-lei-xing-de-fang-shi/">https://jeayk.github.io/2022/01/18/8-pan-duan-js-shu-ju-lei-xing-de-fang-shi/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -736,8 +697,8 @@ Console.ReadKey();
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-                                    <span class="chip bg-color">C#学习笔记</span>
+                                <a href="/tags/Javascript%E5%9F%BA%E7%A1%80/">
+                                    <span class="chip bg-color">Javascript基础</span>
                                 </a>
                             
                         </div>
@@ -911,17 +872,18 @@ Console.ReadKey();
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
             <div class="card">
-                <a href="/2020/05/13/int-parse-yu-int-tryparse-de-qu-bie/">
+                <a href="/2022/01/18/8-pan-duan-js-shu-ju-lei-xing-de-fang-shi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="int.Parse与int.TryParse的区别">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="8. 判断js数据类型的方式">
                         
-                        <span class="card-title">int.Parse与int.TryParse的区别</span>
+                        <span class="card-title">8. 判断js数据类型的方式</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -931,26 +893,27 @@ Console.ReadKey();
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-05-13
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-01-18
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E8%AF%BB%E8%87%AAC-%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A-%E7%AC%AC2%E7%89%88/" class="post-category">
-                                    读自C#从入门到精通 第2版
+                            <a href="/categories/JS%E5%8F%98%E9%87%8F%E4%B8%8E%E7%B1%BB%E5%9E%8B/" class="post-category">
+                                    JS变量与类型
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-                        <span class="chip bg-color">C#学习笔记</span>
+                    <a href="/tags/Javascript%E5%9F%BA%E7%A1%80/">
+                        <span class="chip bg-color">Javascript基础</span>
                     </a>
                     
                 </div>
@@ -964,13 +927,13 @@ Console.ReadKey();
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/04/20/c-xue-xi-bi-ji-ni-ming-fang-fa-yu-lambda-biao-da-shi-du-zi-c-cong-ru-men-dao-jing-tong-di-2-ban/">
+                <a href="/2022/01/18/7-js-zhong-null-yu-undefined-de-qu-bie/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="C#学习笔记-匿名方法与lambda表达式（读自C#从入门到精通 第2版）">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="7. js中null与undefined的区别">
                         
-                        <span class="card-title">C#学习笔记-匿名方法与lambda表达式（读自C#从入门到精通 第2版）</span>
+                        <span class="card-title">7. js中null与undefined的区别</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -981,14 +944,14 @@ Console.ReadKey();
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-20
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-01-18
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E8%AF%BB%E8%87%AAC-%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A-%E7%AC%AC2%E7%89%88/" class="post-category">
-                                    读自C#从入门到精通 第2版
+                            <a href="/categories/JS%E5%8F%98%E9%87%8F%E4%B8%8E%E7%B1%BB%E5%9E%8B/" class="post-category">
+                                    JS变量与类型
                                 </a>
                             
                             
@@ -998,8 +961,8 @@ Console.ReadKey();
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-                        <span class="chip bg-color">C#学习笔记</span>
+                    <a href="/tags/Javascript%E5%9F%BA%E7%A1%80/">
+                        <span class="chip bg-color">Javascript基础</span>
                     </a>
                     
                 </div>
