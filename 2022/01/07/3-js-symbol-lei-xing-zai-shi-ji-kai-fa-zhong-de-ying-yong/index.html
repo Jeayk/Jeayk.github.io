@@ -513,6 +513,7 @@ Symbol 是一种基本数据类型，由Symbol函数生成```javascript// 无参
 <p>// 写法二<br>A = {<br>    symbol2: ‘hello’<br>}<br>console.log(A[symbol2]]); // hello</p>
 <p>// 写法三<br>Object.defineProperty(A, symbol3, {value: ‘hello’});<br>console.log(A[symbol3]]); // hello</p>
 <pre><code>&lt;font style=&quot;color: red&quot;&gt;注意：&lt;/font&gt; 该属性不会出现在 &lt;font style=&quot;color: red&quot;&gt; for...in &lt;/font&gt;、&lt;font style=&quot;color: red&quot;&gt; for...of &lt;/font&gt; 循环中，也不会被&lt;font style=&quot;color: blue&quot;&gt; Object.keys() &lt;/font&gt;、&lt;font style=&quot;color: blue&quot;&gt; Object.getOwnPropertyNames() &lt;/font&gt;、&lt;font style=&quot;color: blue&quot;&gt; JSON.stringify() &lt;/font&gt; 返回。但是，它也不是私有属性，有一个&lt;font style=&quot;color: blue&quot;&gt; Object.getOwnPropertySymbols &lt;/font&gt;  方法，可以获取指定对象的所有 Symbol 属性名。
+
 - 使用同一个 Symbol 值，可以使用 Symbol.for
 ```javascript
 var s1 = Symbol.for(&#39;foo&#39;)
@@ -1063,7 +1064,7 @@ const shape = &#123; triangle: ‘triangle’, circle: ‘circle’&#125;
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total Words:&nbsp;<span
-                        class="white-color">24.3k</span>
+                        class="white-color">24.2k</span>
             
             
             

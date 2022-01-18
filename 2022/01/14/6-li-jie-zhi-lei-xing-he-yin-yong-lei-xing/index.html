@@ -7,11 +7,11 @@
     <meta name="keywords" content="6. 理解值类型和引用类型, 积跬步以至千里">
     <meta name="description" content="值类型也称基本类型string、number、array也就是除了object以外的类型  
 例一：
-值类型也称基本类型string、number、array也就是除了object以外的类型  
+var a = &#39;aaaaa&#39;
+a.foo = &#39;bar&#39;
+console.log(a.foo) // undefined
 
-例一：
-```javascript
-var">
+这是因为js">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -475,7 +475,7 @@ var">
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    922
+                    893
                 </div>
                 
 
@@ -504,12 +504,8 @@ var">
             <div id="articleContent">
                 <p>值类型也称基本类型string、number、array也就是除了object以外的类型  </p>
 <p>例一：</p>
-<pre><code>值类型也称基本类型string、number、array也就是除了object以外的类型  
-
-例一：
-```javascript
-var a = &#39;aaaaa&#39;
-a.foo = &#39;bar&#39;
+<pre class=" language-line-numbers language-javascript"><code class="language-line-numbers language-javascript">var a = 'aaaaa'
+a.foo = 'bar'
 console.log(a.foo) // undefined
 </code></pre>
 <p>这是因为js内部对基本类型a进行a.foo=’bar’操作时，会在内部创建一个对应的包装类型（在上例中也就是一个String类型）的临时对象，对a的操作会有这个基本类型代理，不管是赋值还是调用成员函数（也就是变量a可以使用String的函数，也可以给自己添加属性），操作完后，这个临时对象就释放掉了（给自己添加的属性也一起释放掉了）。下次访问时，会重新创建一个新的临时对象（访问不到释放了的对象中的属性）</p>
@@ -1108,7 +1104,7 @@ str1 instanceof String // false
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total Words:&nbsp;<span
-                        class="white-color">24.3k</span>
+                        class="white-color">24.2k</span>
             
             
             
