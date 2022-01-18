@@ -5,7 +5,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="C#学习笔记-数据类型相关代码笔记（读自C#从入门到精通 第2版）, 积跬步以至千里">
-    <meta name="description" content="数据类型相关操作123456var intNum = 250;int i = intnum; // var 型变量intnum隐式转换成整型var name = &amp;quot;john&amp;quot;;string strname = name;">
+    <meta name="description" content="数据类型相关操作var intNum &amp;#x3D; 250;
+int i &amp;#x3D; intnum; &amp;#x2F;&amp;#x2F; var 型变量intnum隐式转换成整型
+var name &amp;#x3D; &amp;quot;john&amp;quot;;
+">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -469,14 +472,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    1.9k
+                    2.1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    8 Min
+                    9 Min
                 </div>
                 
 
@@ -491,42 +494,210 @@
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
 
         
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="数据类型相关操作"><a href="#数据类型相关操作" class="headerlink" title="数据类型相关操作"></a>数据类型相关操作</h4><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> intNum = <span class="number">250</span>;</span><br><span class="line"><span class="built_in">int</span> i = intnum; <span class="comment">// var 型变量intnum隐式转换成整型</span></span><br><span class="line"><span class="keyword">var</span> name = <span class="string">&quot;john&quot;</span>;</span><br><span class="line"><span class="built_in">string</span> strname = name; <span class="comment">// var型变量name隐式转换成string型</span></span><br><span class="line">Console.WriteLine(<span class="string">&quot;转换后的内容是&#123;0&#125;，&#123;1&#125;&quot;</span>, i, name); <span class="comment">// 转换后的内容是250, john</span></span><br><span class="line">Console.ReadKey();</span><br></pre></td></tr></table></figure>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">decimal</span> pi = <span class="number">3.14159</span>M; <span class="comment">// 字母M表示是decimal类型</span></span><br><span class="line"><span class="built_in">int</span> r = <span class="number">12</span>; <span class="comment">// 圆的半径</span></span><br><span class="line"><span class="built_in">decimal</span> s = <span class="number">0</span>; <span class="comment">// 圆的面积</span></span><br><span class="line">s = pi*r*r;</span><br><span class="line">Console.WriteLine(<span class="string">&quot;圆的半径是&#123;0&#125;，\n圆的面积是&#123;1&#125;&quot;</span>, r, s);</span><br><span class="line">Console.ReadLine();</span><br><span class="line">MessageBox.Show(<span class="string">&quot;圆的半径是&quot;</span>+r+<span class="string">&quot;\n圆的面积是&quot;</span>+s);</span><br></pre></td></tr></table></figure>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">float</span> pi = <span class="number">3.14f</span>; <span class="comment">// 定义一个单精度的实数</span></span><br><span class="line"><span class="built_in">int</span> i = (<span class="built_in">int</span>)pi; <span class="comment">// 将单精度强制转换成整型计算，i的值是3，不是3.14，造成信息丢失</span></span><br><span class="line">Console.WriteLine(<span class="string">&quot;转换后的内容是&#123;0&#125;&quot;</span>, i);</span><br><span class="line">Console.ReadKey();</span><br></pre></td></tr></table></figure>
-<h4 id="Convert类转换"><a href="#Convert类转换" class="headerlink" title="Convert类转换"></a>Convert类转换</h4><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">string</span> myString = <span class="string">&quot;true&quot;</span>;</span><br><span class="line"><span class="built_in">bool</span> MyBool = Convert.ToBoolean(myString); <span class="comment">// 将string转换成Boolean型，Mybool = true</span></span><br><span class="line"><span class="built_in">string</span> newString = <span class="string">&quot;12345&quot;</span>;</span><br><span class="line"><span class="built_in">int</span> myInt = Convert.ToInt32(newString); <span class="comment">// 将字符串转为数字值，myInt = 12345</span></span><br><span class="line">Console.WriteLine(<span class="string">&quot;转换后的内容是&#123;0&#125;，&#123;1&#125;&quot;</span>, MyBool, myInt); <span class="comment">// true 12345</span></span><br><span class="line">Console.ReadKey();</span><br></pre></td></tr></table></figure>
-<h4 id="隐式转换、显式转换使用举例："><a href="#隐式转换、显式转换使用举例：" class="headerlink" title="隐式转换、显式转换使用举例："></a>隐式转换、显式转换使用举例：</h4><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Console.WriteLine(<span class="string">&quot;隐式、显式转换例子：&quot;</span>);</span><br><span class="line"><span class="built_in">short</span> r = <span class="number">25</span>; <span class="comment">// 表示圆的半径</span></span><br><span class="line"><span class="built_in">int</span> i = r; <span class="comment">// 将短整型r隐式转换成整型</span></span><br><span class="line"><span class="built_in">float</span> pi = <span class="number">3.14f</span>; <span class="comment">// 定义一个单精度的实数</span></span><br><span class="line"><span class="built_in">double</span> s1 = pi * i * i; <span class="comment">// s1为double型，表示圆的面积</span></span><br><span class="line"><span class="built_in">int</span> s2;</span><br><span class="line">s2 = (<span class="built_in">int</span>)pi * i * i; <span class="comment">// s2为int型，表示圆的面积 强制转换</span></span><br><span class="line"><span class="keyword">var</span> name = <span class="string">&quot;john&quot;</span>;</span><br><span class="line"><span class="built_in">string</span> strName = name; <span class="comment">// var类型变量name隐式转换为string型</span></span><br><span class="line">Console.WriteLine(<span class="string">&quot;r=25，圆的面积=&#123;0&#125;,&#123;1&#125;&quot;</span>, s1, s2);</span><br><span class="line">Console.WriteLine(<span class="string">&quot;转换成功！&quot;</span>);</span><br><span class="line">Console.ReadKey();</span><br></pre></td></tr></table></figure>
+                <h4 id="数据类型相关操作"><a href="#数据类型相关操作" class="headerlink" title="数据类型相关操作"></a>数据类型相关操作</h4><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">var intNum &#x3D; 250;
+int i &#x3D; intnum; &#x2F;&#x2F; var 型变量intnum隐式转换成整型
+var name &#x3D; &quot;john&quot;;
+string strname &#x3D; name; &#x2F;&#x2F; var型变量name隐式转换成string型
+Console.WriteLine(&quot;转换后的内容是&#123;0&#125;，&#123;1&#125;&quot;, i, name); &#x2F;&#x2F; 转换后的内容是250, john
+Console.ReadKey();<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">decimal pi &#x3D; 3.14159M; &#x2F;&#x2F; 字母M表示是decimal类型
+int r &#x3D; 12; &#x2F;&#x2F; 圆的半径
+decimal s &#x3D; 0; &#x2F;&#x2F; 圆的面积
+s &#x3D; pi*r*r;
+Console.WriteLine(&quot;圆的半径是&#123;0&#125;，\n圆的面积是&#123;1&#125;&quot;, r, s);
+Console.ReadLine();
+MessageBox.Show(&quot;圆的半径是&quot;+r+&quot;\n圆的面积是&quot;+s);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">float pi &#x3D; 3.14f; &#x2F;&#x2F; 定义一个单精度的实数
+int i &#x3D; (int)pi; &#x2F;&#x2F; 将单精度强制转换成整型计算，i的值是3，不是3.14，造成信息丢失
+Console.WriteLine(&quot;转换后的内容是&#123;0&#125;&quot;, i);
+Console.ReadKey();<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="Convert类转换"><a href="#Convert类转换" class="headerlink" title="Convert类转换"></a>Convert类转换</h4><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">string myString &#x3D; &quot;true&quot;;
+bool MyBool &#x3D; Convert.ToBoolean(myString); &#x2F;&#x2F; 将string转换成Boolean型，Mybool &#x3D; true
+string newString &#x3D; &quot;12345&quot;;
+int myInt &#x3D; Convert.ToInt32(newString); &#x2F;&#x2F; 将字符串转为数字值，myInt &#x3D; 12345
+Console.WriteLine(&quot;转换后的内容是&#123;0&#125;，&#123;1&#125;&quot;, MyBool, myInt); &#x2F;&#x2F; true 12345
+Console.ReadKey();<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="隐式转换、显式转换使用举例："><a href="#隐式转换、显式转换使用举例：" class="headerlink" title="隐式转换、显式转换使用举例："></a>隐式转换、显式转换使用举例：</h4><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">Console.WriteLine(&quot;隐式、显式转换例子：&quot;);
+short r &#x3D; 25; &#x2F;&#x2F; 表示圆的半径
+int i &#x3D; r; &#x2F;&#x2F; 将短整型r隐式转换成整型
+float pi &#x3D; 3.14f; &#x2F;&#x2F; 定义一个单精度的实数
+double s1 &#x3D; pi * i * i; &#x2F;&#x2F; s1为double型，表示圆的面积
+int s2;
+s2 &#x3D; (int)pi * i * i; &#x2F;&#x2F; s2为int型，表示圆的面积 强制转换
+var name &#x3D; &quot;john&quot;;
+string strName &#x3D; name; &#x2F;&#x2F; var类型变量name隐式转换为string型
+Console.WriteLine(&quot;r&#x3D;25，圆的面积&#x3D;&#123;0&#125;,&#123;1&#125;&quot;, s1, s2);
+Console.WriteLine(&quot;转换成功！&quot;);
+Console.ReadKey();<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h4 id="Convert转换使用举例："><a href="#Convert转换使用举例：" class="headerlink" title="Convert转换使用举例："></a>Convert转换使用举例：</h4><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Console.WriteLine(<span class="string">&quot;隐式、显式转换例子：&quot;</span>);</span><br><span class="line"><span class="built_in">short</span> r = <span class="number">25</span>; <span class="comment">// 表示圆的半径</span></span><br><span class="line"><span class="built_in">int</span> i = Convert.ToInt32(r); <span class="comment">// 将短整型r隐式转换成整型</span></span><br><span class="line"><span class="built_in">float</span> pi = <span class="number">3.14f</span>; <span class="comment">// 定义一个单精度的实数</span></span><br><span class="line"><span class="built_in">double</span> s1 = pi * i * i; <span class="comment">// s1为double型，表示圆的面积</span></span><br><span class="line"><span class="built_in">int</span> s2;</span><br><span class="line">s2 = Convert.ToInt32(pi) * i * i; <span class="comment">// s2为int型，表示圆的面积</span></span><br><span class="line"><span class="keyword">var</span> memberName = <span class="string">&quot;Johnson&quot;</span>;</span><br><span class="line"><span class="built_in">string</span> strName = Convert.ToString(memberName); <span class="comment">// var型变量隐式转换为string型</span></span><br><span class="line">Console.WriteLine(<span class="string">&quot;r=25，圆的面积=&#123;0&#125;,&#123;1&#125;&quot;</span>, s1, s2);</span><br><span class="line">Console.WriteLine(<span class="string">&quot;memberName=&#123;0&#125;&quot;</span>, memberName);</span><br><span class="line">Console.WriteLine(<span class="string">&quot;转换成功！&quot;</span>);</span><br><span class="line">Console.ReadKey();</span><br></pre></td></tr></table></figure>
+<h4 id="Convert转换使用举例："><a href="#Convert转换使用举例：" class="headerlink" title="Convert转换使用举例："></a>Convert转换使用举例：</h4><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">Console.WriteLine(&quot;隐式、显式转换例子：&quot;);
+short r &#x3D; 25; &#x2F;&#x2F; 表示圆的半径
+int i &#x3D; Convert.ToInt32(r); &#x2F;&#x2F; 将短整型r隐式转换成整型
+float pi &#x3D; 3.14f; &#x2F;&#x2F; 定义一个单精度的实数
+double s1 &#x3D; pi * i * i; &#x2F;&#x2F; s1为double型，表示圆的面积
+int s2;
+s2 &#x3D; Convert.ToInt32(pi) * i * i; &#x2F;&#x2F; s2为int型，表示圆的面积
+var memberName &#x3D; &quot;Johnson&quot;;
+string strName &#x3D; Convert.ToString(memberName); &#x2F;&#x2F; var型变量隐式转换为string型
+Console.WriteLine(&quot;r&#x3D;25，圆的面积&#x3D;&#123;0&#125;,&#123;1&#125;&quot;, s1, s2);
+Console.WriteLine(&quot;memberName&#x3D;&#123;0&#125;&quot;, memberName);
+Console.WriteLine(&quot;转换成功！&quot;);
+Console.ReadKey();<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h4 id="字符串与数值之间的转换"><a href="#字符串与数值之间的转换" class="headerlink" title="字符串与数值之间的转换"></a>字符串与数值之间的转换</h4><ul>
 <li>ToString()方法：数值类型的ToString()方法可以将数值型数据转换为字符串。</li>
-<li>Parse()方法：数值类型的Parse()方法可以将字符串转换为数值型，例如,字符串转换为整型使用int.Parse(string)，字符串转换为双精度浮点型使用double.Parse(string)等。<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span> num1 = <span class="number">25</span>;</span><br><span class="line"><span class="built_in">string</span> str1 = num1.ToString(); <span class="comment">// num1的toString()方法将num1转换成string赋值给str1</span></span><br><span class="line"><span class="built_in">string</span> str2 = <span class="string">&quot;38&quot;</span>;</span><br><span class="line"><span class="built_in">int</span> num2 = <span class="built_in">int</span>.Parse(str2); <span class="comment">// int.Parse()方法将字符串str2转换成int类型</span></span><br><span class="line"><span class="built_in">string</span> str3 = <span class="string">&quot;21&quot;</span>;</span><br><span class="line"><span class="built_in">double</span> num3 = <span class="built_in">double</span>.Parse(str3); <span class="comment">// double.Parse()将字符串转换为双精度浮点型、</span></span><br><span class="line"><span class="built_in">string</span> str4 = <span class="string">&quot;56&quot;</span>;</span><br><span class="line"><span class="built_in">float</span> num4 = <span class="built_in">float</span>.Parse(str4); <span class="comment">// float.Parse()将字符串转换成单精度浮点型</span></span><br><span class="line">Console.WriteLine(<span class="string">&quot;num1、num2、num3、num4对应的数值为: &#123;0&#125;, &#123;1&#125;, &#123;2&#125;, &#123;3&#125;&quot;</span>, num1, num2, num3,num4);</span><br><span class="line">Console.ReadKey();</span><br></pre></td></tr></table></figure></li>
+<li>Parse()方法：数值类型的Parse()方法可以将字符串转换为数值型，例如,字符串转换为整型使用int.Parse(string)，字符串转换为双精度浮点型使用double.Parse(string)等。<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">int num1 &#x3D; 25;
+string str1 &#x3D; num1.ToString(); &#x2F;&#x2F; num1的toString()方法将num1转换成string赋值给str1
+string str2 &#x3D; &quot;38&quot;;
+int num2 &#x3D; int.Parse(str2); &#x2F;&#x2F; int.Parse()方法将字符串str2转换成int类型
+string str3 &#x3D; &quot;21&quot;;
+double num3 &#x3D; double.Parse(str3); &#x2F;&#x2F; double.Parse()将字符串转换为双精度浮点型、
+string str4 &#x3D; &quot;56&quot;;
+float num4 &#x3D; float.Parse(str4); &#x2F;&#x2F; float.Parse()将字符串转换成单精度浮点型
+Console.WriteLine(&quot;num1、num2、num3、num4对应的数值为: &#123;0&#125;, &#123;1&#125;, &#123;2&#125;, &#123;3&#125;&quot;, num1, num2, num3,num4);
+Console.ReadKey();<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ul>
-<h4 id="装箱与拆箱"><a href="#装箱与拆箱" class="headerlink" title="装箱与拆箱"></a>装箱与拆箱</h4><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 拆箱：引用类型-&gt;值类型</span></span><br><span class="line"><span class="comment">// 装箱：值类型-&gt;引用类型</span></span><br><span class="line"><span class="built_in">int</span> n = <span class="number">4</span>; <span class="comment">// n是值类型</span></span><br><span class="line"><span class="built_in">object</span> obj = n; <span class="comment">// 装箱，把任何值类型隐式转换为object类型，其中object为引用类型</span></span><br><span class="line">console.writeline(<span class="string">&quot;n的初始值为：&#123;0&#125;，装箱后的值为：&#123;1&#125;&quot;</span>, n, obj.tostring());</span><br><span class="line"><span class="built_in">int</span> m = (<span class="built_in">int</span>)obj; <span class="comment">//拆箱，把一个object类型隐式的转换为值类型</span></span><br><span class="line">console.writeline(<span class="string">&quot;引用类型的值为：&#123;0&#125;，拆箱后的值为：&#123;1&#125;&quot;</span>, obj.tostring(), m);</span><br><span class="line">console.readline();</span><br></pre></td></tr></table></figure>
+<h4 id="装箱与拆箱"><a href="#装箱与拆箱" class="headerlink" title="装箱与拆箱"></a>装箱与拆箱</h4><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">&#x2F;&#x2F; 拆箱：引用类型-&gt;值类型
+&#x2F;&#x2F; 装箱：值类型-&gt;引用类型
+int n &#x3D; 4; &#x2F;&#x2F; n是值类型
+object obj &#x3D; n; &#x2F;&#x2F; 装箱，把任何值类型隐式转换为object类型，其中object为引用类型
+console.writeline(&quot;n的初始值为：&#123;0&#125;，装箱后的值为：&#123;1&#125;&quot;, n, obj.tostring());
+int m &#x3D; (int)obj; &#x2F;&#x2F;拆箱，把一个object类型隐式的转换为值类型
+console.writeline(&quot;引用类型的值为：&#123;0&#125;，拆箱后的值为：&#123;1&#125;&quot;, obj.tostring(), m);
+console.readline();<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="引用类型与值类型"><a href="#引用类型与值类型" class="headerlink" title="引用类型与值类型"></a>引用类型与值类型</h4><p>引用类型和值类型变量的使用是C#中的高级技巧之一。值类型变量中保存的是自己的实际数据，在赋值的时候会把源变量的数据复制一份，然后赋给目的变量；引用类型变量中保存的是“指向实际数据的指针”，即实际对象数据的内存地址，在进行赋值操作的时候，它和值类型一样，也是先有一个复制的操作，不过它复制的不是实际的数据，而是引用（真实数据的内存地址）。</p>
 <ol>
 <li>怎么区分值类型与引用类型以struct关键字定义的数据类型就是值类型，另外，枚举类型也是值类型；以class关键字定义的数据类型就是引用类型。</li>
-<li>值类型变量与引用类型变量的使用区别值类型变量不需要使用new关键字来分配内存。相信大家使用int型变量时，就没有使用new来为其分配内存，定义完之后，就可以直接使用；引用类型变量则需要为其赋值后，才能使用。下面举例说明值类型与引用类型在使用上的区别。<br>首先定义两种类型的员工：结构体SEmployee和类CEmployee。<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> SEmployee</span><br><span class="line">   &#123;</span><br><span class="line">       <span class="keyword">public</span> <span class="built_in">int</span> age;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">class</span> <span class="title">CEmployee</span></span><br><span class="line">   &#123;</span><br><span class="line">       <span class="keyword">public</span> <span class="built_in">int</span> age;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">SEmployee se;</span><br><span class="line">se.age = <span class="number">4</span>;</span><br><span class="line">CEmployee ce;</span><br><span class="line">ce = <span class="keyword">new</span> CEmployee();</span><br><span class="line">ce.age = <span class="number">5</span>;</span><br><span class="line">Console.WriteLine(<span class="string">&quot;年龄：&#123;0&#125;&quot;</span>, se.age);</span><br><span class="line">Console.WriteLine(<span class="string">&quot;年龄：&#123;0&#125;&quot;</span>, ce.age);</span><br><span class="line">Console.ReadLine();</span><br></pre></td></tr></table></figure>
+<li>值类型变量与引用类型变量的使用区别值类型变量不需要使用new关键字来分配内存。相信大家使用int型变量时，就没有使用new来为其分配内存，定义完之后，就可以直接使用；引用类型变量则需要为其赋值后，才能使用。下面举例说明值类型与引用类型在使用上的区别。<br>首先定义两种类型的员工：结构体SEmployee和类CEmployee。<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">struct SEmployee
+   &#123;
+       public int age;
+   &#125;
+   class CEmployee
+   &#123;
+       public int age;
+   &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">SEmployee se;
+se.age &#x3D; 4;
+CEmployee ce;
+ce &#x3D; new CEmployee();
+ce.age &#x3D; 5;
+Console.WriteLine(&quot;年龄：&#123;0&#125;&quot;, se.age);
+Console.WriteLine(&quot;年龄：&#123;0&#125;&quot;, ce.age);
+Console.ReadLine();<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 值类型变量在定义后，就直接可以使用，而引用类型必须使用new关键字后才能使用。对于引用类型会有“未将对象引用设置到对象的实例”错误，而值类型不会发生这种错误。<h4 id="typeof运算符"><a href="#typeof运算符" class="headerlink" title="typeof运算符"></a>typeof运算符</h4>typeof运算符用于获得系统原型对象的类型，也就是Type类型。Type类包含关于值类型和引用类型的信息。</li>
 </ol>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Type t  = <span class="keyword">typeof</span>(<span class="built_in">int</span>);</span><br><span class="line">Console.WriteLine(<span class="string">&quot;类型：&#123;0&#125;&quot;</span>, t); <span class="comment">// System.Int32</span></span><br><span class="line">Console.ReadKey();</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">Type t  &#x3D; typeof(int);
+Console.WriteLine(&quot;类型：&#123;0&#125;&quot;, t); &#x2F;&#x2F; System.Int32
+Console.ReadKey();<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <h4 id="checked和unchecked运算符"><a href="#checked和unchecked运算符" class="headerlink" title="checked和unchecked运算符"></a>checked和unchecked运算符</h4><p>checked和unchecked运算符用于允许或者禁止对指定的运算进行检测，并指出相应的错误提示信息。</p>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">byte</span> s = <span class="number">255</span>;</span><br><span class="line">checked <span class="comment">// checked会检查溢出报错，并给出错误提示</span></span><br><span class="line"><span class="comment">// unchecked // checked 改为 unckcked,控制台不报错，输出1</span></span><br><span class="line">&#123;</span><br><span class="line">    s += <span class="number">2</span>;</span><br><span class="line">&#125;</span><br><span class="line">Console.WriteLine(s.ToString());</span><br><span class="line">Console.ReadKey(); </span><br></pre></td></tr></table></figure>
-<h4 id="成绩练习代码"><a href="#成绩练习代码" class="headerlink" title="成绩练习代码"></a>成绩练习代码</h4><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">Console.WriteLine(<span class="string">&quot;请输入成绩0-100：&quot;</span>);</span><br><span class="line"><span class="built_in">int</span> score = <span class="built_in">int</span>.Parse(Console.ReadLine());</span><br><span class="line"><span class="keyword">if</span> (score &gt;= <span class="number">90</span>)</span><br><span class="line">&#123;</span><br><span class="line">    Console.WriteLine(<span class="string">&quot;优秀&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span> (score &gt;= <span class="number">80</span>)</span><br><span class="line">&#123;</span><br><span class="line">    Console.WriteLine(<span class="string">&quot;良好&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span> (score &gt;= <span class="number">70</span>)</span><br><span class="line">&#123;</span><br><span class="line">    Console.WriteLine(<span class="string">&quot;中等&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span> (score &gt;= <span class="number">60</span>)</span><br><span class="line">&#123;</span><br><span class="line">    Console.WriteLine(<span class="string">&quot;及格&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">&#123;</span><br><span class="line">    Console.WriteLine(<span class="string">&quot;不及格&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line">Console.ReadKey();</span><br></pre></td></tr></table></figure>
-<h4 id="循环练习代码"><a href="#循环练习代码" class="headerlink" title="循环练习代码"></a>循环练习代码</h4><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// for循环计算0-100的和</span></span><br><span class="line"><span class="built_in">int</span> sum = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">1</span>; i &lt;<span class="number">101</span>; i++)</span><br><span class="line">&#123;</span><br><span class="line">    sum += i;</span><br><span class="line">&#125;</span><br><span class="line">Console.WriteLine(sum);</span><br><span class="line">Console.ReadKey(); </span><br></pre></td></tr></table></figure>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// while循环计算0-100的和</span></span><br><span class="line">    <span class="built_in">int</span> i = <span class="number">1</span>, sum = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(i &lt; <span class="number">101</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        sum += i;</span><br><span class="line">        i++;</span><br><span class="line">    &#125;</span><br><span class="line">    Console.WriteLine(sum);</span><br><span class="line">    Console.ReadKey(); </span><br></pre></td></tr></table></figure>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// do-while计算0-100的和</span></span><br><span class="line"><span class="built_in">int</span> i=<span class="number">1</span>, sum =<span class="number">0</span>;</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">&#123;</span><br><span class="line">    sum += i;</span><br><span class="line">    i++;</span><br><span class="line">&#125; <span class="keyword">while</span> (i &lt;= <span class="number">100</span>);</span><br><span class="line">Console.WriteLine(sum);</span><br><span class="line">Console.ReadKey();</span><br></pre></td></tr></table></figure>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// for-each循环</span></span><br><span class="line"><span class="built_in">string</span>[]week = &#123;<span class="string">&quot;Mon&quot;</span>, <span class="string">&quot;Tue&quot;</span>, <span class="string">&quot;Wed&quot;</span>, <span class="string">&quot;Thu&quot;</span>, <span class="string">&quot;Fri&quot;</span>, <span class="string">&quot;Sat&quot;</span>, <span class="string">&quot;Sun&quot;</span>&#125;; <span class="comment">// 定义数组并赋值</span></span><br><span class="line"><span class="keyword">foreach</span>(<span class="built_in">string</span> s <span class="keyword">in</span> week) <span class="comment">// 遍历数组</span></span><br><span class="line">&#123;</span><br><span class="line">    Console.WriteLine(s);</span><br><span class="line">&#125;</span><br><span class="line">Console.ReadKey(); </span><br></pre></td></tr></table></figure>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 输出九九乘法表</span></span><br><span class="line"><span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">1</span>; i &lt; <span class="number">10</span>; i++)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="built_in">int</span> j = <span class="number">1</span>; j &lt;= i; j++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">int</span> k = i*j;</span><br><span class="line">        Console.Write(<span class="string">&quot;&#123;0&#125;*&#123;1&#125; = &#123;2&#125;&quot;</span>, j, i, k);</span><br><span class="line">        <span class="keyword">if</span> (i != j)Console.Write(<span class="string">&quot;,&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    Console.WriteLine();</span><br><span class="line">&#125;</span><br><span class="line">Console.ReadKey(); </span><br></pre></td></tr></table></figure>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 输出小于100的素数</span></span><br><span class="line">Console.WriteLine(<span class="string">&quot;小于100的素数有：&quot;</span>);</span><br><span class="line"><span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">2</span>; i &lt; <span class="number">100</span>; i++)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">bool</span> isPrime = <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="built_in">int</span> j = <span class="number">2</span>; j &lt; i<span class="number">-1</span>; j++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (i % j == <span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            isPrime = <span class="literal">false</span>;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (isPrime)Console.WriteLine(i);</span><br><span class="line">&#125;</span><br><span class="line">Console.ReadKey(); </span><br></pre></td></tr></table></figure>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 复印纸数练习</span></span><br><span class="line">Console.WriteLine(<span class="string">&quot;请输入复印数量：&quot;</span>);</span><br><span class="line"><span class="built_in">int</span> num = <span class="built_in">int</span>.Parse(Console.ReadLine());</span><br><span class="line"><span class="built_in">double</span> money = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">if</span> (num &lt; <span class="number">51</span>) money = <span class="number">0.5</span>*num;</span><br><span class="line"><span class="keyword">else</span> money = <span class="number">0.5</span>*<span class="number">50</span> + (num - <span class="number">50</span>)*<span class="number">0.2</span>;</span><br><span class="line">Console.WriteLine(money);</span><br><span class="line">Console.ReadKey();</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">byte s &#x3D; 255;
+checked &#x2F;&#x2F; checked会检查溢出报错，并给出错误提示
+&#x2F;&#x2F; unchecked &#x2F;&#x2F; checked 改为 unckcked,控制台不报错，输出1
+&#123;
+    s +&#x3D; 2;
+&#125;
+Console.WriteLine(s.ToString());
+Console.ReadKey(); <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="成绩练习代码"><a href="#成绩练习代码" class="headerlink" title="成绩练习代码"></a>成绩练习代码</h4><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">Console.WriteLine(&quot;请输入成绩0-100：&quot;);
+int score &#x3D; int.Parse(Console.ReadLine());
+if (score &gt;&#x3D; 90)
+&#123;
+    Console.WriteLine(&quot;优秀&quot;);
+&#125;
+else if (score &gt;&#x3D; 80)
+&#123;
+    Console.WriteLine(&quot;良好&quot;);
+&#125;
+else if (score &gt;&#x3D; 70)
+&#123;
+    Console.WriteLine(&quot;中等&quot;);
+&#125;
+else if (score &gt;&#x3D; 60)
+&#123;
+    Console.WriteLine(&quot;及格&quot;);
+&#125;
+else
+&#123;
+    Console.WriteLine(&quot;不及格&quot;);
+&#125;
+Console.ReadKey();<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="循环练习代码"><a href="#循环练习代码" class="headerlink" title="循环练习代码"></a>循环练习代码</h4><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">&#x2F;&#x2F; for循环计算0-100的和
+int sum &#x3D; 0;
+for (int i &#x3D; 1; i &lt;101; i++)
+&#123;
+    sum +&#x3D; i;
+&#125;
+Console.WriteLine(sum);
+Console.ReadKey(); <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">&#x2F;&#x2F; while循环计算0-100的和
+    int i &#x3D; 1, sum &#x3D; 0;
+    while(i &lt; 101)
+    &#123;
+        sum +&#x3D; i;
+        i++;
+    &#125;
+    Console.WriteLine(sum);
+    Console.ReadKey(); <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">&#x2F;&#x2F; do-while计算0-100的和
+int i&#x3D;1, sum &#x3D;0;
+do
+&#123;
+    sum +&#x3D; i;
+    i++;
+&#125; while (i &lt;&#x3D; 100);
+Console.WriteLine(sum);
+Console.ReadKey();<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">&#x2F;&#x2F; for-each循环
+string[]week &#x3D; &#123;&quot;Mon&quot;, &quot;Tue&quot;, &quot;Wed&quot;, &quot;Thu&quot;, &quot;Fri&quot;, &quot;Sat&quot;, &quot;Sun&quot;&#125;; &#x2F;&#x2F; 定义数组并赋值
+foreach(string s in week) &#x2F;&#x2F; 遍历数组
+&#123;
+    Console.WriteLine(s);
+&#125;
+Console.ReadKey(); <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">&#x2F;&#x2F; 输出九九乘法表
+for (int i &#x3D; 1; i &lt; 10; i++)
+&#123;
+    for (int j &#x3D; 1; j &lt;&#x3D; i; j++)
+    &#123;
+        int k &#x3D; i*j;
+        Console.Write(&quot;&#123;0&#125;*&#123;1&#125; &#x3D; &#123;2&#125;&quot;, j, i, k);
+        if (i !&#x3D; j)Console.Write(&quot;,&quot;);
+    &#125;
+    Console.WriteLine();
+&#125;
+Console.ReadKey(); <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">&#x2F;&#x2F; 输出小于100的素数
+Console.WriteLine(&quot;小于100的素数有：&quot;);
+for (int i &#x3D; 2; i &lt; 100; i++)
+&#123;
+    bool isPrime &#x3D; true;
+    for (int j &#x3D; 2; j &lt; i-1; j++)
+    &#123;
+        if (i % j &#x3D;&#x3D; 0)
+        &#123;
+            isPrime &#x3D; false;
+            break;
+        &#125;
+    &#125;
+    if (isPrime)Console.WriteLine(i);
+&#125;
+Console.ReadKey(); <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">&#x2F;&#x2F; 复印纸数练习
+Console.WriteLine(&quot;请输入复印数量：&quot;);
+int num &#x3D; int.Parse(Console.ReadLine());
+double money &#x3D; 0;
+if (num &lt; 51) money &#x3D; 0.5*num;
+else money &#x3D; 0.5*50 + (num - 50)*0.2;
+Console.WriteLine(money);
+Console.ReadKey();<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
                 
             </div>
@@ -1058,7 +1229,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total Words:&nbsp;<span
-                        class="white-color">26.2k</span>
+                        class="white-color">27.2k</span>
             
             
             

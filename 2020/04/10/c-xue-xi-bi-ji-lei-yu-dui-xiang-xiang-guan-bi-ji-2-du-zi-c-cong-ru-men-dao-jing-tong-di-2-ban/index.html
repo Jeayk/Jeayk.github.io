@@ -472,7 +472,7 @@ C#通过new创建对象的过程实际上就是调用类的构造函数的过程
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    1.5k
+                    1.6k
                 </div>
                 
 
@@ -494,6 +494,9 @@ C#通过new创建对象的过程实际上就是调用类的构造函数的过程
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
 
         
 
@@ -507,8 +510,40 @@ C#通过new创建对象的过程实际上就是调用类的构造函数的过程
 <li>声明的构造函数是非静态的实例构造函数。构造函数也有静态的，静态构造函数用于初始化类中的静态字段成员。 <h5 id="析构函数"><a href="#析构函数" class="headerlink" title="析构函数"></a>析构函数</h5></li>
 <li>析构函数是对象销毁前释放所占用系统资源的类的成员。</li>
 <li>析构函数的名字是在类名前面加一个符号“～”。析构函数不接受任何参数，也不返回任何值。</li>
-<li>一个类只能有一个析构函数，析构函数不能手动调用，是系统自动调用的。<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title">Point</span></span><br><span class="line">&#123;</span><br><span class="line">     </span><br><span class="line">     <span class="keyword">public</span> <span class="built_in">int</span> X &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125; <span class="comment">// 定义属性X，得到和设置点的横坐标</span></span><br><span class="line">     <span class="keyword">public</span> <span class="built_in">int</span> Y &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125; <span class="comment">// 定义属性Y，得到和设置点的纵坐标</span></span><br><span class="line">     <span class="keyword">public</span> <span class="keyword">static</span> <span class="built_in">int</span> z;</span><br><span class="line">     <span class="function"><span class="keyword">static</span> <span class="title">Point</span>(<span class="params"></span>) <span class="comment">// 定义静态构造函数</span></span></span><br><span class="line">     &#123;</span><br><span class="line">         z = <span class="number">100</span>;</span><br><span class="line">     &#125;</span><br><span class="line">     <span class="function"><span class="keyword">public</span> <span class="title">Point</span>(<span class="params"></span>) <span class="comment">// 无参构造函数用于初始化</span></span></span><br><span class="line">     &#123;</span><br><span class="line">         X = <span class="number">0</span>; Y = <span class="number">2</span>; <span class="comment">// 初始化</span></span><br><span class="line">     &#125;</span><br><span class="line">     <span class="function"><span class="keyword">public</span> <span class="title">Point</span>(<span class="params"><span class="built_in">int</span> val_x, <span class="built_in">int</span> val_y</span>) <span class="comment">// 有参数构造函数</span></span></span><br><span class="line">     &#123;</span><br><span class="line">         X = val_x; Y = val_y; <span class="comment">// 用指定的参数初始化X和Y</span></span><br><span class="line">     &#125;</span><br><span class="line">     ~Point() <span class="comment">// 析构函数</span></span><br><span class="line">     &#123;</span><br><span class="line">         Console.WriteLine(<span class="string">&quot;析构函数主要用于清理资源！&quot;</span>);</span><br><span class="line">         Console.ReadKey();</span><br><span class="line">     &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
-Main方法测试代码<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Console.WriteLine(<span class="string">&quot;静态构造函数：&quot;</span> + Point.z); <span class="comment">// 静态构造函数：100</span></span><br><span class="line">Point objPoint1 = <span class="keyword">new</span> Point();</span><br><span class="line">Console.WriteLine(<span class="string">&quot;无参构造函数演示&quot;</span>);</span><br><span class="line">Console.WriteLine(<span class="string">&quot;X = &quot;</span> + objPoint1.X); <span class="comment">// X = 0</span></span><br><span class="line">Console.WriteLine(<span class="string">&quot;Y = &quot;</span> + objPoint1.Y); <span class="comment">// Y = 2</span></span><br><span class="line">Point objPoint2 = <span class="keyword">new</span> Point(<span class="number">80</span>, <span class="number">90</span>);</span><br><span class="line">Console.WriteLine(<span class="string">&quot;有参构造函数演示&quot;</span>);</span><br><span class="line">Console.WriteLine(<span class="string">&quot;X = &quot;</span> + objPoint2.X); <span class="comment">// X = 80</span></span><br><span class="line">Console.WriteLine(<span class="string">&quot;Y = &quot;</span> + objPoint2.Y); <span class="comment">// Y = 90</span></span><br><span class="line">Console.ReadKey();</span><br></pre></td></tr></table></figure>
+<li>一个类只能有一个析构函数，析构函数不能手动调用，是系统自动调用的。<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">class Point
+&#123;
+     
+     public int X &#123; get; set; &#125; &#x2F;&#x2F; 定义属性X，得到和设置点的横坐标
+     public int Y &#123; get; set; &#125; &#x2F;&#x2F; 定义属性Y，得到和设置点的纵坐标
+     public static int z;
+     static Point() &#x2F;&#x2F; 定义静态构造函数
+     &#123;
+         z &#x3D; 100;
+     &#125;
+     public Point() &#x2F;&#x2F; 无参构造函数用于初始化
+     &#123;
+         X &#x3D; 0; Y &#x3D; 2; &#x2F;&#x2F; 初始化
+     &#125;
+     public Point(int val_x, int val_y) &#x2F;&#x2F; 有参数构造函数
+     &#123;
+         X &#x3D; val_x; Y &#x3D; val_y; &#x2F;&#x2F; 用指定的参数初始化X和Y
+     &#125;
+     ~Point() &#x2F;&#x2F; 析构函数
+     &#123;
+         Console.WriteLine(&quot;析构函数主要用于清理资源！&quot;);
+         Console.ReadKey();
+     &#125;
+ &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+Main方法测试代码<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">Console.WriteLine(&quot;静态构造函数：&quot; + Point.z); &#x2F;&#x2F; 静态构造函数：100
+Point objPoint1 &#x3D; new Point();
+Console.WriteLine(&quot;无参构造函数演示&quot;);
+Console.WriteLine(&quot;X &#x3D; &quot; + objPoint1.X); &#x2F;&#x2F; X &#x3D; 0
+Console.WriteLine(&quot;Y &#x3D; &quot; + objPoint1.Y); &#x2F;&#x2F; Y &#x3D; 2
+Point objPoint2 &#x3D; new Point(80, 90);
+Console.WriteLine(&quot;有参构造函数演示&quot;);
+Console.WriteLine(&quot;X &#x3D; &quot; + objPoint2.X); &#x2F;&#x2F; X &#x3D; 80
+Console.WriteLine(&quot;Y &#x3D; &quot; + objPoint2.Y); &#x2F;&#x2F; Y &#x3D; 90
+Console.ReadKey();<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h5 id="参数传递"><a href="#参数传递" class="headerlink" title="参数传递"></a>参数传递</h5></li>
 <li>C#定义方法时声明的参数称为形参（或称虚拟参数）,调用方法时传给形参的值称为实参。</li>
 <li>参数传递类型有值传递与引用传递两种。值传递是C#默认的传递方式。</li>
@@ -516,11 +551,39 @@ Main方法测试代码<figure class="highlight csharp"><table><tr><td class="gut
 <li>引用传递是把实在参数的地址传给形式参数，形式参数和实在参数指向同一个存储单元，对形式参数的改变就是对实在参数的改变。</li>
 <li>out传递与ref类似，二者的区别是，ref要求参数在传递之前必须初始化，out则不要求初始化。</li>
 </ul>
-<h6 id="值传递示例"><a href="#值传递示例" class="headerlink" title="值传递示例"></a>值传递示例</h6><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义值传递方法</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">Swap</span>(<span class="params"><span class="built_in">int</span> num1, <span class="built_in">int</span> num2</span>) <span class="comment">// 交换数据的方法</span></span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">int</span> temp; <span class="comment">// 定义用于交换变量值得中间变量</span></span><br><span class="line">    temp = num1; <span class="comment">// 将num1值赋值给中间变量temp</span></span><br><span class="line">    num1 = num2; <span class="comment">// 将num2赋值给num1</span></span><br><span class="line">    num2 = temp; <span class="comment">// 将中间变量存储的num1的值赋值给num2</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span> num1 = <span class="number">1</span>;</span><br><span class="line"><span class="built_in">int</span> num2 = <span class="number">2</span>;</span><br><span class="line">Console.WriteLine(<span class="string">&quot;此实例演示值传递参数&quot;</span>);</span><br><span class="line">Console.WriteLine(<span class="string">&quot;交换之前的字符串顺序为：num1-&#123;0&#125;, num2-&#123;1&#125;&quot;</span>, num1, num2); <span class="comment">// 1   2</span></span><br><span class="line">Program objProgram = <span class="keyword">new</span> Program();</span><br><span class="line">objProgram.Swap(num1, num2);</span><br><span class="line">Console.WriteLine(<span class="string">&quot;交换之后的字符串顺序为：num1-&#123;0&#125;, num2-&#123;1&#125;&quot;</span>, num1, num2); <span class="comment">// 1   2</span></span><br><span class="line">Console.ReadKey();</span><br></pre></td></tr></table></figure>
+<h6 id="值传递示例"><a href="#值传递示例" class="headerlink" title="值传递示例"></a>值传递示例</h6><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">&#x2F;&#x2F; 定义值传递方法
+private void Swap(int num1, int num2) &#x2F;&#x2F; 交换数据的方法
+&#123;
+    int temp; &#x2F;&#x2F; 定义用于交换变量值得中间变量
+    temp &#x3D; num1; &#x2F;&#x2F; 将num1值赋值给中间变量temp
+    num1 &#x3D; num2; &#x2F;&#x2F; 将num2赋值给num1
+    num2 &#x3D; temp; &#x2F;&#x2F; 将中间变量存储的num1的值赋值给num2
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">int num1 &#x3D; 1;
+int num2 &#x3D; 2;
+Console.WriteLine(&quot;此实例演示值传递参数&quot;);
+Console.WriteLine(&quot;交换之前的字符串顺序为：num1-&#123;0&#125;, num2-&#123;1&#125;&quot;, num1, num2); &#x2F;&#x2F; 1   2
+Program objProgram &#x3D; new Program();
+objProgram.Swap(num1, num2);
+Console.WriteLine(&quot;交换之后的字符串顺序为：num1-&#123;0&#125;, num2-&#123;1&#125;&quot;, num1, num2); &#x2F;&#x2F; 1   2
+Console.ReadKey();<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>运行结果显示并没有真正交换num1和num2两个变量的值，因为选择的是值传递的方法来传递参数。</p>
-<h6 id="ref引用传递示例"><a href="#ref引用传递示例" class="headerlink" title="ref引用传递示例"></a>ref引用传递示例</h6><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义引用传递方法</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">Swap</span>(<span class="params"><span class="keyword">ref</span> <span class="built_in">int</span> num1, <span class="keyword">ref</span> <span class="built_in">int</span> num2</span>) <span class="comment">// 交换数据的方法</span></span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">int</span> temp; <span class="comment">// 定义用于交换变量值得中间变量</span></span><br><span class="line">    temp = num1; <span class="comment">// 将num1值赋值给中间变量temp</span></span><br><span class="line">    num1 = num2; <span class="comment">// 将num2赋值给num1</span></span><br><span class="line">    num2 = temp; <span class="comment">// 将中间变量存储的num1的值赋值给num2</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span> num1 = <span class="number">1</span>;</span><br><span class="line"><span class="built_in">int</span> num2 = <span class="number">2</span>;</span><br><span class="line">Console.WriteLine(<span class="string">&quot;此实例演示引用传递参数&quot;</span>);</span><br><span class="line">Console.WriteLine(<span class="string">&quot;交换之前的字符串顺序为：num1-&#123;0&#125;, num2-&#123;1&#125;&quot;</span>, num1, num2); <span class="comment">// 1   2</span></span><br><span class="line">Program objProgram = <span class="keyword">new</span> Program();</span><br><span class="line">objProgram.Swap(<span class="keyword">ref</span> num1, <span class="keyword">ref</span> num2);</span><br><span class="line">Console.WriteLine(<span class="string">&quot;交换之后的字符串顺序为：num1-&#123;0&#125;, num2-&#123;1&#125;&quot;</span>, num1, num2); <span class="comment">// 2   1</span></span><br><span class="line">Console.ReadKey();</span><br></pre></td></tr></table></figure>
+<h6 id="ref引用传递示例"><a href="#ref引用传递示例" class="headerlink" title="ref引用传递示例"></a>ref引用传递示例</h6><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">&#x2F;&#x2F; 定义引用传递方法
+private void Swap(ref int num1, ref int num2) &#x2F;&#x2F; 交换数据的方法
+&#123;
+    int temp; &#x2F;&#x2F; 定义用于交换变量值得中间变量
+    temp &#x3D; num1; &#x2F;&#x2F; 将num1值赋值给中间变量temp
+    num1 &#x3D; num2; &#x2F;&#x2F; 将num2赋值给num1
+    num2 &#x3D; temp; &#x2F;&#x2F; 将中间变量存储的num1的值赋值给num2
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">int num1 &#x3D; 1;
+int num2 &#x3D; 2;
+Console.WriteLine(&quot;此实例演示引用传递参数&quot;);
+Console.WriteLine(&quot;交换之前的字符串顺序为：num1-&#123;0&#125;, num2-&#123;1&#125;&quot;, num1, num2); &#x2F;&#x2F; 1   2
+Program objProgram &#x3D; new Program();
+objProgram.Swap(ref num1, ref num2);
+Console.WriteLine(&quot;交换之后的字符串顺序为：num1-&#123;0&#125;, num2-&#123;1&#125;&quot;, num1, num2); &#x2F;&#x2F; 2   1
+Console.ReadKey();<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>ref引用传递交换了两个变量的值，在使用ref方式传递参数时，定义和调用时都要使用ref关键字。</p>
 <h6 id="out引用传递"><a href="#out引用传递" class="headerlink" title="out引用传递"></a>out引用传递</h6><ul>
 <li>out关键字与ref关键字类似，也是声明引用传递参数的，但ref要求变量必须在传递之前对实在参数初始化。</li>
@@ -528,7 +591,30 @@ Main方法测试代码<figure class="highlight csharp"><table><tr><td class="gut
 <li>当希望方法返回多个值时，可以使用out方式，使用out参数的方法可以将变量用做返回类型，还可以将一个或多个对象作为out参数返回给调用方法。</li>
 </ul>
 <p>下面的例子使用out在一个方法调用中返回3个值。请注意，第3个参数所赋的值为null，这样能允许方法有选择地返回值。</p>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">namespace</span> <span class="title">PointClass</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">class</span> <span class="title">Program</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>(<span class="params"><span class="built_in">string</span>[] args</span>)</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">int</span> <span class="keyword">value</span>;</span><br><span class="line">            <span class="built_in">string</span> str1, str2;</span><br><span class="line">            Console.WriteLine(<span class="string">&quot;此实例演示out引用传递&quot;</span>);</span><br><span class="line">            Method(<span class="keyword">out</span> <span class="built_in">int</span> <span class="keyword">value</span>, <span class="keyword">out</span> <span class="built_in">string</span> str1, <span class="keyword">out</span> <span class="built_in">string</span> str2);</span><br><span class="line">            Console.WriteLine(<span class="string">&quot;参数value的值是：&quot;</span> + <span class="keyword">value</span>); <span class="comment">// 参数value的值是：44</span></span><br><span class="line">            Console.WriteLine(<span class="string">&quot;参数str1的值是：&quot;</span> + str1); <span class="comment">// 参数str1的值是：I&#x27;ve been returned!</span></span><br><span class="line">            Console.WriteLine(<span class="string">&quot;参数str2的值是：&quot;</span> + str2); <span class="comment">// 参数str2的值是：</span></span><br><span class="line">            Console.ReadKey();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Method</span>(<span class="params"><span class="keyword">out</span> <span class="built_in">int</span> i, <span class="keyword">out</span> <span class="built_in">string</span> s1, <span class="keyword">out</span> <span class="built_in">string</span> s2</span>) <span class="comment">// 定义静态方法使用out进行参数的传递</span></span></span><br><span class="line">        &#123;</span><br><span class="line">            i = <span class="number">44</span>;</span><br><span class="line">            s1 = <span class="string">&quot;I&#x27;ve been returned!&quot;</span>;</span><br><span class="line">            s2 = <span class="literal">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">namespace PointClass
+&#123;
+    class Program
+    &#123;
+        static void Main(string[] args)
+        &#123;
+            int value;
+            string str1, str2;
+            Console.WriteLine(&quot;此实例演示out引用传递&quot;);
+            Method(out int value, out string str1, out string str2);
+            Console.WriteLine(&quot;参数value的值是：&quot; + value); &#x2F;&#x2F; 参数value的值是：44
+            Console.WriteLine(&quot;参数str1的值是：&quot; + str1); &#x2F;&#x2F; 参数str1的值是：I&#39;ve been returned!
+            Console.WriteLine(&quot;参数str2的值是：&quot; + str2); &#x2F;&#x2F; 参数str2的值是：
+            Console.ReadKey();
+        &#125;
+
+        static void Method(out int i, out string s1, out string s2) &#x2F;&#x2F; 定义静态方法使用out进行参数的传递
+        &#123;
+            i &#x3D; 44;
+            s1 &#x3D; &quot;I&#39;ve been returned!&quot;;
+            s2 &#x3D; null;
+        &#125;
+    &#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
                 
@@ -1061,7 +1147,7 @@ Main方法测试代码<figure class="highlight csharp"><table><tr><td class="gut
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total Words:&nbsp;<span
-                        class="white-color">26.2k</span>
+                        class="white-color">27.2k</span>
             
             
             

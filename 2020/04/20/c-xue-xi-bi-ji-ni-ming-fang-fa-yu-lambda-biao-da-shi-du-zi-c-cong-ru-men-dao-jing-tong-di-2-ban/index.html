@@ -469,14 +469,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    671
+                    701
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    2 Min
+                    3 Min
                 </div>
                 
 
@@ -491,15 +491,80 @@
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
 
         
 
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h4 id="匿名方法"><a href="#匿名方法" class="headerlink" title="匿名方法"></a>匿名方法</h4><p>要将代码块传递为委托参数，创建匿名方法则是唯一的方法。匿名方法就是为了将代码块传递为委托参数，因此也有人将其称为匿名委托。使用C#的匿名方法可以使委托及事件的代码编写更加精简、高效。一般情况下，事件注册事件处理方法，需要首先定义这个方法，如果该方法仅用于订阅特定的事件，则可使用代码更加简明的匿名方法。<br><strong>示例</strong><br>委托与事件中的烧水示例，Heater类不变，去掉Alarm类和Display类，使用匿名方法订阅事件修改Main方法中的代码。</p>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">Heater heater = <span class="keyword">new</span> Heater();</span><br><span class="line">heater.BoilEvent += <span class="built_in">delegate</span> (<span class="built_in">int</span> param) <span class="comment">//水快开时报警的匿名方法</span></span><br><span class="line">&#123;</span><br><span class="line">    Console.WriteLine(<span class="string">&quot;Alarm: 嘀嘀嘀，水已经&#123;0&#125;度了！&quot;</span>, param);</span><br><span class="line">&#125;;</span><br><span class="line">heater.BoilEvent += <span class="built_in">delegate</span> (<span class="built_in">int</span> param) <span class="comment">// 表示水温的匿名方法</span></span><br><span class="line">&#123;</span><br><span class="line">    Console.WriteLine(<span class="string">&quot;Display: 水快烧开了，当前温度：&#123;0&#125;度！&quot;</span>, param);</span><br><span class="line">&#125;;</span><br><span class="line">heater.BoilWater();</span><br><span class="line">Console.ReadKey();</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* Alarm: 嘀嘀嘀，水已经97度了!</span></span><br><span class="line"><span class="comment">* Display：水快烧开了，当前温度：97度。</span></span><br><span class="line"><span class="comment">* Alarm: 嘀嘀嘀，水已经98度了!</span></span><br><span class="line"><span class="comment">* Display：水快烧开了，当前温度：98度。</span></span><br><span class="line"><span class="comment">* Alarm: 嘀嘀嘀，水已经99度了!</span></span><br><span class="line"><span class="comment">* Display：水快烧开了，当前温度：99度。</span></span><br><span class="line"><span class="comment">* Alarm: 嘀嘀嘀，水已经100度了!</span></span><br><span class="line"><span class="comment">* Display：水快烧开了，当前温度：100度。</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">Heater heater &#x3D; new Heater();
+heater.BoilEvent +&#x3D; delegate (int param) &#x2F;&#x2F;水快开时报警的匿名方法
+&#123;
+    Console.WriteLine(&quot;Alarm: 嘀嘀嘀，水已经&#123;0&#125;度了！&quot;, param);
+&#125;;
+heater.BoilEvent +&#x3D; delegate (int param) &#x2F;&#x2F; 表示水温的匿名方法
+&#123;
+    Console.WriteLine(&quot;Display: 水快烧开了，当前温度：&#123;0&#125;度！&quot;, param);
+&#125;;
+heater.BoilWater();
+Console.ReadKey();
+&#x2F;**
+* Alarm: 嘀嘀嘀，水已经97度了!
+* Display：水快烧开了，当前温度：97度。
+* Alarm: 嘀嘀嘀，水已经98度了!
+* Display：水快烧开了，当前温度：98度。
+* Alarm: 嘀嘀嘀，水已经99度了!
+* Display：水快烧开了，当前温度：99度。
+* Alarm: 嘀嘀嘀，水已经100度了!
+* Display：水快烧开了，当前温度：100度。
+*&#x2F;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="lambda表达式"><a href="#lambda表达式" class="headerlink" title="lambda表达式"></a>lambda表达式</h4><p>lambda表达式是一种可用于创建委托或表达式目录树类型的匿名函数。通过使用lambda表达式，可以写入可作为参数传递或作为函数调用值返回的本地函数。lambda表达式对于编写LINQ查询表达式特别有用。若要创建lambda表达式，需要在lambda运算符 =&gt; 左侧指定输入参数（如果有），然后在另一侧输入表达式或语句块。<br><strong>联想理解：类似于ES6的箭头函数</strong><br>示例：使用lambda表达式实现委托，进行数组排序。</p>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> System.Linq;</span><br><span class="line"><span class="keyword">using</span> System.Text;</span><br><span class="line"><span class="keyword">using</span> System.Threading.Tasks;</span><br><span class="line"><span class="keyword">using</span> System.Linq.Expressions;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">LambdaTest</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">class</span> <span class="title">Program</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="built_in">delegate</span> <span class="built_in">bool</span> <span class="title">SortDelegate</span>(<span class="params"><span class="built_in">int</span>[] x</span>)</span>; <span class="comment">// 定义委托SortDelegate</span></span><br><span class="line">        <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>(<span class="params"><span class="built_in">string</span>[] args</span>)</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">int</span>[] arr = <span class="keyword">new</span> <span class="built_in">int</span>[] &#123; <span class="number">8</span>, <span class="number">9</span>, <span class="number">2</span>, <span class="number">1</span>, <span class="number">4</span>, <span class="number">3</span> &#125;;</span><br><span class="line">            Console.WriteLine(<span class="string">&quot;排序前的数组：&quot;</span>);</span><br><span class="line">            <span class="keyword">foreach</span> (<span class="built_in">int</span> i <span class="keyword">in</span> arr) Console.Write(i); <span class="comment">// 892143</span></span><br><span class="line">            Console.WriteLine();</span><br><span class="line">            <span class="comment">// 用lamdba表达式实例化委托</span></span><br><span class="line">            SortDelegate myDelegate = array =&gt;</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">for</span> (<span class="built_in">int</span> i = array.GetUpperBound(<span class="number">0</span>); i &gt;= <span class="number">0</span>; i--)</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="comment">// 冒泡排序</span></span><br><span class="line">                    <span class="keyword">for</span> (<span class="built_in">int</span> j = <span class="number">0</span>; j &lt;= i; j++)</span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="keyword">if</span> (array[j] &lt;= array[i])</span><br><span class="line">                        &#123;</span><br><span class="line">                            <span class="built_in">int</span> temp = array[j];</span><br><span class="line">                            array[j] = array[i];</span><br><span class="line">                            array[i] = temp;</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">            &#125;;</span><br><span class="line">            myDelegate(arr);</span><br><span class="line">            Console.WriteLine(<span class="string">&quot;排序后的数组：&quot;</span>);</span><br><span class="line">            <span class="keyword">foreach</span>(<span class="built_in">int</span> i <span class="keyword">in</span> arr) Console.Write(i); <span class="comment">// 984321</span></span><br><span class="line">            Console.ReadKey();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Linq.Expressions;
+
+namespace LambdaTest
+&#123;
+    class Program
+    &#123;
+        public delegate bool SortDelegate(int[] x); &#x2F;&#x2F; 定义委托SortDelegate
+        static void Main(string[] args)
+        &#123;
+            int[] arr &#x3D; new int[] &#123; 8, 9, 2, 1, 4, 3 &#125;;
+            Console.WriteLine(&quot;排序前的数组：&quot;);
+            foreach (int i in arr) Console.Write(i); &#x2F;&#x2F; 892143
+            Console.WriteLine();
+            &#x2F;&#x2F; 用lamdba表达式实例化委托
+            SortDelegate myDelegate &#x3D; array &#x3D;&gt;
+            &#123;
+                for (int i &#x3D; array.GetUpperBound(0); i &gt;&#x3D; 0; i--)
+                &#123;
+                    &#x2F;&#x2F; 冒泡排序
+                    for (int j &#x3D; 0; j &lt;&#x3D; i; j++)
+                    &#123;
+                        if (array[j] &lt;&#x3D; array[i])
+                        &#123;
+                            int temp &#x3D; array[j];
+                            array[j] &#x3D; array[i];
+                            array[i] &#x3D; temp;
+                        &#125;
+                    &#125;
+                &#125;
+                return true;
+            &#125;;
+            myDelegate(arr);
+            Console.WriteLine(&quot;排序后的数组：&quot;);
+            foreach(int i in arr) Console.Write(i); &#x2F;&#x2F; 984321
+            Console.ReadKey();
+        &#125;
+    &#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
                 
             </div>
@@ -1031,7 +1096,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total Words:&nbsp;<span
-                        class="white-color">26.2k</span>
+                        class="white-color">27.2k</span>
             
             
             

@@ -6,8 +6,7 @@
     <meta charset="utf-8">
     <meta name="keywords" content="C#学习笔记-数组操作相关笔记（读自C#从入门到精通 第2版）, 积跬步以至千里">
     <meta name="description" content="一维数组语法：数据类型[] 数组名    /   数组名 = new 数据类型[]
-1int[] a   /   a = new int[5]&amp;#123;1, 2, 3, 4, 5&amp;#125;   /   a = new int[5]
-12">
+int[] a   &amp;#x2F;   a &amp;#x3D; new int[5]&amp;#123;1, 2, 3, 4, 5&amp;#125;   &amp;#x2F;   a &amp;">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -471,7 +470,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    1.9k
+                    2k
                 </div>
                 
 
@@ -493,43 +492,141 @@
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
 
         
 
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h4 id="一维数组"><a href="#一维数组" class="headerlink" title="一维数组"></a>一维数组</h4><p>语法：数据类型[] 数组名    /   数组名 = new 数据类型[]</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">int[] a   /   a = new int[5]&#123;1, 2, 3, 4, 5&#125;   /   a = new int[5]</span><br></pre></td></tr></table></figure>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">string</span>[] week = &#123; <span class="string">&quot;Mon&quot;</span>, <span class="string">&quot;Tue&quot;</span>, <span class="string">&quot;Wed&quot;</span>, <span class="string">&quot;Thu&quot;</span>, <span class="string">&quot;Fri&quot;</span>, <span class="string">&quot;Sat&quot;</span>, <span class="string">&quot;Sun&quot;</span> &#125;;</span><br><span class="line"><span class="keyword">for</span>(<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; week.Length; i++)</span><br><span class="line">&#123;</span><br><span class="line">    Console.WriteLine(week[i]);</span><br><span class="line">&#125;</span><br><span class="line">Console.ReadLine();</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">int[] a   &#x2F;   a &#x3D; new int[5]&#123;1, 2, 3, 4, 5&#125;   &#x2F;   a &#x3D; new int[5]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">string[] week &#x3D; &#123; &quot;Mon&quot;, &quot;Tue&quot;, &quot;Wed&quot;, &quot;Thu&quot;, &quot;Fri&quot;, &quot;Sat&quot;, &quot;Sun&quot; &#125;;
+for(int i &#x3D; 0; i &lt; week.Length; i++)
+&#123;
+    Console.WriteLine(week[i]);
+&#125;
+Console.ReadLine();<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h4 id="二维数组"><a href="#二维数组" class="headerlink" title="二维数组"></a>二维数组</h4><p>语法：数据类型[, ]数组名</p>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span>[,] b = &#123; &#123; <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span> &#125;, &#123; <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span> &#125;, &#123; <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span> &#125; &#125;;</span><br><span class="line"><span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++)</span><br><span class="line">    <span class="keyword">for</span> (<span class="built_in">int</span> j = <span class="number">0</span>; j &lt; <span class="number">3</span>; j++)</span><br><span class="line">        Console.WriteLine(<span class="string">&quot;&#123;0&#125;行&#123;1&#125;列元素为&#123;2&#125;&quot;</span>, i, j, b[i, j]);</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="built_in">int</span> j = <span class="number">0</span>; j &lt; <span class="number">3</span>; j++)</span><br><span class="line">    &#123;</span><br><span class="line">        Console.Write(<span class="string">&quot;&#123;0,-5&#125;&quot;</span>, b[i, j]); <span class="comment">// 输出数组元素，每个元素占五格，靠左对齐</span></span><br><span class="line">        <span class="comment">/**</span></span><br><span class="line"><span class="comment">         * 1    2    3</span></span><br><span class="line"><span class="comment">        * 4    5    6</span></span><br><span class="line"><span class="comment">         * 7    8    9</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">    &#125;</span><br><span class="line">    Console.WriteLine();</span><br><span class="line">&#125;</span><br><span class="line">Console.ReadKey();</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">int[,] b &#x3D; &#123; &#123; 1, 2, 3 &#125;, &#123; 4, 5, 6 &#125;, &#123; 7, 8, 9 &#125; &#125;;
+for (int i &#x3D; 0; i &lt; 3; i++)
+    for (int j &#x3D; 0; j &lt; 3; j++)
+        Console.WriteLine(&quot;&#123;0&#125;行&#123;1&#125;列元素为&#123;2&#125;&quot;, i, j, b[i, j]);
+
+for (int i &#x3D; 0; i &lt; 3; i++)
+&#123;
+    for (int j &#x3D; 0; j &lt; 3; j++)
+    &#123;
+        Console.Write(&quot;&#123;0,-5&#125;&quot;, b[i, j]); &#x2F;&#x2F; 输出数组元素，每个元素占五格，靠左对齐
+        &#x2F;**
+         * 1    2    3
+        * 4    5    6
+         * 7    8    9
+         *&#x2F;
+    &#125;
+    Console.WriteLine();
+&#125;
+Console.ReadKey();<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="三维数组"><a href="#三维数组" class="headerlink" title="三维数组"></a>三维数组</h4><p>可以把三维数组看做一本记录本，每页都是一个表格，那么，可以使用页号、行号、列号来定位三维数组的一个元素。<br>语法：数据类型[, , ] 数组名</p>
-<h4 id="交错数组"><a href="#交错数组" class="headerlink" title="交错数组"></a>交错数组</h4><p> 交错数组可以看成是数组的数组，交错数组的每个元素又是一个数组<br> 语法：<br> <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span>[][] = <span class="keyword">new</span> <span class="built_in">int</span>[<span class="number">3</span>][]</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">new</span> <span class="built_in">int</span>[] &#123; <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span> &#125;,</span><br><span class="line">    <span class="keyword">new</span> <span class="built_in">int</span>[] &#123; <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span> &#125;,</span><br><span class="line">    <span class="keyword">new</span> <span class="built_in">int</span>[] &#123; <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span>[][] c;</span><br><span class="line">c = <span class="keyword">new</span> <span class="built_in">int</span>[<span class="number">3</span>][];</span><br><span class="line">c[<span class="number">0</span>] = <span class="keyword">new</span> <span class="built_in">int</span>[] &#123; <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span> &#125;;</span><br><span class="line">c[<span class="number">1</span>] = <span class="keyword">new</span> <span class="built_in">int</span>[] &#123; <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span> &#125;;</span><br><span class="line">c[<span class="number">2</span>] = <span class="keyword">new</span> <span class="built_in">int</span>[] &#123; <span class="number">8</span>, <span class="number">9</span>, <span class="number">10</span>, <span class="number">11</span>, <span class="number">12</span> &#125;;</span><br><span class="line"><span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; c.Length; i++)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="built_in">int</span> j = <span class="number">0</span>; j &lt; c[i].Length; j++)</span><br><span class="line">    &#123;</span><br><span class="line">        Console.Write(<span class="string">&quot;&#123;0, -5&#125;&quot;</span>, c[i][j]);</span><br><span class="line">    &#125;</span><br><span class="line">    Console.WriteLine();</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 1    2    3</span></span><br><span class="line"><span class="comment"> * 4    5    6    7</span></span><br><span class="line"><span class="comment"> * 8    9    10    11    12</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">Console.ReadKey();</span><br></pre></td></tr></table></figure>
+<h4 id="交错数组"><a href="#交错数组" class="headerlink" title="交错数组"></a>交错数组</h4><p> 交错数组可以看成是数组的数组，交错数组的每个元素又是一个数组<br> 语法：<br> <pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">int[][] &#x3D; new int[3][]
+&#123;
+    new int[] &#123; 1, 2, 3 &#125;,
+    new int[] &#123; 4, 5, 6 &#125;,
+    new int[] &#123; 7, 8, 9 &#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></p>
+<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">int[][] c;
+c &#x3D; new int[3][];
+c[0] &#x3D; new int[] &#123; 1, 2, 3 &#125;;
+c[1] &#x3D; new int[] &#123; 4, 5, 6, 7 &#125;;
+c[2] &#x3D; new int[] &#123; 8, 9, 10, 11, 12 &#125;;
+for (int i &#x3D; 0; i &lt; c.Length; i++)
+&#123;
+    for (int j &#x3D; 0; j &lt; c[i].Length; j++)
+    &#123;
+        Console.Write(&quot;&#123;0, -5&#125;&quot;, c[i][j]);
+    &#125;
+    Console.WriteLine();
+&#125;
+&#x2F;**
+ * 1    2    3
+ * 4    5    6    7
+ * 8    9    10    11    12
+ *&#x2F;
+Console.ReadKey();<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="数组基本操作"><a href="#数组基本操作" class="headerlink" title="数组基本操作"></a>数组基本操作</h3><h4 id="数组排序与反转"><a href="#数组排序与反转" class="headerlink" title="数组排序与反转"></a>数组排序与反转</h4><p>Array类的静态方法Sort()可以实现数组的排序，无返回值。<br>语法：Array.Sort(数组名)</p>
 <p>Array类的静态方法Reverse()可以实现数组的反转，无返回值。<br>语法：Array.Reverse(数组名)</p>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span>[] a = &#123; <span class="number">3</span>, <span class="number">8</span>, <span class="number">1</span>, <span class="number">7</span>, <span class="number">4</span> &#125;;</span><br><span class="line">Array.Sort(a);</span><br><span class="line"><span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; a.Length; i++)</span><br><span class="line">&#123;</span><br><span class="line">    Console.Write(<span class="string">&quot;&#123;0, -5&#125;&quot;</span>, a[i]); <span class="comment">// 1    3    4    7    8</span></span><br><span class="line">&#125;</span><br><span class="line">Console.WriteLine();</span><br><span class="line">Array.Reverse(a);</span><br><span class="line"><span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; a.Length; i++)</span><br><span class="line">&#123;</span><br><span class="line">    Console.Write(<span class="string">&quot;&#123;0, -5&#125;&quot;</span>, a[i]); <span class="comment">// 8    7    4    3    1</span></span><br><span class="line">&#125;</span><br><span class="line">Console.ReadKey();</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">int[] a &#x3D; &#123; 3, 8, 1, 7, 4 &#125;;
+Array.Sort(a);
+for (int i &#x3D; 0; i &lt; a.Length; i++)
+&#123;
+    Console.Write(&quot;&#123;0, -5&#125;&quot;, a[i]); &#x2F;&#x2F; 1    3    4    7    8
+&#125;
+Console.WriteLine();
+Array.Reverse(a);
+for (int i &#x3D; 0; i &lt; a.Length; i++)
+&#123;
+    Console.Write(&quot;&#123;0, -5&#125;&quot;, a[i]); &#x2F;&#x2F; 8    7    4    3    1
+&#125;
+Console.ReadKey();<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="查找数组元素"><a href="#查找数组元素" class="headerlink" title="查找数组元素"></a>查找数组元素</h4><p> Array类的静态方法IndexOf( )可以判断数组是否包含与给定值相等的元素，是则返回对应数组元素的下标，否则返回-1。<br>语法：Array.IndexOf(数组名, 要查找的值)</p>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span>[] a = &#123; <span class="number">4</span>, <span class="number">5</span>, <span class="number">2</span>, <span class="number">7</span>, <span class="number">1</span> &#125;;</span><br><span class="line">Console.WriteLine(Array.IndexOf(a, <span class="number">4</span>)); <span class="comment">// 0</span></span><br><span class="line">Console.WriteLine(Array.IndexOf(a, <span class="number">10</span>)); <span class="comment">// -1</span></span><br><span class="line">Console.ReadKey();</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">int[] a &#x3D; &#123; 4, 5, 2, 7, 1 &#125;;
+Console.WriteLine(Array.IndexOf(a, 4)); &#x2F;&#x2F; 0
+Console.WriteLine(Array.IndexOf(a, 10)); &#x2F;&#x2F; -1
+Console.ReadKey();<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p>####数组求和，最大值，最小值，平均值<br>Sum(), Max(), Min(), Average()<br>语法：数组名.Sum()</p>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span>[] a = &#123; <span class="number">3</span>, <span class="number">8</span>, <span class="number">1</span>, <span class="number">7</span>, <span class="number">4</span> &#125;;</span><br><span class="line">Console.WriteLine(a.Sum()); <span class="comment">// 23</span></span><br><span class="line">Console.WriteLine(a.Max()); <span class="comment">// 8</span></span><br><span class="line">Console.WriteLine(a.Min()); <span class="comment">// 1</span></span><br><span class="line">Console.WriteLine(a.Average()); <span class="comment">// 4.6</span></span><br><span class="line">Console.ReadKey();</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">int[] a &#x3D; &#123; 3, 8, 1, 7, 4 &#125;;
+Console.WriteLine(a.Sum()); &#x2F;&#x2F; 23
+Console.WriteLine(a.Max()); &#x2F;&#x2F; 8
+Console.WriteLine(a.Min()); &#x2F;&#x2F; 1
+Console.WriteLine(a.Average()); &#x2F;&#x2F; 4.6
+Console.ReadKey();<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="数组字符串相互转化"><a href="#数组字符串相互转化" class="headerlink" title="数组字符串相互转化"></a>数组字符串相互转化</h4><p> String类的静态方法Join( )可以将数组中所有元素连接起来，生成一个字符串，返回值为该字符串。<br> 语法：String.Join(分隔符, 数组名)  –&gt; Join( )方法分隔符类型为字符串</p>
 <p> 方法Split( )可以根据分隔符将字符串切分为多个部分，每个部分作为一个数组元素生成一个字符串数组，返回值为该字符串数组。<br>语法：字符串变量.Split(分隔符)  –&gt; Split( )方法中的分隔符类型为字符型</p>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">string</span>[] a = &#123; <span class="string">&quot;this&quot;</span>, <span class="string">&quot;is&quot;</span>, <span class="string">&quot;a&quot;</span>, <span class="string">&quot;test&quot;</span>, <span class="string">&quot;!&quot;</span> &#125;;</span><br><span class="line"><span class="built_in">string</span> b = String.Join(<span class="string">&quot; &quot;</span>, a);</span><br><span class="line">Console.WriteLine(b);</span><br><span class="line"><span class="built_in">string</span>[] a1 = b.Split(<span class="string">&#x27; &#x27;</span>);</span><br><span class="line"><span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; a1.Length; i++)</span><br><span class="line">&#123;</span><br><span class="line">    Console.WriteLine(a1[i]);</span><br><span class="line">&#125;</span><br><span class="line">Console.ReadKey();</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">string[] a &#x3D; &#123; &quot;this&quot;, &quot;is&quot;, &quot;a&quot;, &quot;test&quot;, &quot;!&quot; &#125;;
+string b &#x3D; String.Join(&quot; &quot;, a);
+Console.WriteLine(b);
+string[] a1 &#x3D; b.Split(&#39; &#39;);
+for (int i &#x3D; 0; i &lt; a1.Length; i++)
+&#123;
+    Console.WriteLine(a1[i]);
+&#125;
+Console.ReadKey();<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="在字符串中查找、删除字符数组元素"><a href="#在字符串中查找、删除字符数组元素" class="headerlink" title="在字符串中查找、删除字符数组元素"></a>在字符串中查找、删除字符数组元素</h4><p> String类方法IndexOfAny( )用于在字符串中查找给定字符数组中的所有元素，返回字符数组元素在字符串中首次出现的位置值，查找失败则返回-1。<br> 语法：字符串变量.IndexOfAny(字符数组名)</p>
 <p>String类方法LastIndexOfAny( )用于在字符串中查找给定字符数组中的所有元素，返回字符数组元素在字符串中最后出现的位置值，查找失败则返回-1。<br>语法：字符串变量.LastIndexOfAny(字符数组名)</p>
 <p> String类方法Trim( )可以在字符串的首部和尾部去除给定字符数组中的所有元素，返回操作后的字符串。<br> 语法：字符串变量.Trim(字符数组名)</p>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">char</span>[] a = &#123; <span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;t&#x27;</span>, <span class="string">&#x27;i&#x27;</span> &#125;;</span><br><span class="line"><span class="built_in">string</span> str = <span class="string">&quot;This is a test!&quot;</span>;</span><br><span class="line">Console.WriteLine(str.IndexOfAny(a)); <span class="comment">// 2</span></span><br><span class="line">Console.WriteLine(str.LastIndexOfAny(a)); <span class="comment">// 13</span></span><br><span class="line"><span class="built_in">char</span>[] b = &#123; <span class="string">&#x27;T&#x27;</span>, <span class="string">&#x27;h&#x27;</span>, <span class="string">&#x27;t&#x27;</span> &#125;;</span><br><span class="line">Console.WriteLine(str.Trim(b)); <span class="comment">// is is a test!</span></span><br><span class="line">Console.ReadKey();</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">char[] a &#x3D; &#123; &#39;a&#39;, &#39;t&#39;, &#39;i&#39; &#125;;
+string str &#x3D; &quot;This is a test!&quot;;
+Console.WriteLine(str.IndexOfAny(a)); &#x2F;&#x2F; 2
+Console.WriteLine(str.LastIndexOfAny(a)); &#x2F;&#x2F; 13
+char[] b &#x3D; &#123; &#39;T&#39;, &#39;h&#39;, &#39;t&#39; &#125;;
+Console.WriteLine(str.Trim(b)); &#x2F;&#x2F; is is a test!
+Console.ReadKey();<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="枚举"><a href="#枚举" class="headerlink" title="枚举"></a>枚举</h4><p> 枚举类型用于声明一组命名常数。<br> 语法：enum 枚举类型名 {枚举成员列表}<br>例：enum Week { 星期一, 星期二, 星期三, 星期四, 星期五, 星期六, 星期天 };</p>
 <p> 枚举类型week包含七个常数，默认第一个常数为0，对应“星期一”，每个名称对应的常数都比前边一个加1，最后一个常数为6，对应“星期天”。<br> 相当于为常数起了个名字，把七个常数组合在一起构成枚举类型week。</p>
-<p> enum Week { 星期一 = 1, 星期二, 星期三, 星期四, 星期五, 星期六, 星期天 };<br> 给出第一个名称星期一对应的常数为1，后边的名称对应的常数值分别是2、3、4、5、6、7。<br> <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义枚举类型变量x，选择枚举类型中的一个名称为变量x赋值</span></span><br><span class="line">Week x = Week.星期一;</span><br><span class="line"><span class="comment">// 定义枚举类型变量y，将整数2强制转换为week类型的值赋值给变量</span></span><br><span class="line">Week y = (Week)<span class="number">2</span>;</span><br><span class="line">Console.WriteLine(x.ToString()); <span class="comment">// 星期一</span></span><br><span class="line">Console.WriteLine(y.ToString()); <span class="comment">// 星期二</span></span><br><span class="line">Console.WriteLine((Week)<span class="number">2</span>); <span class="comment">// 输出枚举类型Week中常量2对应的名称 --&gt; 星期二</span></span><br><span class="line">Console.WriteLine((<span class="built_in">int</span>)Week.星期天); <span class="comment">// 输出枚举类型Week中名称“星期天”对应的常量  --&gt;  7</span></span><br><span class="line">Console.ReadKey();</span><br></pre></td></tr></table></figure></p>
+<p> enum Week { 星期一 = 1, 星期二, 星期三, 星期四, 星期五, 星期六, 星期天 };<br> 给出第一个名称星期一对应的常数为1，后边的名称对应的常数值分别是2、3、4、5、6、7。<br> <pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">&#x2F;&#x2F; 定义枚举类型变量x，选择枚举类型中的一个名称为变量x赋值
+Week x &#x3D; Week.星期一;
+&#x2F;&#x2F; 定义枚举类型变量y，将整数2强制转换为week类型的值赋值给变量
+Week y &#x3D; (Week)2;
+Console.WriteLine(x.ToString()); &#x2F;&#x2F; 星期一
+Console.WriteLine(y.ToString()); &#x2F;&#x2F; 星期二
+Console.WriteLine((Week)2); &#x2F;&#x2F; 输出枚举类型Week中常量2对应的名称 --&gt; 星期二
+Console.WriteLine((int)Week.星期天); &#x2F;&#x2F; 输出枚举类型Week中名称“星期天”对应的常量  --&gt;  7
+Console.ReadKey();<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></p>
 <ul>
 <li>枚举类型的最大作用是可以自定义一个类型，将许多相关的名称作为一个集合保存和使用，每个名称对应一个整型常量。</li>
 <li>相对于直接使用数值，使用枚举类型可以使代码更加清晰易懂，便于记忆。</li>
 <li>枚举类型的变量只能选择几个常量中的一个，方便控制变量取值范围，保证程序的执行过程安全可靠。</li>
-<li>常量值和枚举值之间转换方便，使用枚举类型使代码更容易编写和维护。<h4 id="字符串与字符数组相互转化"><a href="#字符串与字符数组相互转化" class="headerlink" title="字符串与字符数组相互转化"></a>字符串与字符数组相互转化</h4>使用语句“string str = new string(‘a’,5);”创建包含5个相同字符的字符串str，str对应的字符串为“aaaaa”。<br>事实上，我们可以使用任意一个字符类型数组初始化一个字符串。<br>反之，一个字符串可以直接作为一个字符类型数组使用，直接在字符串名后面加上下标即可<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">char</span>[] c = &#123; <span class="string">&#x27;H&#x27;</span>, <span class="string">&#x27;e&#x27;</span>, <span class="string">&#x27;l&#x27;</span>, <span class="string">&#x27;l&#x27;</span>, <span class="string">&#x27;o&#x27;</span>, <span class="string">&#x27; &#x27;</span>, <span class="string">&#x27;W&#x27;</span>, <span class="string">&#x27;o&#x27;</span>, <span class="string">&#x27;r&#x27;</span>, <span class="string">&#x27;l&#x27;</span>, <span class="string">&#x27;d&#x27;</span>, <span class="string">&#x27;！&#x27;</span> &#125;;</span><br><span class="line"><span class="built_in">string</span> str = <span class="keyword">new</span> <span class="built_in">string</span>(c);</span><br><span class="line">Console.WriteLine(str); <span class="comment">// Hello World!</span></span><br><span class="line">Console.WriteLine(str[<span class="number">0</span>]); <span class="comment">// H</span></span><br><span class="line">Console.ReadKey();</span><br></pre></td></tr></table></figure>
-<h4 id="foreach遍历二维数组"><a href="#foreach遍历二维数组" class="headerlink" title="foreach遍历二维数组"></a>foreach遍历二维数组</h4><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span>[,] a = &#123; &#123; <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span> &#125;, &#123; <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>&#125;, &#123; <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>&#125; &#125;;</span><br><span class="line"><span class="keyword">foreach</span> (<span class="built_in">int</span> x <span class="keyword">in</span> a)</span><br><span class="line">    Console.Write(<span class="string">&quot;&#123;0, -4&#125;&quot;</span>, x);</span><br><span class="line">Console.ReadKey(); <span class="comment">// 1   2   3  4   5   6   7   8   9</span></span><br></pre></td></tr></table></figure></li>
+<li>常量值和枚举值之间转换方便，使用枚举类型使代码更容易编写和维护。<h4 id="字符串与字符数组相互转化"><a href="#字符串与字符数组相互转化" class="headerlink" title="字符串与字符数组相互转化"></a>字符串与字符数组相互转化</h4>使用语句“string str = new string(‘a’,5);”创建包含5个相同字符的字符串str，str对应的字符串为“aaaaa”。<br>事实上，我们可以使用任意一个字符类型数组初始化一个字符串。<br>反之，一个字符串可以直接作为一个字符类型数组使用，直接在字符串名后面加上下标即可<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">char[] c &#x3D; &#123; &#39;H&#39;, &#39;e&#39;, &#39;l&#39;, &#39;l&#39;, &#39;o&#39;, &#39; &#39;, &#39;W&#39;, &#39;o&#39;, &#39;r&#39;, &#39;l&#39;, &#39;d&#39;, &#39;！&#39; &#125;;
+string str &#x3D; new string(c);
+Console.WriteLine(str); &#x2F;&#x2F; Hello World!
+Console.WriteLine(str[0]); &#x2F;&#x2F; H
+Console.ReadKey();<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="foreach遍历二维数组"><a href="#foreach遍历二维数组" class="headerlink" title="foreach遍历二维数组"></a>foreach遍历二维数组</h4><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">int[,] a &#x3D; &#123; &#123; 1, 2, 3 &#125;, &#123; 4, 5, 6&#125;, &#123; 7, 8, 9&#125; &#125;;
+foreach (int x in a)
+    Console.Write(&quot;&#123;0, -4&#125;&quot;, x);
+Console.ReadKey(); &#x2F;&#x2F; 1   2   3  4   5   6   7   8   9<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
 <li>使用foreach循环遍历二维数组，访问数组元素的顺序是先行后列，因此输出结果为123456。</li>
 <li>如果需要按照先列后行遍历数组元素的话，需要使用嵌套的for循环。</li>
 </ul>
@@ -1064,7 +1161,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total Words:&nbsp;<span
-                        class="white-color">26.2k</span>
+                        class="white-color">27.2k</span>
             
             
             

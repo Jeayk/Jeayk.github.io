@@ -470,14 +470,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    2k
+                    2.1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    8 Min
+                    9 Min
                 </div>
                 
 
@@ -492,6 +492,9 @@
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
 
         
 
@@ -499,10 +502,189 @@
             <div id="articleContent">
                 <h5 id="继承的定义与使用"><a href="#继承的定义与使用" class="headerlink" title="继承的定义与使用"></a>继承的定义与使用</h5><p>继承是软件复用的一种形式。使用继承可以复用现有类的数据和行为，为其赋予新功能而创建出新类。复用能节省程序开发的时间，能重用经过实践检验和调试的高质量代码，提高系统的质量。</p>
 <p>在现有类（称为直接基类、父类）上建立新类（称为派生类、子类）的处理过程称为继承。<br>派生类能自动获得基类的除了构造函数和析构函数以外的所有成员，可以在派生类中添加新的属性和方法扩展其功能。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// 语法：</span><br><span class="line">&lt;访问修饰符&gt; class派生类名: 基类名</span><br><span class="line">&#123;</span><br><span class="line">  // 类的代码</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h6 id="Person-cs（Person类）"><a href="#Person-cs（Person类）" class="headerlink" title="Person.cs（Person类）"></a>Person.cs（Person类）</h6><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> System.Linq;</span><br><span class="line"><span class="keyword">using</span> System.Text;</span><br><span class="line"><span class="keyword">using</span> System.Threading.Tasks;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">InheritDemo</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Person</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">private</span> <span class="built_in">string</span> _id; <span class="comment">// 声明身份证号码字段 _id</span></span><br><span class="line">        <span class="keyword">public</span> <span class="built_in">string</span> Id <span class="comment">// 声明身份证号码属性ID</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">get</span> &#123; <span class="keyword">return</span> _id; &#125; <span class="comment">// get访问器，获取身份证号码字段值</span></span><br><span class="line">            <span class="keyword">set</span> &#123; _id = <span class="keyword">value</span>; &#125; <span class="comment">// set访问器，设置身份证号码字段值</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">private</span> <span class="built_in">string</span> _name; <span class="comment">// 声明姓名字段</span></span><br><span class="line">        <span class="keyword">public</span> <span class="built_in">string</span> Name <span class="comment">// 声明姓名属性</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">get</span> &#123; <span class="keyword">return</span> _name; &#125; <span class="comment">// get访问器，获取姓名字段值</span></span><br><span class="line">            <span class="keyword">set</span> &#123; _name = <span class="keyword">value</span>; &#125; <span class="comment">// set访问器，设置身份证号码字段值</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">private</span> <span class="built_in">int</span> _age; <span class="comment">// 声明年龄字段</span></span><br><span class="line">        <span class="keyword">public</span> <span class="built_in">int</span> Age <span class="comment">// 声明年龄属性</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">get</span> &#123; <span class="keyword">return</span> _age; &#125;</span><br><span class="line">            <span class="keyword">set</span> &#123; _age = <span class="keyword">value</span>; &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">private</span> <span class="built_in">string</span> _gender; <span class="comment">// 声明性别字段</span></span><br><span class="line">        <span class="keyword">public</span> <span class="built_in">string</span> Gender <span class="comment">// 声明性别属性</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">get</span> &#123; <span class="keyword">return</span> _gender; &#125;</span><br><span class="line">            <span class="keyword">set</span> &#123; _gender = <span class="keyword">value</span>; &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Display</span>(<span class="params"></span>) <span class="comment">// 基类的公有方法，用于输出Person对象的姓名、年龄与性别信息</span></span></span><br><span class="line">        &#123;</span><br><span class="line">            Console.WriteLine(<span class="string">&quot;&#123;0&#125;是&#123;1&#125;性，年龄为&#123;2&#125;&quot;</span>, <span class="keyword">this</span>._name, <span class="keyword">this</span>._gender, <span class="keyword">this</span>._age);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">Person</span>(<span class="params"></span>) <span class="comment">// 定义无参构造函数</span></span></span><br><span class="line">        &#123; &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">Person</span>(<span class="params"><span class="built_in">string</span> name, <span class="built_in">int</span> age, <span class="built_in">string</span> gender</span>) <span class="comment">// 定义有参构造函数</span></span></span><br><span class="line">        &#123;</span><br><span class="line">            _name = name;</span><br><span class="line">            _age = age;</span><br><span class="line">            _gender = gender;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Student</span>: <span class="title">Person</span><span class="comment">// 创建派生类，派生自Person类</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// 定义派生类自己的属性</span></span><br><span class="line">        <span class="keyword">private</span> <span class="built_in">string</span> _class; <span class="comment">// 定义表示学生班级的字段_class</span></span><br><span class="line">        <span class="keyword">public</span> <span class="built_in">string</span> Class <span class="comment">// 定义设置和获取班级信息的属性Class</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">get</span> &#123; <span class="keyword">return</span> _class; &#125;</span><br><span class="line">            <span class="keyword">set</span> &#123; _class = <span class="keyword">value</span>; &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">private</span> <span class="built_in">string</span> _department; <span class="comment">// 定义学生所属系的字段</span></span><br><span class="line">        <span class="keyword">public</span> <span class="built_in">string</span> Deparement <span class="comment">// 定义学生所属系的属性</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">get</span> &#123; <span class="keyword">return</span> _department; &#125;</span><br><span class="line">            <span class="keyword">set</span> &#123; _department = <span class="keyword">value</span>; &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">private</span> <span class="built_in">string</span> _no; <span class="comment">// 定义学生学号</span></span><br><span class="line">        <span class="keyword">public</span> <span class="built_in">string</span> NO <span class="comment">// 定义学号的属性</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">get</span> &#123; <span class="keyword">return</span> _no; &#125;</span><br><span class="line">            <span class="keyword">set</span> &#123; _no = <span class="keyword">value</span>; &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">Student</span>(<span class="params"></span>) <span class="comment">// 无参构造函数</span></span></span><br><span class="line">        &#123; &#125;</span><br><span class="line">        <span class="comment">// 定义派生类独有的方法Study，表示学生负有学习任务</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Study</span>(<span class="params"></span>)</span></span><br><span class="line">        &#123;</span><br><span class="line">            Console.WriteLine(<span class="string">&quot;好好学习，天天向上！&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h6 id="Teacher-cs（Teacher类）"><a href="#Teacher-cs（Teacher类）" class="headerlink" title="Teacher.cs（Teacher类）"></a>Teacher.cs（Teacher类）</h6><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> System.Linq;</span><br><span class="line"><span class="keyword">using</span> System.Text;</span><br><span class="line"><span class="keyword">using</span> System.Threading.Tasks;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">InheritDemo</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">class</span> <span class="title">Teacher</span>: <span class="title">Person</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">private</span> <span class="built_in">string</span> _tid; <span class="comment">// 声明字段教师编号</span></span><br><span class="line">        <span class="keyword">public</span> <span class="built_in">string</span> Tid <span class="comment">// 定义教师编号属性</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">get</span> &#123; <span class="keyword">return</span> _tid; &#125;</span><br><span class="line">            <span class="keyword">set</span> &#123; _tid = <span class="keyword">value</span>; &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">private</span> <span class="built_in">string</span> _course; <span class="comment">// 声明课程字段</span></span><br><span class="line">        <span class="keyword">public</span> <span class="built_in">string</span> Course <span class="comment">// 定义课程属性</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">get</span> &#123; <span class="keyword">return</span> _course; &#125;</span><br><span class="line">            <span class="keyword">set</span> &#123; _course = <span class="keyword">value</span>; &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 教师派生类的方法</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Teaching</span>(<span class="params"></span>)</span></span><br><span class="line">        &#123;</span><br><span class="line">            Console.WriteLine(<span class="string">&quot;正在上课中...&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">class</span> <span class="title">DoubleStudent</span>: <span class="title">Student</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">private</span> <span class="built_in">string</span> _sndBachelor; <span class="comment">// 声明第二学位名称字段</span></span><br><span class="line">        <span class="keyword">public</span> <span class="built_in">string</span> SndBachelor <span class="comment">// 声明第二学位属性</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">get</span> &#123; <span class="keyword">return</span> _sndBachelor; &#125;</span><br><span class="line">            <span class="keyword">set</span> &#123; _sndBachelor = <span class="keyword">value</span>; &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">DoubleStudent</span>(<span class="params"></span>) <span class="comment">// 无参构造函数</span></span></span><br><span class="line">        &#123; &#125;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">UsaBachelor</span>(<span class="params"></span>) <span class="comment">// 定义方法</span></span></span><br><span class="line">        &#123;</span><br><span class="line">            Console.WriteLine(<span class="string">&quot;正在攻读xxx大学学位&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h6 id="Program-cs"><a href="#Program-cs" class="headerlink" title="Program.cs"></a>Program.cs</h6><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> System.Linq;</span><br><span class="line"><span class="keyword">using</span> System.Text;</span><br><span class="line"><span class="keyword">using</span> System.Threading.Tasks;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">InheritDemo</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">class</span> <span class="title">Program</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>(<span class="params"><span class="built_in">string</span>[] args</span>)</span></span><br><span class="line">        &#123;</span><br><span class="line">            Console.WriteLine(<span class="string">&quot;Person类：&quot;</span>);</span><br><span class="line">            Person objPerson = <span class="keyword">new</span> Person(<span class="string">&quot;张三&quot;</span>, <span class="number">18</span>, <span class="string">&quot;男&quot;</span>);</span><br><span class="line">            objPerson.Display(); <span class="comment">// 调用Display显式对象信息     --&gt;     张三是男性，年龄为18</span></span><br><span class="line"></span><br><span class="line">            Console.WriteLine(<span class="string">&quot;Student类：&quot;</span>);</span><br><span class="line">            Student objStudent = <span class="keyword">new</span> Student()</span><br><span class="line">            &#123;</span><br><span class="line">                Name = <span class="string">&quot;李四&quot;</span>,</span><br><span class="line">                Age = <span class="number">18</span>,</span><br><span class="line">                Gender = <span class="string">&quot;女&quot;</span></span><br><span class="line">            &#125;;</span><br><span class="line">            objStudent.Display(); <span class="comment">// 访问基类的Display方法     --&gt;     李四是女性，年龄为18</span></span><br><span class="line">            objStudent.Study(); <span class="comment">// 调用派生类方法      --&gt;     好好学习，天天向上！</span></span><br><span class="line">            Console.ReadKey();</span><br><span class="line"></span><br><span class="line">            Console.WriteLine(<span class="string">&quot;Teacher类&quot;</span>);</span><br><span class="line">            Teacher objTeacher = <span class="keyword">new</span> Teacher()</span><br><span class="line">            &#123;</span><br><span class="line">                Name = <span class="string">&quot;Mary&quot;</span>,</span><br><span class="line">                Age = <span class="number">26</span>,</span><br><span class="line">                Gender = <span class="string">&quot;女&quot;</span></span><br><span class="line">            &#125;;</span><br><span class="line">            objTeacher.Display(); <span class="comment">// 访问基类的Display方法</span></span><br><span class="line">            objTeacher.Teaching(); <span class="comment">// 访问Teacher类的方法</span></span><br><span class="line"></span><br><span class="line">            Console.WriteLine(<span class="string">&quot;DoubleStudent类&quot;</span>);</span><br><span class="line">            DoubleStudent objSpecial = <span class="keyword">new</span> DoubleStudent()</span><br><span class="line">            &#123;</span><br><span class="line">                Name = <span class="string">&quot;Bliss&quot;</span>,</span><br><span class="line">                Age = <span class="number">22</span>,</span><br><span class="line">                Gender = <span class="string">&quot;女&quot;</span></span><br><span class="line">            &#125;;</span><br><span class="line">            objSpecial.Display(); <span class="comment">// 访问Person类方法</span></span><br><span class="line">            objSpecial.Study(); <span class="comment">// 访问Student类方法</span></span><br><span class="line">            objSpecial.UsaBachelor(); <span class="comment">// 调用DoubleStudent类方法</span></span><br><span class="line">            Console.ReadKey();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">&#x2F;&#x2F; 语法：
+&lt;访问修饰符&gt; class派生类名: 基类名
+&#123;
+	&#x2F;&#x2F; 类的代码
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="Person-cs（Person类）"><a href="#Person-cs（Person类）" class="headerlink" title="Person.cs（Person类）"></a>Person.cs（Person类）</h6><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace InheritDemo
+&#123;
+    public class Person
+    &#123;
+        private string _id; &#x2F;&#x2F; 声明身份证号码字段 _id
+        public string Id &#x2F;&#x2F; 声明身份证号码属性ID
+        &#123;
+            get &#123; return _id; &#125; &#x2F;&#x2F; get访问器，获取身份证号码字段值
+            set &#123; _id &#x3D; value; &#125; &#x2F;&#x2F; set访问器，设置身份证号码字段值
+        &#125;
+        private string _name; &#x2F;&#x2F; 声明姓名字段
+        public string Name &#x2F;&#x2F; 声明姓名属性
+        &#123;
+            get &#123; return _name; &#125; &#x2F;&#x2F; get访问器，获取姓名字段值
+            set &#123; _name &#x3D; value; &#125; &#x2F;&#x2F; set访问器，设置身份证号码字段值
+        &#125;
+        private int _age; &#x2F;&#x2F; 声明年龄字段
+        public int Age &#x2F;&#x2F; 声明年龄属性
+        &#123;
+            get &#123; return _age; &#125;
+            set &#123; _age &#x3D; value; &#125;
+        &#125;
+        private string _gender; &#x2F;&#x2F; 声明性别字段
+        public string Gender &#x2F;&#x2F; 声明性别属性
+        &#123;
+            get &#123; return _gender; &#125;
+            set &#123; _gender &#x3D; value; &#125;
+        &#125;
+
+        public void Display() &#x2F;&#x2F; 基类的公有方法，用于输出Person对象的姓名、年龄与性别信息
+        &#123;
+            Console.WriteLine(&quot;&#123;0&#125;是&#123;1&#125;性，年龄为&#123;2&#125;&quot;, this._name, this._gender, this._age);
+        &#125;
+
+        public Person() &#x2F;&#x2F; 定义无参构造函数
+        &#123; &#125;
+
+        public Person(string name, int age, string gender) &#x2F;&#x2F; 定义有参构造函数
+        &#123;
+            _name &#x3D; name;
+            _age &#x3D; age;
+            _gender &#x3D; gender;
+        &#125;
+    &#125;
+
+    public class Student: Person&#x2F;&#x2F; 创建派生类，派生自Person类
+    &#123;
+        &#x2F;&#x2F; 定义派生类自己的属性
+        private string _class; &#x2F;&#x2F; 定义表示学生班级的字段_class
+        public string Class &#x2F;&#x2F; 定义设置和获取班级信息的属性Class
+        &#123;
+            get &#123; return _class; &#125;
+            set &#123; _class &#x3D; value; &#125;
+        &#125;
+        private string _department; &#x2F;&#x2F; 定义学生所属系的字段
+        public string Deparement &#x2F;&#x2F; 定义学生所属系的属性
+        &#123;
+            get &#123; return _department; &#125;
+            set &#123; _department &#x3D; value; &#125;
+        &#125;
+        private string _no; &#x2F;&#x2F; 定义学生学号
+        public string NO &#x2F;&#x2F; 定义学号的属性
+        &#123;
+            get &#123; return _no; &#125;
+            set &#123; _no &#x3D; value; &#125;
+        &#125;
+        public Student() &#x2F;&#x2F; 无参构造函数
+        &#123; &#125;
+        &#x2F;&#x2F; 定义派生类独有的方法Study，表示学生负有学习任务
+        public void Study()
+        &#123;
+            Console.WriteLine(&quot;好好学习，天天向上！&quot;);
+        &#125;
+    &#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="Teacher-cs（Teacher类）"><a href="#Teacher-cs（Teacher类）" class="headerlink" title="Teacher.cs（Teacher类）"></a>Teacher.cs（Teacher类）</h6><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace InheritDemo
+&#123;
+    class Teacher: Person
+    &#123;
+        private string _tid; &#x2F;&#x2F; 声明字段教师编号
+        public string Tid &#x2F;&#x2F; 定义教师编号属性
+        &#123;
+            get &#123; return _tid; &#125;
+            set &#123; _tid &#x3D; value; &#125;
+        &#125;
+        private string _course; &#x2F;&#x2F; 声明课程字段
+        public string Course &#x2F;&#x2F; 定义课程属性
+        &#123;
+            get &#123; return _course; &#125;
+            set &#123; _course &#x3D; value; &#125;
+        &#125;
+
+        &#x2F;&#x2F; 教师派生类的方法
+        public void Teaching()
+        &#123;
+            Console.WriteLine(&quot;正在上课中...&quot;);
+        &#125;
+    &#125;
+
+    class DoubleStudent: Student
+    &#123;
+        private string _sndBachelor; &#x2F;&#x2F; 声明第二学位名称字段
+        public string SndBachelor &#x2F;&#x2F; 声明第二学位属性
+        &#123;
+            get &#123; return _sndBachelor; &#125;
+            set &#123; _sndBachelor &#x3D; value; &#125;
+        &#125;
+        public DoubleStudent() &#x2F;&#x2F; 无参构造函数
+        &#123; &#125;
+        public void UsaBachelor() &#x2F;&#x2F; 定义方法
+        &#123;
+            Console.WriteLine(&quot;正在攻读xxx大学学位&quot;);
+        &#125;
+    &#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="Program-cs"><a href="#Program-cs" class="headerlink" title="Program.cs"></a>Program.cs</h6><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace InheritDemo
+&#123;
+    class Program
+    &#123;
+        static void Main(string[] args)
+        &#123;
+            Console.WriteLine(&quot;Person类：&quot;);
+            Person objPerson &#x3D; new Person(&quot;张三&quot;, 18, &quot;男&quot;);
+            objPerson.Display(); &#x2F;&#x2F; 调用Display显式对象信息     --&gt;     张三是男性，年龄为18
+
+            Console.WriteLine(&quot;Student类：&quot;);
+            Student objStudent &#x3D; new Student()
+            &#123;
+                Name &#x3D; &quot;李四&quot;,
+                Age &#x3D; 18,
+                Gender &#x3D; &quot;女&quot;
+            &#125;;
+            objStudent.Display(); &#x2F;&#x2F; 访问基类的Display方法     --&gt;     李四是女性，年龄为18
+            objStudent.Study(); &#x2F;&#x2F; 调用派生类方法      --&gt;     好好学习，天天向上！
+            Console.ReadKey();
+
+            Console.WriteLine(&quot;Teacher类&quot;);
+            Teacher objTeacher &#x3D; new Teacher()
+            &#123;
+                Name &#x3D; &quot;Mary&quot;,
+                Age &#x3D; 26,
+                Gender &#x3D; &quot;女&quot;
+            &#125;;
+            objTeacher.Display(); &#x2F;&#x2F; 访问基类的Display方法
+            objTeacher.Teaching(); &#x2F;&#x2F; 访问Teacher类的方法
+
+            Console.WriteLine(&quot;DoubleStudent类&quot;);
+            DoubleStudent objSpecial &#x3D; new DoubleStudent()
+            &#123;
+                Name &#x3D; &quot;Bliss&quot;,
+                Age &#x3D; 22,
+                Gender &#x3D; &quot;女&quot;
+            &#125;;
+            objSpecial.Display(); &#x2F;&#x2F; 访问Person类方法
+            objSpecial.Study(); &#x2F;&#x2F; 访问Student类方法
+            objSpecial.UsaBachelor(); &#x2F;&#x2F; 调用DoubleStudent类方法
+            Console.ReadKey();
+        &#125;
+    &#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h6 id="继承的特性"><a href="#继承的特性" class="headerlink" title="继承的特性"></a>继承的特性</h6><p>C#中的继承主要有以下3种特性：</p>
 <ul>
 <li>继承的可传递性<br>如果C从B中派生，B又从A中派生，那么C不仅继承了B中声明的成员，同样也继承了A中的成员。<br>如示例代码中DoubleStudent类的基类是Student，Student的基类是Person，因此DoubleStudent类可以继承Person类中的成员。<br>派生类是对基类的扩展，在派生类中可以添加新成员，但不能去除已经继承的成员。</li>
@@ -545,14 +727,35 @@
 </tbody></table>
 <h5 id="this和base关键字"><a href="#this和base关键字" class="headerlink" title="this和base关键字"></a>this和base关键字</h5><p>基类中只有被public、protected、internal修饰的成员才可以被访问，这些成员包括任何基类的字段、属性、方法和索引器，但是基类的构造函数和析构函数是不能被继承的。如果要继承基类的构造函数，必须使用base关键字来实现。</p>
 <p>C#中的base关键字代表基类，使用base关键字可以调用基类的构造函数、属性和方法。<br><strong>语法：派生类构造函数: base(参数列表)</strong></p>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 给上述示例Student类添加一个有参构造函数</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">Student</span>(<span class="params"><span class="built_in">string</span> name, <span class="built_in">int</span> age, <span class="built_in">string</span> gender</span>):<span class="title">base</span>(<span class="params">name, age, gender</span>) <span class="comment">// 构造函数</span></span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="comment">// 通过base(name, age, gender)调用基类的构造函数</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 使用base关键字调用基类方法语法</span></span><br><span class="line"><span class="keyword">base</span>: 基类方法</span><br><span class="line"><span class="comment">// 示例:</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">Student</span>(<span class="params"><span class="built_in">string</span> name, <span class="built_in">int</span> age, <span class="built_in">string</span> gender</span>) : <span class="title">base</span>(<span class="params">name, age, gender</span>) <span class="comment">// 调用基类的构造函数</span></span></span><br><span class="line">&#123; &#125;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">&#x2F;&#x2F; 给上述示例Student类添加一个有参构造函数
+public Student(string name, int age, string gender):base(name, age, gender) &#x2F;&#x2F; 构造函数
+&#123;
+	&#x2F;&#x2F; 通过base(name, age, gender)调用基类的构造函数
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">&#x2F;&#x2F; 使用base关键字调用基类方法语法
+base: 基类方法
+&#x2F;&#x2F; 示例:
+public Student(string name, int age, string gender) : base(name, age, gender) &#x2F;&#x2F; 调用基类的构造函数
+&#123; &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>相对于base来说，this关键字是引用类的当前实例。</p>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">Person</span>(<span class="params"><span class="built_in">string</span> name, <span class="built_in">int</span> age, <span class="built_in">string</span> gender</span>) <span class="comment">// 构造函数</span></span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="keyword">this</span>._name = name;</span><br><span class="line">  <span class="keyword">this</span>._age = age;</span><br><span class="line">  <span class="keyword">this</span>._gender = gender;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">public Person(string name, int age, string gender) &#x2F;&#x2F; 构造函数
+&#123;
+	this._name &#x3D; name;
+	this._age &#x3D; age;
+	this._gender &#x3D; gender;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>派生类继承基类的属性和方法，从而使创建派生类变得简单，可实现代码的重用。</p>
 <p><strong>基类对象可以引用派生类对象，也就是派生类对象可以赋值给基类对象变量。</strong><br>对这个特性可以这样理解：儿子继承于父亲，父亲也可以代表儿子处理事务，这就实现了基类对象引用派生类对象。</p>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title">Father</span>()&#123;...&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title">Son</span>: <span class="title">Father</span>&#123;</span><br><span class="line">...</span><br><span class="line"><span class="function">Public <span class="keyword">void</span> <span class="title">CallDaddy</span>(<span class="params"></span>) <span class="comment">// 派生类方法</span></span></span><br><span class="line">&#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Son objSon = <span class="keyword">new</span> Son();</span><br><span class="line">Father objFather = <span class="keyword">new</span> Father();</span><br><span class="line">objFather = objSon; <span class="comment">// 派生类对象objSon赋值给基类对象 objFather </span></span><br><span class="line">((Son)objFather).CallDaddy(); <span class="comment">// 基类对象调用派生类的方法</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">class Father()&#123;...&#125;
+class Son: Father&#123;
+...
+Public void CallDaddy() &#x2F;&#x2F; 派生类方法
+&#123;&#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">Son objSon &#x3D; new Son();
+Father objFather &#x3D; new Father();
+objFather &#x3D; objSon; &#x2F;&#x2F; 派生类对象objSon赋值给基类对象 objFather 
+((Son)objFather).CallDaddy(); &#x2F;&#x2F; 基类对象调用派生类的方法<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p>父类对象引用子类实例时，注意要把父类型转为子类型，否则就会出错。</p>
 
                 
@@ -1086,7 +1289,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total Words:&nbsp;<span
-                        class="white-color">26.2k</span>
+                        class="white-color">27.2k</span>
             
             
             

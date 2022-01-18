@@ -604,7 +604,10 @@
                                 
                                     值类型也称基本类型string、number、array也就是除了object以外的类型  
 例一：
-123var a = &#x27;aaaaa&#x27;a.foo = &#x27;bar&#x27;console.log(a.foo)
+var a = 'aaaaa'
+a.foo = 'bar'
+console.log(a.foo) // undefined
+这是因为js内
                                 
                             </div>
                             <div class="publish-info">
@@ -787,7 +790,12 @@
                                 
                                     开发应用
 Symbol 是一种基本数据类型，由Symbol函数生成
-12345678910111213141516171819202122232425262728293031323334353637383940414243444546474
+// 无参数情况
+var a = Symbol();
+var b = Symbol();
+console.log(a === b); // false
+
+// Symbol
                                 
                             </div>
                             <div class="publish-info">
@@ -1018,7 +1026,7 @@ Symbol的概念Symbol表示独一无二的值
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total Words:&nbsp;<span
-                        class="white-color">26.2k</span>
+                        class="white-color">27.2k</span>
             
             
             

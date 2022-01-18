@@ -470,14 +470,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    657
+                    713
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    2 Min
+                    3 Min
                 </div>
                 
 
@@ -492,6 +492,9 @@
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
 
         
 
@@ -499,14 +502,49 @@
             <div id="articleContent">
                 <h4 id="HashTable类"><a href="#HashTable类" class="headerlink" title="HashTable类"></a>HashTable类</h4><p>HashTable称为哈希表，利用键/值来存储数据。每个元素都是一个键/值对，并且是一一对应的，通过“键”就可以得到“值”。</p>
 <p><strong>常用属性</strong><br>| 属性名称 | 属性说明 |<br>|–|–|<br>| Count | 获取包含在Hashtable中键/值对的数目 |<br>| Keys | 获取包含在Hashtable中所有键的集合 |<br>| Values | 获取包含在Hashtable中所有值得集合 |<br><strong>常用方法</strong><br>| 方法名称 | 方法说明 |<br>|–|–|<br>| Add | 将带有指定键和值得元素添加到Hashtable中 |<br>| Clear | 从Hashtable中移除所有元素 |<br>| Contains | 确认Hashtable是否包含特定键 |<br>| GetEnumberator | 返回IDictionaryEnumberator，可以遍历Hashtable |<br>| Remove | 从Hashtable中移除带有指定键的元素 |<br><strong>常用构造函数声明</strong></p>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Hashtable ht1 = <span class="keyword">new</span> Hashtable(); <span class="comment">// 使用所有默认值构建哈希表实例（初始容量为 16，负载因子为 0.75），实际容量为16 * 0.75 = 12</span></span><br><span class="line">Hashtable ht2 = <span class="keyword">new</span> Hashtable(<span class="number">20</span>); <span class="comment">// 指定哈希表的初始容量为20，实际容量为20 * 0.75 = 15</span></span><br><span class="line">Hashtable ht3 = <span class="keyword">new</span> Hashtable(<span class="number">20</span>, <span class="number">0.8f</span>); <span class="comment">// 初始容量为20个元素，加载因子为0.8,实际容量为10 *0.8 = 16</span></span><br><span class="line">Hashtable ht4 = <span class="keyword">new</span> Hashtable(s1); <span class="comment">// 传入实现了IDicitionary接口的参数创建哈希表</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">Hashtable ht1 &#x3D; new Hashtable(); &#x2F;&#x2F; 使用所有默认值构建哈希表实例（初始容量为 16，负载因子为 0.75），实际容量为16 * 0.75 &#x3D; 12
+Hashtable ht2 &#x3D; new Hashtable(20); &#x2F;&#x2F; 指定哈希表的初始容量为20，实际容量为20 * 0.75 &#x3D; 15
+Hashtable ht3 &#x3D; new Hashtable(20, 0.8f); &#x2F;&#x2F; 初始容量为20个元素，加载因子为0.8,实际容量为10 *0.8 &#x3D; 16
+Hashtable ht4 &#x3D; new Hashtable(s1); &#x2F;&#x2F; 传入实现了IDicitionary接口的参数创建哈希表<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p>加载因子：</p>
 <ul>
 <li>加载因子是表示Hsah表中元素的填满的程度。若:加载因子越大,填满的元素越多,好处是,空间利用率高了,但冲突的机会加大了。反之,加载因子越小,填满的元素越少。好处是:冲突的机会减小了,但空间浪费多了</li>
 <li>冲突的机会越大,则查找的成本越高.反之,查找的成本越小.因而,查找时间就越小</li>
 </ul>
 <p><strong>示例：</strong></p>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">Hashtable openWith = <span class="keyword">new</span> Hashtable();</span><br><span class="line">openWith.Add(<span class="string">&quot;bmp&quot;</span>, <span class="string">&quot;paint.exe&quot;</span>);</span><br><span class="line">openWith.Add(<span class="string">&quot;did&quot;</span>, <span class="string">&quot;paint.exe&quot;</span>);</span><br><span class="line">openWith.Add(<span class="string">&quot;rtf&quot;</span>, <span class="string">&quot;wordpad.exe&quot;</span>);</span><br><span class="line">Console.WriteLine(<span class="string">&quot;键=\&quot;rtf\&quot;，值=&#123;0&#125;&quot;</span>, openWith[<span class="string">&quot;rtf&quot;</span>]); <span class="comment">// wordpad.exe</span></span><br><span class="line"></span><br><span class="line">openWith[<span class="string">&quot;doc&quot;</span>] = <span class="string">&quot;winword.exe&quot;</span>; <span class="comment">// 如果对不存在的键设置值，则添加新的键值对</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 通常添加之前用ContainsKey来判断某个键是否存在</span></span><br><span class="line"><span class="keyword">if</span>(!openWith.ContainsKey(<span class="string">&quot;ht&quot;</span>))</span><br><span class="line">&#123;</span><br><span class="line">    openWith.Add(<span class="string">&quot;ht&quot;</span>, <span class="string">&quot;ht.exe&quot;</span>);</span><br><span class="line">    Console.WriteLine(openWith[<span class="string">&quot;ht&quot;</span>]); <span class="comment">// ht.exe</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 遍历</span></span><br><span class="line"><span class="keyword">foreach</span>(DictionaryEntry de <span class="keyword">in</span> openWith) <span class="comment">// Hashtable的键/值是DicitionaryEntry类型</span></span><br><span class="line">&#123;</span><br><span class="line">    Console.WriteLine(<span class="string">&quot;键 = &#123;0&#125;，值 = &#123;1&#125;&quot;</span>, de.Key, de.Value);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 键 = ht，值 = ht.exe</span></span><br><span class="line"><span class="comment"> * 键 = rtf，值 = wordpad.exe</span></span><br><span class="line"><span class="comment"> * 键 = bmp，值 = paint.exe</span></span><br><span class="line"><span class="comment"> * 键 = did，值 = paint.exe</span></span><br><span class="line"><span class="comment"> * 键 = doc，值 = winword.exe</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 删除</span></span><br><span class="line">openWith.Remove(<span class="string">&quot;doc&quot;</span>);</span><br><span class="line"><span class="keyword">if</span> (!openWith.ContainsKey(<span class="string">&quot;doc&quot;</span>))</span><br><span class="line">    Console.WriteLine(<span class="string">&quot;false&quot;</span>); <span class="comment">// false</span></span><br><span class="line">Console.ReadKey();</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">Hashtable openWith &#x3D; new Hashtable();
+openWith.Add(&quot;bmp&quot;, &quot;paint.exe&quot;);
+openWith.Add(&quot;did&quot;, &quot;paint.exe&quot;);
+openWith.Add(&quot;rtf&quot;, &quot;wordpad.exe&quot;);
+Console.WriteLine(&quot;键&#x3D;\&quot;rtf\&quot;，值&#x3D;&#123;0&#125;&quot;, openWith[&quot;rtf&quot;]); &#x2F;&#x2F; wordpad.exe
+
+openWith[&quot;doc&quot;] &#x3D; &quot;winword.exe&quot;; &#x2F;&#x2F; 如果对不存在的键设置值，则添加新的键值对
+
+&#x2F;&#x2F; 通常添加之前用ContainsKey来判断某个键是否存在
+if(!openWith.ContainsKey(&quot;ht&quot;))
+&#123;
+    openWith.Add(&quot;ht&quot;, &quot;ht.exe&quot;);
+    Console.WriteLine(openWith[&quot;ht&quot;]); &#x2F;&#x2F; ht.exe
+&#125;
+
+&#x2F;&#x2F; 遍历
+foreach(DictionaryEntry de in openWith) &#x2F;&#x2F; Hashtable的键&#x2F;值是DicitionaryEntry类型
+&#123;
+    Console.WriteLine(&quot;键 &#x3D; &#123;0&#125;，值 &#x3D; &#123;1&#125;&quot;, de.Key, de.Value);
+&#125;
+&#x2F;**
+ * 键 &#x3D; ht，值 &#x3D; ht.exe
+ * 键 &#x3D; rtf，值 &#x3D; wordpad.exe
+ * 键 &#x3D; bmp，值 &#x3D; paint.exe
+ * 键 &#x3D; did，值 &#x3D; paint.exe
+ * 键 &#x3D; doc，值 &#x3D; winword.exe
+ *&#x2F;
+
+&#x2F;&#x2F; 删除
+openWith.Remove(&quot;doc&quot;);
+if (!openWith.ContainsKey(&quot;doc&quot;))
+    Console.WriteLine(&quot;false&quot;); &#x2F;&#x2F; false
+Console.ReadKey();<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><strong>遍历时应注意，Hashtable的每个元素都是一个键/值对，因此元素类型既不是键的类型，也不是值的类型，而是DictionaryEntry类型。</strong></p>
 
                 
@@ -1039,7 +1077,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total Words:&nbsp;<span
-                        class="white-color">26.2k</span>
+                        class="white-color">27.2k</span>
             
             
             

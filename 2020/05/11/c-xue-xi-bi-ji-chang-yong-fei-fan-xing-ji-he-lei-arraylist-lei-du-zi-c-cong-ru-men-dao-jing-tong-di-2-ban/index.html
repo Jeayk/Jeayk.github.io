@@ -492,6 +492,9 @@
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
 
         
 
@@ -521,17 +524,48 @@
 <p><strong>为了实现上面的例子，必须在using区添加System.Collections命名空间。</strong></p>
 <h5 id="创建ArrayList"><a href="#创建ArrayList" class="headerlink" title="创建ArrayList"></a>创建ArrayList</h5><p>ArrayList的四种创建方式：</p>
 <ol>
-<li>使用默认的初始容量创建ArrayList，该实例没有任何元素<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ArrayList al1 = <span class="keyword">new</span> ArrayList();</span><br><span class="line">al1.Add(<span class="string">&quot;hello&quot;</span>);</span><br><span class="line">al1.Add(<span class="string">&quot;C#&quot;</span>);</span><br><span class="line">al1.Add(<span class="string">&quot;world!&quot;</span>);</span><br><span class="line">Console.WriteLine(<span class="string">&quot;al1中容量是&#123;0&#125;, 个数是&#123;1&#125;&quot;</span>, al1.Capacity, al1.Count); <span class="comment">// 4 3</span></span><br></pre></td></tr></table></figure></li>
-<li>使用实现了ICollection接口的集合类来初始化新创建的ArrayList,该实例与参数中的集合具有相同的初始容量<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ArrayList al2 = <span class="keyword">new</span> ArrayList(al1);</span><br><span class="line">Console.WriteLine(<span class="string">&quot;al2容量是&#123;0&#125;, 个数是&#123;1&#125;&quot;</span>,al2.Capacity, al2.Count); <span class="comment">// 3 3</span></span><br></pre></td></tr></table></figure></li>
-<li>经由一个整数数值来初始化ArrayList的容量<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ArrayList al3 = <span class="keyword">new</span> ArrayList(<span class="number">18</span>);</span><br><span class="line">Console.WriteLine(<span class="string">&quot;al3的容量是：&#123;0&#125;, 元素个数是&#123;1&#125;&quot;</span>, al3.Capacity, al3.Count); <span class="comment">// 18 0</span></span><br></pre></td></tr></table></figure></li>
-<li>将指定abc字符串重复n次构造数组，以下以三次示例<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ArrayList al4 = ArrayList.Repeat(<span class="string">&quot;abc&quot;</span>, <span class="number">3</span>);</span><br><span class="line">Console.WriteLine(<span class="string">&quot;al4的容量是：&#123;0&#125;，元素个数是&#123;1&#125;&quot;</span>, al4.Capacity, al4.Count); <span class="comment">// 4 3</span></span><br></pre></td></tr></table></figure>
+<li>使用默认的初始容量创建ArrayList，该实例没有任何元素<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">ArrayList al1 &#x3D; new ArrayList();
+al1.Add(&quot;hello&quot;);
+al1.Add(&quot;C#&quot;);
+al1.Add(&quot;world!&quot;);
+Console.WriteLine(&quot;al1中容量是&#123;0&#125;, 个数是&#123;1&#125;&quot;, al1.Capacity, al1.Count); &#x2F;&#x2F; 4 3<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>使用实现了ICollection接口的集合类来初始化新创建的ArrayList,该实例与参数中的集合具有相同的初始容量<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">ArrayList al2 &#x3D; new ArrayList(al1);
+Console.WriteLine(&quot;al2容量是&#123;0&#125;, 个数是&#123;1&#125;&quot;,al2.Capacity, al2.Count); &#x2F;&#x2F; 3 3<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+<li>经由一个整数数值来初始化ArrayList的容量<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">ArrayList al3 &#x3D; new ArrayList(18);
+Console.WriteLine(&quot;al3的容量是：&#123;0&#125;, 元素个数是&#123;1&#125;&quot;, al3.Capacity, al3.Count); &#x2F;&#x2F; 18 0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+<li>将指定abc字符串重复n次构造数组，以下以三次示例<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">ArrayList al4 &#x3D; ArrayList.Repeat(&quot;abc&quot;, 3);
+Console.WriteLine(&quot;al4的容量是：&#123;0&#125;，元素个数是&#123;1&#125;&quot;, al4.Capacity, al4.Count); &#x2F;&#x2F; 4 3<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <h4 id="向ArrayList中添加元素的方法"><a href="#向ArrayList中添加元素的方法" class="headerlink" title="向ArrayList中添加元素的方法"></a>向ArrayList中添加元素的方法</h4></li>
 </ol>
 <ul>
 <li>Add方法可以将单个元素添加到列表的尾部；AddRange方法可以获取一个实现ICollection接口的集合实例，例如，Array、Queue、Stack等，并将这个集合实例按顺序添加到列表的尾部。</li>
 <li>使用Insert和InsertRange方法向ArrayList中指定的位置插入元素。Insert方法用于添加单个元素到指定的索引位置，InsertRange从指定的位置开始添加一个实现了ICollection接口的实例。</li>
 </ul>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">ArrayList a1 = <span class="keyword">new</span> ArrayList(<span class="number">20</span>);</span><br><span class="line">a1.Add(<span class="string">&quot;我是元素1&quot;</span>);</span><br><span class="line">a1.Add(<span class="string">&quot;我是元素2&quot;</span>);</span><br><span class="line"><span class="built_in">string</span>[] strs = &#123; <span class="string">&quot;我是元素3&quot;</span>, <span class="string">&quot;我是元素4&quot;</span> &#125;;</span><br><span class="line">a1.AddRange(strs);</span><br><span class="line">a1.Insert(<span class="number">0</span>, <span class="string">&quot;新增第1个元素&quot;</span>);</span><br><span class="line"></span><br><span class="line">ArrayList a2 = <span class="keyword">new</span> ArrayList();</span><br><span class="line">a2.Add(<span class="string">&quot;我是新增元素1&quot;</span>);</span><br><span class="line">a2.Add(<span class="string">&quot;我是新增元素2&quot;</span>);</span><br><span class="line">a1.InsertRange(<span class="number">2</span>, a2);</span><br><span class="line"><span class="keyword">foreach</span>(<span class="keyword">var</span> i <span class="keyword">in</span> a1)</span><br><span class="line">&#123;</span><br><span class="line">    Console.WriteLine(i);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 新增第1个元素</span></span><br><span class="line"><span class="comment"> * 我是元素1</span></span><br><span class="line"><span class="comment"> * 我是新增元素1</span></span><br><span class="line"><span class="comment"> * 我是新增元素2</span></span><br><span class="line"><span class="comment"> * 我是元素2</span></span><br><span class="line"><span class="comment"> * 我是元素3</span></span><br><span class="line"><span class="comment"> * 我是元素4</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">Console.ReadKey();</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">ArrayList a1 &#x3D; new ArrayList(20);
+a1.Add(&quot;我是元素1&quot;);
+a1.Add(&quot;我是元素2&quot;);
+string[] strs &#x3D; &#123; &quot;我是元素3&quot;, &quot;我是元素4&quot; &#125;;
+a1.AddRange(strs);
+a1.Insert(0, &quot;新增第1个元素&quot;);
+
+ArrayList a2 &#x3D; new ArrayList();
+a2.Add(&quot;我是新增元素1&quot;);
+a2.Add(&quot;我是新增元素2&quot;);
+a1.InsertRange(2, a2);
+foreach(var i in a1)
+&#123;
+    Console.WriteLine(i);
+&#125;
+&#x2F;**
+ * 新增第1个元素
+ * 我是元素1
+ * 我是新增元素1
+ * 我是新增元素2
+ * 我是元素2
+ * 我是元素3
+ * 我是元素4
+ *&#x2F;
+Console.ReadKey();<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="删除ArrayList中的元素"><a href="#删除ArrayList中的元素" class="headerlink" title="删除ArrayList中的元素"></a>删除ArrayList中的元素</h4><p>ArrayList提供了Remove、RemoveAt和RemoveRange3种方法将指定元素从集合中移除。</p>
 <ul>
 <li>Remove方法接受一个object类型的参数，用于移除指定元素值的第一个匹配集合元素</li>
@@ -539,21 +573,98 @@
 <li>RemoveRange方法从集合中移除一定范围的元素</li>
 </ul>
 <p>Clear方法可移除所有的元素</p>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">ArrayList a1 = <span class="keyword">new</span> ArrayList(<span class="number">20</span>);</span><br><span class="line"><span class="built_in">int</span>[] strs = &#123; <span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>&#125;;</span><br><span class="line">a1.AddRange(strs);</span><br><span class="line"><span class="keyword">foreach</span>(<span class="keyword">var</span> i <span class="keyword">in</span> a1)</span><br><span class="line">&#123;</span><br><span class="line">    Console.Write(i); <span class="comment">// 01234</span></span><br><span class="line">&#125;</span><br><span class="line">Console.WriteLine();</span><br><span class="line"></span><br><span class="line">a1.Remove(<span class="number">0</span>);</span><br><span class="line"><span class="keyword">foreach</span>(<span class="keyword">var</span> i <span class="keyword">in</span> a1)</span><br><span class="line">&#123;</span><br><span class="line">    Console.Write(i); <span class="comment">// 1234</span></span><br><span class="line">&#125;</span><br><span class="line">Console.WriteLine();</span><br><span class="line"></span><br><span class="line">a1.RemoveAt(<span class="number">1</span>);</span><br><span class="line"><span class="keyword">foreach</span>(<span class="keyword">var</span> i <span class="keyword">in</span> a1)</span><br><span class="line">&#123;</span><br><span class="line">    Console.Write(i); <span class="comment">// 134</span></span><br><span class="line">&#125;</span><br><span class="line">Console.WriteLine();</span><br><span class="line"></span><br><span class="line">a1.RemoveRange(<span class="number">1</span>, <span class="number">2</span>); <span class="comment">// a1.RemoveRange(index, count)</span></span><br><span class="line"><span class="keyword">foreach</span>(<span class="keyword">var</span> i <span class="keyword">in</span> a1)</span><br><span class="line">&#123;</span><br><span class="line">    Console.Write(i); <span class="comment">// 1</span></span><br><span class="line">&#125;</span><br><span class="line">Console.WriteLine();</span><br><span class="line"></span><br><span class="line">a1.Clear();</span><br><span class="line"><span class="keyword">foreach</span> (<span class="keyword">var</span> i <span class="keyword">in</span> a1)</span><br><span class="line">&#123;</span><br><span class="line">    Console.Write(i); <span class="comment">// 空 </span></span><br><span class="line">&#125;</span><br><span class="line">Console.ReadKey();</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">ArrayList a1 &#x3D; new ArrayList(20);
+int[] strs &#x3D; &#123; 0, 1, 2, 3, 4&#125;;
+a1.AddRange(strs);
+foreach(var i in a1)
+&#123;
+    Console.Write(i); &#x2F;&#x2F; 01234
+&#125;
+Console.WriteLine();
+
+a1.Remove(0);
+foreach(var i in a1)
+&#123;
+    Console.Write(i); &#x2F;&#x2F; 1234
+&#125;
+Console.WriteLine();
+
+a1.RemoveAt(1);
+foreach(var i in a1)
+&#123;
+    Console.Write(i); &#x2F;&#x2F; 134
+&#125;
+Console.WriteLine();
+
+a1.RemoveRange(1, 2); &#x2F;&#x2F; a1.RemoveRange(index, count)
+foreach(var i in a1)
+&#123;
+    Console.Write(i); &#x2F;&#x2F; 1
+&#125;
+Console.WriteLine();
+
+a1.Clear();
+foreach (var i in a1)
+&#123;
+    Console.Write(i); &#x2F;&#x2F; 空 
+&#125;
+Console.ReadKey();<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h4><p>使用Sort方法对ArrayList集合中的元素进行排序。Sort有3种重载方法。</p>
 <ul>
-<li>使用集合元素的比较方式进行排序。<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">Sort</span>(<span class="params"></span>)</span>;</span><br></pre></td></tr></table></figure></li>
-<li>使用自定义比较器进行排序<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">Sort</span>(<span class="params">IComparer comparer</span>)</span>;</span><br></pre></td></tr></table></figure></li>
-<li>使用自定义比较器进行指定范围的排序<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">Sort</span>(<span class="params"><span class="built_in">int</span> index, <span class="built_in">int</span> count, Icomparer comparer</span>)</span>;</span><br></pre></td></tr></table></figure>
-示例：<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">ArrayList a1 = <span class="keyword">new</span> ArrayList();</span><br><span class="line">a1.AddRange(<span class="keyword">new</span> <span class="built_in">string</span>[<span class="number">5</span>] &#123; <span class="string">&quot;Array1&quot;</span>, <span class="string">&quot;Array2&quot;</span>, <span class="string">&quot;Array5&quot;</span>, <span class="string">&quot;Array3&quot;</span>, <span class="string">&quot;Array&quot;</span> &#125;);</span><br><span class="line"><span class="keyword">foreach</span> (<span class="keyword">var</span> i <span class="keyword">in</span> a1)</span><br><span class="line">    Console.Write(i + <span class="string">&quot; &quot;</span>); <span class="comment">// Array1 Array2 Array5 Array3 Array</span></span><br><span class="line">Console.WriteLine();</span><br><span class="line"></span><br><span class="line">a1.Sort();</span><br><span class="line"><span class="keyword">foreach</span> (<span class="keyword">var</span> i <span class="keyword">in</span> a1)</span><br><span class="line">    Console.Write(i + <span class="string">&quot; &quot;</span>); <span class="comment">// Array Array1 Array2 Array3 Array5</span></span><br><span class="line">Console.ReadKey();</span><br></pre></td></tr></table></figure>
+<li>使用集合元素的比较方式进行排序。<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">public virtual void Sort();<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li>使用自定义比较器进行排序<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">public virtual void Sort(IComparer comparer);<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li>使用自定义比较器进行指定范围的排序<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">public virtual void Sort(int index, int count, Icomparer comparer);<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+示例：<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">ArrayList a1 &#x3D; new ArrayList();
+a1.AddRange(new string[5] &#123; &quot;Array1&quot;, &quot;Array2&quot;, &quot;Array5&quot;, &quot;Array3&quot;, &quot;Array&quot; &#125;);
+foreach (var i in a1)
+    Console.Write(i + &quot; &quot;); &#x2F;&#x2F; Array1 Array2 Array5 Array3 Array
+Console.WriteLine();
+
+a1.Sort();
+foreach (var i in a1)
+    Console.Write(i + &quot; &quot;); &#x2F;&#x2F; Array Array1 Array2 Array3 Array5
+Console.ReadKey();<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="查找ArrayList中的集合元素"><a href="#查找ArrayList中的集合元素" class="headerlink" title="查找ArrayList中的集合元素"></a>查找ArrayList中的集合元素</h4></li>
 <li>IndexOf: 从前向后搜索指定的字符串，如果找到，则返回匹配的第1项的自0开始的索引，否则返回-1</li>
 <li>LastIndexOf: 从后向前搜索指定的字符串，如果找到，则返回匹配的最后一项的自0开始的索引，否则返回-1</li>
 <li>BinarySearch: 使用二分算法从集合中搜索指定的值，并返回找到的从0开始的索引，否则返回-1</li>
 </ul>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span>[] nums = &#123; <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">4</span> &#125;;</span><br><span class="line">ArrayList a1 = <span class="keyword">new</span> ArrayList(nums);</span><br><span class="line"><span class="built_in">int</span> i = a1.IndexOf(<span class="number">3</span>);</span><br><span class="line">Console.WriteLine(i); <span class="comment">// 2</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">int</span> j = a1.LastIndexOf(<span class="number">4</span>);</span><br><span class="line">Console.WriteLine(j); <span class="comment">// 5</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">int</span> k = a1.BinarySearch(<span class="number">4</span>);</span><br><span class="line"><span class="built_in">int</span> m = a1.BinarySearch(<span class="number">0</span>);</span><br><span class="line">Console.WriteLine(k); <span class="comment">// 3</span></span><br><span class="line">Console.WriteLine(m); <span class="comment">// -1</span></span><br><span class="line">Console.ReadKey();</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">int[] nums &#x3D; &#123; 1, 2, 3, 4, 5, 4 &#125;;
+ArrayList a1 &#x3D; new ArrayList(nums);
+int i &#x3D; a1.IndexOf(3);
+Console.WriteLine(i); &#x2F;&#x2F; 2
+
+int j &#x3D; a1.LastIndexOf(4);
+Console.WriteLine(j); &#x2F;&#x2F; 5
+
+int k &#x3D; a1.BinarySearch(4);
+int m &#x3D; a1.BinarySearch(0);
+Console.WriteLine(k); &#x2F;&#x2F; 3
+Console.WriteLine(m); &#x2F;&#x2F; -1
+Console.ReadKey();<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="泛型List"><a href="#泛型List" class="headerlink" title="泛型List"></a>泛型List</h4><p>因为ArrayList存在不安全类型与装箱拆箱的缺点，所以在C#2.0后出现了泛型的概念。而List类是ArrayList类的泛型等效类。它的大部分用法都与ArrayList相似，因为List类也继承了IList接口。最关键的区别在于，在声明List集合时，我们同时需要为其声明List集合内数据的对象类型。</p>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">List&lt;<span class="built_in">int</span>&gt; list = <span class="keyword">new</span> List&lt;<span class="built_in">int</span>&gt;();</span><br><span class="line"><span class="comment">//新增数据</span></span><br><span class="line">list.Add(<span class="number">1</span>);</span><br><span class="line">list.Add(<span class="number">3</span>);</span><br><span class="line"><span class="comment">// list.Add(&quot;1&quot;) // 报错，只能为int型，不能为string</span></span><br><span class="line"><span class="keyword">foreach</span> (<span class="keyword">var</span> i <span class="keyword">in</span> list)</span><br><span class="line">    Console.Write(i + <span class="string">&quot; &quot;</span>); <span class="comment">// 1 3</span></span><br><span class="line">Console.WriteLine();</span><br><span class="line"></span><br><span class="line"><span class="comment">//修改数据</span></span><br><span class="line">list[<span class="number">0</span>] = <span class="number">2</span>;</span><br><span class="line"><span class="keyword">foreach</span> (<span class="keyword">var</span> i <span class="keyword">in</span> list)</span><br><span class="line">    Console.Write(i + <span class="string">&quot; &quot;</span>); <span class="comment">// 2 3</span></span><br><span class="line">Console.WriteLine();</span><br><span class="line"></span><br><span class="line"><span class="comment">//移除数据</span></span><br><span class="line">list.RemoveAt(<span class="number">0</span>);</span><br><span class="line"><span class="keyword">foreach</span> (<span class="keyword">var</span> i <span class="keyword">in</span> list)</span><br><span class="line">    Console.Write(i + <span class="string">&quot; &quot;</span>); <span class="comment">// 3</span></span><br><span class="line">Console.WriteLine();</span><br><span class="line"></span><br><span class="line">Console.ReadKey();</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">List&lt;int&gt; list &#x3D; new List&lt;int&gt;();
+&#x2F;&#x2F;新增数据
+list.Add(1);
+list.Add(3);
+&#x2F;&#x2F; list.Add(&quot;1&quot;) &#x2F;&#x2F; 报错，只能为int型，不能为string
+foreach (var i in list)
+    Console.Write(i + &quot; &quot;); &#x2F;&#x2F; 1 3
+Console.WriteLine();
+
+&#x2F;&#x2F;修改数据
+list[0] &#x3D; 2;
+foreach (var i in list)
+    Console.Write(i + &quot; &quot;); &#x2F;&#x2F; 2 3
+Console.WriteLine();
+
+&#x2F;&#x2F;移除数据
+list.RemoveAt(0);
+foreach (var i in list)
+    Console.Write(i + &quot; &quot;); &#x2F;&#x2F; 3
+Console.WriteLine();
+
+Console.ReadKey();<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
                 
             </div>
@@ -1085,7 +1196,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total Words:&nbsp;<span
-                        class="white-color">26.2k</span>
+                        class="white-color">27.2k</span>
             
             
             

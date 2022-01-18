@@ -471,7 +471,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    941
+                    970
                 </div>
                 
 
@@ -493,6 +493,9 @@
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
 
         
 
@@ -502,12 +505,57 @@
 <h4 id="抽象类与抽象方法"><a href="#抽象类与抽象方法" class="headerlink" title="抽象类与抽象方法"></a>抽象类与抽象方法</h4><p>用来描述共性的类叫做抽象类，抽象类中不考虑具体实现，只确定必须具有的行为，即确定抽象方法。</p>
 <p>如教师的任务是教学，具体教什么，如何教，每个教师都有自己独特的一面，对教学这个动作就可以提取出来作为抽象方法，而不考虑具体实现内容。</p>
 <p>包含抽象方法的类就是抽象类，抽象类和抽象方法声明使用<strong>abstract</strong>关键字。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// 语法</span><br><span class="line">&lt;访问修饰符&gt; abstract class 抽象类名</span><br><span class="line">&#123;</span><br><span class="line">  // 类体</span><br><span class="line">  &lt;访问修饰符&gt; abstract 返回类型方法(); // 抽象方法</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 示例</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">class</span> <span class="title">Test</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">Display</span>(<span class="params"></span>)</span>; <span class="comment">// 抽象方法 --&gt; Display()后面不能加 &#123;&#125;, 声明了abstract无法声明主体</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">&#x2F;&#x2F; 语法
+&lt;访问修饰符&gt; abstract class 抽象类名
+&#123;
+	&#x2F;&#x2F; 类体
+	&lt;访问修饰符&gt; abstract 返回类型方法(); &#x2F;&#x2F; 抽象方法
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">&#x2F;&#x2F; 示例
+public abstract class Test
+&#123;
+	public abstract void Display(); &#x2F;&#x2F; 抽象方法 --&gt; Display()后面不能加 &#123;&#125;, 声明了abstract无法声明主体
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="实现抽象方法"><a href="#实现抽象方法" class="headerlink" title="实现抽象方法"></a>实现抽象方法</h4><p><strong>C#中通过方法重写来实现抽象方法。</strong></p>
 <ul>
 <li>当一个抽象基类派生一个派生类时，派生类将继承基类的所有特征，重新实现所有的抽象方法。</li>
-<li>在派生类中实现基类的抽象方法，是使用override关键字来重写基类方法。<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> System.Linq;</span><br><span class="line"><span class="keyword">using</span> System.Text;</span><br><span class="line"><span class="keyword">using</span> System.Threading.Tasks;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">AbstractTest</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">class</span> <span class="title">Program</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>(<span class="params"><span class="built_in">string</span>[] args</span>)</span></span><br><span class="line">        &#123;</span><br><span class="line">            Manager objManager = <span class="keyword">new</span> Manager(<span class="string">&quot;jay&quot;</span>);</span><br><span class="line">            objManager.Display(); <span class="comment">// name: jay</span></span><br><span class="line">            Console.ReadKey();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">class</span> <span class="title">Employee</span> <span class="comment">// 声明抽象类</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">Display</span>(<span class="params"></span>)</span>; <span class="comment">// 抽象方法Display()</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Manager</span>: <span class="title">Employee</span> <span class="comment">// 创建抽象类Employee的派生类Manager类</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">private</span> <span class="built_in">string</span> name;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">Manager</span>(<span class="params"><span class="built_in">string</span> name</span>) <span class="comment">// 构造函数实现name初始化</span></span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">this</span>.name = name;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">override</span> <span class="keyword">void</span> <span class="title">Display</span>(<span class="params"></span>) <span class="comment">// 重写基类Employee中的抽象方法Display()</span></span></span><br><span class="line">        &#123;</span><br><span class="line">            Console.WriteLine(<span class="string">&quot;name: &quot;</span> + name);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<li>在派生类中实现基类的抽象方法，是使用override关键字来重写基类方法。<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace AbstractTest
+&#123;
+    class Program
+    &#123;
+        static void Main(string[] args)
+        &#123;
+            Manager objManager &#x3D; new Manager(&quot;jay&quot;);
+            objManager.Display(); &#x2F;&#x2F; name: jay
+            Console.ReadKey();
+        &#125;
+    &#125;
+
+    public abstract class Employee &#x2F;&#x2F; 声明抽象类
+    &#123;
+        public abstract void Display(); &#x2F;&#x2F; 抽象方法Display()
+    &#125;
+
+    public class Manager: Employee &#x2F;&#x2F; 创建抽象类Employee的派生类Manager类
+    &#123;
+        private string name;
+        public Manager(string name) &#x2F;&#x2F; 构造函数实现name初始化
+        &#123;
+            this.name &#x3D; name;
+        &#125;
+        public override void Display() &#x2F;&#x2F; 重写基类Employee中的抽象方法Display()
+        &#123;
+            Console.WriteLine(&quot;name: &quot; + name);
+        &#125;
+
+    &#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="接口、类和抽象类"><a href="#接口、类和抽象类" class="headerlink" title="接口、类和抽象类"></a>接口、类和抽象类</h4>一个类可以同时继承类和接口，或者抽象类和接口，抽象类和类不能在一个类的继承列表中同时出现。</li>
 </ul>
 <p>如果派生类同时继承类或抽象类和接口，一定要把类或者抽象类写在前面，接口写在后面，类名和接口名之间用“,”隔开，接口没有先后顺序。每一种继承都要根据各自的规则去实现。</p>
@@ -519,7 +567,15 @@
 <li>在实际编程中，接口的使用要比抽象类广泛得多</li>
 </ul>
 <h4 id="密封类"><a href="#密封类" class="headerlink" title="密封类"></a>密封类</h4><p>与抽象类相反的是，C#支持创建密封类，密封类是不能当做基类的类。其他的类不能从此类派生，从而保证了密封类的密封性和安全性。在C#中使用<strong>sealed</strong>关键字创建密封类。</p>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 示例</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">sealed</span> <span class="keyword">class</span> <span class="title">Animal</span> <span class="comment">// 创建密封类</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="title">Animal</span>(<span class="params"></span>) <span class="comment">// 创建构造函数</span></span></span><br><span class="line">  &#123;</span><br><span class="line">    <span class="comment">// 函数主体</span></span><br><span class="line">    Console.WriteLine(<span class="string">&quot;Animal被构造&quot;</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">&#x2F;&#x2F; 示例
+public sealed class Animal &#x2F;&#x2F; 创建密封类
+&#123;
+	public Animal() &#x2F;&#x2F; 创建构造函数
+	&#123;
+		&#x2F;&#x2F; 函数主体
+		Console.WriteLine(&quot;Animal被构造&quot;)
+	&#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>当从Animal派生派生类时，编译器会提示出现错误。设计类的时候，通常情况下是不需要将类设置为密封类的，因为密封类会让类的扩展性非常差，这个类也无法再次扩展和派生。但是出于某种目的，当程序块只需要完成某些特定的功能或者在商业上为了保密，就可以使用密封类对类进行密封，以保证类的可靠性。</p>
 
                 
@@ -1052,7 +1108,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total Words:&nbsp;<span
-                        class="white-color">26.2k</span>
+                        class="white-color">27.2k</span>
             
             
             
