@@ -500,63 +500,16 @@
 <h4 id="泛型"><a href="#泛型" class="headerlink" title="泛型"></a>泛型</h4><p>泛型是一种类型占位符，或称为类型参数。我们知道在一个方法中，一个变量的值可以作为参数，但其实这个变量的类型本身也可以作为参数。泛型允许程序员在代码中将变量或参数的类型先用“类型占位符”来代替，在调用的时候再指定这个类型参数是什么。</p>
 <p>在System.Collections.Generic命名空间中包含了多个泛型集合类，List<T>和Dictionary&lt;K,V&gt;是其中常用的两种泛型集合类，在实际应用中有很重要的作用。</p>
 <h5 id="List-lt-T-gt-类"><a href="#List-lt-T-gt-类" class="headerlink" title="List&lt;T&gt;类"></a>List&lt;T&gt;类</h5><p>List类是ArrayList相对应的泛型集合，用法与ArrayList类似，有更好的类型安全性，无需拆、装箱。</p>
-<pre><code>// 语法
-List&lt;T&gt; 集合名 = new List&lt;T&gt;();
-</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// 语法</span><br><span class="line">List&lt;T&gt; 集合名 = new List&lt;T&gt;();</span><br></pre></td></tr></table></figure>
 <p>在泛型定义中，泛型类型参数“<T>”是必须指定的，其中的“T”是定义泛型类时的占位符，其并不是一种类型，仅代表某种可能的类型。在定义时“T”会被使用的类型代替。泛型集合List<T>中只能有一个参数类型，“<T>”中的“T”可以对集合中的元素类型进行约束。</p>
 <p><strong>注意：泛型集合必须实例化，实例化时和普通类实例化时相同，必须在后面加上“()”。</strong></p>
 <p>List<T>的添加、删除和检索等方法和ArrayList相似，但是不需要像ArrayList那样装箱和拆箱。<br>用法与ArrayList基本相同，ArrayList示例可查看链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/JeayNeverGiveUp/article/details/105998420">ArrayList类相关方法</a></p>
-<pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">// List类部分方法示例
-List<int> list1 = new List<int>();
-list1.Add(1);
-list1.Add(2);
-list1.Insert(2, 3);
-int[] strs1 = &#123; 5, 6 &#125;;
-list1.AddRange(strs1);
-int[] strs2 = &#123; 4 &#125;;
-list1.InsertRange(3, strs2);
-Console.WriteLine("list1的容量为&#123;0&#125;，数目为&#123;1&#125;", list1.Capacity, list1.Count); // 8 6
-foreach (var i in list1)
-    Console.Write(i + " "); // 1 2 3 4 5 6
-Console.WriteLine();
-
-list1.Remove(1);
-foreach (var i in list1)
-    Console.Write(i + " "); // 2 3 4 5 6
-Console.WriteLine();
-
-list1.RemoveAt(3);
-foreach (var i in list1)
-    Console.Write(i + " "); // 2 3 4 6
-Console.WriteLine();
-
-list1.RemoveRange(1, 2); // list1.RemoveRange(index, count)
-foreach (var i in list1)
-    Console.Write(i + " "); // 2 6
-Console.WriteLine();
-
-Console.ReadKey();
-</code></pre>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// List类部分方法示例</span></span><br><span class="line">List&lt;<span class="built_in">int</span>&gt; list1 = <span class="keyword">new</span> List&lt;<span class="built_in">int</span>&gt;();</span><br><span class="line">list1.Add(<span class="number">1</span>);</span><br><span class="line">list1.Add(<span class="number">2</span>);</span><br><span class="line">list1.Insert(<span class="number">2</span>, <span class="number">3</span>);</span><br><span class="line"><span class="built_in">int</span>[] strs1 = &#123; <span class="number">5</span>, <span class="number">6</span> &#125;;</span><br><span class="line">list1.AddRange(strs1);</span><br><span class="line"><span class="built_in">int</span>[] strs2 = &#123; <span class="number">4</span> &#125;;</span><br><span class="line">list1.InsertRange(<span class="number">3</span>, strs2);</span><br><span class="line">Console.WriteLine(<span class="string">&quot;list1的容量为&#123;0&#125;，数目为&#123;1&#125;&quot;</span>, list1.Capacity, list1.Count); <span class="comment">// 8 6</span></span><br><span class="line"><span class="keyword">foreach</span> (<span class="keyword">var</span> i <span class="keyword">in</span> list1)</span><br><span class="line">    Console.Write(i + <span class="string">&quot; &quot;</span>); <span class="comment">// 1 2 3 4 5 6</span></span><br><span class="line">Console.WriteLine();</span><br><span class="line"></span><br><span class="line">list1.Remove(<span class="number">1</span>);</span><br><span class="line"><span class="keyword">foreach</span> (<span class="keyword">var</span> i <span class="keyword">in</span> list1)</span><br><span class="line">    Console.Write(i + <span class="string">&quot; &quot;</span>); <span class="comment">// 2 3 4 5 6</span></span><br><span class="line">Console.WriteLine();</span><br><span class="line"></span><br><span class="line">list1.RemoveAt(<span class="number">3</span>);</span><br><span class="line"><span class="keyword">foreach</span> (<span class="keyword">var</span> i <span class="keyword">in</span> list1)</span><br><span class="line">    Console.Write(i + <span class="string">&quot; &quot;</span>); <span class="comment">// 2 3 4 6</span></span><br><span class="line">Console.WriteLine();</span><br><span class="line"></span><br><span class="line">list1.RemoveRange(<span class="number">1</span>, <span class="number">2</span>); <span class="comment">// list1.RemoveRange(index, count)</span></span><br><span class="line"><span class="keyword">foreach</span> (<span class="keyword">var</span> i <span class="keyword">in</span> list1)</span><br><span class="line">    Console.Write(i + <span class="string">&quot; &quot;</span>); <span class="comment">// 2 6</span></span><br><span class="line">Console.WriteLine();</span><br><span class="line"></span><br><span class="line">Console.ReadKey();</span><br></pre></td></tr></table></figure>
 <h5 id="Dictionary-lt-K-V-gt-类"><a href="#Dictionary-lt-K-V-gt-类" class="headerlink" title="Dictionary&lt;K,V&gt;类"></a>Dictionary&lt;K,V&gt;类</h5><p>在System.Collections.Generic命名空间中，与HashTable相对应的泛型集合是Dictionary&lt;K,V&gt;，其存储数据的方式和哈希表相似，通过键/值来保存元素，并具有泛型的全部特征，编译时检查类型约束，读取时无需进行类型转换。</p>
-<pre><code>// 语法
-Dictionary&lt;K, V&gt; 泛型集合名 = new Dicitionary&lt;K, V&gt;();
-</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// 语法</span><br><span class="line">Dictionary&lt;K, V&gt; 泛型集合名 = new Dicitionary&lt;K, V&gt;();</span><br></pre></td></tr></table></figure>
 <p>其中“K”为占位符，具体定义时用存储键“Key”的数据类型代替，“V”同样也是占位符，用元素的值“Value”的数据类型代替，这样在定义该集合时，就声明了存储元素的键和值的数据类型，保证了类型的安全性。</p>
 <p>Dictionary用法与Hashtable基本相同，Hashtable示例可查看链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/JeayNeverGiveUp/article/details/106056179">ArrayList类相关方法</a></p>
-<pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">// 部分示例
-Dictionary<string, string> openWith = new Dictionary<string, string>();
-openWith.Add("txt", "test.exe");
-openWith.Add("bmp", "paint.exe");
-foreach(var i in openWith)
-&#123;
-    Console.WriteLine(i.Key + ": " + i.Value);
-&#125;
-/**
- * txt: test.exe
- * bmp: paint.exe
- */
-Console.ReadKey();
-</code></pre>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 部分示例</span></span><br><span class="line">Dictionary&lt;<span class="built_in">string</span>, <span class="built_in">string</span>&gt; openWith = <span class="keyword">new</span> Dictionary&lt;<span class="built_in">string</span>, <span class="built_in">string</span>&gt;();</span><br><span class="line">openWith.Add(<span class="string">&quot;txt&quot;</span>, <span class="string">&quot;test.exe&quot;</span>);</span><br><span class="line">openWith.Add(<span class="string">&quot;bmp&quot;</span>, <span class="string">&quot;paint.exe&quot;</span>);</span><br><span class="line"><span class="keyword">foreach</span>(<span class="keyword">var</span> i <span class="keyword">in</span> openWith)</span><br><span class="line">&#123;</span><br><span class="line">    Console.WriteLine(i.Key + <span class="string">&quot;: &quot;</span> + i.Value);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * txt: test.exe</span></span><br><span class="line"><span class="comment"> * bmp: paint.exe</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">Console.ReadKey();</span><br></pre></td></tr></table></figure>
 <h5 id="泛型优点"><a href="#泛型优点" class="headerlink" title="泛型优点"></a>泛型优点</h5><ul>
 <li>性能高。使用泛型不需要进行类型转换，可以避免装箱和拆箱操作，能提高性能</li>
 <li>类型安全。泛型集合对其存储对象进行了类型约束，不是定义时声明的类型，是无法存储到泛型集合中的，从而保证了数据的类型安全</li>
@@ -1096,7 +1049,7 @@ Console.ReadKey();
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total Words:&nbsp;<span
-                        class="white-color">24.2k</span>
+                        class="white-color">26.2k</span>
             
             
             

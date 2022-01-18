@@ -5,10 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="C#学习笔记-字符串操作相关笔记（读自C#从入门到精通 第2版）, 积跬步以至千里">
-    <meta name="description" content="字符串判等 Equals()/**
- * Equals() 判断两个字符串是否相等，若相等则返回True，否则返回False
- * 语法：字符串变量1.Equals(字符串2)
- * 调用string类的静态方法： string.Equal">
+    <meta name="description" content="字符串判等 Equals()123456789/** * Equals() 判断两个字符串是否相等，若相等则返回True，否则返回False * 语法：字符串变量1.Equals(字符串2) * 调用string类的静态方法： string">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -499,115 +496,16 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h5 id="字符串判等-Equals"><a href="#字符串判等-Equals" class="headerlink" title="字符串判等 Equals()"></a>字符串判等 Equals()</h5><pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">/**
- * Equals() 判断两个字符串是否相等，若相等则返回True，否则返回False
- * 语法：字符串变量1.Equals(字符串2)
- * 调用string类的静态方法： string.Equals(字符串1, 字符串2)
-*/
-string str1 = "aaa";
-Console.WriteLine(str1.Equals("aaa")); // true <==> str1 == "aaa"
-Console.WriteLine(str1.Equals("bbb")); // flase
-Console.WriteLine(string.Equals(str1, "aaa"));  // true
-</code></pre>
-<h5 id="字符串比较-CompareTo"><a href="#字符串比较-CompareTo" class="headerlink" title="字符串比较 CompareTo( )"></a>字符串比较 CompareTo( )</h5><pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">/**
- * CompareTo( )用于比较字符串变量与给定字符串的大小，返回值为0、1或者-1
- * 字符串的比较方式是，找到两个字符串中第一个不相同的字符，该字符ASCII值小的字符串较小。
- * 若一直比较到字符串结束，每个对应字符都相同，那么若两个字符串长度相同，则两个字符串相等；
- * 若两个字符串长度不同，则短的字符串较小。
- * 若字符串变量小于字符串2，则返回-1，反之返回1;若字符串变量与字符串2相等，则返回0。
- * 语法： 字符串变量.CompareTo(字符串2)
- * 也可以使用静态方法Compare( )比较字符串1和字符串2的大小，相等则返回0，字符串1小则返回-1，字符串1大则返回1
- * 语法: string.Compare(字符串1, 字符串2);
- */
-string s = "123";
-string str = s;
-Console.WriteLine(s.CompareTo(str)); // 0
-Console.WriteLine(s.CompareTo("121")); // 1
-Console.WriteLine(string.Compare(str, "124")); // -1
-</code></pre>
-<h5 id="字符串包含-Contains"><a href="#字符串包含-Contains" class="headerlink" title="字符串包含 Contains( )"></a>字符串包含 Contains( )</h5><pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">/**
- * Contains( )用于判断字符串变量是否包含指定字符或字符串，是则返回True，否则返回False。
- * 语法： 字符串变量.Contains(字符1/字符串1);
- */
-string s = "123";
-Console.WriteLine(s.Contains("1")); // true
-Console.WriteLine(s.Contains("12")); // true
-Console.WriteLine(s.Contains("123")); // true
-Console.WriteLine(s.Contains("1234"));  // false
-</code></pre>
-<h5 id="字符串位置-IndexOf"><a href="#字符串位置-IndexOf" class="headerlink" title="字符串位置 IndexOf( )"></a>字符串位置 IndexOf( )</h5><pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">/**
- * IndexOf( )用于查找给定字符或字符串在字符串变量中第一次出现的位置，返回字符或者字符串首字母在字符串变量中的位置数值。
- * 不存在，则返回-1
- * 语法：字符串变量.IndexOf(字符1)
- * LastIndexOf( )，用于查找给定字符或字符串在字符串变量中最后一次出现的位置数值。
- */
-string s = "123123";
-Console.WriteLine(s.IndexOf("1")); // 0
-Console.WriteLine(s.IndexOf("23")); // 1
-Console.WriteLine(s.IndexOf("4")); // -1
-Console.WriteLine(s.LastIndexOf("2"));  // 4
-</code></pre>
-<h5 id="字符串截取-SubString"><a href="#字符串截取-SubString" class="headerlink" title="字符串截取 SubString( )"></a>字符串截取 SubString( )</h5><pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">/**
- * SubString( )用于从字符串变量中获取指定位置开始的指定长度的子字符串，如果未指定子字符串长度，则取至字符串变量结尾，返回值为该子字符串。
- * 语法：字符串变量.SubString(起始位置, 字符串长度)
- * 无长度参数即为从起始位置到末尾
- * 若起始位置或者子字符串长度超出字符串变量允许范围，则系统返回异常ArgumentOutOfRangeException。
- */
-string str = "Hello World!";
-Console.WriteLine(str.Substring(6)); // world
-Console.WriteLine(str.Substring(0, 4)); // hell
-</code></pre>
-<h5 id="插入子串-Insert"><a href="#插入子串-Insert" class="headerlink" title="插入子串 Insert( )"></a>插入子串 Insert( )</h5><pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">/**
- * Insert( )用于在字符串变量中指定位置插入给定子字符串，返回值为该子字符串。
- * 语法：字符串变量.Insert(起始位置, 子字符串2)
- */
-string str = "world!";
-Console.WriteLine(str.Insert(0, "hello ")); // hello world
-</code></pre>
-<h5 id="删除子串-Remove"><a href="#删除子串-Remove" class="headerlink" title="删除子串 Remove( )"></a>删除子串 Remove( )</h5><pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">/**
- * Remove( )用于在字符串变量中删除指定位置开始的指定长度的子字符串，返回值为删除指定子串后的字符串变量。
- * 语法：字符串.Remove(起始位置, 子串长度)
- * 无长度参数即为从起始位置到末尾
- */
-string str = "this is a test";
-Console.WriteLine(str.Remove(0, 5)); // is a test
-Console.WriteLine(str.Remove(1, 5)); // ts a test
-Console.WriteLine(str.Remove(4)); // this
-</code></pre>
-<h5 id="替换子串-Replace"><a href="#替换子串-Replace" class="headerlink" title="替换子串 Replace( )"></a>替换子串 Replace( )</h5><pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">/**
- * Replace( )用于替换字符串变量中的指定字符或子字符串，返回值为替换完毕后的字符串变量
- * 语法：字符串变量.Replace(字符1, 字符2) // 用字符2替换字符1
- * 或者：字符串变量.Replace(字符串1, 字符串2) // 用字符串2替换字符串1
- */
-string str = "Tom is a good boy!";
-Console.WriteLine(str.Replace("Tom", "Jack")); // Jack is a good boy!
-Console.WriteLine(str.Replace('o', 'k')); // Tkm is a gkkd bky!
-</code></pre>
-<h5 id="去除字符串空格-Trim"><a href="#去除字符串空格-Trim" class="headerlink" title="去除字符串空格 Trim( )"></a>去除字符串空格 Trim( )</h5><pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">/**
- * Trim( )用于去除字符串变量中头部和尾部的空格，返回值为去除空格的字符串变量
- * 语法：字符串变量.Trim()
- * TrimStart()与TrimEnd()可以分别去除头部和尾部的空格
- */
-string str = "   this is a test   ";
-Console.WriteLine(str); // (3空格)this is a test(3空格)   
-Console.WriteLine(str.Trim()); // this is a test
-Console.WriteLine(str.TrimStart()); // this is a test(3空格)  
-Console.WriteLine(str.TrimEnd()); // (3空格)this is a test
-</code></pre>
-<h5 id="StringBuilder"><a href="#StringBuilder" class="headerlink" title="StringBuilder"></a>StringBuilder</h5><pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">/**
- * String类是引用类型，每次改变String类对象的值，即修改字符串变量对应的字符串，都需要在内存中为新字符串重新分配空间。
- * 在某些特定情况，例如，循环中可能需要反复修改一个字符串变量的值，内存开销会比较大。
- * StringBuilder类则没有这一问题，StringBuilder类的对象可以调用ToString( )方法将StringBuilder类的内容作为String类字符串输出，
- * 调用Append( )和AppendLine( )方法添加内容。
- */
-StringBuilder str = new StringBuilder();
-str.Append("我爱你！");
-str.AppendLine("中国！");
-str.Append("我的祖国！");
-Console.WriteLine(str); // 我爱你！中国！
-                                        // 我的祖国！
-Console.ReadKey();
-</code></pre>
+                <h5 id="字符串判等-Equals"><a href="#字符串判等-Equals" class="headerlink" title="字符串判等 Equals()"></a>字符串判等 Equals()</h5><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Equals() 判断两个字符串是否相等，若相等则返回True，否则返回False</span></span><br><span class="line"><span class="comment"> * 语法：字符串变量1.Equals(字符串2)</span></span><br><span class="line"><span class="comment"> * 调用string类的静态方法： string.Equals(字符串1, 字符串2)</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="built_in">string</span> str1 = <span class="string">&quot;aaa&quot;</span>;</span><br><span class="line">Console.WriteLine(str1.Equals(<span class="string">&quot;aaa&quot;</span>)); <span class="comment">// true &lt;==&gt; str1 == &quot;aaa&quot;</span></span><br><span class="line">Console.WriteLine(str1.Equals(<span class="string">&quot;bbb&quot;</span>)); <span class="comment">// flase</span></span><br><span class="line">Console.WriteLine(<span class="built_in">string</span>.Equals(str1, <span class="string">&quot;aaa&quot;</span>));  <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<h5 id="字符串比较-CompareTo"><a href="#字符串比较-CompareTo" class="headerlink" title="字符串比较 CompareTo( )"></a>字符串比较 CompareTo( )</h5><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * CompareTo( )用于比较字符串变量与给定字符串的大小，返回值为0、1或者-1</span></span><br><span class="line"><span class="comment"> * 字符串的比较方式是，找到两个字符串中第一个不相同的字符，该字符ASCII值小的字符串较小。</span></span><br><span class="line"><span class="comment"> * 若一直比较到字符串结束，每个对应字符都相同，那么若两个字符串长度相同，则两个字符串相等；</span></span><br><span class="line"><span class="comment"> * 若两个字符串长度不同，则短的字符串较小。</span></span><br><span class="line"><span class="comment"> * 若字符串变量小于字符串2，则返回-1，反之返回1;若字符串变量与字符串2相等，则返回0。</span></span><br><span class="line"><span class="comment"> * 语法： 字符串变量.CompareTo(字符串2)</span></span><br><span class="line"><span class="comment"> * 也可以使用静态方法Compare( )比较字符串1和字符串2的大小，相等则返回0，字符串1小则返回-1，字符串1大则返回1</span></span><br><span class="line"><span class="comment"> * 语法: string.Compare(字符串1, 字符串2);</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="built_in">string</span> s = <span class="string">&quot;123&quot;</span>;</span><br><span class="line"><span class="built_in">string</span> str = s;</span><br><span class="line">Console.WriteLine(s.CompareTo(str)); <span class="comment">// 0</span></span><br><span class="line">Console.WriteLine(s.CompareTo(<span class="string">&quot;121&quot;</span>)); <span class="comment">// 1</span></span><br><span class="line">Console.WriteLine(<span class="built_in">string</span>.Compare(str, <span class="string">&quot;124&quot;</span>)); <span class="comment">// -1</span></span><br></pre></td></tr></table></figure>
+<h5 id="字符串包含-Contains"><a href="#字符串包含-Contains" class="headerlink" title="字符串包含 Contains( )"></a>字符串包含 Contains( )</h5><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Contains( )用于判断字符串变量是否包含指定字符或字符串，是则返回True，否则返回False。</span></span><br><span class="line"><span class="comment"> * 语法： 字符串变量.Contains(字符1/字符串1);</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="built_in">string</span> s = <span class="string">&quot;123&quot;</span>;</span><br><span class="line">Console.WriteLine(s.Contains(<span class="string">&quot;1&quot;</span>)); <span class="comment">// true</span></span><br><span class="line">Console.WriteLine(s.Contains(<span class="string">&quot;12&quot;</span>)); <span class="comment">// true</span></span><br><span class="line">Console.WriteLine(s.Contains(<span class="string">&quot;123&quot;</span>)); <span class="comment">// true</span></span><br><span class="line">Console.WriteLine(s.Contains(<span class="string">&quot;1234&quot;</span>));  <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+<h5 id="字符串位置-IndexOf"><a href="#字符串位置-IndexOf" class="headerlink" title="字符串位置 IndexOf( )"></a>字符串位置 IndexOf( )</h5><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * IndexOf( )用于查找给定字符或字符串在字符串变量中第一次出现的位置，返回字符或者字符串首字母在字符串变量中的位置数值。</span></span><br><span class="line"><span class="comment"> * 不存在，则返回-1</span></span><br><span class="line"><span class="comment"> * 语法：字符串变量.IndexOf(字符1)</span></span><br><span class="line"><span class="comment"> * LastIndexOf( )，用于查找给定字符或字符串在字符串变量中最后一次出现的位置数值。</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="built_in">string</span> s = <span class="string">&quot;123123&quot;</span>;</span><br><span class="line">Console.WriteLine(s.IndexOf(<span class="string">&quot;1&quot;</span>)); <span class="comment">// 0</span></span><br><span class="line">Console.WriteLine(s.IndexOf(<span class="string">&quot;23&quot;</span>)); <span class="comment">// 1</span></span><br><span class="line">Console.WriteLine(s.IndexOf(<span class="string">&quot;4&quot;</span>)); <span class="comment">// -1</span></span><br><span class="line">Console.WriteLine(s.LastIndexOf(<span class="string">&quot;2&quot;</span>));  <span class="comment">// 4</span></span><br></pre></td></tr></table></figure>
+<h5 id="字符串截取-SubString"><a href="#字符串截取-SubString" class="headerlink" title="字符串截取 SubString( )"></a>字符串截取 SubString( )</h5><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * SubString( )用于从字符串变量中获取指定位置开始的指定长度的子字符串，如果未指定子字符串长度，则取至字符串变量结尾，返回值为该子字符串。</span></span><br><span class="line"><span class="comment"> * 语法：字符串变量.SubString(起始位置, 字符串长度)</span></span><br><span class="line"><span class="comment"> * 无长度参数即为从起始位置到末尾</span></span><br><span class="line"><span class="comment"> * 若起始位置或者子字符串长度超出字符串变量允许范围，则系统返回异常ArgumentOutOfRangeException。</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="built_in">string</span> str = <span class="string">&quot;Hello World!&quot;</span>;</span><br><span class="line">Console.WriteLine(str.Substring(<span class="number">6</span>)); <span class="comment">// world</span></span><br><span class="line">Console.WriteLine(str.Substring(<span class="number">0</span>, <span class="number">4</span>)); <span class="comment">// hell</span></span><br></pre></td></tr></table></figure>
+<h5 id="插入子串-Insert"><a href="#插入子串-Insert" class="headerlink" title="插入子串 Insert( )"></a>插入子串 Insert( )</h5><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Insert( )用于在字符串变量中指定位置插入给定子字符串，返回值为该子字符串。</span></span><br><span class="line"><span class="comment"> * 语法：字符串变量.Insert(起始位置, 子字符串2)</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="built_in">string</span> str = <span class="string">&quot;world!&quot;</span>;</span><br><span class="line">Console.WriteLine(str.Insert(<span class="number">0</span>, <span class="string">&quot;hello &quot;</span>)); <span class="comment">// hello world</span></span><br></pre></td></tr></table></figure>
+<h5 id="删除子串-Remove"><a href="#删除子串-Remove" class="headerlink" title="删除子串 Remove( )"></a>删除子串 Remove( )</h5><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Remove( )用于在字符串变量中删除指定位置开始的指定长度的子字符串，返回值为删除指定子串后的字符串变量。</span></span><br><span class="line"><span class="comment"> * 语法：字符串.Remove(起始位置, 子串长度)</span></span><br><span class="line"><span class="comment"> * 无长度参数即为从起始位置到末尾</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="built_in">string</span> str = <span class="string">&quot;this is a test&quot;</span>;</span><br><span class="line">Console.WriteLine(str.Remove(<span class="number">0</span>, <span class="number">5</span>)); <span class="comment">// is a test</span></span><br><span class="line">Console.WriteLine(str.Remove(<span class="number">1</span>, <span class="number">5</span>)); <span class="comment">// ts a test</span></span><br><span class="line">Console.WriteLine(str.Remove(<span class="number">4</span>)); <span class="comment">// this</span></span><br></pre></td></tr></table></figure>
+<h5 id="替换子串-Replace"><a href="#替换子串-Replace" class="headerlink" title="替换子串 Replace( )"></a>替换子串 Replace( )</h5><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Replace( )用于替换字符串变量中的指定字符或子字符串，返回值为替换完毕后的字符串变量</span></span><br><span class="line"><span class="comment"> * 语法：字符串变量.Replace(字符1, 字符2) // 用字符2替换字符1</span></span><br><span class="line"><span class="comment"> * 或者：字符串变量.Replace(字符串1, 字符串2) // 用字符串2替换字符串1</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="built_in">string</span> str = <span class="string">&quot;Tom is a good boy!&quot;</span>;</span><br><span class="line">Console.WriteLine(str.Replace(<span class="string">&quot;Tom&quot;</span>, <span class="string">&quot;Jack&quot;</span>)); <span class="comment">// Jack is a good boy!</span></span><br><span class="line">Console.WriteLine(str.Replace(<span class="string">&#x27;o&#x27;</span>, <span class="string">&#x27;k&#x27;</span>)); <span class="comment">// Tkm is a gkkd bky!</span></span><br></pre></td></tr></table></figure>
+<h5 id="去除字符串空格-Trim"><a href="#去除字符串空格-Trim" class="headerlink" title="去除字符串空格 Trim( )"></a>去除字符串空格 Trim( )</h5><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Trim( )用于去除字符串变量中头部和尾部的空格，返回值为去除空格的字符串变量</span></span><br><span class="line"><span class="comment"> * 语法：字符串变量.Trim()</span></span><br><span class="line"><span class="comment"> * TrimStart()与TrimEnd()可以分别去除头部和尾部的空格</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="built_in">string</span> str = <span class="string">&quot;   this is a test   &quot;</span>;</span><br><span class="line">Console.WriteLine(str); <span class="comment">// (3空格)this is a test(3空格)   </span></span><br><span class="line">Console.WriteLine(str.Trim()); <span class="comment">// this is a test</span></span><br><span class="line">Console.WriteLine(str.TrimStart()); <span class="comment">// this is a test(3空格)  </span></span><br><span class="line">Console.WriteLine(str.TrimEnd()); <span class="comment">// (3空格)this is a test</span></span><br></pre></td></tr></table></figure>
+<h5 id="StringBuilder"><a href="#StringBuilder" class="headerlink" title="StringBuilder"></a>StringBuilder</h5><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * String类是引用类型，每次改变String类对象的值，即修改字符串变量对应的字符串，都需要在内存中为新字符串重新分配空间。</span></span><br><span class="line"><span class="comment"> * 在某些特定情况，例如，循环中可能需要反复修改一个字符串变量的值，内存开销会比较大。</span></span><br><span class="line"><span class="comment"> * StringBuilder类则没有这一问题，StringBuilder类的对象可以调用ToString( )方法将StringBuilder类的内容作为String类字符串输出，</span></span><br><span class="line"><span class="comment"> * 调用Append( )和AppendLine( )方法添加内容。</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">StringBuilder str = <span class="keyword">new</span> StringBuilder();</span><br><span class="line">str.Append(<span class="string">&quot;我爱你！&quot;</span>);</span><br><span class="line">str.AppendLine(<span class="string">&quot;中国！&quot;</span>);</span><br><span class="line">str.Append(<span class="string">&quot;我的祖国！&quot;</span>);</span><br><span class="line">Console.WriteLine(str); <span class="comment">// 我爱你！中国！</span></span><br><span class="line">                                        <span class="comment">// 我的祖国！</span></span><br><span class="line">Console.ReadKey();</span><br></pre></td></tr></table></figure>
 
                 
             </div>
@@ -1139,7 +1037,7 @@ Console.ReadKey();
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total Words:&nbsp;<span
-                        class="white-color">24.2k</span>
+                        class="white-color">26.2k</span>
             
             
             

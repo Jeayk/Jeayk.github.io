@@ -6,9 +6,8 @@
     <meta charset="utf-8">
     <meta name="keywords" content="3. js Symbol类型在实际开发中的应用, 积跬步以至千里">
     <meta name="description" content="开发应用
-Symbol 是一种基本数据类型，由Symbol函数生成```javascript// 无参数情况var a = Symbol();var b = Symbol();console.log(a === b); // false
-
-">
+Symbol 是一种基本数据类型，由Symbol函数生成
+12345678910111213141516171819202122232425262728293031323334353637383940414243444546474">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -472,7 +471,7 @@ Symbol 是一种基本数据类型，由Symbol函数生成```javascript// 无参
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    606
+                    565
                 </div>
                 
 
@@ -500,40 +499,21 @@ Symbol 是一种基本数据类型，由Symbol函数生成```javascript// 无参
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h4 id="开发应用"><a href="#开发应用" class="headerlink" title="开发应用"></a>开发应用</h4><ul>
-<li>Symbol 是一种基本数据类型，由Symbol函数生成<br>```javascript<br>// 无参数情况<br>var a = Symbol();<br>var b = Symbol();<br>console.log(a === b); // false</li>
+<li><p>Symbol 是一种基本数据类型，由Symbol函数生成</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 无参数情况</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="built_in">Symbol</span>();</span><br><span class="line"><span class="keyword">var</span> b = <span class="built_in">Symbol</span>();</span><br><span class="line"><span class="built_in">console</span>.log(a === b); <span class="comment">// false</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Symbol 函数可以接受一个字符串作为参数，表示对 Symbol 实例的描述，主要是为了在控制台显示，或者转为字符串时，比较容易区分。</span></span><br><span class="line"><span class="keyword">var</span> c = <span class="built_in">Symbol</span>(<span class="string">&#x27;foo&#x27;</span>);</span><br><span class="line"><span class="built_in">console</span>.log(c); <span class="comment">// Symbol(foo)</span></span><br><span class="line"><span class="keyword">var</span> d = <span class="built_in">Symbol</span>(<span class="string">&#x27;foo&#x27;</span>);</span><br><span class="line"><span class="built_in">console</span>.log(c === d); <span class="comment">// false</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Symbol 函数前不能使用 new 命令，否则会报错。这是因为生成的 Symbol 是一个原始类型的值，不是对象。</span></span><br><span class="line"><span class="keyword">var</span> f = <span class="keyword">new</span> <span class="built_in">Symbol</span>(); <span class="comment">// Symbol is not a constructor at new Symbol</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// instanceof 的结果为 false</span></span><br><span class="line"><span class="keyword">var</span> aa = <span class="built_in">Symbol</span>();</span><br><span class="line"><span class="built_in">console</span>.log(aa <span class="keyword">instanceof</span> <span class="built_in">Symbol</span>); <span class="comment">// false</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 如果 Symbol 的参数是一个对象，就会调用该对象的toString方法，将其转为字符串，然后才生成一个 Symbol 值。</span></span><br><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">  <span class="function"><span class="title">toString</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&#x27;abc&#x27;</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">const</span> sym = <span class="built_in">Symbol</span>(obj);</span><br><span class="line"><span class="built_in">console</span>.log(sym); <span class="comment">// Symbol(abc)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Symbol 值不能与其他类型的值进行运算，会报错</span></span><br><span class="line"><span class="keyword">var</span> sym1 = <span class="built_in">Symbol</span>(<span class="string">&#x27;My symbol&#x27;</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&quot;your symbol is &quot;</span> + sym1); <span class="comment">// TypeError: Cannot convert a Symbol value to a string</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Symbol 值可以显式转为字符串</span></span><br><span class="line"><span class="keyword">var</span> sym2 = <span class="built_in">Symbol</span>(<span class="string">&#x27;My symbol&#x27;</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">String</span>(sym2)); <span class="comment">// &#x27;Symbol(My symbol)&#x27;</span></span><br><span class="line"><span class="built_in">console</span>.log(sym.toString()); <span class="comment">// &#x27;Symbol(My symbol)&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Symbol的唯一性，可以作为标识符，用于对象的属性名</span></span><br><span class="line"><span class="keyword">var</span> symbol1 = <span class="built_in">Symbol</span>();</span><br><span class="line"><span class="keyword">var</span> symbol2 = <span class="built_in">Symbol</span>();</span><br><span class="line"><span class="keyword">var</span> symbol3 = <span class="built_in">Symbol</span>();</span><br><span class="line"><span class="keyword">var</span> A = &#123;&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 写法一</span></span><br><span class="line">A[symbol1] = <span class="string">&#x27;hello&#x27;</span>;</span><br><span class="line"><span class="built_in">console</span>.log(A[symbol1]); <span class="comment">// hello</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 写法二</span></span><br><span class="line">A = &#123;</span><br><span class="line">    <span class="attr">symbol2</span>: <span class="string">&#x27;hello&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(A[symbol2]]); <span class="comment">// hello</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 写法三</span></span><br><span class="line"><span class="built_in">Object</span>.defineProperty(A, symbol3, &#123;<span class="attr">value</span>: <span class="string">&#x27;hello&#x27;</span>&#125;);</span><br><span class="line"><span class="built_in">console</span>.log(A[symbol3]]); <span class="comment">// hello</span></span><br></pre></td></tr></table></figure>
+<p><font style="color: red">注意：</font> 该属性不会出现在 <font style="color: red"> for…in </font>、<font style="color: red"> for…of </font> 循环中，也不会被<font style="color: blue"> Object.keys() </font>、<font style="color: blue"> Object.getOwnPropertyNames() </font>、<font style="color: blue"> JSON.stringify() </font> 返回。但是，它也不是私有属性，有一个<font style="color: blue"> Object.getOwnPropertySymbols </font>  方法，可以获取指定对象的所有 Symbol 属性名。</p>
+</li>
+<li><p>使用同一个 Symbol 值，可以使用 Symbol.for</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> s1 = <span class="built_in">Symbol</span>.for(<span class="string">&#x27;foo&#x27;</span>)</span><br><span class="line"><span class="keyword">var</span> s2 = <span class="built_in">Symbol</span>.for(<span class="string">&#x27;foo&#x27;</span>);</span><br><span class="line">s1 === s2; <span class="comment">// true</span></span><br></pre></td></tr></table></figure></li>
+<li><p>Symbol.keyFor 方法返回一个已登记的 Symbol 类型值的 key</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> s1 = <span class="built_in">Symbol</span>.for(<span class="string">&quot;foo&quot;</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Symbol</span>.keyFor(s1)); <span class="comment">// &quot;foo&quot;</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">var</span> s2 = <span class="built_in">Symbol</span>(<span class="string">&quot;foo&quot;</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Symbol</span>.keyFor(s2) ); <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure></li>
+<li><p>使用  </p>
+</li>
 </ul>
-<p>// Symbol 函数可以接受一个字符串作为参数，表示对 Symbol 实例的描述，主要是为了在控制台显示，或者转为字符串时，比较容易区分。<br>var c = Symbol(‘foo’);<br>console.log(c); // Symbol(foo)<br>var d = Symbol(‘foo’);<br>console.log(c === d); // false</p>
-<p>// Symbol 函数前不能使用 new 命令，否则会报错。这是因为生成的 Symbol 是一个原始类型的值，不是对象。<br>var f = new Symbol(); // Symbol is not a constructor at new Symbol</p>
-<p>// instanceof 的结果为 false<br>var aa = Symbol();<br>console.log(aa instanceof Symbol); // false</p>
-<p>// 如果 Symbol 的参数是一个对象，就会调用该对象的toString方法，将其转为字符串，然后才生成一个 Symbol 值。<br>const obj = {<br>  toString() {<br>    return ‘abc’;<br>  }<br>};<br>const sym = Symbol(obj);<br>console.log(sym); // Symbol(abc)</p>
-<p>// Symbol 值不能与其他类型的值进行运算，会报错<br>var sym1 = Symbol(‘My symbol’);<br>console.log(“your symbol is “ + sym1); // TypeError: Cannot convert a Symbol value to a string</p>
-<p>// Symbol 值可以显式转为字符串<br>var sym2 = Symbol(‘My symbol’);<br>console.log(String(sym2)); // ‘Symbol(My symbol)’<br>console.log(sym.toString()); // ‘Symbol(My symbol)’</p>
-<p>// Symbol的唯一性，可以作为标识符，用于对象的属性名<br>var symbol1 = Symbol();<br>var symbol2 = Symbol();<br>var symbol3 = Symbol();<br>var A = {};</p>
-<p>// 写法一<br>A[symbol1] = ‘hello’;<br>console.log(A[symbol1]); // hello</p>
-<p>// 写法二<br>A = {<br>    symbol2: ‘hello’<br>}<br>console.log(A[symbol2]]); // hello</p>
-<p>// 写法三<br>Object.defineProperty(A, symbol3, {value: ‘hello’});<br>console.log(A[symbol3]]); // hello</p>
-<pre><code>&lt;font style=&quot;color: red&quot;&gt;注意：&lt;/font&gt; 该属性不会出现在 &lt;font style=&quot;color: red&quot;&gt; for...in &lt;/font&gt;、&lt;font style=&quot;color: red&quot;&gt; for...of &lt;/font&gt; 循环中，也不会被&lt;font style=&quot;color: blue&quot;&gt; Object.keys() &lt;/font&gt;、&lt;font style=&quot;color: blue&quot;&gt; Object.getOwnPropertyNames() &lt;/font&gt;、&lt;font style=&quot;color: blue&quot;&gt; JSON.stringify() &lt;/font&gt; 返回。但是，它也不是私有属性，有一个&lt;font style=&quot;color: blue&quot;&gt; Object.getOwnPropertySymbols &lt;/font&gt;  方法，可以获取指定对象的所有 Symbol 属性名。
-
-- 使用同一个 Symbol 值，可以使用 Symbol.for
-```javascript
-var s1 = Symbol.for(&#39;foo&#39;)
-var s2 = Symbol.for(&#39;foo&#39;);
-s1 === s2; // true
-</code></pre>
-<ul>
-<li>Symbol.keyFor 方法返回一个已登记的 Symbol 类型值的 key<br>```javascript<br>var s1 = Symbol.for(“foo”);<br>console.log(Symbol.keyFor(s1)); // “foo”</li>
-</ul>
-<p>var s2 = Symbol(“foo”);<br>console.log(Symbol.keyFor(s2) ); // undefined</p>
-<pre><code>- 使用  
-
-当需要区分形状，正方形，圆形，菱形 会使用
-```javascript
-const shape = &#123; triangle: ‘triangle’, circle: ‘circle’&#125;
-</code></pre>
+<p>当需要区分形状，正方形，圆形，菱形 会使用</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> shape = &#123; <span class="attr">triangle</span>: ‘triangle’, <span class="attr">circle</span>: ‘circle’&#125;</span><br></pre></td></tr></table></figure>
 <p>不优雅，可以使用:</p>
-<pre class=" language-line-numbers language-javascript"><code class="language-line-numbers language-javascript">const shape = &#123; triangle: Symbol(), circle: Symbol()&#125;
-</code></pre>
-
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> shape = &#123; <span class="attr">triangle</span>: <span class="built_in">Symbol</span>(), <span class="attr">circle</span>: <span class="built_in">Symbol</span>()&#125;</span><br></pre></td></tr></table></figure>
                 
             </div>
             <hr/>
@@ -1064,7 +1044,7 @@ const shape = &#123; triangle: ‘triangle’, circle: ‘circle’&#125;
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total Words:&nbsp;<span
-                        class="white-color">24.2k</span>
+                        class="white-color">26.2k</span>
             
             
             

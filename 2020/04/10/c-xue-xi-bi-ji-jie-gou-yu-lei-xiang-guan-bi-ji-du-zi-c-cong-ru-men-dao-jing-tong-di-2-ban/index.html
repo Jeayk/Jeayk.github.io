@@ -472,7 +472,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    1.2k
+                    1.3k
                 </div>
                 
 
@@ -505,71 +505,9 @@
 <li>在C#中，可以将结构看成轻量级的类。定义结构和定义类相似，采用struct进行定义，每个struct类型数据可以是常量、变量、构造函数、方法和属性等成员。</li>
 </ul>
 <p>语法：</p>
-<pre><code>&lt;访问修饰符&gt; struct结构名
-&#123;
-    // 结构体定义
-&#125;
-</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;访问修饰符&gt; struct结构名</span><br><span class="line">&#123;</span><br><span class="line">    // 结构体定义</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><strong>使用：通过声明结构体变量或使用new来实例化结构对象，然后通过“结构体变量.结构成员名”或“结构对象.结构成员”的方式来使用结构。</strong></p>
-<h6 id="示例："><a href="#示例：" class="headerlink" title="示例："></a>示例：</h6><pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace StructTest
-&#123;
-    class Program
-    &#123;
-        static void Main(string[] args)
-        &#123;
-            Student goodStu; // 创建结构goodStu表示好学生
-            goodStu.stuNum = "20200409";
-            goodStu.stuName = "小明";
-            goodStu.stuAge = 19;
-            goodStu.stuClass = 1;
-            goodStu.stuGrade = 100;
-            Console.WriteLine("结构演示：");
-            Console.WriteLine("三好学生：学号-&#123;0&#125;，姓名-&#123;1&#125;，年龄-&#123;2&#125;，班级-&#123;3&#125;，成绩-&#123;4&#125;", goodStu.stuNum, goodStu.stuName, goodStu.stuAge, goodStu.stuClass, goodStu.stuGrade);
-            goodStu.DoHomeWork(); // 调用结构的方法
-            Console.ReadKey();
-            /**
-             * 三好学生：学号-20200409，姓名-小明，年龄-19，班级-1，成绩-100
-             * I'm doing homework!
-             */
-
-            Student normalStu = new Student("20200410", "小红", 19, 1, 80);
-            Console.WriteLine("普通学生：学号-&#123;0&#125;，姓名-&#123;1&#125;，年龄-&#123;2&#125;，班级-&#123;3&#125;，成绩-&#123;4&#125;", normalStu.stuNum, normalStu.stuName, normalStu.stuAge, normalStu.stuClass, normalStu.stuGrade);
-            normalStu.DoHomeWork();
-            Console.ReadKey();
-            /**
-             * 普通学生：学号-20200410，姓名-小红，年龄-19，班级-1，成绩-80
-             * I'm doing homework!
-             */
-        &#125;
-    &#125;
-    struct Student
-    &#123;
-        public string stuNum; // 学号
-        public string stuName; // 姓名
-        public int stuAge; // 年龄
-        public int stuClass; // 班级
-        public int stuGrade; // 成绩
-        public Student(string stuNum, string stuName, int stuAge, int stuClass, int stuGrade) // 结构的构造函数，用参数给结构中的成员赋值
-        &#123;
-            this.stuNum = stuNum;
-            this.stuName = stuName;
-            this.stuAge = stuAge;
-            this.stuClass = stuClass;
-            this.stuGrade = stuGrade;
-        &#125;
-        public void DoHomeWork() // 结构中的方法
-        &#123;
-            Console.WriteLine("I'm doing homework!");
-        &#125;
-    &#125;
-&#125;
-</code></pre>
+<h6 id="示例："><a href="#示例：" class="headerlink" title="示例："></a>示例：</h6><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> System.Linq;</span><br><span class="line"><span class="keyword">using</span> System.Text;</span><br><span class="line"><span class="keyword">using</span> System.Threading.Tasks;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">StructTest</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">class</span> <span class="title">Program</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>(<span class="params"><span class="built_in">string</span>[] args</span>)</span></span><br><span class="line">        &#123;</span><br><span class="line">            Student goodStu; <span class="comment">// 创建结构goodStu表示好学生</span></span><br><span class="line">            goodStu.stuNum = <span class="string">&quot;20200409&quot;</span>;</span><br><span class="line">            goodStu.stuName = <span class="string">&quot;小明&quot;</span>;</span><br><span class="line">            goodStu.stuAge = <span class="number">19</span>;</span><br><span class="line">            goodStu.stuClass = <span class="number">1</span>;</span><br><span class="line">            goodStu.stuGrade = <span class="number">100</span>;</span><br><span class="line">            Console.WriteLine(<span class="string">&quot;结构演示：&quot;</span>);</span><br><span class="line">            Console.WriteLine(<span class="string">&quot;三好学生：学号-&#123;0&#125;，姓名-&#123;1&#125;，年龄-&#123;2&#125;，班级-&#123;3&#125;，成绩-&#123;4&#125;&quot;</span>, goodStu.stuNum, goodStu.stuName, goodStu.stuAge, goodStu.stuClass, goodStu.stuGrade);</span><br><span class="line">            goodStu.DoHomeWork(); <span class="comment">// 调用结构的方法</span></span><br><span class="line">            Console.ReadKey();</span><br><span class="line">            <span class="comment">/**</span></span><br><span class="line"><span class="comment">             * 三好学生：学号-20200409，姓名-小明，年龄-19，班级-1，成绩-100</span></span><br><span class="line"><span class="comment">             * I&#x27;m doing homework!</span></span><br><span class="line"><span class="comment">             */</span></span><br><span class="line"></span><br><span class="line">            Student normalStu = <span class="keyword">new</span> Student(<span class="string">&quot;20200410&quot;</span>, <span class="string">&quot;小红&quot;</span>, <span class="number">19</span>, <span class="number">1</span>, <span class="number">80</span>);</span><br><span class="line">            Console.WriteLine(<span class="string">&quot;普通学生：学号-&#123;0&#125;，姓名-&#123;1&#125;，年龄-&#123;2&#125;，班级-&#123;3&#125;，成绩-&#123;4&#125;&quot;</span>, normalStu.stuNum, normalStu.stuName, normalStu.stuAge, normalStu.stuClass, normalStu.stuGrade);</span><br><span class="line">            normalStu.DoHomeWork();</span><br><span class="line">            Console.ReadKey();</span><br><span class="line">            <span class="comment">/**</span></span><br><span class="line"><span class="comment">             * 普通学生：学号-20200410，姓名-小红，年龄-19，班级-1，成绩-80</span></span><br><span class="line"><span class="comment">             * I&#x27;m doing homework!</span></span><br><span class="line"><span class="comment">             */</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">struct</span> Student</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">public</span> <span class="built_in">string</span> stuNum; <span class="comment">// 学号</span></span><br><span class="line">        <span class="keyword">public</span> <span class="built_in">string</span> stuName; <span class="comment">// 姓名</span></span><br><span class="line">        <span class="keyword">public</span> <span class="built_in">int</span> stuAge; <span class="comment">// 年龄</span></span><br><span class="line">        <span class="keyword">public</span> <span class="built_in">int</span> stuClass; <span class="comment">// 班级</span></span><br><span class="line">        <span class="keyword">public</span> <span class="built_in">int</span> stuGrade; <span class="comment">// 成绩</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">Student</span>(<span class="params"><span class="built_in">string</span> stuNum, <span class="built_in">string</span> stuName, <span class="built_in">int</span> stuAge, <span class="built_in">int</span> stuClass, <span class="built_in">int</span> stuGrade</span>) <span class="comment">// 结构的构造函数，用参数给结构中的成员赋值</span></span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">this</span>.stuNum = stuNum;</span><br><span class="line">            <span class="keyword">this</span>.stuName = stuName;</span><br><span class="line">            <span class="keyword">this</span>.stuAge = stuAge;</span><br><span class="line">            <span class="keyword">this</span>.stuClass = stuClass;</span><br><span class="line">            <span class="keyword">this</span>.stuGrade = stuGrade;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">DoHomeWork</span>(<span class="params"></span>) <span class="comment">// 结构中的方法</span></span></span><br><span class="line">        &#123;</span><br><span class="line">            Console.WriteLine(<span class="string">&quot;I&#x27;m doing homework!&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h5 id="结构与类的关系"><a href="#结构与类的关系" class="headerlink" title="结构与类的关系"></a>结构与类的关系</h5><p>类和结构实际上都是创建对象的模板，都可以包含构造函数、常数、字段、方法、属性、索引器和运算符等成员。</p>
 <ul>
 <li>结构是值类型，类是引用类型，在内存中结构是存储在栈上的值类型，类是存储在堆(heap)上的引用类型。</li>
@@ -586,28 +524,9 @@ namespace StructTest
 </ul>
 <p><strong>分部类是一个纯语言层的编译处理，不影响任何执行机制。<br>事实上C#编译器在编译的时候仍会将各个部分的局部类型合并成一个完整的类。C# 分部类是在class前面添加关键字partial来定义。</strong></p>
 <p><strong>分部类中还可以声明分部方法，分部方法是将方法的定义和实现分隔开。在方法前面用partial关键字修饰的方法就是分部方法。</strong><br>例如，在一个文件中声明分部类Person的代码如下： </p>
-<pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">public partial class Person // 分部类Person的部分代码
-&#123;
-    public void DoWork()
-    &#123;
-        // 定义方法，表示Person类的工作功能
-    &#125;
-    partial void Drink(); // 定义分部方法，表示Person类的喝水功能
-&#125;
-</code></pre>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">partial</span> <span class="keyword">class</span> <span class="title">Person</span> <span class="comment">// 分部类Person的部分代码</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">DoWork</span>(<span class="params"></span>)</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="comment">// 定义方法，表示Person类的工作功能</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">partial</span> <span class="keyword">void</span> <span class="title">Drink</span>(<span class="params"></span>)</span>; <span class="comment">// 定义分部方法，表示Person类的喝水功能</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>在另一个文件中声明分部类Person</p>
-<pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">public partial class Person // 分部类Person的部分代码
-&#123;
-    public void HaveDinner()
-    &#123;
-        // 定义方法，表示Person类的吃晚饭功能
-    &#125;
-    partial void Drink()
-    &#123;
-        // 实现分部方法代码
-    &#125;
-&#125;
-</code></pre>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">partial</span> <span class="keyword">class</span> <span class="title">Person</span> <span class="comment">// 分部类Person的部分代码</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">HaveDinner</span>(<span class="params"></span>)</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="comment">// 定义方法，表示Person类的吃晚饭功能</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">partial</span> <span class="keyword">void</span> <span class="title">Drink</span>(<span class="params"></span>)</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="comment">// 实现分部方法代码</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>分部方法隐式为private类型，不可使用public访问修饰符。分部方法不可有返回值。</p>
 
                 
@@ -1140,7 +1059,7 @@ namespace StructTest
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total Words:&nbsp;<span
-                        class="white-color">24.2k</span>
+                        class="white-color">26.2k</span>
             
             
             

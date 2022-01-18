@@ -471,7 +471,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    1.4k
+                    1.3k
                 </div>
                 
 
@@ -510,136 +510,26 @@
 <p><font color="red">注意：typeof null也是返回object</font>  </p>
 <ul>
 <li><h6 id="instanceof"><a href="#instanceof" class="headerlink" title="instanceof"></a>instanceof</h6><p>判断对象和构造函数在原型链上是否有关系，如果有关系，返回真，否则返回假</p>
-<pre class=" language-line-numbers language-javascript"><code class="language-line-numbers language-javascript">function Aaa()&#123;
-&#125;
-const a1 = new Aaa();
-// 判断a1和Aaa是否在同一个原型链上，是的话返回真，否则返回假
-console.log( a1 instanceof Aaa); // true 
-const arr = [];
-console.log( arr instanceof Aaa);//false
-</code></pre>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Aaa</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> a1 = <span class="keyword">new</span> Aaa();</span><br><span class="line"><span class="comment">// 判断a1和Aaa是否在同一个原型链上，是的话返回真，否则返回假</span></span><br><span class="line"><span class="built_in">console</span>.log( a1 <span class="keyword">instanceof</span> Aaa); <span class="comment">// true </span></span><br><span class="line"><span class="keyword">const</span> arr = [];</span><br><span class="line"><span class="built_in">console</span>.log( arr <span class="keyword">instanceof</span> Aaa);<span class="comment">//false</span></span><br></pre></td></tr></table></figure>
 <p>对于基本数据类型与引用类型的判断：</p>
-<pre class=" language-line-numbers language-javascript"><code class="language-line-numbers language-javascript">const str = 'hello';
-console.log(str instanceof String); // false
-const bool = true;
-console.log(bool instanceof Boolean); // false
-const num = 123;
-console.log(num instanceof Number); // false
-const nul = null;
-console.log(nul instanceof Object); // false
-const und = undefined;
-console.log(und instanceof Object); // false
-const oDate = new Date();
-console.log(oDate instanceof Date); // true
-const obj = &#123;&#125;;
-console.log(obj instanceof Object); // true
-const arr = [];
-console.log(arr instanceof Array); // true
-const reg = /a/;
-console.log(reg instanceof RegExp); // true
-const fun = function()&#123;&#125;;
-console.log(fun instanceof Function); // true
-const error = new Error();
-console.log(error instanceof Error); // true
-</code></pre>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> str = <span class="string">&#x27;hello&#x27;</span>;</span><br><span class="line"><span class="built_in">console</span>.log(str <span class="keyword">instanceof</span> <span class="built_in">String</span>); <span class="comment">// false</span></span><br><span class="line"><span class="keyword">const</span> bool = <span class="literal">true</span>;</span><br><span class="line"><span class="built_in">console</span>.log(bool <span class="keyword">instanceof</span> <span class="built_in">Boolean</span>); <span class="comment">// false</span></span><br><span class="line"><span class="keyword">const</span> num = <span class="number">123</span>;</span><br><span class="line"><span class="built_in">console</span>.log(num <span class="keyword">instanceof</span> <span class="built_in">Number</span>); <span class="comment">// false</span></span><br><span class="line"><span class="keyword">const</span> nul = <span class="literal">null</span>;</span><br><span class="line"><span class="built_in">console</span>.log(nul <span class="keyword">instanceof</span> <span class="built_in">Object</span>); <span class="comment">// false</span></span><br><span class="line"><span class="keyword">const</span> und = <span class="literal">undefined</span>;</span><br><span class="line"><span class="built_in">console</span>.log(und <span class="keyword">instanceof</span> <span class="built_in">Object</span>); <span class="comment">// false</span></span><br><span class="line"><span class="keyword">const</span> oDate = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line"><span class="built_in">console</span>.log(oDate <span class="keyword">instanceof</span> <span class="built_in">Date</span>); <span class="comment">// true</span></span><br><span class="line"><span class="keyword">const</span> obj = &#123;&#125;;</span><br><span class="line"><span class="built_in">console</span>.log(obj <span class="keyword">instanceof</span> <span class="built_in">Object</span>); <span class="comment">// true</span></span><br><span class="line"><span class="keyword">const</span> arr = [];</span><br><span class="line"><span class="built_in">console</span>.log(arr <span class="keyword">instanceof</span> <span class="built_in">Array</span>); <span class="comment">// true</span></span><br><span class="line"><span class="keyword">const</span> reg = <span class="regexp">/a/</span>;</span><br><span class="line"><span class="built_in">console</span>.log(reg <span class="keyword">instanceof</span> <span class="built_in">RegExp</span>); <span class="comment">// true</span></span><br><span class="line"><span class="keyword">const</span> fun = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;;</span><br><span class="line"><span class="built_in">console</span>.log(fun <span class="keyword">instanceof</span> <span class="built_in">Function</span>); <span class="comment">// true</span></span><br><span class="line"><span class="keyword">const</span> error = <span class="keyword">new</span> <span class="built_in">Error</span>();</span><br><span class="line"><span class="built_in">console</span>.log(error <span class="keyword">instanceof</span> <span class="built_in">Error</span>); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
 <p>从上面的运行结果我们可以看到，基本数据类型是没有检测出他们的类型，但是我们使用下面的方式创建num、str、boolean，是可以检测出类型的：  </p>
-<pre class=" language-line-numbers language-javascript"><code class="language-line-numbers language-javascript">const num = new Number(123);
-const str = new String('abcdef');
-const boolean = new Boolean(true);
-console.log(num instanceof Number); // true
-console.log(str instanceof String); // true
-console.log(boolean instanceof Boolean); // true
-</code></pre>
-</li>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> num = <span class="keyword">new</span> <span class="built_in">Number</span>(<span class="number">123</span>);</span><br><span class="line"><span class="keyword">const</span> str = <span class="keyword">new</span> <span class="built_in">String</span>(<span class="string">&#x27;abcdef&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> boolean = <span class="keyword">new</span> <span class="built_in">Boolean</span>(<span class="literal">true</span>);</span><br><span class="line"><span class="built_in">console</span>.log(num <span class="keyword">instanceof</span> <span class="built_in">Number</span>); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(str <span class="keyword">instanceof</span> <span class="built_in">String</span>); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(boolean <span class="keyword">instanceof</span> <span class="built_in">Boolean</span>); <span class="comment">// true</span></span><br></pre></td></tr></table></figure></li>
 <li><h6 id="constructor-NaN"><a href="#constructor-NaN" class="headerlink" title="constructor"></a>constructor</h6><p>查看对象对应的构造函数，constructor 在其对应对象的原型下面，是自动生成的。当我们写一个构造函数的时候，程序会自动添加：构造函数名.prototype.constructor = 构造函数名  </p>
-<p>s<br>```javascript<br>function Aaa(){<br>}<br>// Aaa.prototype.constructor = Aaa; // 每一个函数都会有的，都是自动生成的</p>
+<p>s</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Aaa</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// Aaa.prototype.constructor = Aaa; // 每一个函数都会有的，都是自动生成的</span></span><br><span class="line"> </span><br><span class="line"><span class="comment">// Aaa.prototype.constructor = Aaa;</span></span><br></pre></td></tr></table></figure>
+<p>判断数据类型的方法：  </p>
 </li>
 </ul>
-<p>// Aaa.prototype.constructor = Aaa;</p>
-<pre><code>判断数据类型的方法：  
-
-
-
-```javascript
-const str = &#39;hello&#39;;
-console.log(str.constructor === String); // true
-const bool = true;
-console.log(bool.constructor === Boolean); // true
-const num = 123;
-console.log(num.constructor === Number); // true
-const nul = null;
-console.log(nul.constructor === Object); // 报错 
-const und = undefined;
-console.log(und.constructor === Object); // 报错
-const oDate = new Date();
-console.log(oDate.constructor === Date); // true
-const obj = &#123;&#125;;
-console.log(obj.constructor === Object); // true
-const arr = [];
-console.log(arr.constructor === Array); // true
-const reg = /a/;
-console.log(reg.constructor === RegExp); // true
-const fun = function()&#123;&#125;;
-console.log(fun.constructor === Function); // true
-const error = new Error();
-console.log(error.constructor === Error); // true
-</code></pre>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> str = <span class="string">&#x27;hello&#x27;</span>;</span><br><span class="line"><span class="built_in">console</span>.log(str.constructor === <span class="built_in">String</span>); <span class="comment">// true</span></span><br><span class="line"><span class="keyword">const</span> bool = <span class="literal">true</span>;</span><br><span class="line"><span class="built_in">console</span>.log(bool.constructor === <span class="built_in">Boolean</span>); <span class="comment">// true</span></span><br><span class="line"><span class="keyword">const</span> num = <span class="number">123</span>;</span><br><span class="line"><span class="built_in">console</span>.log(num.constructor === <span class="built_in">Number</span>); <span class="comment">// true</span></span><br><span class="line"><span class="keyword">const</span> nul = <span class="literal">null</span>;</span><br><span class="line"><span class="built_in">console</span>.log(nul.constructor === <span class="built_in">Object</span>); <span class="comment">// 报错 </span></span><br><span class="line"><span class="keyword">const</span> und = <span class="literal">undefined</span>;</span><br><span class="line"><span class="built_in">console</span>.log(und.constructor === <span class="built_in">Object</span>); <span class="comment">// 报错</span></span><br><span class="line"><span class="keyword">const</span> oDate = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line"><span class="built_in">console</span>.log(oDate.constructor === <span class="built_in">Date</span>); <span class="comment">// true</span></span><br><span class="line"><span class="keyword">const</span> obj = &#123;&#125;;</span><br><span class="line"><span class="built_in">console</span>.log(obj.constructor === <span class="built_in">Object</span>); <span class="comment">// true</span></span><br><span class="line"><span class="keyword">const</span> arr = [];</span><br><span class="line"><span class="built_in">console</span>.log(arr.constructor === <span class="built_in">Array</span>); <span class="comment">// true</span></span><br><span class="line"><span class="keyword">const</span> reg = <span class="regexp">/a/</span>;</span><br><span class="line"><span class="built_in">console</span>.log(reg.constructor === <span class="built_in">RegExp</span>); <span class="comment">// true</span></span><br><span class="line"><span class="keyword">const</span> fun = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;;</span><br><span class="line"><span class="built_in">console</span>.log(fun.constructor === <span class="built_in">Function</span>); <span class="comment">// true</span></span><br><span class="line"><span class="keyword">const</span> error = <span class="keyword">new</span> <span class="built_in">Error</span>();</span><br><span class="line"><span class="built_in">console</span>.log(error.constructor === <span class="built_in">Error</span>); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
 <p>从上面的测试中我们可以看到，undefined和null是不能够判断出类型的，并且会报错。因为null和undefined是无效的对象，因此是不会有constructor存在的。<br>同时我们也需要注意到的是：使用constructor是不保险的，因为constructor属性是可以被修改的，会导致检测出的结果不正确。</p>
-<pre class=" language-line-numbers language-javascript"><code class="language-line-numbers language-javascript">function Aaa()&#123;
-&#125;
-
-// 程序可以自动添加，当我们写个构造函数的时候，程序会自动添加这句代码
-Aaa.prototype.constructor = Aaa;
-
-function BBB()&#123;&#125;
-
-// 此时我们就修改Aaa构造函数的指向问题
-Aaa.prototype.constructor = BBB;
-console.log(Aaa.construtor === Aaa); // false
-</code></pre>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Aaa</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 程序可以自动添加，当我们写个构造函数的时候，程序会自动添加这句代码</span></span><br><span class="line">Aaa.prototype.constructor = Aaa;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">BBB</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 此时我们就修改Aaa构造函数的指向问题</span></span><br><span class="line">Aaa.prototype.constructor = BBB;</span><br><span class="line"><span class="built_in">console</span>.log(Aaa.construtor === Aaa); <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
 <p>可以看出，constructor并没有正确检测出正确的构造函数</p>
 <p><font color="red"> 备注：使用Object.create()创建的js对象，没有constructor </font></p>
 <ul>
-<li><h6 id="Object-prototype-toString"><a href="#Object-prototype-toString" class="headerlink" title="Object.prototype.toString"></a>Object.prototype.toString</h6>可以说不管是什么类型，它都可以立即判断出。<br>toString是Object原型对象上的一个方法，该方法默认返回其调用者的具体类型，更严格的讲，是 toString运行时this指向的对象类型, 返回的类型格式为[object xxx],xxx是具体的数据类型，其中包括：<br>String,Number,Boolean,Undefined,Null,Function,Date,Array,RegExp,Error,HTMLDocument,… 基本上所有对象的类型都可以通过这个方法获取到。 <pre class=" language-line-numbers language-javascript"><code class="language-line-numbers language-javascript">const str = 'hello';
-console.log(Object.prototype.toString.call(str));//[object String]
-const bool = true;
-console.log(Object.prototype.toString.call(bool))//[object Boolean]
-const num = 123;
-console.log(Object.prototype.toString.call(num));//[object Number]
-const nul = null;
-console.log(Object.prototype.toString.call(nul));//[object Null]
-const und = undefined;
-console.log(Object.prototype.toString.call(und));//[object Undefined]
-const oDate = new Date();
-console.log(Object.prototype.toString.call(oDate));//[object Date]
-const obj = &#123;&#125;;
-console.log(Object.prototype.toString.call(obj));//[object Object]
-const arr = [];
-console.log(Object.prototype.toString.call(arr));//[object Array]
-const reg = /a/;
-console.log(Object.prototype.toString.call(reg));//[object RegExp]
-const fun = function()&#123;&#125;;
-console.log(Object.prototype.toString.call(fun));//[object Function]
-const error = new Error();
-console.log(Object.prototype.toString.call(error));//[object Error]
-</code></pre>
+<li><h6 id="Object-prototype-toString"><a href="#Object-prototype-toString" class="headerlink" title="Object.prototype.toString"></a>Object.prototype.toString</h6>可以说不管是什么类型，它都可以立即判断出。<br>toString是Object原型对象上的一个方法，该方法默认返回其调用者的具体类型，更严格的讲，是 toString运行时this指向的对象类型, 返回的类型格式为[object xxx],xxx是具体的数据类型，其中包括：<br>String,Number,Boolean,Undefined,Null,Function,Date,Array,RegExp,Error,HTMLDocument,… 基本上所有对象的类型都可以通过这个方法获取到。 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> str = <span class="string">&#x27;hello&#x27;</span>;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.prototype.toString.call(str));<span class="comment">//[object String]</span></span><br><span class="line"><span class="keyword">const</span> bool = <span class="literal">true</span>;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.prototype.toString.call(bool))<span class="comment">//[object Boolean]</span></span><br><span class="line"><span class="keyword">const</span> num = <span class="number">123</span>;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.prototype.toString.call(num));<span class="comment">//[object Number]</span></span><br><span class="line"><span class="keyword">const</span> nul = <span class="literal">null</span>;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.prototype.toString.call(nul));<span class="comment">//[object Null]</span></span><br><span class="line"><span class="keyword">const</span> und = <span class="literal">undefined</span>;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.prototype.toString.call(und));<span class="comment">//[object Undefined]</span></span><br><span class="line"><span class="keyword">const</span> oDate = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.prototype.toString.call(oDate));<span class="comment">//[object Date]</span></span><br><span class="line"><span class="keyword">const</span> obj = &#123;&#125;;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.prototype.toString.call(obj));<span class="comment">//[object Object]</span></span><br><span class="line"><span class="keyword">const</span> arr = [];</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.prototype.toString.call(arr));<span class="comment">//[object Array]</span></span><br><span class="line"><span class="keyword">const</span> reg = <span class="regexp">/a/</span>;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.prototype.toString.call(reg));<span class="comment">//[object RegExp]</span></span><br><span class="line"><span class="keyword">const</span> fun = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.prototype.toString.call(fun));<span class="comment">//[object Function]</span></span><br><span class="line"><span class="keyword">const</span> error = <span class="keyword">new</span> <span class="built_in">Error</span>();</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.prototype.toString.call(error));<span class="comment">//[object Error]</span></span><br></pre></td></tr></table></figure>
 从这个结果也可以看出，不管是什么类型的，Object.prototype.toString.call();都可以判断出其具体的类型。<br>优缺点总结：<br>类型 | 优点 |  缺点  </li>
-<li>|-|-<br>typeof | 使用简单 | 只能检测出基本类型（除了null） |<br>instanceof | 能检测出引用类型 | 不能检测出基本类型，且不能跨iframe  |<br>constructor| 基本能检测所有的类型（除了null和undefined |  constructor易被修改，也不能跨iframe IE6下，undefined和null均为Object |<br>Object.prototype.toString.call | 检测出所有的类型 | / |<br>instanceof和constructor不能跨iframe。<pre class=" language-line-numbers language-javascript"><code class="language-line-numbers language-javascript">window.onload = function () &#123;
-   const oF = document.createElement('iframe');
-   document.body.appendChild( oF );
-   
-   const ifArray = window.frames[0].Array;
-   
-   const arr = new ifArray();
-   
-   console.log( arr.constructor == Array );  // false
-   
-   console.log( arr instanceof Array );  // false
-   
-   console.log( Object.prototype.toString.call(arr) === '[object Array]' );  // true
-&#125;;
-</code></pre>
-</li>
+<li>|-|-<br>typeof | 使用简单 | 只能检测出基本类型（除了null） |<br>instanceof | 能检测出引用类型 | 不能检测出基本类型，且不能跨iframe  |<br>constructor| 基本能检测所有的类型（除了null和undefined |  constructor易被修改，也不能跨iframe IE6下，undefined和null均为Object |<br>Object.prototype.toString.call | 检测出所有的类型 | / |<br>instanceof和constructor不能跨iframe。<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> oF = <span class="built_in">document</span>.createElement(<span class="string">&#x27;iframe&#x27;</span>);</span><br><span class="line">    <span class="built_in">document</span>.body.appendChild( oF );</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">const</span> ifArray = <span class="built_in">window</span>.frames[<span class="number">0</span>].Array;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">const</span> arr = <span class="keyword">new</span> ifArray();</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">console</span>.log( arr.constructor == <span class="built_in">Array</span> );  <span class="comment">// false</span></span><br><span class="line">    </span><br><span class="line">    <span class="built_in">console</span>.log( arr <span class="keyword">instanceof</span> <span class="built_in">Array</span> );  <span class="comment">// false</span></span><br><span class="line">    </span><br><span class="line">    <span class="built_in">console</span>.log( <span class="built_in">Object</span>.prototype.toString.call(arr) === <span class="string">&#x27;[object Array]&#x27;</span> );  <span class="comment">// true</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></li>
 </ul>
 
                 
@@ -1174,7 +1064,7 @@ console.log(Object.prototype.toString.call(error));//[object Error]
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total Words:&nbsp;<span
-                        class="white-color">24.2k</span>
+                        class="white-color">26.2k</span>
             
             
             

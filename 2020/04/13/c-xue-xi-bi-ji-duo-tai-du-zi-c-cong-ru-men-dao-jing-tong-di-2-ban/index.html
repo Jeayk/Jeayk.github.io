@@ -471,7 +471,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    752
+                    757
                 </div>
                 
 
@@ -502,35 +502,9 @@
 <h5 id="多态的实现"><a href="#多态的实现" class="headerlink" title="多态的实现"></a>多态的实现</h5><p>C#中支持基于接口的多态和基于继承的多态，基于继承的多态设计在基类中定义方法，并在派生类中重写方法。</p>
 <p>多态和重写是紧密联系的，重写是实现多态的重要手段。重写基类方法就是修改它的实现，或者说在派生类中对继承的基类方法重新编写。</p>
 <p>在基类中用<strong>virtual</strong>关键字声明的方法（叫做虚拟方法）在派生类中可以重写。</p>
-<pre><code>// 语法
-访问修饰符 virtual 返回类型 方法名()
-&#123;
-    // 方法体
-&#125;
-</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// 语法</span><br><span class="line">访问修饰符 virtual 返回类型 方法名()</span><br><span class="line">&#123;</span><br><span class="line">	// 方法体</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>示例：</p>
-<pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">class Father
-&#123;
-    ...
-    public virtual void Display() // 基类中定义成虚拟方法，使用virtual关键字
-    &#123;
-        // Father does sth.
-        ...
-    &#125;
-&#125;
-class Son: Father
-&#123;
-    ...
-    public override void Display() // 重写基类的Display方法
-    &#123;
-        // Son does sth.
-        ...
-        
-        // 若想派生类方法执行后，继续执行基类方法，执行 base.Display() 方法
-        base.Display();
-    &#125;
-&#125;
-</code></pre>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title">Father</span></span><br><span class="line">&#123;</span><br><span class="line">	...</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">Display</span>(<span class="params"></span>) <span class="comment">// 基类中定义成虚拟方法，使用virtual关键字</span></span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="comment">// Father does sth.</span></span><br><span class="line">		...</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title">Son</span>: <span class="title">Father</span></span><br><span class="line">&#123;</span><br><span class="line">	...</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">override</span> <span class="keyword">void</span> <span class="title">Display</span>(<span class="params"></span>) <span class="comment">// 重写基类的Display方法</span></span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="comment">// Son does sth.</span></span><br><span class="line">		...</span><br><span class="line">		</span><br><span class="line">		<span class="comment">// 若想派生类方法执行后，继续执行基类方法，执行 base.Display() 方法</span></span><br><span class="line">		<span class="keyword">base</span>.Display();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><strong>重写时，子类重写方法的访问级别和父类虚拟方法的访问级别必须相同。</strong></p>
 <h5 id="方法重载、重写和隐蔽"><a href="#方法重载、重写和隐蔽" class="headerlink" title="方法重载、重写和隐蔽"></a>方法重载、重写和隐蔽</h5><p>在基类和派生类中可以存在同名方法，这些同名的方法可以分为重载、重写和隐藏3种类型。</p>
 <ul>
@@ -542,47 +516,8 @@ class Son: Father
 <li>隐藏<br>基类中的方法不声明为virtual（默认为非虚方法），在派生类中声明与基类同名时，需使用new关键字，以隐藏基类同名方法。</li>
 </ul>
 <p><strong>示例：</strong></p>
-<pre class=" language-line-numbers language-csharp"><code class="language-line-numbers language-csharp">class Father
-&#123;
-    ...
-    public virtual void Display() // 基类中定义成虚拟方法，使用virtual关键字
-    &#123;
-        // Father does sth.
-        ...
-    &#125;
-    public void Display(int id)
-    &#123;
-        // 若想执行无参方法
-        this.Display();
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title">Father</span></span><br><span class="line">&#123;</span><br><span class="line">	...</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">Display</span>(<span class="params"></span>) <span class="comment">// 基类中定义成虚拟方法，使用virtual关键字</span></span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="comment">// Father does sth.</span></span><br><span class="line">		...</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Display</span>(<span class="params"><span class="built_in">int</span> id</span>)</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="comment">// 若想执行无参方法</span></span><br><span class="line">		<span class="keyword">this</span>.Display();</span><br><span class="line"></span><br><span class="line">		<span class="comment">// 有参方法</span></span><br><span class="line">		Console.WriteLine(<span class="string">&quot;id: &quot;</span> + id);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title">Son</span>: <span class="title">Father</span></span><br><span class="line">&#123;</span><br><span class="line">	...</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">override</span> <span class="keyword">void</span> <span class="title">Display</span>(<span class="params"></span>) <span class="comment">// 重写基类的Display方法</span></span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="comment">// do sth.</span></span><br><span class="line">		...</span><br><span class="line">		</span><br><span class="line">		<span class="comment">// 若想派生类方法执行后，继续执行基类方法，执行 base.Display() 方法</span></span><br><span class="line">		<span class="keyword">base</span>.Display();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">new</span> <span class="keyword">void</span> <span class="title">Display</span>(<span class="params"><span class="built_in">int</span> no</span>) <span class="comment">// 使用new隐藏基类</span></span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="comment">// do sth.</span></span><br><span class="line">		...</span><br><span class="line">		</span><br><span class="line">		<span class="comment">// 若想派生类方法执行后，继续执行基类方法，执行 base.Display() 方法</span></span><br><span class="line">		<span class="keyword">base</span>.Display();</span><br><span class="line"></span><br><span class="line">		<span class="comment">// 隐藏基类自定义方法</span></span><br><span class="line">		Console.WriteLine(<span class="string">&quot;no: &quot;</span> + no);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-        // 有参方法
-        Console.WriteLine("id: " + id);
-    &#125;
-&#125;
-class Son: Father
-&#123;
-    ...
-    public override void Display() // 重写基类的Display方法
-    &#123;
-        // do sth.
-        ...
-        
-        // 若想派生类方法执行后，继续执行基类方法，执行 base.Display() 方法
-        base.Display();
-    &#125;
-    public new void Display(int no) // 使用new隐藏基类
-    &#123;
-        // do sth.
-        ...
-        
-        // 若想派生类方法执行后，继续执行基类方法，执行 base.Display() 方法
-        base.Display();
-
-        // 隐藏基类自定义方法
-        Console.WriteLine("no: " + no);
-    &#125;
-&#125;
-</code></pre>
 
                 
             </div>
@@ -1114,7 +1049,7 @@ class Son: Father
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total Words:&nbsp;<span
-                        class="white-color">24.2k</span>
+                        class="white-color">26.2k</span>
             
             
             

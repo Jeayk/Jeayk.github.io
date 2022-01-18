@@ -470,7 +470,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    572
+                    582
                 </div>
                 
 
@@ -499,43 +499,21 @@
             <div id="articleContent">
                 <h4 id="装箱"><a href="#装箱" class="headerlink" title="装箱"></a>装箱</h4><p>所谓装箱，就是把基本类型转变为对应的对象。装箱分为隐式和显示。</p>
 <h5 id="隐式装箱"><a href="#隐式装箱" class="headerlink" title="隐式装箱"></a>隐式装箱</h5><p>每当读取一个基本类型的值时，后台会创建一个该基本类型所对应的对象。在这个基本类型上调用方法，其实是在这个基本类型对象上调用方法。这个基本类型的对象是临时的，它只存在于方法调用那一行代码执行的瞬间，执行方法后立刻被销毁。具体到代码如下：</p>
-<pre class=" language-line-numbers language-javascript"><code class="language-line-numbers language-javascript">num.toFixed(2); // '123.00'
-//上方代码在后台的真正步骤为
-var c = new Number(123);
-c.toFixed(2);
-c = null;
-</code></pre>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">num.toFixed(<span class="number">2</span>); <span class="comment">// &#x27;123.00&#x27;</span></span><br><span class="line"><span class="comment">//上方代码在后台的真正步骤为</span></span><br><span class="line"><span class="keyword">var</span> c = <span class="keyword">new</span> <span class="built_in">Number</span>(<span class="number">123</span>);</span><br><span class="line">c.toFixed(<span class="number">2</span>);</span><br><span class="line">c = <span class="literal">null</span>;</span><br></pre></td></tr></table></figure>
 <p>当我们访问 num 时，要从内存中读取这个数字的值，此时访问过程处于读取模式。在读取模式中，后台进行了三步处理：</p>
 <ul>
 <li>创建一个 Number 类型的实例</li>
 <li>在实例上调用方法</li>
-<li>销毁实例<h5 id="显式装箱"><a href="#显式装箱" class="headerlink" title="显式装箱"></a>显式装箱</h5>通过内置对象 Boolean、Object、String 等可以对基本类型进行显示装箱。<pre class=" language-line-numbers language-javascript"><code class="language-line-numbers language-javascript">var obj = new String('123');
-</code></pre>
+<li>销毁实例<h5 id="显式装箱"><a href="#显式装箱" class="headerlink" title="显式装箱"></a>显式装箱</h5>通过内置对象 Boolean、Object、String 等可以对基本类型进行显示装箱。<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = <span class="keyword">new</span> <span class="built_in">String</span>(<span class="string">&#x27;123&#x27;</span>);</span><br></pre></td></tr></table></figure>
 <h4 id="拆箱"><a href="#拆箱" class="headerlink" title="拆箱"></a>拆箱</h4>拆箱与装箱相反，把对象转变为基本类型的值。拆箱过程内部调用了抽象操作 ToPrimitive 。该操作接受两个参数，第一个参数是要转变的对象，第二个参数 PreferredType 是对象被期待转成的类型。第二个参数不是必须的，默认该参数为 number，即对象被期待转为数字类型。有些操作如 String(obj) 会传入 PreferredType 参数。有些操作如 obj + “ “ 不会传入 PreferredType。  </li>
 </ul>
 <p>具体转换过程是这样的。默认情况下，ToPrimitive 先检查对象是否有 valueOf 方法，如果有则再检查 valueOf 方法是否有基本类型的返回值。如果没有 valueOf 方法或 valueOf 方法没有返回值，则调用 toString 方法。如果 toString 方法也没有返回值，产生 TypeError 错误。  </p>
 <p>PreferredType 影响 valueOf 与 toString 的调用顺序。如果 PreferrenType 的值为 string。则先调用 toString ,再调用 valueOf。</p>
 <p>具体测试代码如下：</p>
-<pre class=" language-line-numbers language-javascript"><code class="language-line-numbers language-javascript">var obj = &#123;
-    valueOf: () => &#123;console.log("valueOf"); return []&#125;,
-    toString: () => &#123;console.log("toString"); return []&#125;
-&#125;
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">    <span class="attr">valueOf</span>: <span class="function">() =&gt;</span> &#123;<span class="built_in">console</span>.log(<span class="string">&quot;valueOf&quot;</span>); <span class="keyword">return</span> []&#125;,</span><br><span class="line">    <span class="attr">toString</span>: <span class="function">() =&gt;</span> &#123;<span class="built_in">console</span>.log(<span class="string">&quot;toString&quot;</span>); <span class="keyword">return</span> []&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">String</span>(obj);</span><br><span class="line"><span class="comment">// toString</span></span><br><span class="line"><span class="comment">// valueOf</span></span><br><span class="line"><span class="comment">// Uncaught TypeError: Cannot convert object to primitive value</span></span><br><span class="line"></span><br><span class="line">obj + <span class="string">&#x27;&#x27;</span>;</span><br><span class="line"><span class="comment">// valueOf</span></span><br><span class="line"><span class="comment">// toString</span></span><br><span class="line"><span class="comment">// Uncaught TypeError: Cannot convert object to primitive value</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Number</span>(obj);</span><br><span class="line"><span class="comment">// valueOf</span></span><br><span class="line"><span class="comment">// toString</span></span><br><span class="line"><span class="comment">// Uncaught TypeError: Cannot convert object to primitive value</span></span><br></pre></td></tr></table></figure>
 
-String(obj);
-// toString
-// valueOf
-// Uncaught TypeError: Cannot convert object to primitive value
 
-obj + '';
-// valueOf
-// toString
-// Uncaught TypeError: Cannot convert object to primitive value
 
-Number(obj);
-// valueOf
-// toString
-// Uncaught TypeError: Cannot convert object to primitive value
-</code></pre>
 
                 
             </div>
@@ -1067,7 +1045,7 @@ Number(obj);
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total Words:&nbsp;<span
-                        class="white-color">24.2k</span>
+                        class="white-color">26.2k</span>
             
             
             

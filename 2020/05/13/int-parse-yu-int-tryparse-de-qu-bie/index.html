@@ -470,7 +470,7 @@ Convert.ToInt32 与 int.Parse 较为类似，实际">
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    213
+                    225
                 </div>
                 
 
@@ -505,11 +505,8 @@ Convert.ToInt32 与 int.Parse 较为类似，实际">
 <li>Convert.ToInt32 参数为 “” 时，抛出异常；</li>
 <li>int.Parse 参数为 “” 时，抛出异常。 </li>
 <li>Convert.ToInt32 可以转换的类型较多；</li>
-<li>int.Parse 只能转换数字类型的字符串。<br>int.TryParse 与 int.Parse 又较为类似，但它不会产生异常，转换成功返回 true，转换失败返回 false。最后一个参数为输出值，如果转换失败，输出值为 0。<br>```csharp<br>int m;<br>if(int.TryParse(“2”),out m)<br>{<br>…<br>}<br>// 返回true ,运行{}内，并给m赋值为2；</li>
+<li>int.Parse 只能转换数字类型的字符串。<br>int.TryParse 与 int.Parse 又较为类似，但它不会产生异常，转换成功返回 true，转换失败返回 false。最后一个参数为输出值，如果转换失败，输出值为 0。<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span> m; </span><br><span class="line"><span class="keyword">if</span>(<span class="built_in">int</span>.TryParse(<span class="string">&quot;2&quot;</span>),<span class="keyword">out</span> m)</span><br><span class="line">&#123;</span><br><span class="line">...</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 返回true ,运行&#123;&#125;内，并给m赋值为2；</span></span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(<span class="built_in">int</span>.TryParse(<span class="string">&quot;ddd&quot;</span>),<span class="keyword">out</span> m)</span><br><span class="line">&#123;</span><br><span class="line">...</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 返回false,不运行if&#123;&#125;内，并给m赋值为0；</span></span><br></pre></td></tr></table></figure></li>
 </ul>
-<p>if(int.TryParse(“ddd”),out m)<br>{<br>…<br>}<br>// 返回false,不运行if{}内，并给m赋值为0；</p>
-<pre><code>
-</code></pre>
 
                 
             </div>
@@ -1041,7 +1038,7 @@ Convert.ToInt32 与 int.Parse 较为类似，实际">
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total Words:&nbsp;<span
-                        class="white-color">24.2k</span>
+                        class="white-color">26.2k</span>
             
             
             
