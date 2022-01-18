@@ -510,7 +510,7 @@
 <span class="token keyword">let</span> a3 <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span> <span class="token comment">// 栈内存</span>
 <span class="token keyword">let</span> b <span class="token operator">=</span> <span class="token punctuation">&#123;</span> x<span class="token operator">:</span> <span class="token number">10</span> <span class="token punctuation">&#125;</span><span class="token punctuation">;</span> <span class="token comment">// 变量b存在于栈中，&#123; x: 10 &#125;作为对象存在于堆中</span>
 <span class="token keyword">let</span> c <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// 变量c存在于栈中，[1, 2, 3]作为对象存在于堆中</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<img src="/4-js%E4%B8%AD%E7%9A%84%E5%8F%98%E9%87%8F%E5%9C%A8%E5%86%85%E5%AD%98%E4%B8%AD%E7%9A%84%E5%85%B7%E4%BD%93%E5%AD%98%E5%82%A8%E5%BD%A2%E5%BC%8F/image-20220119003023489.png" alt="image-20220119003023489"></li>
+<img src="/image-20220119003023489.png"></li>
 </ul>
 <h5 id="访问堆内存中的引用数据类型"><a href="#访问堆内存中的引用数据类型" class="headerlink" title="访问堆内存中的引用数据类型:"></a>访问堆内存中的引用数据类型:</h5><ul>
 <li>访问栈内存，获取该对象的地址引用</li>
@@ -518,7 +518,7 @@
 <span class="token keyword">let</span> b <span class="token operator">=</span> a<span class="token punctuation">;</span>
 b <span class="token operator">=</span> <span class="token number">30</span><span class="token punctuation">;</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 20</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<img src="/2022/01/11/4-js-zhong-de-bian-liang-zai-nei-cun-zhong-de-ju-ti-cun-chu-xing-shi/image-20220119003057391.png" alt="image-20220119003057391"></li>
+<img src="/2022/01/11/4-js-zhong-de-bian-liang-zai-nei-cun-zhong-de-ju-ti-cun-chu-xing-shi/image-20220119003057391.png"></li>
 </ul>
 <p>在栈内存中的数据发生复制行为时，系统会自动为新的变量分配一个新值，最后这些变量都是相互独立互不影响的。</p>
 <h5 id="引用类型发生复制行为"><a href="#引用类型发生复制行为" class="headerlink" title="引用类型发生复制行为"></a>引用类型发生复制行为</h5><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">let</span> a <span class="token operator">=</span> <span class="token punctuation">&#123;</span> x<span class="token operator">:</span> <span class="token number">10</span><span class="token punctuation">,</span> y<span class="token operator">:</span> <span class="token number">20</span> <span class="token punctuation">&#125;</span>
@@ -529,8 +529,8 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <li>引用类型的复制，同样为新的变量b分配一个新的值，保存在栈内存中，不同的是，这个值仅仅是引用类型的一个地址指针</li>
 <li>他们两个指向同一个值，也就是地址指针相同，在堆内存中访问到的具体对象实际上是同一个,因此改变b.x时，a.x也发生了变化，这就是引用类型的特性</li>
 </ul>
-<p><img src="/4-js%E4%B8%AD%E7%9A%84%E5%8F%98%E9%87%8F%E5%9C%A8%E5%86%85%E5%AD%98%E4%B8%AD%E7%9A%84%E5%85%B7%E4%BD%93%E5%AD%98%E5%82%A8%E5%BD%A2%E5%BC%8F/image-20220119003111587.png" alt="image-20220119003111587"></p>
-<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p><img src="/4-js%E4%B8%AD%E7%9A%84%E5%8F%98%E9%87%8F%E5%9C%A8%E5%86%85%E5%AD%98%E4%B8%AD%E7%9A%84%E5%85%B7%E4%BD%93%E5%AD%98%E5%82%A8%E5%BD%A2%E5%BC%8F/image-20220119003124330.png" alt="image-20220119003124330"></p>
+<p><img src="/image-20220119003111587.png"></p>
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p><img src="/image-20220119003124330.png"></p>
 
                 
             </div>
