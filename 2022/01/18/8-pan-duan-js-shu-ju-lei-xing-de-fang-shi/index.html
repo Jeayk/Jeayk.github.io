@@ -464,7 +464,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2022-01-18
+                    2022-01-19
                 </div>
                 
 
@@ -509,7 +509,8 @@
 <p>对于引用类型，返回的都是object，其实返回object也没有错，因为所有对象的原型链最终都指向了Object, Object是所有对象的<code>祖宗</code>。<br>但当我们需要知道某个对象的具体类型时，typeof 就显得有些力不从心了。</p>
 <p><font color="red">注意：typeof null也是返回object</font>  </p>
 <ul>
-<li><h6 id="instanceof"><a href="#instanceof" class="headerlink" title="instanceof"></a>instanceof</h6>判断对象和构造函数在原型链上是否有关系，如果有关系，返回真，否则返回假<pre class=" language-line-numbers language-javascript"><code class="language-line-numbers language-javascript">function Aaa()&#123;
+<li><h6 id="instanceof"><a href="#instanceof" class="headerlink" title="instanceof"></a>instanceof</h6><p>判断对象和构造函数在原型链上是否有关系，如果有关系，返回真，否则返回假</p>
+<pre class=" language-line-numbers language-javascript"><code class="language-line-numbers language-javascript">function Aaa()&#123;
 &#125;
 const a1 = new Aaa();
 // 判断a1和Aaa是否在同一个原型链上，是的话返回真，否则返回假
@@ -517,7 +518,8 @@ console.log( a1 instanceof Aaa); // true
 const arr = [];
 console.log( arr instanceof Aaa);//false
 </code></pre>
-对于基本数据类型与引用类型的判断：<pre class=" language-line-numbers language-javascript"><code class="language-line-numbers language-javascript">const str = 'hello';
+<p>对于基本数据类型与引用类型的判断：</p>
+<pre class=" language-line-numbers language-javascript"><code class="language-line-numbers language-javascript">const str = 'hello';
 console.log(str instanceof String); // false
 const bool = true;
 console.log(bool instanceof Boolean); // false
@@ -540,7 +542,8 @@ console.log(fun instanceof Function); // true
 const error = new Error();
 console.log(error instanceof Error); // true
 </code></pre>
-从上面的运行结果我们可以看到，基本数据类型是没有检测出他们的类型，但是我们使用下面的方式创建num、str、boolean，是可以检测出类型的：<pre class=" language-line-numbers language-javascript"><code class="language-line-numbers language-javascript">const num = new Number(123);
+<p>从上面的运行结果我们可以看到，基本数据类型是没有检测出他们的类型，但是我们使用下面的方式创建num、str、boolean，是可以检测出类型的：  </p>
+<pre class=" language-line-numbers language-javascript"><code class="language-line-numbers language-javascript">const num = new Number(123);
 const str = new String('abcdef');
 const boolean = new Boolean(true);
 console.log(num instanceof Number); // true
@@ -548,10 +551,15 @@ console.log(str instanceof String); // true
 console.log(boolean instanceof Boolean); // true
 </code></pre>
 </li>
-<li><h6 id="constructor-NaN"><a href="#constructor-NaN" class="headerlink" title="constructor"></a>constructor</h6>查看对象对应的构造函数，constructor 在其对应对象的原型下面，是自动生成的。当我们写一个构造函数的时候，程序会自动添加：构造函数名.prototype.constructor = 构造函数名<br>```javascript<br>function Aaa(){<br>}<br>// Aaa.prototype.constructor = Aaa; // 每一个函数都会有的，都是自动生成的</li>
+<li><h6 id="constructor-NaN"><a href="#constructor-NaN" class="headerlink" title="constructor"></a>constructor</h6><p>查看对象对应的构造函数，constructor 在其对应对象的原型下面，是自动生成的。当我们写一个构造函数的时候，程序会自动添加：构造函数名.prototype.constructor = 构造函数名  </p>
+<p>s<br>```javascript<br>function Aaa(){<br>}<br>// Aaa.prototype.constructor = Aaa; // 每一个函数都会有的，都是自动生成的</p>
+</li>
 </ul>
 <p>// Aaa.prototype.constructor = Aaa;</p>
-<pre><code>判断数据类型的方法：
+<pre><code>判断数据类型的方法：  
+
+
+
 ```javascript
 const str = &#39;hello&#39;;
 console.log(str.constructor === String); // true
