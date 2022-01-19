@@ -4,9 +4,11 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="-常用非泛型集合类-ArrayList类, 积跬步以至千里">
-    <meta name="description" content="ArrayList是System.Collections命名空间中的非泛型集合类，类似于数组，有人称其为动态数组，其容量可以根据需要自动扩充，元素的索引也可根据元素数量重新分配，可以动态实现元素的添加、删除等操作。
-可以将ArrayList">
+    <meta name="keywords" content="JS变量与类型-2-js对象的底层数据结构, 积跬步以至千里">
+    <meta name="description" content="栈内存和堆内存javascript中的变量分为基本类型和引用类型。  
+
+基本类型是保存在栈内存中的简单数据段，它们的值都有固定的大小，保存在栈空间，按值访问。
+引用类型是保存在堆内存中的对象，值大小不固定，栈内存中存放的该对象的访问地址指">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +20,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>-常用非泛型集合类-ArrayList类 | 积跬步以至千里</title>
+    <title>JS变量与类型-2-js对象的底层数据结构 | 积跬步以至千里</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -310,12 +312,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">-常用非泛型集合类-ArrayList类</h1>
+                    <h1 class="description center-align post-title">JS变量与类型-2-js对象的底层数据结构</h1>
                 </div>
             </div>
         </div>
@@ -431,8 +433,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-                                <span class="chip bg-color">C#学习笔记</span>
+                            <a href="/tags/Javascript%E5%9F%BA%E7%A1%80/">
+                                <span class="chip bg-color">Javascript基础</span>
                             </a>
                         
                     </div>
@@ -443,8 +445,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E8%AF%BB%E8%87%AAC-%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A-%E7%AC%AC2%E7%89%88/" class="post-category">
-                                读自C#从入门到精通 第2版
+                            <a href="/categories/JS%E5%8F%98%E9%87%8F%E4%B8%8E%E7%B1%BB%E5%9E%8B/" class="post-category">
+                                JS变量与类型
                             </a>
                         
                     </div>
@@ -456,28 +458,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2020-05-11
+                    2022-01-05
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2022-01-04
+                    2022-01-20
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    1.7k
+                    478
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    7 Min
+                    1 Min
                 </div>
                 
 
@@ -500,171 +502,36 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>ArrayList是System.Collections命名空间中的非泛型集合类，类似于数组，有人称其为动态数组，其容量可以根据需要自动扩充，元素的索引也可根据元素数量重新分配，可以动态实现元素的添加、删除等操作。</p>
-<p>可以将ArrayList类理解为Array的优化版本，该类既有数组的特征，又有集合的特性，例如，既可以通过下标进行元素访问，对元素进行排序、搜索，又可以像处理集合一样添加，在指定索引处插入及删除元素。</p>
-<p><strong>常用属性</strong></p>
+                <h4 id="栈内存和堆内存"><a href="#栈内存和堆内存" class="headerlink" title="栈内存和堆内存"></a>栈内存和堆内存</h4><p>javascript中的变量分为基本类型和引用类型。  </p>
 <ul>
-<li>Capacity： 获取或设置ArrayList可包含的元素数，默认为4</li>
-<li>Count: 获取ArrayList中实际包含的元素数</li>
-<li>Item: 获取或设置指定索引处的元素</li>
+<li>基本类型是保存在栈内存中的简单数据段，它们的值都有固定的大小，保存在栈空间，按值访问。</li>
+<li>引用类型是保存在堆内存中的对象，值大小不固定，栈内存中存放的该对象的访问地址指向堆内存中的对象，javascript不允许直接访问堆内存中的位置，因此操作对象时，实际上操作的事对象的引用。  </li>
 </ul>
-<p><strong>常用方法</strong></p>
+<h5 id="结合代码与图理解"><a href="#结合代码与图理解" class="headerlink" title="结合代码与图理解"></a>结合代码与图理解</h5><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">let</span> a1 <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token comment">// 栈内存</span>
+<span class="token keyword">let</span> a2 <span class="token operator">=</span> <span class="token string">"this is string"</span> <span class="token comment">// 栈内存</span>
+<span class="token keyword">let</span> a3 <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span> <span class="token comment">// 栈内存</span>
+<span class="token keyword">let</span> b <span class="token operator">=</span> <span class="token punctuation">&#123;</span> x<span class="token operator">:</span> <span class="token number">10</span> <span class="token punctuation">&#125;</span><span class="token punctuation">;</span> <span class="token comment">// 变量b存在于栈中，&#123; x: 10 &#125;作为对象存在于堆中</span>
+<span class="token keyword">let</span> c <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// 变量c存在于栈中，[1, 2, 3]作为对象存在于堆中</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="访问堆内存中的引用数据类型"><a href="#访问堆内存中的引用数据类型" class="headerlink" title="访问堆内存中的引用数据类型:"></a>访问堆内存中的引用数据类型:</h5><ul>
+<li>访问栈内存，获取该对象的地址引用</li>
+<li>通过地址，从堆内存中获取需要的数据</li>
+</ul>
+<h5 id="基本类型发生复制行为"><a href="#基本类型发生复制行为" class="headerlink" title="基本类型发生复制行为"></a>基本类型发生复制行为</h5><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">let</span> a <span class="token operator">=</span> <span class="token number">20</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> b <span class="token operator">=</span> a<span class="token punctuation">;</span>
+b <span class="token operator">=</span> <span class="token number">30</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 20</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>在栈内存中的数据发生复制行为时，系统会自动为新的变量分配一个新值，最后这些变量都是相互独立互不影响的。</p>
+<h5 id="引用类型发生复制行为"><a href="#引用类型发生复制行为" class="headerlink" title="引用类型发生复制行为"></a>引用类型发生复制行为</h5><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">let</span> a <span class="token operator">=</span> <span class="token punctuation">&#123;</span> x<span class="token operator">:</span> <span class="token number">10</span><span class="token punctuation">,</span> y<span class="token operator">:</span> <span class="token number">20</span> <span class="token punctuation">&#125;</span>
+<span class="token keyword">let</span> b <span class="token operator">=</span> a<span class="token punctuation">;</span>
+b<span class="token punctuation">.</span>x <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">.</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 5</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
 <ul>
-<li>Add(): 将元素添加到ArrayList的结尾处</li>
-<li>AddRange(): 在ArrayList的末尾增加一定范围内的元素</li>
-<li>Clear(): 清除ArrayList中的所有元素</li>
-<li>Contains(): 检查某元素是否在ArrayList中</li>
-<li>IndexOf: 返回ArrayList中某个元素值得第一个匹配项对应的索引</li>
-<li>Insert(): 将元素插入ArrayList的指定索引处</li>
-<li>Remove(): 从ArrayList移除特定元素的第一个匹配项</li>
-<li>Reverse(): 将ArrayList或它的一部分中的元素的顺序反转</li>
-<li>Sort(): 对ArrayList或它的一部分中的元素进行排序</li>
+<li>引用类型的复制，同样为新的变量b分配一个新的值，保存在栈内存中，不同的是，这个值仅仅是引用类型的一个地址指针</li>
+<li>他们两个指向同一个值，也就是地址指针相同，在堆内存中访问到的具体对象实际上是同一个,因此改变b.x时，a.x也发生了变化，这就是引用类型的特性</li>
 </ul>
-<p><em><strong>由于ArrayList中元素的类型默认为object，因此在获取集合元素时需要强制进行类型转换。并且由于object是引用类型，在与值类型进行转换时会引起装箱和拆箱的操作，因此需要付出一些性能代价。</strong></em></p>
-<p><strong>为了实现上面的例子，必须在using区添加System.Collections命名空间。</strong></p>
-<h5 id="创建ArrayList"><a href="#创建ArrayList" class="headerlink" title="创建ArrayList"></a>创建ArrayList</h5><p>ArrayList的四种创建方式：</p>
-<ol>
-<li>使用默认的初始容量创建ArrayList，该实例没有任何元素<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">ArrayList al1 &#x3D; new ArrayList();
-al1.Add(&quot;hello&quot;);
-al1.Add(&quot;C#&quot;);
-al1.Add(&quot;world!&quot;);
-Console.WriteLine(&quot;al1中容量是&#123;0&#125;, 个数是&#123;1&#125;&quot;, al1.Capacity, al1.Count); &#x2F;&#x2F; 4 3<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
-<li>使用实现了ICollection接口的集合类来初始化新创建的ArrayList,该实例与参数中的集合具有相同的初始容量<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">ArrayList al2 &#x3D; new ArrayList(al1);
-Console.WriteLine(&quot;al2容量是&#123;0&#125;, 个数是&#123;1&#125;&quot;,al2.Capacity, al2.Count); &#x2F;&#x2F; 3 3<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
-<li>经由一个整数数值来初始化ArrayList的容量<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">ArrayList al3 &#x3D; new ArrayList(18);
-Console.WriteLine(&quot;al3的容量是：&#123;0&#125;, 元素个数是&#123;1&#125;&quot;, al3.Capacity, al3.Count); &#x2F;&#x2F; 18 0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
-<li>将指定abc字符串重复n次构造数组，以下以三次示例<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">ArrayList al4 &#x3D; ArrayList.Repeat(&quot;abc&quot;, 3);
-Console.WriteLine(&quot;al4的容量是：&#123;0&#125;，元素个数是&#123;1&#125;&quot;, al4.Capacity, al4.Count); &#x2F;&#x2F; 4 3<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<h4 id="向ArrayList中添加元素的方法"><a href="#向ArrayList中添加元素的方法" class="headerlink" title="向ArrayList中添加元素的方法"></a>向ArrayList中添加元素的方法</h4></li>
-</ol>
-<ul>
-<li>Add方法可以将单个元素添加到列表的尾部；AddRange方法可以获取一个实现ICollection接口的集合实例，例如，Array、Queue、Stack等，并将这个集合实例按顺序添加到列表的尾部。</li>
-<li>使用Insert和InsertRange方法向ArrayList中指定的位置插入元素。Insert方法用于添加单个元素到指定的索引位置，InsertRange从指定的位置开始添加一个实现了ICollection接口的实例。</li>
-</ul>
-<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">ArrayList a1 &#x3D; new ArrayList(20);
-a1.Add(&quot;我是元素1&quot;);
-a1.Add(&quot;我是元素2&quot;);
-string[] strs &#x3D; &#123; &quot;我是元素3&quot;, &quot;我是元素4&quot; &#125;;
-a1.AddRange(strs);
-a1.Insert(0, &quot;新增第1个元素&quot;);
-
-ArrayList a2 &#x3D; new ArrayList();
-a2.Add(&quot;我是新增元素1&quot;);
-a2.Add(&quot;我是新增元素2&quot;);
-a1.InsertRange(2, a2);
-foreach(var i in a1)
-&#123;
-    Console.WriteLine(i);
-&#125;
-&#x2F;**
- * 新增第1个元素
- * 我是元素1
- * 我是新增元素1
- * 我是新增元素2
- * 我是元素2
- * 我是元素3
- * 我是元素4
- *&#x2F;
-Console.ReadKey();<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="删除ArrayList中的元素"><a href="#删除ArrayList中的元素" class="headerlink" title="删除ArrayList中的元素"></a>删除ArrayList中的元素</h4><p>ArrayList提供了Remove、RemoveAt和RemoveRange3种方法将指定元素从集合中移除。</p>
-<ul>
-<li>Remove方法接受一个object类型的参数，用于移除指定元素值的第一个匹配集合元素</li>
-<li>RemoveAt方法接受一个int类型的参数，用于删除指定索引的集合元素</li>
-<li>RemoveRange方法从集合中移除一定范围的元素</li>
-</ul>
-<p>Clear方法可移除所有的元素</p>
-<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">ArrayList a1 &#x3D; new ArrayList(20);
-int[] strs &#x3D; &#123; 0, 1, 2, 3, 4&#125;;
-a1.AddRange(strs);
-foreach(var i in a1)
-&#123;
-    Console.Write(i); &#x2F;&#x2F; 01234
-&#125;
-Console.WriteLine();
-
-a1.Remove(0);
-foreach(var i in a1)
-&#123;
-    Console.Write(i); &#x2F;&#x2F; 1234
-&#125;
-Console.WriteLine();
-
-a1.RemoveAt(1);
-foreach(var i in a1)
-&#123;
-    Console.Write(i); &#x2F;&#x2F; 134
-&#125;
-Console.WriteLine();
-
-a1.RemoveRange(1, 2); &#x2F;&#x2F; a1.RemoveRange(index, count)
-foreach(var i in a1)
-&#123;
-    Console.Write(i); &#x2F;&#x2F; 1
-&#125;
-Console.WriteLine();
-
-a1.Clear();
-foreach (var i in a1)
-&#123;
-    Console.Write(i); &#x2F;&#x2F; 空 
-&#125;
-Console.ReadKey();<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h4><p>使用Sort方法对ArrayList集合中的元素进行排序。Sort有3种重载方法。</p>
-<ul>
-<li>使用集合元素的比较方式进行排序。<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">public virtual void Sort();<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
-<li>使用自定义比较器进行排序<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">public virtual void Sort(IComparer comparer);<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
-<li>使用自定义比较器进行指定范围的排序<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">public virtual void Sort(int index, int count, Icomparer comparer);<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-示例：<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">ArrayList a1 &#x3D; new ArrayList();
-a1.AddRange(new string[5] &#123; &quot;Array1&quot;, &quot;Array2&quot;, &quot;Array5&quot;, &quot;Array3&quot;, &quot;Array&quot; &#125;);
-foreach (var i in a1)
-    Console.Write(i + &quot; &quot;); &#x2F;&#x2F; Array1 Array2 Array5 Array3 Array
-Console.WriteLine();
-
-a1.Sort();
-foreach (var i in a1)
-    Console.Write(i + &quot; &quot;); &#x2F;&#x2F; Array Array1 Array2 Array3 Array5
-Console.ReadKey();<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="查找ArrayList中的集合元素"><a href="#查找ArrayList中的集合元素" class="headerlink" title="查找ArrayList中的集合元素"></a>查找ArrayList中的集合元素</h4></li>
-<li>IndexOf: 从前向后搜索指定的字符串，如果找到，则返回匹配的第1项的自0开始的索引，否则返回-1</li>
-<li>LastIndexOf: 从后向前搜索指定的字符串，如果找到，则返回匹配的最后一项的自0开始的索引，否则返回-1</li>
-<li>BinarySearch: 使用二分算法从集合中搜索指定的值，并返回找到的从0开始的索引，否则返回-1</li>
-</ul>
-<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">int[] nums &#x3D; &#123; 1, 2, 3, 4, 5, 4 &#125;;
-ArrayList a1 &#x3D; new ArrayList(nums);
-int i &#x3D; a1.IndexOf(3);
-Console.WriteLine(i); &#x2F;&#x2F; 2
-
-int j &#x3D; a1.LastIndexOf(4);
-Console.WriteLine(j); &#x2F;&#x2F; 5
-
-int k &#x3D; a1.BinarySearch(4);
-int m &#x3D; a1.BinarySearch(0);
-Console.WriteLine(k); &#x2F;&#x2F; 3
-Console.WriteLine(m); &#x2F;&#x2F; -1
-Console.ReadKey();<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="泛型List"><a href="#泛型List" class="headerlink" title="泛型List"></a>泛型List</h4><p>因为ArrayList存在不安全类型与装箱拆箱的缺点，所以在C#2.0后出现了泛型的概念。而List类是ArrayList类的泛型等效类。它的大部分用法都与ArrayList相似，因为List类也继承了IList接口。最关键的区别在于，在声明List集合时，我们同时需要为其声明List集合内数据的对象类型。</p>
-<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">List&lt;int&gt; list &#x3D; new List&lt;int&gt;();
-&#x2F;&#x2F;新增数据
-list.Add(1);
-list.Add(3);
-&#x2F;&#x2F; list.Add(&quot;1&quot;) &#x2F;&#x2F; 报错，只能为int型，不能为string
-foreach (var i in list)
-    Console.Write(i + &quot; &quot;); &#x2F;&#x2F; 1 3
-Console.WriteLine();
-
-&#x2F;&#x2F;修改数据
-list[0] &#x3D; 2;
-foreach (var i in list)
-    Console.Write(i + &quot; &quot;); &#x2F;&#x2F; 2 3
-Console.WriteLine();
-
-&#x2F;&#x2F;移除数据
-list.RemoveAt(0);
-foreach (var i in list)
-    Console.Write(i + &quot; &quot;); &#x2F;&#x2F; 3
-Console.WriteLine();
-
-Console.ReadKey();<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
                 
             </div>
@@ -691,7 +558,7 @@ Console.ReadKey();<span aria-hidden="true" class="line-numbers-rows"><span></spa
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://jeayk.github.io/2020/05/11/c-xue-xi-bi-ji-chang-yong-fei-fan-xing-ji-he-lei-arraylist-lei-du-zi-c-cong-ru-men-dao-jing-tong-di-2-ban/">https://jeayk.github.io/2020/05/11/c-xue-xi-bi-ji-chang-yong-fei-fan-xing-ji-he-lei-arraylist-lei-du-zi-c-cong-ru-men-dao-jing-tong-di-2-ban/</a>
+                    <a href="https://jeayk.github.io/2022/01/05/js-bian-liang-yu-lei-xing-2-js-dui-xiang-de-di-ceng-shu-ju-jie-gou/">https://jeayk.github.io/2022/01/05/js-bian-liang-yu-lei-xing-2-js-dui-xiang-de-di-ceng-shu-ju-jie-gou/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -729,8 +596,8 @@ Console.ReadKey();<span aria-hidden="true" class="line-numbers-rows"><span></spa
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-                                    <span class="chip bg-color">C#学习笔记</span>
+                                <a href="/tags/Javascript%E5%9F%BA%E7%A1%80/">
+                                    <span class="chip bg-color">Javascript基础</span>
                                 </a>
                             
                         </div>
@@ -908,13 +775,13 @@ Console.ReadKey();<span aria-hidden="true" class="line-numbers-rows"><span></spa
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/2020/05/13/int-parse-yu-int-tryparse-de-qu-bie/">
+                <a href="/2022/01/21/yuan-xing-yu-yuan-xing-lian-1-li-jie-yuan-xing-she-ji-mo-shi-yi-ji-javascript-zhong-de-yuan-xing-gui-ze/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="int.Parse与int.TryParse的区别">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="原型与原型链-1. 理解原型设计模式以及JavaScript中的原型规则">
                         
-                        <span class="card-title">int.Parse与int.TryParse的区别</span>
+                        <span class="card-title">原型与原型链-1. 理解原型设计模式以及JavaScript中的原型规则</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -925,14 +792,14 @@ Console.ReadKey();<span aria-hidden="true" class="line-numbers-rows"><span></spa
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-05-13
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-01-21
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E8%AF%BB%E8%87%AAC-%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A-%E7%AC%AC2%E7%89%88/" class="post-category">
-                                    读自C#从入门到精通 第2版
+                            <a href="/categories/%E5%8E%9F%E5%9E%8B%E4%B8%8E%E5%8E%9F%E5%9E%8B%E9%93%BE/" class="post-category">
+                                    原型与原型链
                                 </a>
                             
                             
@@ -942,8 +809,8 @@ Console.ReadKey();<span aria-hidden="true" class="line-numbers-rows"><span></spa
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-                        <span class="chip bg-color">C#学习笔记</span>
+                    <a href="/tags/Javascript/">
+                        <span class="chip bg-color">Javascript</span>
                     </a>
                     
                 </div>
@@ -957,13 +824,13 @@ Console.ReadKey();<span aria-hidden="true" class="line-numbers-rows"><span></spa
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/04/20/c-xue-xi-bi-ji-ni-ming-fang-fa-yu-lambda-biao-da-shi-du-zi-c-cong-ru-men-dao-jing-tong-di-2-ban/">
+                <a href="/2022/01/04/js-bian-liang-yu-lei-xing-1-js-yu-yan-lei-xing-yu-symbol-iteratorl-li-jie/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="C#学习笔记-匿名方法与lambda表达式（读自C#从入门到精通 第2版）">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="JS变量与类型-1.js语言类型与Symbol,Iteratorl理解">
                         
-                        <span class="card-title">C#学习笔记-匿名方法与lambda表达式（读自C#从入门到精通 第2版）</span>
+                        <span class="card-title">JS变量与类型-1.js语言类型与Symbol,Iteratorl理解</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -974,14 +841,14 @@ Console.ReadKey();<span aria-hidden="true" class="line-numbers-rows"><span></spa
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-20
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-01-04
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E8%AF%BB%E8%87%AAC-%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A-%E7%AC%AC2%E7%89%88/" class="post-category">
-                                    读自C#从入门到精通 第2版
+                            <a href="/categories/JS%E5%8F%98%E9%87%8F%E4%B8%8E%E7%B1%BB%E5%9E%8B/" class="post-category">
+                                    JS变量与类型
                                 </a>
                             
                             
@@ -991,8 +858,8 @@ Console.ReadKey();<span aria-hidden="true" class="line-numbers-rows"><span></spa
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-                        <span class="chip bg-color">C#学习笔记</span>
+                    <a href="/tags/Javascript%E5%9F%BA%E7%A1%80/">
+                        <span class="chip bg-color">Javascript基础</span>
                     </a>
                     
                 </div>
