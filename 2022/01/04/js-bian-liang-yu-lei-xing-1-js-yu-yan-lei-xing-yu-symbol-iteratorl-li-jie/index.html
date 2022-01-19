@@ -4,11 +4,9 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="C#学习笔记-结构与类相关笔记（读自C#从入门到精通 第2版）, 积跬步以至千里">
-    <meta name="description" content="结构与类
-结构和类相似，通常用来封装小型的相关变量组。
-结构是一种值类型，通常创建结构要比创建类的速度快。如果需要一些紧凑循环，需要在其中创建大量的新数据结构，则应考虑使用结构而不是类。
-在C#中，可以将结构看成轻量级的类。定义结构和定义类">
+    <meta name="keywords" content="JS变量与类型-1.js语言类型与Symbol,Iteratorl理解, 积跬步以至千里">
+    <meta name="description" content="JavaScript规定了几种语言类型？七种： 1.Undefined, 2.Null, 3.Boolean, 4.String, 5.Number, 6.Symbol, 7.Object  
+Symbol的概念Symbol表示独一无二的值">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -20,7 +18,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>C#学习笔记-结构与类相关笔记（读自C#从入门到精通 第2版） | 积跬步以至千里</title>
+    <title>JS变量与类型-1.js语言类型与Symbol,Iteratorl理解 | 积跬步以至千里</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -312,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">C#学习笔记-结构与类相关笔记（读自C#从入门到精通 第2版）</h1>
+                    <h1 class="description center-align post-title">JS变量与类型-1.js语言类型与Symbol,Iteratorl理解</h1>
                 </div>
             </div>
         </div>
@@ -433,8 +431,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-                                <span class="chip bg-color">C#学习笔记</span>
+                            <a href="/tags/Javascript%E5%9F%BA%E7%A1%80/">
+                                <span class="chip bg-color">Javascript基础</span>
                             </a>
                         
                     </div>
@@ -445,8 +443,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E8%AF%BB%E8%87%AAC-%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A-%E7%AC%AC2%E7%89%88/" class="post-category">
-                                读自C#从入门到精通 第2版
+                            <a href="/categories/JS%E5%8F%98%E9%87%8F%E4%B8%8E%E7%B1%BB%E5%9E%8B/" class="post-category">
+                                JS变量与类型
                             </a>
                         
                     </div>
@@ -458,28 +456,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2020-04-10
+                    2022-01-04
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2022-01-04
+                    2022-01-20
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    1.3k
+                    1.7k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    5 Min
+                    6 Min
                 </div>
                 
 
@@ -502,112 +500,113 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="结构与类"><a href="#结构与类" class="headerlink" title="结构与类"></a>结构与类</h4><ul>
-<li>结构和类相似，通常用来封装小型的相关变量组。</li>
-<li>结构是一种值类型，通常创建结构要比创建类的速度快。如果需要一些紧凑循环，需要在其中创建大量的新数据结构，则应考虑使用结构而不是类。</li>
-<li>在C#中，可以将结构看成轻量级的类。定义结构和定义类相似，采用struct进行定义，每个struct类型数据可以是常量、变量、构造函数、方法和属性等成员。</li>
-</ul>
-<p>语法：</p>
-<pre class="line-numbers language-none"><code class="language-none">&lt;访问修饰符&gt; struct结构名
-&#123;
-    &#x2F;&#x2F; 结构体定义
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<p><strong>使用：通过声明结构体变量或使用new来实例化结构对象，然后通过“结构体变量.结构成员名”或“结构对象.结构成员”的方式来使用结构。</strong></p>
-<h6 id="示例："><a href="#示例：" class="headerlink" title="示例："></a>示例：</h6><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+                <h4 id="JavaScript规定了几种语言类型？"><a href="#JavaScript规定了几种语言类型？" class="headerlink" title="JavaScript规定了几种语言类型？"></a>JavaScript规定了几种语言类型？</h4><p>七种： 1.Undefined, 2.Null, 3.Boolean, 4.String, 5.Number, 6.Symbol, 7.Object  </p>
+<h5 id="Symbol的概念"><a href="#Symbol的概念" class="headerlink" title="Symbol的概念"></a>Symbol的概念</h5><p>Symbol表示独一无二的值，它是一切非字符串的对象key的集合。<br>Symbol 值通过Symbol函数生成。这就是说，对象的属性名现在可以有两种类型，一种是原来就有的字符串，另一种就是新增的 Symbol 类型。凡是属性名属于 Symbol 类型，就都是独一无二的，可以保证不会与其他属性名产生冲突。<br>Symbol函数可以接受一个字符串作为参数，表示对 Symbol 实例的描述，但是即使描述相同，Symbol值也不相等。</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">let</span> s1 <span class="token operator">=</span> <span class="token function">Symbol</span><span class="token punctuation">(</span><span class="token string">'foo'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token keyword">let</span> s2 <span class="token operator">=</span> <span class="token function">Symbol</span><span class="token punctuation">(</span><span class="token string">'foo'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-namespace StructTest
-&#123;
-    class Program
-    &#123;
-        static void Main(string[] args)
-        &#123;
-            Student goodStu; &#x2F;&#x2F; 创建结构goodStu表示好学生
-            goodStu.stuNum &#x3D; &quot;20200409&quot;;
-            goodStu.stuName &#x3D; &quot;小明&quot;;
-            goodStu.stuAge &#x3D; 19;
-            goodStu.stuClass &#x3D; 1;
-            goodStu.stuGrade &#x3D; 100;
-            Console.WriteLine(&quot;结构演示：&quot;);
-            Console.WriteLine(&quot;三好学生：学号-&#123;0&#125;，姓名-&#123;1&#125;，年龄-&#123;2&#125;，班级-&#123;3&#125;，成绩-&#123;4&#125;&quot;, goodStu.stuNum, goodStu.stuName, goodStu.stuAge, goodStu.stuClass, goodStu.stuGrade);
-            goodStu.DoHomeWork(); &#x2F;&#x2F; 调用结构的方法
-            Console.ReadKey();
-            &#x2F;**
-             * 三好学生：学号-20200409，姓名-小明，年龄-19，班级-1，成绩-100
-             * I&#39;m doing homework!
-             *&#x2F;
+s1 <span class="token operator">===</span> s2 <span class="token comment">// false</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
-            Student normalStu &#x3D; new Student(&quot;20200410&quot;, &quot;小红&quot;, 19, 1, 80);
-            Console.WriteLine(&quot;普通学生：学号-&#123;0&#125;，姓名-&#123;1&#125;，年龄-&#123;2&#125;，班级-&#123;3&#125;，成绩-&#123;4&#125;&quot;, normalStu.stuNum, normalStu.stuName, normalStu.stuAge, normalStu.stuClass, normalStu.stuGrade);
-            normalStu.DoHomeWork();
-            Console.ReadKey();
-            &#x2F;**
-             * 普通学生：学号-20200410，姓名-小红，年龄-19，班级-1，成绩-80
-             * I&#39;m doing homework!
-             *&#x2F;
-        &#125;
-    &#125;
-    struct Student
-    &#123;
-        public string stuNum; &#x2F;&#x2F; 学号
-        public string stuName; &#x2F;&#x2F; 姓名
-        public int stuAge; &#x2F;&#x2F; 年龄
-        public int stuClass; &#x2F;&#x2F; 班级
-        public int stuGrade; &#x2F;&#x2F; 成绩
-        public Student(string stuNum, string stuName, int stuAge, int stuClass, int stuGrade) &#x2F;&#x2F; 结构的构造函数，用参数给结构中的成员赋值
-        &#123;
-            this.stuNum &#x3D; stuNum;
-            this.stuName &#x3D; stuName;
-            this.stuAge &#x3D; stuAge;
-            this.stuClass &#x3D; stuClass;
-            this.stuGrade &#x3D; stuGrade;
-        &#125;
-        public void DoHomeWork() &#x2F;&#x2F; 结构中的方法
-        &#123;
-            Console.WriteLine(&quot;I&#39;m doing homework!&quot;);
-        &#125;
-    &#125;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h5 id="结构与类的关系"><a href="#结构与类的关系" class="headerlink" title="结构与类的关系"></a>结构与类的关系</h5><p>类和结构实际上都是创建对象的模板，都可以包含构造函数、常数、字段、方法、属性、索引器和运算符等成员。</p>
-<ul>
-<li>结构是值类型，类是引用类型，在内存中结构是存储在栈上的值类型，类是存储在堆(heap)上的引用类型。</li>
-<li>结构的构造函数和类的构造函数不同，结构不能包含显式的无参数构造函数，结构成员会自动初始化为它们的默认值。结构不能包含以下形式的初始值设定类：base（参数列表）。</li>
-<li>对于结构中的实例字段成员，不能在声明时赋值初始化。</li>
-<li>声明了结构类型后，可以使用new运算符创建构造对象，也可以不使用new关键字。如果不使用new，那么在初始化所有字段之前，字段将保持未赋值状态且对象不可用。</li>
-<li>结构不支持继承，即一个结构不能从另一个结构或类继承，而且不能作为一个类的基类。</li>
+<p>一些标准中提到的 Symbol，可以在全局的 Symbol 函数的属性中找到。例如，我们可以使用 Symbol.iterator 来自定义 for…of 在对象上的行为： </p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> o <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Object</span>
+o<span class="token punctuation">[</span>Symbol<span class="token punctuation">.</span>iterator<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">var</span> v <span class="token operator">=</span> <span class="token number">0</span>
+    <span class="token keyword">return</span> <span class="token punctuation">&#123;</span>
+        <span class="token function-variable function">next</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token keyword">return</span> <span class="token punctuation">&#123;</span> value<span class="token operator">:</span> v<span class="token operator">++</span><span class="token punctuation">,</span> done<span class="token operator">:</span> v <span class="token operator">></span> <span class="token number">10</span> <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>        
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> v <span class="token keyword">of</span> o<span class="token punctuation">)</span> 
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>v<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 0 1 2 3 ... 9</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="Iterator（遍历器）的概念"><a href="#Iterator（遍历器）的概念" class="headerlink" title="Iterator（遍历器）的概念"></a>Iterator（遍历器）的概念</h5><p>Javascript表示集合的数据结构，有数组(Array)、对象(Object)、Map、Set四种。用户可以组合使用，定义自己的数据结构。例如:数组的成员为Map,Map的成员为对象。这样就需要一种统一的机制，来处理不同的数据结构。<br>遍历器(Iterator)就是这样一种机制，它是一种接口，为不同的数据结构提供统一的访问机制。任何数据结构只要部署Iterator机制，就可以完成遍历操作。（即依次处理该数据结构的所有成员）。  </p>
+<h5 id="Iterator（遍历器）的作用"><a href="#Iterator（遍历器）的作用" class="headerlink" title="Iterator（遍历器）的作用"></a>Iterator（遍历器）的作用</h5><ul>
+<li>为各种数据结构，提供一个统一的、简便的访问接口</li>
+<li>使得数据结构的成员能够按照某种次序排序</li>
+<li>ES6提供了一种新的遍历命令<font color='red'> for…of </font>循环，Iterator接口主要供<font color='red'> for…of </font>消费  </li>
 </ul>
-<h5 id="分部类"><a href="#分部类" class="headerlink" title="分部类"></a>分部类</h5><p>在大型项目、特殊部署时，可能需要把一个类、结构或接口放在几个文件中来处理。等到编译时，自动地把它们组合起来，成为一个完整的类，这是C# 分部类。</p>
-<ul>
-<li>类型特别大，不宜放在一个文件中实现。</li>
-<li> 一个类型中的一部分代码为自动化工具生成的代码，不宜与自己编写的代码混合在一起。</li>
-<li>需要多人合作编写一个类。</li>
+<h5 id="Iterator（遍历器）的遍历过程"><a href="#Iterator（遍历器）的遍历过程" class="headerlink" title="Iterator（遍历器）的遍历过程"></a>Iterator（遍历器）的遍历过程</h5><ul>
+<li>创建一个指针对象，指向当前数据结构的起始位置。也就是说，遍历器对象本质上，就是一个指针对象。</li>
+<li>第一次调用指针对象的<font color='red'> next </font>方法，可以将指针指向数据结构的第一个成员。</li>
+<li>第二次调用指针对象的<font color='red'> next </font>方法，指针将指向数据结构的第二个成员。</li>
+<li>不断调用指针对象的<font color='red'> next </font>方法，直到指针指向数据结构的结束位置。<br>每一次调用数据结构的<font color='red'> next </font>方法，都会返回数据结构的当前成员的信息。具体来说，就是返回一个包含<font color='red'> value </font>和<font color='red'> done </font>两个属性的对象。其中，<font color='red'> value </font>是当前成员的值，<font color='red'> done </font>是一个布尔值，表示遍历是否结束。（true表示结束，false表示不结束）<br>下面是一个模拟遍历器<font color='red'> next </font>方法返回值的例子:</li>
 </ul>
-<p><strong>分部类是一个纯语言层的编译处理，不影响任何执行机制。<br>事实上C#编译器在编译的时候仍会将各个部分的局部类型合并成一个完整的类。C# 分部类是在class前面添加关键字partial来定义。</strong></p>
-<p><strong>分部类中还可以声明分部方法，分部方法是将方法的定义和实现分隔开。在方法前面用partial关键字修饰的方法就是分部方法。</strong><br>例如，在一个文件中声明分部类Person的代码如下： </p>
-<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">public partial class Person &#x2F;&#x2F; 分部类Person的部分代码
-&#123;
-	public void DoWork()
-	&#123;
-		&#x2F;&#x2F; 定义方法，表示Person类的工作功能
-	&#125;
-	partial void Drink(); &#x2F;&#x2F; 定义分部方法，表示Person类的喝水功能
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>在另一个文件中声明分部类Person</p>
-<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">public partial class Person &#x2F;&#x2F; 分部类Person的部分代码
-&#123;
-	public void HaveDinner()
-	&#123;
-		&#x2F;&#x2F; 定义方法，表示Person类的吃晚饭功能
-	&#125;
-	partial void Drink()
-	&#123;
-		&#x2F;&#x2F; 实现分部方法代码
-	&#125;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>分部方法隐式为private类型，不可使用public访问修饰符。分部方法不可有返回值。</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">makeIterator</span><span class="token punctuation">(</span><span class="token parameter">array</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">var</span> nextIndex <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> <span class="token punctuation">&#123;</span>
+    <span class="token function-variable function">next</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">return</span> nextIndex <span class="token operator">&lt;</span> array<span class="token punctuation">.</span>length <span class="token operator">?</span>
+        <span class="token punctuation">&#123;</span>value<span class="token operator">:</span> array<span class="token punctuation">[</span>nextIndex<span class="token operator">++</span><span class="token punctuation">]</span><span class="token punctuation">&#125;</span> <span class="token operator">:</span>
+        <span class="token punctuation">&#123;</span>done<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="默认Iterator接口"><a href="#默认Iterator接口" class="headerlink" title="默认Iterator接口"></a>默认Iterator接口</h5><p>Iterator接口的目的，就是为所有的数据结构，提供一种统一的访问机制，即<font color='red'> for…of </font>循环。当使用<font color='red'> for…of </font>循环遍历某种数据结构时，该循环会自动去寻找 Iterator 接口。<br>一种数据结构只要部署了Iterator接口，就称这种数据结构是可遍历的。(iterable)<br>ES6规定，默认的Iterator接口部署在数据结构的<font color='red'> Symbol.iterator </font>属性，或者说，一个数据结构只要具有<font color='red'> Symbol.iterator </font>属性，就可以认为是可遍历的。<font color='red'> Symbol.iterator </font>就是当前数据结构默认的遍历器生成函数，返回值为一个遍历器。</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> obj <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+    <span class="token punctuation">[</span>Symbol<span class="token punctuation">.</span>iterator<span class="token punctuation">]</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> <span class="token punctuation">&#123;</span>
+            <span class="token function-variable function">next</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                <span class="token keyword">return</span> <span class="token punctuation">&#123;</span>
+                    value<span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+                    done<span class="token operator">:</span> <span class="token boolean">true</span>
+                <span class="token punctuation">&#125;</span>
+            <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>属性名Symbol.iterator，它是一个表达式，返回Symbol对象的iterator属性，这是一个预定义好的、类型为 Symbol 的特殊值，所以要放在方括号内。<br>ES6 的有些数据结构原生具备 Iterator 接口（比如数组），即不用任何处理，就可以被for…of循环遍历。原因在于，这些数据结构原生部署了Symbol.iterator属性，另外一些数据结构没有（比如对象）。凡是部署了Symbol.iterator属性的数据结构，就称为部署了遍历器接口。调用这个接口，就会返回一个遍历器对象。<br>原生具备 Iterator 接口的数据结构：  </p>
+<ul>
+<li>Array</li>
+<li>Map </li>
+<li>Set: 类似于数组，只不过其成员值都是唯一的，没有重复的值。</li>
+<li>String</li>
+<li>TypedArray: 一个TypedArray对象描述一个底层的二进制数据缓存区的一个类似数组(array-like)视图。</li>
+<li>函数的 arguments 对象</li>
+<li>NodeList 对象: NodeList 对象是一个节点的集合，是由 Node.childNodes 和 document.querySelectorAll返回的.NodeList不是一个数组，是一个类似数组的对象(Like Array Object).虽然NodeList不是一个数组，但是可以使用forEach()对其进行迭代。还可以使用Array.from()将其转换为实际数组。<br>以数组为例： </li>
+</ul>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">let</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token string">'b'</span><span class="token punctuation">,</span> <span class="token string">'c'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> iter <span class="token operator">=</span> arr<span class="token punctuation">[</span>Symbol<span class="token punctuation">.</span>iterator<span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+iter<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// &#123; value: 'a', done: false &#125;</span>
+iter<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// &#123; value: 'b', done: false &#125;</span>
+iter<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// &#123; value: 'c', done: false &#125;</span>
+iter<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// &#123; value: undefined, done: true &#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>对象（Object）之所以没有默认部署 Iterator 接口，是因为对象的哪个属性先遍历，哪个属性后遍历是不确定的，需要开发者手动指定。本质上，遍历器是一种线性处理，对于任何非线性的数据结构，部署遍历器接口，就等于部署一种线性转换。不过，严格地说，对象部署遍历器接口并不是很必要，因为这时对象实际上被当作 Map 结构使用，ES5 没有 Map 结构，而 ES6 原生提供了。<br>一个对象如果要具备可被for…of循环调用的 Iterator 接口，就必须在Symbol.iterator的属性上部署遍历器生成方法（原型链上的对象具有该方法也可）</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">class</span> <span class="token class-name">RangeIterator</span> <span class="token punctuation">&#123;</span>
+    <span class="token function">constructor</span> <span class="token punctuation">(</span><span class="token parameter">start<span class="token punctuation">,</span> stop</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>value <span class="token operator">=</span> start<span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>stop <span class="token operator">=</span> stop<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">[</span>Symbol<span class="token punctuation">.</span>iterator<span class="token punctuation">]</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token function">next</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">const</span> value <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>value<span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>value <span class="token operator">&lt;</span> <span class="token keyword">this</span><span class="token punctuation">.</span>stop<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span>value <span class="token operator">++</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span> <span class="token punctuation">&#123;</span>done<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> value<span class="token operator">:</span> value<span class="token punctuation">&#125;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token keyword">return</span> <span class="token punctuation">&#123;</span>done<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> value<span class="token operator">:</span> <span class="token keyword">undefined</span><span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">function</span> <span class="token function">range</span> <span class="token punctuation">(</span><span class="token parameter">start<span class="token punctuation">,</span> stop</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">RangeIterator</span><span class="token punctuation">(</span>start<span class="token punctuation">,</span> stop<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">const</span> value <span class="token keyword">of</span> <span class="token function">range</span><span class="token punctuation">(</span><span class="token parameter"><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">3</span></span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 0, 1, 2</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token function">range</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// &#123;done: false, value: '0'&#125;</span>
+<span class="token function">range</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// &#123;done: false, value: '1'&#125;</span>
+<span class="token function">range</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// &#123;done: false, value: '2'&#125;</span>
+<span class="token function">range</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// &#123;done: true, value: undefined&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>上面代码是一个类部署 Iterator 接口的写法。Symbol.iterator属性对应一个函数，执行后返回当前对象的遍历器对象。  </p>
 
                 
             </div>
@@ -634,7 +633,7 @@ namespace StructTest
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://jeayk.github.io/2020/04/10/c-xue-xi-bi-ji-jie-gou-yu-lei-xiang-guan-bi-ji-du-zi-c-cong-ru-men-dao-jing-tong-di-2-ban/">https://jeayk.github.io/2020/04/10/c-xue-xi-bi-ji-jie-gou-yu-lei-xiang-guan-bi-ji-du-zi-c-cong-ru-men-dao-jing-tong-di-2-ban/</a>
+                    <a href="https://jeayk.github.io/2022/01/04/js-bian-liang-yu-lei-xing-1-js-yu-yan-lei-xing-yu-symbol-iteratorl-li-jie/">https://jeayk.github.io/2022/01/04/js-bian-liang-yu-lei-xing-1-js-yu-yan-lei-xing-yu-symbol-iteratorl-li-jie/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -672,8 +671,8 @@ namespace StructTest
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-                                    <span class="chip bg-color">C#学习笔记</span>
+                                <a href="/tags/Javascript%E5%9F%BA%E7%A1%80/">
+                                    <span class="chip bg-color">Javascript基础</span>
                                 </a>
                             
                         </div>
@@ -851,13 +850,13 @@ namespace StructTest
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/2020/04/10/c-xue-xi-bi-ji-lei-yu-dui-xiang-xiang-guan-bi-ji-2-du-zi-c-cong-ru-men-dao-jing-tong-di-2-ban/">
+                <a href="/2022/01/21/yuan-xing-yu-yuan-xing-lian-1-li-jie-yuan-xing-she-ji-mo-shi-yi-ji-javascript-zhong-de-yuan-xing-gui-ze/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="C#学习笔记-类与对象相关笔记2（读自C#从入门到精通 第2版）">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="原型与原型链-1. 理解原型设计模式以及JavaScript中的原型规则">
                         
-                        <span class="card-title">C#学习笔记-类与对象相关笔记2（读自C#从入门到精通 第2版）</span>
+                        <span class="card-title">原型与原型链-1. 理解原型设计模式以及JavaScript中的原型规则</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -868,14 +867,14 @@ namespace StructTest
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-04-10
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-01-21
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E8%AF%BB%E8%87%AAC-%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A-%E7%AC%AC2%E7%89%88/" class="post-category">
-                                    读自C#从入门到精通 第2版
+                            <a href="/categories/%E5%8E%9F%E5%9E%8B%E4%B8%8E%E5%8E%9F%E5%9E%8B%E9%93%BE/" class="post-category">
+                                    原型与原型链
                                 </a>
                             
                             
@@ -885,8 +884,8 @@ namespace StructTest
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-                        <span class="chip bg-color">C#学习笔记</span>
+                    <a href="/tags/Javascript/">
+                        <span class="chip bg-color">Javascript</span>
                     </a>
                     
                 </div>
@@ -900,13 +899,13 @@ namespace StructTest
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/04/10/c-xue-xi-bi-ji-ji-cheng-xiang-guan-bi-ji-du-zi-c-cong-ru-men-dao-jing-tong-di-2-ban/">
+                <a href="/2020/05/14/c-xue-xi-bi-ji-fan-xing-du-zi-c-cong-ru-men-dao-jing-tong-di-2-ban/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="C#学习笔记-继承相关笔记（读自C#从入门到精通 第2版）">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="C#学习笔记-泛型（读自C#从入门到精通 第2版）">
                         
-                        <span class="card-title">C#学习笔记-继承相关笔记（读自C#从入门到精通 第2版）</span>
+                        <span class="card-title">C#学习笔记-泛型（读自C#从入门到精通 第2版）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -917,7 +916,7 @@ namespace StructTest
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-10
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-14
                             </span>
                         <span class="publish-author">
                             
