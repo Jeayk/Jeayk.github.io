@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>原型与原型链-2-instanceof的底层实现原理与手动实现</title>
+      <link href="/2022/01/24/yuan-xing-yu-yuan-xing-lian-2-instanceof-de-di-ceng-shi-xian-yuan-li-yu-shou-dong-shi-xian/"/>
+      <url>/2022/01/24/yuan-xing-yu-yuan-xing-lian-2-instanceof-de-di-ceng-shi-xian-yuan-li-yu-shou-dong-shi-xian/</url>
+      
+        <content type="html"><![CDATA[<h5 id="instanceof的作用"><a href="#instanceof的作用" class="headerlink" title="instanceof的作用"></a>instanceof的作用</h5><ul><li>引用数据类型判断：用来判断一个引用数据类型是否属于构造函数</li><li>继承关系判断：用来判断一个实例是否属于它的父类型<h5 id="实现原理"><a href="#实现原理" class="headerlink" title="实现原理"></a>实现原理</h5>首先判断左边的变量的隐式原型（proto）是否全等于右边的变量的显示原型（prototype），如果相等返回true，如果不等则沿着原型链依次向上进行判断，如果都不等则返回false。<h5 id="手写实现"><a href="#手写实现" class="headerlink" title="手写实现"></a>手写实现</h5><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> <span class="token function-variable function">new_instance_of</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token constant">L</span><span class="token punctuation">,</span> <span class="token constant">R</span></span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>    <span class="token keyword">var</span> R_prototype <span class="token operator">=</span> <span class="token class-name">R</span><span class="token punctuation">.</span>prototype<span class="token punctuation">;</span>    <span class="token keyword">var</span> L_proto <span class="token operator">=</span> <span class="token constant">L</span><span class="token punctuation">.</span>__proto__<span class="token punctuation">;</span>    <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> <span class="token comment">// 判断为后续添加条件使用，此处没卵用</span>        <span class="token keyword">if</span> <span class="token punctuation">(</span>L_proto <span class="token operator">===</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>        <span class="token keyword">if</span> <span class="token punctuation">(</span>L_proto <span class="token operator">===</span> R_prototype<span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>        L_proto <span class="token operator">=</span> <span class="token constant">L</span><span class="token punctuation">.</span>__proto__<span class="token punctuation">;</span> <span class="token comment">// 貌似没卵用</span>        <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>    <span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span class="token keyword">const</span> a <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Object</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token function">new_instance_of</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> Object<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// true</span><span class="token comment">// 简写</span><span class="token keyword">function</span> <span class="token function">test_instance_of</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token constant">L</span><span class="token punctuation">,</span> <span class="token constant">R</span></span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>    <span class="token keyword">return</span> <span class="token constant">L</span><span class="token punctuation">.</span>__proto__ <span class="token operator">===</span> <span class="token class-name">R</span><span class="token punctuation">.</span>prototype<span class="token punctuation">;</span><span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 原型与原型链 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Javascript基础 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>原型与原型链-1. 理解原型设计模式以及JavaScript中的原型规则</title>
       <link href="/2022/01/21/yuan-xing-yu-yuan-xing-lian-1-li-jie-yuan-xing-she-ji-mo-shi-yi-ji-javascript-zhong-de-yuan-xing-gui-ze/"/>
       <url>/2022/01/21/yuan-xing-yu-yuan-xing-lian-1-li-jie-yuan-xing-she-ji-mo-shi-yi-ji-javascript-zhong-de-yuan-xing-gui-ze/</url>
