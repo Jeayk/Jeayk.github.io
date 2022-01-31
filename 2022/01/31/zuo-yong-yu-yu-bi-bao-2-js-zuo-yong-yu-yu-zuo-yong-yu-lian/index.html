@@ -4,9 +4,10 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="JS变量与类型-5. js基本类型的装箱与拆箱, 积跬步以至千里">
-    <meta name="description" content="装箱所谓装箱，就是把基本类型转变为对应的对象。装箱分为隐式和显示。
-隐式装箱每当读取一个基本类型的值时，后台会创建一个该基本类型所对应的对象。在这个基本类型上调用方法，其实是在这个基本类型对象上调用方法。这个基本类型的对象是临时的，它只存在">
+    <meta name="keywords" content="作用域与闭包-2. js作用域与作用域链, 积跬步以至千里">
+    <meta name="description" content="作用域(scope)定义
+作用域是在运行时代码中的某些特定部分中变量，函数和对象的可访问性。作用域决定了代码区块中变量和其他资源的可见性。  
+作用域就是一个独立的地盘，让变量不会外泄、暴露出去。也就是说作用域最大的用处就是隔离变量，不同作">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +19,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>JS变量与类型-5. js基本类型的装箱与拆箱 | 积跬步以至千里</title>
+    <title>作用域与闭包-2. js作用域与作用域链 | 积跬步以至千里</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -310,12 +311,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">JS变量与类型-5. js基本类型的装箱与拆箱</h1>
+                    <h1 class="description center-align post-title">作用域与闭包-2. js作用域与作用域链</h1>
                 </div>
             </div>
         </div>
@@ -443,8 +444,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/JS%E5%8F%98%E9%87%8F%E4%B8%8E%E7%B1%BB%E5%9E%8B/" class="post-category">
-                                JS变量与类型
+                            <a href="/categories/%E4%BD%9C%E7%94%A8%E5%9F%9F%E4%B8%8E%E9%97%AD%E5%8C%85/" class="post-category">
+                                作用域与闭包
                             </a>
                         
                     </div>
@@ -456,28 +457,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2022-01-12
+                    2022-01-31
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2022-01-20
+                    2022-01-31
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    572
+                    1.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    2 Min
+                    5 Min
                 </div>
                 
 
@@ -500,49 +501,107 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="装箱"><a href="#装箱" class="headerlink" title="装箱"></a>装箱</h4><p>所谓装箱，就是把基本类型转变为对应的对象。装箱分为隐式和显示。</p>
-<h5 id="隐式装箱"><a href="#隐式装箱" class="headerlink" title="隐式装箱"></a>隐式装箱</h5><p>每当读取一个基本类型的值时，后台会创建一个该基本类型所对应的对象。在这个基本类型上调用方法，其实是在这个基本类型对象上调用方法。这个基本类型的对象是临时的，它只存在于方法调用那一行代码执行的瞬间，执行方法后立刻被销毁。具体到代码如下：</p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">num<span class="token punctuation">.</span><span class="token function">toFixed</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// '123.00'</span>
-<span class="token comment">//上方代码在后台的真正步骤为</span>
-<span class="token keyword">var</span> c <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Number</span><span class="token punctuation">(</span><span class="token number">123</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-c<span class="token punctuation">.</span><span class="token function">toFixed</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-c <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>当我们访问 num 时，要从内存中读取这个数字的值，此时访问过程处于读取模式。在读取模式中，后台进行了三步处理：</p>
-<ul>
-<li>创建一个 Number 类型的实例</li>
-<li>在实例上调用方法</li>
-<li>销毁实例</li>
-</ul>
-<h5 id="显式装箱"><a href="#显式装箱" class="headerlink" title="显式装箱"></a>显式装箱</h5><p>通过内置对象 Boolean、Object、String 等可以对基本类型进行显示装箱。</p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">(</span><span class="token string">'123'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h4 id="拆箱"><a href="#拆箱" class="headerlink" title="拆箱"></a>拆箱</h4><p>拆箱与装箱相反，把对象转变为基本类型的值。拆箱过程内部调用了抽象操作 ToPrimitive 。该操作接受两个参数，第一个参数是要转变的对象，第二个参数 PreferredType 是对象被期待转成的类型。第二个参数不是必须的，默认该参数为 number，即对象被期待转为数字类型。有些操作如 String(obj) 会传入 PreferredType 参数。有些操作如 obj + “ “ 不会传入 PreferredType。  </p>
-<p>具体转换过程是这样的。默认情况下，ToPrimitive 先检查对象是否有 valueOf 方法，如果有则再检查 valueOf 方法是否有基本类型的返回值。如果没有 valueOf 方法或 valueOf 方法没有返回值，则调用 toString 方法。如果 toString 方法也没有返回值，产生 TypeError 错误。  </p>
-<p>PreferredType 影响 valueOf 与 toString 的调用顺序。如果 PreferrenType 的值为 string。则先调用 toString ,再调用 valueOf。</p>
-<p>具体测试代码如下：</p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
-    <span class="token function-variable function">valueOf</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"valueOf"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token keyword">return</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-    <span class="token function-variable function">toString</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"toString"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token keyword">return</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">&#125;</span>
+                <h4 id="作用域-scope"><a href="#作用域-scope" class="headerlink" title="作用域(scope)"></a>作用域(scope)</h4><h5 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h5><ul>
+<li>作用域是在运行时代码中的某些特定部分中变量，函数和对象的可访问性。作用域决定了代码区块中变量和其他资源的可见性。  </li>
+<li>作用域就是一个独立的地盘，让变量不会外泄、暴露出去。也就是说作用域最大的用处就是隔离变量，不同作用域下同名变量不会有冲突。<h5 id="全局作用域与函数作用域"><a href="#全局作用域与函数作用域" class="headerlink" title="全局作用域与函数作用域"></a>全局作用域与函数作用域</h5><h6 id="1-全局作用域"><a href="#1-全局作用域" class="headerlink" title="1. 全局作用域"></a>1. 全局作用域</h6>在代码中任何地方都能访问到的对象拥有全局作用域，一般来说以下几种情形拥有全局作用域：</li>
+<li>最外层函数 和在最外层函数外面定义的变量拥有全局作用域<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> outVariable <span class="token operator">=</span> <span class="token string">"我是最外层变量"</span><span class="token punctuation">;</span> <span class="token comment">//最外层变量</span>
+<span class="token comment">// 最外层函数</span>
+<span class="token keyword">function</span> <span class="token function">outFun</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> 
+    <span class="token keyword">const</span> inVariable <span class="token operator">=</span> <span class="token string">"内层变量"</span><span class="token punctuation">;</span>
+    <span class="token comment">// 内层函数</span>
+    <span class="token keyword">function</span> <span class="token function">innerFun</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> 
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>inVariable<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token function">innerFun</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>outVariable<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 我是最外层变量</span>
+<span class="token function">outFun</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 内层变量</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>inVariable<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// inVariable is not defined</span>
+<span class="token function">innerFun</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// innerFun is not defined</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>所有末定义直接赋值的变量自动声明为拥有全局作用域<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">outFun2</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    variable <span class="token operator">=</span> <span class="token string">"未定义直接赋值的变量"</span><span class="token punctuation">;</span>
+    <span class="token keyword">var</span> inVariable2 <span class="token operator">=</span> <span class="token string">"内层变量2"</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>variable<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// variable is not defined</span>
+<span class="token function">outFun2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 要先执行这个函数，否则根本不知道里面是啥</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>variable<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 未定义直接赋值的变量</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>inVariable2<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// inVariable2 is not defined</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>所有window对象的属性拥有全局作用域<br>一般情况下，window对象的内置属性都拥有全局作用域，例如: window.name、window.location、window.top等</li>
+</ul>
+<p>全局作用域弊端：污染全局命名空间, 容易引起命名冲突。<br>因此，jQuery、Zepto 等库的源码，都会放在<code>javascript (function () &#123;....&#125;)() </code>中。</p>
+<h6 id="2-函数作用域"><a href="#2-函数作用域" class="headerlink" title="2. 函数作用域"></a>2. 函数作用域</h6><p>函数作用域,是指声明在函数内部的变量，和全局作用域相反，局部作用域一般只在固定的代码片段内可访问到。</p>
+<p>作用域是分层的，内层作用域可以访问外层作用域的变量，反之则不行。  </p>
+<p><font style="color: red;"> 注意： </font>块语句（大括号“｛｝”中间的语句），如 if 和 switch 条件语句或 for 和 while 循环语句，不像函数，它们不会创建一个新的作用域。在块语句中定义的变量将保留在它们已经存在的作用域中。<font style="color: red;"> 但是 </font>，let与const声明的块级作用域中例外。</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token comment">// 'if' 条件语句块不会创建一个新的作用域</span>
+    <span class="token keyword">var</span> name <span class="token operator">=</span> <span class="token string">'jay'</span><span class="token punctuation">;</span> <span class="token comment">// name 依然在全局作用域中</span>
+<span class="token punctuation">&#125;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// jay</span>
 
-<span class="token function">String</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment">// toString</span>
-<span class="token comment">// valueOf</span>
-<span class="token comment">// Uncaught TypeError: Cannot convert object to primitive value</span>
-
-obj <span class="token operator">+</span> <span class="token string">''</span><span class="token punctuation">;</span>
-<span class="token comment">// valueOf</span>
-<span class="token comment">// toString</span>
-<span class="token comment">// Uncaught TypeError: Cannot convert object to primitive value</span>
-
-<span class="token function">Number</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment">// valueOf</span>
-<span class="token comment">// toString</span>
-<span class="token comment">// Uncaught TypeError: Cannot convert object to primitive value</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
+<span class="token comment">// let 与 const 块级作用域下</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">const</span> age <span class="token operator">=</span> <span class="token string">'20'</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>age<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// age is not defined</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="作用域链"><a href="#作用域链" class="headerlink" title="作用域链"></a>作用域链</h4><h5 id="1-自由变量"><a href="#1-自由变量" class="headerlink" title="1. 自由变量"></a>1. 自由变量</h5><p>如下代码中，console.log(a)要得到a变量，但是在当前的作用域中没有定义a（可对比一下b）。当前作用域没有定义的变量，这成为 自由变量 。自由变量的值如何得到 —— 向父级作用域寻找。</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token number">100</span>
+<span class="token keyword">function</span> <span class="token function">fn</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">var</span> b <span class="token operator">=</span> <span class="token number">200</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span> <span class="token comment">// 这里的a在这里就是一个自由变量</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span>
+<span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="2-作用域链"><a href="#2-作用域链" class="headerlink" title="2. 作用域链"></a>2. 作用域链</h5><p>如果父级也没呢？再一层一层向上寻找，直到找到全局作用域还是没找到，就宣布放弃。这种一层一层的关系，就是 作用域链 。</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token number">100</span>
+<span class="token keyword">function</span> <span class="token constant">F1</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">var</span> b <span class="token operator">=</span> <span class="token number">200</span>
+    <span class="token keyword">function</span> <span class="token constant">F2</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">var</span> c <span class="token operator">=</span> <span class="token number">300</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span> <span class="token comment">// 自由变量，顺作用域链向父作用域找</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span> <span class="token comment">// 自由变量，顺作用域链向父作用域找</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span> <span class="token comment">// 本作用域的变量</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token constant">F2</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span>
+<span class="token constant">F1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="3-自由变量的取值"><a href="#3-自由变量的取值" class="headerlink" title="3. 自由变量的取值"></a>3. 自由变量的取值</h5><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> x <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+<span class="token keyword">function</span> <span class="token function">fn</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span>
+<span class="token keyword">function</span> <span class="token function">show</span> <span class="token punctuation">(</span><span class="token parameter">f</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">var</span> x <span class="token operator">=</span> <span class="token number">20</span><span class="token punctuation">;</span>
+  <span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token function">f</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// 10，而不是20</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span>
+<span class="token function">show</span><span class="token punctuation">(</span>fn<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>在fn函数中，取自由变量x的值时，要到哪个作用域中取？——要到创建fn函数的那个作用域中取，无论fn函数将在哪里调用。<br>要到<strong>创建</strong>这个函数的作用域中取值,即 <strong>静态作用域</strong> 。</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token number">10</span>
+<span class="token keyword">function</span> <span class="token function">fn</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">var</span> b <span class="token operator">=</span> <span class="token number">20</span>
+  <span class="token keyword">function</span> <span class="token function">bar</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a <span class="token operator">+</span> b<span class="token punctuation">)</span> <span class="token comment">// 30</span>
+  <span class="token punctuation">&#125;</span>
+  <span class="token keyword">return</span> bar
+<span class="token punctuation">&#125;</span>
+<span class="token keyword">var</span> x <span class="token operator">=</span> <span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> b <span class="token operator">=</span> <span class="token number">200</span><span class="token punctuation">;</span>
+<span class="token function">x</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// 30</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>fn()返回的是bar函数，赋值给x。执行x()，即执行bar函数代码。取b的值时，直接在fn作用域取出。取a的值时，试图在fn作用域取，但是取不到，只能转向创建fn的那个作用域中去查找，结果找到了,所以最后的结果是30</p>
+<h4 id="作用域与执行上下文"><a href="#作用域与执行上下文" class="headerlink" title="作用域与执行上下文"></a>作用域与执行上下文</h4><p>JavaScript属于解释型语言，JavaScript的执行分为：解释和执行两个阶段。</p>
+<h6 id="解释阶段："><a href="#解释阶段：" class="headerlink" title="解释阶段："></a>解释阶段：</h6><ul>
+<li>词法分析</li>
+<li>语法分析</li>
+<li>作用域规则确定</li>
+</ul>
+<h6 id="执行阶段："><a href="#执行阶段：" class="headerlink" title="执行阶段："></a>执行阶段：</h6><ul>
+<li>创建执行上下文</li>
+<li>执行函数代码</li>
+<li>垃圾回收</li>
+</ul>
+<p>JavaScript解释阶段便会确定作用域规则，因此<strong>作用域在函数定义时就已经确定</strong>了，而不是在函数调用时确定，但是<strong>执行上下文是函数执行之前创建</strong>的。执行上下文最明显的就是this的指向是执行时确定的。而作用域访问的变量是编写代码的结构确定的。</p>
+<p>作用域和执行上下文之间最大的<strong>区别</strong>是： 执行上下文在运行时确定，随时可能改变；作用域在定义时就确定，并且不会改变。</p>
+<p>一个作用域下可能包含若干个上下文环境。有可能从来没有过上下文环境（函数从来就没有被调用过）；有可能有过，现在函数被调用完毕后，上下文环境被销毁了；有可能同时存在一个或多个（闭包）。同一个作用域下，不同的调用会产生不同的执行上下文环境，继而产生不同的变量的值。</p>
 
                 
             </div>
@@ -569,7 +628,7 @@ obj <span class="token operator">+</span> <span class="token string">''</span><s
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://jeayk.github.io/2022/01/12/js-bian-liang-yu-lei-xing-5-js-ji-ben-lei-xing-de-zhuang-xiang-yu-chai-xiang/">https://jeayk.github.io/2022/01/12/js-bian-liang-yu-lei-xing-5-js-ji-ben-lei-xing-de-zhuang-xiang-yu-chai-xiang/</a>
+                    <a href="https://jeayk.github.io/2022/01/31/zuo-yong-yu-yu-bi-bao-2-js-zuo-yong-yu-yu-zuo-yong-yu-lian/">https://jeayk.github.io/2022/01/31/zuo-yong-yu-yu-bi-bao-2-js-zuo-yong-yu-yu-zuo-yong-yu-lian/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -782,17 +841,18 @@ obj <span class="token operator">+</span> <span class="token string">''</span><s
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
             <div class="card">
-                <a href="/2022/01/14/js-bian-liang-yu-lei-xing-6-li-jie-zhi-lei-xing-he-yin-yong-lei-xing/">
+                <a href="/2022/01/31/zuo-yong-yu-yu-bi-bao-2-js-zuo-yong-yu-yu-zuo-yong-yu-lian/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="JS变量与类型-6. 理解值类型和引用类型">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="作用域与闭包-2. js作用域与作用域链">
                         
-                        <span class="card-title">JS变量与类型-6. 理解值类型和引用类型</span>
+                        <span class="card-title">作用域与闭包-2. js作用域与作用域链</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -802,21 +862,22 @@ obj <span class="token operator">+</span> <span class="token string">''</span><s
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-01-14
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-01-31
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/JS%E5%8F%98%E9%87%8F%E4%B8%8E%E7%B1%BB%E5%9E%8B/" class="post-category">
-                                    JS变量与类型
+                            <a href="/categories/%E4%BD%9C%E7%94%A8%E5%9F%9F%E4%B8%8E%E9%97%AD%E5%8C%85/" class="post-category">
+                                    作用域与闭包
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -835,13 +896,13 @@ obj <span class="token operator">+</span> <span class="token string">''</span><s
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/01/11/js-bian-liang-yu-lei-xing-4-js-zhong-de-bian-liang-zai-nei-cun-zhong-de-ju-ti-cun-chu-xing-shi/">
+                <a href="/2022/01/28/zuo-yong-yu-yu-bi-bao-1-li-jie-ci-fa-zuo-yong-yu-he-dong-tai-zuo-yong-yu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="JS变量与类型-4. js中的变量在内存中的具体存储形式">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="作用域与闭包-1. 理解词法作用域和动态作用域">
                         
-                        <span class="card-title">JS变量与类型-4. js中的变量在内存中的具体存储形式</span>
+                        <span class="card-title">作用域与闭包-1. 理解词法作用域和动态作用域</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -852,14 +913,14 @@ obj <span class="token operator">+</span> <span class="token string">''</span><s
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-01-11
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-01-28
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/JS%E5%8F%98%E9%87%8F%E4%B8%8E%E7%B1%BB%E5%9E%8B/" class="post-category">
-                                    JS变量与类型
+                            <a href="/categories/%E4%BD%9C%E7%94%A8%E5%9F%9F%E4%B8%8E%E9%97%AD%E5%8C%85/" class="post-category">
+                                    作用域与闭包
                                 </a>
                             
                             
