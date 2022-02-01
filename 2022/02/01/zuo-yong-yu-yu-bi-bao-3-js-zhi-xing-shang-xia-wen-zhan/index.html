@@ -4,8 +4,15 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="C#学习笔记-匿名方法与lambda表达式（读自C#从入门到精通 第2版）, 积跬步以至千里">
-    <meta name="description" content="匿名方法要将代码块传递为委托参数，创建匿名方法则是唯一的方法。匿名方法就是为了将代码块传递为委托参数，因此也有人将其称为匿名委托。使用C#的匿名方法可以使委托及事件的代码编写更加精简、高效。一般情况下，事件注册事件处理方法，需要首先定义这个">
+    <meta name="keywords" content="作用域与闭包-3. js执行上下文栈, 积跬步以至千里">
+    <meta name="description" content="可执行代码JavaScript 的可执行代码(executable code)的类型:
+
+全局代码
+函数代码
+eval代码
+
+当执行到一个函数的时候，就会进行准备工作，即”执行上下文(execution context)“。
+执行上下文栈J">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +24,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>C#学习笔记-匿名方法与lambda表达式（读自C#从入门到精通 第2版） | 积跬步以至千里</title>
+    <title>作用域与闭包-3. js执行上下文栈 | 积跬步以至千里</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -309,12 +316,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">C#学习笔记-匿名方法与lambda表达式（读自C#从入门到精通 第2版）</h1>
+                    <h1 class="description center-align post-title">作用域与闭包-3. js执行上下文栈</h1>
                 </div>
             </div>
         </div>
@@ -430,8 +437,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-                                <span class="chip bg-color">C#学习笔记</span>
+                            <a href="/tags/Javascript%E5%9F%BA%E7%A1%80/">
+                                <span class="chip bg-color">Javascript基础</span>
                             </a>
                         
                     </div>
@@ -442,8 +449,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E8%AF%BB%E8%87%AAC-%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A-%E7%AC%AC2%E7%89%88/" class="post-category">
-                                读自C#从入门到精通 第2版
+                            <a href="/categories/%E4%BD%9C%E7%94%A8%E5%9F%9F%E4%B8%8E%E9%97%AD%E5%8C%85/" class="post-category">
+                                作用域与闭包
                             </a>
                         
                     </div>
@@ -455,28 +462,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2020-04-20
+                    2022-02-01
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2022-01-04
+                    2022-02-01
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    701
+                    499
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    3 Min
+                    2 Min
                 </div>
                 
 
@@ -499,72 +506,86 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="匿名方法"><a href="#匿名方法" class="headerlink" title="匿名方法"></a>匿名方法</h4><p>要将代码块传递为委托参数，创建匿名方法则是唯一的方法。匿名方法就是为了将代码块传递为委托参数，因此也有人将其称为匿名委托。使用C#的匿名方法可以使委托及事件的代码编写更加精简、高效。一般情况下，事件注册事件处理方法，需要首先定义这个方法，如果该方法仅用于订阅特定的事件，则可使用代码更加简明的匿名方法。<br><strong>示例</strong><br>委托与事件中的烧水示例，Heater类不变，去掉Alarm类和Display类，使用匿名方法订阅事件修改Main方法中的代码。</p>
-<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">Heater heater &#x3D; new Heater();
-heater.BoilEvent +&#x3D; delegate (int param) &#x2F;&#x2F;水快开时报警的匿名方法
-&#123;
-    Console.WriteLine(&quot;Alarm: 嘀嘀嘀，水已经&#123;0&#125;度了！&quot;, param);
-&#125;;
-heater.BoilEvent +&#x3D; delegate (int param) &#x2F;&#x2F; 表示水温的匿名方法
-&#123;
-    Console.WriteLine(&quot;Display: 水快烧开了，当前温度：&#123;0&#125;度！&quot;, param);
-&#125;;
-heater.BoilWater();
-Console.ReadKey();
-&#x2F;**
-* Alarm: 嘀嘀嘀，水已经97度了!
-* Display：水快烧开了，当前温度：97度。
-* Alarm: 嘀嘀嘀，水已经98度了!
-* Display：水快烧开了，当前温度：98度。
-* Alarm: 嘀嘀嘀，水已经99度了!
-* Display：水快烧开了，当前温度：99度。
-* Alarm: 嘀嘀嘀，水已经100度了!
-* Display：水快烧开了，当前温度：100度。
-*&#x2F;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="lambda表达式"><a href="#lambda表达式" class="headerlink" title="lambda表达式"></a>lambda表达式</h4><p>lambda表达式是一种可用于创建委托或表达式目录树类型的匿名函数。通过使用lambda表达式，可以写入可作为参数传递或作为函数调用值返回的本地函数。lambda表达式对于编写LINQ查询表达式特别有用。若要创建lambda表达式，需要在lambda运算符 =&gt; 左侧指定输入参数（如果有），然后在另一侧输入表达式或语句块。<br><strong>联想理解：类似于ES6的箭头函数</strong><br>示例：使用lambda表达式实现委托，进行数组排序。</p>
-<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Linq.Expressions;
+                <h5 id="可执行代码"><a href="#可执行代码" class="headerlink" title="可执行代码"></a>可执行代码</h5><p>JavaScript 的可执行代码(executable code)的类型:</p>
+<ul>
+<li>全局代码</li>
+<li>函数代码</li>
+<li>eval代码</li>
+</ul>
+<p>当执行到一个函数的时候，就会进行准备工作，即”<strong>执行上下文(execution context)</strong>“。</p>
+<h5 id="执行上下文栈"><a href="#执行上下文栈" class="headerlink" title="执行上下文栈"></a>执行上下文栈</h5><p>JavaScript 引擎创建了执行上下文栈（Execution context stack，ECS）来管理执行上下文。</p>
+<p>为了模拟执行上下文栈的行为，定义执行上下文栈是一个数组：</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">ECStack <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>当 JavaScript 开始要解释执行代码的时候，最先遇到的就是全局代码，所以初始化的时候首先就会向执行上下文栈压入一个全局执行上下文，用 globalContext 表示它，并且只有当整个应用程序结束的时候，ECStack 才会被清空，所以程序结束之前， ECStack 最底部永远有个 globalContext：</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">ECStack <span class="token operator">=</span> <span class="token punctuation">[</span>
+    globalContext
+<span class="token punctuation">]</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>例如下列代码：</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">fun3</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'fun3'</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span>
 
-namespace LambdaTest
-&#123;
-    class Program
-    &#123;
-        public delegate bool SortDelegate(int[] x); &#x2F;&#x2F; 定义委托SortDelegate
-        static void Main(string[] args)
-        &#123;
-            int[] arr &#x3D; new int[] &#123; 8, 9, 2, 1, 4, 3 &#125;;
-            Console.WriteLine(&quot;排序前的数组：&quot;);
-            foreach (int i in arr) Console.Write(i); &#x2F;&#x2F; 892143
-            Console.WriteLine();
-            &#x2F;&#x2F; 用lamdba表达式实例化委托
-            SortDelegate myDelegate &#x3D; array &#x3D;&gt;
-            &#123;
-                for (int i &#x3D; array.GetUpperBound(0); i &gt;&#x3D; 0; i--)
-                &#123;
-                    &#x2F;&#x2F; 冒泡排序
-                    for (int j &#x3D; 0; j &lt;&#x3D; i; j++)
-                    &#123;
-                        if (array[j] &lt;&#x3D; array[i])
-                        &#123;
-                            int temp &#x3D; array[j];
-                            array[j] &#x3D; array[i];
-                            array[i] &#x3D; temp;
-                        &#125;
-                    &#125;
-                &#125;
-                return true;
-            &#125;;
-            myDelegate(arr);
-            Console.WriteLine(&quot;排序后的数组：&quot;);
-            foreach(int i in arr) Console.Write(i); &#x2F;&#x2F; 984321
-            Console.ReadKey();
-        &#125;
-    &#125;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token keyword">function</span> <span class="token function">fun2</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token function">fun3</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">function</span> <span class="token function">fun1</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token function">fun2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token function">fun1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>当执行一个函数的时候，就会创建一个执行上下文，并且压入执行上下文栈，当函数执行完毕的时候，就会将函数的执行上下文从栈中弹出。上述代码流程可理解为：</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 伪代码</span>
+
+<span class="token comment">// fun1()</span>
+ECStack<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token operator">&lt;</span>fun1<span class="token operator">></span> functionContext<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// fun1中竟然调用了fun2，还要创建fun2的执行上下文</span>
+ECStack<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token operator">&lt;</span>fun2<span class="token operator">></span> functionContext<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 擦，fun2还调用了fun3！</span>
+ECStack<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token operator">&lt;</span>fun3<span class="token operator">></span> functionContext<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// fun3执行完毕</span>
+ECStack<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// fun2执行完毕</span>
+ECStack<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// fun1执行完毕</span>
+ECStack<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// javascript接着执行下面的代码，但是ECStack底层永远有个globalContext</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>例子：</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> scope <span class="token operator">=</span> <span class="token string">"global scope"</span><span class="token punctuation">;</span>
+<span class="token keyword">function</span> <span class="token function">checkscope</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">var</span> scope <span class="token operator">=</span> <span class="token string">"local scope"</span><span class="token punctuation">;</span>
+    <span class="token keyword">function</span> <span class="token function">f</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> scope<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">return</span> <span class="token function">f</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token function">checkscope</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> scope <span class="token operator">=</span> <span class="token string">"global scope"</span><span class="token punctuation">;</span>
+<span class="token keyword">function</span> <span class="token function">checkscope</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">var</span> scope <span class="token operator">=</span> <span class="token string">"local scope"</span><span class="token punctuation">;</span>
+    <span class="token keyword">function</span> <span class="token function">f</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> scope<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">return</span> f<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token function">checkscope</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>两段代码执行的结果一样，但是执行上下文栈的变化不一样。  </p>
+<p>流程理解为：<br>第一段代码：</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">ECStack<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token operator">&lt;</span>checkscope<span class="token operator">></span> functionContext<span class="token punctuation">)</span><span class="token punctuation">;</span>
+ECStack<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token operator">&lt;</span>f<span class="token operator">></span> functionContext<span class="token punctuation">)</span><span class="token punctuation">;</span>
+ECStack<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ECStack<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>第二段代码：</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">ECStack<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token operator">&lt;</span>checkscope<span class="token operator">></span> functionContext<span class="token punctuation">)</span><span class="token punctuation">;</span>
+ECStack<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ECStack<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token operator">&lt;</span>f<span class="token operator">></span> functionContext<span class="token punctuation">)</span><span class="token punctuation">;</span>
+ECStack<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
                 
             </div>
@@ -591,7 +612,7 @@ namespace LambdaTest
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://jeayk.github.io/2020/04/20/c-xue-xi-bi-ji-ni-ming-fang-fa-yu-lambda-biao-da-shi-du-zi-c-cong-ru-men-dao-jing-tong-di-2-ban/">https://jeayk.github.io/2020/04/20/c-xue-xi-bi-ji-ni-ming-fang-fa-yu-lambda-biao-da-shi-du-zi-c-cong-ru-men-dao-jing-tong-di-2-ban/</a>
+                    <a href="https://jeayk.github.io/2022/02/01/zuo-yong-yu-yu-bi-bao-3-js-zhi-xing-shang-xia-wen-zhan/">https://jeayk.github.io/2022/02/01/zuo-yong-yu-yu-bi-bao-3-js-zhi-xing-shang-xia-wen-zhan/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -629,8 +650,8 @@ namespace LambdaTest
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-                                    <span class="chip bg-color">C#学习笔记</span>
+                                <a href="/tags/Javascript%E5%9F%BA%E7%A1%80/">
+                                    <span class="chip bg-color">Javascript基础</span>
                                 </a>
                             
                         </div>
@@ -804,17 +825,18 @@ namespace LambdaTest
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
             <div class="card">
-                <a href="/2020/05/11/c-xue-xi-bi-ji-chang-yong-fei-fan-xing-ji-he-lei-arraylist-lei-du-zi-c-cong-ru-men-dao-jing-tong-di-2-ban/">
+                <a href="/2022/02/01/zuo-yong-yu-yu-bi-bao-3-js-zhi-xing-shang-xia-wen-zhan/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="-常用非泛型集合类-ArrayList类">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="作用域与闭包-3. js执行上下文栈">
                         
-                        <span class="card-title">-常用非泛型集合类-ArrayList类</span>
+                        <span class="card-title">作用域与闭包-3. js执行上下文栈</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -824,26 +846,27 @@ namespace LambdaTest
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-05-11
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-02-01
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E8%AF%BB%E8%87%AAC-%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A-%E7%AC%AC2%E7%89%88/" class="post-category">
-                                    读自C#从入门到精通 第2版
+                            <a href="/categories/%E4%BD%9C%E7%94%A8%E5%9F%9F%E4%B8%8E%E9%97%AD%E5%8C%85/" class="post-category">
+                                    作用域与闭包
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-                        <span class="chip bg-color">C#学习笔记</span>
+                    <a href="/tags/Javascript%E5%9F%BA%E7%A1%80/">
+                        <span class="chip bg-color">Javascript基础</span>
                     </a>
                     
                 </div>
@@ -857,13 +880,13 @@ namespace LambdaTest
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/04/16/c-xue-xi-bi-ji-wei-tuo-yu-shi-jian-du-zi-c-cong-ru-men-dao-jing-tong-di-2-ban/">
+                <a href="/2022/01/31/zuo-yong-yu-yu-bi-bao-2-js-zuo-yong-yu-yu-zuo-yong-yu-lian/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="C#学习笔记--委托与事件（读自C#从入门到精通 第2版）">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="作用域与闭包-2. js作用域与作用域链">
                         
-                        <span class="card-title">C#学习笔记--委托与事件（读自C#从入门到精通 第2版）</span>
+                        <span class="card-title">作用域与闭包-2. js作用域与作用域链</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -874,14 +897,14 @@ namespace LambdaTest
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-16
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-01-31
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E8%AF%BB%E8%87%AAC-%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A-%E7%AC%AC2%E7%89%88/" class="post-category">
-                                    读自C#从入门到精通 第2版
+                            <a href="/categories/%E4%BD%9C%E7%94%A8%E5%9F%9F%E4%B8%8E%E9%97%AD%E5%8C%85/" class="post-category">
+                                    作用域与闭包
                                 </a>
                             
                             
@@ -891,8 +914,8 @@ namespace LambdaTest
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-                        <span class="chip bg-color">C#学习笔记</span>
+                    <a href="/tags/Javascript%E5%9F%BA%E7%A1%80/">
+                        <span class="chip bg-color">Javascript基础</span>
                     </a>
                     
                 </div>
