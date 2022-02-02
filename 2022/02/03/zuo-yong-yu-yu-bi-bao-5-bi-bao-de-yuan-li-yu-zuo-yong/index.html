@@ -4,11 +4,10 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="C#学习笔记-结构与类相关笔记（读自C#从入门到精通 第2版）, 积跬步以至千里">
-    <meta name="description" content="结构与类
-结构和类相似，通常用来封装小型的相关变量组。
-结构是一种值类型，通常创建结构要比创建类的速度快。如果需要一些紧凑循环，需要在其中创建大量的新数据结构，则应考虑使用结构而不是类。
-在C#中，可以将结构看成轻量级的类。定义结构和定义类">
+    <meta name="keywords" content="作用域与闭包-5. 闭包的原理与作用, 积跬步以至千里">
+    <meta name="description" content="概念闭包就是能够读取其他函数内部变量的函数，可理解为在一个函数中包含另一个函数。
+在Javascript语言中，只有函数内部的子函数才能读取局部变量，因此可以把闭包简单理解成”定义在一个函数内部的函数”。
+所以，在本质上，闭包就是将函数内部">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -20,7 +19,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>C#学习笔记-结构与类相关笔记（读自C#从入门到精通 第2版） | 积跬步以至千里</title>
+    <title>作用域与闭包-5. 闭包的原理与作用 | 积跬步以至千里</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -312,12 +311,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">C#学习笔记-结构与类相关笔记（读自C#从入门到精通 第2版）</h1>
+                    <h1 class="description center-align post-title">作用域与闭包-5. 闭包的原理与作用</h1>
                 </div>
             </div>
         </div>
@@ -433,8 +432,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-                                <span class="chip bg-color">C#学习笔记</span>
+                            <a href="/tags/Javascript%E5%9F%BA%E7%A1%80/">
+                                <span class="chip bg-color">Javascript基础</span>
                             </a>
                         
                     </div>
@@ -445,8 +444,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E8%AF%BB%E8%87%AAC-%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A-%E7%AC%AC2%E7%89%88/" class="post-category">
-                                读自C#从入门到精通 第2版
+                            <a href="/categories/%E4%BD%9C%E7%94%A8%E5%9F%9F%E4%B8%8E%E9%97%AD%E5%8C%85/" class="post-category">
+                                作用域与闭包
                             </a>
                         
                     </div>
@@ -458,28 +457,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2020-04-10
+                    2022-02-03
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2022-01-04
+                    2022-02-03
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    1.3k
+                    514
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    5 Min
+                    1 Min
                 </div>
                 
 
@@ -502,112 +501,48 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="结构与类"><a href="#结构与类" class="headerlink" title="结构与类"></a>结构与类</h4><ul>
-<li>结构和类相似，通常用来封装小型的相关变量组。</li>
-<li>结构是一种值类型，通常创建结构要比创建类的速度快。如果需要一些紧凑循环，需要在其中创建大量的新数据结构，则应考虑使用结构而不是类。</li>
-<li>在C#中，可以将结构看成轻量级的类。定义结构和定义类相似，采用struct进行定义，每个struct类型数据可以是常量、变量、构造函数、方法和属性等成员。</li>
-</ul>
-<p>语法：</p>
-<pre class="line-numbers language-none"><code class="language-none">&lt;访问修饰符&gt; struct结构名
-&#123;
-    &#x2F;&#x2F; 结构体定义
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<p><strong>使用：通过声明结构体变量或使用new来实例化结构对象，然后通过“结构体变量.结构成员名”或“结构对象.结构成员”的方式来使用结构。</strong></p>
-<h6 id="示例："><a href="#示例：" class="headerlink" title="示例："></a>示例：</h6><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+                <h4 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h4><p>闭包就是能够读取其他函数内部变量的函数，可理解为在一个函数中包含另一个函数。</p>
+<p>在Javascript语言中，只有函数内部的子函数才能读取局部变量，因此可以把闭包简单理解成”定义在一个函数内部的函数”。</p>
+<p>所以，在本质上，闭包就是将函数内部和函数外部连接起来的一座桥梁。<br>在某些业务场景中，我们需要获取到函数内部的局部变量，解决方法即为，在函数内部再定义一个函数,示例：</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">f1</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">var</span> n <span class="token operator">=</span> <span class="token number">999</span><span class="token punctuation">;</span>
+    
+　　<span class="token keyword">function</span> <span class="token function">f2</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+　　    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>
+　　<span class="token punctuation">&#125;</span>
+　　
+　　<span class="token keyword">return</span> f2<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
 
-namespace StructTest
-&#123;
-    class Program
-    &#123;
-        static void Main(string[] args)
-        &#123;
-            Student goodStu; &#x2F;&#x2F; 创建结构goodStu表示好学生
-            goodStu.stuNum &#x3D; &quot;20200409&quot;;
-            goodStu.stuName &#x3D; &quot;小明&quot;;
-            goodStu.stuAge &#x3D; 19;
-            goodStu.stuClass &#x3D; 1;
-            goodStu.stuGrade &#x3D; 100;
-            Console.WriteLine(&quot;结构演示：&quot;);
-            Console.WriteLine(&quot;三好学生：学号-&#123;0&#125;，姓名-&#123;1&#125;，年龄-&#123;2&#125;，班级-&#123;3&#125;，成绩-&#123;4&#125;&quot;, goodStu.stuNum, goodStu.stuName, goodStu.stuAge, goodStu.stuClass, goodStu.stuGrade);
-            goodStu.DoHomeWork(); &#x2F;&#x2F; 调用结构的方法
-            Console.ReadKey();
-            &#x2F;**
-             * 三好学生：学号-20200409，姓名-小明，年龄-19，班级-1，成绩-100
-             * I&#39;m doing homework!
-             *&#x2F;
+<span class="token keyword">var</span> result <span class="token operator">=</span> <span class="token function">f1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">result</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 999</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>示例代码中，f2可沿作用域链访问f1的作用域，f1返回了f2，即可在外部获取f1的局部变量。f2函数，即为闭包。</p>
+<h4 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h4><ul>
+<li>可以读取函数内部的变量</li>
+<li>让这些变量的值始终保持在内存中</li>
+</ul>
+<p>示例：</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">f1</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">var</span> n <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    
+    <span class="token function-variable function">nAdd</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        n<span class="token operator">++</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    
+    <span class="token keyword">function</span> <span class="token function">f2</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    
+    <span class="token keyword">return</span> f2<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
 
-            Student normalStu &#x3D; new Student(&quot;20200410&quot;, &quot;小红&quot;, 19, 1, 80);
-            Console.WriteLine(&quot;普通学生：学号-&#123;0&#125;，姓名-&#123;1&#125;，年龄-&#123;2&#125;，班级-&#123;3&#125;，成绩-&#123;4&#125;&quot;, normalStu.stuNum, normalStu.stuName, normalStu.stuAge, normalStu.stuClass, normalStu.stuGrade);
-            normalStu.DoHomeWork();
-            Console.ReadKey();
-            &#x2F;**
-             * 普通学生：学号-20200410，姓名-小红，年龄-19，班级-1，成绩-80
-             * I&#39;m doing homework!
-             *&#x2F;
-        &#125;
-    &#125;
-    struct Student
-    &#123;
-        public string stuNum; &#x2F;&#x2F; 学号
-        public string stuName; &#x2F;&#x2F; 姓名
-        public int stuAge; &#x2F;&#x2F; 年龄
-        public int stuClass; &#x2F;&#x2F; 班级
-        public int stuGrade; &#x2F;&#x2F; 成绩
-        public Student(string stuNum, string stuName, int stuAge, int stuClass, int stuGrade) &#x2F;&#x2F; 结构的构造函数，用参数给结构中的成员赋值
-        &#123;
-            this.stuNum &#x3D; stuNum;
-            this.stuName &#x3D; stuName;
-            this.stuAge &#x3D; stuAge;
-            this.stuClass &#x3D; stuClass;
-            this.stuGrade &#x3D; stuGrade;
-        &#125;
-        public void DoHomeWork() &#x2F;&#x2F; 结构中的方法
-        &#123;
-            Console.WriteLine(&quot;I&#39;m doing homework!&quot;);
-        &#125;
-    &#125;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h5 id="结构与类的关系"><a href="#结构与类的关系" class="headerlink" title="结构与类的关系"></a>结构与类的关系</h5><p>类和结构实际上都是创建对象的模板，都可以包含构造函数、常数、字段、方法、属性、索引器和运算符等成员。</p>
-<ul>
-<li>结构是值类型，类是引用类型，在内存中结构是存储在栈上的值类型，类是存储在堆(heap)上的引用类型。</li>
-<li>结构的构造函数和类的构造函数不同，结构不能包含显式的无参数构造函数，结构成员会自动初始化为它们的默认值。结构不能包含以下形式的初始值设定类：base（参数列表）。</li>
-<li>对于结构中的实例字段成员，不能在声明时赋值初始化。</li>
-<li>声明了结构类型后，可以使用new运算符创建构造对象，也可以不使用new关键字。如果不使用new，那么在初始化所有字段之前，字段将保持未赋值状态且对象不可用。</li>
-<li>结构不支持继承，即一个结构不能从另一个结构或类继承，而且不能作为一个类的基类。</li>
-</ul>
-<h5 id="分部类"><a href="#分部类" class="headerlink" title="分部类"></a>分部类</h5><p>在大型项目、特殊部署时，可能需要把一个类、结构或接口放在几个文件中来处理。等到编译时，自动地把它们组合起来，成为一个完整的类，这是C# 分部类。</p>
-<ul>
-<li>类型特别大，不宜放在一个文件中实现。</li>
-<li> 一个类型中的一部分代码为自动化工具生成的代码，不宜与自己编写的代码混合在一起。</li>
-<li>需要多人合作编写一个类。</li>
-</ul>
-<p><strong>分部类是一个纯语言层的编译处理，不影响任何执行机制。<br>事实上C#编译器在编译的时候仍会将各个部分的局部类型合并成一个完整的类。C# 分部类是在class前面添加关键字partial来定义。</strong></p>
-<p><strong>分部类中还可以声明分部方法，分部方法是将方法的定义和实现分隔开。在方法前面用partial关键字修饰的方法就是分部方法。</strong><br>例如，在一个文件中声明分部类Person的代码如下： </p>
-<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">public partial class Person &#x2F;&#x2F; 分部类Person的部分代码
-&#123;
-	public void DoWork()
-	&#123;
-		&#x2F;&#x2F; 定义方法，表示Person类的工作功能
-	&#125;
-	partial void Drink(); &#x2F;&#x2F; 定义分部方法，表示Person类的喝水功能
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>在另一个文件中声明分部类Person</p>
-<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">public partial class Person &#x2F;&#x2F; 分部类Person的部分代码
-&#123;
-	public void HaveDinner()
-	&#123;
-		&#x2F;&#x2F; 定义方法，表示Person类的吃晚饭功能
-	&#125;
-	partial void Drink()
-	&#123;
-		&#x2F;&#x2F; 实现分部方法代码
-	&#125;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>分部方法隐式为private类型，不可使用public访问修饰符。分部方法不可有返回值。</p>
+<span class="token keyword">var</span> res <span class="token operator">=</span> <span class="token function">f1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">res</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 0</span>
+<span class="token function">nAdd</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">res</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 1</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>上述代码中，res实际上是闭包f2函数，第一次运行为0，第二次为1。这证明了，函数f1中的局部变量n一直保存在内存中，并没有在f1调用后被自动清除。</p>
+<p>f1是f2的父函数，而f2被赋给了一个全局变量，这导致f2始终在内存中，而f2的存在依赖于f1，因此f1也始终在内存中，不会在调用结束后，被垃圾回收机制（garbage collection）回收。</p>
+<p>另一个值得注意的地方，就是<code>nAdd=function () &#123;n++&#125;</code>这一行，首先在nAdd前面没有使用var关键字，因此nAdd是一个全局变量，而不是局部变量。其次，nAdd的值是一个匿名函数（anonymous function），而这个匿名函数本身也是一个闭包，所以nAdd相当于是一个setter，可以在函数外部对函数内部的局部变量进行操作。</p>
 
                 
             </div>
@@ -634,7 +569,7 @@ namespace StructTest
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://jeayk.github.io/2020/04/10/c-xue-xi-bi-ji-jie-gou-yu-lei-xiang-guan-bi-ji-du-zi-c-cong-ru-men-dao-jing-tong-di-2-ban/">https://jeayk.github.io/2020/04/10/c-xue-xi-bi-ji-jie-gou-yu-lei-xiang-guan-bi-ji-du-zi-c-cong-ru-men-dao-jing-tong-di-2-ban/</a>
+                    <a href="https://jeayk.github.io/2022/02/03/zuo-yong-yu-yu-bi-bao-5-bi-bao-de-yuan-li-yu-zuo-yong/">https://jeayk.github.io/2022/02/03/zuo-yong-yu-yu-bi-bao-5-bi-bao-de-yuan-li-yu-zuo-yong/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -672,8 +607,8 @@ namespace StructTest
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-                                    <span class="chip bg-color">C#学习笔记</span>
+                                <a href="/tags/Javascript%E5%9F%BA%E7%A1%80/">
+                                    <span class="chip bg-color">Javascript基础</span>
                                 </a>
                             
                         </div>
@@ -847,17 +782,18 @@ namespace StructTest
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
             <div class="card">
-                <a href="/2020/04/10/c-xue-xi-bi-ji-lei-yu-dui-xiang-xiang-guan-bi-ji-2-du-zi-c-cong-ru-men-dao-jing-tong-di-2-ban/">
+                <a href="/2022/02/03/zuo-yong-yu-yu-bi-bao-5-bi-bao-de-yuan-li-yu-zuo-yong/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="C#学习笔记-类与对象相关笔记2（读自C#从入门到精通 第2版）">
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="作用域与闭包-5. 闭包的原理与作用">
                         
-                        <span class="card-title">C#学习笔记-类与对象相关笔记2（读自C#从入门到精通 第2版）</span>
+                        <span class="card-title">作用域与闭包-5. 闭包的原理与作用</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -867,26 +803,27 @@ namespace StructTest
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-04-10
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-02-03
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E8%AF%BB%E8%87%AAC-%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A-%E7%AC%AC2%E7%89%88/" class="post-category">
-                                    读自C#从入门到精通 第2版
+                            <a href="/categories/%E4%BD%9C%E7%94%A8%E5%9F%9F%E4%B8%8E%E9%97%AD%E5%8C%85/" class="post-category">
+                                    作用域与闭包
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-                        <span class="chip bg-color">C#学习笔记</span>
+                    <a href="/tags/Javascript%E5%9F%BA%E7%A1%80/">
+                        <span class="chip bg-color">Javascript基础</span>
                     </a>
                     
                 </div>
@@ -900,13 +837,13 @@ namespace StructTest
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/04/10/c-xue-xi-bi-ji-ji-cheng-xiang-guan-bi-ji-du-zi-c-cong-ru-men-dao-jing-tong-di-2-ban/">
+                <a href="/2022/02/02/zuo-yong-yu-yu-bi-bao-4-this-de-yuan-li-yi-ji-ji-chong-bu-tong-shi-yong-chang-jing-de-qu-zhi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="C#学习笔记-继承相关笔记（读自C#从入门到精通 第2版）">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="作用域与闭包-4. this的原理以及几种不同使用场景的取值">
                         
-                        <span class="card-title">C#学习笔记-继承相关笔记（读自C#从入门到精通 第2版）</span>
+                        <span class="card-title">作用域与闭包-4. this的原理以及几种不同使用场景的取值</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -917,14 +854,14 @@ namespace StructTest
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-10
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-02-02
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E8%AF%BB%E8%87%AAC-%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A-%E7%AC%AC2%E7%89%88/" class="post-category">
-                                    读自C#从入门到精通 第2版
+                            <a href="/categories/%E4%BD%9C%E7%94%A8%E5%9F%9F%E4%B8%8E%E9%97%AD%E5%8C%85/" class="post-category">
+                                    作用域与闭包
                                 </a>
                             
                             
@@ -934,8 +871,8 @@ namespace StructTest
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-                        <span class="chip bg-color">C#学习笔记</span>
+                    <a href="/tags/Javascript%E5%9F%BA%E7%A1%80/">
+                        <span class="chip bg-color">Javascript基础</span>
                     </a>
                     
                 </div>
