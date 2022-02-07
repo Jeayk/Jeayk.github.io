@@ -4,10 +4,9 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="C#学习笔记--委托与事件（读自C#从入门到精通 第2版）, 积跬步以至千里">
-    <meta name="description" content="委托委托也叫代理，即把事情交给别人代办。C#中如果将一个方法委托给一个对象，对象即可全权代理该方法的执行。使用委托时首先要定义委托，声明委托所能代理方法的类型。
-&amp;#x2F;&amp;#x2F; 语法
-&amp;lt;访问修饰符&amp;gt; delegate ">
+    <meta name="keywords" content="作用域与闭包-6. 堆栈溢出和内存泄漏的原理与解决方案, 积跬步以至千里">
+    <meta name="description" content="原理理解内存溢出 out of memory，是指程序在申请内存时，没有足够的内存空间供其使用，出现out of memory；比如申请了一个integer,但给它存了long才能存下的数，那就是内存溢出。
+内存泄露 memory leak">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,7 +18,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>C#学习笔记--委托与事件（读自C#从入门到精通 第2版） | 积跬步以至千里</title>
+    <title>作用域与闭包-6. 堆栈溢出和内存泄漏的原理与解决方案 | 积跬步以至千里</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -311,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">C#学习笔记--委托与事件（读自C#从入门到精通 第2版）</h1>
+                    <h1 class="description center-align post-title">作用域与闭包-6. 堆栈溢出和内存泄漏的原理与解决方案</h1>
                 </div>
             </div>
         </div>
@@ -432,8 +431,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-                                <span class="chip bg-color">C#学习笔记</span>
+                            <a href="/tags/Javascript%E5%9F%BA%E7%A1%80/">
+                                <span class="chip bg-color">Javascript基础</span>
                             </a>
                         
                     </div>
@@ -444,8 +443,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E8%AF%BB%E8%87%AAC-%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A-%E7%AC%AC2%E7%89%88/" class="post-category">
-                                读自C#从入门到精通 第2版
+                            <a href="/categories/%E4%BD%9C%E7%94%A8%E5%9F%9F%E4%B8%8E%E9%97%AD%E5%8C%85/" class="post-category">
+                                作用域与闭包
                             </a>
                         
                     </div>
@@ -457,28 +456,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2020-04-16
+                    2022-02-07
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2022-01-04
+                    2022-02-07
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    1.7k
+                    1.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    7 Min
+                    4 Min
                 </div>
                 
 
@@ -501,160 +500,42 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="委托"><a href="#委托" class="headerlink" title="委托"></a>委托</h4><p>委托也叫代理，即把事情交给别人代办。C#中如果将一个方法委托给一个对象，对象即可全权代理该方法的执行。使用委托时首先要定义委托，声明委托所能代理方法的类型。</p>
-<pre class="line-numbers language-none"><code class="language-none">&#x2F;&#x2F; 语法
-&lt;访问修饰符&gt; delegate 返回类型 委托名();<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>委托没有具体的实现体，委托能够代表什么样的方法由它的返回值类型和参数列表决定。</p>
-<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">&#x2F;&#x2F; 示例
-public delegate void testDelegate(string name);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>定义了上述委托示例之后要使用委托，首先要实例化委托，也就是将其指向某个方法，即调用委托的构造函数，并将相关联的方法作为参数传递。然后通过调用    委托，执行相关方法的代码，实现委托。</p>
-<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">&#x2F;&#x2F; 使用委托对数组进行降序排列
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DelegateSort
-&#123;
-    class Program
-    &#123;
-        public delegate bool SortDelegate(int[] x); &#x2F;&#x2F; 定义委托SortDelegate
-        static void Main(string[] args)
-        &#123;
-            int[] arr &#x3D; new int[] &#123; 8, 9, 5, 3, 4, 6, 1 &#125;;
-            Console.WriteLine(&quot;排序前的数组是： &quot;);
-            foreach (int i in arr) Console.Write(&quot;&#123;0&#125;&quot;, i); &#x2F;&#x2F; 8953461
-            SortDelegate myDelegate; &#x2F;&#x2F; 声明委托变量
-            myDelegate &#x3D; new SortDelegate(Test.SortArray); &#x2F;&#x2F; 实例化委托变量，委托Test的SortArray
-            myDelegate(arr); &#x2F;&#x2F; 传递参数，调用委托排序
-            Console.WriteLine(&quot;&quot;);
-            Console.WriteLine(&quot;排序后的数组是：&quot;);
-            foreach (int i in arr) Console.Write(&quot;&#123;0&#125;&quot;, i); &#x2F;&#x2F; 9865431
-            Console.ReadKey();
-        &#125;
-    &#125;
-
-    class Test
-    &#123;
-        public static bool SortArray(int[] array )
-        &#123;
-            &#x2F;&#x2F; 定义方法SortArray用于按照降序排序
-            &#x2F;&#x2F; GetUpperBound(int dimension): 获取数组中指定维度最后一个元素的索引。 dimension Int32 数组的从零开始的维度，其上限需要确定。
-            for (int i &#x3D; array.GetUpperBound(0); i &gt;&#x3D; 0; i--) &#x2F;&#x2F; 循环从后向前取出数组的元素
-            &#123;
-                &#x2F;&#x2F; 冒泡排序，将数值小的元素移到后面，直到所有的元素按照降序排列
-                for(int j &#x3D; 0; j &lt;&#x3D; i; j++)
-                &#123;
-                    if(array[j] &lt;&#x3D; array[i]) &#x2F;&#x2F; 判断数组前面的值是否小于后面的值
-                    &#123;
-                        Swap(ref array[j], ref array[i]); &#x2F;&#x2F; 交换二者的位置
-                    &#125;
-                &#125;
-            &#125;
-            return true; &#x2F;&#x2F; 并非所有代码都有返回值，故加return true
-        &#125;
-        static void Swap(ref int x, ref int y) &#x2F;&#x2F; 交换方法
-        &#123;
-            int temp &#x3D; y;
-            y &#x3D; x;
-            x &#x3D; temp;
-        &#125;
-    &#125;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h4 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h4><p>事件是C#中的一个高级概念，是操作发生时允许执行特定应用程序的代码的机制。事件要么在相关联的操作发生前发生（事前事件），要么在操作发生后发生（事后事件）。例如，当用户单击窗口中的按钮时，将引发一个事后事件，以允许执行特定于应用程序的方法。</p>
-<p>类或对象可以通过事件向其他类或对象通知发生的相关事情。发送（或引发）事件的类称为“发行者”，接收（或处理）事件的类称为“订户”。在典型的C# Windows窗体或Web应用程序中，可以订阅由控件（如按钮和列表框）引发的事件。</p>
-<p>定义和使用事件的步骤：<br>(1) 在一个类中声明关于事件的委托。</p>
-<pre class="line-numbers language-none"><code class="language-none">public delegate void 事件类型名称(object serder, EventArgs e); <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>事件类型名称建议用EventHandler结尾。如果想自定义事件的参数EventArgs，可以用EventArgs类派生自己的事件参数类，也可以没有参数。<br>(2)在类中声明事件，使用步骤(1)的delegate作为事件的类型。 </p>
-<pre class="line-numbers language-none"><code class="language-none">public event 事件类型名称 事件名称;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>(3)在类中需要引发事件的方法中，编写引发事件的方法。</p>
-<pre class="line-numbers language-none"><code class="language-none">事件名称(this, new EventArgs());
-&#x2F;&#x2F; 或者
-if(事件名称 !&#x3D; null) 事件名称 (this, new EventArgs());<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<p>(4)订阅事件，当事件发生时通知订户。</p>
-<pre class="line-numbers language-none"><code class="language-none">带有事件的类实例.事件名称 +&#x3D; new 事件名称(事件处理方法名称);<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>(5)编写事件处理方法。</p>
-<pre class="line-numbers language-none"><code class="language-none">public void 事件处理方法(object sender, EventArgs e)
-&#123;
-	&#x2F;&#x2F; 相关代码
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<p>(6)在适当的条件下触发事件，即需要调用步骤(3)中的引发事件的方法。</p>
-<p><strong>事件的定义和使用示例</strong><br>假设设计一个高档热水器，通电加热到水温超过96℃的时候，扬声器会发出语音告诉你水的温度，液晶屏显示水温的变化，提示水快烧开了。定义一个类来代表热水器的类Heater，它有代表水温的字段temperature，有给水加热的BoilWater()方法，发出语音警报的MakeAlert()方法，显示水温的ShowMsg()方法。</p>
-<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace HeaterEvent
-&#123;
-    class Program
-    &#123;
-        static void Main(string[] args)
-        &#123;
-            Heater heater &#x3D; new Heater(); &#x2F;&#x2F; 创建热水器对象heater
-            Alarm alarm &#x3D; new Alarm(); &#x2F;&#x2F; 创建报警器对象alarm
-            heater.BoilEvent +&#x3D; alarm.MakeAlert; &#x2F;&#x2F; 给alarm的MakeAlert方法订阅事件
-            heater.BoilEvent +&#x3D; Display.ShowMsg; &#x2F;&#x2F; 订阅静态方法
-            heater.BoilWater(); &#x2F;&#x2F; 烧水，会自动调用订阅过的对象方法
-            Console.ReadKey();
-            &#x2F;**
-             * Alarm: 嘀嘀嘀，水已经97度了!
-             * Display：水快烧开了，当前温度：97度。
-             * Alarm: 嘀嘀嘀，水已经98度了!
-             * Display：水快烧开了，当前温度：98度。
-             * Alarm: 嘀嘀嘀，水已经99度了!
-             * Display：水快烧开了，当前温度：99度。
-             * Alarm: 嘀嘀嘀，水已经100度了!
-             * Display：水快烧开了，当前温度：100度。
-             *&#x2F;
-        &#125;
-    &#125;
-    public class Heater &#x2F;&#x2F; 热水器类Heater
-    &#123;
-        private int temperature; &#x2F;&#x2F; 声明表示水温的字段
-        public delegate void BoilHandler(int param); &#x2F;&#x2F; 声明关于事件的委托
-        public event BoilHandler BoilEvent; &#x2F;&#x2F; 声明水要烧开的事件
-        public void BoilWater() &#x2F;&#x2F; 烧水的方法
-        &#123;
-            for(int i &#x3D; 0; i &lt;&#x3D; 100; i++) &#x2F;&#x2F; 循环表示水温的变化
-            &#123;
-                temperature &#x3D; i; &#x2F;&#x2F; 设置水的温度
-                if(temperature &gt; 96) &#x2F;&#x2F; 水温超过96度，引发事件BoilEvent
-                &#123;
-                    &#x2F;*if(BoilEvent !&#x3D; null)
-                    &#123;
-                        &#x2F;&#x2F; 如果有对象订阅
-                        BoilEvent(temperature); &#x2F;&#x2F; 调用所有订阅对象的方法
-                    &#125;*&#x2F;
-                    &#x2F;&#x2F; 优化
-                    BoilEvent?.Invoke(temperature); &#x2F;&#x2F; 如果有对象订阅，调用所有订阅对象的方法
-                &#125;
-            &#125;
-        &#125;
-    &#125;
-
-    public class Alarm &#x2F;&#x2F; 定义报警类
-    &#123;
-        public void MakeAlert(int param) &#x2F;&#x2F; 水快开时报警的方法
-        &#123;
-            Console.WriteLine(&quot;Alarm: 嘀嘀嘀，水已经&#123;0&#125;度了!&quot;, param);
-        &#125;
-    &#125;
-
-    public class Display &#x2F;&#x2F; 显示水温的显示类
-    &#123;
-        &#x2F;&#x2F; 静态方法 ShowMsg用于显示水温
-        public static void ShowMsg(int param)
-        &#123;
-            Console.WriteLine(&quot;Display：水快烧开了，当前温度：&#123;0&#125;度。&quot;, param);
-        &#125;
-    &#125;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
+                <h5 id="原理理解"><a href="#原理理解" class="headerlink" title="原理理解"></a>原理理解</h5><p><strong>内存溢出 out of memory</strong>，是指程序在申请内存时，没有足够的内存空间供其使用，出现out of memory；比如申请了一个integer,但给它存了long才能存下的数，那就是内存溢出。</p>
+<p><strong>内存泄露 memory leak</strong>，是指程序在申请内存后，无法释放已申请的内存空间，一次内存泄露危害可以忽略，但内存泄露堆积后果很严重，无论多少内存,迟早会被占光。</p>
+<p><em>memory leak</em> 会最终会导致 <em>out of memory</em>！</p>
+<p>内存溢出就是你要求分配的内存超出了系统能给你的，系统不能满足需求，于是产生溢出。 </p>
+<p>内存泄漏是指你向系统申请分配内存进行使用(new)，可是使用完了以后却不归还(delete)，结果你申请到的那块内存你自己也不能再访问（也许你把它的地址给弄丢了），而系统也不能再次将它分配给需要的程序。一个盘子用尽各种方法只能装4个果子，你装了5个，结果掉倒地上不能吃了。这就是溢出！比方说栈，栈满时再做进栈必定产生空间溢出，叫上溢，栈空时再做退栈也产生空间溢出，称为下溢。就是分配的内存不足以放下数据项序列,称为内存溢出. </p>
+<h5 id="内存泄漏种类"><a href="#内存泄漏种类" class="headerlink" title="内存泄漏种类"></a>内存泄漏种类</h5><p>以发生的方式来分类，内存泄漏可以分为4类： </p>
+<ul>
+<li>常发性内存泄漏。发生内存泄漏的代码会被多次执行到，每次被执行的时候都会导致一块内存泄漏。 </li>
+<li>偶发性内存泄漏。发生内存泄漏的代码只有在某些特定环境或操作过程下才会发生。常发性和偶发性是相对的。对于特定的环境，偶发性的也许就变成了常发性的。所以测试环境和测试方法对检测内存泄漏至关重要。 </li>
+<li>一次性内存泄漏。发生内存泄漏的代码只会被执行一次，或者由于算法上的缺陷，导致总会有一块仅且一块内存发生泄漏。比如，在类的构造函数中分配内存，在析构函数中却没有释放该内存，所以内存泄漏只会发生一次。 </li>
+<li>隐式内存泄漏。程序在运行过程中不停的分配内存，但是直到结束的时候才释放内存。严格的说这里并没有发生内存泄漏，因为最终程序释放了所有申请的内存。但是对于一个服务器程序，需要运行几天，几周甚至几个月，不及时释放内存也可能导致最终耗尽系统的所有内存。所以，我们称这类内存泄漏为隐式内存泄漏。 </li>
+</ul>
+<p>从用户使用程序的角度来看，内存泄漏本身不会产生什么危害，作为一般的用户，根本感觉不到内存泄漏的存在。真正有危害的是内存泄漏的堆积，这会最终消耗尽系统所有的内存。从这个角度来说，一次性内存泄漏并没有什么危害，因为它不会堆积，而隐式内存泄漏危害性则非常大，因为较之于常发性和偶发性内存泄漏它更难被检测到 </p>
+<h5 id="内存溢出的原因以及解决方法："><a href="#内存溢出的原因以及解决方法：" class="headerlink" title="内存溢出的原因以及解决方法："></a>内存溢出的原因以及解决方法：</h5><p>常见的有以下几种：</p>
+<ul>
+<li>内存中加载的数据量过于庞大，如一次从数据库取出过多数据；</li>
+<li>集合类中有对对象的引用，使用完后未清空，使得JVM不能回收；</li>
+<li>代码中存在死循环或循环产生过多重复的对象实体；</li>
+<li>使用的第三方软件中的BUG；</li>
+<li>启动参数内存值设定的过小</li>
+</ul>
+<p>内存溢出的解决方案：</p>
+<ul>
+<li>第一步，修改JVM启动参数，直接增加内存。(-Xms，-Xmx参数一定不要忘记加。)</li>
+<li>第二步，检查错误日志，查看“OutOfMemory”错误前是否有其它异常或错误。</li>
+<li>第三步，对代码进行走查和分析，找出可能发生内存溢出的位置。重点排查以下几点：</li>
+</ul>
+<ol>
+<li>检查对数据库查询中，是否有一次获得全部数据的查询。一般来说，如果一次取十万条记录到内存，就可能引起内存溢出。这个问题比较隐蔽，在上线前，数据库中数据较少，不容易出问题，上线后，数据库中数据多了，一次查询就有可能引起内存溢出。因此对于数据库查询尽量采用分页的方式查询。</li>
+<li>检查代码中是否有死循环或递归调用。</li>
+<li>检查是否有大循环重复产生新对象实体。</li>
+<li>检查List、MAP等集合对象是否有使用完后，未清除的问题。List、MAP等集合对象会始终存有对对象的引用，使得这些对象不能被GC回收。</li>
+</ol>
+<ul>
+<li>第四步，使用内存查看工具动态查看内存使用情况。</li>
+</ul>
 
                 
             </div>
@@ -681,7 +562,7 @@ namespace HeaterEvent
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://jeayk.github.io/2020/04/16/c-xue-xi-bi-ji-wei-tuo-yu-shi-jian-du-zi-c-cong-ru-men-dao-jing-tong-di-2-ban/">https://jeayk.github.io/2020/04/16/c-xue-xi-bi-ji-wei-tuo-yu-shi-jian-du-zi-c-cong-ru-men-dao-jing-tong-di-2-ban/</a>
+                    <a href="https://jeayk.github.io/2022/02/07/zuo-yong-yu-yu-bi-bao-6-dui-zhan-yi-chu-he-nei-cun-xie-lou-de-yuan-li-yu-jie-jue-fang-an/">https://jeayk.github.io/2022/02/07/zuo-yong-yu-yu-bi-bao-6-dui-zhan-yi-chu-he-nei-cun-xie-lou-de-yuan-li-yu-jie-jue-fang-an/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -719,8 +600,8 @@ namespace HeaterEvent
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-                                    <span class="chip bg-color">C#学习笔记</span>
+                                <a href="/tags/Javascript%E5%9F%BA%E7%A1%80/">
+                                    <span class="chip bg-color">Javascript基础</span>
                                 </a>
                             
                         </div>
@@ -894,17 +775,18 @@ namespace HeaterEvent
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
             <div class="card">
-                <a href="/2020/04/20/c-xue-xi-bi-ji-ni-ming-fang-fa-yu-lambda-biao-da-shi-du-zi-c-cong-ru-men-dao-jing-tong-di-2-ban/">
+                <a href="/2022/02/07/zuo-yong-yu-yu-bi-bao-6-dui-zhan-yi-chu-he-nei-cun-xie-lou-de-yuan-li-yu-jie-jue-fang-an/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="C#学习笔记-匿名方法与lambda表达式（读自C#从入门到精通 第2版）">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="作用域与闭包-6. 堆栈溢出和内存泄漏的原理与解决方案">
                         
-                        <span class="card-title">C#学习笔记-匿名方法与lambda表达式（读自C#从入门到精通 第2版）</span>
+                        <span class="card-title">作用域与闭包-6. 堆栈溢出和内存泄漏的原理与解决方案</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -914,26 +796,27 @@ namespace HeaterEvent
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-04-20
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-02-07
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E8%AF%BB%E8%87%AAC-%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A-%E7%AC%AC2%E7%89%88/" class="post-category">
-                                    读自C#从入门到精通 第2版
+                            <a href="/categories/%E4%BD%9C%E7%94%A8%E5%9F%9F%E4%B8%8E%E9%97%AD%E5%8C%85/" class="post-category">
+                                    作用域与闭包
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-                        <span class="chip bg-color">C#学习笔记</span>
+                    <a href="/tags/Javascript%E5%9F%BA%E7%A1%80/">
+                        <span class="chip bg-color">Javascript基础</span>
                     </a>
                     
                 </div>
@@ -947,13 +830,13 @@ namespace HeaterEvent
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/04/15/c-xue-xi-bi-ji-chou-xiang-lei-yu-mi-feng-lei-du-zi-c-cong-ru-men-dao-jing-tong-di-2-ban/">
+                <a href="/2022/02/03/zuo-yong-yu-yu-bi-bao-5-bi-bao-de-yuan-li-yu-zuo-yong/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="C#学习笔记--抽象类与密封类（读自C#从入门到精通 第2版）">
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="作用域与闭包-5. 闭包的原理与作用">
                         
-                        <span class="card-title">C#学习笔记--抽象类与密封类（读自C#从入门到精通 第2版）</span>
+                        <span class="card-title">作用域与闭包-5. 闭包的原理与作用</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -964,14 +847,14 @@ namespace HeaterEvent
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-15
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-02-03
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E8%AF%BB%E8%87%AAC-%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A-%E7%AC%AC2%E7%89%88/" class="post-category">
-                                    读自C#从入门到精通 第2版
+                            <a href="/categories/%E4%BD%9C%E7%94%A8%E5%9F%9F%E4%B8%8E%E9%97%AD%E5%8C%85/" class="post-category">
+                                    作用域与闭包
                                 </a>
                             
                             
@@ -981,8 +864,8 @@ namespace HeaterEvent
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-                        <span class="chip bg-color">C#学习笔记</span>
+                    <a href="/tags/Javascript%E5%9F%BA%E7%A1%80/">
+                        <span class="chip bg-color">Javascript基础</span>
                     </a>
                     
                 </div>
