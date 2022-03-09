@@ -4,10 +4,9 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="C#学习笔记-多态（读自C#从入门到精通 第2版）, 积跬步以至千里">
-    <meta name="description" content="多态多态的概念同一操作作用于不同的类的对象，不同的类的对象进行不同的执行，最后产生不同的执行结果。
-多态的实现C#中支持基于接口的多态和基于继承的多态，基于继承的多态设计在基类中定义方法，并在派生类中重写方法。
-多态和重写是紧密联系的，重写">
+    <meta name="keywords" content="http破冰-3. 四层与七层是什么？, 积跬步以至千里">
+    <meta name="description" content="TCP/IP 协议，是 HTTP 协议的下层协议，负责具体的数据传输工作。并且TCP/IP 协议是一个“有层次的协议栈”。
+工作中常听到的“四层负载均衡”“七层负载均衡”，“二层转发”“三层路由”具体是什么意思？可以从HTTP应用的角度，理">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,7 +18,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>C#学习笔记-多态（读自C#从入门到精通 第2版） | 积跬步以至千里</title>
+    <title>http破冰-3. 四层与七层是什么？ | 积跬步以至千里</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -311,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">C#学习笔记-多态（读自C#从入门到精通 第2版）</h1>
+                    <h1 class="description center-align post-title">http破冰-3. 四层与七层是什么？</h1>
                 </div>
             </div>
         </div>
@@ -432,8 +431,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-                                <span class="chip bg-color">C#学习笔记</span>
+                            <a href="/tags/HTTP/">
+                                <span class="chip bg-color">HTTP</span>
                             </a>
                         
                     </div>
@@ -444,8 +443,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E8%AF%BB%E8%87%AAC-%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A-%E7%AC%AC2%E7%89%88/" class="post-category">
-                                读自C#从入门到精通 第2版
+                            <a href="/categories/HTTP%E7%A0%B4%E5%86%B0/" class="post-category">
+                                HTTP破冰
                             </a>
                         
                     </div>
@@ -457,28 +456,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2020-04-13
+                    2022-03-09
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2022-01-04
+                    2022-03-09
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    792
+                    2.4k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    3 Min
+                    8 Min
                 </div>
                 
 
@@ -501,89 +500,88 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h4><h5 id="多态的概念"><a href="#多态的概念" class="headerlink" title="多态的概念"></a>多态的概念</h5><p>同一操作作用于不同的类的对象，不同的类的对象进行不同的执行，最后产生不同的执行结果。</p>
-<h5 id="多态的实现"><a href="#多态的实现" class="headerlink" title="多态的实现"></a>多态的实现</h5><p>C#中支持基于接口的多态和基于继承的多态，基于继承的多态设计在基类中定义方法，并在派生类中重写方法。</p>
-<p>多态和重写是紧密联系的，重写是实现多态的重要手段。重写基类方法就是修改它的实现，或者说在派生类中对继承的基类方法重新编写。</p>
-<p>在基类中用<strong>virtual</strong>关键字声明的方法（叫做虚拟方法）在派生类中可以重写。</p>
-<pre class="line-numbers language-none"><code class="language-none">&#x2F;&#x2F; 语法
-访问修饰符 virtual 返回类型 方法名()
-&#123;
-	&#x2F;&#x2F; 方法体
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>示例：</p>
-<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">class Father
-&#123;
-	...
-	public virtual void Display() &#x2F;&#x2F; 基类中定义成虚拟方法，使用virtual关键字
-	&#123;
-		&#x2F;&#x2F; Father does sth.
-		...
-	&#125;
-&#125;
-class Son: Father
-&#123;
-	...
-	public override void Display() &#x2F;&#x2F; 重写基类的Display方法
-	&#123;
-		&#x2F;&#x2F; Son does sth.
-		...
-		
-		&#x2F;&#x2F; 若想派生类方法执行后，继续执行基类方法，执行 base.Display() 方法
-		base.Display();
-	&#125;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><strong>重写时，子类重写方法的访问级别和父类虚拟方法的访问级别必须相同。</strong></p>
-<h5 id="方法重载、重写和隐蔽"><a href="#方法重载、重写和隐蔽" class="headerlink" title="方法重载、重写和隐蔽"></a>方法重载、重写和隐蔽</h5><p>在基类和派生类中可以存在同名方法，这些同名的方法可以分为重载、重写和隐藏3种类型。</p>
+                <p>TCP/IP 协议，是 HTTP 协议的下层协议，负责具体的数据传输工作。并且TCP/IP 协议是一个“有层次的协议栈”。</p>
+<p>工作中常听到的“<strong>四层负载均衡</strong>”“<strong>七层负载均衡</strong>”，“<strong>二层转发</strong>”“<strong>三层路由</strong>”具体是什么意思？可以从HTTP应用的角度，理清这些概念。  </p>
+<hr>
+<h3 id="TCP-IP-网络分层模型"><a href="#TCP-IP-网络分层模型" class="headerlink" title="TCP/IP 网络分层模型"></a>TCP/IP 网络分层模型</h3><p>TCP/IP 设计者提出了“分层”的概念，把复杂的网络通信划分出多个层次，再给每一个层次分配不同的职责，层次内只专心做自己的事情就好，用“分而治之”的思想把一个“大麻烦”拆分成了数个“小麻烦”，从而解决了网络通信的难题。</p>
+<pre class="line-numbers language-none"><code class="language-none">application layer &#x2F; HTTP
+transport layer &#x2F; UDP
+internet layer &#x2F; IP
+link layer &#x2F; MAC<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>TCP/IP 协议总共有四层，就像搭积木一样，每一层需要下层的支撑，同时又支撑着上层，任何一层被抽掉都可能会导致整个协议栈坍塌。它的层次顺序是“从下往上”数的，所以第一层就是最下面的一层。</p>
+<p>第一层叫“<strong>链接层</strong>”（link layer），负责在以太网、WiFi 这样的底层网络上发送原始数据包，工作在网卡这个层次，使用 MAC 地址来标记网络上的设备，所以有时候也叫 MAC 层。</p>
+<p>第二层叫“<strong>网际层</strong>”或者“<strong>网络互连层</strong>”（internet layer），IP 协议就处在这一层。因为 IP 协议定义了“IP 地址”的概念，所以就可以在“链接层”的基础上，用 IP 地址取代 MAC 地址，把许许多多的局域网、广域网连接成一个虚拟的巨大网络，在这个网络里找设备时只要把 IP 地址再“翻译”成 MAC 地址就可以了。</p>
+<p>第三层叫“<strong>传输层</strong>”（transport layer），这个层次协议的职责是保证数据在 IP 地址标记的两点之间“可靠”地传输，是 TCP 协议工作的层次，另外还有它的一个“小伙伴”UDP。</p>
+<p>TCP 是一个有状态的协议，需要先与对方建立连接然后才能发送数据，而且保证数据不丢失不重复。而 UDP 则比较简单，它无状态，不用事先建立连接就可以任意发送数据，但不保证数据一定会发到对方。两个协议的另一个重要区别在于数据的形式。TCP 的数据是连续的“字节流”，有先后顺序，而 UDP 则是分散的小数据包，是顺序发，乱序收。</p>
+<p>协议栈的第四层叫“<strong>应用层</strong>”（application layer），由于下面的三层把基础打得非常好，所以在这一层就“百花齐放”了，有各种面向具体应用的协议。例如 Telnet、SSH、FTP、SMTP 等等，当然还有的 HTTP。</p>
+<p>MAC 层的传输单位是帧（frame），IP 层的传输单位是包（packet），TCP 层的传输单位是段（segment），HTTP 的传输单位则是消息或报文（message）。但这些名词并没有什么本质的区分，可以统称为数据包。</p>
+<h3 id="OSI-网络分层模型"><a href="#OSI-网络分层模型" class="headerlink" title="OSI 网络分层模型"></a>OSI 网络分层模型</h3><p>第二个网络分层模型：<strong>OSI</strong>，全称是“<strong>开放式系统互联通信参考模型</strong>”（Open System Interconnection Reference Model）。</p>
+<p>由国际标准组织（ISO）设计的网络分层模型，OSI 模型分成了七层，部分层次与 TCP/IP 很像，从下到上分别是：</p>
+<pre class="line-numbers language-none"><code class="language-none">application layer
+presetation layer
+session layer
+transport layer
+network layer
+data link layer
+physical layer<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
-<li>重载<br>重载是在同一个作用域内发生（比如一个类里面），定义一系列同名方法，但是方法的参数列表不同，就是签名不同，签名由方法名和参数组成。<br>能通过传递不同的参数来决定到底调用哪一个同名方法。</li>
+<li>第一层：物理层，网络的物理形式，例如电缆、光纤、网卡、集线器等等；</li>
+<li>第二层：数据链路层，它基本相当于 TCP/IP 的链接层；</li>
+<li>第三层：网络层，相当于 TCP/IP 里的网际层；</li>
+<li>第四层：传输层，相当于 TCP/IP 里的传输层；</li>
+<li>第五层：会话层，维护网络中的连接状态，即保持会话和同步；</li>
+<li>第六层：表示层，把数据转换为合适、可理解的语法和语义；</li>
+<li>第七层：应用层，面向具体的应用传输数据。</li>
 </ul>
-<p><strong>注意返回值类型不同不能构成重载，因为签名不包括返回值。</strong></p>
+<p>TCP/IP 等协议已经在许多网络上实际运行，再推翻重来是不可能的。所以，OSI 分层模型在发布的时候就明确地表明是一个“参考”，不是强制标准。</p>
+<h5 id="OSI-模型优点"><a href="#OSI-模型优点" class="headerlink" title="OSI 模型优点"></a>OSI 模型优点</h5><ul>
+<li>对比一下就可以看出，TCP/IP 是一个纯软件的栈，没有网络应有的最根基的电缆、网卡等物理设备的位置。而 OSI 则补足了这个缺失，在理论层面上描述网络更加完整。</li>
+<li>OSI 为每一层标记了明确了编号，最底层是一层，最上层是七层，而 TCP/IP 的层次从来只有名字而没有编号。显然，在交流的时候说“七层”要比“应用层”更简单快捷，特别是英文，对比一下“Layer seven”与“application layer”。<h3 id="两个分层模型的映射关系"><a href="#两个分层模型的映射关系" class="headerlink" title="两个分层模型的映射关系"></a>两个分层模型的映射关系</h3><pre class="line-numbers language-none"><code class="language-none">application layer
+presentation layer ----&gt; application layer &#x2F; HTTP
+session layer
+transport layer ----&gt; transport layer &#x2F; TCP &#x2F; UDP
+network layer ----&gt; internet layer &#x2F; IP
+data link layer ----&gt; link layer &#x2F; MAC
+physical layer ----&gt; 无<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>第一层：物理层，TCP/IP 里无对应；</li>
+<li>第二层：数据链路层，对应 TCP/IP 的链接层；</li>
+<li>第三层：网络层，对应 TCP/IP 的网际层；</li>
+<li>第四层：传输层，对应 TCP/IP 的传输层；</li>
+<li>第五、六、七层：统一对应到 TCP/IP 的应用层。</li>
+</ul>
+<p>OSI 的分层模型在四层以上分的太细，而 TCP/IP 实际应用时的会话管理、编码转换、压缩等和具体应用经常联系的很紧密，很难分开。例如，HTTP 协议就同时包含了连接管理和数据格式定义。</p>
+<p>所谓的“四层负载均衡”就是指工作在传输层上，基于 TCP/IP 协议的特性，例如 IP 地址、端口号等实现对后端服务器的负载均衡。</p>
+<p>所谓的“七层负载均衡”就是指工作在应用层上，看到的是 HTTP 协议，解析 HTTP 报文里的 URI、主机名、资源类型等数据，再用适当的策略转发给后端服务器。</p>
+<h3 id="TCP-IP-协议栈的工作方式"><a href="#TCP-IP-协议栈的工作方式" class="headerlink" title="TCP/IP 协议栈的工作方式"></a>TCP/IP 协议栈的工作方式</h3><p>把 HTTP 利用 TCP/IP 协议栈传输数据想象成一个发快递的过程。</p>
+<p>假设你想把一件毛绒玩具送给朋友，但你要先拿个塑料袋套一下，这件玩具就相当于 <strong>HTTP 协议里要传输的内容</strong>，比如 HTML，然后** HTTP 协议为它加一个 HTTP 专用附加数据**。</p>
+<p>你把玩具交给快递小哥，为了保护货物，他又加了层包装再贴了个标签，相当于在 <strong>TCP 层给数据再次打包，加上了 TCP 头</strong>。</p>
+<p>接着快递小哥下楼，把包裹放进了三轮车里，运到集散点，然后再装进更大的卡车里，相当于<strong>在 IP 层、MAC 层对 TCP 数据包加上了 IP 头、MAC 头</strong>。</p>
+<p>经过运输，包裹到达目的地，要卸货再放进另一位快递员的三轮车，就是<strong>在 IP 层、MAC 层传输后拆包</strong>。</p>
+<p>快递员到了你朋友的家门口，撕掉标签，<strong>去除了 TCP 层的头</strong>，你朋友再拆掉塑料袋包装，也就是 <strong>HTTP 头</strong>，最后就拿到了玩具，也就是真正的 <strong>HTML 页面</strong>。</p>
+<p>这个比喻里省略了很多 TCP/IP 协议里的细节，比如<strong>建连、路由、数据切分与重组、错误检查</strong>等，但核心的数据传输过程是差不多的。</p>
+<p>HTTP 协议的传输过程就是这样通过协议栈逐层向下，每一层都添加本层的专有数据，层层打包，然后通过下层发送出去。</p>
+<p>接收数据则是相反的操作，从下往上穿过协议栈，逐层拆包，每层去掉本层的专有头，上层就会拿到自己的数据。</p>
+<p>但下层的传输过程对于上层是完全“透明”的，上层也不需要关心下层的具体实现细节，所以就 HTTP 层次来看，它不管下层是不是 TCP/IP 协议，看到的只是一个可靠的传输链路，只要把数据加上自己的头，对方就能原样收到。</p>
+<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><ul>
+<li>TCP/IP 分为四层，核心是二层的 IP 和三层的 TCP，HTTP 在第四层；</li>
+<li>OSI 分为七层，基本对应 TCP/IP，TCP 在第四层，HTTP 在第七层；OSI 可以映射到 TCP/IP，但这期间一、五、六层消失了；</li>
+<li>日常交流的时候我们通常使用 OSI 模型，用四层、七层等术语；</li>
+<li>HTTP 利用 TCP/IP 协议栈逐层打包再拆包，实现了数据传输，但下面的细节并不可见。</li>
+</ul>
+<p>辨别四层和七层比较好的（但不是绝对的）小窍门，“<strong>两个凡是</strong>”：<p style="color: Orange;">凡是由操作系统负责处理的就是四层或四层以下，否则，凡是需要由应用程序（也就是你自己写代码）负责处理的就是七层。</p></p>
+<hr>
 <ul>
-<li>重写<br>基类方法中使用virtual关键字声明的方法和派生类中使用override关键字声明的方法名称相同，参数列表也相同，就是基类方法和派生类方法的签名相同，实现了派生类重写基类中的同名方法。</li>
-<li>隐藏<br>基类中的方法不声明为virtual（默认为非虚方法），在派生类中声明与基类同名时，需使用new关键字，以隐藏基类同名方法。</li>
+<li><p>“二层转发”“三层路由”的理解？</p>
+<ul>
+<li>二层转发：设备工作在链路层，帧在经过交换机设备时，检查帧的头部信息，拿到目标mac地址，进行本地转发和广播</li>
+<li>三层路由：设备工作在ip层，报文经过有路由功能的设备时，设备分析报文中的头部信息，拿到ip地址，根据网段范围，进行本地转发或选择下一个网关</li>
 </ul>
-<p><strong>示例：</strong></p>
-<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">class Father
-&#123;
-	...
-	public virtual void Display() &#x2F;&#x2F; 基类中定义成虚拟方法，使用virtual关键字
-	&#123;
-		&#x2F;&#x2F; Father does sth.
-		...
-	&#125;
-	public void Display(int id)
-	&#123;
-		&#x2F;&#x2F; 若想执行无参方法
-		this.Display();
-
-		&#x2F;&#x2F; 有参方法
-		Console.WriteLine(&quot;id: &quot; + id);
-	&#125;
-&#125;
-class Son: Father
-&#123;
-	...
-	public override void Display() &#x2F;&#x2F; 重写基类的Display方法
-	&#123;
-		&#x2F;&#x2F; do sth.
-		...
-		
-		&#x2F;&#x2F; 若想派生类方法执行后，继续执行基类方法，执行 base.Display() 方法
-		base.Display();
-	&#125;
-	public new void Display(int no) &#x2F;&#x2F; 使用new隐藏基类
-	&#123;
-		&#x2F;&#x2F; do sth.
-		...
-		
-		&#x2F;&#x2F; 若想派生类方法执行后，继续执行基类方法，执行 base.Display() 方法
-		base.Display();
-
-		&#x2F;&#x2F; 隐藏基类自定义方法
-		Console.WriteLine(&quot;no: &quot; + no);
-	&#125;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
+</li>
+<li><p>DNS 协议位于哪一层呢？<br>网络请求的第一步是域名解析，所以工作在应用层</p>
+</li>
+<li><p>CDN 工作在哪一层？<br>应用层</p>
+</li>
+</ul>
 
                 
             </div>
@@ -610,7 +608,7 @@ class Son: Father
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://jeayk.github.io/2020/04/13/c-xue-xi-bi-ji-duo-tai-du-zi-c-cong-ru-men-dao-jing-tong-di-2-ban/">https://jeayk.github.io/2020/04/13/c-xue-xi-bi-ji-duo-tai-du-zi-c-cong-ru-men-dao-jing-tong-di-2-ban/</a>
+                    <a href="https://jeayk.github.io/2022/03/09/http-po-bing-3-si-ceng-yu-qi-ceng-shi-shi-me/">https://jeayk.github.io/2022/03/09/http-po-bing-3-si-ceng-yu-qi-ceng-shi-shi-me/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -648,8 +646,8 @@ class Son: Father
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-                                    <span class="chip bg-color">C#学习笔记</span>
+                                <a href="/tags/HTTP/">
+                                    <span class="chip bg-color">HTTP</span>
                                 </a>
                             
                         </div>
@@ -823,17 +821,18 @@ class Son: Father
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
             <div class="card">
-                <a href="/2020/04/14/c-xue-xi-bi-ji-jie-kou-du-zi-c-cong-ru-men-dao-jing-tong-di-2-ban/">
+                <a href="/2022/03/09/http-po-bing-3-si-ceng-yu-qi-ceng-shi-shi-me/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="C#学习笔记--接口（读自C#从入门到精通 第2版）">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="http破冰-3. 四层与七层是什么？">
                         
-                        <span class="card-title">C#学习笔记--接口（读自C#从入门到精通 第2版）</span>
+                        <span class="card-title">http破冰-3. 四层与七层是什么？</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -843,26 +842,27 @@ class Son: Father
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-04-14
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-09
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E8%AF%BB%E8%87%AAC-%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A-%E7%AC%AC2%E7%89%88/" class="post-category">
-                                    读自C#从入门到精通 第2版
+                            <a href="/categories/HTTP%E7%A0%B4%E5%86%B0/" class="post-category">
+                                    HTTP破冰
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-                        <span class="chip bg-color">C#学习笔记</span>
+                    <a href="/tags/HTTP/">
+                        <span class="chip bg-color">HTTP</span>
                     </a>
                     
                 </div>
@@ -876,13 +876,13 @@ class Son: Father
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/04/10/c-xue-xi-bi-ji-shu-ju-lei-xing-xiang-guan-dai-ma-bi-ji-du-zi-c-cong-ru-men-dao-jing-tong-di-2-ban/">
+                <a href="/2022/03/07/http-po-bing-2-yu-http-xiang-guan-de-gai-nian-yu-xie-yi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="C#学习笔记-数据类型相关代码笔记（读自C#从入门到精通 第2版）">
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="http破冰-2. 与HTTP相关的概念与协议">
                         
-                        <span class="card-title">C#学习笔记-数据类型相关代码笔记（读自C#从入门到精通 第2版）</span>
+                        <span class="card-title">http破冰-2. 与HTTP相关的概念与协议</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -893,14 +893,14 @@ class Son: Father
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-10
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-07
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E8%AF%BB%E8%87%AAC-%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A-%E7%AC%AC2%E7%89%88/" class="post-category">
-                                    读自C#从入门到精通 第2版
+                            <a href="/categories/HTTP%E7%A0%B4%E5%86%B0/" class="post-category">
+                                    HTTP破冰
                                 </a>
                             
                             
@@ -910,8 +910,8 @@ class Son: Father
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-                        <span class="chip bg-color">C#学习笔记</span>
+                    <a href="/tags/HTTP/">
+                        <span class="chip bg-color">HTTP</span>
                     </a>
                     
                 </div>
