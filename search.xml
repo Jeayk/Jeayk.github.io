@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>算法与数据结构-1. 数组</title>
+      <link href="/2022/03/11/suan-fa-yu-shu-ju-jie-gou-1-shu-zu/"/>
+      <url>/2022/03/11/suan-fa-yu-shu-ju-jie-gou-1-shu-zu/</url>
+      
+        <content type="html"><![CDATA[<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>数组（Array）是一种<strong>线性表数据结构</strong>，它用一组<span style="color: orange">连续的内存空间</span>,来存储一组<span style="color: orange">具有相同类型</span>的数据。 </p><h4 id="如何实现随机访问？"><a href="#如何实现随机访问？" class="headerlink" title="如何实现随机访问？"></a>如何实现随机访问？</h4><ul><li>线性表<br><strong>线性表：数据只有前后关系</strong><br>线性表就是数据排成像一条线一样的结构。每个线性表上的数据最多只有前和后两个方向。数组、链表、队列、栈等都是线性表结构。</li></ul><p><img src="image-20220311010714056.png"></p><p><strong>非线性表</strong>，比如二叉树、堆、图等。之所以叫非线性，是因为，在非线性表中，数据之间并不是简单的前后关系。</p><p><img src="image-20220311010842310.png"></p><ul><li>连续的内存空间和相同类型的数据<br>因为这两个限制，它才有了“<strong>随机访问</strong>”的特性。但有利就有弊，这两个限制也让数组的很多操作变得非常低效，比如要想在数组中删除、插入一个数据，为了保证连续性，就需要做大量的数据搬移工作。</li></ul>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>http破冰4. 域名里的门道</title>
       <link href="/2022/03/10/http-po-bing-4-yu-ming-li-de-men-dao/"/>
       <url>/2022/03/10/http-po-bing-4-yu-ming-li-de-men-dao/</url>
