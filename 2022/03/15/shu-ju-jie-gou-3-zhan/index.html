@@ -4,9 +4,10 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="int.Parse与int.TryParse的区别, 积跬步以至千里">
-    <meta name="description" content="Convert.ToInt32int.Parse（Int32.Parse）int.TryParse(int)四者都可以解释为将类型转换为 int，那它们的区别是什么呢？
-Convert.ToInt32 与 int.Parse 较为类似，实际">
+    <meta name="keywords" content="数据结构-3. 栈, 积跬步以至千里">
+    <meta name="description" content="理解栈是一种“操作受限”的线性表，只允许在一端插入和删除数据，后进者先出，先进者后出。
+使用情况：当某个数据集合只涉及在一端插入和删除数据，并且满足后进先出、先进后出的特性。
+如何实现一个栈顺序栈-基于数组实现class ArrayStac">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +19,7 @@ Convert.ToInt32 与 int.Parse 较为类似，实际">
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>int.Parse与int.TryParse的区别 | 积跬步以至千里</title>
+    <title>数据结构-3. 栈 | 积跬步以至千里</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -310,12 +311,12 @@ Convert.ToInt32 与 int.Parse 较为类似，实际">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">int.Parse与int.TryParse的区别</h1>
+                    <h1 class="description center-align post-title">数据结构-3. 栈</h1>
                 </div>
             </div>
         </div>
@@ -431,8 +432,8 @@ Convert.ToInt32 与 int.Parse 较为类似，实际">
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-                                <span class="chip bg-color">C#学习笔记</span>
+                            <a href="/tags/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+                                <span class="chip bg-color">算法与数据结构</span>
                             </a>
                         
                     </div>
@@ -443,8 +444,8 @@ Convert.ToInt32 与 int.Parse 较为类似，实际">
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E8%AF%BB%E8%87%AAC-%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A-%E7%AC%AC2%E7%89%88/" class="post-category">
-                                读自C#从入门到精通 第2版
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="post-category">
+                                数据结构
                             </a>
                         
                     </div>
@@ -456,28 +457,28 @@ Convert.ToInt32 与 int.Parse 较为类似，实际">
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2020-05-13
+                    2022-03-15
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2022-01-04
+                    2022-03-15
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    229
+                    562
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    1 Min
+                    2 Min
                 </div>
                 
 
@@ -500,29 +501,161 @@ Convert.ToInt32 与 int.Parse 较为类似，实际">
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p><strong>Convert.ToInt32<br>int.Parse（Int32.Parse）<br>int.TryParse<br>(int)</strong><br>四者都可以解释为将类型转换为 int，那它们的区别是什么呢？</p>
-<p>Convert.ToInt32 与 int.Parse 较为类似，实际上 Convert.ToInt32 内部调用了 int.Parse：</p>
-<ul>
-<li>Convert.ToInt32 参数为 null 时，返回 0；</li>
-<li>int.Parse 参数为 null 时，抛出异常。  </li>
-<li>Convert.ToInt32 参数为 “” 时，抛出异常；</li>
-<li>int.Parse 参数为 “” 时，抛出异常。 </li>
-<li>Convert.ToInt32 可以转换的类型较多；</li>
-<li>int.Parse 只能转换数字类型的字符串。<br>int.TryParse 与 int.Parse 又较为类似，但它不会产生异常，转换成功返回 true，转换失败返回 false。最后一个参数为输出值，如果转换失败，输出值为 0。<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">int m; 
-if(int.TryParse(&quot;2&quot;),out m)
-&#123;
-...
-&#125;
-&#x2F;&#x2F; 返回true ,运行&#123;&#125;内，并给m赋值为2；
+                <h4 id="理解"><a href="#理解" class="headerlink" title="理解"></a>理解</h4><p>栈是一种“操作受限”的线性表，只允许在一端插入和删除数据，后进者先出，先进者后出。</p>
+<p><strong>使用情况</strong>：当某个数据集合只涉及在一端插入和删除数据，并且满足后进先出、先进后出的特性。</p>
+<h4 id="如何实现一个栈"><a href="#如何实现一个栈" class="headerlink" title="如何实现一个栈"></a>如何实现一个栈</h4><h5 id="顺序栈-基于数组实现"><a href="#顺序栈-基于数组实现" class="headerlink" title="顺序栈-基于数组实现"></a>顺序栈-基于数组实现</h5><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">class</span> <span class="token class-name">ArrayStack</span><span class="token punctuation">&#123;</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">n</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token comment">// 数组: items, 元素个数: count, 数组大小: n</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>items <span class="token operator">=</span> <span class="token punctuation">[</span>n<span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// 数组</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>count <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token comment">// 元素个数</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>n <span class="token operator">=</span> n <span class="token comment">// 数组长度</span>
+  <span class="token punctuation">&#125;</span>
 
- 
+  <span class="token comment">// 入栈操作</span>
+  <span class="token function">push</span><span class="token punctuation">(</span><span class="token parameter">item</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token comment">// 如果定义了数组长度，数组空间不够直接返回false</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>count <span class="token operator">===</span> <span class="token keyword">this</span><span class="token punctuation">.</span>n<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">return</span> <span class="token boolean">false</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token comment">// 将item放到count位置，count++</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>items<span class="token punctuation">[</span><span class="token keyword">this</span><span class="token punctuation">.</span>count<span class="token punctuation">]</span> <span class="token operator">=</span> item<span class="token punctuation">;</span>
+    <span class="token operator">++</span><span class="token keyword">this</span><span class="token punctuation">.</span>count<span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token boolean">true</span>
+  <span class="token punctuation">&#125;</span>
 
-if(int.TryParse(&quot;ddd&quot;),out m)
-&#123;
-...
-&#125;
-&#x2F;&#x2F; 返回false,不运行if&#123;&#125;内，并给m赋值为0；<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
-</ul>
+  <span class="token comment">// 出栈操作</span>
+  <span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token comment">// 栈为空，直接返回null</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>count <span class="token operator">===</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">return</span> <span class="token keyword">null</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token comment">// 返回下标为count-1的数组元素，并且栈中元素个数count减一</span>
+    <span class="token keyword">const</span> tmp <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>items<span class="token punctuation">[</span><span class="token keyword">this</span><span class="token punctuation">.</span>count <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>items<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token operator">--</span><span class="token keyword">this</span><span class="token punctuation">.</span>count<span class="token punctuation">;</span>
+    <span class="token keyword">return</span> tmp
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 测试</span>
+<span class="token keyword">let</span> a <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayStack</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+a<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// ArrayStack &#123; items: [1], count: 1, n: 3 &#125;</span>
+a<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// ArrayStack &#123; items: [1, 2], count: 2, n: 3 &#125;</span>
+a<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+a<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// ArrayStack &#123; items: [1, 2, 3], count: 3, n: 3 &#125;</span>
+a<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// ArrayStack &#123; items: [1, 2], count: 2, n: 3 &#125;</span>
+a<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// ArrayStack &#123; items: [1], count: 1, n: 3 &#125;</span>
+a<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// ArrayStack &#123; items: [], count: 0, n: 3 &#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="链式栈-基于链表实现"><a href="#链式栈-基于链表实现" class="headerlink" title="链式栈-基于链表实现"></a>链式栈-基于链表实现</h5><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">class</span> <span class="token class-name">Node</span> <span class="token punctuation">&#123;</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">element</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>element <span class="token operator">=</span> element<span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>next <span class="token operator">=</span> <span class="token keyword">null</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">StackBasedLinkedList</span>  <span class="token punctuation">&#123;</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>top <span class="token operator">=</span> <span class="token keyword">null</span>
+  <span class="token punctuation">&#125;</span>
+
+  <span class="token comment">// 入栈操作</span>
+  <span class="token function">push</span><span class="token punctuation">(</span><span class="token parameter">value</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">const</span> node <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Node</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>top <span class="token operator">===</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>top <span class="token operator">=</span> node
+    <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+      node<span class="token punctuation">.</span>next <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>top<span class="token punctuation">;</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>top <span class="token operator">=</span> node
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span>
+
+  <span class="token comment">// 出栈操作</span>
+  <span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>top <span class="token operator">===</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span>
+    <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">const</span> value <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>top<span class="token punctuation">.</span>element<span class="token punctuation">;</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>top <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>top<span class="token punctuation">.</span>next<span class="token punctuation">;</span>
+      <span class="token keyword">return</span> value
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 测试</span>
+<span class="token keyword">let</span> b <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">StackBasedLinkedList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+b<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">/**
+ * StackBasedLinkedList &#123;
+ *  top: Node &#123;
+ *   element: 1,
+ *   next: null
+ *  &#125;
+ * &#125;
+ * */</span>
+
+b<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">/**
+ * StackBasedLinkedList &#123;
+ *  top: Node &#123;
+ *   element: 2,
+ *   next: Node &#123;
+ *    element: 1,
+ *    next: null
+ *   &#125;
+ *  &#125;
+ * &#125;
+ * */</span>
+
+b<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">/**
+ * StackBasedLinkedList &#123;
+ *  top: Node &#123;
+ *   element: 3,
+ *   next: Node &#123;
+ *    element: 2,
+ *    next: [Node]
+ *   &#125;
+ *  &#125;
+ * &#125;
+ * */</span>
+
+b<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">/**
+ * StackBasedLinkedList &#123;
+ *  top: Node &#123;
+ *   element: 2,
+ *   next: Node &#123;
+ *    element: 1,
+ *    next: null
+ *   &#125;
+ *  &#125;
+ * &#125;
+ * */</span>
+
+b<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">/**
+ * StackBasedLinkedList &#123;
+ *  top: Node &#123;
+ *   element: 1,
+ *   next: null
+ *  &#125;
+ * &#125;
+ * */</span>
+
+b<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// StackBasedLinkedList &#123; top: null &#125;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>b<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// -1</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
                 
             </div>
@@ -549,7 +682,7 @@ if(int.TryParse(&quot;ddd&quot;),out m)
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://jeayk.github.io/2020/05/13/int-parse-yu-int-tryparse-de-qu-bie/">https://jeayk.github.io/2020/05/13/int-parse-yu-int-tryparse-de-qu-bie/</a>
+                    <a href="https://jeayk.github.io/2022/03/15/shu-ju-jie-gou-3-zhan/">https://jeayk.github.io/2022/03/15/shu-ju-jie-gou-3-zhan/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -587,8 +720,8 @@ if(int.TryParse(&quot;ddd&quot;),out m)
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-                                    <span class="chip bg-color">C#学习笔记</span>
+                                <a href="/tags/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+                                    <span class="chip bg-color">算法与数据结构</span>
                                 </a>
                             
                         </div>
@@ -762,17 +895,18 @@ if(int.TryParse(&quot;ddd&quot;),out m)
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
             <div class="card">
-                <a href="/2020/05/13/c-xue-xi-bi-ji-chang-yong-fei-fan-xing-ji-he-lei-hashtable-lei-du-zi-c-cong-ru-men-dao-jing-tong-di-2-ban/">
+                <a href="/2022/03/15/shu-ju-jie-gou-3-zhan/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="C#学习笔记-常用非泛型集合类-Hashtable类（读自C#从入门到精通 第2版）">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="数据结构-3. 栈">
                         
-                        <span class="card-title">C#学习笔记-常用非泛型集合类-Hashtable类（读自C#从入门到精通 第2版）</span>
+                        <span class="card-title">数据结构-3. 栈</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -782,26 +916,27 @@ if(int.TryParse(&quot;ddd&quot;),out m)
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-05-13
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-15
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E8%AF%BB%E8%87%AAC-%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A-%E7%AC%AC2%E7%89%88/" class="post-category">
-                                    读自C#从入门到精通 第2版
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="post-category">
+                                    数据结构
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-                        <span class="chip bg-color">C#学习笔记</span>
+                    <a href="/tags/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+                        <span class="chip bg-color">算法与数据结构</span>
                     </a>
                     
                 </div>
@@ -815,13 +950,13 @@ if(int.TryParse(&quot;ddd&quot;),out m)
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/05/11/c-xue-xi-bi-ji-chang-yong-fei-fan-xing-ji-he-lei-arraylist-lei-du-zi-c-cong-ru-men-dao-jing-tong-di-2-ban/">
+                <a href="/2022/03/14/shu-ju-jie-gou-2-lian-biao/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="-常用非泛型集合类-ArrayList类">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="数据结构-2. 链表">
                         
-                        <span class="card-title">-常用非泛型集合类-ArrayList类</span>
+                        <span class="card-title">数据结构-2. 链表</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -832,14 +967,14 @@ if(int.TryParse(&quot;ddd&quot;),out m)
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-11
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-14
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E8%AF%BB%E8%87%AAC-%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A-%E7%AC%AC2%E7%89%88/" class="post-category">
-                                    读自C#从入门到精通 第2版
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="post-category">
+                                    数据结构
                                 </a>
                             
                             
@@ -849,8 +984,8 @@ if(int.TryParse(&quot;ddd&quot;),out m)
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-                        <span class="chip bg-color">C#学习笔记</span>
+                    <a href="/tags/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+                        <span class="chip bg-color">算法与数据结构</span>
                     </a>
                     
                 </div>
