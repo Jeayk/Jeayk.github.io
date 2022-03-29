@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>算法-2.3 选择排序</title>
+      <link href="/2022/03/30/suan-fa-2-3-xuan-ze-pai-xu/"/>
+      <url>/2022/03/30/suan-fa-2-3-xuan-ze-pai-xu/</url>
+      
+        <content type="html"><![CDATA[<h4 id="选择排序（Selection-Sort）"><a href="#选择排序（Selection-Sort）" class="headerlink" title="选择排序（Selection Sort）"></a>选择排序（Selection Sort）</h4><p>选择排序算法的实现思路有点类似插入排序，也分<strong>已排序区间</strong>和<strong>未排序区间</strong>。但是选择排序每次会从<strong>未排序区间</strong>中找到==最小的元素==，将其放到<strong>已排序区间</strong>的==末尾==。</p><p><img src="image-20220330001458974.png"></p><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">selectionSort</span><span class="token punctuation">(</span><span class="token parameter">arr</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>    <span class="token keyword">const</span> n <span class="token operator">=</span> arr<span class="token punctuation">.</span>length    <span class="token keyword">if</span> <span class="token punctuation">(</span>n <span class="token operator">&lt;</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token keyword">return</span>    <span class="token comment">// 需要注意这里的边界，因为需要在内存进行 i + 1后的循环，所以外层需要 n - 1</span>    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>        <span class="token keyword">let</span> minIndex <span class="token operator">=</span> i        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> j <span class="token operator">=</span> i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>            <span class="token keyword">if</span> <span class="token punctuation">(</span>arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">&lt;</span> arr<span class="token punctuation">[</span>minIndex<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>                minIndex <span class="token operator">=</span> j <span class="token comment">// 找到整个数组的最小值</span>            <span class="token punctuation">&#125;</span>        <span class="token punctuation">&#125;</span>        <span class="token keyword">const</span> temp <span class="token operator">=</span> arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span>        arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> arr<span class="token punctuation">[</span>minIndex<span class="token punctuation">]</span>        arr<span class="token punctuation">[</span>minIndex<span class="token punctuation">]</span> <span class="token operator">=</span> temp    <span class="token punctuation">&#125;</span>    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><ul><li><p>选择排序是原地排序算法</p><p>选择排序空间复杂度为 O(1)，是一种原地排序算法。选择排序的最好情况时间复杂度、最坏情况和平均情况时间复杂度都为 O(n²)。</p></li><li><p>选择排序不是稳定的排序算法</p><p>选择排序每次都要找剩余未排序元素中的最小值，并和前面的元素交换位置，这样破坏了稳定性。</p><p>例： 5，8，5，2，9 这样一组数据，使用选择排序算法来排序的话，第一次找到最小元素 2，与第一个 5 交换位置，那第一个 5 和中间的 5 顺序就变了，所以就不稳定了。</p><h4 id="对比"><a href="#对比" class="headerlink" title="对比"></a>对比</h4><p><img src="image-20220330001511776.png"></p></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 算法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 算法与数据结构 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>算法-2.2 插入排序</title>
       <link href="/2022/03/28/suan-fa-2-2-cha-ru-pai-xu/"/>
       <url>/2022/03/28/suan-fa-2-2-cha-ru-pai-xu/</url>
@@ -54,9 +79,9 @@
     
     
     <entry>
-      <title>算法-2.排序</title>
-      <link href="/2022/03/23/suan-fa-2-pai-xu/"/>
-      <url>/2022/03/23/suan-fa-2-pai-xu/</url>
+      <title>算法-2-0-排序</title>
+      <link href="/2022/03/23/suan-fa-2-0-pai-xu/"/>
+      <url>/2022/03/23/suan-fa-2-0-pai-xu/</url>
       
         <content type="html"><![CDATA[<h3 id="如何分析一个“排序算法”？"><a href="#如何分析一个“排序算法”？" class="headerlink" title="如何分析一个“排序算法”？"></a>如何分析一个“排序算法”？</h3><h4 id="一、排序算法的执行效率"><a href="#一、排序算法的执行效率" class="headerlink" title="一、排序算法的执行效率"></a><span style="color: orange;">一、排序算法的执行效率</span></h4><h5 id="1-最好情况、最坏情况、平均情况时间复杂度"><a href="#1-最好情况、最坏情况、平均情况时间复杂度" class="headerlink" title="1. 最好情况、最坏情况、平均情况时间复杂度"></a>1. 最好情况、最坏情况、平均情况时间复杂度</h5><p>有些排序算法会区分最好情况、最坏情况、平均情况下的时间复杂度;对于要排序的数据，有的接近有序，有的完全无序。有序度不同的数据，对于排序的执行时间肯定是有影响的，需要知道排序算法在不同数据下的性能表现。</p><h5 id="2-时间复杂度的系数、常数-、低阶"><a href="#2-时间复杂度的系数、常数-、低阶" class="headerlink" title="2. 时间复杂度的系数、常数 、低阶"></a>2. 时间复杂度的系数、常数 、低阶</h5><p>时间复杂度反映的是数据规模 n 很大的时候的一个增长趋势，所以它表示的时候会忽略系数、常数、低阶。但是实际的软件开发中，排序的可能是 10 个、100 个、1000 个这样规模很小的数据，所以，在对同一阶时间复杂度的排序算法性能对比的时候，就要把系数、常数、低阶也考虑进来。</p><h5 id="3-比较次数和交换（或移动）次数"><a href="#3-比较次数和交换（或移动）次数" class="headerlink" title="3. 比较次数和交换（或移动）次数"></a>3. 比较次数和交换（或移动）次数</h5><h4 id="二、排序算法的内存消耗"><a href="#二、排序算法的内存消耗" class="headerlink" title="二、排序算法的内存消耗"></a><span style="color: orange;">二、排序算法的内存消耗</span></h4><p>算法的内存消耗可以通过空间复杂度来衡量，排序算法也不例外。不过，针对排序算法的空间复杂度，还引入了一个新的概念，原地排序（Sorted in place）。原地排序算法，就是特指空间复杂度是 O(1) 的排序算法。</p><h4 id="三、排序算法的稳定性"><a href="#三、排序算法的稳定性" class="headerlink" title="三、排序算法的稳定性"></a><span style="color: orange;">三、排序算法的稳定性</span></h4><p>仅仅用执行效率和内存消耗来衡量排序算法的好坏是不够的。针对排序算法，还有一个重要的度量指标，稳定性。这个概念是说，如果待排序的序列中存在值相等的元素，经过排序之后，相等元素之间原有的先后顺序不变。</p><p>比如将数据 2, 3, 6, 5, 3 按排序后就是 2, 3, 3, 5, 6 。</p><p>这组数据里有两个 3。经过某种排序算法排序之后，如果两个 3 的前后顺序没有改变，那就把这种排序算法叫作<strong>稳定的排序算法</strong>；如果前后顺序发生变化，那对应的排序算法就叫作<strong>不稳定的排序算法</strong>。</p>]]></content>
       

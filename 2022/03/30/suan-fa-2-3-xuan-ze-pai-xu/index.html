@@ -4,10 +4,10 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="作用域与闭包-1. 理解词法作用域和动态作用域, 积跬步以至千里">
-    <meta name="description" content="作用域作用域是指代码中定义变量的区域。作用域规定了当前执行代码对变量的访问权限。javascript采用词法作用域（lexical scoping），也就是静态作用域。
-定义
-词法作用域（静态作用域）：函数的作用域在函数定义时就已经决定了。">
+    <meta name="keywords" content="算法-2.3 选择排序, 积跬步以至千里">
+    <meta name="description" content="选择排序（Selection Sort）选择排序算法的实现思路有点类似插入排序，也分已排序区间和未排序区间。但是选择排序每次会从未排序区间中找到==最小的元素==，将其放到已排序区间的==末尾==。
+
+function selectionS">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,7 +19,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>作用域与闭包-1. 理解词法作用域和动态作用域 | 积跬步以至千里</title>
+    <title>算法-2.3 选择排序 | 积跬步以至千里</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -311,12 +311,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">作用域与闭包-1. 理解词法作用域和动态作用域</h1>
+                    <h1 class="description center-align post-title">算法-2.3 选择排序</h1>
                 </div>
             </div>
         </div>
@@ -432,8 +432,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Javascript%E5%9F%BA%E7%A1%80/">
-                                <span class="chip bg-color">Javascript基础</span>
+                            <a href="/tags/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+                                <span class="chip bg-color">算法与数据结构</span>
                             </a>
                         
                     </div>
@@ -444,8 +444,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E4%BD%9C%E7%94%A8%E5%9F%9F%E4%B8%8E%E9%97%AD%E5%8C%85/" class="post-category">
-                                作用域与闭包
+                            <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category">
+                                算法
                             </a>
                         
                     </div>
@@ -457,21 +457,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2022-01-28
+                    2022-03-30
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2022-01-28
+                    2022-03-30
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    333
+                    363
                 </div>
                 
 
@@ -501,34 +501,34 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h4><p>作用域是指代码中定义变量的区域。<br>作用域规定了当前执行代码对变量的访问权限。<br>javascript采用词法作用域（lexical scoping），也就是静态作用域。</p>
-<h5 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h5><ul>
-<li>词法作用域（静态作用域）：函数的作用域在函数定义时就已经决定了。  </li>
-<li>动态作用域：函数的作用域在函数调用的时候才决定。    </li>
-</ul>
-<h6 id="示例："><a href="#示例：" class="headerlink" title="示例："></a>示例：</h6><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> value <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
-
-<span class="token keyword">function</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span>
-
-<span class="token keyword">function</span> <span class="token function">bar</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">var</span> value <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
-    <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span>
-
-<span class="token function">bar</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 1 </span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+                <h4 id="选择排序（Selection-Sort）"><a href="#选择排序（Selection-Sort）" class="headerlink" title="选择排序（Selection Sort）"></a>选择排序（Selection Sort）</h4><p>选择排序算法的实现思路有点类似插入排序，也分<strong>已排序区间</strong>和<strong>未排序区间</strong>。但是选择排序每次会从<strong>未排序区间</strong>中找到==最小的元素==，将其放到<strong>已排序区间</strong>的==末尾==。</p>
+<p><img src="image-20220330001458974.png"></p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">selectionSort</span><span class="token punctuation">(</span><span class="token parameter">arr</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">const</span> n <span class="token operator">=</span> arr<span class="token punctuation">.</span>length
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>n <span class="token operator">&lt;</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token keyword">return</span>
+    <span class="token comment">// 需要注意这里的边界，因为需要在内存进行 i + 1后的循环，所以外层需要 n - 1</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">let</span> minIndex <span class="token operator">=</span> i
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> j <span class="token operator">=</span> i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">&lt;</span> arr<span class="token punctuation">[</span>minIndex<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                minIndex <span class="token operator">=</span> j <span class="token comment">// 找到整个数组的最小值</span>
+            <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token keyword">const</span> temp <span class="token operator">=</span> arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+        arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> arr<span class="token punctuation">[</span>minIndex<span class="token punctuation">]</span>
+        arr<span class="token punctuation">[</span>minIndex<span class="token punctuation">]</span> <span class="token operator">=</span> temp
+    <span class="token punctuation">&#125;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
-<li>js为静态作用域，执行过程为：<br>执行foo函数，先从内部查找变量value是否定义，如果没有，转向作用域链父级寻找，最后返回执行结果，也就是value = 1。</li>
-<li>假设JavaScript采用动态作用域，执行过程为：<br>执行 foo 函数，依然是从 foo 函数内部查找是否有局部变量 value。如果没有，就从调用函数的作用域，也就是 bar 函数内部查找 value 变量，如果还没有，就从调用函数的作用域链父级查找。<h6 id="动态作用域示例"><a href="#动态作用域示例" class="headerlink" title="动态作用域示例"></a>动态作用域示例</h6>bash语言即为动态作用域。下列代码存为test.bash文件，进入目录执行bash test.bash命令，打印的值为 2<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">value<span class="token operator">=</span><span class="token number">1</span>
-<span class="token keyword">function</span> <span class="token function">foo</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    echo $value<span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span>
-<span class="token keyword">function</span> <span class="token function">bar</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    local value<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">;</span>
-    foo<span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span>
-bar<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><p>选择排序是原地排序算法</p>
+<p>选择排序空间复杂度为 O(1)，是一种原地排序算法。选择排序的最好情况时间复杂度、最坏情况和平均情况时间复杂度都为 O(n²)。</p>
+</li>
+<li><p>选择排序不是稳定的排序算法</p>
+<p>选择排序每次都要找剩余未排序元素中的最小值，并和前面的元素交换位置，这样破坏了稳定性。</p>
+<p>例： 5，8，5，2，9 这样一组数据，使用选择排序算法来排序的话，第一次找到最小元素 2，与第一个 5 交换位置，那第一个 5 和中间的 5 顺序就变了，所以就不稳定了。</p>
+<h4 id="对比"><a href="#对比" class="headerlink" title="对比"></a>对比</h4><p><img src="image-20220330001511776.png"></p>
+</li>
 </ul>
 
                 
@@ -556,7 +556,7 @@ bar<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span>
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://jeayk.github.io/2022/01/28/zuo-yong-yu-yu-bi-bao-1-li-jie-ci-fa-zuo-yong-yu-he-dong-tai-zuo-yong-yu/">https://jeayk.github.io/2022/01/28/zuo-yong-yu-yu-bi-bao-1-li-jie-ci-fa-zuo-yong-yu-he-dong-tai-zuo-yong-yu/</a>
+                    <a href="https://jeayk.github.io/2022/03/30/suan-fa-2-3-xuan-ze-pai-xu/">https://jeayk.github.io/2022/03/30/suan-fa-2-3-xuan-ze-pai-xu/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -594,8 +594,8 @@ bar<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span>
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Javascript%E5%9F%BA%E7%A1%80/">
-                                    <span class="chip bg-color">Javascript基础</span>
+                                <a href="/tags/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+                                    <span class="chip bg-color">算法与数据结构</span>
                                 </a>
                             
                         </div>
@@ -769,17 +769,18 @@ bar<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span>
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
             <div class="card">
-                <a href="/2022/01/31/zuo-yong-yu-yu-bi-bao-2-js-zuo-yong-yu-yu-zuo-yong-yu-lian/">
+                <a href="/2022/03/30/suan-fa-2-3-xuan-ze-pai-xu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="作用域与闭包-2. js作用域与作用域链">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="算法-2.3 选择排序">
                         
-                        <span class="card-title">作用域与闭包-2. js作用域与作用域链</span>
+                        <span class="card-title">算法-2.3 选择排序</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -789,26 +790,27 @@ bar<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span>
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-01-31
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-30
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E4%BD%9C%E7%94%A8%E5%9F%9F%E4%B8%8E%E9%97%AD%E5%8C%85/" class="post-category">
-                                    作用域与闭包
+                            <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category">
+                                    算法
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Javascript%E5%9F%BA%E7%A1%80/">
-                        <span class="chip bg-color">Javascript基础</span>
+                    <a href="/tags/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+                        <span class="chip bg-color">算法与数据结构</span>
                     </a>
                     
                 </div>
@@ -822,13 +824,13 @@ bar<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span>
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/01/28/yuan-xing-yu-yuan-xing-lian-6-wei-dai-ma-li-jie-new-cao-zuo-fu/">
+                <a href="/2022/03/28/suan-fa-2-2-cha-ru-pai-xu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="原型与原型链-6. 伪代码理解new操作符">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="算法-2.2 插入排序">
                         
-                        <span class="card-title">原型与原型链-6. 伪代码理解new操作符</span>
+                        <span class="card-title">算法-2.2 插入排序</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -839,14 +841,14 @@ bar<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span>
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-01-28
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-28
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%8E%9F%E5%9E%8B%E4%B8%8E%E5%8E%9F%E5%9E%8B%E9%93%BE/" class="post-category">
-                                    原型与原型链
+                            <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category">
+                                    算法
                                 </a>
                             
                             
@@ -856,8 +858,8 @@ bar<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span>
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Javascript%E5%9F%BA%E7%A1%80/">
-                        <span class="chip bg-color">Javascript基础</span>
+                    <a href="/tags/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+                        <span class="chip bg-color">算法与数据结构</span>
                     </a>
                     
                 </div>
