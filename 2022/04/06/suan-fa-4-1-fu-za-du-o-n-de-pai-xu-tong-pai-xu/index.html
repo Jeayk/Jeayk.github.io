@@ -4,10 +4,9 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="算法-3.1 复杂度O(nlogn)的排序-归并排序, 积跬步以至千里">
-    <meta name="description" content="归并排序（Merge Sort）核心思想如果要排序一个数组，我们先把数组从中间分成前后两部分，然后对前后两部分分别排序，再将排好序的两部分合并在一起，这样整个数组就都有序了。
-
-归并排序使用的是分治思想。分治，顾名思义，就是分而治之，将一个">
+    <meta name="keywords" content="算法-4.1复杂度O(n)的排序-桶排序, 积跬步以至千里">
+    <meta name="description" content="桶排序（Bucket sort）桶排序，顾名思义，会用到“桶”，核心思想是将要排序的数据分到几个有序的桶里，每个桶里的数据再单独进行排序。桶内排完序之后，再把每个桶里的数据按照顺序依次取出，组成的序列就是有序的了。
+桶排序的时间复杂度为什么">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,7 +18,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>算法-3.1 复杂度O(nlogn)的排序-归并排序 | 积跬步以至千里</title>
+    <title>算法-4.1复杂度O(n)的排序-桶排序 | 积跬步以至千里</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -311,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">算法-3.1 复杂度O(nlogn)的排序-归并排序</h1>
+                    <h1 class="description center-align post-title">算法-4.1复杂度O(n)的排序-桶排序</h1>
                 </div>
             </div>
         </div>
@@ -457,28 +456,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2022-03-31
+                    2022-04-06
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2022-03-31
+                    2022-04-06
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    1.9k
+                    1.4k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    7 Min
+                    5 Min
                 </div>
                 
 
@@ -501,142 +500,99 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="归并排序（Merge-Sort）"><a href="#归并排序（Merge-Sort）" class="headerlink" title="归并排序（Merge Sort）"></a>归并排序（Merge Sort）</h4><h5 id="核心思想"><a href="#核心思想" class="headerlink" title="核心思想"></a>核心思想</h5><p>如果要排序一个数组，我们先把数组从中间分成前后两部分，然后对前后两部分分别排序，再将排好序的两部分合并在一起，这样整个数组就都有序了。</p>
-<p><img src="image-20220331003948693.png"></p>
-<p>归并排序使用的是<strong>分治思想</strong>。分治，顾名思义，就是分而治之，将一个大问题分解成小的子问题来解决。小的子问题解决了，大问题也就解决了。</p>
-<p>分治算法一般都是用递归来实现的。<strong>分治是一种解决问题的处理思想，递归是一种编程技巧。</strong></p>
-<p><strong>用递归代码来实现归并排序</strong></p>
-<pre class="line-numbers language-none"><code class="language-none">&#x2F;&#x2F; 递推公式
-
-递推公式：
-merge_sort(p…r) &#x3D; merge(merge_sort(p…q), merge_sort(q+1…r))
-
-终止条件：
-p &gt;&#x3D; r 不用再继续分解<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>merge_sort(p…r) 表示，给下标从 p 到 r 之间的数组排序。将这个排序问题转化为了两个子问题，merge_sort(p…q) 和 merge_sort(q+1…r)，其中下标 q 等于 p 和 r 的中间位置，也就是 (p+r)/2。当下标从 p 到 q 和从 q+1 到 r 这两个子数组都排好序之后，我们再将两个有序的子数组合并在一起，这样下标从 p 到 r 之间的数据就也排好序了。</p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 伪代码理解</span>
-
-<span class="token comment">// 归并排序算法，A为数组，n为数组大小</span>
-<span class="token function">merge_sort</span><span class="token punctuation">(</span><span class="token parameter"><span class="token constant">A</span></span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">const</span> n <span class="token operator">=</span> <span class="token constant">A</span><span class="token punctuation">.</span>length
-    <span class="token function">merge_sort_c</span><span class="token punctuation">(</span><span class="token constant">A</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> n <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span>
+                <h4 id="桶排序（Bucket-sort）"><a href="#桶排序（Bucket-sort）" class="headerlink" title="桶排序（Bucket sort）"></a>桶排序（Bucket sort）</h4><p>桶排序，顾名思义，会用到“桶”，核心思想是将要排序的数据分到几个有序的桶里，每个桶里的数据再单独进行排序。桶内排完序之后，再把每个桶里的数据按照顺序依次取出，组成的序列就是有序的了。<br><img src="image-20220406215000617.png"></p>
+<p><strong>桶排序的时间复杂度为什么是 O(n)？</strong></p>
+<p>如果要排序的数据有 n 个，把它们均匀地划分到 m 个桶内，每个桶里就有 k=n/m 个元素。每个桶内部使用快速排序，时间复杂度为 O(k * logk)。m 个桶排序的时间复杂度就是 O(m * k * logk)，因为 k=n/m，所以整个桶排序的时间复杂度就是 O(n*log(n/m))。当桶的个数 m 接近数据个数 n 时，log(n/m) 就是一个非常小的常量，这个时候桶排序的时间复杂度接近 O(n)。</p>
+<p><strong>桶排序能否替代其他排序算法？</strong></p>
+<p>不能，因为桶排序对要排序数据的要求是非常苛刻的。</p>
+<p>首先，要排序的数据需要很容易就能划分成 m 个桶，并且，桶与桶之间有着天然的大小顺序。这样每个桶内的数据都排序完之后，桶与桶之间的数据不需要再进行排序。</p>
+<p>其次，数据在各个桶之间的分布是比较均匀的。如果数据经过桶的划分之后，有些桶里的数据非常多，有些非常少，很不平均，那桶内数据排序的时间复杂度就不是常量级了。在极端情况下，如果数据都被划分到一个桶里，那就退化为 O(nlogn) 的排序算法了。</p>
+<h5 id="桶排序比较适合用在外部排序中"><a href="#桶排序比较适合用在外部排序中" class="headerlink" title="桶排序比较适合用在外部排序中"></a>桶排序比较适合用在外部排序中</h5><p>所谓的外部排序就是数据存储在外部磁盘中，数据量比较大，内存有限，无法将数据全部加载到内存中。</p>
+<hr>
+<p><span style="color: orange;">示例：</span> 有 10GB 的订单数据，希望按订单金额（假设金额都是正整数）进行排序，但内存有限，只有几百 MB，没办法一次性把 10GB 的数据都加载到内存中。这个时候该怎么办呢？如何借助桶排序的处理思想来解决这个问题。</p>
+<p>可以先扫描一遍文件，看订单金额所处的数据范围。假设经过扫描之后得到，订单金额最小是 1 元，最大是 10 万元。将所有订单根据金额划分到 100 个桶里，第一个桶存储金额在 1 元到 1000 元之内的订单，第二桶存储金额在 1001 元到 2000 元之内的订单，以此类推。每一个桶对应一个文件，并且按照金额范围的大小顺序编号命名（00，01，02…99）。</p>
+<p>理想的情况下，如果订单金额在 1 到 10 万之间均匀分布，那订单会被均匀划分到 100 个文件中，每个小文件中存储大约 100MB 的订单数据，就可以将这 100 个小文件依次放到内存中，用快排来排序。等所有文件都排好序之后，只需要按照文件编号，从小到大依次读取每个小文件中的订单数据，并将其写入到一个文件中，那这个文件中存储的就是按照金额从小到大排序的订单数据了。</p>
+<p>但是订单金额不一定是均匀分布，针对这些划分之后还是比较大的文件，可以继续划分，比如，订单金额在 1 元到 1000 元之间的比较多，就将这个区间继续划分为 10 个小区间，1 元到 100 元，101 元到 200 元，201 元到 300 元….901 元到 1000 元。如果划分之后，101 元到 200 元之间的订单还是太多，无法一次性读入内存，那就继续再划分，直到所有的文件都能读入内存为止。</p>
+<hr>
+<h5 id="桶排序代码"><a href="#桶排序代码" class="headerlink" title="桶排序代码"></a>桶排序代码</h5><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">/**
+ * 思路：将数组中的数据，按桶进行划分，将相邻的数据划分在同一个桶里
+ * 每个桶用插入排序算法（或者快速排序）进行排序
+ * 最后整合每个桶中的数据
+ * */</span>
+<span class="token keyword">const</span> <span class="token function-variable function">bucketSort</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">arr<span class="token punctuation">,</span> bucketSize <span class="token operator">=</span> <span class="token number">5</span></span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>arr<span class="token punctuation">.</span>length <span class="token operator">&lt;</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token keyword">return</span> arr
+    <span class="token keyword">const</span> buckets <span class="token operator">=</span> <span class="token function">createBuckets</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span> bucketSize<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> <span class="token function">sortBuckets</span><span class="token punctuation">(</span>buckets<span class="token punctuation">)</span>
 <span class="token punctuation">&#125;</span>
 
-<span class="token comment">//递归调用函数</span>
-<span class="token function">merge_sort_c</span><span class="token punctuation">(</span><span class="token parameter"><span class="token constant">A</span><span class="token punctuation">,</span> p<span class="token punctuation">,</span> r</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    <span class="token comment">// 递归终止条件</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>p <span class="token operator">></span> r<span class="token punctuation">)</span> <span class="token keyword">return</span>
-    <span class="token comment">// 取p -> r的中间位置q</span>
-    <span class="token keyword">const</span> q <span class="token operator">=</span> <span class="token punctuation">(</span>p <span class="token operator">+</span> r<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">2</span>
-    <span class="token comment">// 分治递归</span>
-    <span class="token function">merge_sort_c</span><span class="token punctuation">(</span><span class="token constant">A</span><span class="token punctuation">,</span> p<span class="token punctuation">,</span> q<span class="token punctuation">)</span>
-    <span class="token function">merge_sort_c</span><span class="token punctuation">(</span><span class="token constant">A</span><span class="token punctuation">,</span> q <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> r<span class="token punctuation">)</span>
-    <span class="token comment">// 将A[p...q]和A[q+1...r]合并为A[p...r]</span>
-    <span class="token function">merge</span><span class="token punctuation">(</span><span class="token constant">A</span><span class="token punctuation">[</span>p<span class="token operator">...</span>r<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token constant">A</span><span class="token punctuation">[</span>p<span class="token operator">...</span>q<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token constant">A</span><span class="token punctuation">[</span>q<span class="token operator">+</span><span class="token number">1.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>r<span class="token punctuation">]</span><span class="token punctuation">)</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>merge(A[p…r], A[p…q], A[q+1…r]) 函数的作用是将已经有序的 A[p…q]和 A[q+1….r]合并成一个有序的数组，并且放入 A[p….r]。</p>
-<p><strong>实现过程：</strong><br>申请一个临时数组 tmp，大小与 A[p…r]相同。用两个游标 i 和 j，分别指向 A[p…q]和 A[q+1…r]的第一个元素。比较这两个元素 A[i]和 A[j]，如果 A[i]&lt;=A[j]，就把 A[i]放入到临时数组 tmp，并且 i 后移一位，否则将 A[j]放入到数组 tmp，j 后移一位。继续上述比较过程，直到其中一个子数组中的所有数据都放入临时数组中，再把另一个数组中的数据依次加入到临时数组的末尾，这个时候，临时数组中存储的就是两个子数组合并之后的结果了。最后再把临时数组 tmp 中的数据拷贝到原数组 A[p…r]中。</p>
-<p><img src="image-20220331004008283.png"></p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 归并排序</span>
-<span class="token function">merge</span><span class="token punctuation">(</span><span class="token parameter"><span class="token constant">A</span><span class="token punctuation">[</span>p<span class="token operator">...</span>r<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token constant">A</span><span class="token punctuation">[</span>p<span class="token operator">...</span>q<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token constant">A</span><span class="token punctuation">[</span>q<span class="token operator">+</span><span class="token number">1.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>r<span class="token punctuation">]</span></span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">let</span> i <span class="token operator">=</span> p，j <span class="token operator">=</span> q <span class="token operator">+</span> <span class="token number">1</span>，k <span class="token operator">=</span> <span class="token number">0</span> <span class="token comment">// 初始化变量i, j, k</span>
-    <span class="token keyword">const</span> tmp <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">array</span><span class="token punctuation">[</span><span class="token number">0.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>r<span class="token operator">-</span>p<span class="token punctuation">]</span> <span class="token comment">// 申请一个大小跟A[p...r]一样的临时数组</span>
-    <span class="token keyword">while</span> <span class="token punctuation">(</span>i <span class="token operator">&lt;=</span> q <span class="token operator">&amp;&amp;</span> j <span class="token operator">&lt;=</span> r<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token constant">A</span><span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">&lt;=</span> <span class="token constant">A</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        tmp<span class="token punctuation">[</span>k<span class="token operator">++</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token constant">A</span><span class="token punctuation">[</span>i<span class="token operator">++</span><span class="token punctuation">]</span> <span class="token comment">// i++等于i:=i+1</span>
-        <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
-            tmp<span class="token punctuation">[</span>k<span class="token operator">++</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token constant">A</span><span class="token punctuation">[</span>j<span class="token operator">++</span><span class="token punctuation">]</span>
-        <span class="token punctuation">&#125;</span>
-    <span class="token punctuation">&#125;</span>
-  
-    <span class="token comment">// 判断哪个子数组中有剩余的数据</span>
-    <span class="token keyword">let</span> start <span class="token operator">=</span> i，end  q
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>j<span class="token operator">&lt;=</span>r<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        start <span class="token operator">=</span> j
-        end<span class="token operator">=</span>r
-    <span class="token punctuation">&#125;</span>
-  
-    <span class="token comment">// 将剩余的数据拷贝到临时数组tmp</span>
-    <span class="token keyword">while</span> <span class="token punctuation">(</span>start <span class="token operator">&lt;=</span> end<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        tmp<span class="token punctuation">[</span>k<span class="token operator">++</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token constant">A</span><span class="token punctuation">[</span>start<span class="token operator">++</span><span class="token punctuation">]</span>
-    <span class="token punctuation">&#125;</span>
-  
-    <span class="token comment">// 将tmp中的数组拷贝回A[p...r]</span>
-    <span class="token keyword">for</span> <span class="token punctuation">(</span>i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> r<span class="token operator">-</span>p<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token constant">A</span><span class="token punctuation">[</span>p<span class="token operator">+</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> tmp<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><strong>完整js实现代码</strong></p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 归并排序</span>
-<span class="token keyword">function</span> <span class="token function">mergeSort</span><span class="token punctuation">(</span><span class="token parameter">arr</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    <span class="token comment">// 当任意数组分解到只有一个值时返回</span>
+<span class="token keyword">const</span> <span class="token function-variable function">createBuckets</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">arr<span class="token punctuation">,</span> bucketSize</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">let</span> minVal <span class="token operator">=</span> arr<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+    <span class="token keyword">let</span> maxVal <span class="token operator">=</span> arr<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+    <span class="token comment">// 遍历数组，找到数组最小值与数组最大值</span>
     <span class="token keyword">const</span> n <span class="token operator">=</span> arr<span class="token punctuation">.</span>length
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>n <span class="token operator">&lt;=</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token keyword">return</span> arr
-    <span class="token comment">// 获取中间值</span>
-    <span class="token keyword">const</span> mid <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>n <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">)</span>
-    <span class="token comment">// 分割数组</span>
-    <span class="token keyword">const</span> left <span class="token operator">=</span> arr<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> mid<span class="token punctuation">)</span>
-    <span class="token keyword">const</span> right <span class="token operator">=</span> arr<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span>mid<span class="token punctuation">)</span>
-    <span class="token comment">// 递归 分解 合并</span>
-    <span class="token keyword">return</span> <span class="token function">mergeArr</span><span class="token punctuation">(</span><span class="token function">mergeSort</span><span class="token punctuation">(</span>left<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">mergeSort</span><span class="token punctuation">(</span>right<span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token punctuation">&#125;</span>
-
-<span class="token keyword">function</span> <span class="token function">mergeArr</span><span class="token punctuation">(</span><span class="token parameter">left<span class="token punctuation">,</span> right</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">let</span> temp <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
-    <span class="token keyword">let</span> leftIndex <span class="token operator">=</span> <span class="token number">0</span>
-    <span class="token keyword">let</span> rightIndex <span class="token operator">=</span> <span class="token number">0</span>
-    <span class="token keyword">const</span> leftLength <span class="token operator">=</span> left<span class="token punctuation">.</span>length
-    <span class="token keyword">const</span> rightLength <span class="token operator">=</span> right<span class="token punctuation">.</span>length
-    <span class="token comment">// 判断两个数组中元素的大小，依次插入数组</span>
-    <span class="token keyword">while</span> <span class="token punctuation">(</span>leftLength <span class="token operator">></span> leftIndex <span class="token operator">&amp;&amp;</span> rightLength <span class="token operator">></span> rightIndex<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>left<span class="token punctuation">[</span>leftIndex<span class="token punctuation">]</span> <span class="token operator">&lt;=</span> right<span class="token punctuation">[</span>rightIndex<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-            temp<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>left<span class="token punctuation">[</span>leftIndex<span class="token punctuation">]</span><span class="token punctuation">)</span>
-            leftIndex<span class="token operator">++</span>
-        <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
-            temp<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>right<span class="token punctuation">[</span>rightIndex<span class="token punctuation">]</span><span class="token punctuation">)</span>
-            rightIndex<span class="token operator">++</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">&lt;</span> minVal<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            minVal <span class="token operator">=</span> arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+        <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">></span> maxVal<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            maxVal <span class="token operator">=</span> arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
         <span class="token punctuation">&#125;</span>
     <span class="token punctuation">&#125;</span>
-    <span class="token comment">// 合并 剩余数组</span>
-    <span class="token keyword">return</span> temp<span class="token punctuation">.</span><span class="token function">concat</span><span class="token punctuation">(</span>left<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span>leftIndex<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">concat</span><span class="token punctuation">(</span>right<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span>rightIndex<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token comment">// 根据最小值、最大值、桶的大小，计算得到的桶的个数</span>
+    <span class="token keyword">const</span> bucketCount <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span><span class="token punctuation">(</span>maxVal <span class="token operator">-</span> minVal<span class="token punctuation">)</span> <span class="token operator">/</span> bucketSize<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span>
+    <span class="token comment">// 建立一个二维数组，将桶放入buckets中</span>
+    <span class="token keyword">const</span> buckets <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> bucketCount<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        buckets<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token comment">// 计算每一个值应该放在哪一个桶中</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">const</span> bucketIndex <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span><span class="token punctuation">(</span>arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">-</span> minVal<span class="token punctuation">)</span> <span class="token operator">/</span> bucketSize<span class="token punctuation">)</span>
+        buckets<span class="token punctuation">[</span>bucketIndex<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">return</span> buckets
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">const</span> <span class="token function-variable function">sortBuckets</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">buckets</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">const</span> sortedArr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token keyword">const</span> n <span class="token operator">=</span> buckets<span class="token punctuation">.</span>length
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>buckets<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">!==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token function">insertSort</span><span class="token punctuation">(</span>buckets<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
+            sortedArr<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token operator">...</span>buckets<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">return</span> sortedArr
+<span class="token punctuation">&#125;</span>
+
+<span class="token comment">// 插入排序</span>
+<span class="token keyword">const</span> <span class="token function-variable function">insertSort</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">arr</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">const</span> n <span class="token operator">=</span> arr<span class="token punctuation">.</span>length
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>n <span class="token operator">&lt;=</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token keyword">return</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">let</span> value <span class="token operator">=</span> arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+        <span class="token keyword">let</span> j <span class="token operator">=</span> i <span class="token operator">-</span> <span class="token number">1</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>j <span class="token operator">>=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">></span> value<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                arr<span class="token punctuation">[</span>j <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span>
+                j<span class="token operator">--</span>
+            <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+                <span class="token keyword">break</span>
+            <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">&#125;</span>
+        arr<span class="token punctuation">[</span>j <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> value
+    <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span>
 
 <span class="token comment">// 测试</span>
-<span class="token keyword">let</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
 <span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span>
-<span class="token keyword">while</span> <span class="token punctuation">(</span>i <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+<span class="token keyword">let</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token keyword">while</span> <span class="token punctuation">(</span>i <span class="token operator">&lt;</span> <span class="token number">100</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
     arr<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
     i<span class="token operator">++</span>
 <span class="token punctuation">&#125;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'排序前： '</span><span class="token punctuation">,</span> arr<span class="token punctuation">)</span>
 
-<span class="token keyword">const</span> res <span class="token operator">=</span> <span class="token function">mergeSort</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span> <span class="token comment">// [190, 288, 440, 512,521, 602, 680, 692,910, 983]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li><p>归并排序是稳定的排序算法</p>
-<p>  归并排序稳不稳定关键要看 两个有序子数组合并成一个有序数组的merge() 函数。在合并的过程中，如果 A[p…q]和 A[q+1…r]之间有值相同的元素，可以先把 A[p…q]中的元素放入 tmp 数组。这样就保证了值相同的元素，在合并前后的先后顺序不变。所以，归并排序是一个稳定的排序算法。</p>
-</li>
-<li><p>归并排序的时间复杂度<br>定义求解问题 a 的时间是 T(a)，求解问题 b、c 的时间分别是 T(b) 和 T( c)，可以得到这样的递推关系式：</p>
-  <pre class="line-numbers language-none"><code class="language-none">T(a) &#x3D; T(b) + T(c) + K<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>  其中 K 等于将两个子问题 b、c 的结果合并成问题 a 的结果所消耗的时间。</p>
-<p>  <strong>不仅递归求解的问题可以写成递推公式，递归代码的时间复杂度也可以写成递推公式。</strong></p>
-<p>  假设对 n 个元素进行归并排序需要的时间是 T(n)，那分解成两个子数组排序的时间都是 T(n/2)。同时，merge() 函数合并两个有序子数组的时间复杂度是 O(n)。所以，套用前面的公式，归并排序的时间复杂度的计算公式就是：</p>
-  <pre class="line-numbers language-none"><code class="language-none">T(1) &#x3D; C；   n&#x3D;1时，只需要常量级的执行时间，所以表示为C。
-T(n) &#x3D; 2*T(n&#x2F;2) + n； n&gt;1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>  分治计算：</p>
-  <pre class="line-numbers language-none"><code class="language-none">T(n) &#x3D; 2*T(n&#x2F;2) + n
-     &#x3D; 2*(2*T(n&#x2F;4) + n&#x2F;2) + n &#x3D; 4*T(n&#x2F;4) + 2*n
-     &#x3D; 4*(2*T(n&#x2F;8) + n&#x2F;4) + 2*n &#x3D; 8*T(n&#x2F;8) + 3*n
-     &#x3D; 8*(2*T(n&#x2F;16) + n&#x2F;8) + 3*n &#x3D; 16*T(n&#x2F;16) + 4*n
-     ......
-     &#x3D; 2^k * T(n&#x2F;2^k) + k * n
-     ......<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>  可得 <code>T(n) = 2^kT(n/2^k)+kn</code>。当 T(n/2^k)=T(1) 时，也就是 n/2^k=1，可得 k=log2n 。将 k 值代入上面的公式，得到 T(n)=Cn+nlog2n 。如果用大 O 标记法来表示的话，T(n) 就等于 O(nlogn)。所以归并排序的时间复杂度是 O(nlogn)。</p>
-<p>  所以，归并排序的执行效率与要排序的原始数组的有序程度无关，所以其时间复杂度是非常稳定的，不管是最好情况、最坏情况，还是平均情况，时间复杂度都是 **O(nlogn)**。</p>
-</li>
-<li><p>归并排序的空间复杂度<br>  因为归并排序的合并函数，在合并两个有序数组为一个有序数组时，需要借助额外的存储空间，所以归并排序不是原地排序算法。</p>
-<p>  递归代码的空间复杂度并不能像时间复杂度那样累加，尽管每次合并操作都需要申请额外的内存空间，但在合并完成之后，临时开辟的内存空间就被释放掉了。在任意时刻，CPU 只会有一个函数在执行，也就只会有一个临时的内存空间在使用。临时内存空间最大也不会超过 n 个数据的大小，所以空间复杂度是 **O(n)**。</p>
-</li>
-</ul>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'排序后：'</span><span class="token punctuation">,</span> <span class="token function">bucketSort</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
                 
             </div>
@@ -663,7 +619,7 @@ T(n) &#x3D; 2*T(n&#x2F;2) + n； n&gt;1<span aria-hidden="true" class="line-numb
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://jeayk.github.io/2022/03/31/suan-fa-3-1-fu-za-du-o-nlogn-de-pai-xu-gui-bing-pai-xu/">https://jeayk.github.io/2022/03/31/suan-fa-3-1-fu-za-du-o-nlogn-de-pai-xu-gui-bing-pai-xu/</a>
+                    <a href="https://jeayk.github.io/2022/04/06/suan-fa-4-1-fu-za-du-o-n-de-pai-xu-tong-pai-xu/">https://jeayk.github.io/2022/04/06/suan-fa-4-1-fu-za-du-o-n-de-pai-xu-tong-pai-xu/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -876,17 +832,18 @@ T(n) &#x3D; 2*T(n&#x2F;2) + n； n&gt;1<span aria-hidden="true" class="line-numb
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
             <div class="card">
-                <a href="/2022/04/01/suan-fa-3-2-fu-za-du-o-nlogn-de-pai-xu-kuai-su-pai-xu/">
+                <a href="/2022/04/06/suan-fa-4-1-fu-za-du-o-n-de-pai-xu-tong-pai-xu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="算法-3.2 复杂度O(nlogn)的排序-快速排序">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="算法-4.1复杂度O(n)的排序-桶排序">
                         
-                        <span class="card-title">算法-3.2 复杂度O(nlogn)的排序-快速排序</span>
+                        <span class="card-title">算法-4.1复杂度O(n)的排序-桶排序</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -896,9 +853,9 @@ T(n) &#x3D; 2*T(n&#x2F;2) + n； n&gt;1<span aria-hidden="true" class="line-numb
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-04-01
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-06
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -911,6 +868,7 @@ T(n) &#x3D; 2*T(n&#x2F;2) + n； n&gt;1<span aria-hidden="true" class="line-numb
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -929,13 +887,13 @@ T(n) &#x3D; 2*T(n&#x2F;2) + n； n&gt;1<span aria-hidden="true" class="line-numb
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/03/30/suan-fa-2-3-xuan-ze-pai-xu/">
+                <a href="/2022/04/01/suan-fa-3-2-fu-za-du-o-nlogn-de-pai-xu-kuai-su-pai-xu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="算法-2.3 选择排序">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="算法-3.2 复杂度O(nlogn)的排序-快速排序">
                         
-                        <span class="card-title">算法-2.3 选择排序</span>
+                        <span class="card-title">算法-3.2 复杂度O(nlogn)的排序-快速排序</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -946,7 +904,7 @@ T(n) &#x3D; 2*T(n&#x2F;2) + n； n&gt;1<span aria-hidden="true" class="line-numb
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-30
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-01
                             </span>
                         <span class="publish-author">
                             
