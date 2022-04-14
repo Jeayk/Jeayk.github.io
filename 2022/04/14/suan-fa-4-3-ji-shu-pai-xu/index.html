@@ -4,11 +4,12 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="C#接口, 积跬步以至千里">
-    <meta name="description" content="统一的标准-接口接口是面向对象编程的一个重要技术，在C#中负责实现多重继承。一个接口定义一个协定，实现接口的类或结构必须遵守其协定。
-接口的定义
-接口用来描述一种程序的规定，可定义属于任何类或结构的一组相关行为。
-接口可由方法、属性、事件、">
+    <meta name="keywords" content="算法-4.3 基数排序, 积跬步以至千里">
+    <meta name="description" content="基数排序（Radix sort）假设有 10 万个手机号码，希望将这 10 万个手机号码从小到大排序，有什么比较快速的排序方法呢？
+
+快排，时间复杂度可以做到 O(nlogn)；
+手机号码有 11 位，范围太大，桶排序、计数排序不适合
+基数">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -20,7 +21,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>C#接口 | 积跬步以至千里</title>
+    <title>算法-4.3 基数排序 | 积跬步以至千里</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -312,12 +313,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">C#接口</h1>
+                    <h1 class="description center-align post-title">算法-4.3 基数排序</h1>
                 </div>
             </div>
         </div>
@@ -433,8 +434,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/C-%E5%9F%BA%E7%A1%80/">
-                                <span class="chip bg-color">C#基础</span>
+                            <a href="/tags/%E7%AE%97%E6%B3%95/">
+                                <span class="chip bg-color">算法</span>
                             </a>
                         
                     </div>
@@ -445,8 +446,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/C/" class="post-category">
-                                C#
+                            <a href="/categories/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="post-category">
+                                算法与数据结构
                             </a>
                         
                     </div>
@@ -458,28 +459,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2020-04-14
+                    2022-04-14
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2022-03-31
+                    2022-04-14
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    1.4k
+                    647
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    5 Min
+                    2 Min
                 </div>
                 
 
@@ -502,139 +503,20 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="统一的标准-接口"><a href="#统一的标准-接口" class="headerlink" title="统一的标准-接口"></a>统一的标准-接口</h4><p>接口是面向对象编程的一个重要技术，在C#中负责实现多重继承。一个接口定义一个协定，实现接口的类或结构必须遵守其协定。</p>
-<h5 id="接口的定义"><a href="#接口的定义" class="headerlink" title="接口的定义"></a>接口的定义</h5><ul>
-<li>接口用来描述一种程序的规定，可定义属于任何类或结构的一组相关行为。</li>
-<li>接口可由方法、属性、事件、索引器或这4种成员类型的任何组合构成。</li>
-<li>接口不能包含常数、字段、运算符、实例构造函数、析构函数或类型，也不能包含任何种类的静态成员。</li>
-<li>接口成员一定是公共的。</li>
-<li>接口不能包含其所定义的成员的任何实现语句，接口只指定实现该接口的类或必须提供的成员。<pre class="line-numbers language-none"><code class="language-none">&#x2F;&#x2F; 语法：
-&lt;访问修饰符&gt; interface 接口名
-&#123;
-	&#x2F;&#x2F;接口主体
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h5 id="接口的实现"><a href="#接口的实现" class="headerlink" title="接口的实现"></a>接口的实现</h5>定义了接口后，就要在类或结构中实现。C#中通常把派生类和基类的关系称为继承，类和接口的关系称为实现。</li>
-</ul>
-<p>实现接口的语法和继承类一样，都有“：”，接口中的方法在类中实现时不是重载，不需要使用override关键字。</p>
-<p><strong>示例： 声明接口IPoint描述一个点的坐标并实现该接口。</strong></p>
-<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">&#x2F;&#x2F; IPoint.cs
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace interfaceTest
-&#123;
-    interface IPoint
-    &#123;
-        &#x2F;&#x2F; 定义属性成员x，它含有读&#x2F;写抽象访问
-        int x &#123; get; set; &#125;
-        &#x2F;&#x2F; 定义属性成员y，它含有读&#x2F;写抽象访问
-        int y &#123; get; set; &#125;
-        &#x2F;**
-         * 对接口名称建议以“I”开头，如Ipoint；
-         * 对接口的访问修饰符可以选择使用，但是接口的方法前面不能添加任何访问修饰符，它是隐式公开的；
-         * 接口不能包含构造函数，接口不能实现任何方法、属性和索引器。
-         *&#x2F;
-    &#125;
-
-    &#x2F;&#x2F; 从接口IPoint派生一个新类，这个类用来实现Point接口成员
-    class Point: IPoint
-    &#123;
-        &#x2F;&#x2F; 定义两个类内部访问的私有成员变量
-        private int px;
-        private int py;
-        &#x2F;&#x2F; 构造函数实现类的私有化，为私有变量赋值
-        public Point(int x, int y)
-        &#123;
-            px &#x3D; x;
-            py &#x3D; y;
-        &#125;
-        &#x2F;&#x2F; 接口属性实现
-        public int x
-        &#123;
-            get &#123; return px; &#125; &#x2F;&#x2F; 实现读访写
-            set &#123; px &#x3D; value; &#125; &#x2F;&#x2F; 实现写访问
-        &#125;
-        public int y
-        &#123;
-            get &#123; return py; &#125; &#x2F;&#x2F; 实现读访写
-            set &#123; py &#x3D; value; &#125; &#x2F;&#x2F; 实现写访问
-        &#125;
-    &#125;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>IPoint接口内部声明了两个属性成员x和y，x和y一起组成了一个点的坐标。属性成员x和y包含抽象的读/写访问，分别表示属性成员可以对坐标进行读和写。<br>定义类Point来实现IPoint接口，它包含了对接口成员的具体实现。</p>
-<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">&#x2F;&#x2F; Program.cs
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace interfaceTest
-&#123;
-    class Program
-    &#123;
-        static void Main(string[] args)
-        &#123;
-            Point p &#x3D; new Point(5, 30); &#x2F;&#x2F; 应用接口的派生类Point实例化一个新的对象并进行初始化赋值
-            Console.WriteLine(&quot;新创建的Point点的坐标是：&quot;);
-            Console.WriteLine(&quot;x &#x3D; &#123;0&#125;, y &#x3D; &#123;1&#125;&quot;, p.x, p.y); &#x2F;&#x2F; x &#x3D; 5, y &#x3D; 30
-        &#125;
-    &#125;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+                <h4 id="基数排序（Radix-sort）"><a href="#基数排序（Radix-sort）" class="headerlink" title="基数排序（Radix sort）"></a>基数排序（Radix sort）</h4><p>假设有 10 万个手机号码，希望将这 10 万个手机号码从小到大排序，有什么比较快速的排序方法呢？</p>
 <ul>
-<li>对接口名称建议以“I”开头，如Ipoint；</li>
-<li>对接口的访问修饰符可以选择使用，但是接口的方法前面不能添加任何访问修饰符，它是隐式公开的；</li>
-<li>接口不能包含构造函数，接口不能实现任何方法、属性和索引器。</li>
+<li>快排，时间复杂度可以做到 O(nlogn)；</li>
+<li>手机号码有 11 位，范围太大，桶排序、计数排序不适合</li>
+<li>基数排序…</li>
 </ul>
-<p>扩展：定义一个IPerson接口，接口包含DoWork和DoExercise两个抽象方法，并用Person类实现接口。</p>
-<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">&#x2F;&#x2F; IPerson.cs
-interface IPerson &#x2F;&#x2F; 声明接口IPerson
-&#123;
-	void DoWork(); &#x2F;&#x2F; 声明DoWork方法
-	void DoExercise(); &#x2F;&#x2F; 声明DoExercise方法
-&#125;
-&#x2F;&#x2F; 定义Person类实现IPerson接口
-public class Person: IPerson
-&#123;
-	&#x2F;&#x2F; 定义基类的共有属性
-	private string _name; &#x2F;&#x2F; 声明姓名字段
-	public string Name &#x2F;&#x2F; 声明姓名属性
-	&#123;
-		get &#123; return this._name; &#125;
-		set &#123;this._name &#x3D; value; &#125;
-	&#125;
-	public Person()&#123;&#125; &#x2F;&#x2F; 声明无参构造函数
-	public Person(string name) &#x2F;&#x2F; 声明有参构造函数
-	&#123;
-		this._name &#x3D; name;
-	&#125;
-	public void DoWork() &#x2F;&#x2F; 定义工作方法
-	&#123;
-		Console.WriteLine(&quot;I&#39;m working!&quot;);
-	&#125;
-	public void DoExercise() &#x2F;&#x2F; 定义锻炼方法
-	&#123;
-		Console.WriteLine(&quot;I&#39;m doing exercise!&quot;);
-	&#125;
-	public void Display() &#x2F;&#x2F; 基类的共有方法
-	&#123;
-		Console.WriteLine(&quot;我是&#123;0&#125;&quot;, this._name);
-	&#125;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">&#x2F;&#x2F; Program.cs
-Person objPerson &#x3D; new Person(&quot;小明&quot;);
-objPerson.Display(); &#x2F;&#x2F;  我是小明
-objPerson.DoWork(); &#x2F;&#x2F; I&#39;m working!
-objPerson.DoExercise(); &#x2F;&#x2F; I&#39;m doing exercise!<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h5 id="接口的实现-1"><a href="#接口的实现-1" class="headerlink" title="接口的实现"></a>接口的实现</h5><ul>
-<li>C#中的派生类只能有一个基类，不支持类的多重继承，但可以继承多个接口，通过接口实现多继承。</li>
-<li>如在现实中儿子不但可以继承父亲的财产，如伯父无子女，也可以继承伯父的财产，在C#中这属于多重继承，要用接口来实现，其实接口就是为了实现多重继承而产生的。</li>
-<li>在C#中接口可以多继承，接口之间可以互相继承，普通类和抽象类可以继承自接口。</li>
-<li>一个类可以同时继承一个类和多个接口，但是接口不能继承类。</li>
-</ul>
+<p><strong>思路</strong>：假设要比较两个手机号码 a，b 的大小，如果在前面几位中，a 手机号码已经比 b 手机号码大了，那后面的几位就不用看了。</p>
+<p>借助稳定排序算法，先按照最后一位来排序手机号码，然后，再按照倒数第二位重新排序，以此类推，最后按照第一位重新排序。经过 11 次排序之后，手机号码就都有序了。</p>
+<p>以字符串排序为例，基数排序过程分解图：<br><img src="image-20220414220629556.png"></p>
+<p>按照每位来排序的排序算法要是稳定的，否则这个实现思路就是不正确的。因为如果是非稳定排序算法，那最后一次排序只会考虑最高位的大小顺序，完全不管其他位的大小关系，那么低位的排序就完全没有意义了。</p>
+<p>根据每一位来排序，可以用桶排序或者计数排序，它们的时间复杂度可以做到 O(n)。如果要排序的数据有 k 位，那就需要 k 次桶排序或者计数排序，总的时间复杂度是 O(k*n)。当 k 不大的时候，比如手机号码排序的例子，k 最大就是 11，所以基数排序的时间复杂度就近似于 O(n)。</p>
+<p><span style="color: orange;">实际上，有时候要排序的数据并不都是等长的，对于这种不等长的数据，基数排序还适用吗？</span></p>
+<p>可以把所有的单词补齐到相同长度，位数不够的可以在后面补“0”，因为根据ASCII 值，所有字母都大于“0”，所以补“0”不会影响到原有的大小顺序。这样就可以继续用基数排序了。</p>
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p><span style="color: orange;">基数排序对要排序的数据是有要求的，需要可以分割出独立的“位”来比较，而且位之间有递进的关系，如果 a 数据的高位比 b 数据大，那剩下的低位就不用比较了。除此之外，每一位的数据范围不能太大，要可以用线性排序算法来排序，否则，基数排序的时间复杂度就无法做到 O(n) 了。</span> </p>
 
                 
             </div>
@@ -661,7 +543,7 @@ objPerson.DoExercise(); &#x2F;&#x2F; I&#39;m doing exercise!<span aria-hidden="t
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://jeayk.github.io/2020/04/14/csharp-jie-kou/">https://jeayk.github.io/2020/04/14/csharp-jie-kou/</a>
+                    <a href="https://jeayk.github.io/2022/04/14/suan-fa-4-3-ji-shu-pai-xu/">https://jeayk.github.io/2022/04/14/suan-fa-4-3-ji-shu-pai-xu/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -699,8 +581,8 @@ objPerson.DoExercise(); &#x2F;&#x2F; I&#39;m doing exercise!<span aria-hidden="t
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/C-%E5%9F%BA%E7%A1%80/">
-                                    <span class="chip bg-color">C#基础</span>
+                                <a href="/tags/%E7%AE%97%E6%B3%95/">
+                                    <span class="chip bg-color">算法</span>
                                 </a>
                             
                         </div>
@@ -874,17 +756,18 @@ objPerson.DoExercise(); &#x2F;&#x2F; I&#39;m doing exercise!<span aria-hidden="t
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
             <div class="card">
-                <a href="/2020/04/15/csharp-chou-xiang-lei-yu-mi-feng-lei/">
+                <a href="/2022/04/14/suan-fa-4-3-ji-shu-pai-xu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="C#抽象类与密封类">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="算法-4.3 基数排序">
                         
-                        <span class="card-title">C#抽象类与密封类</span>
+                        <span class="card-title">算法-4.3 基数排序</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -894,26 +777,27 @@ objPerson.DoExercise(); &#x2F;&#x2F; I&#39;m doing exercise!<span aria-hidden="t
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-04-15
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-14
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/C/" class="post-category">
-                                    C#
+                            <a href="/categories/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="post-category">
+                                    算法与数据结构
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/C-%E5%9F%BA%E7%A1%80/">
-                        <span class="chip bg-color">C#基础</span>
+                    <a href="/tags/%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">算法</span>
                     </a>
                     
                 </div>
@@ -927,13 +811,13 @@ objPerson.DoExercise(); &#x2F;&#x2F; I&#39;m doing exercise!<span aria-hidden="t
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/04/13/csharp-duo-tai/">
+                <a href="/2022/04/08/suan-fa-4-2-fu-za-du-o-n-de-pai-xu-ji-shu-pai-xu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="C#多态">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="算法-4.2复杂度O(n)的排序-计数排序">
                         
-                        <span class="card-title">C#多态</span>
+                        <span class="card-title">算法-4.2复杂度O(n)的排序-计数排序</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -944,14 +828,14 @@ objPerson.DoExercise(); &#x2F;&#x2F; I&#39;m doing exercise!<span aria-hidden="t
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-13
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-08
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/C/" class="post-category">
-                                    C#
+                            <a href="/categories/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="post-category">
+                                    算法与数据结构
                                 </a>
                             
                             
@@ -961,8 +845,8 @@ objPerson.DoExercise(); &#x2F;&#x2F; I&#39;m doing exercise!<span aria-hidden="t
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/C-%E5%9F%BA%E7%A1%80/">
-                        <span class="chip bg-color">C#基础</span>
+                    <a href="/tags/%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">算法</span>
                     </a>
                     
                 </div>
