@@ -4,9 +4,10 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="JS变量与类型-1.js语言类型与Symbol,Iteratorl理解, 积跬步以至千里">
-    <meta name="description" content="JavaScript规定了几种语言类型？七种： 1.Undefined, 2.Null, 3.Boolean, 4.String, 5.Number, 6.Symbol, 7.Object  
-Symbol的概念Symbol表示独一无二的值">
+    <meta name="keywords" content="算法-4.4 排序优化, 积跬步以至千里">
+    <meta name="description" content="如何选择合适的排序算法几种排序算法的比较：
+线性排序算法的时间复杂度比较低，适用场景比较特殊。所以如果要写一个通用的排序函数，不能选择线性排序算法。
+如果对小规模数据进行排序，可以选择时间复杂度是 O(n²) 的算法；如果对大规模数据进行排">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +19,7 @@ Symbol的概念Symbol表示独一无二的值">
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>JS变量与类型-1.js语言类型与Symbol,Iteratorl理解 | 积跬步以至千里</title>
+    <title>算法-4.4 排序优化 | 积跬步以至千里</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -310,12 +311,12 @@ Symbol的概念Symbol表示独一无二的值">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">JS变量与类型-1.js语言类型与Symbol,Iteratorl理解</h1>
+                    <h1 class="description center-align post-title">算法-4.4 排序优化</h1>
                 </div>
             </div>
         </div>
@@ -431,8 +432,8 @@ Symbol的概念Symbol表示独一无二的值">
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/JS%E5%8F%98%E9%87%8F%E4%B8%8E%E7%B1%BB%E5%9E%8B/">
-                                <span class="chip bg-color">JS变量与类型</span>
+                            <a href="/tags/%E7%AE%97%E6%B3%95/">
+                                <span class="chip bg-color">算法</span>
                             </a>
                         
                     </div>
@@ -443,8 +444,8 @@ Symbol的概念Symbol表示独一无二的值">
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Javascript%E5%9F%BA%E7%A1%80/" class="post-category">
-                                Javascript基础
+                            <a href="/categories/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="post-category">
+                                算法与数据结构
                             </a>
                         
                     </div>
@@ -456,28 +457,28 @@ Symbol的概念Symbol表示独一无二的值">
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2022-01-04
+                    2022-04-20
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2022-03-31
+                    2022-04-20
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    1.7k
+                    1.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    6 Min
+                    5 Min
                 </div>
                 
 
@@ -500,113 +501,33 @@ Symbol的概念Symbol表示独一无二的值">
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="JavaScript规定了几种语言类型？"><a href="#JavaScript规定了几种语言类型？" class="headerlink" title="JavaScript规定了几种语言类型？"></a>JavaScript规定了几种语言类型？</h4><p>七种： 1.Undefined, 2.Null, 3.Boolean, 4.String, 5.Number, 6.Symbol, 7.Object  </p>
-<h5 id="Symbol的概念"><a href="#Symbol的概念" class="headerlink" title="Symbol的概念"></a>Symbol的概念</h5><p>Symbol表示独一无二的值，它是一切非字符串的对象key的集合。<br>Symbol 值通过Symbol函数生成。这就是说，对象的属性名现在可以有两种类型，一种是原来就有的字符串，另一种就是新增的 Symbol 类型。凡是属性名属于 Symbol 类型，就都是独一无二的，可以保证不会与其他属性名产生冲突。<br>Symbol函数可以接受一个字符串作为参数，表示对 Symbol 实例的描述，但是即使描述相同，Symbol值也不相等。</p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">let</span> s1 <span class="token operator">=</span> <span class="token function">Symbol</span><span class="token punctuation">(</span><span class="token string">'foo'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token keyword">let</span> s2 <span class="token operator">=</span> <span class="token function">Symbol</span><span class="token punctuation">(</span><span class="token string">'foo'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <h4 id="如何选择合适的排序算法"><a href="#如何选择合适的排序算法" class="headerlink" title="如何选择合适的排序算法"></a>如何选择合适的排序算法</h4><p>几种排序算法的比较：<br><img src="image-20220420223302619.png"></p>
+<p>线性排序算法的时间复杂度比较低，适用场景比较特殊。所以如果要写一个通用的排序函数，不能选择线性排序算法。</p>
+<p>如果对小规模数据进行排序，可以选择时间复杂度是 O(n²) 的算法；如果对大规模数据进行排序，时间复杂度是 O(nlogn) 的算法更加高效。所以，为了兼顾任意规模数据的排序，一般都会首选时间复杂度是 O(nlogn) 的排序算法来实现排序函数。</p>
+<p>时间复杂度是 O(nlogn) 的排序算法包括：归并排序、快速排序、堆排序…</p>
+<p>使用归并排序的情况其实并不多，快排在最坏情况下的时间复杂度是 O(n²)，而归并排序可以做到平均情况、最坏情况下的时间复杂度都是 O(nlogn)，但是归并排序并不是原地排序算法，空间复杂度是 O(n)。例如要排序 100MB 的数据，除了数据本身占用的内存之外，排序算法还要额外再占用 100MB 的内存空间，空间耗费直接翻倍。</p>
+<h4 id="如何优化快速排序？"><a href="#如何优化快速排序？" class="headerlink" title="如何优化快速排序？"></a>如何优化快速排序？</h4><p>为什么最坏情况下快速排序的时间复杂度是 O(n²) ？</p>
+<p>如果数据原来就是有序的或者接近有序的，每次分区点都选择最后一个数据，那快速排序算法就会变得非常糟糕，时间复杂度就会退化为 O(n²)。<span style="color: orange;">这种 O(n²) 时间复杂度出现的主要原因还是因为分区点选得不够合理。</span></p>
+<p>最理想的分区点是：<span style="color: orange;">被分区点分开的两个分区中，数据的数量差不多。</span></p>
+<p><span style="color: red">两个比较常用、比较简单的分区算法：</span></p>
+<h5 id="1-三数取中法"><a href="#1-三数取中法" class="headerlink" title="1. 三数取中法"></a>1. 三数取中法</h5><p>从区间的首、尾、中间，分别取出一个数，然后对比大小，取这 3 个数的中间值作为分区点。这样每间隔某个固定的长度，取数据出来比较，将中间值作为分区点的分区算法，肯定要比单纯取某一个数据更好。但是，如果要排序的数组比较大，那“三数取中”可能就不够了，可能要“五数取中”或者“十数取中”。</p>
+<h5 id="2-随机法"><a href="#2-随机法" class="headerlink" title="2. 随机法"></a>2. 随机法</h5><p>每次从要排序的区间中，随机选择一个元素作为分区点。这种方法并不能保证每次分区点都选的比较好，但是从概率的角度来看，也不大可能会出现每次分区点都选得很差的情况，所以平均情况下，这样选的分区点是比较好的。时间复杂度退化为最糟糕的 O(n²) 的情况，出现的可能性不大。</p>
+<p>快速排序是用递归来实现的，递归要警惕堆栈溢出。为了避免快速排序里，递归过深而堆栈过小，导致堆栈溢出，我们种解决办法：第一种是限制递归深度。一旦递归过深，超过了事先设定的阈值，就停止递归。第二种是通过在堆上模拟实现一个函数调用栈，手动模拟递归压栈、出栈的过程，这样就没有了系统栈大小的限制。</p>
+<h4 id="举例分析排序函数-qsort"><a href="#举例分析排序函数-qsort" class="headerlink" title="举例分析排序函数-qsort()"></a>举例分析排序函数-qsort()</h4><p><strong>qsort() 会优先使用归并排序来排序输入数据。</strong></p>
+<p>因为归并排序的空间复杂度是 O(n)，所以对于小数据量的排序，比如 1KB、2KB 等，归并排序额外需要 1KB、2KB 的内存空间，用空间换时间。</p>
+<p>但如果数据量太大，如排序 100MB 的数据，再用归并排序就不合适了。所以，<strong>要排序的数据量比较大的时候，qsort() 会改为用快速排序算法来排序。</strong></p>
+<p>qsort() 用“三数取中法”选择快速排序算法的分区点。</p>
+<p>递归太深会导致堆栈溢出的问题，qsort() 是通过自己实现一个堆上的栈，手动模拟递归来解决的。</p>
+<p>实际上，qsort() 并不仅仅用到了归并排序和快速排序，它还用到了插入排序。在快速排序的过程中，当要排序的区间中，元素的个数小于等于 4 时，qsort() 就退化为插入排序，不再继续用递归来做快速排序。因为：<strong>在小规模数据面前，O(n²) 时间复杂度的算法并不一定比 O(nlogn) 的算法执行时间长。</strong>分析如下：</p>
+<p>算法的性能可以通过时间复杂度来分析，但是，这种复杂度分析是比较偏理论的，如果深究的话，实际上时间复杂度并不等于代码实际的运行时间。</p>
+<p>时间复杂度代表的是一个增长趋势，如果画成增长曲线图，会发现 O(n²) 比 O(nlogn) 要陡峭，也就是说增长趋势要更猛一些。但是在大 O 复杂度表示法中，会省略低阶、系数和常数，也就是说，O(nlogn) 在没有省略低阶、系数、常数之前可能是 O(knlogn + c)，而且 k 和 c 有可能还是一个比较大的数。</p>
+<p>假设 k=1000，c=200，当对小规模数据（比如 n=100）排序时，n²的值实际上比 knlogn+c 还要小。</p>
+<pre class="line-numbers language-none"><code class="language-none">knlogn+c &#x3D; 1000 * 100 * log100 + 200 远大于10000
 
-s1 <span class="token operator">===</span> s2 <span class="token comment">// false</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+n^2 &#x3D; 100*100 &#x3D; 10000<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
-<p>一些标准中提到的 Symbol，可以在全局的 Symbol 函数的属性中找到。例如，我们可以使用 Symbol.iterator 来自定义 for…of 在对象上的行为： </p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> o <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Object</span>
-o<span class="token punctuation">[</span>Symbol<span class="token punctuation">.</span>iterator<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">var</span> v <span class="token operator">=</span> <span class="token number">0</span>
-    <span class="token keyword">return</span> <span class="token punctuation">&#123;</span>
-        <span class="token function-variable function">next</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-            <span class="token keyword">return</span> <span class="token punctuation">&#123;</span> value<span class="token operator">:</span> v<span class="token operator">++</span><span class="token punctuation">,</span> done<span class="token operator">:</span> v <span class="token operator">></span> <span class="token number">10</span> <span class="token punctuation">&#125;</span>
-        <span class="token punctuation">&#125;</span>
-    <span class="token punctuation">&#125;</span>        
-<span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
-<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> v <span class="token keyword">of</span> o<span class="token punctuation">)</span> 
-    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>v<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 0 1 2 3 ... 9</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h5 id="Iterator（遍历器）的概念"><a href="#Iterator（遍历器）的概念" class="headerlink" title="Iterator（遍历器）的概念"></a>Iterator（遍历器）的概念</h5><p>Javascript表示集合的数据结构，有数组(Array)、对象(Object)、Map、Set四种。用户可以组合使用，定义自己的数据结构。例如:数组的成员为Map,Map的成员为对象。这样就需要一种统一的机制，来处理不同的数据结构。<br>遍历器(Iterator)就是这样一种机制，它是一种接口，为不同的数据结构提供统一的访问机制。任何数据结构只要部署Iterator机制，就可以完成遍历操作。（即依次处理该数据结构的所有成员）。  </p>
-<h5 id="Iterator（遍历器）的作用"><a href="#Iterator（遍历器）的作用" class="headerlink" title="Iterator（遍历器）的作用"></a>Iterator（遍历器）的作用</h5><ul>
-<li>为各种数据结构，提供一个统一的、简便的访问接口</li>
-<li>使得数据结构的成员能够按照某种次序排序</li>
-<li>ES6提供了一种新的遍历命令<font color='red'> for…of </font>循环，Iterator接口主要供<font color='red'> for…of </font>消费  </li>
-</ul>
-<h5 id="Iterator（遍历器）的遍历过程"><a href="#Iterator（遍历器）的遍历过程" class="headerlink" title="Iterator（遍历器）的遍历过程"></a>Iterator（遍历器）的遍历过程</h5><ul>
-<li>创建一个指针对象，指向当前数据结构的起始位置。也就是说，遍历器对象本质上，就是一个指针对象。</li>
-<li>第一次调用指针对象的<font color='red'> next </font>方法，可以将指针指向数据结构的第一个成员。</li>
-<li>第二次调用指针对象的<font color='red'> next </font>方法，指针将指向数据结构的第二个成员。</li>
-<li>不断调用指针对象的<font color='red'> next </font>方法，直到指针指向数据结构的结束位置。<br>每一次调用数据结构的<font color='red'> next </font>方法，都会返回数据结构的当前成员的信息。具体来说，就是返回一个包含<font color='red'> value </font>和<font color='red'> done </font>两个属性的对象。其中，<font color='red'> value </font>是当前成员的值，<font color='red'> done </font>是一个布尔值，表示遍历是否结束。（true表示结束，false表示不结束）<br>下面是一个模拟遍历器<font color='red'> next </font>方法返回值的例子:</li>
-</ul>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">makeIterator</span><span class="token punctuation">(</span><span class="token parameter">array</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  <span class="token keyword">var</span> nextIndex <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-  <span class="token keyword">return</span> <span class="token punctuation">&#123;</span>
-    <span class="token function-variable function">next</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-      <span class="token keyword">return</span> nextIndex <span class="token operator">&lt;</span> array<span class="token punctuation">.</span>length <span class="token operator">?</span>
-        <span class="token punctuation">&#123;</span>value<span class="token operator">:</span> array<span class="token punctuation">[</span>nextIndex<span class="token operator">++</span><span class="token punctuation">]</span><span class="token punctuation">&#125;</span> <span class="token operator">:</span>
-        <span class="token punctuation">&#123;</span>done<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-  <span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h5 id="默认Iterator接口"><a href="#默认Iterator接口" class="headerlink" title="默认Iterator接口"></a>默认Iterator接口</h5><p>Iterator接口的目的，就是为所有的数据结构，提供一种统一的访问机制，即<font color='red'> for…of </font>循环。当使用<font color='red'> for…of </font>循环遍历某种数据结构时，该循环会自动去寻找 Iterator 接口。<br>一种数据结构只要部署了Iterator接口，就称这种数据结构是可遍历的。(iterable)<br>ES6规定，默认的Iterator接口部署在数据结构的<font color='red'> Symbol.iterator </font>属性，或者说，一个数据结构只要具有<font color='red'> Symbol.iterator </font>属性，就可以认为是可遍历的。<font color='red'> Symbol.iterator </font>就是当前数据结构默认的遍历器生成函数，返回值为一个遍历器。</p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> obj <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
-    <span class="token punctuation">[</span>Symbol<span class="token punctuation">.</span>iterator<span class="token punctuation">]</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token keyword">return</span> <span class="token punctuation">&#123;</span>
-            <span class="token function-variable function">next</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-                <span class="token keyword">return</span> <span class="token punctuation">&#123;</span>
-                    value<span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
-                    done<span class="token operator">:</span> <span class="token boolean">true</span>
-                <span class="token punctuation">&#125;</span>
-            <span class="token punctuation">&#125;</span>
-        <span class="token punctuation">&#125;</span>
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>属性名Symbol.iterator，它是一个表达式，返回Symbol对象的iterator属性，这是一个预定义好的、类型为 Symbol 的特殊值，所以要放在方括号内。<br>ES6 的有些数据结构原生具备 Iterator 接口（比如数组），即不用任何处理，就可以被for…of循环遍历。原因在于，这些数据结构原生部署了Symbol.iterator属性，另外一些数据结构没有（比如对象）。凡是部署了Symbol.iterator属性的数据结构，就称为部署了遍历器接口。调用这个接口，就会返回一个遍历器对象。<br>原生具备 Iterator 接口的数据结构：  </p>
-<ul>
-<li>Array</li>
-<li>Map </li>
-<li>Set: 类似于数组，只不过其成员值都是唯一的，没有重复的值。</li>
-<li>String</li>
-<li>TypedArray: 一个TypedArray对象描述一个底层的二进制数据缓存区的一个类似数组(array-like)视图。</li>
-<li>函数的 arguments 对象</li>
-<li>NodeList 对象: NodeList 对象是一个节点的集合，是由 Node.childNodes 和 document.querySelectorAll返回的.NodeList不是一个数组，是一个类似数组的对象(Like Array Object).虽然NodeList不是一个数组，但是可以使用forEach()对其进行迭代。还可以使用Array.from()将其转换为实际数组。<br>以数组为例： </li>
-</ul>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">let</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token string">'b'</span><span class="token punctuation">,</span> <span class="token string">'c'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-<span class="token keyword">let</span> iter <span class="token operator">=</span> arr<span class="token punctuation">[</span>Symbol<span class="token punctuation">.</span>iterator<span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-iter<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// &#123; value: 'a', done: false &#125;</span>
-iter<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// &#123; value: 'b', done: false &#125;</span>
-iter<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// &#123; value: 'c', done: false &#125;</span>
-iter<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// &#123; value: undefined, done: true &#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>对象（Object）之所以没有默认部署 Iterator 接口，是因为对象的哪个属性先遍历，哪个属性后遍历是不确定的，需要开发者手动指定。本质上，遍历器是一种线性处理，对于任何非线性的数据结构，部署遍历器接口，就等于部署一种线性转换。不过，严格地说，对象部署遍历器接口并不是很必要，因为这时对象实际上被当作 Map 结构使用，ES5 没有 Map 结构，而 ES6 原生提供了。<br>一个对象如果要具备可被for…of循环调用的 Iterator 接口，就必须在Symbol.iterator的属性上部署遍历器生成方法（原型链上的对象具有该方法也可）</p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">class</span> <span class="token class-name">RangeIterator</span> <span class="token punctuation">&#123;</span>
-    <span class="token function">constructor</span> <span class="token punctuation">(</span><span class="token parameter">start<span class="token punctuation">,</span> stop</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token keyword">this</span><span class="token punctuation">.</span>value <span class="token operator">=</span> start<span class="token punctuation">;</span>
-        <span class="token keyword">this</span><span class="token punctuation">.</span>stop <span class="token operator">=</span> stop<span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-    <span class="token punctuation">[</span>Symbol<span class="token punctuation">.</span>iterator<span class="token punctuation">]</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-    <span class="token function">next</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token keyword">const</span> value <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>value<span class="token punctuation">;</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>value <span class="token operator">&lt;</span> <span class="token keyword">this</span><span class="token punctuation">.</span>stop<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-            <span class="token keyword">this</span><span class="token punctuation">.</span>value <span class="token operator">++</span><span class="token punctuation">;</span>
-            <span class="token keyword">return</span> <span class="token punctuation">&#123;</span>done<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> value<span class="token operator">:</span> value<span class="token punctuation">&#125;</span>
-        <span class="token punctuation">&#125;</span>
-        <span class="token keyword">return</span> <span class="token punctuation">&#123;</span>done<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> value<span class="token operator">:</span> <span class="token keyword">undefined</span><span class="token punctuation">&#125;</span>
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span>
-
-<span class="token keyword">function</span> <span class="token function">range</span> <span class="token punctuation">(</span><span class="token parameter">start<span class="token punctuation">,</span> stop</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">RangeIterator</span><span class="token punctuation">(</span>start<span class="token punctuation">,</span> stop<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span>
-
-<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">const</span> value <span class="token keyword">of</span> <span class="token function">range</span><span class="token punctuation">(</span><span class="token parameter"><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">3</span></span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 0, 1, 2</span>
-<span class="token punctuation">&#125;</span>
-
-<span class="token function">range</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// &#123;done: false, value: '0'&#125;</span>
-<span class="token function">range</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// &#123;done: false, value: '1'&#125;</span>
-<span class="token function">range</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// &#123;done: false, value: '2'&#125;</span>
-<span class="token function">range</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// &#123;done: true, value: undefined&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>上面代码是一个类部署 Iterator 接口的写法。Symbol.iterator属性对应一个函数，执行后返回当前对象的遍历器对象。  </p>
+<p>所以，对于小规模数据的排序，O(n²) 的排序算法并不一定比 O(nlogn) 排序算法执行的时间长。对于小数据量的排序，选择比较简单、不需要递归的插入排序算法。</p>
+<p>在 qsort() 插入排序的算法实现中，也利用了哨兵来简化代码，提高执行效率的技巧。虽然哨兵可能只是少做一次判断，但是毕竟排序函数是非常常用、非常基础的函数，性能的优化要做到极致。</p>
 
                 
             </div>
@@ -633,7 +554,7 @@ iter<span class="token punctuation">.</span><span class="token function">next</s
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://jeayk.github.io/2022/01/04/js-bian-liang-yu-lei-xing-1-js-yu-yan-lei-xing-yu-symbol-iteratorl-li-jie/">https://jeayk.github.io/2022/01/04/js-bian-liang-yu-lei-xing-1-js-yu-yan-lei-xing-yu-symbol-iteratorl-li-jie/</a>
+                    <a href="https://jeayk.github.io/2022/04/20/suan-fa-4-4-pai-xu-you-hua/">https://jeayk.github.io/2022/04/20/suan-fa-4-4-pai-xu-you-hua/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -671,8 +592,8 @@ iter<span class="token punctuation">.</span><span class="token function">next</s
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/JS%E5%8F%98%E9%87%8F%E4%B8%8E%E7%B1%BB%E5%9E%8B/">
-                                    <span class="chip bg-color">JS变量与类型</span>
+                                <a href="/tags/%E7%AE%97%E6%B3%95/">
+                                    <span class="chip bg-color">算法</span>
                                 </a>
                             
                         </div>
@@ -846,17 +767,18 @@ iter<span class="token punctuation">.</span><span class="token function">next</s
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
             <div class="card">
-                <a href="/2022/01/05/js-bian-liang-yu-lei-xing-2-js-dui-xiang-de-di-ceng-shu-ju-jie-gou/">
+                <a href="/2022/04/20/suan-fa-4-4-pai-xu-you-hua/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="JS变量与类型-2-js对象的底层数据结构">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="算法-4.4 排序优化">
                         
-                        <span class="card-title">JS变量与类型-2-js对象的底层数据结构</span>
+                        <span class="card-title">算法-4.4 排序优化</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -866,26 +788,27 @@ iter<span class="token punctuation">.</span><span class="token function">next</s
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-01-05
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-20
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Javascript%E5%9F%BA%E7%A1%80/" class="post-category">
-                                    Javascript基础
+                            <a href="/categories/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="post-category">
+                                    算法与数据结构
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/JS%E5%8F%98%E9%87%8F%E4%B8%8E%E7%B1%BB%E5%9E%8B/">
-                        <span class="chip bg-color">JS变量与类型</span>
+                    <a href="/tags/%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">算法</span>
                     </a>
                     
                 </div>
@@ -899,13 +822,13 @@ iter<span class="token punctuation">.</span><span class="token function">next</s
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/05/14/csharp-fan-xing/">
+                <a href="/2022/04/14/suan-fa-4-3-ji-shu-pai-xu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="C#泛型">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="算法-4.3 基数排序">
                         
-                        <span class="card-title">C#泛型</span>
+                        <span class="card-title">算法-4.3 基数排序</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -916,14 +839,14 @@ iter<span class="token punctuation">.</span><span class="token function">next</s
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-14
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-14
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/C/" class="post-category">
-                                    C#
+                            <a href="/categories/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="post-category">
+                                    算法与数据结构
                                 </a>
                             
                             
@@ -933,8 +856,8 @@ iter<span class="token punctuation">.</span><span class="token function">next</s
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/C-%E5%9F%BA%E7%A1%80/">
-                        <span class="chip bg-color">C#基础</span>
+                    <a href="/tags/%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">算法</span>
                     </a>
                     
                 </div>
