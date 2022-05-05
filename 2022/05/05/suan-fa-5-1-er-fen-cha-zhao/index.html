@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="算法-5-1-二分查找, 积跬步以至千里">
+    <meta name="keywords" content="算法-5. 1 二分查找, 积跬步以至千里">
     <meta name="description" content="二分查找（Binary Search）例：假设有 10 个订单，订单金额分别是：8，11，19，23，27，33，45，55，67，98。是否存在金额等于 19 元的订单，如果存在，则返回订单数据，如果不存在则返回 null。
 二分查找针对">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,7 +18,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>算法-5-1-二分查找 | 积跬步以至千里</title>
+    <title>算法-5. 1 二分查找 | 积跬步以至千里</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -310,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">算法-5-1-二分查找</h1>
+                    <h1 class="description center-align post-title">算法-5. 1 二分查找</h1>
                 </div>
             </div>
         </div>
@@ -530,6 +530,7 @@
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">biaryFind</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 6</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">biaryFind</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span> <span class="token number">102</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 14</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">biaryFind</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 0</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h5 id="容易出错的-3-个地方"><a href="#容易出错的-3-个地方" class="headerlink" title="容易出错的 3 个地方"></a>容易出错的 3 个地方</h5><ul>
 <li><strong>循环退出条件</strong>: <strong>是 low&lt;=high，而不是 low</strong></li>
 <li><strong>mid的取值</strong>：实际上，mid=(low+high)/2 这种写法是有问题的。因为如果 low 和 high 比较大的话，两者之和就有可能会溢出。改进的方法是将 mid 的计算方式写成 low+(high-low)/2。更进一步，如果要将性能优化到极致的话，可以将这里的除以 2 操作转化成位运算 low+((high-low)&gt;&gt;1)，因为相比除法运算来说，计算机处理位运算要快得多</li>
@@ -554,6 +555,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">bSearch</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 6</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">bSearch</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span> <span class="token number">102</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 14</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">bSearch</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 0</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h4 id="二分查找应用场景的局限性"><a href="#二分查找应用场景的局限性" class="headerlink" title="二分查找应用场景的局限性"></a>二分查找应用场景的局限性</h4><h5 id="1-二分查找依赖的是顺序表结构，简单点说就是数组"><a href="#1-二分查找依赖的是顺序表结构，简单点说就是数组" class="headerlink" title="1. 二分查找依赖的是顺序表结构，简单点说就是数组"></a>1. 二分查找依赖的是顺序表结构，简单点说就是数组</h5><p>二分查找算法需要按照下标随机访问元素，如果换成其他数据结构，比如链表，数组按照下标随机访问数据的时间复杂度是 O(1)，而链表随机访问的时间复杂度是 O(n)，用链表的话，二分查找的时间复杂就会变得很高。</p>
 <h5 id="2-二分查找针对的是有序数据"><a href="#2-二分查找针对的是有序数据" class="headerlink" title="2. 二分查找针对的是有序数据"></a>2. 二分查找针对的是有序数据</h5><p>如果数据没有序，需要先排序。排序的时间复杂度最低是 O(nlogn)。所以，如果针对的是一组静态的数据，没有频繁地插入、删除，可以进行一次排序，多次二分查找。这样排序的成本可被均摊，二分查找的边际成本就会比较低。</p>
 <p><span style="color: red;">但是</span>，如果数据集合有频繁的插入和删除操作，要想用二分查找，要么每次插入、删除操作之后保证数据仍然有序，要么在每次二分查找之前都先进行排序。针对这种动态数据集合，无论哪种方法，维护有序的成本都是很高的。</p>
@@ -810,9 +812,9 @@ console<span class="token punctuation">.</span><span class="token function">log<
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="算法-5-1-二分查找">
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="算法-5. 1 二分查找">
                         
-                        <span class="card-title">算法-5-1-二分查找</span>
+                        <span class="card-title">算法-5. 1 二分查找</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -856,13 +858,13 @@ console<span class="token punctuation">.</span><span class="token function">log<
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/04/20/suan-fa-4-4-pai-xu-you-hua/">
+                <a href="/2022/05/05/suan-fa-5-0-er-fen-cha-zhao/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="算法-4.4 排序优化">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="算法-5.1 二分查找">
                         
-                        <span class="card-title">算法-4.4 排序优化</span>
+                        <span class="card-title">算法-5.1 二分查找</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -873,7 +875,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-20
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-05
                             </span>
                         <span class="publish-author">
                             
@@ -1095,7 +1097,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total Words:&nbsp;<span
-                        class="white-color">76.8k</span>
+                        class="white-color">78.7k</span>
             
             
             

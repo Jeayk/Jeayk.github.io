@@ -4,12 +4,9 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="原型与原型链-6. 伪代码理解new操作符, 积跬步以至千里">
-    <meta name="description" content="伪代码理解 new 操作符以英雄联盟提莫的蘑菇为例，训练模式技能无CD固定等级固定装备情况下，以蘑菇为对象，具有以下几点属性：
-const 蘑菇 = &amp;#123;
-    id: 1, // 用于区分,
-    type: 蘑菇，
-    ">
+    <meta name="keywords" content="算法-5.1 二分查找, 积跬步以至千里">
+    <meta name="description" content="二分查找（Binary Search）例：假设有 10 个订单，订单金额分别是：8，11，19，23，27，33，45，55，67，98。是否存在金额等于 19 元的订单，如果存在，则返回订单数据，如果不存在则返回 null。
+二分查找针对">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -21,7 +18,7 @@ const 蘑菇 = &amp;#123;
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>原型与原型链-6. 伪代码理解new操作符 | 积跬步以至千里</title>
+    <title>算法-5.1 二分查找 | 积跬步以至千里</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -313,12 +310,12 @@ const 蘑菇 = &amp;#123;
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">原型与原型链-6. 伪代码理解new操作符</h1>
+                    <h1 class="description center-align post-title">算法-5.1 二分查找</h1>
                 </div>
             </div>
         </div>
@@ -434,8 +431,8 @@ const 蘑菇 = &amp;#123;
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%8E%9F%E5%9E%8B%E4%B8%8E%E5%8E%9F%E5%9E%8B%E9%93%BE/">
-                                <span class="chip bg-color">原型与原型链</span>
+                            <a href="/tags/%E7%AE%97%E6%B3%95/">
+                                <span class="chip bg-color">算法</span>
                             </a>
                         
                     </div>
@@ -446,8 +443,8 @@ const 蘑菇 = &amp;#123;
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Javascript%E5%9F%BA%E7%A1%80/" class="post-category">
-                                Javascript基础
+                            <a href="/categories/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="post-category">
+                                算法与数据结构
                             </a>
                         
                     </div>
@@ -459,28 +456,28 @@ const 蘑菇 = &amp;#123;
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2022-01-28
+                    2022-05-05
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2022-03-31
+                    2022-05-05
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    795
+                    1.9k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    3 Min
+                    7 Min
                 </div>
                 
 
@@ -503,121 +500,68 @@ const 蘑菇 = &amp;#123;
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h5 id="伪代码理解-new-操作符"><a href="#伪代码理解-new-操作符" class="headerlink" title="伪代码理解 new 操作符"></a>伪代码理解 new 操作符</h5><p>以英雄联盟提莫的蘑菇为例，训练模式技能无CD固定等级固定装备情况下，以蘑菇为对象，具有以下几点属性：</p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> 蘑菇 <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
-    id<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token comment">// 用于区分,</span>
-    type<span class="token operator">:</span> 蘑菇，
-    血量<span class="token operator">:</span> <span class="token number">3</span>，
-    时间<span class="token operator">:</span> <span class="token number">10</span>，
-    伤害：<span class="token number">200</span>，
-    <span class="token function-variable function">种植</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> <span class="token comment">/* 种植操作 */</span> <span class="token punctuation">&#125;</span>
-    <span class="token function-variable function">爆炸</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> <span class="token comment">/* 爆炸操作 */</span> <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span>
-提莫<span class="token punctuation">.</span><span class="token constant">R</span><span class="token punctuation">(</span>蘑菇<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h5 id="种一百蘑菇"><a href="#种一百蘑菇" class="headerlink" title="种一百蘑菇"></a>种一百蘑菇</h5><p>循环一百次：</p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">let</span> 蘑菇们 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">100</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">let</span> 蘑菇 <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
-        id<span class="token operator">:</span> i<span class="token punctuation">,</span> <span class="token comment">// 用于区分,</span>
-        type<span class="token operator">:</span> 蘑菇，
-        血量<span class="token operator">:</span> <span class="token number">3</span>，
-        时间<span class="token operator">:</span> <span class="token number">10</span>，
-        伤害：<span class="token number">200</span>，
-        <span class="token function-variable function">种植</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> <span class="token comment">/* 种植操作 */</span> <span class="token punctuation">&#125;</span>
-        <span class="token function-variable function">爆炸</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> <span class="token comment">/* 爆炸操作 */</span> <span class="token punctuation">&#125;</span>
+                <h4 id="二分查找（Binary-Search）"><a href="#二分查找（Binary-Search）" class="headerlink" title="二分查找（Binary Search）"></a>二分查找（Binary Search）</h4><p><strong>例：</strong><br>假设有 10 个订单，订单金额分别是：8，11，19，23，27，33，45，55，67，98。是否存在金额等于 19 元的订单，如果存在，则返回订单数据，如果不存在则返回 null。</p>
+<p><img src="image-20220505235236901.png"><br>二分查找针对的是一个有序的数据集合，查找思想有点类似分治思想。每次都通过跟区间的中间元素对比，将待查找的区间缩小为之前的一半，直到找到要查找的元素，或者区间被缩小为 0。</p>
+<h5 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h5><p>假设数据大小是 n，每次查找后数据都会缩小为原来的一半，也就是会除以 2。最坏情况下，直到查找区间被缩小为空，才停止。<br><img src="image-20220505235251043.png"></p>
+<p>这是一个等比数列，其中 n/2^k=1 时，k 的值就是总共缩小的次数。而每一次缩小操作只涉及两个数据的大小比较，所以，经过了 k 次区间缩小操作，时间复杂度就是 O(k)。通过 n/2k=1，可以求得 k=log2n，所以时间复杂度就是 O(logn)。</p>
+<p>二分查找是时间复杂度为 O(logn) 的算法之一，除此之外还有堆、二叉树的操作等等，它们的时间复杂度也是 O(logn)。O(logn) 这种对数时间复杂度是一种极其高效的时间复杂度，有的时候甚至比时间复杂度是常量级 O(1) 的算法还要高效。</p>
+<p>因为 logn 是一个非常“恐怖”的数量级，即便 n 非常非常大，对应的 logn 也很小。比如 n 等于 2 的 32 次方，大约是 42 亿。也就是说，如果在 42 亿个数据中用二分查找一个数据，最多需要比较 32 次。</p>
+<p>用大 O 标记法表示时间复杂度的时候，会省略掉常数、系数和低阶。对于常量级时间复杂度的算法来说，O(1) 有可能表示的是一个非常大的常量值，比如 O(1000)、O(10000)。所以，常量级时间复杂度的算法有时候可能还没有 O(logn) 的算法执行效率高。指数时间复杂度的算法在大规模数据面前是无效的。</p>
+<h4 id="二分查找的递归与非递归实现"><a href="#二分查找的递归与非递归实现" class="headerlink" title="二分查找的递归与非递归实现"></a>二分查找的递归与非递归实现</h4><p>最简单的情况就是<strong>有序数组中不存在重复元素</strong>，在其中用二分查找值等于给定值的数据。</p>
+<h5 id="循环实现"><a href="#循环实现" class="headerlink" title="循环实现"></a>循环实现</h5><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 二分查找 数组必须有序，不存在重复</span>
+<span class="token comment">// 二分查找 数组必须有序，不存在重复</span>
+<span class="token keyword">const</span> <span class="token function-variable function">biaryFind</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">arr<span class="token punctuation">,</span> target</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">const</span> n <span class="token operator">=</span> arr<span class="token punctuation">.</span>length
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>n<span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span>
+    <span class="token keyword">let</span> low <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> high <span class="token operator">=</span> n <span class="token operator">-</span> <span class="token number">1</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>low <span class="token operator">&lt;=</span> high<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">const</span> mid <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span><span class="token punctuation">(</span>high <span class="token operator">+</span> low<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">)</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>target <span class="token operator">===</span> arr<span class="token punctuation">[</span>mid<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token keyword">return</span> mid
+        <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>target <span class="token operator">&lt;</span> arr<span class="token punctuation">[</span>mid<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            high <span class="token operator">=</span> mid <span class="token operator">-</span> <span class="token number">1</span>
+        <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+            low <span class="token operator">=</span> mid <span class="token operator">+</span> <span class="token number">1</span>
+        <span class="token punctuation">&#125;</span>
     <span class="token punctuation">&#125;</span>
-    蘑菇们<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>蘑菇<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span>
 <span class="token punctuation">&#125;</span>
-提莫<span class="token punctuation">.</span><span class="token constant">R</span><span class="token punctuation">(</span>蘑菇们<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><font style='color: red;'>代码优化思考：</font><br>蘑菇的属性中，只有id是不一样的，其他的属性for循环浪费内存</p>
-<p>从原型角度出发处理，先创建一个蘑菇原型，然后蘑菇的__proto__ 指向蘑菇原型</p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">let</span> 蘑菇原型 <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
-    type<span class="token operator">:</span> 蘑菇，
-    血量<span class="token operator">:</span> <span class="token number">3</span>，
-    时间<span class="token operator">:</span> <span class="token number">10</span>，
-    伤害：<span class="token number">200</span>，
-    <span class="token function-variable function">种植</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> <span class="token comment">/* 种植操作 */</span> <span class="token punctuation">&#125;</span>
-    <span class="token function-variable function">爆炸</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> <span class="token comment">/* 爆炸操作 */</span> <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span>
-<span class="token keyword">let</span> 蘑菇们 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">100</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">let</span> 蘑菇 <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
-        id<span class="token operator">:</span> i
-    <span class="token punctuation">&#125;</span>
-    蘑菇<span class="token punctuation">.</span>__proto__ <span class="token operator">=</span> 蘑菇原型<span class="token punctuation">;</span>
-    蘑菇们<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>蘑菇<span class="token punctuation">)</span>
-<span class="token punctuation">&#125;</span>
-提莫<span class="token punctuation">.</span><span class="token constant">R</span><span class="token punctuation">(</span>蘑菇们<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>继续优化，函数化思想：</p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">蘑菇</span> <span class="token punctuation">(</span><span class="token parameter">id</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">let</span> obj <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span> <span class="token comment">// 创建临时对象</span>
-    obj<span class="token punctuation">.</span>__proto__ <span class="token operator">=</span> 蘑菇<span class="token punctuation">.</span>原型<span class="token punctuation">;</span>
-    obj<span class="token punctuation">.</span>id <span class="token operator">=</span> id<span class="token punctuation">;</span>
-    <span class="token keyword">return</span> obj<span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span>
-蘑菇<span class="token punctuation">.</span>原型 <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
-    type<span class="token operator">:</span> 蘑菇，
-    血量<span class="token operator">:</span> <span class="token number">3</span>，
-    时间<span class="token operator">:</span> <span class="token number">10</span>，
-    伤害：<span class="token number">200</span>，
-    <span class="token function-variable function">种植</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> <span class="token comment">/* 种植操作 */</span> <span class="token punctuation">&#125;</span>
-    <span class="token function-variable function">爆炸</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> <span class="token comment">/* 爆炸操作 */</span> <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span>
-
-<span class="token keyword">let</span> 蘑菇们 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">100</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    蘑菇们<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token function">蘑菇</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span>
-提莫<span class="token punctuation">.</span><span class="token constant">R</span><span class="token punctuation">(</span>蘑菇们<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>new关键字让上述方法继续优化：</p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">蘑菇</span> <span class="token punctuation">(</span><span class="token parameter">id</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">let</span> obj <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span> <span class="token comment">// 创建临时对象       -->     new 帮忙创建临时对象    </span>
-    obj<span class="token punctuation">.</span>__proto__ <span class="token operator">=</span> 蘑菇<span class="token punctuation">.</span>原型<span class="token punctuation">;</span> <span class="token comment">//       -->     new 帮忙绑定原型</span>
-    obj<span class="token punctuation">.</span>id <span class="token operator">=</span> id<span class="token punctuation">;</span>
-    <span class="token keyword">return</span> obj<span class="token punctuation">;</span> <span class="token comment">//                      -->     new 帮忙 return</span>
-<span class="token punctuation">&#125;</span>
-蘑菇<span class="token punctuation">.</span>原型 <span class="token operator">=</span> <span class="token punctuation">&#123;</span> <span class="token comment">//                        -->     原型统一叫 prototype</span>
-    type<span class="token operator">:</span> 蘑菇，
-    血量<span class="token operator">:</span> <span class="token number">3</span>，
-    时间<span class="token operator">:</span> <span class="token number">10</span>，
-    伤害：<span class="token number">200</span>，
-    <span class="token function-variable function">种植</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> <span class="token comment">/* 种植操作 */</span> <span class="token punctuation">&#125;</span>
-    <span class="token function-variable function">爆炸</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> <span class="token comment">/* 爆炸操作 */</span> <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>只要你在「蘑菇」前面使用 new 关键字，那么可以少做四件事情：</p>
-<ul>
-<li>不用创建临时对象，因为 new 会帮你做（你使用「this」就可以访问到临时对象）</li>
-<li>不用绑定原型，因为 new 会帮你做（new 为了知道原型在哪，所以指定原型的名字为 prototype）；</li>
-<li>不用 return 临时对象，因为 new 会帮你做；</li>
-<li>不要给原型想名字了，因为 new 指定名字为 prototype。</li>
+<span class="token keyword">const</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">,</span> <span class="token number">23</span><span class="token punctuation">,</span> <span class="token number">42</span><span class="token punctuation">,</span> <span class="token number">44</span><span class="token punctuation">,</span> <span class="token number">54</span><span class="token punctuation">,</span> <span class="token number">56</span><span class="token punctuation">,</span> <span class="token number">77</span><span class="token punctuation">,</span> <span class="token number">102</span><span class="token punctuation">]</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">biaryFind</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 6</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">biaryFind</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span> <span class="token number">102</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 14</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">biaryFind</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 0</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="容易出错的-3-个地方"><a href="#容易出错的-3-个地方" class="headerlink" title="容易出错的 3 个地方"></a>容易出错的 3 个地方</h5><ul>
+<li><strong>循环退出条件</strong>: <strong>是 low&lt;=high，而不是 low</strong></li>
+<li><strong>mid的取值</strong>：实际上，mid=(low+high)/2 这种写法是有问题的。因为如果 low 和 high 比较大的话，两者之和就有可能会溢出。改进的方法是将 mid 的计算方式写成 low+(high-low)/2。更进一步，如果要将性能优化到极致的话，可以将这里的除以 2 操作转化成位运算 low+((high-low)&gt;&gt;1)，因为相比除法运算来说，计算机处理位运算要快得多</li>
+<li><strong>low 和 high 的更新</strong>：low=mid+1，high=mid-1。注意这里的 +1 和 -1，如果直接写成 low=mid 或者 high=mid，就可能会发生死循环。比如，当 high=3，low=3 时，如果 a[3]不等于 value，就会导致一直循环不退出。</li>
 </ul>
-<h5 id="new-实现"><a href="#new-实现" class="headerlink" title="new 实现"></a>new 实现</h5><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">蘑菇</span> <span class="token punctuation">(</span><span class="token parameter">id</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">this</span><span class="token punctuation">.</span>id <span class="token operator">=</span> id<span class="token punctuation">;</span>
+<h5 id="递归实现"><a href="#递归实现" class="headerlink" title="递归实现"></a>递归实现</h5><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> <span class="token function-variable function">bSearch</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">arr<span class="token punctuation">,</span> target</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">const</span> n <span class="token operator">=</span> arr<span class="token punctuation">.</span>length
+    <span class="token keyword">return</span> <span class="token function">bSearchInternally</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> n <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">,</span> target<span class="token punctuation">)</span>
 <span class="token punctuation">&#125;</span>
-<span class="token class-name">蘑菇</span><span class="token punctuation">.</span>prototype <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
-    type<span class="token operator">:</span> 蘑菇，
-    血量<span class="token operator">:</span> <span class="token number">3</span>，
-    时间<span class="token operator">:</span> <span class="token number">10</span>，
-    伤害：<span class="token number">200</span>，
-    <span class="token function-variable function">种植</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> <span class="token comment">/* 种植操作 */</span> <span class="token punctuation">&#125;</span>
-    <span class="token function-variable function">爆炸</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> <span class="token comment">/* 爆炸操作 */</span> <span class="token punctuation">&#125;</span>
+<span class="token keyword">const</span> <span class="token function-variable function">bSearchInternally</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">arr<span class="token punctuation">,</span> low<span class="token punctuation">,</span> high<span class="token punctuation">,</span> target</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>low <span class="token operator">></span> high<span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span>
+    <span class="token keyword">const</span> mid <span class="token operator">=</span> low <span class="token operator">+</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>high <span class="token operator">-</span> low<span class="token punctuation">)</span> <span class="token operator">>></span> <span class="token number">1</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>arr<span class="token punctuation">[</span>mid<span class="token punctuation">]</span> <span class="token operator">===</span> target<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> mid
+    <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>arr<span class="token punctuation">[</span>mid<span class="token punctuation">]</span> <span class="token operator">&lt;</span> target<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> <span class="token function">bSearchInternally</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span> mid <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> high<span class="token punctuation">,</span> target<span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> <span class="token function">bSearchInternally</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span> low<span class="token punctuation">,</span> mid <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">,</span> target<span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span>
-
-<span class="token keyword">let</span> 蘑菇们 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">100</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    蘑菇们<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token function">蘑菇</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span>
-提莫<span class="token punctuation">.</span><span class="token constant">R</span><span class="token punctuation">(</span>蘑菇们<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h5 id="注意-constructor-属性"><a href="#注意-constructor-属性" class="headerlink" title="注意 constructor 属性"></a>注意 constructor 属性</h5><p>函数的prototype属性会默认生成constructor属性，指向构造函数</p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token class-name">蘑菇</span><span class="token punctuation">.</span>prototype <span class="token comment">// &#123;constructor: ƒ&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>所以写法优化为：</p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token class-name">蘑菇</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>type <span class="token operator">=</span> 蘑菇<span class="token punctuation">;</span>
-<span class="token class-name">蘑菇</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>血量 <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span>
-<span class="token class-name">蘑菇</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>时间 <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
-<span class="token class-name">蘑菇</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>伤害 <span class="token operator">=</span> <span class="token number">200</span><span class="token punctuation">;</span>
-<span class="token class-name">蘑菇</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">种植</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> <span class="token comment">/* 种植操作 */</span> <span class="token punctuation">&#125;</span>
-<span class="token class-name">蘑菇</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">爆炸</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> <span class="token comment">/* 爆炸操作 */</span> <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token keyword">const</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">,</span> <span class="token number">23</span><span class="token punctuation">,</span> <span class="token number">42</span><span class="token punctuation">,</span> <span class="token number">44</span><span class="token punctuation">,</span> <span class="token number">54</span><span class="token punctuation">,</span> <span class="token number">56</span><span class="token punctuation">,</span> <span class="token number">77</span><span class="token punctuation">,</span> <span class="token number">102</span><span class="token punctuation">]</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">bSearch</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 6</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">bSearch</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span> <span class="token number">102</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 14</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">bSearch</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 0</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="二分查找应用场景的局限性"><a href="#二分查找应用场景的局限性" class="headerlink" title="二分查找应用场景的局限性"></a>二分查找应用场景的局限性</h4><h5 id="1-二分查找依赖的是顺序表结构，简单点说就是数组"><a href="#1-二分查找依赖的是顺序表结构，简单点说就是数组" class="headerlink" title="1. 二分查找依赖的是顺序表结构，简单点说就是数组"></a>1. 二分查找依赖的是顺序表结构，简单点说就是数组</h5><p>二分查找算法需要按照下标随机访问元素，如果换成其他数据结构，比如链表，数组按照下标随机访问数据的时间复杂度是 O(1)，而链表随机访问的时间复杂度是 O(n)，用链表的话，二分查找的时间复杂就会变得很高。</p>
+<h5 id="2-二分查找针对的是有序数据"><a href="#2-二分查找针对的是有序数据" class="headerlink" title="2. 二分查找针对的是有序数据"></a>2. 二分查找针对的是有序数据</h5><p>如果数据没有序，需要先排序。排序的时间复杂度最低是 O(nlogn)。所以，如果针对的是一组静态的数据，没有频繁地插入、删除，可以进行一次排序，多次二分查找。这样排序的成本可被均摊，二分查找的边际成本就会比较低。</p>
+<p><span style="color: red;">但是</span>，如果数据集合有频繁的插入和删除操作，要想用二分查找，要么每次插入、删除操作之后保证数据仍然有序，要么在每次二分查找之前都先进行排序。针对这种动态数据集合，无论哪种方法，维护有序的成本都是很高的。</p>
+<p>所以，二分查找只能用在插入、删除操作不频繁，一次排序多次查找的场景中。针对动态变化的数据集合，二分查找将不再适用。</p>
+<h5 id="3-数据量太小不适合二分查找。"><a href="#3-数据量太小不适合二分查找。" class="headerlink" title="3. 数据量太小不适合二分查找。"></a>3. 数据量太小不适合二分查找。</h5><p>如果要处理的数据量很小，完全没有必要用二分查找，顺序遍历就足够了。比如在一个大小为 10 的数组中查找一个元素，不管用二分查找还是顺序遍历，查找速度都差不多。只有数据量比较大的时候，二分查找的优势才会比较明显。</p>
+<p><span style="color: red;">例外情况</span>：如果数据之间的比较操作非常耗时，不管数据量大小，都推荐使用二分查找。比如，数组中存储的都是长度超过 300 的字符串，如此长的两个字符串之间比对大小，就会非常耗时。需要尽可能地减少比较次数，而比较次数的减少会大大提高性能，这个时候二分查找就比顺序遍历更有优势。</p>
+<h5 id="4-数据量太大也不适合二分查找"><a href="#4-数据量太大也不适合二分查找" class="headerlink" title="4. 数据量太大也不适合二分查找"></a>4. 数据量太大也不适合二分查找</h5><p>二分查找的底层需要依赖数组这种数据结构，而数组为了支持随机访问的特性，要求内存空间连续，对内存的要求比较苛刻。比如，有 1GB 大小的数据，如果希望用数组来存储，那就需要 1GB 的连续内存空间。</p>
+<p>注意“<span style="color: red;">连续</span>”二字，也就是说，即便有 2GB 的内存空间剩余，但是如果这剩余的 2GB 内存空间都是零散的，没有连续的 1GB 大小的内存空间，那照样无法申请一个 1GB 大小的数组。而二分查找是作用在数组这种数据结构之上的，所以太大的数据用数组存储就比较吃力了，也就不能用二分查找了。</p>
 
                 
             </div>
@@ -644,7 +588,7 @@ const 蘑菇 = &amp;#123;
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://jeayk.github.io/2022/01/28/yuan-xing-yu-yuan-xing-lian-6-wei-dai-ma-li-jie-new-cao-zuo-fu/">https://jeayk.github.io/2022/01/28/yuan-xing-yu-yuan-xing-lian-6-wei-dai-ma-li-jie-new-cao-zuo-fu/</a>
+                    <a href="https://jeayk.github.io/2022/05/05/suan-fa-5-0-er-fen-cha-zhao/">https://jeayk.github.io/2022/05/05/suan-fa-5-0-er-fen-cha-zhao/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -682,8 +626,8 @@ const 蘑菇 = &amp;#123;
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E5%8E%9F%E5%9E%8B%E4%B8%8E%E5%8E%9F%E5%9E%8B%E9%93%BE/">
-                                    <span class="chip bg-color">原型与原型链</span>
+                                <a href="/tags/%E7%AE%97%E6%B3%95/">
+                                    <span class="chip bg-color">算法</span>
                                 </a>
                             
                         </div>
@@ -861,13 +805,13 @@ const 蘑菇 = &amp;#123;
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/2022/01/28/zuo-yong-yu-yu-bi-bao-1-li-jie-ci-fa-zuo-yong-yu-he-dong-tai-zuo-yong-yu/">
+                <a href="/2022/05/05/suan-fa-5-1-er-fen-cha-zhao/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="作用域与闭包-1. 理解词法作用域和动态作用域">
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="算法-5. 1 二分查找">
                         
-                        <span class="card-title">作用域与闭包-1. 理解词法作用域和动态作用域</span>
+                        <span class="card-title">算法-5. 1 二分查找</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -878,14 +822,14 @@ const 蘑菇 = &amp;#123;
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-01-28
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-05-05
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Javascript%E5%9F%BA%E7%A1%80/" class="post-category">
-                                    Javascript基础
+                            <a href="/categories/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="post-category">
+                                    算法与数据结构
                                 </a>
                             
                             
@@ -895,8 +839,8 @@ const 蘑菇 = &amp;#123;
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E4%BD%9C%E7%94%A8%E5%9F%9F%E4%B8%8E%E9%97%AD%E5%8C%85/">
-                        <span class="chip bg-color">作用域与闭包</span>
+                    <a href="/tags/%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">算法</span>
                     </a>
                     
                 </div>
@@ -910,13 +854,13 @@ const 蘑菇 = &amp;#123;
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/01/28/yuan-xing-yu-yuan-xing-lian-5-li-jie-es6class-gou-zao-yi-ji-ji-cheng-de-di-ceng-shi-xian-yuan-li/">
+                <a href="/2022/04/20/suan-fa-4-4-pai-xu-you-hua/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="原型与原型链-5.理解es6class构造以及继承的底层实现原理">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="算法-4.4 排序优化">
                         
-                        <span class="card-title">原型与原型链-5.理解es6class构造以及继承的底层实现原理</span>
+                        <span class="card-title">算法-4.4 排序优化</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -927,14 +871,14 @@ const 蘑菇 = &amp;#123;
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-01-28
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-20
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Javascript%E5%9F%BA%E7%A1%80/" class="post-category">
-                                    Javascript基础
+                            <a href="/categories/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="post-category">
+                                    算法与数据结构
                                 </a>
                             
                             
@@ -944,8 +888,8 @@ const 蘑菇 = &amp;#123;
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%8E%9F%E5%9E%8B%E4%B8%8E%E5%8E%9F%E5%9E%8B%E9%93%BE/">
-                        <span class="chip bg-color">原型与原型链</span>
+                    <a href="/tags/%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">算法</span>
                     </a>
                     
                 </div>
