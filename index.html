@@ -560,6 +560,9 @@
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
+                                散列表的查询效率并不能笼统地说成是 O(1)。它跟散列函数、装载因子、散列冲突等都有关系。如果散列函数设计得不好，或者装载因子过高，都可能导致散列冲突发生的概率升高，查询效率下降。
+在极端情况下，有些恶意的攻击者，还有可能通过精心构造的数据
+                            
                         </div>
                         <div class="publish-info">
                             <span class="publish-date">
@@ -595,8 +598,11 @@
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                散列表的查询效率并不能笼统地说成是 O(1)。它跟散列函数、装载因子、散列冲突等都有关系。如果散列函数设计得不好，或者装载因子过高，都可能导致散列冲突发生的概率升高，查询效率下降。
-在极端情况下，有些恶意的攻击者，还有可能通过精心构造的数据
+                                
+散列思想
+散列表（Hash Table），平时也叫“哈希表”或者“Hash 表”。
+散列表用的是数组支持按照下标随机访问数据的特性，所以散列表其实就是数组的一种扩展，由数组演化而来。可以说，如果没有数组，就没有散列表。
+示例：假如有 89
                             
                         </div>
                         <div class="publish-info">
@@ -1141,7 +1147,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total Words:&nbsp;<span
-                        class="white-color">84k</span>
+                        class="white-color">86.5k</span>
             
             
             
