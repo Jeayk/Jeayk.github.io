@@ -4,9 +4,13 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="作用域与闭包-6. 堆栈溢出和内存泄漏的原理与解决方案, 积跬步以至千里">
-    <meta name="description" content="原理理解内存溢出 out of memory，是指程序在申请内存时，没有足够的内存空间供其使用，出现out of memory；比如申请了一个integer,但给它存了long才能存下的数，那就是内存溢出。
-内存泄露 memory leak">
+    <meta name="keywords" content="算法-7.3 散列表（下）, 积跬步以至千里">
+    <meta name="description" content="LRU 缓存淘汰算法如何借助散列表把 LRU 缓存淘汰算法的时间复杂度降低为 O(1)？
+实现方式：  
+
+维护一个按照访问时间从大到小有序排列的链表结构。因为缓存大小有限，当缓存空间不够，就直接将链表头部的结点删除。
+
+当要缓存某个数据的">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +22,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>作用域与闭包-6. 堆栈溢出和内存泄漏的原理与解决方案 | 积跬步以至千里</title>
+    <title>算法-7.3 散列表（下） | 积跬步以至千里</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -310,12 +314,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">作用域与闭包-6. 堆栈溢出和内存泄漏的原理与解决方案</h1>
+                    <h1 class="description center-align post-title">算法-7.3 散列表（下）</h1>
                 </div>
             </div>
         </div>
@@ -431,8 +435,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E4%BD%9C%E7%94%A8%E5%9F%9F%E4%B8%8E%E9%97%AD%E5%8C%85/">
-                                <span class="chip bg-color">作用域与闭包</span>
+                            <a href="/tags/%E7%AE%97%E6%B3%95/">
+                                <span class="chip bg-color">算法</span>
                             </a>
                         
                     </div>
@@ -443,8 +447,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Javascript%E5%9F%BA%E7%A1%80/" class="post-category">
-                                Javascript基础
+                            <a href="/categories/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="post-category">
+                                算法与数据结构
                             </a>
                         
                     </div>
@@ -456,21 +460,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2022-02-07
+                    2022-06-15
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2022-03-31
+                    2022-06-15
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    1.3k
+                    1.5k
                 </div>
                 
 
@@ -500,42 +504,44 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h5 id="原理理解"><a href="#原理理解" class="headerlink" title="原理理解"></a>原理理解</h5><p><strong>内存溢出 out of memory</strong>，是指程序在申请内存时，没有足够的内存空间供其使用，出现out of memory；比如申请了一个integer,但给它存了long才能存下的数，那就是内存溢出。</p>
-<p><strong>内存泄露 memory leak</strong>，是指程序在申请内存后，无法释放已申请的内存空间，一次内存泄露危害可以忽略，但内存泄露堆积后果很严重，无论多少内存,迟早会被占光。</p>
-<p><em>memory leak</em> 会最终会导致 <em>out of memory</em>！</p>
-<p>内存溢出就是你要求分配的内存超出了系统能给你的，系统不能满足需求，于是产生溢出。 </p>
-<p>内存泄漏是指你向系统申请分配内存进行使用(new)，可是使用完了以后却不归还(delete)，结果你申请到的那块内存你自己也不能再访问（也许你把它的地址给弄丢了），而系统也不能再次将它分配给需要的程序。一个盘子用尽各种方法只能装4个果子，你装了5个，结果掉倒地上不能吃了。这就是溢出！比方说栈，栈满时再做进栈必定产生空间溢出，叫上溢，栈空时再做退栈也产生空间溢出，称为下溢。就是分配的内存不足以放下数据项序列,称为内存溢出. </p>
-<h5 id="内存泄漏种类"><a href="#内存泄漏种类" class="headerlink" title="内存泄漏种类"></a>内存泄漏种类</h5><p>以发生的方式来分类，内存泄漏可以分为4类： </p>
+                <h4 id="LRU-缓存淘汰算法"><a href="#LRU-缓存淘汰算法" class="headerlink" title="LRU 缓存淘汰算法"></a>LRU 缓存淘汰算法</h4><p>如何借助散列表把 LRU 缓存淘汰算法的时间复杂度降低为 O(1)？</p>
+<p><strong>实现方式</strong>：  </p>
 <ul>
-<li>常发性内存泄漏。发生内存泄漏的代码会被多次执行到，每次被执行的时候都会导致一块内存泄漏。 </li>
-<li>偶发性内存泄漏。发生内存泄漏的代码只有在某些特定环境或操作过程下才会发生。常发性和偶发性是相对的。对于特定的环境，偶发性的也许就变成了常发性的。所以测试环境和测试方法对检测内存泄漏至关重要。 </li>
-<li>一次性内存泄漏。发生内存泄漏的代码只会被执行一次，或者由于算法上的缺陷，导致总会有一块仅且一块内存发生泄漏。比如，在类的构造函数中分配内存，在析构函数中却没有释放该内存，所以内存泄漏只会发生一次。 </li>
-<li>隐式内存泄漏。程序在运行过程中不停的分配内存，但是直到结束的时候才释放内存。严格的说这里并没有发生内存泄漏，因为最终程序释放了所有申请的内存。但是对于一个服务器程序，需要运行几天，几周甚至几个月，不及时释放内存也可能导致最终耗尽系统的所有内存。所以，我们称这类内存泄漏为隐式内存泄漏。 </li>
+<li><p>维护一个按照访问时间从大到小有序排列的链表结构。因为缓存大小有限，当缓存空间不够，就直接将链表头部的结点删除。</p>
+</li>
+<li><p>当要缓存某个数据的时候，先在链表中查找这个数据。如果没有找到，则直接将数据放到链表的尾部；如果找到了，就把它移动到链表的尾部。因为查找数据需要遍历链表，所以单纯用链表实现的 LRU 缓存淘汰算法的时间复杂很高，是 O(n)。</p>
+</li>
 </ul>
-<p>从用户使用程序的角度来看，内存泄漏本身不会产生什么危害，作为一般的用户，根本感觉不到内存泄漏的存在。真正有危害的是内存泄漏的堆积，这会最终消耗尽系统所有的内存。从这个角度来说，一次性内存泄漏并没有什么危害，因为它不会堆积，而隐式内存泄漏危害性则非常大，因为较之于常发性和偶发性内存泄漏它更难被检测到 </p>
-<h5 id="内存溢出的原因以及解决方法："><a href="#内存溢出的原因以及解决方法：" class="headerlink" title="内存溢出的原因以及解决方法："></a>内存溢出的原因以及解决方法：</h5><p>常见的有以下几种：</p>
+<p>实际上，一个缓存（cache）系统主要包含下面这几个操作：</p>
 <ul>
-<li>内存中加载的数据量过于庞大，如一次从数据库取出过多数据；</li>
-<li>集合类中有对对象的引用，使用完后未清空，使得JVM不能回收；</li>
-<li>代码中存在死循环或循环产生过多重复的对象实体；</li>
-<li>使用的第三方软件中的BUG；</li>
-<li>启动参数内存值设定的过小</li>
+<li>往缓存中添加一个数据</li>
+<li>从缓存中删除一个数据</li>
+<li>在缓存中查找一个数据</li>
 </ul>
-<p>内存溢出的解决方案：</p>
+<p>这三个操作都要涉及“查找”操作，如果单纯地采用链表的话，时间复杂度只能是 O(n)。如果将散列表和链表两种数据结构组合使用，可以将这三个操作的时间复杂度都降低到 O(1)。具体的结构就是下面这个样子：<br><img src="image-20220615235645006.png"><br>使用双向链表存储数据，链表中的每个结点处理存储数据（data）、前驱指针（prev）、后继指针（next)之外，还新增了一个特殊的字段 hnext。</p>
+<p>因为散列表是通过链表法解决散列冲突的，所以每个结点会在两条链中。一个链是<em><strong>双向链表</strong>，另一个链是散列表中的</em>*拉链<strong>。</strong>前驱和后继指针是为了将结点串在双向链表中，hnext 指针是为了将结点串在散列表的拉链中**。</p>
+<h5 id="如何将缓存的三个操作做到时间复杂度-O-1"><a href="#如何将缓存的三个操作做到时间复杂度-O-1" class="headerlink" title="如何将缓存的三个操作做到时间复杂度 O(1)"></a>如何将缓存的三个操作做到时间复杂度 O(1)</h5><ul>
+<li><p><strong>如何查找一个数据</strong><br>散列表中查找数据的时间复杂度接近 O(1)，所以通过散列表，可以很快地在缓存中找到一个数据。当找到数据之后，还需要将它移动到双向链表的尾部。</p>
+</li>
+<li><p><strong>如何删除一个数据</strong><br>需要找到数据所在的结点，然后将结点删除。借助散列表，可以在 O(1) 时间复杂度里找到要删除的结点。因为链表是双向链表，双向链表可以通过前驱指针 O(1) 时间复杂度获取前驱结点，所以在双向链表中，删除结点只需要 O(1) 的时间复杂度。</p>
+</li>
+<li><p><strong>如何添加一个数据</strong><br>添加数据到缓存稍微有点麻烦，需要先看这个数据是否已经在缓存中。如果已经在其中，需要将其移动到双向链表的尾部；如果不在其中，还要看缓存有没有满。如果满了，则将双向链表头部的结点删除，然后再将数据放到链表的尾部；如果没有满，就直接将数据放到链表的尾部。</p>
+<p>这整个过程涉及的查找操作都可以通过散列表来完成。其他的操作，比如删除头结点、链表尾部插入数据等，都可以在 O(1) 的时间复杂度内完成。所以，这三个操作的时间复杂度都是 O(1)。至此，就通过散列表和双向链表的组合使用，实现了一个高效的、支持 LRU 缓存淘汰算法的缓存系统原型。</p>
+</li>
+</ul>
+<h4 id="Redis-有序集合"><a href="#Redis-有序集合" class="headerlink" title="Redis 有序集合"></a>Redis 有序集合</h4><p>在有序集合中，每个成员对象有两个重要的属性，key（键值）和 score（分值）。不仅会通过 score 来查找数据，还会通过 key 来查找数据。</p>
+<p>举个例子，比如用户积分排行榜有这样一个功能：可以通过用户的 ID 来查找积分信息，也可以通过积分区间来查找用户 ID 或者姓名信息。这里包含 ID、姓名和积分的用户信息，就是成员对象，用户 ID 就是 key，积分就是 score。</p>
+<p>Redis 有序集合的操作包括：</p>
 <ul>
-<li>第一步，修改JVM启动参数，直接增加内存。(-Xms，-Xmx参数一定不要忘记加。)</li>
-<li>第二步，检查错误日志，查看“OutOfMemory”错误前是否有其它异常或错误。</li>
-<li>第三步，对代码进行走查和分析，找出可能发生内存溢出的位置。重点排查以下几点：</li>
+<li>添加一个成员对象</li>
+<li>按照键值来删除一个成员对象</li>
+<li>按照键值来查找一个成员对象</li>
+<li>按照分值区间查找数据，比如查找积分在[100, 356]之间的成员对象</li>
+<li>按照分值从小到大排序成员对象</li>
 </ul>
-<ol>
-<li>检查对数据库查询中，是否有一次获得全部数据的查询。一般来说，如果一次取十万条记录到内存，就可能引起内存溢出。这个问题比较隐蔽，在上线前，数据库中数据较少，不容易出问题，上线后，数据库中数据多了，一次查询就有可能引起内存溢出。因此对于数据库查询尽量采用分页的方式查询。</li>
-<li>检查代码中是否有死循环或递归调用。</li>
-<li>检查是否有大循环重复产生新对象实体。</li>
-<li>检查List、MAP等集合对象是否有使用完后，未清除的问题。List、MAP等集合对象会始终存有对对象的引用，使得这些对象不能被GC回收。</li>
-</ol>
-<ul>
-<li>第四步，使用内存查看工具动态查看内存使用情况。</li>
-</ul>
+<p>如果仅仅按照分值将成员对象组织成跳表的结构，那按照键值来删除、查询成员对象就会很慢，解决方法与 LRU 缓存淘汰算法的解决方法类似。可以再按照键值构建一个散列表，这样按照 key 来删除、查找一个成员对象的时间复杂度就变成了 O(1)。同时，借助跳表结构，其他操作也非常高效。</p>
+<h4 id="为什么散列表和链表经常一块使用？"><a href="#为什么散列表和链表经常一块使用？" class="headerlink" title="为什么散列表和链表经常一块使用？"></a>为什么散列表和链表经常一块使用？</h4><p>散列表这种数据结构虽然支持非常高效的数据插入、删除、查找操作，但是散列表中的数据都是通过散列函数打乱之后无规律存储的。也就说，它无法支持按照某种顺序快速地遍历数据。如果希望按照顺序遍历散列表中的数据，需要将散列表中的数据拷贝到数组中，然后排序，再遍历。</p>
+<p>因为散列表是动态数据结构，不停地有数据的插入、删除，所以每当希望按顺序遍历散列表中的数据的时候，都需要先排序，那效率势必会很低。为了解决这个问题，将散列表和链表（或者跳表）结合在一起使用。</p>
 
                 
             </div>
@@ -562,7 +568,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://jeayk.github.io/2022/02/07/zuo-yong-yu-yu-bi-bao-6-dui-zhan-yi-chu-he-nei-cun-xie-lou-de-yuan-li-yu-jie-jue-fang-an/">https://jeayk.github.io/2022/02/07/zuo-yong-yu-yu-bi-bao-6-dui-zhan-yi-chu-he-nei-cun-xie-lou-de-yuan-li-yu-jie-jue-fang-an/</a>
+                    <a href="https://jeayk.github.io/2022/06/15/suan-fa-7-3-san-lie-biao-xia/">https://jeayk.github.io/2022/06/15/suan-fa-7-3-san-lie-biao-xia/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -600,8 +606,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E4%BD%9C%E7%94%A8%E5%9F%9F%E4%B8%8E%E9%97%AD%E5%8C%85/">
-                                    <span class="chip bg-color">作用域与闭包</span>
+                                <a href="/tags/%E7%AE%97%E6%B3%95/">
+                                    <span class="chip bg-color">算法</span>
                                 </a>
                             
                         </div>
@@ -775,17 +781,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
             <div class="card">
-                <a href="/2022/02/09/zuo-yong-yu-yu-bi-bao-7-ru-he-chu-li-xun-huan-de-yi-bu-cao-zuo/">
+                <a href="/2022/06/15/suan-fa-7-3-san-lie-biao-xia/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="作用域与闭包-7. 如何处理循环的异步操作">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="算法-7.3 散列表（下）">
                         
-                        <span class="card-title">作用域与闭包-7. 如何处理循环的异步操作</span>
+                        <span class="card-title">算法-7.3 散列表（下）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -795,26 +802,27 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-02-09
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-06-15
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Javascript%E5%9F%BA%E7%A1%80/" class="post-category">
-                                    Javascript基础
+                            <a href="/categories/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="post-category">
+                                    算法与数据结构
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E4%BD%9C%E7%94%A8%E5%9F%9F%E4%B8%8E%E9%97%AD%E5%8C%85/">
-                        <span class="chip bg-color">作用域与闭包</span>
+                    <a href="/tags/%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">算法</span>
                     </a>
                     
                 </div>
@@ -828,13 +836,13 @@
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/02/03/zuo-yong-yu-yu-bi-bao-5-bi-bao-de-yuan-li-yu-zuo-yong/">
+                <a href="/2022/06/14/suan-fa-7-2-san-lie-biao-zhong/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="作用域与闭包-5. 闭包的原理与作用">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="算法-7.2 散列表(中)">
                         
-                        <span class="card-title">作用域与闭包-5. 闭包的原理与作用</span>
+                        <span class="card-title">算法-7.2 散列表(中)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -845,14 +853,14 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-02-03
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-06-14
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Javascript%E5%9F%BA%E7%A1%80/" class="post-category">
-                                    Javascript基础
+                            <a href="/categories/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="post-category">
+                                    算法与数据结构
                                 </a>
                             
                             
@@ -862,8 +870,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E4%BD%9C%E7%94%A8%E5%9F%9F%E4%B8%8E%E9%97%AD%E5%8C%85/">
-                        <span class="chip bg-color">作用域与闭包</span>
+                    <a href="/tags/%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">算法</span>
                     </a>
                     
                 </div>
