@@ -4,11 +4,11 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="C#数据类型, 积跬步以至千里">
-    <meta name="description" content="数据类型相关操作var intNum &amp;#x3D; 250;
-int i &amp;#x3D; intnum; &amp;#x2F;&amp;#x2F; var 型变量intnum隐式转换成整型
-var name &amp;#x3D; &amp;quot;john&amp;quot;;
-">
+    <meta name="keywords" content="算法-8.1 哈希算法（上）, 积跬步以至千里">
+    <meta name="description" content="什么是哈希算法？将任意长度的二进制值串映射为固定长度的二进制值串，这个映射的规则就是哈希算法，而通过原始数据映射之后得到的二进制值串就是哈希值。
+设计一个优秀的哈希算法的几点要求：
+
+从哈希值不能反向推导出原始数据（所以哈希算法也叫单向哈希">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -20,7 +20,7 @@ var name &amp;#x3D; &amp;quot;john&amp;quot;;
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>C#数据类型 | 积跬步以至千里</title>
+    <title>算法-8.1 哈希算法（上） | 积跬步以至千里</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -312,12 +312,12 @@ var name &amp;#x3D; &amp;quot;john&amp;quot;;
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">C#数据类型</h1>
+                    <h1 class="description center-align post-title">算法-8.1 哈希算法（上）</h1>
                 </div>
             </div>
         </div>
@@ -433,8 +433,8 @@ var name &amp;#x3D; &amp;quot;john&amp;quot;;
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/C-%E5%9F%BA%E7%A1%80/">
-                                <span class="chip bg-color">C#基础</span>
+                            <a href="/tags/%E7%AE%97%E6%B3%95/">
+                                <span class="chip bg-color">算法</span>
                             </a>
                         
                     </div>
@@ -445,8 +445,8 @@ var name &amp;#x3D; &amp;quot;john&amp;quot;;
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/C/" class="post-category">
-                                C#
+                            <a href="/categories/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="post-category">
+                                算法与数据结构
                             </a>
                         
                     </div>
@@ -458,28 +458,28 @@ var name &amp;#x3D; &amp;quot;john&amp;quot;;
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2020-04-10
+                    2022-06-28
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2022-03-31
+                    2022-06-28
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    2.1k
+                    2.6k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    9 Min
+                    8 Min
                 </div>
                 
 
@@ -502,206 +502,39 @@ var name &amp;#x3D; &amp;quot;john&amp;quot;;
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="数据类型相关操作"><a href="#数据类型相关操作" class="headerlink" title="数据类型相关操作"></a>数据类型相关操作</h4><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">var intNum &#x3D; 250;
-int i &#x3D; intnum; &#x2F;&#x2F; var 型变量intnum隐式转换成整型
-var name &#x3D; &quot;john&quot;;
-string strname &#x3D; name; &#x2F;&#x2F; var型变量name隐式转换成string型
-Console.WriteLine(&quot;转换后的内容是&#123;0&#125;，&#123;1&#125;&quot;, i, name); &#x2F;&#x2F; 转换后的内容是250, john
-Console.ReadKey();<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">decimal pi &#x3D; 3.14159M; &#x2F;&#x2F; 字母M表示是decimal类型
-int r &#x3D; 12; &#x2F;&#x2F; 圆的半径
-decimal s &#x3D; 0; &#x2F;&#x2F; 圆的面积
-s &#x3D; pi*r*r;
-Console.WriteLine(&quot;圆的半径是&#123;0&#125;，\n圆的面积是&#123;1&#125;&quot;, r, s);
-Console.ReadLine();
-MessageBox.Show(&quot;圆的半径是&quot;+r+&quot;\n圆的面积是&quot;+s);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">float pi &#x3D; 3.14f; &#x2F;&#x2F; 定义一个单精度的实数
-int i &#x3D; (int)pi; &#x2F;&#x2F; 将单精度强制转换成整型计算，i的值是3，不是3.14，造成信息丢失
-Console.WriteLine(&quot;转换后的内容是&#123;0&#125;&quot;, i);
-Console.ReadKey();<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="Convert类转换"><a href="#Convert类转换" class="headerlink" title="Convert类转换"></a>Convert类转换</h4><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">string myString &#x3D; &quot;true&quot;;
-bool MyBool &#x3D; Convert.ToBoolean(myString); &#x2F;&#x2F; 将string转换成Boolean型，Mybool &#x3D; true
-string newString &#x3D; &quot;12345&quot;;
-int myInt &#x3D; Convert.ToInt32(newString); &#x2F;&#x2F; 将字符串转为数字值，myInt &#x3D; 12345
-Console.WriteLine(&quot;转换后的内容是&#123;0&#125;，&#123;1&#125;&quot;, MyBool, myInt); &#x2F;&#x2F; true 12345
-Console.ReadKey();<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="隐式转换、显式转换使用举例："><a href="#隐式转换、显式转换使用举例：" class="headerlink" title="隐式转换、显式转换使用举例："></a>隐式转换、显式转换使用举例：</h4><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">Console.WriteLine(&quot;隐式、显式转换例子：&quot;);
-short r &#x3D; 25; &#x2F;&#x2F; 表示圆的半径
-int i &#x3D; r; &#x2F;&#x2F; 将短整型r隐式转换成整型
-float pi &#x3D; 3.14f; &#x2F;&#x2F; 定义一个单精度的实数
-double s1 &#x3D; pi * i * i; &#x2F;&#x2F; s1为double型，表示圆的面积
-int s2;
-s2 &#x3D; (int)pi * i * i; &#x2F;&#x2F; s2为int型，表示圆的面积 强制转换
-var name &#x3D; &quot;john&quot;;
-string strName &#x3D; name; &#x2F;&#x2F; var类型变量name隐式转换为string型
-Console.WriteLine(&quot;r&#x3D;25，圆的面积&#x3D;&#123;0&#125;,&#123;1&#125;&quot;, s1, s2);
-Console.WriteLine(&quot;转换成功！&quot;);
-Console.ReadKey();<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h4 id="Convert转换使用举例："><a href="#Convert转换使用举例：" class="headerlink" title="Convert转换使用举例："></a>Convert转换使用举例：</h4><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">Console.WriteLine(&quot;隐式、显式转换例子：&quot;);
-short r &#x3D; 25; &#x2F;&#x2F; 表示圆的半径
-int i &#x3D; Convert.ToInt32(r); &#x2F;&#x2F; 将短整型r隐式转换成整型
-float pi &#x3D; 3.14f; &#x2F;&#x2F; 定义一个单精度的实数
-double s1 &#x3D; pi * i * i; &#x2F;&#x2F; s1为double型，表示圆的面积
-int s2;
-s2 &#x3D; Convert.ToInt32(pi) * i * i; &#x2F;&#x2F; s2为int型，表示圆的面积
-var memberName &#x3D; &quot;Johnson&quot;;
-string strName &#x3D; Convert.ToString(memberName); &#x2F;&#x2F; var型变量隐式转换为string型
-Console.WriteLine(&quot;r&#x3D;25，圆的面积&#x3D;&#123;0&#125;,&#123;1&#125;&quot;, s1, s2);
-Console.WriteLine(&quot;memberName&#x3D;&#123;0&#125;&quot;, memberName);
-Console.WriteLine(&quot;转换成功！&quot;);
-Console.ReadKey();<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h4 id="字符串与数值之间的转换"><a href="#字符串与数值之间的转换" class="headerlink" title="字符串与数值之间的转换"></a>字符串与数值之间的转换</h4><ul>
-<li>ToString()方法：数值类型的ToString()方法可以将数值型数据转换为字符串。</li>
-<li>Parse()方法：数值类型的Parse()方法可以将字符串转换为数值型，例如,字符串转换为整型使用int.Parse(string)，字符串转换为双精度浮点型使用double.Parse(string)等。<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">int num1 &#x3D; 25;
-string str1 &#x3D; num1.ToString(); &#x2F;&#x2F; num1的toString()方法将num1转换成string赋值给str1
-string str2 &#x3D; &quot;38&quot;;
-int num2 &#x3D; int.Parse(str2); &#x2F;&#x2F; int.Parse()方法将字符串str2转换成int类型
-string str3 &#x3D; &quot;21&quot;;
-double num3 &#x3D; double.Parse(str3); &#x2F;&#x2F; double.Parse()将字符串转换为双精度浮点型、
-string str4 &#x3D; &quot;56&quot;;
-float num4 &#x3D; float.Parse(str4); &#x2F;&#x2F; float.Parse()将字符串转换成单精度浮点型
-Console.WriteLine(&quot;num1、num2、num3、num4对应的数值为: &#123;0&#125;, &#123;1&#125;, &#123;2&#125;, &#123;3&#125;&quot;, num1, num2, num3,num4);
-Console.ReadKey();<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+                <h4 id="什么是哈希算法？"><a href="#什么是哈希算法？" class="headerlink" title="什么是哈希算法？"></a>什么是哈希算法？</h4><p>将任意长度的二进制值串映射为固定长度的二进制值串，这个映射的规则就是哈希算法，而通过原始数据映射之后得到的二进制值串就是哈希值。</p>
+<p>设计一个优秀的哈希算法的几点要求：</p>
+<ul>
+<li>从哈希值不能反向推导出原始数据（所以哈希算法也叫单向哈希算法）</li>
+<li>对输入数据非常敏感，哪怕原始数据只修改了一个 Bit，最后得到的哈希值也大不相同</li>
+<li>散列冲突的概率要很小，对于不同的原始数据，哈希值相同的概率非常小</li>
+<li>哈希算法的执行效率要尽量高效，针对较长的文本，也能快速地计算出哈希值。</li>
 </ul>
-<h4 id="装箱与拆箱"><a href="#装箱与拆箱" class="headerlink" title="装箱与拆箱"></a>装箱与拆箱</h4><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">&#x2F;&#x2F; 拆箱：引用类型-&gt;值类型
-&#x2F;&#x2F; 装箱：值类型-&gt;引用类型
-int n &#x3D; 4; &#x2F;&#x2F; n是值类型
-object obj &#x3D; n; &#x2F;&#x2F; 装箱，把任何值类型隐式转换为object类型，其中object为引用类型
-console.writeline(&quot;n的初始值为：&#123;0&#125;，装箱后的值为：&#123;1&#125;&quot;, n, obj.tostring());
-int m &#x3D; (int)obj; &#x2F;&#x2F;拆箱，把一个object类型隐式的转换为值类型
-console.writeline(&quot;引用类型的值为：&#123;0&#125;，拆箱后的值为：&#123;1&#125;&quot;, obj.tostring(), m);
-console.readline();<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="引用类型与值类型"><a href="#引用类型与值类型" class="headerlink" title="引用类型与值类型"></a>引用类型与值类型</h4><p>引用类型和值类型变量的使用是C#中的高级技巧之一。值类型变量中保存的是自己的实际数据，在赋值的时候会把源变量的数据复制一份，然后赋给目的变量；引用类型变量中保存的是“指向实际数据的指针”，即实际对象数据的内存地址，在进行赋值操作的时候，它和值类型一样，也是先有一个复制的操作，不过它复制的不是实际的数据，而是引用（真实数据的内存地址）。</p>
-<ol>
-<li>怎么区分值类型与引用类型以struct关键字定义的数据类型就是值类型，另外，枚举类型也是值类型；以class关键字定义的数据类型就是引用类型。</li>
-<li>值类型变量与引用类型变量的使用区别值类型变量不需要使用new关键字来分配内存。相信大家使用int型变量时，就没有使用new来为其分配内存，定义完之后，就可以直接使用；引用类型变量则需要为其赋值后，才能使用。下面举例说明值类型与引用类型在使用上的区别。<br>首先定义两种类型的员工：结构体SEmployee和类CEmployee。<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">struct SEmployee
-   &#123;
-       public int age;
-   &#125;
-   class CEmployee
-   &#123;
-       public int age;
-   &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">SEmployee se;
-se.age &#x3D; 4;
-CEmployee ce;
-ce &#x3D; new CEmployee();
-ce.age &#x3D; 5;
-Console.WriteLine(&quot;年龄：&#123;0&#125;&quot;, se.age);
-Console.WriteLine(&quot;年龄：&#123;0&#125;&quot;, ce.age);
-Console.ReadLine();<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-值类型变量在定义后，就直接可以使用，而引用类型必须使用new关键字后才能使用。对于引用类型会有“未将对象引用设置到对象的实例”错误，而值类型不会发生这种错误。<h4 id="typeof运算符"><a href="#typeof运算符" class="headerlink" title="typeof运算符"></a>typeof运算符</h4>typeof运算符用于获得系统原型对象的类型，也就是Type类型。Type类包含关于值类型和引用类型的信息。</li>
-</ol>
-<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">Type t  &#x3D; typeof(int);
-Console.WriteLine(&quot;类型：&#123;0&#125;&quot;, t); &#x2F;&#x2F; System.Int32
-Console.ReadKey();<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<h4 id="checked和unchecked运算符"><a href="#checked和unchecked运算符" class="headerlink" title="checked和unchecked运算符"></a>checked和unchecked运算符</h4><p>checked和unchecked运算符用于允许或者禁止对指定的运算进行检测，并指出相应的错误提示信息。</p>
-<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">byte s &#x3D; 255;
-checked &#x2F;&#x2F; checked会检查溢出报错，并给出错误提示
-&#x2F;&#x2F; unchecked &#x2F;&#x2F; checked 改为 unckcked,控制台不报错，输出1
-&#123;
-    s +&#x3D; 2;
-&#125;
-Console.WriteLine(s.ToString());
-Console.ReadKey(); <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="成绩练习代码"><a href="#成绩练习代码" class="headerlink" title="成绩练习代码"></a>成绩练习代码</h4><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">Console.WriteLine(&quot;请输入成绩0-100：&quot;);
-int score &#x3D; int.Parse(Console.ReadLine());
-if (score &gt;&#x3D; 90)
-&#123;
-    Console.WriteLine(&quot;优秀&quot;);
-&#125;
-else if (score &gt;&#x3D; 80)
-&#123;
-    Console.WriteLine(&quot;良好&quot;);
-&#125;
-else if (score &gt;&#x3D; 70)
-&#123;
-    Console.WriteLine(&quot;中等&quot;);
-&#125;
-else if (score &gt;&#x3D; 60)
-&#123;
-    Console.WriteLine(&quot;及格&quot;);
-&#125;
-else
-&#123;
-    Console.WriteLine(&quot;不及格&quot;);
-&#125;
-Console.ReadKey();<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-<h4 id="循环练习代码"><a href="#循环练习代码" class="headerlink" title="循环练习代码"></a>循环练习代码</h4><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">&#x2F;&#x2F; for循环计算0-100的和
-int sum &#x3D; 0;
-for (int i &#x3D; 1; i &lt;101; i++)
-&#123;
-    sum +&#x3D; i;
-&#125;
-Console.WriteLine(sum);
-Console.ReadKey(); <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">&#x2F;&#x2F; while循环计算0-100的和
-    int i &#x3D; 1, sum &#x3D; 0;
-    while(i &lt; 101)
-    &#123;
-        sum +&#x3D; i;
-        i++;
-    &#125;
-    Console.WriteLine(sum);
-    Console.ReadKey(); <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">&#x2F;&#x2F; do-while计算0-100的和
-int i&#x3D;1, sum &#x3D;0;
-do
-&#123;
-    sum +&#x3D; i;
-    i++;
-&#125; while (i &lt;&#x3D; 100);
-Console.WriteLine(sum);
-Console.ReadKey();<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">&#x2F;&#x2F; for-each循环
-string[]week &#x3D; &#123;&quot;Mon&quot;, &quot;Tue&quot;, &quot;Wed&quot;, &quot;Thu&quot;, &quot;Fri&quot;, &quot;Sat&quot;, &quot;Sun&quot;&#125;; &#x2F;&#x2F; 定义数组并赋值
-foreach(string s in week) &#x2F;&#x2F; 遍历数组
-&#123;
-    Console.WriteLine(s);
-&#125;
-Console.ReadKey(); <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">&#x2F;&#x2F; 输出九九乘法表
-for (int i &#x3D; 1; i &lt; 10; i++)
-&#123;
-    for (int j &#x3D; 1; j &lt;&#x3D; i; j++)
-    &#123;
-        int k &#x3D; i*j;
-        Console.Write(&quot;&#123;0&#125;*&#123;1&#125; &#x3D; &#123;2&#125;&quot;, j, i, k);
-        if (i !&#x3D; j)Console.Write(&quot;,&quot;);
-    &#125;
-    Console.WriteLine();
-&#125;
-Console.ReadKey(); <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">&#x2F;&#x2F; 输出小于100的素数
-Console.WriteLine(&quot;小于100的素数有：&quot;);
-for (int i &#x3D; 2; i &lt; 100; i++)
-&#123;
-    bool isPrime &#x3D; true;
-    for (int j &#x3D; 2; j &lt; i-1; j++)
-    &#123;
-        if (i % j &#x3D;&#x3D; 0)
-        &#123;
-            isPrime &#x3D; false;
-            break;
-        &#125;
-    &#125;
-    if (isPrime)Console.WriteLine(i);
-&#125;
-Console.ReadKey(); <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">&#x2F;&#x2F; 复印纸数练习
-Console.WriteLine(&quot;请输入复印数量：&quot;);
-int num &#x3D; int.Parse(Console.ReadLine());
-double money &#x3D; 0;
-if (num &lt; 51) money &#x3D; 0.5*num;
-else money &#x3D; 0.5*50 + (num - 50)*0.2;
-Console.WriteLine(money);
-Console.ReadKey();<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="哈希算法的几个应用"><a href="#哈希算法的几个应用" class="headerlink" title="哈希算法的几个应用"></a>哈希算法的几个应用</h4><h5 id="应用一：安全加密"><a href="#应用一：安全加密" class="headerlink" title="应用一：安全加密"></a>应用一：安全加密</h5><p>最常用于加密的哈希算法是 MD5（MD5 Message-Digest Algorithm，MD5 消息摘要算法）和 SHA（Secure Hash Algorithm，安全散列算法）。</p>
+<p>哈希算法的四点要求中，对用于加密的哈希算法来说，有两点格外重要。第一点是很难根据哈希值反向推导出原始数据，第二点是散列冲突的概率要很小。</p>
+<p>第一点很好理解，加密的目的就是防止原始数据泄露，所以很难通过哈希值反向推导原始数据，这是一个最基本的要求。</p>
+<p>第二点，实际上，不管是什么哈希算法，只能尽量减少碰撞冲突的概率，理论上是没办法做到完全不冲突的。</p>
+<p><span style="color: red;">为什么哈希算法无法做到零冲突：</span><br>基于组合数学中一个非常基础的理论，鸽巢原理（也叫抽屉原理）。这个原理本身很简单，它是说，如果有 10 个鸽巢，有 11 只鸽子，那肯定有 1 个鸽巢中的鸽子数量多于 1 个，换句话说就是，肯定有 2 只鸽子在 1 个鸽巢内。</p>
+<p>哈希算法产生的哈希值的长度是固定且有限的。比如前面举的 MD5 的例子，哈希值是固定的 128 位二进制串，能表示的数据是有限的，最多能表示 2^128 个数据，而需要哈希的数据是无穷的。基于鸽巢原理，如果对 2^128+1 个数据求哈希值，就必然会存在哈希值相同的情况。所以，一般情况下，哈希值越长的哈希算法，散列冲突的概率越低。</p>
+<p>不过，即便哈希算法存在散列冲突的情况，但是因为哈希值的范围很大，冲突的概率极低，所以相对来说还是很难破解的。像 MD5，有 2^128 个不同的哈希值，这个数据已经是一个天文数字了，所以散列冲突的概率要小于 1/2^128。</p>
+<p>如果拿到一个 MD5 哈希值，希望通过毫无规律的穷举的方法，找到跟这个 MD5 值相同的另一个数据，那耗费的时间应该是个天文数字。所以，即便哈希算法存在冲突，但是在有限的时间和资源下，哈希算法还是很难被破解的。</p>
+<p>除此之外，没有绝对安全的加密。越复杂、越难破解的加密算法，需要的计算时间也越长。比如 SHA-256 比 SHA-1 要更复杂、更安全，相应的计算时间就会比较长。密码学界也一直致力于找到一种快速并且很难被破解的哈希算法。在实际的开发过程中，也需要权衡破解难度和计算时间，来决定究竟使用哪种加密算法。</p>
+<h5 id="应用二：唯一标识"><a href="#应用二：唯一标识" class="headerlink" title="应用二：唯一标识"></a>应用二：唯一标识</h5><p><span style="color: red;">示例：</span><br>如果要在海量的图库中，搜索一张图是否存在，不能单纯地用图片的元信息（比如图片名称）来比对，因为有可能存在名称相同但图片内容不同，或者名称不同图片内容相同的情况。那该如何搜索呢？</p>
+<p>任何文件在计算中都可以表示成二进制码串，所以，比较笨的办法就是，拿要查找的图片的二进制码串与图库中所有图片的二进制码串一一比对。如果相同，则说明图片在图库中存在。但是，每个图片小则几十 KB、大则几 MB，转化成二进制是一个非常长的串，比对起来非常耗时。有没有比较快的方法呢？</p>
+<p>可以给每一个图片取一个唯一标识，或者说信息摘要。比如，可以从图片的二进制码串开头取 100 个字节，从中间取 100 个字节，从最后再取 100 个字节，然后将这 300 个字节放到一块，通过哈希算法（比如 MD5），得到一个哈希字符串，用它作为图片的唯一标识。通过这个唯一标识来判定图片是否在图库中，这样就可以减少很多工作量。</p>
+<p>如果还想继续提高效率，可以把每个图片的唯一标识，和相应的图片文件在图库中的路径信息，都存储在散列表中。当要查看某个图片是不是在图库中的时候，先通过哈希算法对这个图片取唯一标识，然后在散列表中查找是否存在这个唯一标识。</p>
+<p>如果不存在，那就说明这个图片不在图库中；如果存在，再通过散列表中存储的文件路径，获取到这个已经存在的图片，跟现在要插入的图片做全量的比对，看是否完全一样。如果一样，就说明已经存在；如果不一样，说明两张图片尽管唯一标识相同，但是并不是相同的图片。</p>
+<h5 id="应用三：数据校验"><a href="#应用三：数据校验" class="headerlink" title="应用三：数据校验"></a>应用三：数据校验</h5><p>电驴这样的 BT 下载软件为例，BT 下载的原理是基于 P2P 协议的。从多个机器上并行下载一个 2GB 的电影时，这个电影文件可能会被分割成很多文件块（比如可以分成 100 块，每块大约 20MB）。等所有的文件块都下载完成之后，再组装成一个完整的电影文件就行了。</p>
+<p>网络传输是不安全的，下载的文件块有可能是被宿主机器恶意修改过的，又或者下载过程中出现了错误，所以下载的文件块可能不是完整的。如果没有能力检测这种恶意修改或者文件下载出错，就会导致最终合并后的电影无法观看，甚至导致电脑中毒。现在的问题是，如何来校验文件块的安全、正确、完整呢？</p>
+<p>具体的 BT 协议很复杂，校验方法也有很多，其中一种思路如下。</p>
+<p>通过哈希算法，对 100 个文件块分别取哈希值，并且保存在种子文件中。前面讲过，哈希算法有一个特点，对数据很敏感。只要文件块的内容有一丁点儿的改变，最后计算出的哈希值就会完全不同。所以，当文件块下载完成之后，可以通过相同的哈希算法，对下载好的文件块逐一求哈希值，然后跟种子文件中保存的哈希值比对。如果不同，说明这个文件块不完整或者被篡改了，需要再重新从其他宿主机器上下载这个文件块。</p>
+<h5 id="应用四：散列函数"><a href="#应用四：散列函数" class="headerlink" title="应用四：散列函数"></a>应用四：散列函数</h5><p>散列函数是设计一个散列表的关键。它直接决定了散列冲突的概率和散列表的性能。不过，相对哈希算法的其他应用，散列函数对于散列算法冲突的要求要低很多。即便出现个别散列冲突，只要不是过于严重，都可以通过开放寻址法或者链表法解决。</p>
+<p>不仅如此，散列函数对于散列算法计算得到的值，是否能反向解密也并不关心。散列函数中用到的散列算法，更加关注散列后的值是否能平均分布，也就是，一组数据是否能均匀地散列在各个槽中。除此之外，散列函数执行的快慢，也会影响散列表的性能，所以，散列函数用的散列算法一般都比较简单，比较追求效率。</p>
+<h4 id="思考"><a href="#思考" class="headerlink" title="思考"></a>思考</h4><p><strong>如何防止数据库中的用户信息被脱库？</strong></p>
+<p>可以通过哈希算法，对用户密码进行加密之后再存储，不过最好选择相对安全的加密算法，比如 SHA 等（因为 MD5 已经号称被破解了）。不过仅仅这样加密之后存储就万事大吉了吗？</p>
+<p>字典攻击你听说过吗？如果用户信息被“脱库”，黑客虽然拿到是加密之后的密文，但可以通过“猜”的方式来破解密码，这是因为，有些用户的密码太简单。比如很多人习惯用 00000、123456 这样的简单数字组合做密码，很容易就被猜中。</p>
+<p>那就需要维护一个常用密码的字典表，把字典中的每个密码用哈希算法计算哈希值，然后拿哈希值跟脱库后的密文比对。如果相同，基本上就可以认为，这个加密之后的密码对应的明文就是字典中的这个密码。（注意，这里说是的是“基本上可以认为”，因为根据前面的学习，哈希算法存在散列冲突，也有可能出现，尽管密文一样，但是明文并不一样的情况。）</p>
+<p>针对字典攻击，可以引入一个盐（salt），跟用户的密码组合在一起，增加密码的复杂度。拿组合之后的字符串来做哈希算法加密，将它存储到数据库中，进一步增加破解的难度。不过安全和攻击是一种博弈关系，不存在绝对的安全。所有的安全措施，只是增加攻击的成本而已。</p>
 
                 
             </div>
@@ -728,7 +561,7 @@ Console.ReadKey();<span aria-hidden="true" class="line-numbers-rows"><span></spa
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://jeayk.github.io/2020/04/10/csharp-shu-ju-lei-xing/">https://jeayk.github.io/2020/04/10/csharp-shu-ju-lei-xing/</a>
+                    <a href="https://jeayk.github.io/2022/06/28/suan-fa-8-1-ha-xi-suan-fa-shang/">https://jeayk.github.io/2022/06/28/suan-fa-8-1-ha-xi-suan-fa-shang/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -766,8 +599,8 @@ Console.ReadKey();<span aria-hidden="true" class="line-numbers-rows"><span></spa
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/C-%E5%9F%BA%E7%A1%80/">
-                                    <span class="chip bg-color">C#基础</span>
+                                <a href="/tags/%E7%AE%97%E6%B3%95/">
+                                    <span class="chip bg-color">算法</span>
                                 </a>
                             
                         </div>
@@ -941,17 +774,18 @@ Console.ReadKey();<span aria-hidden="true" class="line-numbers-rows"><span></spa
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
             <div class="card">
-                <a href="/2020/04/13/csharp-duo-tai/">
+                <a href="/2022/06/28/suan-fa-8-1-ha-xi-suan-fa-shang/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="C#多态">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="算法-8.1 哈希算法（上）">
                         
-                        <span class="card-title">C#多态</span>
+                        <span class="card-title">算法-8.1 哈希算法（上）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -961,26 +795,27 @@ Console.ReadKey();<span aria-hidden="true" class="line-numbers-rows"><span></spa
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-04-13
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-06-28
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/C/" class="post-category">
-                                    C#
+                            <a href="/categories/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="post-category">
+                                    算法与数据结构
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/C-%E5%9F%BA%E7%A1%80/">
-                        <span class="chip bg-color">C#基础</span>
+                    <a href="/tags/%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">算法</span>
                     </a>
                     
                 </div>
@@ -994,13 +829,13 @@ Console.ReadKey();<span aria-hidden="true" class="line-numbers-rows"><span></spa
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/04/10/csharp-zi-fu-chuan-cao-zuo-xiang-guan/">
+                <a href="/2022/06/15/suan-fa-7-3-san-lie-biao-xia/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="Csharp字符串操作">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="算法-7.3 散列表（下）">
                         
-                        <span class="card-title">Csharp字符串操作</span>
+                        <span class="card-title">算法-7.3 散列表（下）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1011,14 +846,14 @@ Console.ReadKey();<span aria-hidden="true" class="line-numbers-rows"><span></spa
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-10
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-06-15
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/C/" class="post-category">
-                                    C#
+                            <a href="/categories/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="post-category">
+                                    算法与数据结构
                                 </a>
                             
                             
@@ -1028,8 +863,8 @@ Console.ReadKey();<span aria-hidden="true" class="line-numbers-rows"><span></spa
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/C-%E5%9F%BA%E7%A1%80/">
-                        <span class="chip bg-color">C#基础</span>
+                    <a href="/tags/%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">算法</span>
                     </a>
                     
                 </div>
